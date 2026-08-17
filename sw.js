@@ -1,5 +1,5 @@
-const CACHE='tenka-v0.1.1';
-const CORE=['./','./index.html','./styles.css?v=0.1.1','./data.js?v=0.1.1','./app.js?v=0.1.1','./manifest.webmanifest?v=0.1.1','./assets/icon.svg?v=0.1.1'];
+const CACHE='tenka-v0.1.2';
+const CORE=['./','./index.html','./styles.css?v=0.1.2','./data.js?v=0.1.2','./app.js?v=0.1.2','./manifest.webmanifest?v=0.1.2','./assets/icon.svg?v=0.1.2'];
 
 self.addEventListener('install',event=>{
   self.skipWaiting();
@@ -16,6 +16,8 @@ self.addEventListener('activate',event=>{
 
 self.addEventListener('fetch',event=>{
   const req=event.request;
+
+  // HTML navigation may fall back to the cached app shell when offline.
   if(req.mode==='navigate'){
     event.respondWith(
       fetch(req)
@@ -29,6 +31,7 @@ self.addEventListener('fetch',event=>{
     return;
   }
 
+  // Never return HTML as a fallback for JavaScript/CSS/assets.
   event.respondWith(
     caches.match(req).then(cached=>cached||fetch(req).then(resp=>{
       if(resp && resp.ok){
