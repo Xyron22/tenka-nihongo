@@ -1,0 +1,14 @@
+{
+  "name": "TENKA 日本語",
+  "short_name": "TENKA",
+  "description": "Belajar JLPT, bunpou, kanji, listening dan bahasa Kaigo dalam satu aplikasi.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101014",
+  "theme_color": "#101014",
+  "orientation": "portrait",
+  "icons": [
+    {"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
