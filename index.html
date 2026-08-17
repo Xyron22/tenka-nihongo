@@ -7,9 +7,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="TENKA">
-  <link rel="manifest" href="manifest.webmanifest?v=0.1.1">
-  <link rel="icon" href="assets/icon.svg?v=0.1.1" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=0.1.1">
+  <link rel="manifest" href="manifest.webmanifest?v=0.1.2">
+  <link rel="icon" href="assets/icon.svg?v=0.1.2" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=0.1.2">
   <title>TENKA 日本語</title>
 </head>
 <body>
@@ -21,14 +21,65 @@
       </div>
     </div>
     <section class="hero">
-      <h1>読み込み中…</h1>
-      <p>TENKA sedang menyiapkan sesi belajarmu.</p>
+      <h1 id="boot-title">読み込み中…</h1>
+      <p id="boot-message">TENKA sedang menyiapkan sesi belajarmu.</p>
     </section>
-    <div class="muted-box">Kalau tulisan ini tidak berubah dalam beberapa detik, refresh halaman sekali.</div>
+    <div id="boot-detail" class="muted-box">Memeriksa cache aplikasi…</div>
   </main>
   <div id="toast" aria-live="polite"></div>
   <noscript><div style="padding:24px;color:white">TENKA membutuhkan JavaScript untuk menjalankan flashcard dan quiz.</div></noscript>
-  <script src="data.js?v=0.1.1"></script>
-  <script src="app.js?v=0.1.1"></script>
+
+  <script>
+  (function(){
+    function detail(msg){
+      var el=document.getElementById('boot-detail');
+      if(el) el.textContent=msg;
+    }
+    window.tenkaBootError=function(name){
+      var title=document.getElementById('boot-title');
+      var msg=document.getElementById('boot-message');
+      if(title) title.textContent='読み込みエラー';
+      if(msg) msg.textContent='Gagal memuat '+name+'. Coba buka ulang halaman ini di Safari.';
+      detail('TENKA diagnostic: '+name+' tidak berhasil dimuat.');
+    };
+    window.addEventListener('error',function(e){
+      if(e && e.message) detail('JavaScript error: '+e.message);
+    });
+
+    // One-time cleanup for the early TENKA service worker that could serve
+    // the HTML shell for failed JavaScript requests. Unregister it, reload,
+    // then app.js will register the corrected worker again.
+    if('serviceWorker' in navigator && !sessionStorage.getItem('tenka-sw-reset-012')){
+      navigator.serviceWorker.getRegistrations().then(function(regs){
+        if(!regs.length){
+          sessionStorage.setItem('tenka-sw-reset-012','1');
+          detail('Cache bersih. Memuat aplikasi…');
+          return;
+        }
+        detail('Membersihkan cache TENKA lama…');
+        Promise.all(regs.map(function(reg){return reg.unregister();})).then(function(){
+          sessionStorage.setItem('tenka-sw-reset-012','1');
+          location.reload();
+        });
+      }).catch(function(){
+        sessionStorage.setItem('tenka-sw-reset-012','1');
+        detail('Memuat aplikasi tanpa reset cache…');
+      });
+    }else{
+      detail('Memuat data belajar…');
+    }
+  })();
+  </script>
+  <script src="data.js?v=0.1.2" onerror="tenkaBootError('data.js')"></script>
+  <script src="app.js?v=0.1.2" onerror="tenkaBootError('app.js')"></script>
+  <script>
+    setTimeout(function(){
+      var title=document.getElementById('boot-title');
+      if(title && title.textContent.indexOf('読み込み')!==-1){
+        var detail=document.getElementById('boot-detail');
+        if(detail) detail.textContent='JavaScript belum menyelesaikan startup. Buka halaman ini lewat Safari, bukan browser di dalam ChatGPT.';
+      }
+    },2500);
+  </script>
 </body>
 </html>
