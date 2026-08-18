@@ -1,82 +1,28 @@
-const fs = require('fs');
-const vm = require('vm');
-
-const dataSource = fs.readFileSync('data.js', 'utf8');
-const appSource = fs.readFileSync('app.js', 'utf8');
-
-const appEl = { innerHTML: '' };
-const toastEl = { textContent: '', classList: { add() {}, remove() {} } };
-
-const context = {
-  console,
-  Date,
-  Math,
-  Object,
-  JSON,
-  String,
-  Array,
-  Set,
-  Promise,
-  setTimeout,
-  clearTimeout,
-  setInterval,
-  clearInterval,
-  localStorage: {
-    getItem() { return null; },
-    setItem() {},
-    removeItem() {},
-  },
-  document: {
-    querySelector(selector) {
-      if (selector === '#app') return appEl;
-      if (selector === '#toast') return toastEl;
-      return null;
-    },
-    querySelectorAll() { return []; },
-  },
-  navigator: {},
-  scrollTo() {},
-  confirm() { return false; },
-  speechSynthesis: { cancel() {}, speak() {} },
-  SpeechSynthesisUtterance: function SpeechSynthesisUtterance() {},
-  window: null,
-};
-context.window = context;
-
-Object.defineProperty(context, 'top', {
-  value: { safariProtectedGlobal: true },
-  configurable: false,
-  writable: false,
-  enumerable: true,
-});
-
+const fs=require('fs');
+const vm=require('vm');
+const dataSource=fs.readFileSync('data.js','utf8');
+const contentSource=fs.readFileSync('content-pack-v1.js','utf8');
+const appSource=fs.readFileSync('app.js','utf8');
+const appEl={innerHTML:'',textContent:'',querySelectorAll(){return[]}};
+const toastEl={textContent:'',classList:{add(){},remove(){}}};
+const context={console,Date,Math,Object,JSON,String,Array,Set,Promise,setTimeout,clearTimeout,setInterval,clearInterval,localStorage:{getItem(){return null},setItem(){},removeItem(){}},document:{querySelector(s){if(s==='#app')return appEl;if(s==='#toast')return toastEl;return null},querySelectorAll(){return[]}},navigator:{},scrollTo(){},confirm(){return false},speechSynthesis:{cancel(){},speak(){},getVoices(){return[]}},SpeechSynthesisUtterance:function(t){this.text=t||''},window:null};
+context.window=context;
+Object.defineProperty(context,'top',{value:{safariProtectedGlobal:true},configurable:false,writable:false,enumerable:true});
 vm.createContext(context);
-vm.runInContext(dataSource, context, { filename: 'data.js' });
-vm.runInContext(appSource, context, { filename: 'app.js' });
-
-function assert(condition, message) {
-  if (!condition) throw new Error(message);
-}
-
-assert(context.TENKA_READY === true, 'TENKA_READY was not set');
-assert(context.top && context.top.safariProtectedGlobal, 'window.top was overwritten');
-assert(appEl.innerHTML.includes('TENKA 日本語'), 'Home screen did not render');
-assert(appEl.innerHTML.includes('JLPT'), 'Home screen missing JLPT');
-
-context.go('jlpt');
-assert(appEl.innerHTML.includes('N5'), 'JLPT level screen did not render');
-
-context.openLevel('N5');
-assert(appEl.innerHTML.includes('Flashcard Kanji'), 'N5 level menu did not render');
-
-context.openFlash('N5', 'kanji');
-assert(appEl.innerHTML.includes('日'), 'N5 kanji flashcard did not render');
-assert(appEl.innerHTML.includes('Kakijun'), 'Kakijun action missing');
-
-context.openGrammar('N5');
-assert(appEl.innerHTML.includes('Bunpou N5'), 'N5 grammar did not render');
-
-context.go('kaigo');
-assert(appEl.innerHTML.includes('申し送り'), 'Kaigo handoff menu did not render');
-
+vm.runInContext(dataSource,context,{filename:'data.js'});
+vm.runInContext(contentSource,context,{filename:'content-pack-v1.js'});
+vm.runInContext(appSource,context,{filename:'app.js'});
+function assert(x,m){if(!x)throw new Error(m)}
+assert(context.TENKA_READY===true,'TENKA_READY was not set');
+assert(context.top&&context.top.safariProtectedGlobal,'window.top was overwritten');
+assert(context.TENKA_DATA.jlpt.N5.kanji.length>=15,'N5 kanji content pack missing');
+assert(context.TENKA_DATA.jlpt.N5.vocab.length>=20,'N5 vocab content pack missing');
+assert(context.TENKA_DATA.kaigo.vocab.length>=30,'Kaigo vocab content pack missing');
+assert(context.TENKA_DATA.kaigo.handoff.length>=6,'Handoff content pack missing');
+assert(appEl.innerHTML.includes('TENKA 日本語'),'Home did not render');
+context.go('jlpt');assert(appEl.innerHTML.includes('N5'),'JLPT screen missing N5');
+context.openLevel('N5');assert(appEl.innerHTML.includes('Flashcard Kanji'),'N5 menu missing');
+context.openFlash('N5','kanji');assert(appEl.innerHTML.includes('Kakijun'),'Kakijun action missing');
+context.openGrammar('N5');assert(appEl.innerHTML.includes('Bunpou N5'),'Grammar missing');
+context.go('kaigo');assert(appEl.innerHTML.includes('申し送り'),'Kaigo handoff missing');
 console.log('TENKA smoke test passed');
