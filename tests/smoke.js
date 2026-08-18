@@ -3,9 +3,10 @@ const vm=require('vm');
 const dataSource=fs.readFileSync('data.js','utf8');
 const contentSource=fs.readFileSync('content-pack-v1.js','utf8');
 const appSource=fs.readFileSync('app.js','utf8');
+const audioSource=fs.readFileSync('audio-patch.js','utf8');
 const appEl={innerHTML:'',textContent:'',querySelectorAll(){return[]}};
 const toastEl={textContent:'',classList:{add(){},remove(){}}};
-const context={console,Date,Math,Object,JSON,String,Array,Set,Promise,setTimeout,clearTimeout,setInterval,clearInterval,localStorage:{getItem(){return null},setItem(){},removeItem(){}},document:{querySelector(s){if(s==='#app')return appEl;if(s==='#toast')return toastEl;return null},querySelectorAll(){return[]}},navigator:{},scrollTo(){},confirm(){return false},speechSynthesis:{cancel(){},speak(){},getVoices(){return[]}},SpeechSynthesisUtterance:function(t){this.text=t||''},window:null};
+const context={console,Date,Math,Object,JSON,String,Array,Set,Promise,setTimeout,clearTimeout,setInterval,clearInterval,localStorage:{getItem(){return null},setItem(){},removeItem(){}},document:{readyState:'complete',querySelector(s){if(s==='#app')return appEl;if(s==='#toast')return toastEl;return null},querySelectorAll(){return[]},addEventListener(){},createElement(){return{innerHTML:'',remove(){},querySelectorAll(){return[]}}}},navigator:{},scrollTo(){},confirm(){return false},speechSynthesis:{cancel(){},speak(){},getVoices(){return[]}},SpeechSynthesisUtterance:function(t){this.text=t||''},Audio:function(){this.volume=1;this.play=()=>Promise.resolve()},URL:{createObjectURL(){return'blob:test'},revokeObjectURL(){}},window:null};
 context.window=context;
 Object.defineProperty(context,'top',{value:{safariProtectedGlobal:true},configurable:false,writable:false,enumerable:true});
 vm.createContext(context);
@@ -25,4 +26,10 @@ context.openLevel('N5');assert(appEl.innerHTML.includes('Flashcard Kanji'),'N5 m
 context.openFlash('N5','kanji');assert(appEl.innerHTML.includes('Kakijun'),'Kakijun action missing');
 context.openGrammar('N5');assert(appEl.innerHTML.includes('Bunpou N5'),'Grammar missing');
 context.go('kaigo');assert(appEl.innerHTML.includes('申し送り'),'Kaigo handoff missing');
-console.log('TENKA smoke test passed');
+vm.runInContext(audioSource,context,{filename:'audio-patch.js'});
+setTimeout(()=>{
+  assert(context.TENKA_AUDIO&&typeof context.TENKA_AUDIO.playEvent==='function','Sound engine did not initialize');
+  assert(typeof context.tenkaAudioImportPack==='function','Sound pack importer missing');
+  context.TENKA_AUDIO.playEvent('correct');
+  console.log('TENKA smoke test passed');
+},20);
