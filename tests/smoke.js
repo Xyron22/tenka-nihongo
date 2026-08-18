@@ -3,6 +3,7 @@ const vm=require('vm');
 const dataSource=fs.readFileSync('data.js','utf8');
 const contentSource=fs.readFileSync('content-pack-v1.js','utf8');
 const appSource=fs.readFileSync('app.js','utf8');
+const hooksSource=fs.readFileSync('v1-hooks.js','utf8');
 const audioSource=fs.readFileSync('audio-patch.js','utf8');
 let appHtml='';
 const appEl={get innerHTML(){return appHtml},set innerHTML(v){appHtml=v},textContent:'',querySelectorAll(){return[]}};
@@ -14,8 +15,10 @@ vm.createContext(context);
 vm.runInContext(dataSource,context,{filename:'data.js'});
 vm.runInContext(contentSource,context,{filename:'content-pack-v1.js'});
 vm.runInContext(appSource,context,{filename:'app.js'});
+vm.runInContext(hooksSource,context,{filename:'v1-hooks.js'});
 function assert(x,m){if(!x)throw new Error(m)}
 assert(context.TENKA_READY===true,'TENKA_READY was not set');
+assert(context.TENKA_SYSTEM_VERSION==='1.0.0','TENKA V1 hooks did not initialize');
 assert(context.TENKA_CORE&&context.TENKA_CORE.state,'TENKA_CORE API missing');
 assert(context.top&&context.top.safariProtectedGlobal,'window.top was overwritten');
 assert(context.TENKA_DATA.jlpt.N5.kanji.length>=15,'N5 kanji content pack missing');
@@ -32,7 +35,8 @@ context.openReview('N5');assert(appHtml.includes('Review'),'Due review session d
 context.openGrammar('N5');assert(appHtml.includes('Quiz Bunpou'),'Grammar quiz action missing');
 context.startGrammarQuiz('N5');assert(appHtml.includes('30'),'Grammar quiz did not render');context.go('home');
 context.go('kaigo');assert(appHtml.includes('Listening Kaigo'),'Kaigo listening missing');assert(appHtml.includes('申し送り'),'Kaigo handoff missing');
-context.startKaigoQuiz('listening');assert(appHtml.includes('Dengarkan lalu pilih arti'),'Kaigo listening quiz did not render');context.go('home');
+context.startKaigoQuiz('listening');assert(appHtml.includes('Dengarkan lalu pilih arti'),'Kaigo listening quiz did not render');
+context.restartQuiz();assert(context.TENKA_CORE.state.quiz.type==='listening','Kaigo listening restart switched quiz type');context.go('home');
 vm.runInContext(audioSource,context,{filename:'audio-patch.js'});
 setTimeout(()=>{
   assert(context.TENKA_AUDIO&&typeof context.TENKA_AUDIO.playEvent==='function','Sound engine did not initialize');
