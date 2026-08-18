@@ -18,7 +18,7 @@ vm.runInContext(appSource,context,{filename:'app.js'});
 vm.runInContext(hooksSource,context,{filename:'v1-hooks.js'});
 function assert(x,m){if(!x)throw new Error(m)}
 assert(context.TENKA_READY===true,'TENKA_READY was not set');
-assert(context.TENKA_SYSTEM_VERSION==='1.0.0','TENKA V1 hooks did not initialize');
+assert(context.TENKA_SYSTEM_VERSION==='1.0.1','TENKA V1.0.1 hooks did not initialize');
 assert(context.TENKA_CORE&&context.TENKA_CORE.state,'TENKA_CORE API missing');
 assert(context.top&&context.top.safariProtectedGlobal,'window.top was overwritten');
 assert(context.TENKA_DATA.jlpt.N5.kanji.length>=15,'N5 kanji content pack missing');
@@ -41,6 +41,24 @@ vm.runInContext(audioSource,context,{filename:'audio-patch.js'});
 setTimeout(()=>{
   assert(context.TENKA_AUDIO&&typeof context.TENKA_AUDIO.playEvent==='function','Sound engine did not initialize');
   assert(typeof context.tenkaAudioImportPack==='function','Sound pack importer missing');
-  context.TENKA_AUDIO.playEvent('correct');
-  console.log('TENKA V1 system smoke test passed');
+
+  // Home CTA must open Daily Study first, never silently jump into Review.
+  context.go('home');
+  context.startDaily();
+  assert(context.TENKA_CORE.state.view==='daily','Home 始めよう jumped directly into review');
+
+  // Daily CTA may explicitly start the due-review session.
+  context.startDaily();
+  assert(context.TENKA_CORE.state.view==='flash','Daily Study did not start a learning session');
+  assert(context.TENKA_CORE.state.mode==='review','Due review was not started from Daily Study');
+
+  // Flashcard self-ratings are neutral: no quiz correct/wrong reaction voice.
+  const events=[];
+  const originalPlay=context.TENKA_AUDIO.playEvent;
+  context.TENKA_AUDIO.playEvent=function(event){events.push(event)};
+  context.rateCard('good');
+  assert(!events.includes('correct')&&!events.includes('wrong'),'Flashcard Hafal triggered quiz reaction audio');
+  context.TENKA_AUDIO.playEvent=originalPlay;
+
+  console.log('TENKA V1.0.1 behavior smoke test passed');
 },30);
