@@ -31,9 +31,10 @@ jobs:
           node --check app.js
           node --check data.js
           node --check content-pack-v1.js
+          node --check v1-hooks.js
           node --check audio-patch.js
 
-      - name: Safari regression and content smoke test
+      - name: TENKA V1 Safari and system smoke test
         run: node tests/smoke.js
 
       - name: Configure GitHub Pages
