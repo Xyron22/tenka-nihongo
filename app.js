@@ -59,6 +59,6 @@ function toggle(k,title,sub,on){return `<div class="toggle"><div><b>${title}</b>
 function setSetting(k,v){state.settings[k]=v;save();toast('Tersimpan')}
 function resetProgress(){if(confirm('Reset semua progress lokal?')){localStorage.removeItem('tenka-progress');state.progress={reviews:{},quizRuns:{},best:{},correct:0,total:0,streak:1,lastStudy:null};render()}}
 Object.assign(window,{startGreeting,go,openLevel,openFlash,flipCard,rateCard,openGrammar,speak,startQuiz,answerQuiz,restartQuiz,openKaigoFlash,startKaigoQuiz,handoffAnswer,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,resetProgress});
-window.TENKA_READY=true;
 render();
+window.TENKA_READY=true;
 })();
