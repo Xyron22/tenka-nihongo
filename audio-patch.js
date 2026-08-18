@@ -74,17 +74,18 @@ function beep(freq,duration=.08,type='sine',delay=0,gain=.06){const c=ctx();if(!
 function builtinSfx(event){if(!settings.enabled)return;switch(event){case'click':beep(520,.035,'sine',0,.025);break;case'correct':beep(620,.08);beep(880,.11,'sine',.07);break;case'wrong':beep(190,.12,'sawtooth');beep(145,.13,'sawtooth',.1);break;case'combo':beep(660,.07);beep(880,.07,'sine',.06);beep(1100,.12,'sine',.12);break;case'timeout':beep(260,.12,'square');beep(220,.18,'square',.12);break;case'finish':beep(523,.09);beep(659,.09,'sine',.08);beep(784,.18,'sine',.16);break;case'perfect':beep(523,.08);beep(659,.08,'sine',.07);beep(784,.08,'sine',.14);beep(1046,.24,'sine',.21);break;case'greeting':beep(660,.06);beep(880,.1,'sine',.055);break}}
 function playClip(item,event){try{const a=new Audio(item.clip.url);a.volume=settings.volume;const p=a.play();if(p&&p.catch)p.catch(()=>fallback(event));return true}catch{return false}}
 function fallback(event){builtinSfx(event);if(settings.mode==='quiet'||event==='click')return;const phrase=chooseNoRepeat(PHRASES[event]||[],event,lastPhrase);if(phrase)setTimeout(()=>expressiveSpeak(phrase,event),event==='wrong'?40:65)}
-function playEvent(event,opts={}){
+function playEvent(event){
   if(!settings.enabled)return;
   if(event==='click'&&!settings.click)return;
   const available=availableFor(event);
-  if(available.length){const pick=chooseNoRepeat(available,event,lastClip);if(pick){builtinSfx(event);playClip(pick,event);return}}
+  if(available.length){const pick=chooseNoRepeat(available,event,lastClip);if(pick){if(pick.source!=='pixabay')builtinSfx(event);playClip(pick,event);return}}
   fallback(event);
 }
 function reactionFromText(text){const map={'今日も頑張ろう！':'greeting','正解！':'correct','すごい！':'correct','えぇぇ！？':'wrong','惜しい！':'wrong','おめでとうございます！':'finish','お疲れさまでした！':'finish'};return map[text]||null}
-function patchSpeech(){if(!('speechSynthesis'in window)||nativeSpeak)return;nativeSpeak=speechSynthesis.speak.bind(speechSynthesis);try{speechSynthesis.speak=function(utterance){const text=utterance&&utterance.text;const event=reactionFromText(text);if(event){const mega=document.querySelector('.mega');playEvent(event==='finish'&&mega&&mega.textContent.trim()==='100%'?'perfect':event);return}return nativeSpeak(utterance)}}catch{}}
+function patchSpeech(){if(!('speechSynthesis'in window)||nativeSpeak)return;nativeSpeak=speechSynthesis.speak.bind(speechSynthesis);if(window.TENKA_CORE)return;try{speechSynthesis.speak=function(utterance){const text=utterance&&utterance.text;const event=reactionFromText(text);if(event){const mega=document.querySelector('.mega');playEvent(event==='finish'&&mega&&mega.textContent.trim()==='100%'?'perfect':event);return}return nativeSpeak(utterance)}}catch{}}
 function patchApp(){
   if(typeof window.go==='function'&&!window.go.__tenkaSound){const original=window.go;const wrapped=function(v){const r=original.apply(this,arguments);if(v==='settings')setTimeout(()=>injectSettings(),0);return r};wrapped.__tenkaSound=true;window.go=wrapped}
+  if(window.TENKA_CORE)return;
   if(typeof window.answerQuiz==='function'&&!window.answerQuiz.__tenkaSound){const original=window.answerQuiz;const wrapped=function(i){const r=original.apply(this,arguments);setTimeout(()=>{if(i<0){combo=0;playEvent('timeout');return}const b=document.querySelector('#choice-'+i);if(b&&b.classList.contains('correct')){combo++;if(combo>=3&&combo%3===0)playEvent('combo')}else combo=0},30);return r};wrapped.__tenkaSound=true;window.answerQuiz=wrapped}
   if(typeof window.restartQuiz==='function'&&!window.restartQuiz.__tenkaSound){const original=window.restartQuiz;const wrapped=function(){combo=0;return original.apply(this,arguments)};wrapped.__tenkaSound=true;window.restartQuiz=wrapped}
 }
