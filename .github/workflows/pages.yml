@@ -26,6 +26,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Validate JavaScript syntax
+        run: |
+          node --check app.js
+          node --check data.js
+
+      - name: Safari regression smoke test
+        run: node tests/smoke.js
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
