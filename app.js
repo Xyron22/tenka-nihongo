@@ -1,8 +1,10 @@
+(()=>{
+'use strict';
 const D=window.TENKA_DATA;
 const $=s=>document.querySelector(s);
 const state={view:'home',level:'N5',mode:'vocab',cards:[],cardIndex:0,flipped:false,returnView:'level',quiz:null,timer:null,seconds:30,quizAnswered:false,kakijun:null,settings:load('tenka-settings',{sound:true,voice:true,meme:true,haptic:true}),progress:load('tenka-progress',{reviews:{},quizRuns:{},best:{},correct:0,total:0,streak:1,lastStudy:null})};
-function load(k,f){try{return JSON.parse(localStorage.getItem(k))||f}catch{return f}}
-function save(){localStorage.setItem('tenka-progress',JSON.stringify(state.progress));localStorage.setItem('tenka-settings',JSON.stringify(state.settings))}
+function load(k,f){try{const v=JSON.parse(localStorage.getItem(k));return v&&typeof v==='object'?Object.assign({},f,v):f}catch{return f}}
+function save(){try{localStorage.setItem('tenka-progress',JSON.stringify(state.progress));localStorage.setItem('tenka-settings',JSON.stringify(state.settings))}catch{}}
 function today(){return new Date().toISOString().slice(0,10)}
 function markStudy(){const t=today();if(state.progress.lastStudy!==t){if(state.progress.lastStudy){const prev=new Date(state.progress.lastStudy+'T00:00:00');const now=new Date(t+'T00:00:00');state.progress.streak=Math.round((now-prev)/86400000)===1?(state.progress.streak||1)+1:1}else state.progress.streak=1;state.progress.lastStudy=t;save()}}
 function toast(t){const el=$('#toast');if(!el)return;el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1300)}
@@ -56,5 +58,7 @@ function settings(){const s=state.settings;return `${top('Settings','Seru di rum
 function toggle(k,title,sub,on){return `<div class="toggle"><div><b>${title}</b><div class="subtle">${sub}</div></div><input type="checkbox" ${on?'checked':''} onchange="setSetting('${k}',this.checked)"></div>`}
 function setSetting(k,v){state.settings[k]=v;save();toast('Tersimpan')}
 function resetProgress(){if(confirm('Reset semua progress lokal?')){localStorage.removeItem('tenka-progress');state.progress={reviews:{},quizRuns:{},best:{},correct:0,total:0,streak:1,lastStudy:null};render()}}
-if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+Object.assign(window,{startGreeting,go,openLevel,openFlash,flipCard,rateCard,openGrammar,speak,startQuiz,answerQuiz,restartQuiz,openKaigoFlash,startKaigoQuiz,handoffAnswer,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,resetProgress});
+window.TENKA_READY=true;
 render();
+})();
