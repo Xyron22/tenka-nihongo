@@ -47,7 +47,7 @@ synth() {
     --get --data-urlencode "text=${text}" > "$query"
 
   jq --argjson speed "$speed" --argjson pitch "$pitch" --argjson intonation "$intonation" \
-    '.speedScale=$speed | .pitchScale=$pitch | .intonationScale=$intonation | .volumeScale=1.0 | .prePhonemeLength=0.05 | .postPhonemeLength=0.07' \
+    '.speedScale=$speed | .pitchScale=$pitch | .intonationScale=$intonation | .volumeScale=1.0 | .prePhonemeLength=0.04 | .postPhonemeLength=0.06' \
     "$query" > "$tuned"
 
   curl -fsS -H 'Content-Type: application/json' -X POST \
@@ -58,31 +58,33 @@ synth() {
   echo "VOICEVOX Nemo ${voice_name}: ${event}/${variant} -> ${text}"
 }
 
+# One clip = one short reaction. Variety comes from different voices/phrases,
+# not from chaining two reactions inside one audio file.
 phrase_for() {
   local event="$1"
   local idx="$2"
   case "${event}:${idx}" in
-    greeting:1) echo '今日も一緒に頑張ろう！' ;;
-    greeting:2) echo 'よーし、始めよう！' ;;
-    greeting:3) echo '準備はいいかな？' ;;
-    correct:1) echo '正解！その調子！' ;;
-    correct:2) echo 'やったー！正解！' ;;
-    correct:3) echo 'すごい！いい感じ！' ;;
-    wrong:1) echo '惜しい！もう一回！' ;;
-    wrong:2) echo 'ざんねーん！次いこう！' ;;
-    wrong:3) echo 'あとちょっと！ドンマイ！' ;;
-    combo:1) echo '三問連続正解！すごい！' ;;
-    combo:2) echo 'コンボ！その調子！' ;;
-    combo:3) echo '止まらないね！すごい！' ;;
+    greeting:1) echo '始めよう！' ;;
+    greeting:2) echo '準備オーケー？' ;;
+    greeting:3) echo '今日も頑張ろう！' ;;
+    correct:1) echo '正解！' ;;
+    correct:2) echo 'やったー！' ;;
+    correct:3) echo 'すごい！' ;;
+    wrong:1) echo '惜しい！' ;;
+    wrong:2) echo '残念！' ;;
+    wrong:3) echo 'ドンマイ！' ;;
+    combo:1) echo 'コンボ！' ;;
+    combo:2) echo 'その調子！' ;;
+    combo:3) echo 'すごい！' ;;
     timeout:1) echo 'タイムアップ！' ;;
-    timeout:2) echo '時間切れ～！' ;;
+    timeout:2) echo '時間切れ！' ;;
     timeout:3) echo 'あー、時間切れ！' ;;
-    finish:1) echo 'お疲れさま！今日も頑張ったね！' ;;
-    finish:2) echo 'おめでとう！最後までできたね！' ;;
-    finish:3) echo 'よく頑張りました！' ;;
-    perfect:1) echo '全問正解！パーフェクト！' ;;
-    perfect:2) echo '完璧！すごすぎる！' ;;
-    perfect:3) echo '満点！おめでとう！' ;;
+    finish:1) echo 'お疲れさま！' ;;
+    finish:2) echo 'おめでとう！' ;;
+    finish:3) echo 'よく頑張ったね！' ;;
+    perfect:1) echo 'パーフェクト！' ;;
+    perfect:2) echo '完璧！' ;;
+    perfect:3) echo '満点！' ;;
   esac
 }
 
@@ -102,4 +104,4 @@ Voices used: 女声1, 女声2, 女声3
 Generated for TENKA 日本語.
 EOF
 
-echo "VOICEVOX Nemo TENKA multi-voice pack generated: 21 clips."
+echo "VOICEVOX Nemo TENKA short-reaction pack generated: 21 clips."
