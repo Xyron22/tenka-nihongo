@@ -2,7 +2,7 @@
 'use strict';
 
 const VERSION='2.0.0';
-const ASSET_VERSION='1.2.0';
+const ASSET_VERSION='2.0.0';
 const KEY='tenka-builtin-sound-pack-v2';
 const SOURCES=['soundeffectlab','pixabay','voicevox'];
 let manifest=null;
