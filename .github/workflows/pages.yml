@@ -1,9 +1,10 @@
-name: Deploy TENKA to GitHub Pages
+name: TENKA Core 2 CI and Pages
 
 on:
   push:
     branches:
       - main
+      - core-v2-staging
   workflow_dispatch:
 
 permissions:
@@ -13,38 +14,51 @@ permissions:
   actions: read
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  validate-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'github-pages' || 'core-v2-staging' }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Validate JavaScript and shell syntax
+      - name: Validate Core 2 source syntax
         run: |
-          node --check app.js
           node --check data.js
           node --check content-pack-v1.js
-          node --check v1-hooks.js
-          node --check audio-patch.js
-          node --check audio-guard-v1.2.2.js
-          node --check sound-pack-v1.js
-          node --check tests/quiz-audio-v1.2.2.js
+          node --check audio-engine-v2.js
+          node --check app-v2.js
+          node --check sound-pack-v2.js
+          node --check tests/data-v2.js
+          node --check tests/system-v2.js
+          node --check tests/audio-v2.js
           node --check scripts/build-sound-pack.mjs
           node --check scripts/augment-calm-voice.mjs
           bash -n scripts/generate-voicevox-nemo.sh
 
-      - name: TENKA V1 Safari and system smoke test
-        run: node tests/smoke.js
+      - name: Data integrity test
+        run: node tests/data-v2.js
 
-      - name: Quiz audio single-reaction regression test
-        run: node tests/quiz-audio-v1.2.2.js
+      - name: TENKA Core 2 system regression test
+        run: node tests/system-v2.js
+
+      - name: Audio Engine 2 single-channel test
+        run: node tests/audio-v2.js
+
+      - name: Reject legacy patch-chain references
+        run: |
+          if grep -E "app\.js|v1-hooks\.js|audio-patch\.js|audio-guard-v1\.2\.[12]\.js|sound-pack-v1\.js" index.html; then
+            echo "Legacy runtime reference found in index.html" >&2
+            exit 1
+          fi
+          grep -q "audio-engine-v2.js" index.html
+          grep -q "app-v2.js" index.html
+          grep -q "sound-pack-v2.js" index.html
 
       - name: Restore VOICEVOX Nemo sound cache
         id: voice-cache
@@ -53,7 +67,7 @@ jobs:
           path: assets/audio/voicevox
           key: ${{ runner.os }}-tenka-voicevox-nemo-${{ hashFiles('scripts/generate-voicevox-nemo.sh') }}
 
-      - name: Generate VOICEVOX Nemo multi-voice reactions
+      - name: Generate VOICEVOX Nemo reactions
         if: steps.voice-cache.outputs.cache-hit != 'true'
         continue-on-error: true
         run: bash scripts/generate-voicevox-nemo.sh
@@ -64,29 +78,35 @@ jobs:
       - name: Add second Sound Effect Lab voice style
         run: node scripts/augment-calm-voice.mjs
 
-      - name: Validate sound pack variety
+      - name: Validate built sound pack
         run: |
           node - <<'NODE'
           const m=require('./assets/audio/manifest.json');
-          if(m.version!=='1.2.0') throw new Error('Wrong sound manifest version: '+m.version);
+          if(m.version!=='1.2.0') throw new Error('Wrong asset manifest version: '+m.version);
+          if(!Array.isArray(m.entries)||!m.entries.length) throw new Error('Empty sound manifest');
           const voices=m.entries.filter(e=>e.role==='voice');
           const styles=new Set(voices.map(e=>e.voice).filter(Boolean));
-          if(styles.size<2) throw new Error('Sound pack needs at least 2 distinct voice styles; found '+[...styles].join(', '));
+          if(styles.size<2) throw new Error('Need at least 2 voice styles; found '+[...styles].join(', '));
           for(const event of ['correct','wrong']){
             const clips=voices.filter(e=>e.event===event);
             if(clips.length<2) throw new Error(event+' needs at least 2 voice clips; found '+clips.length);
           }
-          console.log('TENKA Sound Pack',m.version,m.counts,m.eventCounts,'voiceStyles='+[...styles].join(' / '),'total='+m.entries.length);
+          const duplicatePaths=m.entries.filter((e,i,a)=>a.findIndex(x=>x.path===e.path)!==i);
+          if(duplicatePaths.length) throw new Error('Duplicate sound asset paths found');
+          console.log('Sound pack validated:',m.entries.length,'assets; voices:',[...styles].join(' / '));
           NODE
 
       - name: Configure GitHub Pages
+        if: github.ref == 'refs/heads/main'
         uses: actions/configure-pages@v5
 
       - name: Upload static site
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v4
         with:
           path: .
 
       - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
         id: deployment
         uses: actions/deploy-pages@v4
