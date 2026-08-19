@@ -26,7 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Validate JavaScript syntax
+      - name: Validate JavaScript and shell syntax
         run: |
           node --check app.js
           node --check data.js
@@ -35,6 +35,7 @@ jobs:
           node --check audio-patch.js
           node --check sound-pack-v1.js
           node --check scripts/build-sound-pack.mjs
+          bash -n scripts/generate-voicevox-nemo.sh
 
       - name: TENKA V1 Safari and system smoke test
         run: node tests/smoke.js
@@ -46,17 +47,28 @@ jobs:
           path: assets/audio/voicevox
           key: ${{ runner.os }}-tenka-voicevox-nemo-${{ hashFiles('scripts/generate-voicevox-nemo.sh') }}
 
-      - name: Generate VOICEVOX Nemo reactions
+      - name: Generate VOICEVOX Nemo multi-voice reactions
         if: steps.voice-cache.outputs.cache-hit != 'true'
-        continue-on-error: true
         run: bash scripts/generate-voicevox-nemo.sh
 
       - name: Build licensed multi-source sound pack
         run: node scripts/build-sound-pack.mjs
 
-      - name: Report sound pack
+      - name: Validate sound pack variety
         run: |
-          node -e "const m=require('./assets/audio/manifest.json'); console.log('TENKA Sound Pack',m.version,m.counts,'total='+m.entries.length);"
+          node - <<'NODE'
+          const m=require('./assets/audio/manifest.json');
+          const vv=m.entries.filter(e=>e.source==='voicevox');
+          const required=['greeting','correct','wrong','combo','timeout','finish','perfect'];
+          if(m.version!=='1.2.0') throw new Error('Wrong sound manifest version: '+m.version);
+          if(vv.length<21) throw new Error('VOICEVOX multi-voice pack incomplete: '+vv.length+'/21');
+          for(const event of required){
+            const clips=vv.filter(e=>e.event===event);
+            const voices=new Set(clips.map(e=>e.voice));
+            if(clips.length<3||voices.size<3) throw new Error(event+' does not have 3 distinct VOICEVOX voices');
+          }
+          console.log('TENKA Sound Pack',m.version,m.counts,m.eventCounts,'total='+m.entries.length);
+          NODE
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
