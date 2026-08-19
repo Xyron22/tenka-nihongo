@@ -10,6 +10,10 @@ const originalGo=window.go;
 const originalSetSetting=window.setSetting;
 const hapticSupported=typeof navigator!=='undefined'&&typeof navigator.vibrate==='function';
 
+function totalDue(){
+  return ['N5','N4','N3','N2','N1'].reduce((n,l)=>n+core.dueCards(l).length,0)+core.dueCards('KAIGO').length;
+}
+
 function persistUnsupportedHaptic(){
   if(hapticSupported||!core.state||!core.state.settings)return;
   core.state.settings.haptic=false;
@@ -24,16 +28,14 @@ function persistUnsupportedHaptic(){
 function syncPrimaryCta(){
   const state=core&&core.state;
   if(!state||!document||!document.querySelector)return;
+  const due=totalDue();
   if(state.view==='home'){
     const button=document.querySelector('.hero .action.primary');
-    if(button)button.textContent='始めよう！';
+    if(button)button.textContent=due?`🧠 Review ${due} kartu →`:'始めよう！';
   }
   if(state.view==='daily'){
     const button=document.querySelector('.action.primary');
-    if(button){
-      const due=['N5','N4','N3','N2','N1'].reduce((n,l)=>n+core.dueCards(l).length,0)+core.dueCards('KAIGO').length;
-      button.textContent=due?`Review ${due} kartu →`:'Mulai N5 5 menit →';
-    }
+    if(button)button.textContent=due?`🧠 Review ${due} kartu →`:'Mulai N5 5 menit →';
   }
 }
 
@@ -59,7 +61,11 @@ window.go=function(v){
 
 window.startDaily=function(){
   const state=core&&core.state;
-  if(state&&state.view==='home')return window.go('daily');
+  if(state&&state.view==='home'){
+    // Home CTA follows its label: review if due, otherwise open Daily Study.
+    if(totalDue()>0)return originalStartDaily.apply(this,arguments);
+    return window.go('daily');
+  }
   return originalStartDaily.apply(this,arguments);
 };
 
@@ -107,5 +113,5 @@ window.restartQuiz=function(){
 persistUnsupportedHaptic();
 syncUi();
 window.TENKA_HAPTIC_SUPPORTED=hapticSupported;
-window.TENKA_SYSTEM_VERSION='1.0.2';
+window.TENKA_SYSTEM_VERSION='1.0.3';
 })();
