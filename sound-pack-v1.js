@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 
-const PACK_VERSION='1.2.1';
+const PACK_VERSION='1.2.2';
 const ASSET_VERSION='1.2.0';
 const KEY='tenka-builtin-sound-pack-version';
 const BUILTIN_SOURCES=['soundeffectlab','pixabay','voicevox'];
@@ -101,7 +101,6 @@ async function install(force=false){
     const before=completeness();
     if(!force&&previous===PACK_VERSION&&before.ok){injectStatus();return}
 
-    // Any partial/old built-in pack is rebuilt from zero. Never bless a half-installed pack.
     await clearBuiltin();
     let saved=0;
     for(const source of BUILTIN_SOURCES){
@@ -141,7 +140,7 @@ function injectStatus(){
   const expected=manifest?.entries?.length||0,ready=totalCount(),health=completeness();
   const vv=manifest?.entries?.filter(e=>e.source==='voicevox')||[];
   const voiceNames=[...new Set(vv.map(e=>e.voice).filter(Boolean))];
-  box.innerHTML=`<b>🎬 Built-in Anime Voice v${PACK_VERSION}</b><br>${countsText()}<br><span class="subtle">${health.ok?'✅ Pack lengkap':installing?'⏳ Memasang pack…':'⚠️ Pack belum lengkap'} • ${ready}/${expected} file lokal${lastError?` • ${lastError}`:''}</span><div class="subtle" style="margin-top:6px">VOICEVOX per event: ${voiceEventText()}</div><div class="small-actions" style="margin-top:10px"><button class="pill" onclick="TENKA_SOUND_PACK.reinstall()">↻ Repair / pasang ulang</button><button class="pill" onclick="TENKA_AUDIO.playEvent('correct')">▶️ Test</button></div><div class="subtle" style="margin-top:8px">VOICEVOX: ${voiceNames.length?voiceNames.join('・'):'belum tersedia'} • 効果音ラボ • Pixabay. Pack parsial tidak lagi dianggap sukses.</div>`;
+  box.innerHTML=`<b>🎬 Built-in Anime Voice v${PACK_VERSION}</b><br>${countsText()}<br><span class="subtle">${health.ok?'✅ Pack lengkap':installing?'⏳ Memasang pack…':'⚠️ Pack belum lengkap'} • ${ready}/${expected} file lokal${lastError?` • ${lastError}`:''}</span><div class="subtle" style="margin-top:6px">VOICEVOX per event: ${voiceEventText()}</div><div class="small-actions" style="margin-top:10px"><button class="pill" onclick="TENKA_SOUND_PACK.reinstall()">↻ Repair / pasang ulang</button><button class="pill" onclick="TENKA_AUDIO.playEvent('correct')">▶️ Test</button></div><div class="subtle" style="margin-top:8px">VOICEVOX: ${voiceNames.length?voiceNames.join('・'):'belum tersedia'} • 効果音ラボ • Pixabay. Satu jawaban hanya boleh menghasilkan satu reaction.</div>`;
   engine.appendChild(box);
 }
 async function init(){
