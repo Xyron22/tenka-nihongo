@@ -8,7 +8,7 @@ const audioSource=fs.readFileSync('audio-patch.js','utf8');
 let appHtml='';
 const appEl={get innerHTML(){return appHtml},set innerHTML(v){appHtml=v},textContent:'',querySelectorAll(){return[]}};
 const toastEl={textContent:'',classList:{add(){},remove(){}}};
-const context={console,Date,Math,Object,JSON,String,Array,Set,Promise,setTimeout,clearTimeout,setInterval,clearInterval,localStorage:{getItem(){return null},setItem(){},removeItem(){}},document:{readyState:'complete',querySelector(s){if(s==='#app')return appEl;if(s==='#toast')return toastEl;return null},querySelectorAll(){return[]},addEventListener(){},createElement(){return{innerHTML:'',remove(){},querySelectorAll(){return[]}}}},navigator:{},scrollTo(){},confirm(){return false},speechSynthesis:{cancel(){},speak(){},getVoices(){return[]}},SpeechSynthesisUtterance:function(t){this.text=t||''},Audio:function(){this.volume=1;this.play=()=>Promise.resolve()},URL:{createObjectURL(){return'blob:test'},revokeObjectURL(){}},window:null};
+const context={console,Date,Math,Object,JSON,String,Array,Set,Promise,setTimeout,clearTimeout,setInterval,clearInterval,localStorage:{data:{},getItem(k){return this.data[k]||null},setItem(k,v){this.data[k]=String(v)},removeItem(k){delete this.data[k]}},document:{readyState:'complete',querySelector(s){if(s==='#app')return appEl;if(s==='#toast')return toastEl;return null},querySelectorAll(){return[]},addEventListener(){},createElement(){return{innerHTML:'',remove(){},querySelectorAll(){return[]}}}},navigator:{},scrollTo(){},confirm(){return false},speechSynthesis:{cancel(){},speak(){},getVoices(){return[]}},SpeechSynthesisUtterance:function(t){this.text=t||''},Audio:function(){this.volume=1;this.play=()=>Promise.resolve()},URL:{createObjectURL(){return'blob:test'},revokeObjectURL(){}},window:null};
 context.window=context;
 Object.defineProperty(context,'top',{value:{safariProtectedGlobal:true},configurable:false,writable:false,enumerable:true});
 vm.createContext(context);
@@ -18,8 +18,10 @@ vm.runInContext(appSource,context,{filename:'app.js'});
 vm.runInContext(hooksSource,context,{filename:'v1-hooks.js'});
 function assert(x,m){if(!x)throw new Error(m)}
 assert(context.TENKA_READY===true,'TENKA_READY was not set');
-assert(context.TENKA_SYSTEM_VERSION==='1.0.1','TENKA V1.0.1 hooks did not initialize');
+assert(context.TENKA_SYSTEM_VERSION==='1.0.2','TENKA V1.0.2 hooks did not initialize');
+assert(context.TENKA_HAPTIC_SUPPORTED===false,'Haptic capability detection should be false without navigator.vibrate');
 assert(context.TENKA_CORE&&context.TENKA_CORE.state,'TENKA_CORE API missing');
+assert(context.TENKA_CORE.state.settings.haptic===false,'Unsupported web haptic should be disabled');
 assert(context.top&&context.top.safariProtectedGlobal,'window.top was overwritten');
 assert(context.TENKA_DATA.jlpt.N5.kanji.length>=15,'N5 kanji content pack missing');
 assert(context.TENKA_DATA.jlpt.N5.vocab.length>=20,'N5 vocab content pack missing');
@@ -60,5 +62,9 @@ setTimeout(()=>{
   assert(!events.includes('correct')&&!events.includes('wrong'),'Flashcard Hafal triggered quiz reaction audio');
   context.TENKA_AUDIO.playEvent=originalPlay;
 
-  console.log('TENKA V1.0.1 behavior smoke test passed');
+  // An unsupported browser must never re-enable haptic through Settings.
+  context.setSetting('haptic',true);
+  assert(context.TENKA_CORE.state.settings.haptic===false,'Unsupported haptic was re-enabled');
+
+  console.log('TENKA V1.0.2 behavior smoke test passed');
 },30);
