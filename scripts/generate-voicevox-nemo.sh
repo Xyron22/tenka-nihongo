@@ -3,64 +3,103 @@ set -euo pipefail
 
 OUT="assets/audio/voicevox"
 mkdir -p "$OUT"
-
-if [[ -s "$OUT/greeting-1.wav" && -s "$OUT/perfect-1.wav" ]]; then
-  echo "VOICEVOX Nemo pack already exists; skip generation."
-  exit 0
-fi
+rm -f "$OUT"/*.wav
 
 echo "Starting VOICEVOX Nemo engine..."
 docker pull voicevox/voicevox_nemo_engine:cpu-ubuntu20.04-latest
 docker rm -f tenka-voicevox-nemo >/dev/null 2>&1 || true
+
 docker run -d --name tenka-voicevox-nemo \
   -p 127.0.0.1:50021:50021 \
-  -p 127.0.0.1:50121:50121 \
   voicevox/voicevox_nemo_engine:cpu-ubuntu20.04-latest >/dev/null
 trap 'docker rm -f tenka-voicevox-nemo >/dev/null 2>&1 || true' EXIT
 
-PORT=''
+BASE=""
 for _ in $(seq 1 90); do
-  for candidate in 50121 50021; do
-    if curl -fsS "http://127.0.0.1:${candidate}/version" >/dev/null 2>&1; then PORT="$candidate"; break 2; fi
-  done
+  if curl -fsS "http://127.0.0.1:50021/version" >/dev/null 2>&1; then
+    BASE="http://127.0.0.1:50021"
+    break
+  fi
   sleep 2
 done
-if [[ -z "$PORT" ]]; then
-  echo "VOICEVOX Nemo engine did not become ready on 50121 or 50021" >&2
-  docker logs tenka-voicevox-nemo || true
+if [[ -z "$BASE" ]]; then
+  echo "VOICEVOX Nemo engine did not become ready" >&2
   exit 1
 fi
 
-echo "VOICEVOX Nemo ready on port ${PORT}"
+# Official VOICEVOX Nemo VVM style IDs:
+# 女声1=10005, 女声2=10007, 女声3=10004.
+VOICES=("10005:女声1:1.10:0.035:1.10" "10007:女声2:1.16:0.055:1.16" "10004:女声3:1.06:0.020:1.08")
 
-# VOICEVOX Nemo 女声1, official style ID from VOICEVOX VVM metadata.
-SPEAKER=10005
-
-synth(){
+synth() {
   local event="$1"
-  local text="$2"
-  local query="/tmp/tenka-${event}-query.json"
-  local tuned="/tmp/tenka-${event}-tuned.json"
+  local variant="$2"
+  local speaker="$3"
+  local voice_name="$4"
+  local speed="$5"
+  local pitch="$6"
+  local intonation="$7"
+  local text="$8"
+  local query="/tmp/tenka-${event}-${variant}-query.json"
+  local tuned="/tmp/tenka-${event}-${variant}-tuned.json"
 
-  curl -fsS -X POST "http://127.0.0.1:${PORT}/audio_query?speaker=${SPEAKER}" \
+  curl -fsS -X POST "${BASE}/audio_query?speaker=${speaker}" \
     --get --data-urlencode "text=${text}" > "$query"
 
-  jq '.speedScale=1.12 | .pitchScale=0.045 | .intonationScale=1.12 | .volumeScale=1.0 | .prePhonemeLength=0.06 | .postPhonemeLength=0.08' "$query" > "$tuned"
+  jq --argjson speed "$speed" --argjson pitch "$pitch" --argjson intonation "$intonation" \
+    '.speedScale=$speed | .pitchScale=$pitch | .intonationScale=$intonation | .volumeScale=1.0 | .prePhonemeLength=0.05 | .postPhonemeLength=0.07' \
+    "$query" > "$tuned"
 
   curl -fsS -H 'Content-Type: application/json' -X POST \
-    -d @"$tuned" "http://127.0.0.1:${PORT}/synthesis?speaker=${SPEAKER}" \
-    > "$OUT/${event}-1.wav"
+    -d @"$tuned" "${BASE}/synthesis?speaker=${speaker}" \
+    > "$OUT/${event}-${variant}.wav"
 
-  test -s "$OUT/${event}-1.wav"
-  echo "VOICEVOX Nemo: ${event} -> ${text}"
+  test -s "$OUT/${event}-${variant}.wav"
+  echo "VOICEVOX Nemo ${voice_name}: ${event}/${variant} -> ${text}"
 }
 
-synth greeting '今日も一緒に頑張ろう！'
-synth correct '正解！その調子！'
-synth wrong '惜しい！もう一回！'
-synth combo '三問連続正解！すごい！'
-synth timeout 'タイムアップ！'
-synth finish 'お疲れさま！今日も頑張ったね！'
-synth perfect '全問正解！パーフェクト！'
+phrase_for() {
+  local event="$1"
+  local idx="$2"
+  case "${event}:${idx}" in
+    greeting:1) echo '今日も一緒に頑張ろう！' ;;
+    greeting:2) echo 'よーし、始めよう！' ;;
+    greeting:3) echo '準備はいいかな？' ;;
+    correct:1) echo '正解！その調子！' ;;
+    correct:2) echo 'やったー！正解！' ;;
+    correct:3) echo 'すごい！いい感じ！' ;;
+    wrong:1) echo '惜しい！もう一回！' ;;
+    wrong:2) echo 'ざんねーん！次いこう！' ;;
+    wrong:3) echo 'あとちょっと！ドンマイ！' ;;
+    combo:1) echo '三問連続正解！すごい！' ;;
+    combo:2) echo 'コンボ！その調子！' ;;
+    combo:3) echo '止まらないね！すごい！' ;;
+    timeout:1) echo 'タイムアップ！' ;;
+    timeout:2) echo '時間切れ～！' ;;
+    timeout:3) echo 'あー、時間切れ！' ;;
+    finish:1) echo 'お疲れさま！今日も頑張ったね！' ;;
+    finish:2) echo 'おめでとう！最後までできたね！' ;;
+    finish:3) echo 'よく頑張りました！' ;;
+    perfect:1) echo '全問正解！パーフェクト！' ;;
+    perfect:2) echo '完璧！すごすぎる！' ;;
+    perfect:3) echo '満点！おめでとう！' ;;
+  esac
+}
 
-echo "VOICEVOX Nemo TENKA pack generated."
+for event in greeting correct wrong combo timeout finish perfect; do
+  idx=0
+  for spec in "${VOICES[@]}"; do
+    idx=$((idx+1))
+    IFS=':' read -r speaker voice_name speed pitch intonation <<< "$spec"
+    text="$(phrase_for "$event" "$idx")"
+    synth "$event" "f${idx}" "$speaker" "$voice_name" "$speed" "$pitch" "$intonation" "$text"
+  done
+done
+
+cat > "$OUT/VOICEVOX_CREDIT.txt" <<'EOF'
+VOICEVOX Nemo
+Voices used: 女声1, 女声2, 女声3
+Generated for TENKA 日本語.
+EOF
+
+echo "VOICEVOX Nemo TENKA multi-voice pack generated: 21 clips."
