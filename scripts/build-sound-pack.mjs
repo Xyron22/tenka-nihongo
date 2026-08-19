@@ -3,7 +3,8 @@ import path from 'node:path';
 
 const ROOT=process.cwd();
 const OUT=path.join(ROOT,'assets','audio');
-const UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126 Safari/537.36 TENKA-SoundBuilder/1.1';
+const VERSION='1.2.0';
+const UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126 Safari/537.36 TENKA-SoundBuilder/1.2';
 const entries=[];
 
 await fs.mkdir(OUT,{recursive:true});
@@ -74,7 +75,7 @@ async function buildSoundEffectLab(){
   };
   try{
     const html=await fetchText(page);
-    const used=new Map();
+    const used=new Set();
     for(const [event,phrases] of Object.entries(targets)){
       let n=0;
       for(const phrase of phrases){
@@ -82,12 +83,12 @@ async function buildSoundEffectLab(){
         if(!url){console.warn(`[効果音ラボ] MP3 not found near: ${phrase}`);continue;}
         const key=`${event}:${url}`;
         if(used.has(key))continue;
-        used.set(key,true);
+        used.add(key);
         n++;
         const rel=`assets/audio/soundeffectlab/${event}-${n}-${safeName(phrase)}.mp3`;
         try{
           const bytes=await download(url,path.join(ROOT,rel),page);
-          entries.push({source:'soundeffectlab',role:'voice',event,path:`./${rel}`,label:phrase,sourcePage:page,credit:'Sound Effect Lab / 効果音ラボ',bytes});
+          entries.push({source:'soundeffectlab',role:'voice',event,path:`./${rel}`,label:phrase,voice:'効果音ラボ',sourcePage:page,credit:'Sound Effect Lab / 効果音ラボ',bytes});
           console.log(`[効果音ラボ] ${event}: ${phrase} (${bytes} bytes)`);
         }catch(e){console.warn(`[効果音ラボ] download failed ${phrase}: ${e.message}`);}
       }
@@ -124,13 +125,19 @@ async function buildPixabay(){
       const url=pixabayAudioUrl(html);
       if(!url){console.warn(`[Pixabay] CDN URL not found: ${clip.title}`);continue;}
       i++;
-      const ext='.mp3';
-      const rel=`assets/audio/pixabay/${clip.event}-${i}-${safeName(clip.title)}${ext}`;
+      const rel=`assets/audio/pixabay/${clip.event}-${i}-${safeName(clip.title)}.mp3`;
       const bytes=await download(url,path.join(ROOT,rel),clip.page);
       entries.push({source:'pixabay',role:'sfx',event:clip.event,path:`./${rel}`,label:clip.title,sourcePage:clip.page,credit:'Pixabay Content License',bytes});
       console.log(`[Pixabay] ${clip.event}: ${clip.title} (${bytes} bytes)`);
     }catch(e){console.warn(`[Pixabay] ${clip.title}: ${e.message}`);}
   }
+}
+
+function voiceNameFromFile(file){
+  if(/-f1\./i.test(file))return'女声1';
+  if(/-f2\./i.test(file))return'女声2';
+  if(/-f3\./i.test(file))return'女声3';
+  return'VOICEVOX Nemo';
 }
 
 async function includeVoicevox(){
@@ -141,7 +148,13 @@ async function includeVoicevox(){
     const event=file.split('-')[0];
     if(!['greeting','correct','wrong','combo','timeout','finish','perfect'].includes(event))continue;
     const st=await fs.stat(path.join(dir,file));
-    entries.push({source:'voicevox',role:'voice',event,path:`./assets/audio/voicevox/${file}`,label:`VOICEVOX Nemo 女声1 — ${event}`,sourcePage:'https://voicevox.hiroshiba.jp/nemo/',credit:'VOICEVOX Nemo: 女声1',bytes:st.size});
+    const voice=voiceNameFromFile(file);
+    entries.push({
+      source:'voicevox',role:'voice',event,path:`./assets/audio/voicevox/${file}`,
+      label:`VOICEVOX Nemo ${voice} — ${event}`,voice,
+      sourcePage:'https://voicevox.hiroshiba.jp/nemo/',
+      credit:`VOICEVOX Nemo: ${voice}`,bytes:st.size
+    });
   }
 }
 
@@ -150,17 +163,22 @@ await buildPixabay();
 await includeVoicevox();
 
 const counts={};
-for(const e of entries){counts[e.source]=(counts[e.source]||0)+1;}
+const eventCounts={};
+for(const e of entries){
+  counts[e.source]=(counts[e.source]||0)+1;
+  eventCounts[e.event]=(eventCounts[e.event]||0)+1;
+}
 const manifest={
-  version:'1.1.0',
+  version:VERSION,
   generatedAt:new Date().toISOString(),
   counts,
+  eventCounts,
   entries,
   credits:[
     {source:'soundeffectlab',text:'Sound Effect Lab / 効果音ラボ',url:'https://soundeffect-lab.info/sound/voice/'},
     {source:'pixabay',text:'Pixabay Content License',url:'https://pixabay.com/service/license-summary/'},
-    {source:'voicevox',text:'VOICEVOX Nemo: 女声1',url:'https://voicevox.hiroshiba.jp/nemo/'}
+    {source:'voicevox',text:'VOICEVOX Nemo: 女声1・女声2・女声3',url:'https://voicevox.hiroshiba.jp/nemo/'}
   ]
 };
 await fs.writeFile(path.join(OUT,'manifest.json'),JSON.stringify(manifest,null,2)+'\n','utf8');
-console.log('TENKA sound manifest:',counts,'total',entries.length);
+console.log('TENKA sound manifest:',counts,eventCounts,'total',entries.length);
