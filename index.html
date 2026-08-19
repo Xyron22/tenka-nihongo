@@ -7,9 +7,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="TENKA">
-  <link rel="manifest" href="manifest.webmanifest?v=1.1.0">
-  <link rel="icon" href="assets/icon.svg?v=1.1.0" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=1.1.0">
+  <link rel="manifest" href="manifest.webmanifest?v=1.2.0">
+  <link rel="icon" href="assets/icon.svg?v=1.2.0" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=1.2.0">
   <title>TENKA 日本語</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
   <noscript><div style="padding:24px;color:white">TENKA membutuhkan JavaScript.</div></noscript>
   <script>
   (function(){
-    var VERSION='110';
+    var VERSION='120';
     var title=document.getElementById('boot-title');
     var message=document.getElementById('boot-message');
     var detail=document.getElementById('boot-detail');
@@ -30,7 +30,7 @@
     function fail(text){if(title)title.textContent='読み込みエラー';if(message)message.textContent='TENKA belum berhasil mulai.';setDetail(text)}
     window.addEventListener('error',function(event){if(event&&event.message)fail('JavaScript error: '+event.message)});
     window.addEventListener('unhandledrejection',function(event){fail('Promise error: '+String(event.reason||'unknown'))});
-    function loadScript(src,name){return new Promise(function(resolve,reject){var script=document.createElement('script');script.src=src+'?v=1.1.0&cb='+Date.now();script.onload=function(){resolve()};script.onerror=function(){reject(new Error('Gagal memuat '+name))};document.body.appendChild(script)})}
+    function loadScript(src,name){return new Promise(function(resolve,reject){var script=document.createElement('script');script.src=src+'?v=1.2.0&cb='+Date.now();script.onload=function(){resolve()};script.onerror=function(){reject(new Error('Gagal memuat '+name))};document.body.appendChild(script)})}
     function loadApp(){
       setDetail('Memuat data belajar…');
       loadScript('./data.js','data.js').then(function(){
@@ -44,14 +44,14 @@
         if(!window.TENKA_READY)throw new Error('app.js selesai dimuat tetapi TENKA_READY belum aktif');
         return loadScript('./v1-hooks.js','v1-hooks.js');
       }).then(function(){
-        if(window.TENKA_SYSTEM_VERSION!=='1.0.3')throw new Error('TENKA V1 hooks belum aktif');
-        setDetail('Memuat Anime Sound Engine…');
+        if(window.TENKA_SYSTEM_VERSION!=='1.0.4')throw new Error('TENKA V1 hooks belum aktif');
+        setDetail('Memuat Sound Engine v1.2…');
         return loadScript('./audio-patch.js','audio-patch.js');
       }).then(function(){
-        setDetail('Memasang built-in sound pack…');
+        setDetail('Memasang multi-voice sound pack…');
         return loadScript('./sound-pack-v1.js','sound-pack-v1.js');
       }).then(function(){
-        if(window.TENKA_SOUND_VERSION!=='1.1.0')throw new Error('TENKA built-in sound pack belum aktif');
+        if(window.TENKA_SOUND_VERSION!=='1.2.0')throw new Error('TENKA built-in sound pack belum aktif');
         setDetail('TENKA siap.');
       }).catch(function(error){fail(error&&error.message?error.message:String(error))});
     }
