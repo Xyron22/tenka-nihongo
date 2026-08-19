@@ -37,8 +37,7 @@ jobs:
           node --check tests/data-v2.js
           node --check tests/system-v2.js
           node --check tests/audio-v2.js
-          node --check scripts/build-sound-pack.mjs
-          node --check scripts/augment-calm-voice.mjs
+          node --check scripts/build-sound-manifest-v2.mjs
           bash -n scripts/generate-voicevox-nemo.sh
 
       - name: Data integrity test
@@ -60,40 +59,36 @@ jobs:
           grep -q "app-v2.js" index.html
           grep -q "sound-pack-v2.js" index.html
 
-      - name: Restore VOICEVOX Nemo sound cache
+      - name: Restore generated VOICEVOX Nemo cache
         id: voice-cache
         uses: actions/cache@v5
         with:
           path: assets/audio/voicevox
-          key: ${{ runner.os }}-tenka-voicevox-nemo-${{ hashFiles('scripts/generate-voicevox-nemo.sh') }}
+          key: ${{ runner.os }}-tenka-core2-voicevox-${{ hashFiles('scripts/generate-voicevox-nemo.sh') }}
 
-      - name: Generate VOICEVOX Nemo reactions
+      - name: Generate deterministic VOICEVOX Nemo reactions
         if: steps.voice-cache.outputs.cache-hit != 'true'
-        continue-on-error: true
         run: bash scripts/generate-voicevox-nemo.sh
 
-      - name: Build licensed multi-source sound pack
-        run: node scripts/build-sound-pack.mjs
+      - name: Build deterministic sound manifest
+        run: node scripts/build-sound-manifest-v2.mjs
 
-      - name: Add second Sound Effect Lab voice style
-        run: node scripts/augment-calm-voice.mjs
-
-      - name: Validate built sound pack
+      - name: Validate built-in reaction pack
         run: |
           node - <<'NODE'
           const m=require('./assets/audio/manifest.json');
-          if(m.version!=='1.2.0') throw new Error('Wrong asset manifest version: '+m.version);
-          if(!Array.isArray(m.entries)||!m.entries.length) throw new Error('Empty sound manifest');
-          const voices=m.entries.filter(e=>e.role==='voice');
-          const styles=new Set(voices.map(e=>e.voice).filter(Boolean));
-          if(styles.size<2) throw new Error('Need at least 2 voice styles; found '+[...styles].join(', '));
-          for(const event of ['correct','wrong']){
-            const clips=voices.filter(e=>e.event===event);
-            if(clips.length<2) throw new Error(event+' needs at least 2 voice clips; found '+clips.length);
+          const events=['greeting','correct','wrong','combo','timeout','finish','perfect'];
+          if(m.version!=='2.0.0') throw new Error('Wrong Core 2 sound manifest version: '+m.version);
+          if(m.entries.length!==21) throw new Error('Expected exactly 21 built-in voice clips, got '+m.entries.length);
+          const styles=new Set(m.entries.map(e=>e.voice));
+          if(styles.size!==3) throw new Error('Expected 3 VOICEVOX voice styles, got '+[...styles].join(', '));
+          for(const event of events){
+            const clips=m.entries.filter(e=>e.event===event);
+            if(clips.length!==3) throw new Error(event+' must have exactly 3 voices; found '+clips.length);
           }
           const duplicatePaths=m.entries.filter((e,i,a)=>a.findIndex(x=>x.path===e.path)!==i);
           if(duplicatePaths.length) throw new Error('Duplicate sound asset paths found');
-          console.log('Sound pack validated:',m.entries.length,'assets; voices:',[...styles].join(' / '));
+          console.log('Core 2 sound pack validated:',m.entries.length,'clips; voices:',[...styles].join(' / '));
           NODE
 
       - name: Configure GitHub Pages
