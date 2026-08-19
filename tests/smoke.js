@@ -18,7 +18,7 @@ vm.runInContext(appSource,context,{filename:'app.js'});
 vm.runInContext(hooksSource,context,{filename:'v1-hooks.js'});
 function assert(x,m){if(!x)throw new Error(m)}
 assert(context.TENKA_READY===true,'TENKA_READY was not set');
-assert(context.TENKA_SYSTEM_VERSION==='1.0.2','TENKA V1.0.2 hooks did not initialize');
+assert(context.TENKA_SYSTEM_VERSION==='1.0.3','TENKA V1.0.3 hooks did not initialize');
 assert(context.TENKA_HAPTIC_SUPPORTED===false,'Haptic capability detection should be false without navigator.vibrate');
 assert(context.TENKA_CORE&&context.TENKA_CORE.state,'TENKA_CORE API missing');
 assert(context.TENKA_CORE.state.settings.haptic===false,'Unsupported web haptic should be disabled');
@@ -44,15 +44,12 @@ setTimeout(()=>{
   assert(context.TENKA_AUDIO&&typeof context.TENKA_AUDIO.playEvent==='function','Sound engine did not initialize');
   assert(typeof context.tenkaAudioImportPack==='function','Sound pack importer missing');
 
-  // Home CTA must open Daily Study first, never silently jump into Review.
+  // If review is due, the Home label and action must both say/do Review.
   context.go('home');
+  assert(appHtml.includes('Review 1 kartu'),'Home CTA did not reveal the pending review');
   context.startDaily();
-  assert(context.TENKA_CORE.state.view==='daily','Home 始めよう jumped directly into review');
-
-  // Daily CTA may explicitly start the due-review session.
-  context.startDaily();
-  assert(context.TENKA_CORE.state.view==='flash','Daily Study did not start a learning session');
-  assert(context.TENKA_CORE.state.mode==='review','Due review was not started from Daily Study');
+  assert(context.TENKA_CORE.state.view==='flash','Home Review CTA did not open review');
+  assert(context.TENKA_CORE.state.mode==='review','Home Review CTA opened the wrong session');
 
   // Flashcard self-ratings are neutral: no quiz correct/wrong reaction voice.
   const events=[];
@@ -62,9 +59,15 @@ setTimeout(()=>{
   assert(!events.includes('correct')&&!events.includes('wrong'),'Flashcard Hafal triggered quiz reaction audio');
   context.TENKA_AUDIO.playEvent=originalPlay;
 
+  // After the due card is scheduled into the future, Home becomes normal Daily start.
+  context.go('home');
+  assert(appHtml.includes('始めよう！'),'Home CTA did not return to normal start state');
+  context.startDaily();
+  assert(context.TENKA_CORE.state.view==='daily','Normal Home start did not open Daily Study');
+
   // An unsupported browser must never re-enable haptic through Settings.
   context.setSetting('haptic',true);
   assert(context.TENKA_CORE.state.settings.haptic===false,'Unsupported haptic was re-enabled');
 
-  console.log('TENKA V1.0.2 behavior smoke test passed');
+  console.log('TENKA V1.0.3 behavior smoke test passed');
 },30);
