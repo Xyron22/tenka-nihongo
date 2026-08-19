@@ -5,6 +5,9 @@ on:
     branches:
       - main
       - core-v2-staging
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -14,15 +17,12 @@ permissions:
   actions: read
 
 concurrency:
-  group: pages-${{ github.ref }}
+  group: tenka-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  validate-and-deploy:
+  validate-build:
     runs-on: ubuntu-latest
-    environment:
-      name: ${{ github.ref == 'refs/heads/main' && 'github-pages' || 'core-v2-staging' }}
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -50,7 +50,7 @@ jobs:
       - name: Audio Engine 2 single-channel test
         run: node tests/audio-v2.js
 
-      - name: Reject legacy patch-chain references
+      - name: Reject legacy patch-chain runtime
         run: |
           if grep -E "app\.js|v1-hooks\.js|audio-patch\.js|audio-guard-v1\.2\.[12]\.js|sound-pack-v1\.js" index.html; then
             echo "Legacy runtime reference found in index.html" >&2
@@ -106,7 +106,14 @@ jobs:
         with:
           path: .
 
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: validate-build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
         id: deployment
         uses: actions/deploy-pages@v4
