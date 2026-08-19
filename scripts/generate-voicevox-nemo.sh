@@ -5,31 +5,50 @@ OUT="assets/audio/voicevox"
 mkdir -p "$OUT"
 rm -f "$OUT"/*.wav
 
-echo "Starting VOICEVOX Nemo engine..."
+echo "Starting VOICEVOX Nemo engine on explicit host/port..."
 docker pull voicevox/voicevox_nemo_engine:cpu-ubuntu20.04-latest
 docker rm -f tenka-voicevox-nemo >/dev/null 2>&1 || true
 
 docker run -d --name tenka-voicevox-nemo \
-  -p 127.0.0.1:50021:50021 \
+  -e VV_HOST=0.0.0.0 \
+  -e VV_PORT=50121 \
+  -p 127.0.0.1:50121:50121 \
   voicevox/voicevox_nemo_engine:cpu-ubuntu20.04-latest >/dev/null
 trap 'docker rm -f tenka-voicevox-nemo >/dev/null 2>&1 || true' EXIT
 
-BASE=""
-for _ in $(seq 1 90); do
-  if curl -fsS "http://127.0.0.1:50021/version" >/dev/null 2>&1; then
-    BASE="http://127.0.0.1:50021"
+BASE="http://127.0.0.1:50121"
+READY=0
+for _ in $(seq 1 75); do
+  if curl -fsS "${BASE}/version" >/dev/null 2>&1; then
+    READY=1
     break
+  fi
+  if ! docker ps --format '{{.Names}}' | grep -qx tenka-voicevox-nemo; then
+    echo "VOICEVOX Nemo container exited before becoming ready" >&2
+    docker logs tenka-voicevox-nemo 2>&1 || true
+    exit 1
   fi
   sleep 2
 done
-if [[ -z "$BASE" ]]; then
-  echo "VOICEVOX Nemo engine did not become ready" >&2
+if [[ "$READY" != "1" ]]; then
+  echo "VOICEVOX Nemo engine did not become ready on ${BASE}" >&2
+  docker logs tenka-voicevox-nemo 2>&1 || true
   exit 1
 fi
 
-# Official VOICEVOX Nemo VVM style IDs:
+echo "VOICEVOX Nemo version: $(curl -fsS "${BASE}/version")"
+curl -fsS "${BASE}/speakers" > /tmp/tenka-nemo-speakers.json
+
+# Official VOICEVOX VVM Nemo style IDs:
 # 女声1=10005, 女声2=10007, 女声3=10004.
 VOICES=("10005:女声1:1.10:0.035:1.10" "10007:女声2:1.16:0.055:1.16" "10004:女声3:1.06:0.020:1.08")
+for speaker in 10005 10007 10004; do
+  if ! jq -e --argjson id "$speaker" '[.[].styles[].id] | index($id) != null' /tmp/tenka-nemo-speakers.json >/dev/null; then
+    echo "Required VOICEVOX Nemo style ID missing: ${speaker}" >&2
+    jq 'map({name,styles})' /tmp/tenka-nemo-speakers.json >&2 || true
+    exit 1
+  fi
+done
 
 synth() {
   local event="$1"
