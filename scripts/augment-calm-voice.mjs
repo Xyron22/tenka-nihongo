@@ -24,6 +24,12 @@ function nearest(html,phrase){
 await fs.mkdir(OUT,{recursive:true});
 let manifest;
 try{manifest=JSON.parse(await fs.readFile(MANIFEST,'utf8'))}catch{process.exit(0)}
+
+// Base Sound Effect Lab page is the energetic-girl pack.
+for(const e of manifest.entries||[]){
+  if(e.source==='soundeffectlab'&&e.role==='voice'&&!e.voice)e.voice='元気な女の子';
+}
+
 try{
   const html=await (await get(PAGE)).text();
   const targets=[
@@ -45,8 +51,13 @@ try{
     await fs.writeFile(path.join(ROOT,rel),buf);
     manifest.entries.push({source:'soundeffectlab',role:'voice',event,path:`./${rel}`,label:phrase,voice:'落ち着いた女性',sourcePage:PAGE,credit:'Sound Effect Lab / 効果音ラボ',bytes:buf.length});
   }
-  manifest.counts.soundeffectlab=(manifest.entries.filter(e=>e.source==='soundeffectlab').length);
+  manifest.counts.soundeffectlab=manifest.entries.filter(e=>e.source==='soundeffectlab').length;
   manifest.eventCounts={};for(const e of manifest.entries)manifest.eventCounts[e.event]=(manifest.eventCounts[e.event]||0)+1;
+  manifest.voiceStyles=[...new Set(manifest.entries.filter(e=>e.role==='voice').map(e=>e.voice).filter(Boolean))];
   await fs.writeFile(MANIFEST,JSON.stringify(manifest,null,2)+'\n','utf8');
-  console.log('TENKA calm voice augmentation:',n,'clips');
-}catch(e){console.warn('TENKA calm voice augmentation skipped:',e.message)}
+  console.log('TENKA calm voice augmentation:',n,'clips; voice styles:',manifest.voiceStyles);
+}catch(e){
+  manifest.voiceStyles=[...new Set((manifest.entries||[]).filter(e=>e.role==='voice').map(e=>e.voice).filter(Boolean))];
+  await fs.writeFile(MANIFEST,JSON.stringify(manifest,null,2)+'\n','utf8');
+  console.warn('TENKA calm voice augmentation skipped:',e.message);
+}
