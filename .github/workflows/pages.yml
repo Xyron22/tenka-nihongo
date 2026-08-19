@@ -33,14 +33,18 @@ jobs:
           node --check content-pack-v1.js
           node --check v1-hooks.js
           node --check audio-patch.js
-          node --check audio-guard-v1.2.1.js
+          node --check audio-guard-v1.2.2.js
           node --check sound-pack-v1.js
+          node --check tests/quiz-audio-v1.2.2.js
           node --check scripts/build-sound-pack.mjs
           node --check scripts/augment-calm-voice.mjs
           bash -n scripts/generate-voicevox-nemo.sh
 
       - name: TENKA V1 Safari and system smoke test
         run: node tests/smoke.js
+
+      - name: Quiz audio single-reaction regression test
+        run: node tests/quiz-audio-v1.2.2.js
 
       - name: Restore VOICEVOX Nemo sound cache
         id: voice-cache
