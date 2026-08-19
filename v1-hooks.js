@@ -8,6 +8,7 @@ const originalStartDaily=window.startDaily;
 const originalRateCard=window.rateCard;
 const originalGo=window.go;
 const originalSetSetting=window.setSetting;
+const originalAnswerQuiz=window.answerQuiz;
 const hapticSupported=typeof navigator!=='undefined'&&typeof navigator.vibrate==='function';
 
 function totalDue(){
@@ -62,7 +63,6 @@ window.go=function(v){
 window.startDaily=function(){
   const state=core&&core.state;
   if(state&&state.view==='home'){
-    // Home CTA follows its label: review if due, otherwise open Daily Study.
     if(totalDue()>0)return originalStartDaily.apply(this,arguments);
     return window.go('daily');
   }
@@ -73,8 +73,7 @@ window.rateCard=function(rating){
   const state=core&&core.state;
   if(!state)return originalRateCard.apply(this,arguments);
 
-  // Lagi / Hafal / Mudah are self-rating controls, not right/wrong answers.
-  // Keep neutral UI feedback and suppress quiz reaction voices.
+  // Lagi / Hafal / Mudah are SRS self-ratings, not quiz right/wrong answers.
   const oldSound=state.settings&&state.settings.sound;
   const oldMeme=state.settings&&state.settings.meme;
   const audio=window.TENKA_AUDIO;
@@ -91,6 +90,32 @@ window.rateCard=function(rating){
   try{return originalRateCard.apply(this,arguments);}
   finally{
     if(state.settings){state.settings.sound=oldSound;state.settings.meme=oldMeme;}
+    if(audio&&originalPlay)audio.playEvent=originalPlay;
+  }
+};
+
+window.answerQuiz=function(index){
+  const state=core&&core.state;
+  const q=state&&state.quiz;
+  const item=q&&q.items&&q.items[q.i];
+  const correct=!!(item&&index===item.answer);
+  const finalQuestion=!!(q&&q.i===q.items.length-1);
+  const nextCombo=correct?(Number(q.combo)||0)+1:0;
+  const comboMilestone=correct&&nextCombo>=3&&nextCombo%3===0;
+
+  // One answer should produce one semantic reaction:
+  // combo replaces normal correct, and the last correct waits for finish/perfect.
+  const audio=window.TENKA_AUDIO;
+  const originalPlay=audio&&typeof audio.playEvent==='function'?audio.playEvent:null;
+  if(audio&&originalPlay&&(comboMilestone||finalQuestion)){
+    audio.playEvent=function(event){
+      if(event==='correct'&&(comboMilestone||finalQuestion))return;
+      return originalPlay.apply(audio,arguments);
+    };
+  }
+
+  try{return originalAnswerQuiz.apply(this,arguments);}
+  finally{
     if(audio&&originalPlay)audio.playEvent=originalPlay;
   }
 };
@@ -113,5 +138,5 @@ window.restartQuiz=function(){
 persistUnsupportedHaptic();
 syncUi();
 window.TENKA_HAPTIC_SUPPORTED=hapticSupported;
-window.TENKA_SYSTEM_VERSION='1.0.3';
+window.TENKA_SYSTEM_VERSION='1.0.4';
 })();
