@@ -46,9 +46,24 @@ jobs:
           mkdir -p assets/audio/exam
           UA='Mozilla/5.0 (TENKA build; GitHub Pages)'
           REF='https://www.myinstants.com/'
-          curl -fL --retry 3 --retry-all-errors -A "$UA" -e "$REF" -o assets/audio/exam/wrong.mp3 'https://www.myinstants.com/media/sounds/error_CDOxCYm.mp3'
-          curl -fL --retry 3 --retry-all-errors -A "$UA" -e "$REF" -o assets/audio/exam/correct.mp3 'https://www.myinstants.com/media/sounds/ding-sound-effect_2.mp3'
-          curl -fL --retry 3 --retry-all-errors -A "$UA" -e "$REF" -o assets/audio/exam/timeout.mp3 'https://www.myinstants.com/media/sounds/movie_1.mp3'
+          fetch_audio() {
+            out="$1"; primary="$2"; fallback="$3"
+            if curl -fL --connect-timeout 10 --max-time 30 -A "$UA" -e "$REF" -o "$out" "$primary"; then
+              echo "Downloaded from MyInstants: $primary"
+            else
+              echo "MyInstants blocked the build runner; using exact-filename public mirror: $fallback"
+              curl -fL --retry 3 --retry-all-errors --connect-timeout 10 --max-time 30 -A "$UA" -o "$out" "$fallback"
+            fi
+          }
+          fetch_audio assets/audio/exam/wrong.mp3 \
+            'https://www.myinstants.com/media/sounds/error_CDOxCYm.mp3' \
+            'https://fastdl.exhibitionrp.com/mbrp/taunts/error_CDOxCYm.mp3'
+          fetch_audio assets/audio/exam/correct.mp3 \
+            'https://www.myinstants.com/media/sounds/ding-sound-effect_2.mp3' \
+            'https://genevol.biology.duke.edu/static/audio/ding-sound-effect_2.mp3'
+          fetch_audio assets/audio/exam/timeout.mp3 \
+            'https://www.myinstants.com/media/sounds/movie_1.mp3' \
+            'https://fastdl.exhibitionrp.com/mbrp/taunts/movie_1.mp3'
           python - <<'PY'
           from pathlib import Path
           for name in ['correct.mp3','wrong.mp3','timeout.mp3']:
