@@ -31,12 +31,12 @@ jobs:
           node --check data.js
           node --check content-pack-v1.js
           node --check app-v2.js
-          node --check audio-engine-v3.js
+          node --check audio-engine-v4.js
           node --check sound-pack-v3.js
           node --check audio-settings-v3.js
           node --check tests/data-v2.js
           node --check tests/system-v2.js
-          node --check tests/audio-v3.js
+          node --check tests/audio-v4.js
           node --check scripts/build-sound-manifest-v2.mjs
           bash -n scripts/generate-voicevox-nemo.sh
 
@@ -46,22 +46,27 @@ jobs:
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js
 
-      - name: Exam Sound v3 separation test
-        run: node tests/audio-v3.js
+      - name: Safari-safe Exam Sound v4 test
+        run: node tests/audio-v4.js
 
       - name: Verify clean runtime architecture
         run: |
           test ! -e sw.js
-          grep -q "audio-engine-v3.js" index.html
+          grep -q "audio-engine-v4.js" index.html
           grep -q "app-v2.js" index.html
           grep -q "sound-pack-v3.js" index.html
           grep -q "audio-settings-v3.js" index.html
-          if grep -E "audio-engine-v2\.js|sound-pack-v2\.js|audio-patch\.js|audio-guard" index.html; then
+          if grep -E "audio-engine-v2\.js|audio-engine-v3\.js|sound-pack-v2\.js|audio-patch\.js|audio-guard" index.html; then
             echo "Legacy audio runtime reference found" >&2
             exit 1
           fi
-          grep -q "tenka-audio-v3" index.html
-          grep -q "tenka-exam-sound-clean-300" index.html
+          if grep -E "AudioContext|webkitAudioContext" audio-engine-v4.js; then
+            echo "Exam Sound v4 must not depend on Web Audio" >&2
+            exit 1
+          fi
+          grep -q "new Audio" audio-engine-v4.js
+          grep -q "primeExamAudio" audio-engine-v4.js
+          grep -q "CACHE_VERSION='4.0.0'" index.html
 
       - name: Restore generated VOICEVOX Nemo cache
         id: voice-cache
@@ -93,7 +98,7 @@ jobs:
           for(const forbidden of ['correct','wrong','combo','timeout']){
             if(m.entries.some(e=>e.event===forbidden))throw new Error(forbidden+' must be SFX-only and cannot have voice assets');
           }
-          console.log('Exam Sound v3 validated:',m.entries.length,'celebration voices');
+          console.log('Exam Sound v4 validated:',m.entries.length,'celebration voices');
           NODE
 
       - name: Configure GitHub Pages
