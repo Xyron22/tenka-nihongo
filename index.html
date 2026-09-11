@@ -7,52 +7,47 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="TENKA">
-  <link rel="manifest" href="manifest.webmanifest?v=4.0.0">
-  <link rel="icon" href="assets/icon.svg?v=4.0.0" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=4.0.0">
+  <link rel="manifest" href="manifest.webmanifest?v=5.0.0">
+  <link rel="icon" href="assets/icon.svg?v=5.0.0" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=5.0.0">
   <title>TENKA 日本語</title>
 </head>
 <body>
   <main id="app" class="app-shell">
     <div class="topbar"><div><div class="brand">TENKA 日本語</div><div class="subtle">JLPT • Bunpou • Kaigo</div></div></div>
     <section class="hero"><h1 id="boot-title">読み込み中…</h1><p id="boot-message">TENKA sedang menyiapkan sistem belajar.</p></section>
-    <div id="boot-detail" class="muted-box">Menyiapkan TENKA Core 2 + Exam Sound v4…</div>
+    <div id="boot-detail" class="muted-box">Menyiapkan TENKA Core 2 + MyInstants Exam Sound v5…</div>
   </main>
   <div id="toast" aria-live="polite"></div>
   <noscript><div style="padding:24px;color:white">TENKA membutuhkan JavaScript.</div></noscript>
   <script>
   (function(){
     var CORE_VERSION='2.0.0';
-    var AUDIO_VERSION='4.0.0';
+    var AUDIO_VERSION='5.0.0';
     var SOUND_PACK_VERSION='3.0.0';
-    var CACHE_VERSION='4.0.0';
-    var CLEAN_KEY='tenka-exam-sound-clean-300';
-    var RELOAD_KEY='tenka-exam-sound-reload';
+    var CACHE_VERSION='5.0.0';
+    var CLEAN_KEY='tenka-exam-sound-clean-500';
+    var RELOAD_KEY='tenka-exam-sound-reload-500';
     var title=document.getElementById('boot-title'),message=document.getElementById('boot-message'),detail=document.getElementById('boot-detail');
     function setDetail(text){if(detail)detail.textContent=text}
     function fail(text){if(title)title.textContent='読み込みエラー';if(message)message.textContent='TENKA belum berhasil mulai.';setDetail(text)}
     window.addEventListener('error',function(e){if(e&&e.message)fail('JavaScript error: '+e.message)});
     window.addEventListener('unhandledrejection',function(e){fail('Promise error: '+String(e.reason||'unknown'))});
     function load(src,name){return new Promise(function(resolve,reject){var s=document.createElement('script');s.src=src+'?v='+CACHE_VERSION;s.onload=resolve;s.onerror=function(){reject(new Error('Gagal memuat '+name))};document.body.appendChild(s)})}
-    function deleteDb(name){return new Promise(function(resolve){if(!('indexedDB'in window)||!indexedDB.deleteDatabase){resolve();return}try{var r=indexedDB.deleteDatabase(name);r.onsuccess=r.onerror=r.onblocked=function(){resolve()}}catch(e){resolve()}})}
     async function cleanupLegacy(){
       var controlled=!!('serviceWorker'in navigator&&navigator.serviceWorker.controller),alreadyClean=false;
       try{alreadyClean=localStorage.getItem(CLEAN_KEY)==='1'}catch(e){}
       if(!alreadyClean){
-        setDetail('Membersihkan sistem audio lama…');
+        setDetail('Menyiapkan sound pilihan kamu…');
         try{
           if('serviceWorker'in navigator){var regs=await navigator.serviceWorker.getRegistrations();await Promise.all(regs.map(function(r){return r.unregister()}))}
           if('caches'in window){var keys=await caches.keys();await Promise.all(keys.map(function(k){return caches.delete(k)}))}
-          await deleteDb('tenka-audio-v2');await deleteDb('tenka-audio-v3');
-          try{
-            ['tenka-builtin-sound-pack-version','tenka-builtin-sound-pack-v2','tenka-audio-settings-v2','tenka-audio-settings-v3','tenka-audio-settings-v4'].forEach(function(k){localStorage.removeItem(k)});
-            localStorage.setItem(CLEAN_KEY,'1');
-          }catch(e){}
+          try{localStorage.setItem(CLEAN_KEY,'1')}catch(e){}
         }catch(e){console.warn('[TENKA cleanup]',e)}
       }
       if(controlled){
         var reloaded=false;try{reloaded=sessionStorage.getItem(RELOAD_KEY)==='1'}catch(e){}
-        if(!reloaded){try{sessionStorage.setItem(RELOAD_KEY,'1')}catch(e){}setDetail('Sistem lama dibersihkan. Reload otomatis sekali…');location.replace(location.pathname+'?soundv4=1&t='+Date.now());return false}
+        if(!reloaded){try{sessionStorage.setItem(RELOAD_KEY,'1')}catch(e){}setDetail('Sound baru siap. Reload otomatis sekali…');location.replace(location.pathname+'?soundv5=1&t='+Date.now());return false}
       }
       return true;
     }
@@ -62,13 +57,13 @@
         setDetail('Memuat data belajar…');await load('./data.js','data.js');
         if(!window.TENKA_DATA)throw new Error('TENKA_DATA tidak tersedia');
         await load('./content-pack-v1.js','content-pack-v1.js');
-        setDetail('Memuat Exam Sound v4…');await load('./audio-engine-v4.js','audio-engine-v4.js');
-        if(window.TENKA_AUDIO_VERSION!==AUDIO_VERSION)throw new Error('Exam Sound v4 belum aktif');
+        setDetail('Memuat MP3 Exam Sound v5…');await load('./audio-engine-v5.js','audio-engine-v5.js');
+        if(window.TENKA_AUDIO_VERSION!==AUDIO_VERSION)throw new Error('Exam Sound v5 belum aktif');
         setDetail('Memuat TENKA Core 2…');await load('./app-v2.js','app-v2.js');
         if(window.TENKA_APP_VERSION!==CORE_VERSION||!window.TENKA_READY)throw new Error('TENKA Core 2 belum aktif');
         setDetail('Memuat celebration voice…');await load('./sound-pack-v3.js','sound-pack-v3.js');
         if(window.TENKA_SOUND_VERSION!==SOUND_PACK_VERSION)throw new Error('Celebration Voice Pack belum aktif');
-        await load('./audio-settings-v3.js','audio-settings-v3.js');
+        await load('./audio-settings-v5.js','audio-settings-v5.js');
         setDetail('TENKA siap.');
       }catch(e){fail(e&&e.message?e.message:String(e))}
     }
