@@ -1,9 +1,9 @@
 (()=>{
 'use strict';
 
-const VERSION='3.0.0';
+const VERSION='3.1.0';
 const ASSET_VERSION='3.0.0';
-const KEY='tenka-celebration-voice-pack-v3';
+const KEY='tenka-celebration-voice-pack-v31';
 const SOURCE='voicevox';
 const EVENTS=['greeting','finish','perfect'];
 let manifest=null;
@@ -54,7 +54,7 @@ async function reinstall(){localStorage.removeItem(KEY);return install(true)}
 function styles(){return [...new Set((manifest?.entries||[]).map(e=>e.voice).filter(Boolean))]}
 function renderStatus(){
   const box=document.querySelector('#tenka-sound-pack-status');if(!box)return;const h=health();
-  box.innerHTML=`<b>🎙️ Celebration Voice Pack v${VERSION}</b><br><span class="subtle">${installing?'⏳ Memasang…':h.ok?'✅ Siap':'⚠️ Belum lengkap'} • ${sourceCount()}/${manifest?.entries?.length||0} voice lokal${lastError?` • ${lastError}`:''}</span><div class="subtle" style="margin-top:6px">Dipakai hanya untuk mulai, selesai, dan perfect. Voice: ${styles().join('・')||'menunggu build'}</div><div class="small-actions" style="margin-top:10px"><button class="pill" onclick="TENKA_SOUND_PACK.reinstall()">↻ Repair voice pack</button></div>`;
+  box.innerHTML=`<b>🎙️ Celebration Voice Pack v${VERSION}</b><br><span class="subtle">${installing?'⏳ Memasang…':h.ok?'✅ Siap':'⚠️ Belum lengkap'} • ${sourceCount()}/${manifest?.entries?.length||0} voice lokal${lastError?` • ${lastError}`:''}</span><div class="subtle" style="margin-top:6px">Jawaban memakai WAV ujian. Voice hanya: mulai • selesai • perfect. ${styles().join('・')||'menunggu build'}</div><div class="small-actions" style="margin-top:10px"><button class="pill" onclick="TENKA_SOUND_PACK.reinstall()">↻ Repair voice pack</button></div>`;
 }
 async function init(){try{await loadManifest()}catch(e){lastError=e?.message||String(e)}renderStatus();setTimeout(()=>install(false),120)}
 window.TENKA_SOUND_PACK={version:VERSION,install,reinstall,renderStatus,status:()=>({version:VERSION,manifest,health:health(),error:lastError})};
