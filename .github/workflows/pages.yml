@@ -31,14 +31,51 @@ jobs:
           node --check data.js
           node --check content-pack-v1.js
           node --check app-v2.js
-          node --check audio-engine-v4.js
+          node --check audio-engine-v5.js
           node --check sound-pack-v3.js
-          node --check audio-settings-v3.js
+          node --check audio-settings-v5.js
           node --check tests/data-v2.js
           node --check tests/system-v2.js
-          node --check tests/audio-v4.js
+          node --check tests/audio-v5.js
           node --check scripts/build-sound-manifest-v2.mjs
           bash -n scripts/generate-voicevox-nemo.sh
+
+      - name: Download selected MyInstants exam SFX
+        run: |
+          set -euo pipefail
+          mkdir -p assets/audio/exam
+          UA='Mozilla/5.0 (TENKA build; GitHub Pages)'
+          REF='https://www.myinstants.com/'
+          MIRROR_BASE='https://raw.githubusercontent.com/danielhermawan02/meme-soundcard/188f7701bb742b60f6976e9bf60c811b40ffec6a/assets/sounds'
+          fetch_audio() {
+            out="$1"; primary="$2"; fallback="$3"
+            if curl -fL --connect-timeout 10 --max-time 30 -A "$UA" -e "$REF" -o "$out" "$primary"; then
+              echo "Downloaded from MyInstants: $primary"
+            else
+              echo "MyInstants blocked the build runner; using exact-filename GitHub mirror: $fallback"
+              curl -fL --retry 3 --retry-all-errors --connect-timeout 10 --max-time 30 -A "$UA" -o "$out" "$fallback"
+            fi
+          }
+          fetch_audio assets/audio/exam/wrong.mp3 \
+            'https://www.myinstants.com/media/sounds/error_CDOxCYm.mp3' \
+            "$MIRROR_BASE/error_CDOxCYm.mp3"
+          fetch_audio assets/audio/exam/correct.mp3 \
+            'https://www.myinstants.com/media/sounds/ding-sound-effect_2.mp3' \
+            "$MIRROR_BASE/ding-sound-effect_2.mp3"
+          fetch_audio assets/audio/exam/timeout.mp3 \
+            'https://www.myinstants.com/media/sounds/movie_1.mp3' \
+            "$MIRROR_BASE/movie_1.mp3"
+          python - <<'PY'
+          from pathlib import Path
+          for name in ['correct.mp3','wrong.mp3','timeout.mp3']:
+              p=Path('assets/audio/exam')/name
+              data=p.read_bytes()
+              if len(data)<1000:
+                  raise SystemExit(f'{name} too small: {len(data)} bytes')
+              if data[:3] != b'ID3' and not (len(data)>=2 and data[0]==0xff and (data[1]&0xe0)==0xe0):
+                  raise SystemExit(f'{name} does not look like MP3 data')
+              print(name, len(data), 'bytes')
+          PY
 
       - name: Data integrity test
         run: node tests/data-v2.js
@@ -46,27 +83,29 @@ jobs:
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js
 
-      - name: Safari-safe Exam Sound v4 test
-        run: node tests/audio-v4.js
+      - name: MyInstants Exam Sound v5 test
+        run: node tests/audio-v5.js
 
       - name: Verify clean runtime architecture
         run: |
           test ! -e sw.js
-          grep -q "audio-engine-v4.js" index.html
+          grep -q "audio-engine-v5.js" index.html
           grep -q "app-v2.js" index.html
           grep -q "sound-pack-v3.js" index.html
-          grep -q "audio-settings-v3.js" index.html
-          if grep -E "audio-engine-v2\.js|audio-engine-v3\.js|sound-pack-v2\.js|audio-patch\.js|audio-guard" index.html; then
+          grep -q "audio-settings-v5.js" index.html
+          if grep -E "audio-engine-v2\.js|audio-engine-v3\.js|audio-engine-v4\.js|sound-pack-v2\.js|audio-patch\.js|audio-guard" index.html; then
             echo "Legacy audio runtime reference found" >&2
             exit 1
           fi
-          if grep -E "AudioContext|webkitAudioContext" audio-engine-v4.js; then
-            echo "Exam Sound v4 must not depend on Web Audio" >&2
+          if grep -E "AudioContext|webkitAudioContext" audio-engine-v5.js; then
+            echo "Exam Sound v5 must not depend on Web Audio" >&2
             exit 1
           fi
-          grep -q "new Audio" audio-engine-v4.js
-          grep -q "primeExamAudio" audio-engine-v4.js
-          grep -q "CACHE_VERSION='4.0.0'" index.html
+          grep -q "assets/audio/exam/correct.mp3" audio-engine-v5.js
+          grep -q "assets/audio/exam/wrong.mp3" audio-engine-v5.js
+          grep -q "assets/audio/exam/timeout.mp3" audio-engine-v5.js
+          grep -q "primeExamAudio" audio-engine-v5.js
+          grep -q "CACHE_VERSION='5.0.0'" index.html
 
       - name: Restore generated VOICEVOX Nemo cache
         id: voice-cache
@@ -98,7 +137,7 @@ jobs:
           for(const forbidden of ['correct','wrong','combo','timeout']){
             if(m.entries.some(e=>e.event===forbidden))throw new Error(forbidden+' must be SFX-only and cannot have voice assets');
           }
-          console.log('Exam Sound v4 validated:',m.entries.length,'celebration voices');
+          console.log('Exam Sound v5 validated:',m.entries.length,'celebration voices');
           NODE
 
       - name: Configure GitHub Pages
