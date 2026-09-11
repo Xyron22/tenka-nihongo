@@ -19,10 +19,7 @@ trap 'docker rm -f tenka-voicevox-nemo >/dev/null 2>&1 || true' EXIT
 BASE="http://127.0.0.1:50121"
 READY=0
 for _ in $(seq 1 75); do
-  if curl -fsS "${BASE}/version" >/dev/null 2>&1; then
-    READY=1
-    break
-  fi
+  if curl -fsS "${BASE}/version" >/dev/null 2>&1; then READY=1; break; fi
   if ! docker ps --format '{{.Names}}' | grep -qx tenka-voicevox-nemo; then
     echo "VOICEVOX Nemo container exited before becoming ready" >&2
     docker logs tenka-voicevox-nemo 2>&1 || true
@@ -36,68 +33,29 @@ if [[ "$READY" != "1" ]]; then
   exit 1
 fi
 
-echo "VOICEVOX Nemo version: $(curl -fsS "${BASE}/version")"
 curl -fsS "${BASE}/speakers" > /tmp/tenka-nemo-speakers.json
-
-# Official VOICEVOX VVM Nemo style IDs:
-# 女声1=10005, 女声2=10007, 女声3=10004.
-VOICES=("10005:女声1:1.10:0.035:1.10" "10007:女声2:1.16:0.055:1.16" "10004:女声3:1.06:0.020:1.08")
+VOICES=("10005:女声1:1.08:0.025:1.08" "10007:女声2:1.12:0.045:1.12" "10004:女声3:1.04:0.015:1.05")
 for speaker in 10005 10007 10004; do
-  if ! jq -e --argjson id "$speaker" '[.[].styles[].id] | index($id) != null' /tmp/tenka-nemo-speakers.json >/dev/null; then
-    echo "Required VOICEVOX Nemo style ID missing: ${speaker}" >&2
-    jq 'map({name,styles})' /tmp/tenka-nemo-speakers.json >&2 || true
-    exit 1
-  fi
+  jq -e --argjson id "$speaker" '[.[].styles[].id] | index($id) != null' /tmp/tenka-nemo-speakers.json >/dev/null || { echo "Required VOICEVOX Nemo style ID missing: ${speaker}" >&2; exit 1; }
 done
 
 synth() {
-  local event="$1"
-  local variant="$2"
-  local speaker="$3"
-  local voice_name="$4"
-  local speed="$5"
-  local pitch="$6"
-  local intonation="$7"
-  local text="$8"
-  local query="/tmp/tenka-${event}-${variant}-query.json"
-  local tuned="/tmp/tenka-${event}-${variant}-tuned.json"
-
-  curl -fsS -X POST "${BASE}/audio_query?speaker=${speaker}" \
-    --get --data-urlencode "text=${text}" > "$query"
-
+  local event="$1" variant="$2" speaker="$3" voice_name="$4" speed="$5" pitch="$6" intonation="$7" text="$8"
+  local query="/tmp/tenka-${event}-${variant}-query.json" tuned="/tmp/tenka-${event}-${variant}-tuned.json"
+  curl -fsS -X POST "${BASE}/audio_query?speaker=${speaker}" --get --data-urlencode "text=${text}" > "$query"
   jq --argjson speed "$speed" --argjson pitch "$pitch" --argjson intonation "$intonation" \
-    '.speedScale=$speed | .pitchScale=$pitch | .intonationScale=$intonation | .volumeScale=1.0 | .prePhonemeLength=0.04 | .postPhonemeLength=0.06' \
+    '.speedScale=$speed | .pitchScale=$pitch | .intonationScale=$intonation | .volumeScale=1.0 | .prePhonemeLength=0.04 | .postPhonemeLength=0.08' \
     "$query" > "$tuned"
-
-  curl -fsS -H 'Content-Type: application/json' -X POST \
-    -d @"$tuned" "${BASE}/synthesis?speaker=${speaker}" \
-    > "$OUT/${event}-${variant}.wav"
-
+  curl -fsS -H 'Content-Type: application/json' -X POST -d @"$tuned" "${BASE}/synthesis?speaker=${speaker}" > "$OUT/${event}-${variant}.wav"
   test -s "$OUT/${event}-${variant}.wav"
   echo "VOICEVOX Nemo ${voice_name}: ${event}/${variant} -> ${text}"
 }
 
-# One clip = one short reaction. Variety comes from different voices/phrases,
-# not from chaining two reactions inside one audio file.
 phrase_for() {
-  local event="$1"
-  local idx="$2"
-  case "${event}:${idx}" in
+  case "$1:$2" in
     greeting:1) echo '始めよう！' ;;
     greeting:2) echo '準備オーケー？' ;;
     greeting:3) echo '今日も頑張ろう！' ;;
-    correct:1) echo '正解！' ;;
-    correct:2) echo 'やったー！' ;;
-    correct:3) echo 'すごい！' ;;
-    wrong:1) echo '惜しい！' ;;
-    wrong:2) echo '残念！' ;;
-    wrong:3) echo 'ドンマイ！' ;;
-    combo:1) echo 'コンボ！' ;;
-    combo:2) echo 'その調子！' ;;
-    combo:3) echo 'すごい！' ;;
-    timeout:1) echo 'タイムアップ！' ;;
-    timeout:2) echo '時間切れ！' ;;
-    timeout:3) echo 'あー、時間切れ！' ;;
     finish:1) echo 'お疲れさま！' ;;
     finish:2) echo 'おめでとう！' ;;
     finish:3) echo 'よく頑張ったね！' ;;
@@ -107,20 +65,18 @@ phrase_for() {
   esac
 }
 
-for event in greeting correct wrong combo timeout finish perfect; do
+for event in greeting finish perfect; do
   idx=0
   for spec in "${VOICES[@]}"; do
-    idx=$((idx+1))
-    IFS=':' read -r speaker voice_name speed pitch intonation <<< "$spec"
-    text="$(phrase_for "$event" "$idx")"
-    synth "$event" "f${idx}" "$speaker" "$voice_name" "$speed" "$pitch" "$intonation" "$text"
+    idx=$((idx+1)); IFS=':' read -r speaker voice_name speed pitch intonation <<< "$spec"
+    synth "$event" "f${idx}" "$speaker" "$voice_name" "$speed" "$pitch" "$intonation" "$(phrase_for "$event" "$idx")"
   done
 done
 
 cat > "$OUT/VOICEVOX_CREDIT.txt" <<'EOF'
 VOICEVOX Nemo
 Voices used: 女声1, 女声2, 女声3
-Generated for TENKA 日本語.
+Generated for TENKA 日本語 celebration moments only.
 EOF
 
-echo "VOICEVOX Nemo TENKA short-reaction pack generated: 21 clips."
+echo "TENKA celebration voice pack generated: 9 clips."
