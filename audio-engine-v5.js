@@ -1,12 +1,12 @@
 (()=>{
 'use strict';
 
-const VERSION='5.0.0';
+const VERSION='5.1.0';
 const DB_NAME='tenka-audio-v4';
 const STORE='clips';
 const SETTINGS_KEY='tenka-audio-settings-v5';
-const EVENTS=['greeting','correct','wrong','combo','timeout','finish','perfect','click'];
-const EXAM_EVENTS=new Set(['correct','wrong','combo','timeout']);
+const EVENTS=['greeting','correct','wrong','timeout','finish','perfect','click'];
+const EXAM_EVENTS=new Set(['correct','wrong','timeout']);
 const VOICE_EVENTS=new Set(['greeting','finish','perfect']);
 const SOURCES=['voicevox','custom'];
 const PHRASES={
@@ -15,10 +15,9 @@ const PHRASES={
   perfect:['パーフェクト！','完璧！','満点！']
 };
 const EXAM_FILES={
-  correct:'./assets/audio/exam/correct.mp3?v=5.0.0',
-  wrong:'./assets/audio/exam/wrong.mp3?v=5.0.0',
-  combo:'./assets/audio/exam/correct.mp3?v=5.0.0',
-  timeout:'./assets/audio/exam/timeout.mp3?v=5.0.0'
+  correct:'./assets/audio/exam/correct.mp3?v=5.1.0',
+  wrong:'./assets/audio/exam/wrong.mp3?v=5.1.0',
+  timeout:'./assets/audio/exam/timeout.mp3?v=5.1.0'
 };
 
 const memory={};
@@ -111,7 +110,7 @@ function playExam(event){
 function voiceList(event){const out=[];for(const source of SOURCES)for(const clip of memory[source]?.[event]||[])out.push({source,clip});return out}
 function chooseVoice(event){const all=voiceList(event);if(!all.length)return null;const prev=lastClip[event];let pool=all.length>1?all.filter(x=>x.clip.id!==prev):all;if(!pool.length)pool=all;const pick=pool[Math.floor(Math.random()*pool.length)];lastClip[event]=pick.clip.id;return pick}
 function fallbackSpeech(event,token){if(token!==playToken||!settings.celebrationVoice||!('speechSynthesis'in window)||!('SpeechSynthesisUtterance'in window))return false;const arr=PHRASES[event]||[];if(!arr.length)return false;let pool=arr.length>1&&lastPhrase[event]?arr.filter(x=>x!==lastPhrase[event]):arr;if(!pool.length)pool=arr;const text=pool[Math.floor(Math.random()*pool.length)];lastPhrase[event]=text;try{cancelSpeech();const u=new SpeechSynthesisUtterance(text);u.lang='ja-JP';u.volume=settings.volume;u.rate=1.0;u.pitch=1.05;speechSynthesis.speak(u);return true}catch{return false}}
-function resultFallback(event){return playExam(event==='perfect'?'combo':'correct')}
+function resultFallback(){return playExam('correct')}
 function playVoiceEvent(event,token){
   if(!settings.celebrationVoice)return resultFallback(event);
   const pick=chooseVoice(event);if(!pick){if(!fallbackSpeech(event,token))resultFallback(event);return true}
