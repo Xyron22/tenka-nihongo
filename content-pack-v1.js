@@ -40,7 +40,7 @@ const n5Grammar=[
 const kaigoVocab=[
 {id:'k-v-13',term:'体温',reading:'たいおん',meaning:'suhu tubuh',category:'バイタル',example:'体温は36.8度です。',exampleMeaning:'Suhu tubuh 36,8°C.'},
 {id:'k-v-14',term:'脈拍',reading:'みゃくはく',meaning:'denyut nadi',category:'バイタル',example:'脈拍を測ります。',exampleMeaning:'Mengukur denyut nadi.'},
-{id:'k-v-15',term:'呼吸数',reading:'こきゅうすう',meaning:'frekuensi napas',category:'バイタル',example:'呼吸数は20回です。',exampleMeaning:'Frekuensi napas 20 kali.'},
+{id:'k-v-15',term:'呼吸数',reading:'こきゅうすう',meaning:'frekuensi napas',category:'バイタル',example:'呼吸数は1分間に20回です。',exampleMeaning:'Frekuensi napas 20 kali per menit.'},
 {id:'k-v-16',term:'SpO₂',reading:'エスピーオーツー',meaning:'saturasi oksigen',category:'バイタル',example:'SpO₂は94パーセントです。',exampleMeaning:'SpO₂ 94%.'},
 {id:'k-v-17',term:'呼吸苦',reading:'こきゅうく',meaning:'sesak napas',category:'状態・症状',example:'呼吸苦の訴えがあります。',exampleMeaning:'Ada keluhan sesak napas.'},
 {id:'k-v-18',term:'咳嗽',reading:'がいそう',meaning:'batuk',category:'状態・症状',example:'咳嗽が続いています。',exampleMeaning:'Batuk terus berlanjut.'},
@@ -52,12 +52,12 @@ const kaigoVocab=[
 {id:'k-v-24',term:'失禁',reading:'しっきん',meaning:'inkontinensia',category:'排泄',example:'夜間に尿失禁がありました。',exampleMeaning:'Ada inkontinensia urin pada malam hari.'},
 {id:'k-v-25',term:'便秘',reading:'べんぴ',meaning:'konstipasi / sembelit',category:'排泄',example:'三日間排便なく、便秘傾向です。',exampleMeaning:'Sudah tiga hari tidak BAB dan cenderung konstipasi.'},
 {id:'k-v-26',term:'下痢',reading:'げり',meaning:'diare',category:'排泄',example:'本日、下痢便が二回ありました。',exampleMeaning:'Hari ini ada BAB diare dua kali.'},
-{id:'k-v-27',term:'移乗',reading:'いじょう',meaning:'transfer posisi',category:'ADL・移動',example:'車椅子への移乗は二人介助です。',exampleMeaning:'Transfer ke kursi roda membutuhkan bantuan dua orang.'},
+{id:'k-v-27',term:'移乗',reading:'いじょう',meaning:'transfer / berpindah dari satu permukaan ke permukaan lain',category:'ADL・移動',example:'車椅子への移乗は二人介助です。',exampleMeaning:'Transfer ke kursi roda membutuhkan bantuan dua orang.'},
 {id:'k-v-28',term:'歩行',reading:'ほこう',meaning:'berjalan / ambulasi',category:'ADL・移動',example:'歩行時は見守りが必要です。',exampleMeaning:'Saat berjalan perlu pengawasan.'},
-{id:'k-v-29',term:'見守り',reading:'みまもり',meaning:'pengawasan / standby',category:'ADL・移動',example:'トイレへの移動時は見守りが必要です。',exampleMeaning:'Saat berpindah ke toilet perlu pengawasan.'},
+{id:'k-v-29',term:'見守り',reading:'みまもり',meaning:'pengawasan / mendampingi sambil mengamati',category:'ADL・移動',example:'トイレへの移動時は見守りが必要です。',exampleMeaning:'Saat berpindah ke toilet perlu pengawasan.'},
 {id:'k-v-30',term:'転倒',reading:'てんとう',meaning:'jatuh',category:'安全・リスク',example:'昨夜、転倒がありました。',exampleMeaning:'Tadi malam terjadi jatuh.'},
 {id:'k-v-31',term:'不穏',reading:'ふおん',meaning:'gelisah / agitasi',category:'認知症・精神',example:'夜間に不穏がみられました。',exampleMeaning:'Terlihat agitasi pada malam hari.'},
-{id:'k-v-32',term:'頓服',reading:'とんぷく',meaning:'obat PRN / bila perlu',category:'薬・処置',example:'疼痛時に頓服を使用しました。',exampleMeaning:'Obat PRN digunakan saat nyeri.'}
+{id:'k-v-32',term:'頓服',reading:'とんぷく',meaning:'obat PRN / bila perlu',category:'薬・処置',example:'疼痛時に頓服薬を服用されています。',exampleMeaning:'Saat nyeri, pasien telah minum obat PRN.'}
 ];
 const handoff=[
 {id:'h-03',
