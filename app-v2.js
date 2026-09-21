@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 
-const APP_VERSION='2.2.0';
+const APP_VERSION='2.3.0';
 const D=window.TENKA_DATA;
 if(!D||!D.jlpt||!D.kaigo)throw new Error('TENKA_DATA belum siap');
 
@@ -14,7 +14,7 @@ const HAPTIC_SUPPORTED=typeof navigator!=='undefined'&&typeof navigator.vibrate=
 
 const defaultProgress=()=>({
   reviews:{},quizRuns:{},best:{},correct:0,total:0,streak:1,lastStudy:null,
-  grammarDone:{},handoffDone:{},daily:{}
+  grammarDone:{},handoffDone:{},houkokuDone:{},daily:{}
 });
 const defaultSettings=()=>({voice:true,haptic:HAPTIC_SUPPORTED});
 
@@ -34,6 +34,7 @@ function mergeProgress(value){
     best:Object.assign({},base.best,value?.best||{}),
     grammarDone:Object.assign({},base.grammarDone,value?.grammarDone||{}),
     handoffDone:Object.assign({},base.handoffDone,value?.handoffDone||{}),
+    houkokuDone:Object.assign({},base.houkokuDone,value?.houkokuDone||{}),
     daily:Object.assign({},base.daily,value?.daily||{})
   });
 }
@@ -45,7 +46,7 @@ function mergeSettings(value){
 
 const state={
   view:'home',level:'N5',mode:'vocab',cards:[],cardIndex:0,flipped:false,returnView:'level',
-  quiz:null,timer:null,seconds:30,quizAnswered:false,handoffSession:null,kakijun:null,guide:false,
+  quiz:null,timer:null,seconds:30,quizAnswered:false,handoffSession:null,houkokuSession:null,kakijun:null,guide:false,
   settings:mergeSettings(safeLoad(SETTINGS_KEY,defaultSettings)),
   progress:mergeProgress(safeLoad(PROGRESS_KEY,defaultProgress))
 };
@@ -114,11 +115,11 @@ function startGreeting(){markStudy();audioEvent('greeting');toast('今日も頑�
 function header(title,sub=''){return `<div class="topbar"><div><div class="brand">${title}</div>${sub?`<div class="subtle">${sub}</div>`:''}</div><button class="icon-btn" onclick="startGreeting()">🔊</button></div>`}
 function nav(){return `<nav class="bottom-nav"><button onclick="go('home')"><span>⌂</span>Home</button><button onclick="go('daily')"><span>🎯</span>Daily</button><button onclick="go('progress')"><span>📊</span>Progress</button><button onclick="go('settings')"><span>⚙️</span>Setting</button></nav>`}
 function clearTimer(){if(state.timer)clearInterval(state.timer);state.timer=null}
-function go(view){clearTimer();if(state.view==='handoff'&&view!=='handoff')state.handoffSession=null;state.view=view;state.flipped=false;render();try{scrollTo(0,0)}catch{}}
+function go(view){clearTimer();if(state.view==='handoff'&&view!=='handoff')state.handoffSession=null;if(state.view==='houkoku'&&view!=='houkoku')state.houkokuSession=null;state.view=view;state.flipped=false;render();try{scrollTo(0,0)}catch{}}
 function render(){
   const app=$('#app');if(!app)return;
-  const withNav=['home','jlpt','level','grammar','kaigo','handoff','daily','progress','settings'].includes(state.view);
-  const views={home,jlpt,level,flash,grammar,quiz:quizView,kaigo,handoff,kakijun,daily,progress,settings};
+  const withNav=['home','jlpt','level','grammar','kaigo','handoff','houkoku','daily','progress','settings'].includes(state.view);
+  const views={home,jlpt,level,flash,grammar,quiz:quizView,kaigo,handoff,houkoku,kakijun,daily,progress,settings};
   const renderer=views[state.view]||home;
   app.innerHTML=renderer()+(withNav?nav():'');
   afterRender();
@@ -224,11 +225,65 @@ function finishQuiz(){
   return `<div class="score"><div class="confetti">🎉✨🎊</div><div class="mega">${pct}%</div><h2>${pct===100?'パーフェクト！':pct>=70?'おめでとう！':'Sesi selesai'}</h2><p>${q.score}/${q.items.length} benar</p><button class="action primary" onclick="go('${state.returnView}')">Selesai</button></div>`;
 }
 function kaigo(){
-  const cats=[...new Set((D.kaigo.vocab||[]).map(x=>x.category).filter(Boolean))],due=dueCards('KAIGO').length,done=handoffDoneCount();
-  return `${header('Kaigo・Keperawatan','Bahasa kerja • listening • 申し送り')}<button class="back" onclick="go('home')">←</button><div class="list"><button class="row" onclick="openKaigoFlash()"><div class="left"><b>🏥 Flashcard Kaigo</b><small>${D.kaigo.vocab.length} istilah</small></div><span>›</span></button><button class="row" onclick="openReview('KAIGO')"><div class="left"><b>🧠 Review Kaigo</b><small>${due?`${due} kartu jatuh tempo`:'Belum ada review jatuh tempo'}</small></div><span>›</span></button><button class="row" onclick="startKaigoQuiz('kaigo')"><div class="left"><b>🎮 Quiz Kaigo</b><small>Istilah kerja • satu jawaban satu feedback</small></div><span>›</span></button><button class="row" onclick="startKaigoQuiz('listening')"><div class="left"><b>🎧 Listening Kaigo</b><small>Dengar istilah → tangkap arti</small></div><span>›</span></button><button class="row" onclick="openHandoffPractice()"><div class="left"><b>🗣️ 申し送り Practice</b><small>${done}/${D.kaigo.handoff.length} kasus dikuasai • per kalimat</small></div><span>›</span></button></div><div class="section-title">Kategori</div><div class="small-actions">${cats.map(x=>`<button class="pill" onclick="openKaigoCategory('${esc(x)}')">${x}</button>`).join('')}</div>`;
+  const cats=[...new Set((D.kaigo.vocab||[]).map(x=>x.category).filter(Boolean))],due=dueCards('KAIGO').length,done=handoffDoneCount(),reportDone=houkokuDoneCount(),reportTotal=(D.kaigo.houkoku||[]).length;
+  return `${header('Kaigo・Keperawatan','Bahasa kerja • listening • 申し送り')}<button class="back" onclick="go('home')">←</button><div class="list"><button class="row" onclick="openKaigoFlash()"><div class="left"><b>🏥 Flashcard Kaigo</b><small>${D.kaigo.vocab.length} istilah</small></div><span>›</span></button><button class="row" onclick="openReview('KAIGO')"><div class="left"><b>🧠 Review Kaigo</b><small>${due?`${due} kartu jatuh tempo`:'Belum ada review jatuh tempo'}</small></div><span>›</span></button><button class="row" onclick="startKaigoQuiz('kaigo')"><div class="left"><b>🎮 Quiz Kaigo</b><small>Istilah kerja • satu jawaban satu feedback</small></div><span>›</span></button><button class="row" onclick="startKaigoQuiz('listening')"><div class="left"><b>🎧 Listening Kaigo</b><small>Dengar istilah → tangkap arti</small></div><span>›</span></button><button class="row" onclick="openHoukokuPractice()"><div class="left"><b>📣 報告 Practice</b><small>${reportDone}/${reportTotal} kasus • susun laporan kerja</small></div><span>›</span></button><button class="row" onclick="openHandoffPractice()"><div class="left"><b>🗣️ 申し送り Practice</b><small>${done}/${D.kaigo.handoff.length} kasus dikuasai • per kalimat</small></div><span>›</span></button></div><div class="section-title">Kategori</div><div class="small-actions">${cats.map(x=>`<button class="pill" onclick="openKaigoCategory('${esc(x)}')">${x}</button>`).join('')}</div>`;
 }
 function openKaigoFlash(){state.level='KAIGO';state.cards=allKaigoCards();state.mode='vocab';state.cardIndex=0;state.flipped=false;state.returnView='kaigo';go('flash')}
 function openKaigoCategory(cat){const cards=allKaigoCards().filter(x=>x.category===cat);if(!cards.length)return;state.level='KAIGO';openCustomFlash(cards,'kaigo','vocab')}
+
+function houkokuItems(){return D.kaigo.houkoku||[]}
+function houkokuDoneCount(){return houkokuItems().filter(h=>!!state.progress.houkokuDone[h.id]).length}
+function firstIncompleteHoukoku(){return houkokuItems().findIndex(h=>!state.progress.houkokuDone[h.id])}
+function makeHoukokuSession(caseIndex){
+  const h=houkokuItems()[caseIndex],order=shuffle((h?.pieces||[]).map((_,i)=>i));
+  return{caseIndex,selected:[],remaining:order,checked:false,correct:false,stage:'puzzle'};
+}
+function openHoukokuPractice(caseIndex=null){
+  const arr=houkokuItems();if(!arr.length){toast('Materi 報告 belum tersedia');return}
+  const next=firstIncompleteHoukoku();
+  if(!Number.isInteger(caseIndex)&&next<0){state.houkokuSession=null;toast('Semua kasus 報告 yang tersedia sudah selesai');return}
+  const i=Number.isInteger(caseIndex)?Math.max(0,Math.min(caseIndex,arr.length-1)):next;
+  state.houkokuSession=makeHoukokuSession(i);go('houkoku');
+}
+function currentHoukoku(){const hs=state.houkokuSession;return hs?houkokuItems()[hs.caseIndex]||null:null}
+function houkoku(){
+  const arr=houkokuItems();
+  if(!arr.length)return `${header('報告 Practice','Belum ada materi')}<button class="back" onclick="go('kaigo')">←</button><div class="muted-box">Materi belum tersedia.</div>`;
+  if(!state.houkokuSession){const i=firstIncompleteHoukoku();if(i<0)return `${header('報告 Practice','Semua kasus selesai')}<button class="back" onclick="go('kaigo')">←</button><div class="score"><h2>完了 ✅</h2><p>Semua kasus 報告 yang tersedia sudah selesai.</p><button class="action primary" onclick="go('kaigo')">Selesai</button></div>`;state.houkokuSession=makeHoukokuSession(i)}
+  const hs=state.houkokuSession,h=currentHoukoku();if(!h){state.houkokuSession=null;return ''}
+  const label=`Kasus ${hs.caseIndex+1}/${arr.length}`;
+  if(hs.stage==='result'){
+    return `${header('報告 Practice',`${label} • Model laporan`)}<button class="back" onclick="finishHoukoku()">←</button><article class="grammar-card"><span class="badge">✅ 報告モデル</span><h3>${h.title}</h3><div class="handoff">${h.pieces.join('')}</div><div class="furigana">${h.reading||''}</div><div class="example">🇮🇩 ${h.meaning||''}</div><div class="muted-box" style="margin-top:12px">💡 ${h.note||''}</div><div class="small-actions"><button class="pill" onclick="speakText('${esc(h.pieces.join(''))}',.82)">🔊 Dengarkan</button></div></article><button class="action primary" onclick="finishHoukoku()">Selesai</button>`;
+  }
+  const selected=hs.selected.map((pieceIndex,pos)=>`<button class="choice ${hs.checked?(hs.correct?'correct':'wrong'):''}" onclick="houkokuRemove(${pos})">${h.pieces[pieceIndex]}</button>`).join('');
+  const available=hs.remaining.map(pieceIndex=>`<button class="pill" draggable="true" ondragstart="houkokuDragStart(event,${pieceIndex})" onclick="houkokuPick(${pieceIndex})">${h.pieces[pieceIndex]}</button>`).join('');
+  const feedback=hs.checked?(hs.correct?'<div class="muted-box">✅ Urutannya benar. Ini sudah menjadi laporan yang natural.</div>':'<div class="muted-box">❌ Urutannya belum tepat. Coba susun lagi dari fakta → kondisi → permintaan konfirmasi.</div>'):'';
+  return `${header('報告 Practice',`${label} • Puzzle laporan`)}<button class="back" onclick="finishHoukoku()">←</button><article class="grammar-card"><span class="badge">${h.examArea||'コミュニケーション技術'}</span><h3>${h.title}</h3><div class="example">🧑‍⚕️ ${h.situation}</div><p class="subtle">Susun potongan Jepang menjadi houkoku. Di iPhone cukup tap; drag & drop juga tersedia bila browser mendukung.</p></article><div class="section-title">🧩 Laporanmu</div><div class="choices" ondragover="event.preventDefault()" ondrop="houkokuDrop(event)">${selected||'<div class="muted-box">＿＿＿＿　＿＿＿＿　＿＿＿＿</div>'}</div>${feedback}<div class="section-title">Potongan kalimat</div><div class="small-actions">${available||'<span class="subtle">Semua potongan sudah dipakai.</span>'}</div><div class="controls"><button class="action" onclick="houkokuReset()">Acak ulang</button>${hs.checked&&hs.correct?'<button class="action primary" onclick="houkokuShowResult()">Lihat model →</button>':hs.checked?'<button class="action primary" onclick="houkokuReset()">Coba lagi</button>':'<button class="action primary" onclick="houkokuCheck()">Periksa</button>'}</div>`;
+}
+function houkokuPick(pieceIndex){
+  const hs=state.houkokuSession;if(!hs||hs.checked)return;
+  const p=hs.remaining.indexOf(pieceIndex);if(p<0)return;
+  hs.remaining.splice(p,1);hs.selected.push(pieceIndex);render();
+}
+function houkokuRemove(pos){
+  const hs=state.houkokuSession;if(!hs||hs.checked||pos<0||pos>=hs.selected.length)return;
+  const piece=hs.selected.splice(pos,1)[0];hs.remaining.push(piece);render();
+}
+function houkokuDragStart(event,pieceIndex){try{event.dataTransfer.setData('text/plain',String(pieceIndex))}catch{}}
+function houkokuDrop(event){try{event.preventDefault();const i=Number(event.dataTransfer.getData('text/plain'));if(Number.isInteger(i))houkokuPick(i)}catch{}}
+function houkokuCheck(){
+  const hs=state.houkokuSession,h=currentHoukoku();if(!hs||!h||hs.checked)return;
+  if(hs.selected.length!==h.pieces.length){toast('Susun semua potongan dulu');return}
+  hs.correct=hs.selected.every((x,i)=>x===i);hs.checked=true;answerFeedback(hs.correct);
+  if(hs.correct){state.progress.houkokuDone[h.id]=new Date().toISOString();markDaily('kaigo','houkoku:'+h.id);save()}
+  render();
+}
+function houkokuReset(){
+  const hs=state.houkokuSession,h=currentHoukoku();if(!hs||!h)return;
+  hs.selected=[];hs.remaining=shuffle(h.pieces.map((_,i)=>i));hs.checked=false;hs.correct=false;render();
+}
+function houkokuShowResult(){const hs=state.houkokuSession;if(!hs||!hs.correct)return;hs.stage='result';render()}
+function finishHoukoku(){state.houkokuSession=null;go('kaigo')}
 
 function handoffSegments(h){
   if(Array.isArray(h?.segments)&&h.segments.length)return h.segments;
@@ -309,7 +364,7 @@ function setAudioSetting(key,value){if(key==='volume')value=Math.max(0,Math.min(
 function previewAudio(event){window.TENKA_AUDIO?.playEvent?.(event)}
 function resetProgress(){if(confirm('Reset semua progress belajar di perangkat ini?')){state.progress=defaultProgress();save();render();toast('Progress direset')}}
 
-Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,startKaigoQuiz,openKaigoFlash,openKaigoCategory,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
+Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,startKaigoQuiz,openKaigoFlash,openKaigoCategory,openHoukokuPractice,houkokuPick,houkokuRemove,houkokuDragStart,houkokuDrop,houkokuCheck,houkokuReset,houkokuShowResult,finishHoukoku,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
 window.TENKA_CORE={state,render,dueCards,allLevelCards,allKaigoCards,totalDue};
 window.TENKA_APP_VERSION=APP_VERSION;
 render();

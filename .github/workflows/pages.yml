@@ -32,6 +32,7 @@ jobs:
           node --check content-pack-v1.js
           node --check content-pack-v2.js
           node --check content-pack-v3.js
+          node --check houkoku-pack-v1.js
           node --check app-v2.js
           node --check audio-engine-v5.js
           node --check sound-pack-v3.js
@@ -95,6 +96,7 @@ jobs:
           grep -q "app-v2.js" index.html
           grep -q "sound-pack-v3.js" index.html
           grep -q "content-pack-v3.js" index.html
+          grep -q "houkoku-pack-v1.js" index.html
           grep -q "audio-settings-v5.js" index.html
           if grep -E "audio-engine-v2\.js|audio-engine-v3\.js|audio-engine-v4\.js|sound-pack-v2\.js|audio-patch\.js|audio-guard" index.html; then
             echo "Legacy audio runtime reference found" >&2
@@ -116,9 +118,9 @@ jobs:
             echo "Completed quiz/handoff sessions must exit instead of chaining or repeating" >&2
             exit 1
           fi
-          grep -q "CORE_VERSION='2.2.0'" index.html
+          grep -q "CORE_VERSION='2.3.0'" index.html
           grep -q "AUDIO_VERSION='5.1.1'" index.html
-          grep -q "CACHE_VERSION='5.2.1'" index.html
+          grep -q "CACHE_VERSION='5.3.0'" index.html
 
       - name: Restore generated VOICEVOX Nemo cache
         id: voice-cache
