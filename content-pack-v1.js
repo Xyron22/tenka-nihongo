@@ -11,7 +11,22 @@ const n5Kanji=[
 {id:'n5-k-12',kanji:'中',reading:'ちゅう・なか',romaji:'chuu / naka',meaning:'tengah / dalam',example:'部屋の中にいます。',exampleReading:'へや の なか に います。',exampleMeaning:'Ada di dalam kamar.'},
 {id:'n5-k-13',kanji:'大',reading:'だい・たい・おおきい',romaji:'dai / tai / ookii',meaning:'besar',example:'大きい病院です。',exampleReading:'おおきい びょういん です。',exampleMeaning:'Ini rumah sakit besar.'},
 {id:'n5-k-14',kanji:'小',reading:'しょう・ちいさい',romaji:'shou / chiisai',meaning:'kecil',example:'小さい声で話します。',exampleReading:'ちいさい こえ で はなします。',exampleMeaning:'Berbicara dengan suara kecil.'},
-{id:'n5-k-15',kanji:'時',reading:'じ・とき',romaji:'ji / toki',meaning:'waktu / jam',example:'七時に起きます。',exampleReading:'しちじ に おきます。',exampleMeaning:'Saya bangun pukul tujuh.'}
+{id:'n5-k-15',kanji:'時',reading:'じ・とき',romaji:'ji / toki',meaning:'waktu / jam',example:'七時に起きます。',exampleReading:'しちじ に おきます。',exampleMeaning:'Saya bangun pukul tujuh.'},
+{id:'n5-k-16',kanji:'本',reading:'ほん・もと',romaji:'hon / moto',meaning:'buku / asal',example:'本を読みます。',exampleReading:'ほん を よみます。',exampleMeaning:'Saya membaca buku.'},
+{id:'n5-k-17',kanji:'田',reading:'でん・た',romaji:'den / ta',meaning:'sawah',example:'田んぼの近くに住んでいます。',exampleReading:'たんぼ の ちかく に すんで います。',exampleMeaning:'Saya tinggal dekat sawah.'},
+{id:'n5-k-18',kanji:'川',reading:'せん・かわ',romaji:'sen / kawa',meaning:'sungai',example:'川の水は冷たいです。',exampleReading:'かわ の みず は つめたい です。',exampleMeaning:'Air sungainya dingin.'},
+{id:'n5-k-19',kanji:'口',reading:'こう・くち',romaji:'kou / kuchi',meaning:'mulut / pintu masuk',example:'口を開けてください。',exampleReading:'くち を あけて ください。',exampleMeaning:'Tolong buka mulut.'},
+{id:'n5-k-20',kanji:'目',reading:'もく・め',romaji:'moku / me',meaning:'mata',example:'目を閉じてください。',exampleReading:'め を とじて ください。',exampleMeaning:'Tolong tutup mata.'},
+{id:'n5-k-21',kanji:'耳',reading:'じ・みみ',romaji:'ji / mimi',meaning:'telinga',example:'右の耳が少し聞こえにくいです。',exampleReading:'みぎ の みみ が すこし きこえにくい です。',exampleMeaning:'Telinga kanan agak sulit mendengar.'},
+{id:'n5-k-22',kanji:'手',reading:'しゅ・て',romaji:'shu / te',meaning:'tangan',example:'手を洗います。',exampleReading:'て を あらいます。',exampleMeaning:'Saya mencuci tangan.'},
+{id:'n5-k-23',kanji:'足',reading:'そく・あし',romaji:'soku / ashi',meaning:'kaki',example:'足が痛いです。',exampleReading:'あし が いたい です。',exampleMeaning:'Kaki saya sakit.'},
+{id:'n5-k-24',kanji:'男',reading:'だん・おとこ',romaji:'dan / otoko',meaning:'laki-laki',example:'あの男の人は先生です。',exampleReading:'あの おとこ の ひと は せんせい です。',exampleMeaning:'Pria itu adalah guru.'},
+{id:'n5-k-25',kanji:'女',reading:'じょ・おんな',romaji:'jo / onna',meaning:'perempuan',example:'あの女の人は看護師です。',exampleReading:'あの おんな の ひと は かんごし です。',exampleMeaning:'Perempuan itu adalah perawat.'},
+{id:'n5-k-26',kanji:'子',reading:'し・こ',romaji:'shi / ko',meaning:'anak',example:'子どもが二人います。',exampleReading:'こども が ふたり います。',exampleMeaning:'Ada dua anak.'},
+{id:'n5-k-27',kanji:'学',reading:'がく・まなぶ',romaji:'gaku / manabu',meaning:'belajar / ilmu',example:'日本語を学びます。',exampleReading:'にほんご を まなびます。',exampleMeaning:'Saya belajar bahasa Jepang.'},
+{id:'n5-k-28',kanji:'校',reading:'こう',romaji:'kou',meaning:'sekolah',example:'学校へ行きます。',exampleReading:'がっこう へ いきます。',exampleMeaning:'Saya pergi ke sekolah.'},
+{id:'n5-k-29',kanji:'生',reading:'せい・しょう・いきる',romaji:'sei / shou / ikiru',meaning:'hidup / lahir / pelajar',example:'私は学生です。',exampleReading:'わたし は がくせい です。',exampleMeaning:'Saya seorang pelajar.'},
+{id:'n5-k-30',kanji:'先',reading:'せん・さき',romaji:'sen / saki',meaning:'depan / sebelumnya',example:'先生に聞きます。',exampleReading:'せんせい に ききます。',exampleMeaning:'Saya bertanya kepada guru.'}
 ];
 const n5Vocab=[
 {id:'n5-v-07',term:'話す',reading:'はなす',meaning:'berbicara',example:'ゆっくり話してください。',exampleMeaning:'Tolong bicara pelan-pelan.'},
@@ -28,14 +43,41 @@ const n5Vocab=[
 {id:'n5-v-18',term:'寝る',reading:'ねる',meaning:'tidur',example:'十一時に寝ます。',exampleMeaning:'Saya tidur pukul sebelas.'},
 {id:'n5-v-19',term:'働く',reading:'はたらく',meaning:'bekerja',example:'病院で働いています。',exampleMeaning:'Saya bekerja di rumah sakit.'},
 {id:'n5-v-20',term:'勉強する',reading:'べんきょうする',meaning:'belajar',example:'毎日日本語を勉強します。',exampleMeaning:'Saya belajar bahasa Jepang setiap hari.'},
-{id:'n5-v-21',term:'分かる',reading:'わかる',meaning:'mengerti',example:'少し分かります。',exampleMeaning:'Saya mengerti sedikit.'}
+{id:'n5-v-21',term:'分かる',reading:'わかる',meaning:'mengerti',example:'少し分かります。',exampleMeaning:'Saya mengerti sedikit.'},
+{id:'n5-v-22',term:'本',reading:'ほん',meaning:'buku',example:'日本語の本を読みます。',exampleMeaning:'Saya membaca buku bahasa Jepang.'},
+{id:'n5-v-23',term:'名前',reading:'なまえ',meaning:'nama',example:'名前を書いてください。',exampleMeaning:'Tolong tulis nama.'},
+{id:'n5-v-24',term:'先生',reading:'せんせい',meaning:'guru / dokter (sapaan)',example:'先生に質問します。',exampleMeaning:'Saya bertanya kepada guru.'},
+{id:'n5-v-25',term:'学生',reading:'がくせい',meaning:'pelajar / mahasiswa',example:'妹は学生です。',exampleMeaning:'Adik perempuan saya seorang pelajar.'},
+{id:'n5-v-26',term:'友達',reading:'ともだち',meaning:'teman',example:'友達と話します。',exampleMeaning:'Saya berbicara dengan teman.'},
+{id:'n5-v-27',term:'時間',reading:'じかん',meaning:'waktu / durasi',example:'少し時間があります。',exampleMeaning:'Saya punya sedikit waktu.'},
+{id:'n5-v-28',term:'今日',reading:'きょう',meaning:'hari ini',example:'今日は仕事です。',exampleMeaning:'Hari ini saya bekerja.'},
+{id:'n5-v-29',term:'明日',reading:'あした',meaning:'besok',example:'明日は休みです。',exampleMeaning:'Besok libur.'},
+{id:'n5-v-30',term:'昨日',reading:'きのう',meaning:'kemarin',example:'昨日は雨でした。',exampleMeaning:'Kemarin hujan.'},
+{id:'n5-v-31',term:'朝',reading:'あさ',meaning:'pagi',example:'朝ご飯を食べます。',exampleMeaning:'Saya makan sarapan.'},
+{id:'n5-v-32',term:'昼',reading:'ひる',meaning:'siang',example:'昼に休みます。',exampleMeaning:'Saya beristirahat siang hari.'},
+{id:'n5-v-33',term:'夜',reading:'よる',meaning:'malam',example:'夜は早く寝ます。',exampleMeaning:'Malam hari saya tidur lebih awal.'},
+{id:'n5-v-34',term:'毎日',reading:'まいにち',meaning:'setiap hari',example:'毎日日本語を勉強します。',exampleMeaning:'Saya belajar bahasa Jepang setiap hari.'},
+{id:'n5-v-35',term:'右',reading:'みぎ',meaning:'kanan',example:'右に曲がってください。',exampleMeaning:'Tolong belok ke kanan.'},
+{id:'n5-v-36',term:'左',reading:'ひだり',meaning:'kiri',example:'左にトイレがあります。',exampleMeaning:'Ada toilet di sebelah kiri.'},
+{id:'n5-v-37',term:'前',reading:'まえ',meaning:'depan / sebelum',example:'駅の前で待ちます。',exampleMeaning:'Saya menunggu di depan stasiun.'},
+{id:'n5-v-38',term:'後ろ',reading:'うしろ',meaning:'belakang',example:'後ろを見てください。',exampleMeaning:'Tolong lihat ke belakang.'},
+{id:'n5-v-39',term:'外',reading:'そと',meaning:'luar',example:'外は寒いです。',exampleMeaning:'Di luar dingin.'},
+{id:'n5-v-40',term:'近い',reading:'ちかい',meaning:'dekat',example:'駅はここから近いです。',exampleMeaning:'Stasiun dekat dari sini.'},
+{id:'n5-v-41',term:'遠い',reading:'とおい',meaning:'jauh',example:'病院は少し遠いです。',exampleMeaning:'Rumah sakit agak jauh.'}
 ];
 const n5Grammar=[
 {id:'n5-g-04',title:'～てください',meaning:'tolong lakukan ～',pattern:'Vて + ください',explanation:'Permintaan sopan agar lawan bicara melakukan sesuatu.',example:'ここに名前を書いてください。',exampleReading:'ここ に なまえ を かいて ください。',exampleMeaning:'Tolong tulis nama di sini.',contrast:'～ないでください = tolong jangan melakukan.'},
 {id:'n5-g-05',title:'～ないでください',meaning:'tolong jangan melakukan ～',pattern:'Vない + でください',explanation:'Permintaan sopan agar seseorang tidak melakukan sesuatu.',example:'ここで写真を撮らないでください。',exampleReading:'ここ で しゃしん を とらないで ください。',exampleMeaning:'Tolong jangan mengambil foto di sini.',contrast:'～てください = tolong lakukan.'},
 {id:'n5-g-06',title:'～ましょう',meaning:'ayo / mari melakukan ～',pattern:'Vます → ます diganti ましょう',explanation:'Dipakai untuk mengajak melakukan sesuatu bersama.',example:'一緒に勉強しましょう。',exampleReading:'いっしょ に べんきょう しましょう。',exampleMeaning:'Mari belajar bersama.',contrast:'～ませんか lebih lembut sebagai ajakan.'},
 {id:'n5-g-07',title:'～ませんか',meaning:'maukah / bagaimana kalau ～',pattern:'Vます → ませんか',explanation:'Ajakan atau undangan yang lebih halus.',example:'一緒にご飯を食べませんか。',exampleReading:'いっしょ に ごはん を たべませんか。',exampleMeaning:'Mau makan bersama?',contrast:'～ましょう lebih langsung.'},
-{id:'n5-g-08',title:'～から',meaning:'karena ～',pattern:'Kalimat + から',explanation:'Menjelaskan alasan atau sebab.',example:'明日は休みですから、ゆっくり寝ます。',exampleReading:'あした は やすみ です から、ゆっくり ねます。',exampleMeaning:'Karena besok libur, saya akan tidur santai.',contrast:'ので juga menyatakan sebab dengan nuansa lebih lembut.'}
+{id:'n5-g-08',title:'～から',meaning:'karena ～',pattern:'Kalimat + から',explanation:'Menjelaskan alasan atau sebab.',example:'明日は休みですから、ゆっくり寝ます。',exampleReading:'あした は やすみ です から、ゆっくり ねます。',exampleMeaning:'Karena besok libur, saya akan tidur santai.',contrast:'ので juga menyatakan sebab dengan nuansa lebih lembut.'},
+{id:'n5-g-09',title:'NはNです',meaning:'A adalah B',pattern:'N1 は N2 です',explanation:'Pola dasar untuk menjelaskan identitas, pekerjaan, atau kategori secara sopan.',example:'私は介護職です。',exampleReading:'わたし は かいごしょく です。',exampleMeaning:'Saya adalah pekerja kaigo.',contrast:'は menandai topik; tidak selalu sama dengan subjek gramatikal.'},
+{id:'n5-g-10',title:'NはNじゃありません',meaning:'A bukan B',pattern:'N1 は N2 じゃありません',explanation:'Bentuk negatif sopan yang umum dalam percakapan. ではありません lebih formal.',example:'今日は休みじゃありません。',exampleReading:'きょう は やすみ じゃ ありません。',exampleMeaning:'Hari ini bukan hari libur.',contrast:'です = positif; じゃありません / ではありません = negatif.'},
+{id:'n5-g-11',title:'Nがあります',meaning:'ada / mempunyai benda atau hal',pattern:'N が あります',explanation:'Dipakai untuk benda, tempat, acara, atau hal yang tidak dianggap makhluk hidup.',example:'明日、会議があります。',exampleReading:'あした、かいぎ が あります。',exampleMeaning:'Besok ada rapat.',contrast:'Untuk orang atau hewan biasanya memakai います.'},
+{id:'n5-g-12',title:'Nがいます',meaning:'ada orang / hewan',pattern:'N が います',explanation:'Dipakai untuk keberadaan orang dan hewan.',example:'部屋に看護師さんがいます。',exampleReading:'へや に かんごしさん が います。',exampleMeaning:'Ada perawat di kamar.',contrast:'Benda dan acara biasanya memakai あります.'},
+{id:'n5-g-13',title:'場所にNがあります／います',meaning:'ada N di suatu tempat',pattern:'Tempat + に + N + が + あります／います',explanation:'に menunjukkan lokasi keberadaan sesuatu atau seseorang.',example:'一階にトイレがあります。',exampleReading:'いっかい に トイレ が あります。',exampleMeaning:'Ada toilet di lantai satu.',contrast:'で biasanya menunjukkan tempat berlangsungnya suatu tindakan.'},
+{id:'n5-g-14',title:'場所でVます',meaning:'melakukan kegiatan di suatu tempat',pattern:'Tempat + で + Vます',explanation:'で menunjukkan tempat suatu tindakan berlangsung.',example:'食堂で昼ご飯を食べます。',exampleReading:'しょくどう で ひるごはん を たべます。',exampleMeaning:'Saya makan siang di ruang makan.',contrast:'に dipakai untuk keberadaan atau tujuan; で untuk tempat melakukan tindakan.'},
+{id:'n5-g-15',title:'時間にVます',meaning:'melakukan sesuatu pada waktu tertentu',pattern:'Waktu tertentu + に + Vます',explanation:'に menandai waktu tertentu seperti jam atau tanggal.',example:'七時に起きます。',exampleReading:'しちじ に おきます。',exampleMeaning:'Saya bangun pukul tujuh.',contrast:'今日・明日・毎日など sering tidak memakai に.'}
 ];
 const kaigoVocab=[
 {id:'k-v-13',term:'体温',reading:'たいおん',meaning:'suhu tubuh',category:'バイタル',example:'体温は36.8度です。',exampleMeaning:'Suhu tubuh 36,8°C.'},
@@ -57,7 +99,27 @@ const kaigoVocab=[
 {id:'k-v-29',term:'見守り',reading:'みまもり',meaning:'pengawasan / mendampingi sambil mengamati',category:'ADL・移動',example:'トイレへの移動時は見守りが必要です。',exampleMeaning:'Saat berpindah ke toilet perlu pengawasan.'},
 {id:'k-v-30',term:'転倒',reading:'てんとう',meaning:'jatuh',category:'安全・リスク',example:'昨夜、転倒がありました。',exampleMeaning:'Tadi malam terjadi jatuh.'},
 {id:'k-v-31',term:'不穏',reading:'ふおん',meaning:'gelisah / agitasi',category:'認知症・精神',example:'夜間に不穏がみられました。',exampleMeaning:'Terlihat agitasi pada malam hari.'},
-{id:'k-v-32',term:'頓服',reading:'とんぷく',meaning:'obat PRN / bila perlu',category:'薬・処置',example:'疼痛時に頓服薬を服用されています。',exampleMeaning:'Saat nyeri, pasien telah minum obat PRN.'}
+{id:'k-v-32',term:'頓服',reading:'とんぷく',meaning:'obat PRN / bila perlu',category:'薬・処置',example:'疼痛時に頓服薬を服用されています。',exampleMeaning:'Saat nyeri, pasien telah minum obat PRN.'},
+{id:'k-v-33',term:'介助',reading:'かいじょ',meaning:'bantuan dalam aktivitas sehari-hari',category:'介助・自立',example:'移乗時に介助が必要です。',exampleMeaning:'Saat transfer diperlukan bantuan.'},
+{id:'k-v-34',term:'全介助',reading:'ぜんかいじょ',meaning:'bantuan penuh',category:'介助・自立',example:'更衣は全介助です。',exampleMeaning:'Ganti pakaian membutuhkan bantuan penuh.'},
+{id:'k-v-35',term:'一部介助',reading:'いちぶかいじょ',meaning:'bantuan sebagian',category:'介助・自立',example:'食事は一部介助です。',exampleMeaning:'Makan membutuhkan bantuan sebagian.'},
+{id:'k-v-36',term:'自立',reading:'じりつ',meaning:'mandiri',category:'介助・自立',example:'食事動作は自立しています。',exampleMeaning:'Aktivitas makan dilakukan secara mandiri.'},
+{id:'k-v-37',term:'自立支援',reading:'じりつしえん',meaning:'dukungan agar pengguna tetap melakukan yang mampu dilakukan sendiri',category:'介助・自立',example:'できることはご本人にしていただくよう支援します。',exampleMeaning:'Kami mendukung agar hal yang masih mampu dilakukan tetap dilakukan sendiri oleh pengguna.'},
+{id:'k-v-38',term:'体位変換',reading:'たいいへんかん',meaning:'mengubah posisi tubuh',category:'ADL・移動',example:'体位変換を行いました。',exampleMeaning:'Perubahan posisi tubuh telah dilakukan.'},
+{id:'k-v-39',term:'更衣',reading:'こうい',meaning:'ganti pakaian',category:'清潔・更衣',example:'朝、更衣を行いました。',exampleMeaning:'Pagi hari dilakukan ganti pakaian.'},
+{id:'k-v-40',term:'清拭',reading:'せいしき',meaning:'membersihkan tubuh dengan lap',category:'清潔・更衣',example:'午前中に清拭を行いました。',exampleMeaning:'Pada pagi hari dilakukan pembersihan tubuh dengan lap.'},
+{id:'k-v-41',term:'口腔ケア',reading:'こうくうケア',meaning:'perawatan kebersihan mulut',category:'清潔・更衣',example:'食後に口腔ケアを行いました。',exampleMeaning:'Setelah makan dilakukan perawatan kebersihan mulut.'},
+{id:'k-v-42',term:'褥瘡',reading:'じょくそう',meaning:'luka tekan / pressure injury',category:'皮膚・褥瘡',example:'仙骨部に褥瘡があります。',exampleMeaning:'Ada luka tekan di daerah sakrum.'},
+{id:'k-v-43',term:'発赤',reading:'ほっせき',meaning:'kemerahan pada kulit',category:'皮膚・褥瘡',example:'右踵に発赤がみられます。',exampleMeaning:'Terlihat kemerahan pada tumit kanan.'},
+{id:'k-v-44',term:'皮膚剥離',reading:'ひふはくり',meaning:'kulit terkelupas / skin tear',category:'皮膚・褥瘡',example:'左前腕に皮膚剥離があります。',exampleMeaning:'Ada kulit terkelupas pada lengan bawah kiri.'},
+{id:'k-v-45',term:'離床',reading:'りしょう',meaning:'bangun / meninggalkan tempat tidur',category:'ADL・移動',example:'昼食時に離床されています。',exampleMeaning:'Saat makan siang pasien sudah bangun dari tempat tidur.'},
+{id:'k-v-46',term:'臥床',reading:'がしょう',meaning:'berbaring di tempat tidur',category:'ADL・移動',example:'昼食後は臥床されています。',exampleMeaning:'Setelah makan siang pasien berbaring di tempat tidur.'},
+{id:'k-v-47',term:'傾眠',reading:'けいみん',meaning:'cenderung mengantuk / mudah tertidur',category:'意識・状態',example:'午後は傾眠傾向がみられました。',exampleMeaning:'Sore hari terlihat kecenderungan mengantuk.'},
+{id:'k-v-48',term:'覚醒',reading:'かくせい',meaning:'terjaga / sadar',category:'意識・状態',example:'声かけで覚醒されました。',exampleMeaning:'Pasien terbangun setelah dipanggil.'},
+{id:'k-v-49',term:'ナースコール',reading:'ナースコール',meaning:'tombol panggil perawat',category:'業務・連携',example:'夜間にナースコールが3回ありました。',exampleMeaning:'Pada malam hari ada tiga kali panggilan nurse call.'},
+{id:'k-v-50',term:'食事介助',reading:'しょくじかいじょ',meaning:'bantuan saat makan',category:'食事・嚥下',example:'夕食は食事介助を行いました。',exampleMeaning:'Saat makan malam dilakukan bantuan makan.'},
+{id:'k-v-51',term:'排泄介助',reading:'はいせつかいじょ',meaning:'bantuan saat eliminasi / toileting',category:'排泄',example:'排泄時に介助が必要です。',exampleMeaning:'Saat eliminasi diperlukan bantuan.'},
+{id:'k-v-52',term:'経過観察',reading:'けいかかんさつ',meaning:'pemantauan perkembangan kondisi',category:'業務・連携',example:'引き続き経過観察をお願いします。',exampleMeaning:'Mohon lanjutkan pemantauan kondisi.'}
 ];
 const handoff=[
 {id:'h-03',
@@ -102,7 +164,51 @@ const handoff=[
   {text:'歩行時にふらつきがあります。',reading:'ほこうじ に ふらつき が あります。',meaning:'Saat berjalan masih ada sempoyongan.'}
  ],
  question:'Apa perhatian saat mobilisasi?',
- choices:['Harus lari agar stabil','Perlu pengawasan karena sempoyongan','Tidak boleh minum','Tidak ada perhatian khusus'],answer:1}
+ choices:['Harus lari agar stabil','Perlu pengawasan karena sempoyongan','Tidak boleh minum','Tidak ada perhatian khusus'],answer:1},
+{id:'h-07',
+ text:'井上さんは夜間にトイレ希望が3回ありました。いずれも歩行時にふらつきがみられたため、職員が付き添って対応しています。転倒はありませんでした。',
+ reading:'いのうえさん は やかん に トイレきぼう が さんかい ありました。いずれも ほこうじ に ふらつき が みられた ため、しょくいん が つきそって たいおう して います。てんとう は ありません でした。',
+ meaning:'Inoue-san tiga kali ingin ke toilet pada malam hari. Karena setiap kali berjalan tampak sempoyongan, staf mendampingi. Tidak terjadi jatuh.',
+ segments:[
+  {text:'井上さんは夜間にトイレ希望が3回ありました。',reading:'いのうえさん は やかん に トイレきぼう が さんかい ありました。',meaning:'Inoue-san tiga kali ingin ke toilet pada malam hari.'},
+  {text:'いずれも歩行時にふらつきがみられたため、職員が付き添って対応しています。',reading:'いずれも ほこうじ に ふらつき が みられた ため、しょくいん が つきそって たいおう して います。',meaning:'Karena setiap kali berjalan tampak sempoyongan, staf mendampingi.'},
+  {text:'転倒はありませんでした。',reading:'てんとう は ありません でした。',meaning:'Tidak terjadi jatuh.'}
+ ],
+ question:'Apa yang penting diteruskan ke shift berikutnya?',
+ choices:['Perhatikan keselamatan saat ke toilet karena ada sempoyongan','Pasien harus puasa','Pasien mengalami muntah berulang','Tidak perlu pengawasan saat berjalan'],answer:0},
+{id:'h-08',
+ text:'中村さんは右踵に発赤がみられました。皮膚剥離はありません。移動や更衣の際も皮膚状態の確認をお願いします。',
+ reading:'なかむらさん は みぎかかと に ほっせき が みられました。ひふはくり は ありません。いどう や こうい の さい も ひふじょうたい の かくにん を おねがいします。',
+ meaning:'Nakamura-san tampak kemerahan pada tumit kanan. Tidak ada kulit terkelupas. Mohon periksa kondisi kulit juga saat mobilisasi dan ganti pakaian.',
+ segments:[
+  {text:'中村さんは右踵に発赤がみられました。',reading:'なかむらさん は みぎかかと に ほっせき が みられました。',meaning:'Nakamura-san tampak kemerahan pada tumit kanan.'},
+  {text:'皮膚剥離はありません。',reading:'ひふはくり は ありません。',meaning:'Tidak ada kulit terkelupas.'},
+  {text:'移動や更衣の際も皮膚状態の確認をお願いします。',reading:'いどう や こうい の さい も ひふじょうたい の かくにん を おねがいします。',meaning:'Mohon periksa kondisi kulit juga saat mobilisasi dan ganti pakaian.'}
+ ],
+ question:'Bagian mana yang perlu diperhatikan?',
+ choices:['Tumit kanan karena ada kemerahan','Telinga kiri karena nyeri','Perut karena muntah','Mata karena penglihatan menurun'],answer:0},
+{id:'h-09',
+ text:'小林さんは昼食時にむせが1回ありました。食事摂取量は7割で、水分はとろみ付きで摂取されています。食後の呼吸状態に変化はありません。',
+ reading:'こばやしさん は ちゅうしょくじ に むせ が いっかい ありました。しょくじせっしゅりょう は ななわり で、すいぶん は とろみつき で せっしゅ されて います。しょくご の こきゅうじょうたい に へんか は ありません。',
+ meaning:'Kobayashi-san tersedak satu kali saat makan siang. Asupan makan 70% dan cairan dikonsumsi dengan pengental. Setelah makan tidak ada perubahan kondisi pernapasan.',
+ segments:[
+  {text:'小林さんは昼食時にむせが1回ありました。',reading:'こばやしさん は ちゅうしょくじ に むせ が いっかい ありました。',meaning:'Kobayashi-san tersedak satu kali saat makan siang.'},
+  {text:'食事摂取量は7割で、水分はとろみ付きで摂取されています。',reading:'しょくじせっしゅりょう は ななわり で、すいぶん は とろみつき で せっしゅ されて います。',meaning:'Asupan makan 70% dan cairan dikonsumsi dengan pengental.'},
+  {text:'食後の呼吸状態に変化はありません。',reading:'しょくご の こきゅうじょうたい に へんか は ありません。',meaning:'Setelah makan tidak ada perubahan kondisi pernapasan.'}
+ ],
+ question:'Informasi penting untuk makan/minum berikutnya?',
+ choices:['Perhatikan kembali kondisi menelan dan gunakan cairan sesuai kekentalan yang ditetapkan','Berikan cairan tanpa pengental','Hentikan semua makan dan minum tanpa instruksi','Tidak perlu memperhatikanむせ'],answer:0},
+{id:'h-10',
+ text:'松本さんは午後、傾眠傾向がみられました。声かけで覚醒し、体温36.6度、SpO₂97%でした。その後は会話できています。',
+ reading:'まつもとさん は ごご、けいみんけいこう が みられました。こえかけ で かくせい し、たいおん さんじゅうろくてんろくど、エスピーオーツー きゅうじゅうななパーセント でした。そのご は かいわ できて います。',
+ meaning:'Matsumoto-san sore hari tampak cenderung mengantuk. Setelah dipanggil beliau terbangun; suhu 36,6°C dan SpO₂ 97%. Setelah itu dapat bercakap-cakap.',
+ segments:[
+  {text:'松本さんは午後、傾眠傾向がみられました。',reading:'まつもとさん は ごご、けいみんけいこう が みられました。',meaning:'Matsumoto-san sore hari tampak cenderung mengantuk.'},
+  {text:'声かけで覚醒し、体温36.6度、SpO₂97%でした。',reading:'こえかけ で かくせい し、たいおん さんじゅうろくてんろくど、エスピーオーツー きゅうじゅうななパーセント でした。',meaning:'Setelah dipanggil beliau terbangun; suhu 36,6°C dan SpO₂ 97%.'},
+  {text:'その後は会話できています。',reading:'そのご は かいわ できて います。',meaning:'Setelah itu dapat bercakap-cakap.'}
+ ],
+ question:'Apa yang perlu terus diamati?',
+ choices:['Perubahan tingkat kesadaran dan kondisi umum','Warna rambut','Ukuran sepatu','Tidak perlu observasi lagi'],answer:0}
 ];
 function pushUnique(target,items){const ids=new Set(target.map(x=>x.id));items.forEach(item=>{if(!ids.has(item.id)){target.push(item);ids.add(item.id)}})}
 pushUnique(D.jlpt.N5.kanji,n5Kanji);pushUnique(D.jlpt.N5.vocab,n5Vocab);pushUnique(D.jlpt.N5.grammar,n5Grammar);pushUnique(D.kaigo.vocab,kaigoVocab);pushUnique(D.kaigo.handoff,handoff);
