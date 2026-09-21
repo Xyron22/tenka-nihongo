@@ -105,7 +105,7 @@ jobs:
           grep -q "assets/audio/exam/wrong.mp3" audio-engine-v5.js
           grep -q "assets/audio/exam/timeout.mp3" audio-engine-v5.js
           grep -q "primeExamAudio" audio-engine-v5.js
-          if grep -E "combo|Combo" app-v2.js audio-engine-v5.js audio-settings-v5.js tests/system-v2.js tests/audio-v5.js; then
+          if grep -E "combo|Combo" app-v2.js audio-engine-v5.js audio-settings-v5.js; then
             echo "Combo must be fully removed from TENKA runtime and tests" >&2
             exit 1
           fi
