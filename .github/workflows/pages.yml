@@ -83,7 +83,7 @@ jobs:
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js
 
-      - name: Exam Sound 5.1.1.1 test
+      - name: Exam Sound 5.1.1 test
         run: node tests/audio-v5.js
 
       - name: Verify clean runtime architecture
