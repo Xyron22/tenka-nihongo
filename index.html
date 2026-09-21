@@ -7,27 +7,27 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="TENKA">
-  <link rel="manifest" href="manifest.webmanifest?v=5.1.1">
-  <link rel="icon" href="assets/icon.svg?v=5.1.1" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=5.1.1">
+  <link rel="manifest" href="manifest.webmanifest?v=5.2.0">
+  <link rel="icon" href="assets/icon.svg?v=5.2.0" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=5.2.0">
   <title>TENKA 日本語</title>
 </head>
 <body>
   <main id="app" class="app-shell">
     <div class="topbar"><div><div class="brand">TENKA 日本語</div><div class="subtle">JLPT • Bunpou • Kaigo</div></div></div>
     <section class="hero"><h1 id="boot-title">読み込み中…</h1><p id="boot-message">TENKA sedang menyiapkan sistem belajar.</p></section>
-    <div id="boot-detail" class="muted-box">Menyiapkan TENKA Core 2.1.1 + Exam Sound 5.1.1…</div>
+    <div id="boot-detail" class="muted-box">Menyiapkan TENKA Core 2.2.0 + Exam Sound 5.1.1…</div>
   </main>
   <div id="toast" aria-live="polite"></div>
   <noscript><div style="padding:24px;color:white">TENKA membutuhkan JavaScript.</div></noscript>
   <script>
   (function(){
-    var CORE_VERSION='2.1.1';
+    var CORE_VERSION='2.2.0';
     var AUDIO_VERSION='5.1.1';
     var SOUND_PACK_VERSION='3.0.0';
-    var CACHE_VERSION='5.1.1';
-    var CLEAN_KEY='tenka-system-audit-clean-511';
-    var RELOAD_KEY='tenka-system-audit-reload-511';
+    var CACHE_VERSION='5.2.0';
+    var CLEAN_KEY='tenka-system-audit-clean-520';
+    var RELOAD_KEY='tenka-system-audit-reload-520';
     var title=document.getElementById('boot-title'),message=document.getElementById('boot-message'),detail=document.getElementById('boot-detail');
     function setDetail(text){if(detail)detail.textContent=text}
     function fail(text){if(title)title.textContent='読み込みエラー';if(message)message.textContent='TENKA belum berhasil mulai.';setDetail(text)}
