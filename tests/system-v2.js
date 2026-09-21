@@ -102,5 +102,18 @@ function setQuiz(c,{length=2,index=0,answer=0}){
   {
     const b=boot();b.context.go('settings');assert(b.html.includes('Tidak didukung Safari/iPhone'),'unsupported haptic should be explained');assert(/disabled aria-disabled="true"/.test(b.html),'unsupported haptic must be disabled');
   }
+  {
+    const b=boot(),s=b.context.TENKA_CORE.state;
+    s.level='N5';
+    for(const view of ['home','jlpt','level','grammar','kaigo','daily','progress','settings']){
+      b.context.go(view);
+      assert(b.html.length>80,'route '+view+' must render');
+      assert(!b.html.includes('undefined'),'route '+view+' must not leak undefined');
+    }
+    b.context.openFlash('N5','vocab');
+    assert(s.view==='flash'&&b.html.includes('聞く'),'N5 flash route');
+    b.context.go('kaigo');b.context.openKaigoFlash();
+    assert(s.view==='flash'&&b.html.includes('体温'),'Kaigo flash route');
+  }
   console.log('TENKA Core 2 system tests passed');
 })().catch(e=>{console.error(e);process.exit(1)});
