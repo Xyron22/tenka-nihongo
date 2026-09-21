@@ -12,5 +12,13 @@ for(const level of ['N5','N4','N3','N2','N1']){
 }
 assert(Array.isArray(D.kaigo.vocab)&&Array.isArray(D.kaigo.handoff),'Kaigo structure');
 for(const item of [...D.kaigo.vocab,...D.kaigo.handoff]){assert(item.id,'Kaigo item without id');assert(!ids.has(item.id),'duplicate id '+item.id);ids.add(item.id)}
-for(const h of D.kaigo.handoff){assert(Array.isArray(h.choices)&&Number.isInteger(h.answer)&&h.answer>=0&&h.answer<h.choices.length,'bad handoff '+h.id)}
+for(const h of D.kaigo.handoff){
+ assert(Array.isArray(h.choices)&&Number.isInteger(h.answer)&&h.answer>=0&&h.answer<h.choices.length,'bad handoff '+h.id);
+ assert(Array.isArray(h.segments)&&h.segments.length>=2,'handoff must be sentence-segmented '+h.id);
+ for(const seg of h.segments){
+  assert(seg.text&&seg.text.endsWith('。'),'handoff segment text '+h.id);
+  assert(seg.reading&&seg.meaning,'handoff segment reading/meaning '+h.id);
+ }
+ assert(h.text===h.segments.map(x=>x.text).join(''),'handoff text must equal segment join '+h.id);
+}
 console.log('TENKA data integrity passed:',ids.size,'unique ids');
