@@ -10,7 +10,7 @@ const mockData={
     N5:{kanji:[{id:'k1',kanji:'聞',reading:'ぶん・もん・きく',meaning:'kanji mendengar',example:'音を聞く',exampleMeaning:'mendengar suara'}],vocab:[{id:'v1',term:'聞く',reading:'きく',meaning:'mendengar'},{id:'v2',term:'読む',reading:'よむ',meaning:'membaca'},{id:'v3',term:'書く',reading:'かく',meaning:'menulis'},{id:'v4',term:'話す',reading:'はなす',meaning:'berbicara'}],grammar:[{id:'g1',title:'〜ます',meaning:'bentuk sopan',pattern:'Vます',explanation:'x',example:'食べます',exampleMeaning:'makan',contrast:''},{id:'g2',title:'〜てください',meaning:'tolong lakukan',pattern:'Vてください',explanation:'x',example:'見てください',exampleMeaning:'tolong lihat',contrast:''}]},
     N4:{kanji:[],vocab:[],grammar:[{id:'g4',title:'〜たことがあります',meaning:'pernah melakukan',pattern:'Vたことがあります',explanation:'x',example:'行ったことがあります',exampleMeaning:'pernah pergi',contrast:''}]},N3:{kanji:[],vocab:[],grammar:[]},N2:{kanji:[],vocab:[],grammar:[]},N1:{kanji:[],vocab:[],grammar:[]}
   },
-  kaigo:{vocab:[{id:'kg1',term:'体温',reading:'たいおん',meaning:'suhu tubuh',category:'バイタル'},{id:'kg2',term:'排便',reading:'はいべん',meaning:'buang air besar',category:'排泄'}],handoff:[{id:'h1',text:'体温は37度です。食事は5割です。',reading:'たいおん は さんじゅうななど です。しょくじ は ごわり です。',meaning:'Suhu 37 derajat. Makan 50%.',segments:[{text:'体温は37度です。',reading:'たいおん は さんじゅうななど です。',meaning:'Suhu 37 derajat.'},{text:'食事は5割です。',reading:'しょくじ は ごわり です。',meaning:'Makan 50%.'}],question:'berapa?',choices:['37','40'],answer:0}]}
+  kaigo:{vocab:[{id:'kg1',term:'体温',reading:'たいおん',meaning:'suhu tubuh',category:'バイタル'},{id:'kg2',term:'排便',reading:'はいべん',meaning:'buang air besar',category:'排泄'}],handoff:[{id:'h1',text:'体温は37度です。食事は5割です。',reading:'たいおん は さんじゅうななど です。しょくじ は ごわり です。',meaning:'Suhu 37 derajat. Makan 50%.',segments:[{text:'体温は37度です。',reading:'たいおん は さんじゅうななど です。',meaning:'Suhu 37 derajat.'},{text:'食事は5割です。',reading:'しょくじ は ごわり です。',meaning:'Makan 50%.'}],question:'berapa?',choices:['37','40'],answer:0}],houkoku:[{id:'r1',title:'転倒',examArea:'コミュニケーション技術',situation:'A-san sudah duduk di lantai saat ditemukan.',pieces:['Aさんですが、','私が見た時には床に座っておられました。','状態の確認をお願いします。'],reading:'エーさん ですが、わたし が みた とき には ゆか に すわって おられました。じょうたい の かくにん を おねがいします。',meaning:'Model laporan jatuh.',note:'Laporkan fakta yang benar-benar terlihat.'}]}
 };
 
 function boot(){
@@ -51,7 +51,7 @@ function setQuiz(c,{length=2,index=0,answer=0}){
 
 (async()=>{
   {
-    const b=boot();assert(b.context.TENKA_APP_VERSION==='2.2.0','app version');
+    const b=boot();assert(b.context.TENKA_APP_VERSION==='2.3.0','app version');
     assert(b.html.includes('始めよう！'),'home CTA should be start when no due');
     b.context.homePrimary();assert(b.context.TENKA_CORE.state.view==='daily','home start should open Daily');
   }
@@ -138,6 +138,28 @@ function setQuiz(c,{length=2,index=0,answer=0}){
     b.context.openHandoffPractice();
     assert(s.view==='kaigo'&&s.handoffSession===null,'completed handoff library must not automatically restart from case 1');
     assert(b.html.includes('1/1 kasus dikuasai'),'Kaigo screen must count only completed current cases');
+  }
+  {
+    const b=boot(),s=b.context.TENKA_CORE.state;
+    b.context.openHoukokuPractice(0);
+    assert(s.view==='houkoku'&&s.houkokuSession.stage==='puzzle','Houkoku must open as a puzzle session');
+    assert(b.html.includes('報告 Practice')&&b.html.includes('A-san sudah duduk di lantai'),'Houkoku scenario must render');
+    s.houkokuSession.selected=[1,0,2];s.houkokuSession.remaining=[];b.context.houkokuCheck();
+    assert(s.houkokuSession.checked&&s.houkokuSession.correct===false,'wrong Houkoku order must be rejected');
+    assert(b.events.at(-1)==='wrong','wrong Houkoku order must emit wrong SFX');
+    b.context.houkokuReset();
+    b.context.houkokuPick(0);b.context.houkokuPick(1);b.context.houkokuPick(2);b.context.houkokuCheck();
+    assert(s.houkokuSession.correct===true,'correct Houkoku order must pass');
+    assert(b.events.at(-1)==='correct','correct Houkoku order must emit correct SFX');
+    assert(!!s.progress.houkokuDone.r1,'correct Houkoku must save completion');
+    b.context.houkokuShowResult();assert(s.houkokuSession.stage==='result'&&b.html.includes('報告モデル'),'correct Houkoku must show model report');
+    b.context.finishHoukoku();assert(s.view==='kaigo'&&s.houkokuSession===null,'Houkoku finish must return to Kaigo menu');
+  }
+  {
+    const b=boot(),s=b.context.TENKA_CORE.state;b.context.go('kaigo');s.progress.houkokuDone.r1=new Date().toISOString();b.context.TENKA_CORE.render();
+    b.context.openHoukokuPractice();
+    assert(s.view==='kaigo'&&s.houkokuSession===null,'completed Houkoku library must not automatically restart');
+    assert(b.html.includes('1/1 kasus'),'Kaigo screen must show current Houkoku completion count');
   }
   {
     const b=boot();b.context.go('settings');assert(b.html.includes('Tidak didukung Safari/iPhone'),'unsupported haptic should be explained');assert(/disabled aria-disabled="true"/.test(b.html),'unsupported haptic must be disabled');
