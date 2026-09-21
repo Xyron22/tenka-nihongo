@@ -40,30 +40,69 @@ const n5Grammar=[
 const kaigoVocab=[
 {id:'k-v-13',term:'体温',reading:'たいおん',meaning:'suhu tubuh',category:'バイタル',example:'体温は36.8度です。',exampleMeaning:'Suhu tubuh 36,8°C.'},
 {id:'k-v-14',term:'脈拍',reading:'みゃくはく',meaning:'denyut nadi',category:'バイタル',example:'脈拍を測ります。',exampleMeaning:'Mengukur denyut nadi.'},
-{id:'k-v-15',term:'呼吸数',reading:'こきゅうすう',meaning:'frekuensi napas',category:'バイタル',example:'呼吸数は20回です。',exampleMeaning:'Frekuensi napas 20 kali.'},
+{id:'k-v-15',term:'呼吸数',reading:'こきゅうすう',meaning:'frekuensi napas',category:'バイタル',example:'呼吸数は1分間に20回です。',exampleMeaning:'Frekuensi napas 20 kali per menit.'},
 {id:'k-v-16',term:'SpO₂',reading:'エスピーオーツー',meaning:'saturasi oksigen',category:'バイタル',example:'SpO₂は94パーセントです。',exampleMeaning:'SpO₂ 94%.'},
-{id:'k-v-17',term:'呼吸苦',reading:'こきゅうく',meaning:'sesak napas',category:'Kondisi pasien',example:'呼吸苦の訴えがあります。',exampleMeaning:'Ada keluhan sesak napas.'},
-{id:'k-v-18',term:'咳嗽',reading:'がいそう',meaning:'batuk',category:'Kondisi pasien',example:'咳嗽が続いています。',exampleMeaning:'Batuk terus berlanjut.'},
-{id:'k-v-19',term:'痰',reading:'たん',meaning:'dahak / sputum',category:'Kondisi pasien',example:'痰が多く出ています。',exampleMeaning:'Dahak keluar cukup banyak.'},
-{id:'k-v-20',term:'倦怠感',reading:'けんたいかん',meaning:'rasa lelah / malaise',category:'Kondisi pasien',example:'倦怠感があるとのことです。',exampleMeaning:'Pasien mengatakan merasa lelah.'},
+{id:'k-v-17',term:'呼吸苦',reading:'こきゅうく',meaning:'sesak napas',category:'状態・症状',example:'呼吸苦の訴えがあります。',exampleMeaning:'Ada keluhan sesak napas.'},
+{id:'k-v-18',term:'咳嗽',reading:'がいそう',meaning:'batuk',category:'状態・症状',example:'咳嗽が続いています。',exampleMeaning:'Batuk terus berlanjut.'},
+{id:'k-v-19',term:'痰',reading:'たん',meaning:'dahak / sputum',category:'状態・症状',example:'痰が多く出ています。',exampleMeaning:'Dahak keluar cukup banyak.'},
+{id:'k-v-20',term:'倦怠感',reading:'けんたいかん',meaning:'rasa lelah / malaise',category:'状態・症状',example:'倦怠感があるとのことです。',exampleMeaning:'Pasien mengatakan merasa lelah.'},
 {id:'k-v-21',term:'食欲不振',reading:'しょくよくふしん',meaning:'nafsu makan menurun',category:'食事・嚥下',example:'食欲不振が続いています。',exampleMeaning:'Nafsu makan menurun masih berlanjut.'},
 {id:'k-v-22',term:'むせ',reading:'むせ',meaning:'tersedak / batuk saat menelan',category:'食事・嚥下',example:'水分摂取時にむせがありました。',exampleMeaning:'Ada tersedak saat minum cairan.'},
 {id:'k-v-23',term:'尿量',reading:'にょうりょう',meaning:'jumlah urin',category:'排泄',example:'尿量を確認してください。',exampleMeaning:'Tolong periksa jumlah urin.'},
 {id:'k-v-24',term:'失禁',reading:'しっきん',meaning:'inkontinensia',category:'排泄',example:'夜間に尿失禁がありました。',exampleMeaning:'Ada inkontinensia urin pada malam hari.'},
 {id:'k-v-25',term:'便秘',reading:'べんぴ',meaning:'konstipasi / sembelit',category:'排泄',example:'三日間排便なく、便秘傾向です。',exampleMeaning:'Sudah tiga hari tidak BAB dan cenderung konstipasi.'},
 {id:'k-v-26',term:'下痢',reading:'げり',meaning:'diare',category:'排泄',example:'本日、下痢便が二回ありました。',exampleMeaning:'Hari ini ada BAB diare dua kali.'},
-{id:'k-v-27',term:'移乗',reading:'いじょう',meaning:'transfer posisi',category:'ADL・移動',example:'車椅子への移乗は二人介助です。',exampleMeaning:'Transfer ke kursi roda membutuhkan bantuan dua orang.'},
+{id:'k-v-27',term:'移乗',reading:'いじょう',meaning:'transfer / berpindah dari satu permukaan ke permukaan lain',category:'ADL・移動',example:'車椅子への移乗は二人介助です。',exampleMeaning:'Transfer ke kursi roda membutuhkan bantuan dua orang.'},
 {id:'k-v-28',term:'歩行',reading:'ほこう',meaning:'berjalan / ambulasi',category:'ADL・移動',example:'歩行時は見守りが必要です。',exampleMeaning:'Saat berjalan perlu pengawasan.'},
-{id:'k-v-29',term:'見守り',reading:'みまもり',meaning:'pengawasan / standby',category:'ケア',example:'トイレ移動は見守りです。',exampleMeaning:'Perjalanan ke toilet cukup dengan pengawasan.'},
-{id:'k-v-30',term:'転倒',reading:'てんとう',meaning:'jatuh',category:'リスク',example:'昨夜、転倒がありました。',exampleMeaning:'Tadi malam terjadi jatuh.'},
-{id:'k-v-31',term:'不穏',reading:'ふおん',meaning:'gelisah / agitasi',category:'認知・精神',example:'夜間に不穏がみられました。',exampleMeaning:'Terlihat agitasi pada malam hari.'},
-{id:'k-v-32',term:'頓服',reading:'とんぷく',meaning:'obat PRN / bila perlu',category:'薬・処置',example:'疼痛時に頓服を使用しました。',exampleMeaning:'Obat PRN digunakan saat nyeri.'}
+{id:'k-v-29',term:'見守り',reading:'みまもり',meaning:'pengawasan / mendampingi sambil mengamati',category:'ADL・移動',example:'トイレへの移動時は見守りが必要です。',exampleMeaning:'Saat berpindah ke toilet perlu pengawasan.'},
+{id:'k-v-30',term:'転倒',reading:'てんとう',meaning:'jatuh',category:'安全・リスク',example:'昨夜、転倒がありました。',exampleMeaning:'Tadi malam terjadi jatuh.'},
+{id:'k-v-31',term:'不穏',reading:'ふおん',meaning:'gelisah / agitasi',category:'認知症・精神',example:'夜間に不穏がみられました。',exampleMeaning:'Terlihat agitasi pada malam hari.'},
+{id:'k-v-32',term:'頓服',reading:'とんぷく',meaning:'obat PRN / bila perlu',category:'薬・処置',example:'疼痛時に頓服薬を服用されています。',exampleMeaning:'Saat nyeri, pasien telah minum obat PRN.'}
 ];
 const handoff=[
-{id:'h-03',text:'山田さんですが、夕食時にむせが二回ありました。SpO₂の低下はなく、その後は落ち着いています。水分はとろみ付きでお願いします。',reading:'やまださん ですが、ゆうしょくじ に むせ が にかい ありました。エスピーオーツー の ていか は なく、そのご は おちついて います。すいぶん は とろみつき で おねがいします。',meaning:'Yamada-san tersedak dua kali saat makan malam. Tidak ada penurunan SpO₂. Cairan mohon diberikan dengan pengental.',question:'Hal terpenting untuk shift berikutnya?',choices:['Berikan cairan dengan pengental dan perhatikan tersedak','Pasien harus puasa total','Pasien mengalami perdarahan','Pasien boleh berjalan sendiri'],answer:0},
-{id:'h-04',text:'鈴木さんは夜間トイレに行こうとして一人で立ち上がることがありました。転倒歴がありますので、移動時は必ず見守りをお願いします。',reading:'すずきさん は やかん トイレ に いこう として ひとり で たちあがる こと が ありました。てんとうれき が あります ので、いどうじ は かならず みまもり を おねがいします。',meaning:'Suzuki-san sempat berdiri sendiri untuk ke toilet. Karena ada riwayat jatuh, mohon selalu diawasi saat berpindah.',question:'Risiko utama pasien?',choices:['Aspirasi','Jatuh saat berpindah','Demam tinggi','Konstipasi'],answer:1},
-{id:'h-05',text:'高橋さん、朝から食欲がなく、朝食は二割程度です。水分は300ミリリットル摂取できています。発熱や嘔吐はありません。',reading:'たかはしさん、あさ から しょくよく が なく、ちょうしょく は にわり ていど です。すいぶん は さんびゃくミリリットル せっしゅ できて います。はつねつ や おうと は ありません。',meaning:'Takahashi-san sejak pagi tidak nafsu makan, sarapan sekitar 20%, cairan 300 mL. Tidak ada demam atau muntah.',question:'Apa yang perlu terus dipantau?',choices:['Asupan makan dan cairan','Luka tekan saja','Pendengaran','Warna rambut'],answer:0},
-{id:'h-06',text:'佐々木さんは腰痛の訴えがあり、14時に頓服を使用しました。現在は痛みが軽減しています。歩行時はふらつきがあります。',reading:'ささきさん は ようつう の うったえ が あり、じゅうよじ に とんぷく を しよう しました。げんざい は いたみ が けいげん して います。ほこうじ は ふらつき が あります。',meaning:'Sasaki-san mengeluh nyeri pinggang dan mendapat obat PRN pukul 14. Nyeri berkurang, tetapi saat berjalan masih sempoyongan.',question:'Apa perhatian saat mobilisasi?',choices:['Harus lari agar stabil','Perlu pengawasan karena sempoyongan','Tidak boleh minum','Tidak ada perhatian khusus'],answer:1}
+{id:'h-03',
+ text:'山田さんですが、夕食時にむせが2回ありました。SpO₂の低下はなく、その後は落ち着いています。水分はとろみ付きでお願いします。',
+ reading:'やまださん ですが、ゆうしょくじ に むせ が にかい ありました。エスピーオーツー の ていか は なく、そのご は おちついて います。すいぶん は とろみつき で おねがいします。',
+ meaning:'Yamada-san tersedak dua kali saat makan malam. Tidak ada penurunan SpO₂ dan setelah itu kondisinya tenang. Cairan mohon diberikan dengan pengental.',
+ segments:[
+  {text:'山田さんですが、夕食時にむせが2回ありました。',reading:'やまださん ですが、ゆうしょくじ に むせ が にかい ありました。',meaning:'Mengenai Yamada-san, saat makan malam terjadi tersedak dua kali.'},
+  {text:'SpO₂の低下はなく、その後は落ち着いています。',reading:'エスピーオーツー の ていか は なく、そのご は おちついて います。',meaning:'Tidak ada penurunan SpO₂ dan setelah itu kondisinya tenang.'},
+  {text:'水分はとろみ付きでお願いします。',reading:'すいぶん は とろみつき で おねがいします。',meaning:'Cairan mohon diberikan dengan pengental.'}
+ ],
+ question:'Hal terpenting untuk shift berikutnya?',
+ choices:['Berikan cairan dengan pengental dan perhatikan tersedak','Pasien harus puasa total','Pasien mengalami perdarahan','Pasien boleh berjalan sendiri'],answer:0},
+{id:'h-04',
+ text:'鈴木さんは夜間、トイレに行こうとして一人で立ち上がることがありました。転倒歴がありますので、移動時は必ず見守りをお願いします。',
+ reading:'すずきさん は やかん、トイレ に いこう として ひとり で たちあがる こと が ありました。てんとうれき が あります ので、いどうじ は かならず みまもり を おねがいします。',
+ meaning:'Suzuki-san pada malam hari sempat berdiri sendiri untuk pergi ke toilet. Karena ada riwayat jatuh, mohon selalu lakukan pengawasan saat berpindah.',
+ segments:[
+  {text:'鈴木さんは夜間、トイレに行こうとして一人で立ち上がることがありました。',reading:'すずきさん は やかん、トイレ に いこう として ひとり で たちあがる こと が ありました。',meaning:'Suzuki-san pada malam hari sempat berdiri sendiri untuk pergi ke toilet.'},
+  {text:'転倒歴がありますので、移動時は必ず見守りをお願いします。',reading:'てんとうれき が あります ので、いどうじ は かならず みまもり を おねがいします。',meaning:'Karena ada riwayat jatuh, mohon selalu lakukan pengawasan saat berpindah.'}
+ ],
+ question:'Risiko utama pasien?',
+ choices:['Aspirasi','Jatuh saat berpindah','Demam tinggi','Konstipasi'],answer:1},
+{id:'h-05',
+ text:'高橋さんは朝から食欲がなく、朝食は2割程度です。水分は300ミリリットル摂取できています。発熱や嘔吐はありません。',
+ reading:'たかはしさん は あさ から しょくよく が なく、ちょうしょく は にわり ていど です。すいぶん は さんびゃくミリリットル せっしゅ できて います。はつねつ や おうと は ありません。',
+ meaning:'Takahashi-san sejak pagi tidak nafsu makan, sarapan sekitar 20%, dan cairan 300 mL. Tidak ada demam atau muntah.',
+ segments:[
+  {text:'高橋さんは朝から食欲がなく、朝食は2割程度です。',reading:'たかはしさん は あさ から しょくよく が なく、ちょうしょく は にわり ていど です。',meaning:'Takahashi-san sejak pagi tidak nafsu makan dan sarapan sekitar 20%.'},
+  {text:'水分は300ミリリットル摂取できています。',reading:'すいぶん は さんびゃくミリリットル せっしゅ できて います。',meaning:'Asupan cairan sekitar 300 mL.'},
+  {text:'発熱や嘔吐はありません。',reading:'はつねつ や おうと は ありません。',meaning:'Tidak ada demam atau muntah.'}
+ ],
+ question:'Apa yang perlu terus dipantau?',
+ choices:['Asupan makan dan cairan','Luka tekan saja','Pendengaran','Warna rambut'],answer:0},
+{id:'h-06',
+ text:'佐々木さんは腰痛の訴えがあり、14時に頓服薬を服用されています。現在は痛みが軽減しています。歩行時にふらつきがあります。',
+ reading:'ささきさん は ようつう の うったえ が あり、じゅうよじ に とんぷくやく を ふくよう されて います。げんざい は いたみ が けいげん して います。ほこうじ に ふらつき が あります。',
+ meaning:'Sasaki-san mengeluh nyeri pinggang dan pada pukul 14 telah minum obat PRN. Saat ini nyeri berkurang, tetapi saat berjalan masih sempoyongan.',
+ segments:[
+  {text:'佐々木さんは腰痛の訴えがあり、14時に頓服薬を服用されています。',reading:'ささきさん は ようつう の うったえ が あり、じゅうよじ に とんぷくやく を ふくよう されて います。',meaning:'Sasaki-san mengeluh nyeri pinggang dan pada pukul 14 telah minum obat PRN.'},
+  {text:'現在は痛みが軽減しています。',reading:'げんざい は いたみ が けいげん して います。',meaning:'Saat ini nyeri sudah berkurang.'},
+  {text:'歩行時にふらつきがあります。',reading:'ほこうじ に ふらつき が あります。',meaning:'Saat berjalan masih ada sempoyongan.'}
+ ],
+ question:'Apa perhatian saat mobilisasi?',
+ choices:['Harus lari agar stabil','Perlu pengawasan karena sempoyongan','Tidak boleh minum','Tidak ada perhatian khusus'],answer:1}
 ];
 function pushUnique(target,items){const ids=new Set(target.map(x=>x.id));items.forEach(item=>{if(!ids.has(item.id)){target.push(item);ids.add(item.id)}})}
 pushUnique(D.jlpt.N5.kanji,n5Kanji);pushUnique(D.jlpt.N5.vocab,n5Vocab);pushUnique(D.jlpt.N5.grammar,n5Grammar);pushUnique(D.kaigo.vocab,kaigoVocab);pushUnique(D.kaigo.handoff,handoff);
