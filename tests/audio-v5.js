@@ -29,5 +29,5 @@ assert(context.TENKA_AUDIO.playEvent('finish')===false,'finish with celebration 
 assert(plays('correct.mp3')===beforeFinishCorrect,'finish must never fall back to correct ding');
 context.TENKA_AUDIO.setSetting('celebrationVoice',true);
 assert(!/AudioContext|webkitAudioContext/.test(src),'Exam Sound 5.1.1 must not use Web Audio');
-const d=context.TENKA_AUDIO.debug();assert(d.eventLog.slice(-3).every(x=>x.source==='myinstants-mp3'),'answer events must be logged as MyInstants MP3');
+const d=context.TENKA_AUDIO.debug();const answerLogs=d.eventLog.filter(x=>['correct','wrong','timeout'].includes(x.event));assert(answerLogs.length===3&&answerLogs.every(x=>x.source==='myinstants-mp3'),'answer events must be logged as MyInstants MP3');
 console.log('TENKA Exam Sound 5.1.1 tests passed');
