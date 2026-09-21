@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 
-const APP_VERSION='2.1.1';
+const APP_VERSION='2.2.0';
 const D=window.TENKA_DATA;
 if(!D||!D.jlpt||!D.kaigo)throw new Error('TENKA_DATA belum siap');
 
@@ -193,15 +193,13 @@ function grammar(){
   return `${header(`Bunpou ${state.level}`,'Pahami konteks, lalu tes diri')}<button class="back" onclick="go('level')">←</button><div class="small-actions"><button class="action primary" onclick="startGrammarQuiz('${state.level}')">🎮 Quiz Bunpou</button></div>${arr.map(g=>{const done=!!state.progress.grammarDone[g.id];return `<article class="grammar-card"><span class="badge">${state.level}${done?' • ✅ Paham':''}</span><h3>${g.title}</h3><div class="meaning">${g.meaning}</div><p>${g.explanation}</p><div class="pattern">${g.pattern}</div><div class="example"><b>${g.example}</b><br><small>${g.exampleReading||''}</small><br>${g.exampleMeaning||''}</div><p class="subtle">⚠️ ${g.contrast||''}</p><div class="small-actions"><button class="pill" onclick="speakText('${esc(g.example)}')">🔊 Dengarkan</button><button class="pill" onclick="toggleGrammar('${g.id}')">${done?'↩️ Belum yakin':'✅ Tandai paham'}</button></div></article>`}).join('')}`;
 }
 function toggleGrammar(id){if(state.progress.grammarDone[id])delete state.progress.grammarDone[id];else{state.progress.grammarDone[id]=new Date().toISOString();markStudy();markDaily('grammar',id)}save();render()}
-function grammarPool(){return LEVELS.flatMap(l=>(D.jlpt[l].grammar||[]).map(g=>Object.assign({_level:l},g)))}
 function startGrammarQuiz(level){
   const src=(D.jlpt[level].grammar||[]).slice();if(!src.length){toast('Materi bunpou belum tersedia');return}
-  const pool=grammarPool();const items=shuffle(src).slice(0,Math.min(10,src.length)).map(g=>{const wrong=shuffle(pool.filter(x=>x.id!==g.id&&x.meaning!==g.meaning).map(x=>x.meaning)).slice(0,3);const choices=shuffle([g.meaning,...wrong]);return{prompt:g.title,reading:g.pattern,correct:g.meaning,choices,answer:choices.indexOf(g.meaning),voiceText:g.example,type:'grammar'}});beginQuiz(level,'grammar',items,'grammar');
+  const items=shuffle(src).slice(0,Math.min(10,src.length)).map(g=>{const wrong=shuffle([...new Set(src.filter(x=>x.id!==g.id&&x.meaning!==g.meaning).map(x=>x.meaning))]).slice(0,3);const choices=shuffle([g.meaning,...wrong]);return{prompt:g.title,reading:g.pattern,correct:g.meaning,choices,answer:choices.indexOf(g.meaning),voiceText:g.example,type:'grammar'}});beginQuiz(level,'grammar',items,'grammar');
 }
 function shuffle(arr){const x=arr.slice();for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x}
-function meaningPool(){return [...new Set(allCards().map(c=>c.meaning).filter(Boolean))]}
-function makeCardQuiz(cards,type){const all=meaningPool();return shuffle(cards).slice(0,Math.min(10,cards.length)).map(c=>{const wrong=shuffle(all.filter(x=>x!==c.meaning)).slice(0,3),choices=shuffle([c.meaning,...wrong]);return{prompt:c.term||c.kanji,reading:c.reading,voiceText:c.term||c.kanji||c.reading,correct:c.meaning,choices,answer:choices.indexOf(c.meaning),type}})}
-function startQuiz(level,type='mix'){state.level=level;beginQuiz(level,type,makeCardQuiz(allLevelCards(level),type),'level')}
+function makeCardQuiz(cards,type){const pool=[...new Set(cards.map(c=>c.meaning).filter(Boolean))];return shuffle(cards).slice(0,Math.min(10,cards.length)).map(c=>{const wrong=shuffle(pool.filter(x=>x!==c.meaning)).slice(0,3),choices=shuffle([c.meaning,...wrong]);return{prompt:c.term||c.kanji,reading:c.reading,voiceText:c.term||c.kanji||c.reading,correct:c.meaning,choices,answer:choices.indexOf(c.meaning),type}})}
+function startQuiz(level,type='mix'){state.level=level;const cards=type==='listening'?(D.jlpt[level]?.vocab||[]).map(c=>Object.assign({_kind:'vocab',_level:level},c)):allLevelCards(level);beginQuiz(level,type,makeCardQuiz(cards,type),'level')}
 function startKaigoQuiz(type='kaigo'){state.level='KAIGO';const quizType=(type==='listening'||type==='kaigo-listening')?'kaigo-listening':'kaigo';beginQuiz('KAIGO',quizType,makeCardQuiz(allKaigoCards(),quizType),'kaigo')}
 function beginQuiz(level,type,items,returnView){clearTimer();if(!items.length){toast('Belum ada soal untuk sesi ini');return}state.level=level;state.returnView=returnView;state.quiz={items,i:0,score:0,type,finished:false,saved:false,resultSoundPlayed:false};state.quizAnswered=false;go('quiz')}
 function quizView(){
@@ -225,9 +223,8 @@ function finishQuiz(){
   if(!q.resultSoundPlayed){q.resultSoundPlayed=true;setTimeout(()=>{if(state.quiz===q&&state.view==='quiz')audioEvent(pct===100?'perfect':'finish')},80)}
   return `<div class="score"><div class="confetti">🎉✨🎊</div><div class="mega">${pct}%</div><h2>${pct===100?'パーフェクト！':pct>=70?'おめでとう！':'Sesi selesai'}</h2><p>${q.score}/${q.items.length} benar</p><button class="action primary" onclick="go('${state.returnView}')">Selesai</button></div>`;
 }
-function restartQuiz(){const type=state.quiz?.type;if(state.level==='KAIGO')return startKaigoQuiz(type==='kaigo-listening'?'listening':'kaigo');if(type==='grammar')return startGrammarQuiz(state.level);startQuiz(state.level,type||'mix')}
 function kaigo(){
-  const cats=[...new Set((D.kaigo.vocab||[]).map(x=>x.category).filter(Boolean))],due=dueCards('KAIGO').length,done=Object.keys(state.progress.handoffDone||{}).length;
+  const cats=[...new Set((D.kaigo.vocab||[]).map(x=>x.category).filter(Boolean))],due=dueCards('KAIGO').length,done=handoffDoneCount();
   return `${header('Kaigo・Keperawatan','Bahasa kerja • listening • 申し送り')}<button class="back" onclick="go('home')">←</button><div class="list"><button class="row" onclick="openKaigoFlash()"><div class="left"><b>🏥 Flashcard Kaigo</b><small>${D.kaigo.vocab.length} istilah</small></div><span>›</span></button><button class="row" onclick="openReview('KAIGO')"><div class="left"><b>🧠 Review Kaigo</b><small>${due?`${due} kartu jatuh tempo`:'Belum ada review jatuh tempo'}</small></div><span>›</span></button><button class="row" onclick="startKaigoQuiz('kaigo')"><div class="left"><b>🎮 Quiz Kaigo</b><small>Istilah kerja • satu jawaban satu feedback</small></div><span>›</span></button><button class="row" onclick="startKaigoQuiz('listening')"><div class="left"><b>🎧 Listening Kaigo</b><small>Dengar istilah → tangkap arti</small></div><span>›</span></button><button class="row" onclick="openHandoffPractice()"><div class="left"><b>🗣️ 申し送り Practice</b><small>${done}/${D.kaigo.handoff.length} kasus dikuasai • per kalimat</small></div><span>›</span></button></div><div class="section-title">Kategori</div><div class="small-actions">${cats.map(x=>`<button class="pill" onclick="openKaigoCategory('${esc(x)}')">${x}</button>`).join('')}</div>`;
 }
 function openKaigoFlash(){state.level='KAIGO';state.cards=allKaigoCards();state.mode='vocab';state.cardIndex=0;state.flipped=false;state.returnView='kaigo';go('flash')}
@@ -238,15 +235,14 @@ function handoffSegments(h){
   const texts=String(h?.text||'').split('。').map(x=>x.trim()).filter(Boolean).map(x=>x+'。');
   return texts.map(text=>({text,reading:'',meaning:''}));
 }
-function firstIncompleteHandoff(){
-  const arr=D.kaigo.handoff||[];
-  const i=arr.findIndex(h=>!state.progress.handoffDone[h.id]);
-  return i>=0?i:0;
-}
+function handoffDoneCount(){return (D.kaigo.handoff||[]).filter(h=>!!state.progress.handoffDone[h.id]).length}
+function firstIncompleteHandoff(){return (D.kaigo.handoff||[]).findIndex(h=>!state.progress.handoffDone[h.id])}
 function openHandoffPractice(caseIndex=null){
   const arr=D.kaigo.handoff||[];
   if(!arr.length){toast('Materi 申し送り belum tersedia');return}
-  const i=Number.isInteger(caseIndex)?Math.max(0,Math.min(caseIndex,arr.length-1)):firstIncompleteHandoff();
+  const next=firstIncompleteHandoff();
+  if(!Number.isInteger(caseIndex)&&next<0){state.handoffSession=null;toast('Semua kasus 申し送り yang tersedia sudah selesai');return}
+  const i=Number.isInteger(caseIndex)?Math.max(0,Math.min(caseIndex,arr.length-1)):next;
   state.handoffSession={caseIndex:i,sentenceIndex:0,stage:'read',answered:false,correct:null,choice:null};
   go('handoff');
 }
@@ -257,7 +253,7 @@ function currentHandoff(){
 function handoff(){
   const arr=D.kaigo.handoff||[];
   if(!arr.length)return `${header('申し送り Practice','Belum ada materi')}<button class="back" onclick="go('kaigo')">←</button><div class="muted-box">Materi belum tersedia.</div>`;
-  if(!state.handoffSession)state.handoffSession={caseIndex:firstIncompleteHandoff(),sentenceIndex:0,stage:'read',answered:false,correct:null,choice:null};
+  if(!state.handoffSession){const i=firstIncompleteHandoff();if(i<0)return `${header('申し送り Practice','Semua kasus selesai')}<button class="back" onclick="go('kaigo')">←</button><div class="score"><h2>完了 ✅</h2><p>Semua kasus 申し送り yang tersedia sudah selesai.</p><button class="action primary" onclick="go('kaigo')">Selesai</button></div>`;state.handoffSession={caseIndex:i,sentenceIndex:0,stage:'read',answered:false,correct:null,choice:null}}
   const hs=state.handoffSession,h=currentHandoff();
   if(!h){state.handoffSession=null;return `${header('申し送り Practice','Sesi selesai')}<button class="action primary" onclick="go('kaigo')">Selesai</button>`}
   const segments=handoffSegments(h),seg=segments[Math.min(hs.sentenceIndex,Math.max(0,segments.length-1))]||{text:h.text,reading:h.reading,meaning:h.meaning};
@@ -269,11 +265,11 @@ function handoff(){
   }
 
   if(hs.stage==='question'){
-    return `${header('申し送り Practice',`${caseLabel} • Pemahaman`)}<button class="back" onclick="finishHandoff()">←</button><article class="grammar-card"><span class="badge">確認問題</span><h3 style="font-size:18px">${h.question}</h3><div class="choices">${h.choices.map((c,i)=>`<button class="choice" onclick="handoffAnswer(${i})">${String.fromCharCode(65+i)}. ${c}</button>`).join('')}</div><div class="small-actions"><button class="pill" onclick="speakText('${esc(h.text)}',.82)">🔊 Dengarkan kasus lagi</button></div></article><button class="action" onclick="finishHandoff()">Selesai</button>`;
+    return `${header('申し送り Practice',`${caseLabel} • Pemahaman`)}<button class="back" onclick="finishHandoff()">←</button><article class="grammar-card"><span class="badge">確認問題</span><h3 style="font-size:18px">${h.question}</h3><div class="choices">${h.choices.map((c,i)=>`<button class="choice" onclick="handoffAnswer(${i})">${String.fromCharCode(65+i)}. ${c}</button>`).join('')}</div></article><button class="action" onclick="finishHandoff()">Selesai</button>`;
   }
 
-  const ok=hs.correct===true,next=hs.caseIndex<arr.length-1;
-  return `${header('申し送り Practice',`${caseLabel} • Selesai`)}<article class="grammar-card"><span class="badge">${ok?'✅ 正解':'❌ 要復習'}</span><h3>${ok?'Intinya tertangkap dengan benar.':'Jawaban yang tepat:'}</h3><div class="example">${h.choices[h.answer]}</div></article><div class="controls"><button class="action primary" onclick="finishHandoff()">Selesai</button>${next?`<button class="action" onclick="handoffNextCase()">Kasus berikutnya</button>`:''}</div>`;
+  const ok=hs.correct===true;
+  return `${header('申し送り Practice',`${caseLabel} • Selesai`)}<article class="grammar-card"><span class="badge">${ok?'✅ 正解':'❌ 要復習'}</span><h3>${ok?'Intinya tertangkap dengan benar.':'Jawaban yang tepat:'}</h3><div class="example">${h.choices[h.answer]}</div></article><button class="action primary" onclick="finishHandoff()">Selesai</button>`;
 }
 function handoffNextSentence(){
   const hs=state.handoffSession,h=currentHandoff();if(!hs||!h)return;
@@ -290,11 +286,6 @@ function handoffAnswer(index){
   if(hs.correct){state.progress.handoffDone[h.id]=new Date().toISOString();markDaily('kaigo','handoff:'+h.id);save()}
   render();
 }
-function handoffNextCase(){
-  const hs=state.handoffSession,arr=D.kaigo.handoff||[];if(!hs)return;
-  const next=hs.caseIndex+1;if(next>=arr.length){finishHandoff();return}
-  state.handoffSession={caseIndex:next,sentenceIndex:0,stage:'read',answered:false,correct:null,choice:null};render();try{scrollTo(0,0)}catch{}
-}
 function finishHandoff(){state.handoffSession=null;go('kaigo')}
 function findKanji(id){for(const l of LEVELS){const c=(D.jlpt[l].kanji||[]).find(x=>x.id===id);if(c)return Object.assign({_kind:'kanji',_level:l},c)}return null}
 function openKakijun(id){state.kakijun=findKanji(id);if(state.kakijun)go('kakijun')}
@@ -306,7 +297,7 @@ function clearCanvas(){const c=$('#writeCanvas');if(ctx2&&c)ctx2.clearRect(0,0,c
 function toggleGuide(){state.guide=!state.guide;render()}
 function drawGuide(){const c=$('#writeCanvas');if(!ctx2||!c||!state.kakijun)return;ctx2.save();ctx2.globalAlpha=.12;ctx2.fillStyle='#111';ctx2.font='300px serif';ctx2.textAlign='center';ctx2.textBaseline='middle';ctx2.fillText(state.kakijun.kanji,c.width/2,c.height/2+10);ctx2.restore()}
 function daily(){const d=ensureDaily(),due=totalDue();const missions=[['🧠 Review selesai',5,Math.min(5,d.reviewed.length)],['🔤 Kartu dipelajari',10,Math.min(10,d.cards.length)],['📝 Bunpou',1,Math.min(1,d.grammar.length)],['🎮 Quiz',1,Math.min(1,d.quizzes)],['🏥 Kaigo',5,Math.min(5,d.kaigo.length)]];return `${header('今日のミッション',`${due} review menunggu`)}<button class="back" onclick="go('home')">←</button>${missions.map(m=>`<div class="mission"><div class="mission-line"><b>${m[0]}</b><span>${m[2]}/${m[1]}</span></div><div class="progress"><i style="width:${Math.min(100,m[2]/m[1]*100)}%"></i></div></div>`).join('')}<button class="action primary" onclick="dailyStart()">${due?`🧠 Review ${due} kartu →`:'Mulai N5 5 menit →'}</button>`}
-function progress(){const runs=Object.values(state.progress.quizRuns).reduce((a,b)=>a+b,0),acc=state.progress.total?Math.round(state.progress.correct/state.progress.total*100):0,due=totalDue();return `${header('Progress','Tersimpan di perangkat ini')}<button class="back" onclick="go('home')">←</button><div class="grid"><div class="nav-card"><div class="emoji">🔥</div><b>${state.progress.streak||1}</b><span>day streak</span></div><div class="nav-card"><div class="emoji">🎮</div><b>${runs}</b><span>quiz dimainkan</span></div><div class="nav-card"><div class="emoji">🎯</div><b>${acc}%</b><span>akurasi quiz</span></div><div class="nav-card"><div class="emoji">🧠</div><b>${due}</b><span>review due</span></div></div><div class="section-title">JLPT</div>${LEVELS.map(l=>{const d=D.jlpt[l],gd=(d.grammar||[]).filter(g=>state.progress.grammarDone[g.id]).length;return `<div class="row"><div><b>${l}</b><small>${touchedCount(l)}/${allLevelCards(l).length} kartu • ${gd}/${d.grammar.length} bunpou</small></div><span>${state.progress.best[`${l}-mix`]||0}% best</span></div>`}).join('')}<div class="section-title">Kaigo</div><div class="row"><div><b>🏥 Kaigo</b><small>${touchedCount('KAIGO')}/${allKaigoCards().length} kartu • ${Object.keys(state.progress.handoffDone).length}/${D.kaigo.handoff.length} 申し送り</small></div><span>${state.progress.best['KAIGO-kaigo']||0}% best</span></div>`}
+function progress(){const runs=Object.values(state.progress.quizRuns).reduce((a,b)=>a+b,0),acc=state.progress.total?Math.round(state.progress.correct/state.progress.total*100):0,due=totalDue();return `${header('Progress','Tersimpan di perangkat ini')}<button class="back" onclick="go('home')">←</button><div class="grid"><div class="nav-card"><div class="emoji">🔥</div><b>${state.progress.streak||1}</b><span>day streak</span></div><div class="nav-card"><div class="emoji">🎮</div><b>${runs}</b><span>quiz dimainkan</span></div><div class="nav-card"><div class="emoji">🎯</div><b>${acc}%</b><span>akurasi quiz</span></div><div class="nav-card"><div class="emoji">🧠</div><b>${due}</b><span>review due</span></div></div><div class="section-title">JLPT</div>${LEVELS.map(l=>{const d=D.jlpt[l],gd=(d.grammar||[]).filter(g=>state.progress.grammarDone[g.id]).length;return `<div class="row"><div><b>${l}</b><small>${touchedCount(l)}/${allLevelCards(l).length} kartu • ${gd}/${d.grammar.length} bunpou</small></div><span>${state.progress.best[`${l}-mix`]||0}% best</span></div>`}).join('')}<div class="section-title">Kaigo</div><div class="row"><div><b>🏥 Kaigo</b><small>${touchedCount('KAIGO')}/${allKaigoCards().length} kartu • ${handoffDoneCount()}/${D.kaigo.handoff.length} 申し送り</small></div><span>${state.progress.best['KAIGO-kaigo']||0}% best</span></div>`}
 function audioSettings(){
   const a=window.TENKA_AUDIO,s=a?.settings?.()||{enabled:true,volume:.82,celebrationVoice:true};
   return `<section id="tenka-sound-engine"><div class="section-title">🎧 Exam Sound</div><div class="muted-box">Benar, salah, dan time up memakai satu SFX pendek. Voice Jepang hanya untuk momen sesi.</div><div class="toggle"><div><b>🔊 Master Audio</b><div class="subtle">SFX jawaban + celebration voice</div></div><input type="checkbox" ${s.enabled?'checked':''} onchange="setAudioSetting('enabled',this.checked)"></div><div class="row"><div style="flex:1"><b>🔉 Volume</b><small>${Math.round((s.volume??.82)*100)}%</small></div><input aria-label="Volume" type="range" min="0" max="1" step="0.05" value="${s.volume??.82}" onchange="setAudioSetting('volume',this.value)" style="width:145px"></div><div class="toggle"><div><b>🎙️ Celebration Voice</b><div class="subtle">Mulai, selesai, dan perfect</div></div><input type="checkbox" ${s.celebrationVoice!==false?'checked':''} onchange="setAudioSetting('celebrationVoice',this.checked)"></div><div class="section-title">🎚️ Test</div><div class="small-actions"><button class="pill" onclick="previewAudio('correct')">✅ Benar</button><button class="pill" onclick="previewAudio('wrong')">❌ Salah</button><button class="pill" onclick="previewAudio('timeout')">⏱️ Time up</button><button class="pill" onclick="previewAudio('finish')">🎉 Selesai</button><button class="pill" onclick="previewAudio('perfect')">💯 Perfect</button></div><div id="tenka-sound-pack-status" class="muted-box" style="margin-top:12px">Memeriksa voice pack…</div></section>`;
@@ -318,7 +309,7 @@ function setAudioSetting(key,value){if(key==='volume')value=Math.max(0,Math.min(
 function previewAudio(event){window.TENKA_AUDIO?.playEvent?.(event)}
 function resetProgress(){if(confirm('Reset semua progress belajar di perangkat ini?')){state.progress=defaultProgress();save();render();toast('Progress direset')}}
 
-Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,restartQuiz,startKaigoQuiz,openKaigoFlash,openKaigoCategory,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,handoffNextCase,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
+Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,startKaigoQuiz,openKaigoFlash,openKaigoCategory,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
 window.TENKA_CORE={state,render,dueCards,allLevelCards,allKaigoCards,totalDue};
 window.TENKA_APP_VERSION=APP_VERSION;
 render();
