@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 
-const APP_VERSION='2.3.0';
+const APP_VERSION='2.3.1';
 const D=window.TENKA_DATA;
 if(!D||!D.jlpt||!D.kaigo)throw new Error('TENKA_DATA belum siap');
 
@@ -232,6 +232,11 @@ function openKaigoFlash(){state.level='KAIGO';state.cards=allKaigoCards();state.
 function openKaigoCategory(cat){const cards=allKaigoCards().filter(x=>x.category===cat);if(!cards.length)return;state.level='KAIGO';openCustomFlash(cards,'kaigo','vocab')}
 
 function houkokuItems(){return D.kaigo.houkoku||[]}
+function houkokuPieceText(piece){return typeof piece==='string'?piece:String(piece?.text||'')}
+function houkokuPieceReading(piece){return typeof piece==='string'?'':String(piece?.reading||'')}
+function houkokuPieceMeaning(piece){return typeof piece==='string'?'':String(piece?.meaning||'')}
+function houkokuRuby(text,reading){const t=String(text||''),r=String(reading||'');return r?`<ruby class="houkoku-ruby">${t}<rt>${r}</rt></ruby>`:t}
+function houkokuPieceHtml(piece){return houkokuRuby(houkokuPieceText(piece),houkokuPieceReading(piece))}
 function houkokuDoneCount(){return houkokuItems().filter(h=>!!state.progress.houkokuDone[h.id]).length}
 function firstIncompleteHoukoku(){return houkokuItems().findIndex(h=>!state.progress.houkokuDone[h.id])}
 function makeHoukokuSession(caseIndex){
@@ -253,12 +258,14 @@ function houkoku(){
   const hs=state.houkokuSession,h=currentHoukoku();if(!h){state.houkokuSession=null;return ''}
   const label=`Kasus ${hs.caseIndex+1}/${arr.length}`;
   if(hs.stage==='result'){
-    return `${header('報告 Practice',`${label} • Model laporan`)}<button class="back" onclick="finishHoukoku()">←</button><article class="grammar-card"><span class="badge">✅ 報告モデル</span><h3>${h.title}</h3><div class="handoff">${h.pieces.join('')}</div><div class="furigana">${h.reading||''}</div><div class="example">🇮🇩 ${h.meaning||''}</div><div class="muted-box" style="margin-top:12px">💡 ${h.note||''}</div><div class="small-actions"><button class="pill" onclick="speakText('${esc(h.pieces.join(''))}',.82)">🔊 Dengarkan</button></div></article><button class="action primary" onclick="finishHoukoku()">Selesai</button>`;
+    const fullText=h.pieces.map(houkokuPieceText).join('');
+    const model=h.pieces.map(piece=>`<div class="houkoku-model-line"><div class="handoff">${houkokuPieceHtml(piece)}</div><div class="houkoku-id">🇮🇩 ${houkokuPieceMeaning(piece)}</div></div>`).join('');
+    return `${header('報告 Practice',`${label} • Model laporan`)}<button class="back" onclick="finishHoukoku()">←</button><article class="grammar-card"><span class="badge">✅ 報告モデル</span><h3>${houkokuRuby(h.title,h.titleReading)}</h3><div class="houkoku-model">${model}</div><div class="muted-box" style="margin-top:12px">💡 ${h.note||''}</div><div class="small-actions"><button class="pill" onclick="speakText('${esc(fullText)}',.82)">🔊 Dengarkan</button></div></article><button class="action primary" onclick="finishHoukoku()">Selesai</button>`;
   }
-  const selected=hs.selected.map((pieceIndex,pos)=>`<button class="choice ${hs.checked?(hs.correct?'correct':'wrong'):''}" onclick="houkokuRemove(${pos})">${h.pieces[pieceIndex]}</button>`).join('');
-  const available=hs.remaining.map(pieceIndex=>`<button class="pill" draggable="true" ondragstart="houkokuDragStart(event,${pieceIndex})" onclick="houkokuPick(${pieceIndex})">${h.pieces[pieceIndex]}</button>`).join('');
+  const selected=hs.selected.map((pieceIndex,pos)=>`<button class="choice houkoku-piece ${hs.checked?(hs.correct?'correct':'wrong'):''}" onclick="houkokuRemove(${pos})">${houkokuPieceHtml(h.pieces[pieceIndex])}</button>`).join('');
+  const available=hs.remaining.map(pieceIndex=>`<button class="pill houkoku-piece" draggable="true" ondragstart="houkokuDragStart(event,${pieceIndex})" onclick="houkokuPick(${pieceIndex})">${houkokuPieceHtml(h.pieces[pieceIndex])}</button>`).join('');
   const feedback=hs.checked?(hs.correct?'<div class="muted-box">✅ Urutannya benar. Ini sudah menjadi laporan yang natural.</div>':'<div class="muted-box">❌ Urutannya belum tepat. Coba susun lagi dari fakta → kondisi → permintaan konfirmasi.</div>'):'';
-  return `${header('報告 Practice',`${label} • Puzzle laporan`)}<button class="back" onclick="finishHoukoku()">←</button><article class="grammar-card"><span class="badge">${h.examArea||'コミュニケーション技術'}</span><h3>${h.title}</h3><div class="example">🧑‍⚕️ ${h.situation}</div><p class="subtle">Susun potongan Jepang menjadi houkoku. Di iPhone cukup tap; drag & drop juga tersedia bila browser mendukung.</p></article><div class="section-title">🧩 Laporanmu</div><div class="choices" ondragover="event.preventDefault()" ondrop="houkokuDrop(event)">${selected||'<div class="muted-box">＿＿＿＿　＿＿＿＿　＿＿＿＿</div>'}</div>${feedback}<div class="section-title">Potongan kalimat</div><div class="small-actions">${available||'<span class="subtle">Semua potongan sudah dipakai.</span>'}</div><div class="controls"><button class="action" onclick="houkokuReset()">Acak ulang</button>${hs.checked&&hs.correct?'<button class="action primary" onclick="houkokuShowResult()">Lihat model →</button>':hs.checked?'<button class="action primary" onclick="houkokuReset()">Coba lagi</button>':'<button class="action primary" onclick="houkokuCheck()">Periksa</button>'}</div>`;
+  return `${header('報告 Practice',`${label} • Puzzle laporan`)}<button class="back" onclick="finishHoukoku()">←</button><article class="grammar-card"><span class="badge">${h.examArea||'コミュニケーション技術'}</span><h3>${houkokuRuby(h.title,h.titleReading)}</h3><div class="example">🧑‍⚕️ ${h.situation}</div><p class="subtle">Susun potongan Jepang menjadi houkoku. Di iPhone cukup tap; drag & drop juga tersedia bila browser mendukung.</p></article><div class="section-title">🧩 Laporanmu</div><div class="choices" ondragover="event.preventDefault()" ondrop="houkokuDrop(event)">${selected||'<div class="muted-box">＿＿＿＿　＿＿＿＿　＿＿＿＿</div>'}</div>${feedback}<div class="section-title">Potongan kalimat</div><div class="small-actions">${available||'<span class="subtle">Semua potongan sudah dipakai.</span>'}</div><div class="controls"><button class="action" onclick="houkokuReset()">Acak ulang</button>${hs.checked&&hs.correct?'<button class="action primary" onclick="houkokuShowResult()">Lihat model →</button>':hs.checked?'<button class="action primary" onclick="houkokuReset()">Coba lagi</button>':'<button class="action primary" onclick="houkokuCheck()">Periksa</button>'}</div>`;
 }
 function houkokuPick(pieceIndex){
   const hs=state.houkokuSession;if(!hs||hs.checked)return;

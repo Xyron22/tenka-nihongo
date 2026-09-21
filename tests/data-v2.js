@@ -40,9 +40,10 @@ assert(D.kaigo.vocab.length>=52,'Kaigo vocab Stage 2A incomplete');
 assert(D.kaigo.handoff.length>=12,'Kaigo handoff Stage 2A incomplete');
 assert(D.kaigo.houkoku.length>=4,'Houkoku Pack 1 incomplete');
 for(const h of D.kaigo.houkoku){
- assert(h.title&&h.situation&&h.reading&&h.meaning&&h.note,'Houkoku missing core fields '+h.id);
+ assert(h.title&&h.titleReading&&h.situation&&h.reading&&h.meaning&&h.note,'Houkoku missing core fields '+h.id);
  assert(Array.isArray(h.pieces)&&h.pieces.length>=3,'Houkoku needs at least 3 puzzle pieces '+h.id);
- assert(new Set(h.pieces).size===h.pieces.length,'Houkoku pieces must be unique '+h.id);
+ for(const piece of h.pieces){assert(piece&&piece.text&&piece.reading&&piece.meaning,'Houkoku piece needs text/reading/meaning '+h.id)}
+ assert(new Set(h.pieces.map(x=>x.text)).size===h.pieces.length,'Houkoku pieces must be unique '+h.id);
  assert(KAIGO_EXAM_AREAS.has(h.examArea),'Unknown official Houkoku examArea '+h.examArea+' on '+h.id);
 }
 
