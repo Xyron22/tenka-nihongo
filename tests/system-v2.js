@@ -51,7 +51,7 @@ function setQuiz(c,{length=2,index=0,answer=0}){
 
 (async()=>{
   {
-    const b=boot();assert(b.context.TENKA_APP_VERSION==='2.1.0','app version');
+    const b=boot();assert(b.context.TENKA_APP_VERSION==='2.1.1','app version');
     assert(b.html.includes('始めよう！'),'home CTA should be start when no due');
     b.context.homePrimary();assert(b.context.TENKA_CORE.state.view==='daily','home start should open Daily');
   }
@@ -95,6 +95,26 @@ function setQuiz(c,{length=2,index=0,answer=0}){
     assert(b.html.includes('Selesai'),'handoff result must have finish button');
     b.context.finishHandoff();
     assert(s.view==='kaigo'&&s.handoffSession===null,'handoff finish must exit instead of repeating');
+  }
+
+  {
+    const b=boot(),s=b.context.TENKA_CORE.state;
+    b.context.startQuiz('N5','listening');
+    assert(s.view==='quiz'&&s.quiz.items.length>0,'N5 listening quiz must start');
+    for(const item of s.quiz.items) assert(item.voiceText===item.prompt,'listening must speak target term/kanji, not a reading list');
+    b.context.go('level');
+  }
+  {
+    const b=boot(),s=b.context.TENKA_CORE.state;
+    b.context.startGrammarQuiz('N5');
+    assert(s.view==='quiz'&&s.quiz.type==='grammar','grammar quiz must start');
+    b.context.go('grammar');
+    b.context.startKaigoQuiz('kaigo');
+    assert(s.view==='quiz'&&s.quiz.type==='kaigo','Kaigo quiz must start');
+    b.context.go('kaigo');
+    b.context.startKaigoQuiz('listening');
+    assert(s.view==='quiz'&&s.quiz.type==='kaigo-listening','Kaigo listening must start');
+    b.context.go('kaigo');
   }
   {
     const b=boot(),s=b.context.TENKA_CORE.state;s.level='KAIGO';s.quiz={type:'kaigo-listening'};b.context.restartQuiz();assert(s.quiz.type==='kaigo-listening','Kaigo listening restart must stay listening');

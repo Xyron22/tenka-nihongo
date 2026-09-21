@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 
-const APP_VERSION='2.1.0';
+const APP_VERSION='2.1.1';
 const D=window.TENKA_DATA;
 if(!D||!D.jlpt||!D.kaigo)throw new Error('TENKA_DATA belum siap');
 
@@ -200,7 +200,7 @@ function startGrammarQuiz(level){
 }
 function shuffle(arr){const x=arr.slice();for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x}
 function meaningPool(){return [...new Set(allCards().map(c=>c.meaning).filter(Boolean))]}
-function makeCardQuiz(cards,type){const all=meaningPool();return shuffle(cards).slice(0,Math.min(10,cards.length)).map(c=>{const wrong=shuffle(all.filter(x=>x!==c.meaning)).slice(0,3),choices=shuffle([c.meaning,...wrong]);return{prompt:c.term||c.kanji,reading:c.reading,voiceText:c.reading||c.term||c.kanji,correct:c.meaning,choices,answer:choices.indexOf(c.meaning),type}})}
+function makeCardQuiz(cards,type){const all=meaningPool();return shuffle(cards).slice(0,Math.min(10,cards.length)).map(c=>{const wrong=shuffle(all.filter(x=>x!==c.meaning)).slice(0,3),choices=shuffle([c.meaning,...wrong]);return{prompt:c.term||c.kanji,reading:c.reading,voiceText:c.term||c.kanji||c.reading,correct:c.meaning,choices,answer:choices.indexOf(c.meaning),type}})}
 function startQuiz(level,type='mix'){state.level=level;beginQuiz(level,type,makeCardQuiz(allLevelCards(level),type),'level')}
 function startKaigoQuiz(type='kaigo'){state.level='KAIGO';const quizType=(type==='listening'||type==='kaigo-listening')?'kaigo-listening':'kaigo';beginQuiz('KAIGO',quizType,makeCardQuiz(allKaigoCards(),quizType),'kaigo')}
 function beginQuiz(level,type,items,returnView){clearTimer();if(!items.length){toast('Belum ada soal untuk sesi ini');return}state.level=level;state.returnView=returnView;state.quiz={items,i:0,score:0,type,finished:false,saved:false,resultSoundPlayed:false};state.quizAnswered=false;go('quiz')}

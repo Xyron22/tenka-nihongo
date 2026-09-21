@@ -11,7 +11,7 @@ const context={console,Date,Math,Object,JSON,String,Array,Set,Map,Promise,setTim
  document:{addEventListener(){}},speechSynthesis:{cancel(){cancelled++},speak(u){spoken.push(u.text)},getVoices(){return[]}},
  SpeechSynthesisUtterance:function(t){this.text=t;this.lang='';this.volume=1;this.rate=1;this.pitch=1},window:null
 };context.window=context;vm.createContext(context);vm.runInContext(src,context,{filename:'audio-engine-v5.js'});
-assert(context.TENKA_AUDIO_VERSION==='5.1.0','version');
+assert(context.TENKA_AUDIO_VERSION==='5.1.1','version');
 const d0=context.TENKA_AUDIO.debug();
 assert(d0.examFiles.correct.includes('assets/audio/exam/correct.mp3'),'correct MP3 path');
 assert(d0.examFiles.wrong.includes('assets/audio/exam/wrong.mp3'),'wrong MP3 path');
@@ -22,6 +22,12 @@ n=plays('wrong.mp3');context.TENKA_AUDIO.playEvent('wrong');assert(plays('wrong.
 n=plays('timeout.mp3');context.TENKA_AUDIO.playEvent('timeout');assert(plays('timeout.mp3')===n+1,'timeout must play exactly one BRUH MP3');assert(spoken.length===0,'timeout must never speak');
 assert(context.TENKA_AUDIO.playEvent('combo')===false,'combo event must not exist');
 assert(!('combo' in d0.examFiles),'combo file must not exist');
-assert(!/AudioContext|webkitAudioContext/.test(src),'Exam Sound 5.1 must not use Web Audio');
-const d=context.TENKA_AUDIO.debug();assert(d.eventLog.slice(-3).every(x=>x.source==='myinstants-mp3'),'answer events must be logged as MyInstants MP3');
-console.log('TENKA Exam Sound 5.1 tests passed');
+
+const beforeFinishCorrect=plays('correct.mp3');
+context.TENKA_AUDIO.setSetting('celebrationVoice',false);
+assert(context.TENKA_AUDIO.playEvent('finish')===false,'finish with celebration voice disabled should be silent, not reuse correct SFX');
+assert(plays('correct.mp3')===beforeFinishCorrect,'finish must never fall back to correct ding');
+context.TENKA_AUDIO.setSetting('celebrationVoice',true);
+assert(!/AudioContext|webkitAudioContext/.test(src),'Exam Sound 5.1.1 must not use Web Audio');
+const d=context.TENKA_AUDIO.debug();const answerLogs=d.eventLog.filter(x=>['correct','wrong','timeout'].includes(x.event));assert(answerLogs.length===3&&answerLogs.every(x=>x.source==='myinstants-mp3'),'answer events must be logged as MyInstants MP3');
+console.log('TENKA Exam Sound 5.1.1 tests passed');
