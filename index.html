@@ -57,6 +57,7 @@
         setDetail('Memuat data belajar…');await load('./data.js','data.js');
         if(!window.TENKA_DATA)throw new Error('TENKA_DATA tidak tersedia');
         await load('./content-pack-v1.js','content-pack-v1.js');
+        await load('./content-pack-v2.js','content-pack-v2.js');
         setDetail('Memuat Exam Sound 5.1.1…');await load('./audio-engine-v5.js','audio-engine-v5.js');
         if(window.TENKA_AUDIO_VERSION!==AUDIO_VERSION)throw new Error('Exam Sound 5.1.1 belum aktif');
         setDetail('Memuat TENKA Core 2…');await load('./app-v2.js','app-v2.js');
