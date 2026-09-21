@@ -6,6 +6,7 @@ vm.runInContext(fs.readFileSync('content-pack-v1.js','utf8'),c,{filename:'conten
 vm.runInContext(fs.readFileSync('content-pack-v2.js','utf8'),c,{filename:'content-pack-v2.js'});
 vm.runInContext(fs.readFileSync('content-pack-v3.js','utf8'),c,{filename:'content-pack-v3.js'});
 vm.runInContext(fs.readFileSync('houkoku-pack-v1.js','utf8'),c,{filename:'houkoku-pack-v1.js'});
+vm.runInContext(fs.readFileSync('houkoku-pack-v2.js','utf8'),c,{filename:'houkoku-pack-v2.js'});
 const D=c.TENKA_DATA;assert(D&&D.jlpt&&D.kaigo,'TENKA_DATA missing');
 const KAIGO_EXAM_AREAS=new Set(['人間の尊厳と自立','介護の基本','社会の理解','人間関係とコミュニケーション','コミュニケーション技術','生活支援技術','こころとからだのしくみ','発達と老化の理解','認知症の理解','障害の理解','医療的ケア','介護過程','総合問題']);
 const ids=new Set();
@@ -38,7 +39,7 @@ assert(D.jlpt.N5.vocab.length>=45,'N5 vocab Stage 2A incomplete');
 assert(D.jlpt.N5.grammar.length>=15,'N5 grammar Stage 2A incomplete');
 assert(D.kaigo.vocab.length>=52,'Kaigo vocab Stage 2A incomplete');
 assert(D.kaigo.handoff.length>=12,'Kaigo handoff Stage 2A incomplete');
-assert(D.kaigo.houkoku.length>=4,'Houkoku Pack 1 incomplete');
+assert(D.kaigo.houkoku.length>=12,'Houkoku Pack 2 incomplete');
 for(const h of D.kaigo.houkoku){
  assert(h.title&&h.titleReading&&h.situation&&h.reading&&h.meaning&&h.note,'Houkoku missing core fields '+h.id);
  assert(Array.isArray(h.pieces)&&h.pieces.length>=3,'Houkoku needs at least 3 puzzle pieces '+h.id);
