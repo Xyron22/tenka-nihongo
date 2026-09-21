@@ -4,6 +4,7 @@ const c={window:null};c.window=c;vm.createContext(c);
 vm.runInContext(fs.readFileSync('data.js','utf8'),c,{filename:'data.js'});
 vm.runInContext(fs.readFileSync('content-pack-v1.js','utf8'),c,{filename:'content-pack-v1.js'});
 vm.runInContext(fs.readFileSync('content-pack-v2.js','utf8'),c,{filename:'content-pack-v2.js'});
+vm.runInContext(fs.readFileSync('content-pack-v3.js','utf8'),c,{filename:'content-pack-v3.js'});
 const D=c.TENKA_DATA;assert(D&&D.jlpt&&D.kaigo,'TENKA_DATA missing');
 const KAIGO_EXAM_AREAS=new Set(['人間の尊厳と自立','介護の基本','社会の理解','人間関係とコミュニケーション','コミュニケーション技術','生活支援技術','こころとからだのしくみ','発達と老化の理解','認知症の理解','障害の理解','医療的ケア','介護過程','総合問題']);
 const ids=new Set();
@@ -21,6 +22,7 @@ for(const item of D.kaigo.vocab){
 }
 for(const h of D.kaigo.handoff){
  assert(h.text&&h.reading&&h.meaning&&h.question,'handoff missing core fields '+h.id);
+ if(h.examArea)assert(KAIGO_EXAM_AREAS.has(h.examArea),'Unknown official handoff examArea '+h.examArea+' on '+h.id);
  assert(Array.isArray(h.choices)&&Number.isInteger(h.answer)&&h.answer>=0&&h.answer<h.choices.length,'bad handoff '+h.id);
  assert(h.choices.length>=2&&new Set(h.choices).size===h.choices.length,'handoff choices must be unique '+h.id);
  assert(Array.isArray(h.segments)&&h.segments.length>=2,'handoff must be sentence-segmented '+h.id);
@@ -30,12 +32,15 @@ for(const h of D.kaigo.handoff){
  }
  assert(h.text===h.segments.map(x=>x.text).join(''),'handoff text must equal segment join '+h.id);
 }
-assert(D.jlpt.N5.kanji.length>=25,'N5 kanji batch 2 incomplete');
-assert(D.jlpt.N5.vocab.length>=35,'N5 vocab batch 2 incomplete');
-assert(D.jlpt.N5.grammar.length>=12,'N5 grammar batch 2 incomplete');
-assert(D.kaigo.vocab.length>=44,'Kaigo vocab batch 2 incomplete');
-assert(D.kaigo.handoff.length>=10,'Kaigo handoff batch 2 incomplete');
-for(const item of D.kaigo.vocab.filter(x=>/^k-v-(3[3-9]|4[0-4])$/.test(x.id))){
+assert(D.jlpt.N5.kanji.length>=30,'N5 kanji Stage 2A incomplete');
+assert(D.jlpt.N5.vocab.length>=45,'N5 vocab Stage 2A incomplete');
+assert(D.jlpt.N5.grammar.length>=15,'N5 grammar Stage 2A incomplete');
+assert(D.kaigo.vocab.length>=52,'Kaigo vocab Stage 2A incomplete');
+assert(D.kaigo.handoff.length>=12,'Kaigo handoff Stage 2A incomplete');
+for(const item of D.kaigo.vocab.filter(x=>/^k-v-(3[3-9]|4[0-9]|5[0-2])$/.test(x.id))){
  assert(item.examArea,'Kaigo certification foundation item missing examArea '+item.id);
+}
+for(const h of D.kaigo.handoff.filter(x=>/^h-(11|12)$/.test(x.id))){
+ assert(h.examArea,'Stage 2A handoff missing examArea '+h.id);
 }
 console.log('TENKA data integrity passed:',ids.size,'unique ids');
