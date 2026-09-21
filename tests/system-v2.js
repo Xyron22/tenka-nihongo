@@ -7,10 +7,10 @@ function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
 
 const mockData={
   jlpt:{
-    N5:{kanji:[{id:'k1',kanji:'聞',reading:'きく',meaning:'mendengar',example:'音を聞く',exampleMeaning:'mendengar suara'}],vocab:[{id:'v1',term:'聞く',reading:'きく',meaning:'mendengar'}],grammar:[{id:'g1',title:'〜ます',meaning:'bentuk sopan',pattern:'Vます',explanation:'x',example:'食べます',exampleMeaning:'makan',contrast:''}]},
-    N4:{kanji:[],vocab:[],grammar:[]},N3:{kanji:[],vocab:[],grammar:[]},N2:{kanji:[],vocab:[],grammar:[]},N1:{kanji:[],vocab:[],grammar:[]}
+    N5:{kanji:[{id:'k1',kanji:'聞',reading:'ぶん・もん・きく',meaning:'kanji mendengar',example:'音を聞く',exampleMeaning:'mendengar suara'}],vocab:[{id:'v1',term:'聞く',reading:'きく',meaning:'mendengar'},{id:'v2',term:'読む',reading:'よむ',meaning:'membaca'},{id:'v3',term:'書く',reading:'かく',meaning:'menulis'},{id:'v4',term:'話す',reading:'はなす',meaning:'berbicara'}],grammar:[{id:'g1',title:'〜ます',meaning:'bentuk sopan',pattern:'Vます',explanation:'x',example:'食べます',exampleMeaning:'makan',contrast:''},{id:'g2',title:'〜てください',meaning:'tolong lakukan',pattern:'Vてください',explanation:'x',example:'見てください',exampleMeaning:'tolong lihat',contrast:''}]},
+    N4:{kanji:[],vocab:[],grammar:[{id:'g4',title:'〜たことがあります',meaning:'pernah melakukan',pattern:'Vたことがあります',explanation:'x',example:'行ったことがあります',exampleMeaning:'pernah pergi',contrast:''}]},N3:{kanji:[],vocab:[],grammar:[]},N2:{kanji:[],vocab:[],grammar:[]},N1:{kanji:[],vocab:[],grammar:[]}
   },
-  kaigo:{vocab:[{id:'kg1',term:'体温',reading:'たいおん',meaning:'suhu tubuh',category:'バイタル'}],handoff:[{id:'h1',text:'体温は37度です。食事は5割です。',reading:'たいおん は さんじゅうななど です。しょくじ は ごわり です。',meaning:'Suhu 37 derajat. Makan 50%.',segments:[{text:'体温は37度です。',reading:'たいおん は さんじゅうななど です。',meaning:'Suhu 37 derajat.'},{text:'食事は5割です。',reading:'しょくじ は ごわり です。',meaning:'Makan 50%.'}],question:'berapa?',choices:['37','40'],answer:0}]}
+  kaigo:{vocab:[{id:'kg1',term:'体温',reading:'たいおん',meaning:'suhu tubuh',category:'バイタル'},{id:'kg2',term:'排便',reading:'はいべん',meaning:'buang air besar',category:'排泄'}],handoff:[{id:'h1',text:'体温は37度です。食事は5割です。',reading:'たいおん は さんじゅうななど です。しょくじ は ごわり です。',meaning:'Suhu 37 derajat. Makan 50%.',segments:[{text:'体温は37度です。',reading:'たいおん は さんじゅうななど です。',meaning:'Suhu 37 derajat.'},{text:'食事は5割です。',reading:'しょくじ は ごわり です。',meaning:'Makan 50%.'}],question:'berapa?',choices:['37','40'],answer:0}]}
 };
 
 function boot(){
@@ -51,7 +51,7 @@ function setQuiz(c,{length=2,index=0,answer=0}){
 
 (async()=>{
   {
-    const b=boot();assert(b.context.TENKA_APP_VERSION==='2.1.1','app version');
+    const b=boot();assert(b.context.TENKA_APP_VERSION==='2.2.0','app version');
     assert(b.html.includes('始めよう！'),'home CTA should be start when no due');
     b.context.homePrimary();assert(b.context.TENKA_CORE.state.view==='daily','home start should open Daily');
   }
@@ -90,9 +90,11 @@ function setQuiz(c,{length=2,index=0,answer=0}){
     assert(b.html.includes('Kalimat 2/2'),'second handoff sentence');
     b.context.handoffToQuestion();
     assert(s.handoffSession.stage==='question'&&b.html.includes('確認問題'),'handoff must move to one question after reading');
+    assert(!b.html.includes('Dengarkan kasus lagi'),'handoff question must not merge all sentences into one playback');
     b.context.handoffAnswer(0);
     assert(s.handoffSession.stage==='result'&&s.handoffSession.correct===true,'handoff answer must end at result state');
     assert(b.html.includes('Selesai'),'handoff result must have finish button');
+    assert(!b.html.includes('Kasus berikutnya'),'handoff result must not chain into another case');
     b.context.finishHandoff();
     assert(s.view==='kaigo'&&s.handoffSession===null,'handoff finish must exit instead of repeating');
   }
@@ -101,13 +103,25 @@ function setQuiz(c,{length=2,index=0,answer=0}){
     const b=boot(),s=b.context.TENKA_CORE.state;
     b.context.startQuiz('N5','listening');
     assert(s.view==='quiz'&&s.quiz.items.length>0,'N5 listening quiz must start');
-    for(const item of s.quiz.items) assert(item.voiceText===item.prompt,'listening must speak target term/kanji, not a reading list');
+    const vocabTerms=new Set(mockData.jlpt.N5.vocab.map(x=>x.term));
+    for(const item of s.quiz.items){assert(item.voiceText===item.prompt,'listening must speak the target vocabulary');assert(vocabTerms.has(item.prompt),'JLPT listening must use vocabulary, not standalone multi-reading kanji')}
+    b.context.go('level');
+  }
+  {
+    const b=boot(),s=b.context.TENKA_CORE.state;
+    b.context.startQuiz('N5','mix');
+    const allowed=new Set([...mockData.jlpt.N5.kanji,...mockData.jlpt.N5.vocab].map(x=>x.meaning));
+    for(const item of s.quiz.items)for(const choice of item.choices)assert(allowed.has(choice),'JLPT quiz distractors must stay inside the selected level');
+    assert(!s.quiz.items.some(item=>item.choices.includes('suhu tubuh')||item.choices.includes('buang air besar')),'JLPT quiz must never pull Kaigo distractors');
     b.context.go('level');
   }
   {
     const b=boot(),s=b.context.TENKA_CORE.state;
     b.context.startGrammarQuiz('N5');
     assert(s.view==='quiz'&&s.quiz.type==='grammar','grammar quiz must start');
+    const n5GrammarMeanings=new Set(mockData.jlpt.N5.grammar.map(x=>x.meaning));
+    for(const item of s.quiz.items)for(const choice of item.choices)assert(n5GrammarMeanings.has(choice),'grammar distractors must stay inside selected level');
+    assert(!s.quiz.items.some(item=>item.choices.includes('pernah melakukan')),'N5 grammar quiz must not pull N4 distractors');
     b.context.go('grammar');
     b.context.startKaigoQuiz('kaigo');
     assert(s.view==='quiz'&&s.quiz.type==='kaigo','Kaigo quiz must start');
@@ -117,7 +131,13 @@ function setQuiz(c,{length=2,index=0,answer=0}){
     b.context.go('kaigo');
   }
   {
-    const b=boot(),s=b.context.TENKA_CORE.state;s.level='KAIGO';s.quiz={type:'kaigo-listening'};b.context.restartQuiz();assert(s.quiz.type==='kaigo-listening','Kaigo listening restart must stay listening');
+    const b=boot();assert(typeof b.context.restartQuiz==='undefined','quiz restart action must not be exposed; completed sessions exit with Selesai');
+  }
+  {
+    const b=boot(),s=b.context.TENKA_CORE.state;b.context.go('kaigo');s.progress.handoffDone.h1=new Date().toISOString();b.context.TENKA_CORE.render();
+    b.context.openHandoffPractice();
+    assert(s.view==='kaigo'&&s.handoffSession===null,'completed handoff library must not automatically restart from case 1');
+    assert(b.html.includes('1/1 kasus dikuasai'),'Kaigo screen must count only completed current cases');
   }
   {
     const b=boot();b.context.go('settings');assert(b.html.includes('Tidak didukung Safari/iPhone'),'unsupported haptic should be explained');assert(/disabled aria-disabled="true"/.test(b.html),'unsupported haptic must be disabled');
