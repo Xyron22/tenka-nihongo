@@ -110,9 +110,13 @@ jobs:
             echo "Combo must be fully removed from TENKA runtime and tests" >&2
             exit 1
           fi
-          grep -q "CORE_VERSION='2.1.1'" index.html
+          if grep -E "restartQuiz|handoffNextCase|Kasus berikutnya|Dengarkan kasus lagi" app-v2.js; then
+            echo "Completed quiz/handoff sessions must exit instead of chaining or repeating" >&2
+            exit 1
+          fi
+          grep -q "CORE_VERSION='2.2.0'" index.html
           grep -q "AUDIO_VERSION='5.1.1'" index.html
-          grep -q "CACHE_VERSION='5.1.1'" index.html
+          grep -q "CACHE_VERSION='5.2.0'" index.html
 
       - name: Restore generated VOICEVOX Nemo cache
         id: voice-cache
