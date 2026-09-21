@@ -2,31 +2,32 @@
 'use strict';
 const D=window.TENKA_DATA;if(!D||!D.kaigo)return;
 
-// Draft atlas: 4 columns × 4 rows, 112 × 84 px per cell.
-// Keep explicit dimensions so renderers preserve the non-square aspect ratio.
+// Stage 6A-2: tools 01–04 use independent images (one 1×1 cell).
+// Tools 05–13 still use the draft 4×4 atlas, with 112×84 px cells.
+// Explicit dimensions preserve each image's aspect ratio.
 const SPRITE='assets/tools/medical-tools-sprite.jpg';
 D.kaigo.tools=[
 {
  id:'tool-01',term:'体温計',reading:'たいおんけい',meaning:'termometer',category:'検査・測定',
- image:SPRITE,spriteIndex:0,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/thermometer-v2.png',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:1254,spriteHeight:1254,
  functionJP:'体温を測るための器具です。',functionReading:'たいおん を はかる ため の きぐ です。',functionID:'Alat untuk mengukur suhu tubuh.',
  example:'体温計で体温を測ります。',exampleReading:'たいおんけい で たいおん を はかります。',exampleMeaning:'Mengukur suhu tubuh dengan termometer.'
 },
 {
  id:'tool-02',term:'血圧計',reading:'けつあつけい',meaning:'tensimeter / alat ukur tekanan darah',category:'検査・測定',
- image:SPRITE,spriteIndex:1,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/blood-pressure-monitor-v2.png',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:1254,spriteHeight:1254,
  functionJP:'血圧を測るための機器です。',functionReading:'けつあつ を はかる ため の きき です。',functionID:'Alat untuk mengukur tekanan darah.',
  example:'血圧計で血圧を測ります。',exampleReading:'けつあつけい で けつあつ を はかります。',exampleMeaning:'Mengukur tekanan darah dengan tensimeter.'
 },
 {
  id:'tool-03',term:'聴診器',reading:'ちょうしんき',meaning:'stetoskop',category:'検査・測定',
- image:SPRITE,spriteIndex:2,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/stethoscope-v2.png',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:1254,spriteHeight:1254,
  functionJP:'心音や呼吸音などを聴くための器具です。',functionReading:'しんおん や こきゅうおん など を きく ため の きぐ です。',functionID:'Alat untuk mendengarkan bunyi jantung, bunyi napas, dan suara tubuh lainnya.',
  example:'看護師が聴診器で呼吸音を確認します。',exampleReading:'かんごし が ちょうしんき で こきゅうおん を かくにん します。',exampleMeaning:'Perawat memeriksa bunyi napas dengan stetoskop.'
 },
 {
  id:'tool-04',term:'パルスオキシメーター',reading:'ぱるすおきしめーたー',meaning:'pulse oximeter',category:'検査・測定',
- image:SPRITE,spriteIndex:3,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/pulse-oximeter-v2.png',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:1254,spriteHeight:1254,
  functionJP:'SpO₂や脈拍を測る機器です。',functionReading:'エスピーオーツー や みゃくはく を はかる きき です。',functionID:'Alat untuk mengukur SpO₂ dan denyut nadi.',
  example:'パルスオキシメーターでSpO₂を測ります。',exampleReading:'ぱるすおきしめーたー で エスピーオーツー を はかります。',exampleMeaning:'Mengukur SpO₂ dengan pulse oximeter.'
 },

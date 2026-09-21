@@ -71,13 +71,25 @@ function jpegSize(bytes) {
   throw new Error('JPEG frame dimensions not found');
 }
 
-test('every sprite cell fits the actual JPEG and is assigned once', () => {
+function imageSize(bytes) {
+  const signature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
+  if (!bytes.subarray(0, 8).equals(signature)) return jpegSize(bytes);
+  assert.ok(bytes.length >= 45, 'truncated PNG');
+  assert.equal(bytes.readUInt32BE(8), 13, 'PNG IHDR length is invalid');
+  assert.equal(bytes.toString('ascii', 12, 16), 'IHDR', 'PNG IHDR missing');
+  assert.equal(bytes.toString('ascii', bytes.length - 8, bytes.length - 4), 'IEND', 'PNG IEND missing');
+  const width = bytes.readUInt32BE(16), height = bytes.readUInt32BE(20);
+  assert.ok(width > 0 && height > 0, 'PNG dimensions must be positive');
+  return { width, height };
+}
+
+test('every image cell fits the actual PNG/JPEG and is assigned once', () => {
   const used = new Set();
   const images = new Map();
   for (const card of cards) {
     const file = path.resolve(root, card.image);
     assert.ok(file.startsWith(root + path.sep), 'image must stay inside repository');
-    if (!images.has(file)) images.set(file, jpegSize(fs.readFileSync(file)));
+    if (!images.has(file)) images.set(file, imageSize(fs.readFileSync(file)));
     const actual = images.get(file);
     assert.equal(card.spriteWidth, actual.width, `${card.id}: wrong atlas width`);
     assert.equal(card.spriteHeight, actual.height, `${card.id}: wrong atlas height`);
@@ -91,10 +103,34 @@ test('every sprite cell fits the actual JPEG and is assigned once', () => {
   }
 });
 
-test('reviewed image order remains paired with the corresponding tool', () => {
-  const expected = ['体温計', '血圧計', '聴診器', 'パルスオキシメーター', '注射器',
-    '点滴', '点滴スタンド', '吸引器', '車椅子', '歩行器', 'ポータブルトイレ', 'おむつ', '使い捨て手袋'];
-  for (const card of cards) assert.equal(card.term, expected[card.spriteIndex], `${card.id}: wrong image mapping`);
+test('reviewed individual images and remaining atlas cells match their tools', () => {
+  const expected = [
+    ['体温計', 'thermometer-v2.png', 0],
+    ['血圧計', 'blood-pressure-monitor-v2.png', 0],
+    ['聴診器', 'stethoscope-v2.png', 0],
+    ['パルスオキシメーター', 'pulse-oximeter-v2.png', 0],
+    ['注射器', 'medical-tools-sprite.jpg', 4],
+    ['点滴', 'medical-tools-sprite.jpg', 5],
+    ['点滴スタンド', 'medical-tools-sprite.jpg', 6],
+    ['吸引器', 'medical-tools-sprite.jpg', 7],
+    ['車椅子', 'medical-tools-sprite.jpg', 8],
+    ['歩行器', 'medical-tools-sprite.jpg', 9],
+    ['ポータブルトイレ', 'medical-tools-sprite.jpg', 10],
+    ['おむつ', 'medical-tools-sprite.jpg', 11],
+    ['使い捨て手袋', 'medical-tools-sprite.jpg', 12]
+  ];
+  expected.forEach(([term, file, index], i) => {
+    const id = `tool-${String(i + 1).padStart(2, '0')}`;
+    const card = cards.find(x => x.id === id);
+    assert.ok(card, `missing ${id}`);
+    assert.equal(card.term, term);
+    assert.equal(card.image, `assets/tools/${file}`, `${id}: wrong image file`);
+    assert.equal(card.spriteIndex, index, `${id}: wrong image cell`);
+    if (i < 4) {
+      assert.equal(card.spriteCols, 1); assert.equal(card.spriteRows, 1);
+      assert.ok(card.spriteWidth >= 1024 && card.spriteHeight >= 1024, `${id}: individual image resolution too small`);
+    }
+  });
 });
 
 test('loading the pack preserves existing JLPT, Kaigo and Houkoku data', () => {
