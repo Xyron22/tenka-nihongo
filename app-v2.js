@@ -114,7 +114,7 @@ function startGreeting(){markStudy();audioEvent('greeting');toast('今日も頑�
 function header(title,sub=''){return `<div class="topbar"><div><div class="brand">${title}</div>${sub?`<div class="subtle">${sub}</div>`:''}</div><button class="icon-btn" onclick="startGreeting()">🔊</button></div>`}
 function nav(){return `<nav class="bottom-nav"><button onclick="go('home')"><span>⌂</span>Home</button><button onclick="go('daily')"><span>🎯</span>Daily</button><button onclick="go('progress')"><span>📊</span>Progress</button><button onclick="go('settings')"><span>⚙️</span>Setting</button></nav>`}
 function clearTimer(){if(state.timer)clearInterval(state.timer);state.timer=null}
-function go(view){clearTimer();state.view=view;state.flipped=false;render();try{scrollTo(0,0)}catch{}}
+function go(view){clearTimer();if(state.view==='handoff'&&view!=='handoff')state.handoffSession=null;state.view=view;state.flipped=false;render();try{scrollTo(0,0)}catch{}}
 function render(){
   const app=$('#app');if(!app)return;
   const withNav=['home','jlpt','level','grammar','kaigo','handoff','daily','progress','settings'].includes(state.view);
@@ -316,10 +316,9 @@ function toggleRow(key,title,sub,on,disabled){return `<div class="toggle"><div><
 function setSetting(key,value){if(key==='haptic'&&!HAPTIC_SUPPORTED){state.settings.haptic=false;save();return}state.settings[key]=value;save();toast('Tersimpan')}
 function setAudioSetting(key,value){if(key==='volume')value=Math.max(0,Math.min(1,Number(value)||0));window.TENKA_AUDIO?.setSetting?.(key,value);render()}
 function previewAudio(event){window.TENKA_AUDIO?.playEvent?.(event)}
-async function importCustomSound(event,input){try{const result=await window.TENKA_AUDIO?.importEvent?.('custom',event,[...(input?.files||[])]);toast(result?.saved?`${result.saved} sound custom ditambahkan`:'Tidak ada file audio yang terbaca')}catch{toast('Gagal membaca audio')}if(input)input.value='';render()}
 function resetProgress(){if(confirm('Reset semua progress belajar di perangkat ini?')){state.progress=defaultProgress();save();render();toast('Progress direset')}}
 
-Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,restartQuiz,startKaigoQuiz,openKaigoFlash,openKaigoCategory,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,handoffNextCase,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,importCustomSound,resetProgress});
+Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,restartQuiz,startKaigoQuiz,openKaigoFlash,openKaigoCategory,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,handoffNextCase,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
 window.TENKA_CORE={state,render,dueCards,allLevelCards,allKaigoCards,totalDue};
 window.TENKA_APP_VERSION=APP_VERSION;
 render();
