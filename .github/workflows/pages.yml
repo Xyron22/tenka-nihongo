@@ -30,6 +30,7 @@ jobs:
         run: |
           node --check data.js
           node --check content-pack-v1.js
+          node --check content-pack-v2.js
           node --check app-v2.js
           node --check audio-engine-v5.js
           node --check sound-pack-v3.js
