@@ -51,7 +51,7 @@ function setQuiz(c,{length=2,index=0,answer=0}){
 
 (async()=>{
   {
-    const b=boot();assert(b.context.TENKA_APP_VERSION==='2.3.1','app version');
+    const b=boot();assert(b.context.TENKA_APP_VERSION==='2.4.0','app version');
     assert(b.html.includes('始めよう！'),'home CTA should be start when no due');
     b.context.homePrimary();assert(b.context.TENKA_CORE.state.view==='daily','home start should open Daily');
   }
@@ -163,6 +163,35 @@ function setQuiz(c,{length=2,index=0,answer=0}){
     b.context.openHoukokuPractice();
     assert(s.view==='kaigo'&&s.houkokuSession===null,'completed Houkoku library must not automatically restart');
     assert(b.html.includes('1/1 kasus'),'Kaigo screen must show current Houkoku completion count');
+  }
+  {
+    const b=boot(),s=b.context.TENKA_CORE.state;
+    b.context.openHoukokuEssay(0);
+    assert(s.view==='houkokuEssay'&&s.houkokuEssaySession.stage==='write','Houkoku Level 2 must open in writing stage');
+    assert(b.html.includes('報告 Level 2')&&b.html.includes('houkoku-essay-input'),'Houkoku Level 2 must render writing UI');
+    assert(b.html.includes('<ruby')&&b.html.includes('<rt>'),'Houkoku Level 2 case title must keep furigana');
+    const beforeEvents=b.events.length;
+    b.context.houkokuEssayReveal('Aさんですが、床に座っていました。');
+    assert(s.houkokuEssaySession.stage==='model','Houkoku Level 2 must reveal model after a draft');
+    assert(s.houkokuEssaySession.draft==='Aさんですが、床に座っていました。','Houkoku Level 2 must retain the learner draft');
+    assert(b.events.length===beforeEvents,'Houkoku Level 2 free writing must not auto-grade with correct/wrong SFX');
+    assert(b.html.includes('あなたの報告')&&b.html.includes('報告モデル'),'Houkoku Level 2 compare screen must show learner draft and model');
+    assert(b.html.includes('🇮🇩')&&b.html.includes('<ruby')&&b.html.includes('<rt>'),'Houkoku Level 2 model must show Indonesian meaning and furigana');
+    b.context.finishHoukokuEssay(false);
+    assert(s.view==='kaigo'&&s.houkokuEssaySession===null,'Houkoku Level 2 not-mastered finish must return to Kaigo');
+    assert(!s.progress.houkokuEssayDone.r1,'not-mastered Level 2 case must not be recorded as mastered');
+  }
+  {
+    const b=boot(),s=b.context.TENKA_CORE.state;
+    b.context.openHoukokuEssay(0);
+    b.context.houkokuEssayReveal('Aさんですが、状態の確認をお願いします。');
+    b.context.finishHoukokuEssay(true);
+    assert(s.view==='kaigo'&&s.houkokuEssaySession===null,'mastered Level 2 finish must return to Kaigo');
+    assert(!!s.progress.houkokuEssayDone.r1,'mastered Level 2 case must save progress');
+    b.context.openHoukokuEssay();
+    assert(s.view==='kaigo'&&s.houkokuEssaySession===null,'completed Houkoku Level 2 library must not automatically restart');
+    b.context.TENKA_CORE.render();
+    assert(b.html.includes('1/1 kasus • tulis sendiri lalu bandingkan'),'Kaigo screen must show Houkoku Level 2 completion count');
   }
   {
     const b=boot();b.context.go('settings');assert(b.html.includes('Tidak didukung Safari/iPhone'),'unsupported haptic should be explained');assert(/disabled aria-disabled="true"/.test(b.html),'unsupported haptic must be disabled');
