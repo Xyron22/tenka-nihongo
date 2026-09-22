@@ -1,5 +1,8 @@
 # Stage 6A-2 — four examination-tool images
 
+Historical checkpoint: the following treatment-tool batch is now complete in
+[Stage 6A-3](TOOLS_IMAGES_6A3.md). Eight of thirteen cards have individual images.
+
 ## Checkpoint
 
 Four of thirteen tools now use new individual images: thermometer, blood-pressure monitor, stethoscope and pulse oximeter. Each PNG is 1254 × 1254 px at its original generated resolution. The remaining nine cards retain their draft atlas mappings. The current app boot, navigation, audio and progress remain outside this stage.
@@ -44,4 +47,3 @@ Subject: ONE ordinary adult stethoscope laid out neatly with exactly two grey so
 
 Use case: product-mockup. Asset type: a single reusable raster illustration for TENKA Japanese medical/care vocabulary flashcards. Create a square 1024x1024 image of ONE specified generic device, isolated on a pure white background, centered with about 15 percent clean padding on all sides, fully inside frame. Consistent style: refined realistic digital educational illustration, smooth soft shading, clean edges, subtle grey contact shadow, natural proportions, clinical white / pale blue / dark slate palette, no cartoon face or decorative elements. This is object-recognition art, not a clinical procedure diagram. No people or hands, no packaging, no logos, no brand names, no labels, no numbers, no badges, no captions, no watermark, no app UI. Displays are blank and powered off with no text or digits. Avoid cropped parts, extraneous parts, invented attachments, gradients in the white background.
 Subject: ONE ordinary fingertip pulse oximeter, compact hinged clip with a rounded pale-blue top shell, white lower shell, dark blank rectangular display on the top, one small unmarked button and a visible soft dark finger aperture at the front. A clean three-quarter view with the clip slightly ajar so the finger opening is obvious. No finger or hand. No separate monitor, cables, numbers or symbols.
-

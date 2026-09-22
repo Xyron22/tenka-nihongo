@@ -2,8 +2,8 @@
 'use strict';
 const D=window.TENKA_DATA;if(!D||!D.kaigo)return;
 
-// Stage 6A-2: tools 01–04 use independent images (one 1×1 cell).
-// Tools 05–13 still use the draft 4×4 atlas, with 112×84 px cells.
+// Stage 6A-3: tools 01–08 use independent images (one 1×1 cell).
+// Tools 09–13 still use the draft 4×4 atlas, with 112×84 px cells.
 // Explicit dimensions preserve each image's aspect ratio.
 const SPRITE='assets/tools/medical-tools-sprite.jpg';
 D.kaigo.tools=[
@@ -33,25 +33,25 @@ D.kaigo.tools=[
 },
 {
  id:'tool-05',term:'注射器',reading:'ちゅうしゃき',meaning:'syringe / alat suntik',category:'処置・治療',
- image:SPRITE,spriteIndex:4,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/syringe-v2.png',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:1254,spriteHeight:1254,
  functionJP:'薬液を注入したり、液体を吸い取ったりする器具です。',functionReading:'やくえき を ちゅうにゅう したり、えきたい を すいとったり する きぐ です。',functionID:'Alat untuk memasukkan cairan obat atau menarik cairan.',
  example:'これは注射器です。',exampleReading:'これ は ちゅうしゃき です。',exampleMeaning:'Ini adalah syringe / alat suntik.'
 },
 {
  id:'tool-06',term:'点滴',reading:'てんてき',meaning:'infus / IV drip',category:'処置・治療',
- image:SPRITE,spriteIndex:5,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/iv-drip-v2.png',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:1254,spriteHeight:1254,
  functionJP:'静脈から水分や薬剤などを入れる方法です。',functionReading:'じょうみゃく から すいぶん や やくざい など を いれる ほうほう です。',functionID:'Pemberian cairan atau obat melalui pembuluh vena.',
  example:'点滴をしています。',exampleReading:'てんてき を して います。',exampleMeaning:'Sedang mendapat infus.'
 },
 {
  id:'tool-07',term:'点滴スタンド',reading:'てんてきすたんど',meaning:'tiang infus / IV pole',category:'処置・治療',
- image:SPRITE,spriteIndex:6,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/iv-pole-v2.png',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:1254,spriteHeight:1254,
  functionJP:'点滴バッグなどを掛けるためのスタンドです。',functionReading:'てんてきバッグ など を かける ため の スタンド です。',functionID:'Tiang untuk menggantung kantong infus dan perlengkapannya.',
  example:'点滴スタンドをベッドの横に置きます。',exampleReading:'てんてきすたんど を ベッド の よこ に おきます。',exampleMeaning:'Meletakkan tiang infus di samping tempat tidur.'
 },
 {
  id:'tool-08',term:'吸引器',reading:'きゅういんき',meaning:'alat suction / aspirator',category:'処置・治療',
- image:SPRITE,spriteIndex:7,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/suction-machine-v2.png',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:1254,spriteHeight:1254,
  functionJP:'痰や唾液などを吸引するための機器です。',functionReading:'たん や だえき など を きゅういん する ため の きき です。',functionID:'Alat untuk melakukan suction pada dahak, saliva, atau cairan lain.',
  example:'吸引器を準備します。',exampleReading:'きゅういんき を じゅんび します。',exampleMeaning:'Menyiapkan alat suction.',
  safetyNote:'吸引は資格・指示・施設の手順に従って行います。',

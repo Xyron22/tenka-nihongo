@@ -1,8 +1,9 @@
 # Stage 6A-1 checkpoint
 
-Update, Stage 6A-2: tools 01–04 now use individual 1254 × 1254 PNGs,
-each represented by one 1×1 cell. Tools 05–13 still use the draft atlas.
-See [the image checkpoint and prompts](TOOLS_IMAGES_6A2.md) for details.
+Update, Stage 6A-3: tools 01–08 now use individual 1254 × 1254 PNGs,
+each represented by one 1×1 cell. Tools 09–13 still use the draft atlas.
+See [the examination-tool checkpoint](TOOLS_IMAGES_6A2.md) and
+[the treatment-tool checkpoint and prompts](TOOLS_IMAGES_6A3.md) for details.
 The original atlas findings below describe the Stage 6A-1 starting point.
 
 Scope: draft images and data for 13 common medical/kaigo vocabulary cards.

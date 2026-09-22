@@ -109,10 +109,10 @@ test('reviewed individual images and remaining atlas cells match their tools', (
     ['血圧計', 'blood-pressure-monitor-v2.png', 0],
     ['聴診器', 'stethoscope-v2.png', 0],
     ['パルスオキシメーター', 'pulse-oximeter-v2.png', 0],
-    ['注射器', 'medical-tools-sprite.jpg', 4],
-    ['点滴', 'medical-tools-sprite.jpg', 5],
-    ['点滴スタンド', 'medical-tools-sprite.jpg', 6],
-    ['吸引器', 'medical-tools-sprite.jpg', 7],
+    ['注射器', 'syringe-v2.png', 0],
+    ['点滴', 'iv-drip-v2.png', 0],
+    ['点滴スタンド', 'iv-pole-v2.png', 0],
+    ['吸引器', 'suction-machine-v2.png', 0],
     ['車椅子', 'medical-tools-sprite.jpg', 8],
     ['歩行器', 'medical-tools-sprite.jpg', 9],
     ['ポータブルトイレ', 'medical-tools-sprite.jpg', 10],
@@ -126,7 +126,7 @@ test('reviewed individual images and remaining atlas cells match their tools', (
     assert.equal(card.term, term);
     assert.equal(card.image, `assets/tools/${file}`, `${id}: wrong image file`);
     assert.equal(card.spriteIndex, index, `${id}: wrong image cell`);
-    if (i < 4) {
+    if (i < 8) {
       assert.equal(card.spriteCols, 1); assert.equal(card.spriteRows, 1);
       assert.ok(card.spriteWidth >= 1024 && card.spriteHeight >= 1024, `${id}: individual image resolution too small`);
     }
