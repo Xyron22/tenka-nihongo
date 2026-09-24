@@ -155,7 +155,7 @@ function dueSession(){return [...LEVELS.flatMap(l=>dueCards(l)),...dueCards('KAI
 function home(){
   const due=totalDue(),streak=state.progress.streak||1;
   const kaigoTouched=touchedCount('KAIGO'),kaigoTotal=allKaigoStudyCards().length,kaigoPct=Math.round(kaigoTouched/Math.max(1,kaigoTotal)*100);
-  const n5Total=allLevelCards('N5').length,n5Touched=touchedCount('N5'),n5Pct=Math.round(n5Touched/Math.max(1,n5Total)*100);
+  const jlptStats=LEVELS.map(level=>{const total=allLevelCards(level).length,touched=touchedCount(level),pct=Math.round(touched/Math.max(1,total)*100);return{level,total,touched,pct}}),jlptTouched=jlptStats.reduce((n,x)=>n+x.touched,0),jlptTotal=jlptStats.reduce((n,x)=>n+x.total,0),jlptPct=Math.round(jlptTouched/Math.max(1,jlptTotal)*100);
   const reportTotal=(D.kaigo.houkoku||[]).length,reportDone=houkokuDoneCount(),essayDone=houkokuEssayDoneCount();
   return `<section class="tenka-home-hero">
     <div class="tenka-home-brand"><div><div class="tenka-wordmark">TENKA</div><div class="tenka-kana">てんか</div></div><div class="tenka-home-motto"><b>Belajar hari ini, masa depan lebih dekat.</b><span>今日の勉強が、未来を近づける。</span></div></div>
@@ -189,11 +189,13 @@ function home(){
         </div>
       </div>
     </section>
-    <button class="tenka-panel tenka-panel-jlpt" onclick="go('jlpt')">
-      <div class="tenka-panel-head"><span>📘</span><div><b>JLPT Roadmap</b><small>N5 → N1</small></div><strong>${n5Pct}%</strong></div>
-      <div class="tenka-panel-progress"><i style="width:${n5Pct}%"></i></div>
-      <div class="tenka-level-pills"><span class="active">N5</span><span>N4</span><span>N3</span><span>N2</span><span>N1</span></div>
-    </button>
+    <section class="tenka-panel tenka-panel-jlpt">
+      <div class="tenka-panel-head"><span>📘</span><div><b>JLPT Roadmap</b><small>N5 → N1 • kanji & kosakata</small></div><strong>${jlptPct}%</strong></div>
+      <div class="tenka-jlpt-roadmap">
+        ${jlptStats.map((x,i)=>`<button class="tenka-jlpt-step ${x.touched>=x.total&&x.total?'complete':x.touched?'started':i===0?'current':''}" onclick="openLevel('${x.level}')"><span class="tenka-jlpt-badge">${x.level}</span><div><b>${x.level}</b><small>${x.touched}/${x.total} kartu disentuh</small></div><em>${x.pct}%</em></button>${i<jlptStats.length-1?`<div class="tenka-jlpt-line ${x.touched>=x.total&&x.total?'complete':''}"></div>`:''}`).join('')}
+      </div>
+      <button class="tenka-jlpt-all" onclick="go('jlpt')">Lihat semua materi JLPT →</button>
+    </section>
     <button class="tenka-panel tenka-panel-daily" onclick="go('daily')">
       <div class="tenka-panel-head"><span>🎯</span><div><b>今日のミッション</b><small>Belajar sedikit, tapi rutin</small></div><strong>→</strong></div>
       <div class="tenka-daily-quote"><b>一歩ずつ、確実に。</b><span>Satu langkah demi satu, pasti sampai.</span></div>
