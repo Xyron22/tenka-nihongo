@@ -58,3 +58,22 @@
   .tenka-dashboard-grid{grid-template-columns:1fr}
   .tenka-panel{min-height:145px}
 }
+
+
+.tenka-houkoku-roadmap{display:grid;gap:7px;margin-top:14px}
+.tenka-houkoku-step{width:100%;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:10px 11px;border:1px solid rgba(255,255,255,.09);border-radius:15px;background:rgba(18,14,9,.24);color:var(--text);text-align:left;cursor:pointer}
+.tenka-houkoku-step:hover{background:rgba(255,255,255,.055)}
+.tenka-houkoku-step .tenka-step-no{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;border:1px solid #806b43;background:#2b2419;font-weight:950;color:#ead7a7}
+.tenka-houkoku-step b{display:block;font-size:14px}
+.tenka-houkoku-step small{display:block;margin-top:2px;color:#cfc5ae;font-size:11px;line-height:1.35}
+.tenka-houkoku-step em{font-style:normal;font-size:11px;font-weight:850;color:#e5cf9d}
+.tenka-houkoku-step.complete{border-color:rgba(86,169,117,.42);background:rgba(31,91,57,.22)}
+.tenka-houkoku-step.complete .tenka-step-no{background:#2e744a;border-color:#56a975;color:#e6fff0}
+.tenka-houkoku-step.complete em{color:#9ee0b3}
+.tenka-houkoku-step.planned{cursor:default;opacity:.7}
+.tenka-road-line{width:2px;height:10px;background:#68583a;margin:-1px 0 -1px 25px;border-radius:99px}
+.tenka-road-line.complete{background:#56a975}
+@media(max-width:520px){
+  .tenka-houkoku-step{padding:11px}
+  .tenka-houkoku-step small{font-size:10.5px}
+}
