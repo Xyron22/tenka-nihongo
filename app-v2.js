@@ -158,6 +158,7 @@ function home(){
   const kaigoVocab=allKaigoCards(),kaigoTools=allMedicalToolCards(),kaigoVocabTouched=kaigoVocab.filter(x=>reviewInfo(x.id)).length,kaigoToolTouched=kaigoTools.filter(x=>reviewInfo(x.id)).length,kaigoDue=dueCards('KAIGO').length,handoffDone=handoffDoneCount(),handoffTotal=D.kaigo.handoff.length;
   const jlptStats=LEVELS.map(level=>{const total=allLevelCards(level).length,touched=touchedCount(level),pct=Math.round(touched/Math.max(1,total)*100);return{level,total,touched,pct}}),jlptTouched=jlptStats.reduce((n,x)=>n+x.touched,0),jlptTotal=jlptStats.reduce((n,x)=>n+x.total,0),jlptPct=Math.round(jlptTouched/Math.max(1,jlptTotal)*100);
   const reportTotal=(D.kaigo.houkoku||[]).length,reportDone=houkokuDoneCount(),essayDone=houkokuEssayDoneCount();
+  const daily=ensureDaily(),dailyParts=[Math.min(1,daily.reviewed.length/5),Math.min(1,daily.cards.length/10),Math.min(1,daily.grammar.length),Math.min(1,daily.quizzes),Math.min(1,daily.kaigo.length/5)],dailyPct=Math.round(dailyParts.reduce((a,b)=>a+b,0)/dailyParts.length*100),dailyDone=dailyParts.filter(x=>x>=1).length;
   return `<section class="tenka-home-hero">
     <div class="tenka-home-brand"><div><div class="tenka-wordmark">TENKA</div><div class="tenka-kana">てんか</div></div><div class="tenka-home-motto"><b>Belajar hari ini, masa depan lebih dekat.</b><span>今日の勉強が、未来を近づける。</span></div></div>
     <div class="tenka-home-sky" aria-hidden="true"><span class="sun"></span><span class="fuji"></span><span class="ridge"></span></div>
@@ -203,10 +204,19 @@ function home(){
       </div>
       <button class="tenka-jlpt-all" onclick="go('jlpt')">Lihat semua materi JLPT →</button>
     </section>
-    <button class="tenka-panel tenka-panel-daily" onclick="go('daily')">
-      <div class="tenka-panel-head"><span>🎯</span><div><b>今日のミッション</b><small>Belajar sedikit, tapi rutin</small></div><strong>→</strong></div>
-      <div class="tenka-daily-quote"><b>一歩ずつ、確実に。</b><span>Satu langkah demi satu, pasti sampai.</span></div>
-    </button>
+    <section class="tenka-panel tenka-panel-daily">
+      <div class="tenka-panel-head"><span>🎯</span><div><b>今日のミッション</b><small>Target belajar hari ini</small></div><strong>${dailyPct}%</strong></div>
+      <div class="tenka-panel-progress"><i style="width:${dailyPct}%"></i></div>
+      <div class="tenka-daily-missions">
+        <div class="${daily.reviewed.length>=5?'done':''}"><span>🧠</span><b>Review</b><em>${Math.min(5,daily.reviewed.length)}/5</em></div>
+        <div class="${daily.cards.length>=10?'done':''}"><span>🔤</span><b>Kartu</b><em>${Math.min(10,daily.cards.length)}/10</em></div>
+        <div class="${daily.grammar.length>=1?'done':''}"><span>📝</span><b>Bunpou</b><em>${Math.min(1,daily.grammar.length)}/1</em></div>
+        <div class="${daily.quizzes>=1?'done':''}"><span>🎮</span><b>Quiz</b><em>${Math.min(1,daily.quizzes)}/1</em></div>
+        <div class="${daily.kaigo.length>=5?'done':''}"><span>🏥</span><b>Kaigo</b><em>${Math.min(5,daily.kaigo.length)}/5</em></div>
+      </div>
+      <div class="tenka-daily-quote"><b>${dailyDone===5?'今日も完璧！':'一歩ずつ、確実に。'}</b><span>${dailyDone===5?'Misi hari ini selesai semua 🎉':`${dailyDone}/5 target selesai • lanjut sedikit lagi.`}</span></div>
+      <button class="tenka-daily-action" onclick="go('daily')">${dailyDone===5?'Lihat hasil hari ini':'Buka Daily Mission'} →</button>
+    </section>
   </div>
   <div class="install-tip">📱 Safari → Share → <b>Add to Home Screen</b> untuk membuka TENKA seperti aplikasi.</div>`;
 }
