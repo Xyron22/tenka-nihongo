@@ -166,12 +166,21 @@ function openFlash(level,kind){state.level=level;state.mode=kind;state.cards=(D.
 function openCustomFlash(cards,returnView='level',mode='review'){state.cards=cards.slice();state.cardIndex=0;state.flipped=false;state.mode=mode;state.returnView=returnView;go('flash')}
 function openReview(level){state.level=level;const cards=dueCards(level);if(!cards.length){toast('Belum ada kartu yang jatuh tempo');return}openCustomFlash(cards,level==='KAIGO'?'kaigo':'level','review')}
 function currentCard(){return state.cards[state.cardIndex]||null}
-function cardFront(c){return c._kind==='kanji'?`<div class="kanji">${c.kanji}</div>`:`<div class="term">${c.term}</div>`}
-function cardBack(c){return `<div class="reading">${c.reading||''}</div>${c.romaji?`<div class="subtle">${c.romaji}</div>`:''}<div class="meaning">${c.meaning||''}</div><div class="example"><b>${c.example||''}</b>${c.exampleReading?`<br><small>${c.exampleReading}</small>`:''}<br>${c.exampleMeaning||''}</div>`}
+function cardFront(c){
+  if(c._kind==='kanji')return `<div class="kanji">${c.kanji}</div>`;
+  if(c._kind==='tool')return `<img class="tool-flash-image" src="${htmlSafe(c.image||'')}" alt="${htmlSafe(c.term||'alat medis')}"><div class="tool-flash-term">${htmlSafe(c.term||'')}</div>`;
+  return `<div class="term">${c.term}</div>`;
+}
+function cardBack(c){
+  if(c._kind==='tool')return `<div class="reading">${htmlSafe(c.reading||'')}</div><div class="meaning">${htmlSafe(c.meaning||'')}</div><div class="tool-flash-block"><b>${htmlSafe(c.functionJP||'')}</b>${c.functionReading?`<small>${htmlSafe(c.functionReading)}</small>`:''}${c.functionID?`<div>🇮🇩 ${htmlSafe(c.functionID)}</div>`:''}</div><div class="example"><b>${htmlSafe(c.example||'')}</b>${c.exampleReading?`<br><small>${htmlSafe(c.exampleReading)}</small>`:''}<br>${htmlSafe(c.exampleMeaning||'')}</div>`;
+  return `<div class="reading">${c.reading||''}</div>${c.romaji?`<div class="subtle">${c.romaji}</div>`:''}<div class="meaning">${c.meaning||''}</div><div class="example"><b>${c.example||''}</b>${c.exampleReading?`<br><small>${c.exampleReading}</small>`:''}<br>${c.exampleMeaning||''}</div>`;
+}
 function flash(){
   const c=currentCard();if(!c)return `<div class="score"><h2>Selesai 🎉</h2><p>Tidak ada kartu lagi di sesi ini.</p><button class="action primary" onclick="go('${state.returnView}')">Kembali</button></div>`;
-  const due=reviewInfo(c.id)?.due;
-  return `<div class="topbar"><button class="back" onclick="go('${state.returnView}')">←</button><div class="subtle">${state.cardIndex+1}/${state.cards.length}${state.mode==='review'?' • Review':''}</div><button class="icon-btn" onclick="speakText('${esc(c.reading||c.term||c.kanji)}')">🔊</button></div><div class="flash-wrap"><div class="flash ${state.flipped?'flipped':''}" onclick="flipCard()"><div class="face">${cardFront(c)}<div class="subtle">Tap untuk balik</div></div><div class="face backface">${cardBack(c)}</div></div></div>${c._kind==='kanji'?`<div class="small-actions"><button class="pill" onclick="openKakijun('${c.id}')">✍️ Kakijun</button><button class="pill" onclick="speakText('${esc(c.example||c.kanji)}')">🔊 Contoh</button></div><div class="spacer"></div>`:''}<div class="controls"><button class="action bad" onclick="rateCard('again')">😵 Lagi</button><button class="action blue" onclick="rateCard('good')">🙂 Hafal</button><button class="action ok" onclick="rateCard('easy')">✨ Mudah</button></div>${due?`<div class="subtle" style="text-align:center;margin-top:10px">Review sebelumnya: ${new Date(due).toLocaleDateString()}</div>`:''}`;
+  const due=reviewInfo(c.id)?.due,isToolMode=state.mode==='tools';
+  const toolControls=isToolMode?`<div class="controls tool-flash-controls"><button class="action" onclick="stepToolFlash(-1)" ${state.cardIndex===0?'disabled aria-disabled="true"':''}>← Sebelumnya</button><button class="action primary" onclick="${state.cardIndex>=state.cards.length-1?`go('${state.returnView}')`:'stepToolFlash(1)'}">${state.cardIndex>=state.cards.length-1?'Selesai':'Berikutnya →'}</button></div>`:'';
+  const reviewControls=isToolMode?'':`<div class="controls"><button class="action bad" onclick="rateCard('again')">😵 Lagi</button><button class="action blue" onclick="rateCard('good')">🙂 Hafal</button><button class="action ok" onclick="rateCard('easy')">✨ Mudah</button></div>`;
+  return `<div class="topbar"><button class="back" onclick="go('${state.returnView}')">←</button><div class="subtle">${state.cardIndex+1}/${state.cards.length}${state.mode==='review'?' • Review':isToolMode?' • Alat medis':''}</div><button class="icon-btn" onclick="speakText('${esc(c.term||c.reading||c.kanji)}')">🔊</button></div><div class="flash-wrap"><div class="flash ${isToolMode?'tool-flash':''} ${state.flipped?'flipped':''}" onclick="flipCard()"><div class="face">${cardFront(c)}<div class="subtle">Tap untuk balik</div></div><div class="face backface">${cardBack(c)}</div></div></div>${c._kind==='kanji'?`<div class="small-actions"><button class="pill" onclick="openKakijun('${c.id}')">✍️ Kakijun</button><button class="pill" onclick="speakText('${esc(c.example||c.kanji)}')">🔊 Contoh</button></div><div class="spacer"></div>`:''}${toolControls}${reviewControls}${!isToolMode&&due?`<div class="subtle" style="text-align:center;margin-top:10px">Review sebelumnya: ${new Date(due).toLocaleDateString()}</div>`:''}`;
 }
 function esc(s){return String(s||'').replaceAll('\\','\\\\').replaceAll("'","\\'")}
 function htmlSafe(s){return String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;')}
@@ -181,6 +190,11 @@ function scheduleCard(c,rating){
   if(rating==='again')intervalDays=10/1440;else if(rating==='good')intervalDays=oldInt?Math.max(1,oldInt*2.1):1;else intervalDays=oldInt?Math.max(4,oldInt*3):4;
   state.progress.reviews[c.id]={rating,intervalDays,due:new Date(Date.now()+intervalDays*86400000).toISOString(),last:new Date().toISOString()};
   save();markStudy();markDaily('cards',c.id);if(state.mode==='review')markDaily('reviewed',c.id);if(c._level==='KAIGO')markDaily('kaigo',c.id);
+}
+function stepToolFlash(delta){
+  if(state.mode!=='tools'||!state.cards.length)return;
+  const next=Math.max(0,Math.min(state.cards.length-1,state.cardIndex+delta));if(next===state.cardIndex)return;
+  state.cardIndex=next;state.flipped=false;haptic(10);render();try{scrollTo(0,0)}catch{}
 }
 function rateCard(rating){
   const c=currentCard();if(!c)return;scheduleCard(c,rating);
@@ -235,7 +249,12 @@ function openKaigoCategory(cat){const cards=allKaigoCards().filter(x=>x.category
 
 function medicalTools(){
   const tools=D.kaigo.tools||[];
-  return `${header('Alat Medis・介護用品',`${tools.length} alat • gambar + istilah Jepang`)}<button class="back" onclick="go('kaigo')">←</button><div class="tool-list">${tools.map(t=>`<button class="tool-row" onclick="openMedicalTool('${esc(t.id)}')"><img class="tool-thumb" src="${htmlSafe(t.image||'')}" alt="${htmlSafe(t.term||'alat medis')}" loading="lazy"><div class="tool-copy"><span class="badge">${htmlSafe(t.category||'介護用品')}</span><b>${htmlSafe(t.term||'')}</b><small>${htmlSafe(t.reading||'')}</small><div class="tool-meaning">${htmlSafe(t.meaning||'')}</div></div><span class="tool-chevron">›</span></button>`).join('')}</div>`;
+  return `${header('Alat Medis・介護用品',`${tools.length} alat • gambar + istilah Jepang`)}<button class="back" onclick="go('kaigo')">←</button><button class="action primary tool-study-start" onclick="openMedicalToolFlash()">🃏 Mulai Flashcard ${tools.length} alat</button><div class="tool-list">${tools.map(t=>`<button class="tool-row" onclick="openMedicalTool('${esc(t.id)}')"><img class="tool-thumb" src="${htmlSafe(t.image||'')}" alt="${htmlSafe(t.term||'alat medis')}" loading="lazy"><div class="tool-copy"><span class="badge">${htmlSafe(t.category||'介護用品')}</span><b>${htmlSafe(t.term||'')}</b><small>${htmlSafe(t.reading||'')}</small><div class="tool-meaning">${htmlSafe(t.meaning||'')}</div></div><span class="tool-chevron">›</span></button>`).join('')}</div>`;
+}
+function openMedicalToolFlash(){
+  const cards=(D.kaigo.tools||[]).map(t=>Object.assign({_kind:'tool',_level:'KAIGO'},t));
+  if(!cards.length){toast('Materi alat medis belum tersedia');return}
+  state.level='KAIGO';openCustomFlash(cards,'medicalTools','tools');
 }
 
 function openMedicalTool(id){
@@ -433,7 +452,7 @@ function setAudioSetting(key,value){if(key==='volume')value=Math.max(0,Math.min(
 function previewAudio(event){window.TENKA_AUDIO?.playEvent?.(event)}
 function resetProgress(){if(confirm('Reset semua progress belajar di perangkat ini?')){state.progress=defaultProgress();save();render();toast('Progress direset')}}
 
-Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,startKaigoQuiz,openKaigoFlash,openKaigoCategory,openMedicalTool,stepMedicalTool,openHoukokuPractice,houkokuPick,houkokuRemove,houkokuDragStart,houkokuDrop,houkokuCheck,houkokuReset,houkokuShowResult,finishHoukoku,openHoukokuEssay,houkokuEssayReveal,finishHoukokuEssay,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
+Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,startKaigoQuiz,openKaigoFlash,openKaigoCategory,openMedicalToolFlash,openMedicalTool,stepMedicalTool,stepToolFlash,openHoukokuPractice,houkokuPick,houkokuRemove,houkokuDragStart,houkokuDrop,houkokuCheck,houkokuReset,houkokuShowResult,finishHoukoku,openHoukokuEssay,houkokuEssayReveal,finishHoukokuEssay,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
 window.TENKA_CORE={state,render,dueCards,allLevelCards,allKaigoCards,totalDue};
 window.TENKA_APP_VERSION=APP_VERSION;
 render();
