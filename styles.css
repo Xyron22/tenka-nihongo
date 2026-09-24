@@ -212,3 +212,56 @@
   .page-topbar .subtle{font-size:12px}
   .page-audio,.back{width:40px;height:40px;border-radius:13px}
 }
+
+
+/* Stage 7A-9 — modern inner study cards */
+.study-list{display:grid;gap:10px}
+.study-row{width:100%;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:13px 14px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:linear-gradient(145deg,#1c1f27,#17191f);color:var(--text);text-align:left;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.025);transition:transform .16s ease,border-color .16s ease,background .16s ease}
+.study-row:active{transform:scale(.988)}
+.study-row-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);font-size:21px}
+.study-row-copy{min-width:0}
+.study-row-copy b{display:block;font-size:15px;line-height:1.25}
+.study-row-copy small{display:block;margin-top:4px;color:#aeb6c0;font-size:11.5px;line-height:1.4}
+.study-row-end{font-size:24px;color:#8994a0;line-height:1}
+.study-row-badge{min-width:32px;padding:5px 8px;border-radius:999px;text-align:center;font-size:11px;font-weight:900;background:rgba(255,255,255,.06);color:#9da7b2}
+.study-row-badge.hot{background:rgba(240,184,107,.14);color:#f1ca8a;border:1px solid rgba(240,184,107,.20)}
+.study-row-badge.quiet{opacity:.72}
+.study-row.tone-blue{border-color:rgba(103,160,215,.16)}
+.study-row.tone-cyan{border-color:rgba(91,192,204,.16)}
+.study-row.tone-green{border-color:rgba(101,187,135,.16)}
+.study-row.tone-purple{border-color:rgba(173,131,214,.16)}
+.study-row.tone-gold{border-color:rgba(216,178,94,.16)}
+.study-row.tone-warn{border-color:rgba(240,184,107,.30);background:linear-gradient(145deg,#282117,#1d1a16)}
+.study-row.tone-blue .study-row-icon{background:rgba(84,137,191,.10)}
+.study-row.tone-cyan .study-row-icon{background:rgba(70,171,184,.10)}
+.study-row.tone-green .study-row-icon{background:rgba(74,155,105,.10)}
+.study-row.tone-purple .study-row-icon{background:rgba(144,99,190,.10)}
+.study-row.tone-gold .study-row-icon,.study-row.tone-warn .study-row-icon{background:rgba(186,145,66,.10)}
+.section-title-polished{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-top:25px}
+.section-title-polished span{font-size:18px}
+.section-title-polished small{font-size:11px;font-weight:700;color:var(--muted)}
+.kaigo-category-pills{gap:7px}
+.kaigo-category-pills .pill{background:linear-gradient(145deg,#1f242c,#191c22);border:1px solid rgba(255,255,255,.08);font-size:12px}
+.kaigo-category-pills .pill:active{transform:scale(.97)}
+
+.jlpt-level-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.jlpt-level-card{width:100%;padding:15px;border:1px solid rgba(255,255,255,.08);border-radius:21px;background:linear-gradient(145deg,#1a2430,#161b22);color:var(--text);text-align:left;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.025);transition:transform .16s ease,border-color .16s ease}
+.jlpt-level-card:active{transform:scale(.985)}
+.jlpt-level-top{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center}
+.jlpt-level-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:rgba(94,148,200,.10);border:1px solid rgba(115,171,224,.14);font-size:21px}
+.jlpt-level-top b{display:block;font-size:18px}
+.jlpt-level-top small{display:block;margin-top:2px;color:#aab7c4;font-size:10.5px}
+.jlpt-level-top em{font-style:normal;font-size:12px;font-weight:900;color:#c7ddf2}
+.jlpt-level-card .progress{height:7px;margin-top:13px}
+.jlpt-level-bottom{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:10px;color:#9facb8;font-size:10px}
+.jlpt-level-bottom strong{font-size:10px;color:#f0c781;font-weight:850}
+.jlpt-level-bottom strong.quiet{color:#82909c}
+@media(max-width:520px){
+  .study-list{gap:9px}
+  .study-row{padding:12px 12px;gap:10px;border-radius:17px}
+  .study-row-icon{width:39px;height:39px;border-radius:13px;font-size:20px}
+  .study-row-copy b{font-size:14.5px}
+  .study-row-copy small{font-size:11px}
+  .jlpt-level-grid{grid-template-columns:1fr;gap:10px}
+  .jlpt-level-card{padding:14px;border-radius:19px}
+}
