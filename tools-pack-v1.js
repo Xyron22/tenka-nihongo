@@ -3,7 +3,7 @@
 const D=window.TENKA_DATA;if(!D||!D.kaigo)return;
 
 // Stage 6A-3: tools 01–08 use independent images (one 1×1 cell).
-// Tools 09–13 still use the draft 4×4 atlas, with 112×84 px cells.
+// Stage 6A-4A: tools 09–10 now use standalone images; tools 11–13 still use the draft 4×4 atlas.
 // Explicit dimensions preserve each image's aspect ratio.
 const SPRITE='assets/tools/medical-tools-sprite.jpg';
 D.kaigo.tools=[
@@ -60,13 +60,13 @@ D.kaigo.tools=[
 },
 {
  id:'tool-09',term:'車椅子',reading:'くるまいす',meaning:'kursi roda',category:'介護・移動',
- image:SPRITE,spriteIndex:8,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/wheelchair-v2.svg',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:512,spriteHeight:512,
  functionJP:'歩行が難しい人の移動を助けるための用具です。',functionReading:'ほこう が むずかしい ひと の いどう を たすける ため の ようぐ です。',functionID:'Alat untuk membantu mobilitas orang yang kesulitan berjalan.',
  example:'車椅子で食堂まで移動します。',exampleReading:'くるまいす で しょくどう まで いどう します。',exampleMeaning:'Berpindah sampai ruang makan dengan kursi roda.'
 },
 {
  id:'tool-10',term:'歩行器',reading:'ほこうき',meaning:'walker / alat bantu jalan',category:'介護・移動',
- image:SPRITE,spriteIndex:9,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/walker-v2.svg',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:512,spriteHeight:512,
  functionJP:'歩行を安定させるための福祉用具です。',functionReading:'ほこう を あんてい させる ため の ふくしようぐ です。',functionID:'Alat bantu untuk membuat berjalan lebih stabil.',
  example:'歩行器を使って歩きます。',exampleReading:'ほこうき を つかって あるきます。',exampleMeaning:'Berjalan menggunakan walker.'
 },
