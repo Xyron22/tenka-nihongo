@@ -169,6 +169,7 @@ function home(){
     </div>
     <button class="action primary tenka-home-primary" onclick="homePrimary()">${due?`🧠 Mulai Review ${due} kartu →`:'🎯 Mulai belajar hari ini →'}</button>
   </section>
+  <div class="tenka-dashboard-title"><span>学習ダッシュボード</span><b>Belajar apa hari ini?</b></div>
   <div class="tenka-dashboard-grid">
     <section class="tenka-panel tenka-panel-kaigo">
       <div class="tenka-panel-head"><span>🏥</span><div><b>Kaigo・介護</b><small>Bahasa kerja & keperawatan</small></div><strong>${kaigoPct}%</strong></div>
@@ -218,7 +219,7 @@ function home(){
       <button class="tenka-daily-action" onclick="go('daily')">${dailyDone===5?'Lihat hasil hari ini':'Buka Daily Mission'} →</button>
     </section>
   </div>
-  <div class="install-tip">📱 Safari → Share → <b>Add to Home Screen</b> untuk membuka TENKA seperti aplikasi.</div>`;
+  <div class="install-tip tenka-home-install">📱 Safari → Share → <b>Add to Home Screen</b> untuk membuka TENKA seperti aplikasi.</div>`;
 }
 function homePrimary(){const due=dueSession();if(due.length)return openCustomFlash(due,'home','review');go('daily')}
 function dailyStart(){const due=dueSession();if(due.length)return openCustomFlash(due,'daily','review');openFlash('N5','vocab')}
