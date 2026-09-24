@@ -118,3 +118,17 @@
 @media(max-width:360px){
   .tenka-kaigo-grid{grid-template-columns:1fr}
 }
+
+
+.tenka-daily-missions{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px}
+.tenka-daily-missions>div{display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 6px;border:1px solid rgba(255,255,255,.08);border-radius:13px;background:rgba(18,10,30,.22);text-align:center}
+.tenka-daily-missions span{font-size:18px}
+.tenka-daily-missions b{font-size:10.5px}
+.tenka-daily-missions em{font-style:normal;font-size:10px;color:#d2c7de}
+.tenka-daily-missions>div.done{border-color:rgba(86,169,117,.42);background:rgba(31,91,57,.2)}
+.tenka-daily-missions>div.done em{color:#9ee0b3;font-weight:850}
+.tenka-daily-action{width:100%;margin-top:10px;padding:10px 12px;border:1px solid rgba(213,190,239,.16);border-radius:14px;background:rgba(28,18,42,.22);color:#eee5f7;font-weight:850;cursor:pointer}
+@media(max-width:520px){
+  .tenka-daily-missions{grid-template-columns:repeat(5,minmax(52px,1fr));overflow-x:auto;padding-bottom:2px}
+  .tenka-daily-missions>div{min-width:54px}
+}
