@@ -556,7 +556,32 @@ function setupCanvas(){const c=$('#writeCanvas');if(!c)return;ctx2=c.getContext(
 function clearCanvas(){const c=$('#writeCanvas');if(ctx2&&c)ctx2.clearRect(0,0,c.width,c.height);if(state.guide)drawGuide()}
 function toggleGuide(){state.guide=!state.guide;render()}
 function drawGuide(){const c=$('#writeCanvas');if(!ctx2||!c||!state.kakijun)return;ctx2.save();ctx2.globalAlpha=.12;ctx2.fillStyle='#111';ctx2.font='300px serif';ctx2.textAlign='center';ctx2.textBaseline='middle';ctx2.fillText(state.kakijun.kanji,c.width/2,c.height/2+10);ctx2.restore()}
-function daily(){const d=ensureDaily(),due=totalDue();const missions=[['🧠 Review selesai',5,Math.min(5,d.reviewed.length)],['🔤 Kartu dipelajari',10,Math.min(10,d.cards.length)],['📝 Bunpou',1,Math.min(1,d.grammar.length)],['🎮 Quiz',1,Math.min(1,d.quizzes)],['🏥 Kaigo',5,Math.min(5,d.kaigo.length)]];return `${header('今日のミッション',`${due} review menunggu`)}<button class="back" onclick="go('home')">←</button>${missions.map(m=>`<div class="mission"><div class="mission-line"><b>${m[0]}</b><span>${m[2]}/${m[1]}</span></div><div class="progress"><i style="width:${Math.min(100,m[2]/m[1]*100)}%"></i></div></div>`).join('')}<button class="action primary" onclick="dailyStart()">${due?`🧠 Review ${due} kartu →`:'Mulai N5 5 menit →'}</button>`}
+function daily(){
+  const d=ensureDaily(),due=totalDue();
+  const missions=[
+    {icon:'🧠',title:'Review selesai',target:5,value:Math.min(5,d.reviewed.length),sub:'Ulang kartu yang sudah jatuh tempo'},
+    {icon:'🔤',title:'Kartu dipelajari',target:10,value:Math.min(10,d.cards.length),sub:'Kanji atau kosakata baru'},
+    {icon:'📝',title:'Bunpou',target:1,value:Math.min(1,d.grammar.length),sub:'Pahami satu pola tata bahasa'},
+    {icon:'🎮',title:'Quiz',target:1,value:Math.min(1,d.quizzes),sub:'Tes singkat untuk cek ingatan'},
+    {icon:'🏥',title:'Kaigo',target:5,value:Math.min(5,d.kaigo.length),sub:'Bahasa kerja dan keperawatan'}
+  ];
+  const done=missions.filter(m=>m.value>=m.target).length,pct=Math.round(missions.reduce((n,m)=>n+Math.min(1,m.value/m.target),0)/missions.length*100);
+  const today=new Date().toLocaleDateString('ja-JP',{month:'long',day:'numeric',weekday:'short'});
+  return `${header('今日のミッション',`${due} review menunggu`)}<button class="back" onclick="go('home')">←</button>
+  <section class="daily-hero">
+    <div class="daily-hero-head"><div><span>DAILY STUDY</span><b>${today}</b><small>${done===5?'Semua target hari ini sudah selesai 🎉':'Sedikit demi sedikit, yang penting jalan.'}</small></div><div class="daily-ring" style="--p:${pct}"><strong>${pct}%</strong><span>${done}/5</span></div></div>
+    <div class="daily-hero-track"><i style="width:${pct}%"></i></div>
+    <div class="daily-hero-meta"><span>🔥 ${state.progress.streak||1} hari streak</span><span>🧠 ${due} review due</span></div>
+  </section>
+  <div class="daily-section-head"><div><span>TODAY'S TARGET</span><b>5 misi kecil</b></div><small>${done}/5 selesai</small></div>
+  <div class="daily-mission-list">
+    ${missions.map((m,i)=>{const mp=Math.round(Math.min(1,m.value/m.target)*100),complete=m.value>=m.target;return `<div class="daily-mission-card ${complete?'complete':''}"><div class="daily-mission-icon">${m.icon}</div><div class="daily-mission-copy"><div class="daily-mission-title"><b>${m.title}</b><span>${m.value}/${m.target}</span></div><small>${m.sub}</small><div class="daily-mission-track"><i style="width:${mp}%"></i></div></div><div class="daily-mission-state">${complete?'✓':i+1}</div></div>`}).join('')}
+  </div>
+  <section class="daily-focus-card">
+    <div><span>${done===5?'今日も完璧！':'今日も少しずつ。'}</span><b>${done===5?'Kerja bagus. Besok lanjut lagi.':'Mulai dari yang paling penting dulu.'}</b><small>${due?'Ada kartu review yang sudah waktunya diulang.':'Belum ada review due, jadi lanjutkan sesi N5 singkat.'}</small></div>
+    <button class="daily-start-btn" onclick="dailyStart()">${due?`🧠 Review ${due} kartu`:'🌱 Mulai N5 5 menit'} <span>→</span></button>
+  </section>`;
+}
 function progress(){
   const runs=Object.values(state.progress.quizRuns).reduce((a,b)=>a+b,0),acc=state.progress.total?Math.round(state.progress.correct/state.progress.total*100):0,due=totalDue(),streak=state.progress.streak||1;
   const tools=allMedicalToolCards(),toolTouched=tools.filter(x=>reviewInfo(x.id)).length,toolDue=tools.filter(x=>isDue(x.id)).length,toolBest=state.progress.best['KAIGO-medical-tools']||0,toolPct=Math.round(toolTouched/Math.max(1,tools.length)*100);
