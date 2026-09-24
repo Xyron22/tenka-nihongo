@@ -113,7 +113,10 @@ function audioEvent(event){
 function answerFeedback(ok){markStudy();haptic(ok?18:55);audioEvent(ok?'correct':'wrong')}
 function startGreeting(){markStudy();audioEvent('greeting');toast('今日も頑張ろう！')}
 
-function header(title,sub=''){return `<div class="topbar"><div><div class="brand">${title}</div>${sub?`<div class="subtle">${sub}</div>`:''}</div><button class="icon-btn" onclick="startGreeting()">🔊</button></div>`}
+function header(title,sub=''){
+  const group=['jlpt','level','grammar'].includes(state.view)?'JLPT STUDY':['kaigo','medicalTools','medicalToolDetail','handoff','houkoku','houkokuEssay'].includes(state.view)?'KAIGO WORK':state.view==='daily'?'DAILY STUDY':state.view==='progress'?'PROGRESS':state.view==='settings'?'TENKA SETTINGS':'TENKA';
+  return `<div class="topbar page-topbar"><div class="page-heading"><div class="page-eyebrow">${group}</div><div class="brand">${title}</div>${sub?`<div class="subtle">${sub}</div>`:''}</div><button class="icon-btn page-audio" onclick="startGreeting()" aria-label="Putar suara penyemangat"><span>🔊</span></button></div>`;
+}
 function nav(){
   const active=['daily','progress','settings'].includes(state.view)?state.view:'home';
   const item=(view,icon,label)=>`<button class="${active===view?'active':''}" onclick="go('${view}')" ${active===view?'aria-current="page"':''}><span class="nav-icon">${icon}</span><span class="nav-label">${label}</span></button>`;
