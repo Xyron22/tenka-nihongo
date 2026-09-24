@@ -270,13 +270,18 @@ function setMedicalToolCategory(cat){
 }
 function medicalTools(){
   const all=D.kaigo.tools||[],tools=selectedMedicalTools(),cats=medicalToolCategories(),cat=state.medicalToolCategory||'Semua';
-  const label=cat==='Semua'?`${tools.length} alat`:`${cat} • ${tools.length}/${all.length} alat`;
-  return `${header('Alat Medis・介護用品',`${label} • gambar + istilah Jepang`)}<button class="back" onclick="go('kaigo')">←</button><div class="tool-filter-bar"><button class="pill tool-filter ${cat==='Semua'?'active':''}" onclick="setMedicalToolCategory('Semua')">Semua</button>${cats.map(x=>`<button class="pill tool-filter ${cat===x?'active':''}" onclick="setMedicalToolCategory('${esc(x)}')">${htmlSafe(x)}</button>`).join('')}</div><div class="tool-study-actions"><button class="action primary" onclick="openMedicalToolFlash()">🃏 Flashcard ${tools.length} alat</button><button class="action" onclick="startMedicalToolQuiz()">🎮 Quiz Gambar</button></div><div class="tool-list">${tools.map(t=>`<button class="tool-row" onclick="openMedicalTool('${esc(t.id)}')"><img class="tool-thumb" src="${htmlSafe(t.image||'')}" alt="${htmlSafe(t.term||'alat medis')}" loading="lazy"><div class="tool-copy"><span class="badge">${htmlSafe(t.category||'介護用品')}</span><b>${htmlSafe(t.term||'')}</b><small>${htmlSafe(t.reading||'')}</small><div class="tool-meaning">${htmlSafe(t.meaning||'')}</div></div><span class="tool-chevron">›</span></button>`).join('')}</div>`;
+  const due=tools.filter(t=>isDue(t.id)).length,label=cat==='Semua'?`${tools.length} alat`:`${cat} • ${tools.length}/${all.length} alat`;
+  return `${header('Alat Medis・介護用品',`${label} • gambar + istilah Jepang`)}<button class="back" onclick="go('kaigo')">←</button><div class="tool-filter-bar"><button class="pill tool-filter ${cat==='Semua'?'active':''}" onclick="setMedicalToolCategory('Semua')">Semua</button>${cats.map(x=>`<button class="pill tool-filter ${cat===x?'active':''}" onclick="setMedicalToolCategory('${esc(x)}')">${htmlSafe(x)}</button>`).join('')}</div><div class="tool-study-actions"><button class="action primary" onclick="openMedicalToolFlash()">🃏 Flashcard ${tools.length} alat</button><button class="action" onclick="startMedicalToolQuiz()">🎮 Quiz Gambar</button><button class="action ${due?'blue':''}" onclick="openMedicalToolReview()">🧠 Review ${due}</button></div><div class="tool-list">${tools.map(t=>`<button class="tool-row" onclick="openMedicalTool('${esc(t.id)}')"><img class="tool-thumb" src="${htmlSafe(t.image||'')}" alt="${htmlSafe(t.term||'alat medis')}" loading="lazy"><div class="tool-copy"><span class="badge">${htmlSafe(t.category||'介護用品')}</span><b>${htmlSafe(t.term||'')}</b><small>${htmlSafe(t.reading||'')}</small><div class="tool-meaning">${htmlSafe(t.meaning||'')}</div></div><span class="tool-chevron">›</span></button>`).join('')}</div>`;
 }
 function openMedicalToolFlash(){
   const cards=selectedMedicalTools().map(t=>Object.assign({_kind:'tool',_level:'KAIGO'},t));
   if(!cards.length){toast('Materi alat medis belum tersedia');return}
   state.level='KAIGO';openCustomFlash(cards,'medicalTools','tools');
+}
+function openMedicalToolReview(){
+  const cards=selectedMedicalTools().map(t=>Object.assign({_kind:'tool',_level:'KAIGO'},t)).filter(c=>isDue(c.id));
+  if(!cards.length){toast('Belum ada review alat yang jatuh tempo');return}
+  state.level='KAIGO';openCustomFlash(cards,'medicalTools','review');
 }
 
 function openMedicalTool(id){
@@ -477,7 +482,7 @@ function setAudioSetting(key,value){if(key==='volume')value=Math.max(0,Math.min(
 function previewAudio(event){window.TENKA_AUDIO?.playEvent?.(event)}
 function resetProgress(){if(confirm('Reset semua progress belajar di perangkat ini?')){state.progress=defaultProgress();save();render();toast('Progress direset')}}
 
-Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,startKaigoQuiz,startMedicalToolQuiz,openKaigoFlash,openKaigoCategory,setMedicalToolCategory,openMedicalToolFlash,openMedicalTool,stepMedicalTool,stepToolFlash,openHoukokuPractice,houkokuPick,houkokuRemove,houkokuDragStart,houkokuDrop,houkokuCheck,houkokuReset,houkokuShowResult,finishHoukoku,openHoukokuEssay,houkokuEssayReveal,finishHoukokuEssay,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
+Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,startKaigoQuiz,startMedicalToolQuiz,openKaigoFlash,openKaigoCategory,setMedicalToolCategory,openMedicalToolFlash,openMedicalToolReview,openMedicalTool,stepMedicalTool,stepToolFlash,openHoukokuPractice,houkokuPick,houkokuRemove,houkokuDragStart,houkokuDrop,houkokuCheck,houkokuReset,houkokuShowResult,finishHoukoku,openHoukokuEssay,houkokuEssayReveal,finishHoukokuEssay,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
 window.TENKA_CORE={state,render,dueCards,allLevelCards,allKaigoCards,allMedicalToolCards,allKaigoStudyCards,totalDue};
 window.TENKA_APP_VERSION=APP_VERSION;
 render();
