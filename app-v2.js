@@ -243,11 +243,18 @@ function openMedicalTool(id){
   state.medicalToolId=id;go('medicalToolDetail');
 }
 function currentMedicalTool(){return (D.kaigo.tools||[]).find(t=>t.id===state.medicalToolId)||null}
+function stepMedicalTool(delta){
+  const tools=D.kaigo.tools||[];if(!tools.length)return;
+  const i=tools.findIndex(t=>t.id===state.medicalToolId);if(i<0)return;
+  const next=Math.max(0,Math.min(tools.length-1,i+delta));if(next===i)return;
+  state.medicalToolId=tools[next].id;haptic(10);render();try{scrollTo(0,0)}catch{}
+}
 function medicalToolDetail(){
-  const t=currentMedicalTool();
+  const tools=D.kaigo.tools||[],t=currentMedicalTool();
   if(!t)return `${header('Alat Medis','Data tidak ditemukan')}<button class="back" onclick="go('medicalTools')">←</button><div class="muted-box">Alat tidak ditemukan.</div>`;
+  const index=Math.max(0,tools.findIndex(x=>x.id===t.id)),hasPrev=index>0,hasNext=index<tools.length-1;
   const safety=t.safetyNote?`<div class="tool-safety"><b>⚠️ Catatan aman</b><div>${htmlSafe(t.safetyNote)}</div>${t.safetyNoteReading?`<small>${htmlSafe(t.safetyNoteReading)}</small>`:''}${t.safetyNoteMeaning?`<p>${htmlSafe(t.safetyNoteMeaning)}</p>`:''}</div>`:'';
-  return `${header('Alat Medis・介護用品',htmlSafe(t.category||''))}<button class="back" onclick="go('medicalTools')">←</button><article class="tool-detail"><div class="tool-hero"><img src="${htmlSafe(t.image||'')}" alt="${htmlSafe(t.term||'alat medis')}"></div><span class="badge">${htmlSafe(t.category||'介護用品')}</span><h2>${htmlSafe(t.term||'')}</h2><div class="tool-reading">${htmlSafe(t.reading||'')}</div><div class="tool-detail-meaning">${htmlSafe(t.meaning||'')}</div><div class="small-actions"><button class="pill" onclick="speakText('${esc(t.term||t.reading)}')">🔊 Nama alat</button></div><div class="section-title">Fungsi</div><div class="tool-info"><b>${htmlSafe(t.functionJP||'')}</b>${t.functionReading?`<small>${htmlSafe(t.functionReading)}</small>`:''}${t.functionID?`<p>🇮🇩 ${htmlSafe(t.functionID)}</p>`:''}${t.functionJP?`<button class="pill" onclick="speakText('${esc(t.functionJP)}',.82)">🔊 Dengarkan fungsi</button>`:''}</div><div class="section-title">Contoh kalimat</div><div class="tool-info"><b>${htmlSafe(t.example||'')}</b>${t.exampleReading?`<small>${htmlSafe(t.exampleReading)}</small>`:''}${t.exampleMeaning?`<p>🇮🇩 ${htmlSafe(t.exampleMeaning)}</p>`:''}${t.example?`<button class="pill" onclick="speakText('${esc(t.example)}',.82)">🔊 Dengarkan contoh</button>`:''}</div>${safety}</article>`;
+  return `${header('Alat Medis・介護用品',htmlSafe(t.category||''))}<button class="back" onclick="go('medicalTools')">←</button><article class="tool-detail"><div class="tool-hero"><img src="${htmlSafe(t.image||'')}" alt="${htmlSafe(t.term||'alat medis')}"></div><span class="badge">${htmlSafe(t.category||'介護用品')}</span><h2>${htmlSafe(t.term||'')}</h2><div class="tool-reading">${htmlSafe(t.reading||'')}</div><div class="tool-detail-meaning">${htmlSafe(t.meaning||'')}</div><div class="small-actions"><button class="pill" onclick="speakText('${esc(t.term||t.reading)}')">🔊 Nama alat</button></div><div class="section-title">Fungsi</div><div class="tool-info"><b>${htmlSafe(t.functionJP||'')}</b>${t.functionReading?`<small>${htmlSafe(t.functionReading)}</small>`:''}${t.functionID?`<p>🇮🇩 ${htmlSafe(t.functionID)}</p>`:''}${t.functionJP?`<button class="pill" onclick="speakText('${esc(t.functionJP)}',.82)">🔊 Dengarkan fungsi</button>`:''}</div><div class="section-title">Contoh kalimat</div><div class="tool-info"><b>${htmlSafe(t.example||'')}</b>${t.exampleReading?`<small>${htmlSafe(t.exampleReading)}</small>`:''}${t.exampleMeaning?`<p>🇮🇩 ${htmlSafe(t.exampleMeaning)}</p>`:''}${t.example?`<button class="pill" onclick="speakText('${esc(t.example)}',.82)">🔊 Dengarkan contoh</button>`:''}</div>${safety}<div class="tool-pager"><button class="action" onclick="stepMedicalTool(-1)" ${hasPrev?'':'disabled aria-disabled="true"'}>← Sebelumnya</button><span>${index+1}/${tools.length}</span><button class="action primary" onclick="stepMedicalTool(1)" ${hasNext?'':'disabled aria-disabled="true"'}>Berikutnya →</button></div></article>`;
 }
 
 function houkokuItems(){return D.kaigo.houkoku||[]}
@@ -426,7 +433,7 @@ function setAudioSetting(key,value){if(key==='volume')value=Math.max(0,Math.min(
 function previewAudio(event){window.TENKA_AUDIO?.playEvent?.(event)}
 function resetProgress(){if(confirm('Reset semua progress belajar di perangkat ini?')){state.progress=defaultProgress();save();render();toast('Progress direset')}}
 
-Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,startKaigoQuiz,openKaigoFlash,openKaigoCategory,openMedicalTool,openHoukokuPractice,houkokuPick,houkokuRemove,houkokuDragStart,houkokuDrop,houkokuCheck,houkokuReset,houkokuShowResult,finishHoukoku,openHoukokuEssay,houkokuEssayReveal,finishHoukokuEssay,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
+Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,startKaigoQuiz,openKaigoFlash,openKaigoCategory,openMedicalTool,stepMedicalTool,openHoukokuPractice,houkokuPick,houkokuRemove,houkokuDragStart,houkokuDrop,houkokuCheck,houkokuReset,houkokuShowResult,finishHoukoku,openHoukokuEssay,houkokuEssayReveal,finishHoukokuEssay,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
 window.TENKA_CORE={state,render,dueCards,allLevelCards,allKaigoCards,totalDue};
 window.TENKA_APP_VERSION=APP_VERSION;
 render();
