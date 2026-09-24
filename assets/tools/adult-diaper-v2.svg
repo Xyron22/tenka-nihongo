@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Adult diaper illustration">
+  <rect width="512" height="512" rx="72" fill="#f7f8fa"/>
+  <path d="M150 150c34 26 68 36 106 36s72-10 106-36l30 74-42 176c-31-12-61-18-94-18s-63 6-94 18l-42-176z" fill="#ffffff" stroke="#252a31" stroke-width="20" stroke-linejoin="round"/>
+  <path d="M167 190h70M275 190h70" fill="none" stroke="#8b98a5" stroke-width="18" stroke-linecap="round"/>
+  <path d="M190 254c28 18 43 48 43 88M322 254c-28 18-43 48-43 88" fill="none" stroke="#dbe3ea" stroke-width="22" stroke-linecap="round"/>
+  <path d="M210 372h92" fill="none" stroke="#e0b93e" stroke-width="16" stroke-linecap="round"/>
+</svg>
