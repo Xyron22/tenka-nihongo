@@ -192,3 +192,23 @@
   .bottom-nav button{min-height:52px;padding:6px 2px 5px;font-size:10.5px;border-radius:14px}
   .bottom-nav .nav-icon{font-size:19px}
 }
+
+
+/* Stage 7A-8 — inner page header/topbar polish */
+.page-topbar{position:relative;margin:2px 0 16px;padding:15px 16px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:linear-gradient(145deg,rgba(29,34,43,.92),rgba(20,23,30,.94));box-shadow:0 10px 28px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.03)}
+.page-topbar:before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);pointer-events:none}
+.page-heading{min-width:0;flex:1}
+.page-eyebrow{margin-bottom:4px;font-size:10px;line-height:1;letter-spacing:.16em;font-weight:900;color:#8fa1b2}
+.page-topbar .brand{font-size:23px;line-height:1.16;letter-spacing:-.015em}
+.page-topbar .subtle{margin-top:5px;line-height:1.4;color:#adb5c0}
+.page-audio{flex:0 0 auto;width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#232833,#1c2028);border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+.page-audio span{display:grid;place-items:center;font-size:18px}
+.page-audio:active{transform:scale(.96)}
+.back{display:inline-grid;place-items:center;width:42px;height:42px;margin:0 0 12px;padding:0;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:linear-gradient(145deg,#20242c,#191c23);box-shadow:inset 0 1px 0 rgba(255,255,255,.025);font-size:20px;line-height:1;transition:transform .16s ease,background .16s ease}
+.back:active{transform:scale(.96)}
+@media(max-width:520px){
+  .page-topbar{padding:14px 14px;border-radius:20px;margin-bottom:14px}
+  .page-topbar .brand{font-size:21px}
+  .page-topbar .subtle{font-size:12px}
+  .page-audio,.back{width:40px;height:40px;border-radius:13px}
+}
