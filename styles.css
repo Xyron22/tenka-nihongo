@@ -5,3 +5,56 @@
 .tool-list{display:grid;gap:10px}.tool-row{width:100%;display:flex;align-items:center;gap:14px;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:18px;text-align:left;cursor:pointer}.tool-thumb{width:88px;height:88px;flex:0 0 88px;object-fit:contain;background:#f7f8fa;border-radius:14px}.tool-copy{min-width:0;display:flex;flex:1;flex-direction:column;align-items:flex-start}.tool-copy b{font-size:19px;margin-top:6px}.tool-copy small{color:var(--muted);margin-top:2px}.tool-meaning{color:var(--accent);font-size:14px;margin-top:6px;line-height:1.4}.tool-chevron{font-size:28px;color:var(--muted);padding-right:4px}.tool-detail{padding-bottom:16px}.tool-hero{height:280px;display:grid;place-items:center;background:#f7f8fa;border-radius:24px;margin:8px 0 16px;overflow:hidden}.tool-hero img{width:100%;height:100%;object-fit:contain}.tool-detail h2{font-size:34px;margin:12px 0 2px}.tool-reading{font-size:20px;font-weight:800;color:var(--muted)}.tool-detail-meaning{font-size:18px;color:var(--accent);margin:6px 0 12px}.tool-info{padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:18px;line-height:1.65}.tool-info b{display:block;font-size:18px}.tool-info small{display:block;color:var(--muted);margin-top:4px}.tool-info p{margin:10px 0}.tool-safety{margin-top:16px;padding:15px;border:1px solid #665820;background:#2a2517;border-radius:18px;line-height:1.6}.tool-pager{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin-top:18px}.tool-pager>span{font-weight:850;color:var(--muted);font-variant-numeric:tabular-nums;text-align:center}.tool-pager .action:disabled{opacity:.35;cursor:default}.tool-pager .action:last-child{justify-self:stretch}@media(max-width:390px){.tool-pager{grid-template-columns:1fr 52px 1fr}.tool-pager .action{padding:12px 10px;font-size:13px}}
 .tool-safety b{display:block;color:#ffe889;margin-bottom:6px}.tool-safety small{display:block;color:var(--muted);margin-top:5px}.tool-safety p{margin:8px 0 0}@media(max-width:390px){.tool-thumb{width:76px;height:76px;flex-basis:76px}.tool-copy b{font-size:17px}.tool-hero{height:240px}.tool-detail h2{font-size:30px}}
 .houkoku-ruby{ruby-position:over}.houkoku-ruby rt{font-size:.58em;color:var(--muted);font-weight:650;line-height:1}.houkoku-piece{line-height:2.05;padding-top:20px}.houkoku-model{display:grid;gap:10px;margin-top:14px}.houkoku-model-line{padding:14px;background:#101014;border-radius:16px}.houkoku-model-line .handoff{line-height:2.25}.houkoku-id{margin-top:8px;color:var(--accent);font-size:14px;line-height:1.55}.houkoku-textarea{width:100%;min-height:210px;resize:vertical;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:18px;padding:16px;font:inherit;font-size:17px;line-height:1.75;outline:none}.houkoku-textarea:focus{border-color:var(--accent)}.essay-answer{white-space:pre-wrap;background:#101014;border-radius:16px;padding:14px;line-height:1.75;font-size:17px}.essay-controls{grid-template-columns:1fr 1fr;margin-top:14px}
+
+.tenka-home-hero{position:relative;overflow:hidden;padding:22px;border:1px solid #355a77;border-radius:28px;background:linear-gradient(145deg,#0f2b43,#183f5e 55%,#214e67);box-shadow:0 18px 50px rgba(0,0,0,.22);margin-bottom:16px}
+.tenka-home-brand{position:relative;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.tenka-wordmark{font-size:40px;line-height:.95;font-weight:950;letter-spacing:.08em;color:#d6ecff;text-shadow:0 2px 18px rgba(105,184,255,.18)}
+.tenka-kana{margin-top:6px;text-align:center;letter-spacing:.35em;color:#c2d9e9;font-size:13px}
+.tenka-home-motto{display:flex;flex-direction:column;align-items:flex-end;text-align:right;max-width:62%;gap:3px}
+.tenka-home-motto b{font-size:17px}
+.tenka-home-motto span{font-size:13px;color:#d3e1ea}
+.tenka-home-sky{position:absolute;inset:0;pointer-events:none;opacity:.75}
+.tenka-home-sky .sun{position:absolute;width:54px;height:54px;border-radius:50%;right:42px;top:20px;background:#f0b86b;box-shadow:0 0 35px rgba(240,184,107,.18)}
+.tenka-home-sky .fuji{position:absolute;right:100px;top:34px;width:150px;height:92px;background:linear-gradient(140deg,#6583a0,#2b5877);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.tenka-home-sky .fuji:after{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:70px;height:38px;background:#dfe8ef;clip-path:polygon(50% 0,100% 100%,72% 74%,55% 100%,38% 72%,0 100%)}
+.tenka-home-sky .ridge{position:absolute;left:-5%;right:-5%;bottom:-32px;height:98px;background:#0a2234;clip-path:polygon(0 62%,12% 45%,20% 61%,31% 36%,43% 58%,54% 41%,67% 64%,80% 34%,100% 58%,100% 100%,0 100%)}
+.tenka-home-summary{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:28px 0 12px}
+.tenka-home-summary>div{padding:11px 12px;border:1px solid rgba(255,255,255,.12);background:rgba(6,22,34,.44);backdrop-filter:blur(8px);border-radius:16px}
+.tenka-home-summary b{display:block;font-size:18px}
+.tenka-home-summary span{display:block;margin-top:2px;font-size:11px;color:#c5d7e3}
+.tenka-home-primary{position:relative;z-index:2;width:100%}
+.tenka-dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tenka-panel{border:1px solid var(--line);border-radius:22px;padding:16px;text-align:left;color:var(--text);cursor:pointer;min-height:162px;box-shadow:0 10px 26px rgba(0,0,0,.14)}
+.tenka-panel-kaigo{background:linear-gradient(145deg,#16352a,#1d4937)}
+.tenka-panel-houkoku{background:linear-gradient(145deg,#3a2e1d,#4d3b23)}
+.tenka-panel-jlpt{background:linear-gradient(145deg,#16344f,#1d4468)}
+.tenka-panel-daily{background:linear-gradient(145deg,#32284a,#46345c)}
+.tenka-panel-head{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center}
+.tenka-panel-head>span{font-size:27px}
+.tenka-panel-head b{display:block;font-size:17px}
+.tenka-panel-head small{display:block;margin-top:2px;color:#c0c0cb;font-size:12px}
+.tenka-panel-head strong{font-size:16px;color:var(--accent)}
+.tenka-panel-progress{height:9px;background:rgba(0,0,0,.25);border-radius:99px;overflow:hidden;margin:18px 0 12px}
+.tenka-panel-progress i{display:block;height:100%;background:var(--accent);border-radius:inherit}
+.tenka-panel-foot{display:flex;gap:8px;flex-wrap:wrap;color:#d0d1d8;font-size:11px}
+.tenka-mini-road{display:grid;grid-template-columns:auto 1fr auto 1fr auto;align-items:center;gap:6px;margin:17px 0 11px}
+.tenka-mini-road span{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;border:1px solid #806b43;background:#2b2419;font-weight:900}
+.tenka-mini-road span.done{background:#2e744a;border-color:#56a975;color:#dff7e7}
+.tenka-mini-road i{height:2px;background:#68583a}
+.tenka-level-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:13px}
+.tenka-level-pills span{padding:6px 8px;border-radius:999px;background:rgba(0,0,0,.22);font-size:11px;color:#bfcbd5}
+.tenka-level-pills .active{background:#d7ebff;color:#16314b;font-weight:900}
+.tenka-daily-quote{display:flex;flex-direction:column;justify-content:center;min-height:82px;margin-top:13px;padding:12px;border-radius:16px;background:rgba(0,0,0,.18)}
+.tenka-daily-quote b{font-size:17px}
+.tenka-daily-quote span{margin-top:5px;color:#d7cede;font-size:12px}
+@media(max-width:520px){
+  .tenka-home-brand{display:block}
+  .tenka-home-motto{align-items:flex-start;text-align:left;max-width:100%;margin-top:14px}
+  .tenka-home-sky .sun{right:18px;top:18px}
+  .tenka-home-sky .fuji{right:40px;top:44px;width:120px;height:74px;opacity:.58}
+  .tenka-home-summary{grid-template-columns:1fr 1fr 1fr;margin-top:22px}
+  .tenka-home-summary>div{padding:9px}
+  .tenka-home-summary b{font-size:16px}
+  .tenka-dashboard-grid{grid-template-columns:1fr}
+  .tenka-panel{min-height:145px}
+}
