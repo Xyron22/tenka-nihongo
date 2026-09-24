@@ -153,8 +153,42 @@ function touchedCount(level){const ids=(level==='KAIGO'?allKaigoStudyCards():all
 function dueSession(){return [...LEVELS.flatMap(l=>dueCards(l)),...dueCards('KAIGO')]}
 
 function home(){
-  const due=totalDue();
-  return `${header('TENKA 日本語','JLPT • Bunpou • Kaigo')}<section class="hero"><h1>今日も少しずつ。</h1><p>Satu layar, satu fokus. Belajar singkat tapi rutin.</p><div class="streak">🔥 ${state.progress.streak||1} hari streak</div><div class="spacer"></div><button class="action primary" onclick="homePrimary()">${due?`🧠 Review ${due} kartu →`:'始めよう！'}</button></section><div class="grid"><button class="nav-card" onclick="go('jlpt')"><div class="emoji">🈶</div><b>JLPT</b><span>N5 → N1 • kanji & kosakata</span></button><button class="nav-card" onclick="openGrammar('N5')"><div class="emoji">📝</div><b>Bunpou</b><span>Pola + latihan mini</span></button><button class="nav-card" onclick="go('kaigo')"><div class="emoji">🏥</div><b>Kaigo</b><span>Kosakata medis & 申し送り</span></button><button class="nav-card" onclick="go('daily')"><div class="emoji">🎯</div><b>Daily Study</b><span>Misi singkat setiap hari</span></button></div><div class="install-tip">📱 Safari → Share → <b>Add to Home Screen</b> untuk membuka TENKA seperti aplikasi.</div>`;
+  const due=totalDue(),streak=state.progress.streak||1;
+  const kaigoTouched=touchedCount('KAIGO'),kaigoTotal=allKaigoStudyCards().length,kaigoPct=Math.round(kaigoTouched/Math.max(1,kaigoTotal)*100);
+  const n5Total=allLevelCards('N5').length,n5Touched=touchedCount('N5'),n5Pct=Math.round(n5Touched/Math.max(1,n5Total)*100);
+  const reportTotal=(D.kaigo.houkoku||[]).length,reportDone=houkokuDoneCount(),essayDone=houkokuEssayDoneCount();
+  return `<section class="tenka-home-hero">
+    <div class="tenka-home-brand"><div><div class="tenka-wordmark">TENKA</div><div class="tenka-kana">てんか</div></div><div class="tenka-home-motto"><b>Belajar hari ini, masa depan lebih dekat.</b><span>今日の勉強が、未来を近づける。</span></div></div>
+    <div class="tenka-home-sky" aria-hidden="true"><span class="sun"></span><span class="fuji"></span><span class="ridge"></span></div>
+    <div class="tenka-home-summary">
+      <div><b>🔥 ${streak}</b><span>hari streak</span></div>
+      <div><b>🧠 ${due}</b><span>review due</span></div>
+      <div><b>🏥 ${kaigoTouched}/${kaigoTotal}</b><span>Kaigo disentuh</span></div>
+    </div>
+    <button class="action primary tenka-home-primary" onclick="homePrimary()">${due?`🧠 Mulai Review ${due} kartu →`:'🎯 Mulai belajar hari ini →'}</button>
+  </section>
+  <div class="tenka-dashboard-grid">
+    <button class="tenka-panel tenka-panel-kaigo" onclick="go('kaigo')">
+      <div class="tenka-panel-head"><span>🏥</span><div><b>Kaigo・介護</b><small>Bahasa kerja & keperawatan</small></div><strong>${kaigoPct}%</strong></div>
+      <div class="tenka-panel-progress"><i style="width:${kaigoPct}%"></i></div>
+      <div class="tenka-panel-foot"><span>🩺 ${allMedicalToolCards().length} alat medis</span><span>🗣️ ${handoffDoneCount()}/${D.kaigo.handoff.length} 申し送り</span></div>
+    </button>
+    <button class="tenka-panel tenka-panel-houkoku" onclick="openHoukokuPractice()">
+      <div class="tenka-panel-head"><span>📣</span><div><b>Houkoku・報告</b><small>Latihan laporan kerja</small></div><strong>${reportDone}/${reportTotal}</strong></div>
+      <div class="tenka-mini-road"><span class="${reportDone?'done':''}">1</span><i></i><span class="${essayDone?'done':''}">2</span><i></i><span>3</span></div>
+      <div class="tenka-panel-foot"><span>Level 1 Puzzle</span><span>Level 2 Tulis</span><span>Level 3 Rencana</span></div>
+    </button>
+    <button class="tenka-panel tenka-panel-jlpt" onclick="go('jlpt')">
+      <div class="tenka-panel-head"><span>📘</span><div><b>JLPT Roadmap</b><small>N5 → N1</small></div><strong>${n5Pct}%</strong></div>
+      <div class="tenka-panel-progress"><i style="width:${n5Pct}%"></i></div>
+      <div class="tenka-level-pills"><span class="active">N5</span><span>N4</span><span>N3</span><span>N2</span><span>N1</span></div>
+    </button>
+    <button class="tenka-panel tenka-panel-daily" onclick="go('daily')">
+      <div class="tenka-panel-head"><span>🎯</span><div><b>今日のミッション</b><small>Belajar sedikit, tapi rutin</small></div><strong>→</strong></div>
+      <div class="tenka-daily-quote"><b>一歩ずつ、確実に。</b><span>Satu langkah demi satu, pasti sampai.</span></div>
+    </button>
+  </div>
+  <div class="install-tip">📱 Safari → Share → <b>Add to Home Screen</b> untuk membuka TENKA seperti aplikasi.</div>`;
 }
 function homePrimary(){const due=dueSession();if(due.length)return openCustomFlash(due,'home','review');go('daily')}
 function dailyStart(){const due=dueSession();if(due.length)return openCustomFlash(due,'daily','review');openFlash('N5','vocab')}
