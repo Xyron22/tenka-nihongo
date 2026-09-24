@@ -7,9 +7,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="TENKA">
-  <link rel="manifest" href="manifest.webmanifest?v=5.5.0">
-  <link rel="icon" href="assets/icon.svg?v=5.5.0" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=5.5.0">
+  <link rel="manifest" href="manifest.webmanifest?v=5.6.0">
+  <link rel="icon" href="assets/icon.svg?v=5.6.0" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=5.6.0">
   <title>TENKA 日本語</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
     var CORE_VERSION='2.4.0';
     var AUDIO_VERSION='5.1.1';
     var SOUND_PACK_VERSION='3.0.0';
-    var CACHE_VERSION='5.5.0';
+    var CACHE_VERSION='5.6.0';
     var CLEAN_KEY='tenka-system-audit-clean-520';
     var RELOAD_KEY='tenka-system-audit-reload-520';
     var title=document.getElementById('boot-title'),message=document.getElementById('boot-message'),detail=document.getElementById('boot-detail');
@@ -61,6 +61,7 @@
         await load('./content-pack-v3.js','content-pack-v3.js');
         await load('./houkoku-pack-v1.js','houkoku-pack-v1.js');
         await load('./houkoku-pack-v2.js','houkoku-pack-v2.js');
+        await load('./tools-pack-v1.js','tools-pack-v1.js');
         setDetail('Memuat Exam Sound 5.1.1…');await load('./audio-engine-v5.js','audio-engine-v5.js');
         if(window.TENKA_AUDIO_VERSION!==AUDIO_VERSION)throw new Error('Exam Sound 5.1.1 belum aktif');
         setDetail('Memuat TENKA Core 2…');await load('./app-v2.js','app-v2.js');
