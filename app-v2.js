@@ -114,7 +114,11 @@ function answerFeedback(ok){markStudy();haptic(ok?18:55);audioEvent(ok?'correct'
 function startGreeting(){markStudy();audioEvent('greeting');toast('今日も頑張ろう！')}
 
 function header(title,sub=''){return `<div class="topbar"><div><div class="brand">${title}</div>${sub?`<div class="subtle">${sub}</div>`:''}</div><button class="icon-btn" onclick="startGreeting()">🔊</button></div>`}
-function nav(){return `<nav class="bottom-nav"><button onclick="go('home')"><span>⌂</span>Home</button><button onclick="go('daily')"><span>🎯</span>Daily</button><button onclick="go('progress')"><span>📊</span>Progress</button><button onclick="go('settings')"><span>⚙️</span>Setting</button></nav>`}
+function nav(){
+  const active=['daily','progress','settings'].includes(state.view)?state.view:'home';
+  const item=(view,icon,label)=>`<button class="${active===view?'active':''}" onclick="go('${view}')" ${active===view?'aria-current="page"':''}><span class="nav-icon">${icon}</span><span class="nav-label">${label}</span></button>`;
+  return `<nav class="bottom-nav" aria-label="Navigasi utama"><div class="bottom-nav-inner">${item('home','⌂','Home')}${item('daily','🎯','Daily')}${item('progress','📊','Progress')}${item('settings','⚙️','Setting')}</div></nav>`;
+}
 function clearTimer(){if(state.timer)clearInterval(state.timer);state.timer=null}
 function go(view){clearTimer();if(state.view==='handoff'&&view!=='handoff')state.handoffSession=null;if(state.view==='houkoku'&&view!=='houkoku')state.houkokuSession=null;if(state.view==='houkokuEssay'&&view!=='houkokuEssay')state.houkokuEssaySession=null;state.view=view;state.flipped=false;render();try{scrollTo(0,0)}catch{}}
 function render(){
