@@ -265,3 +265,59 @@
   .jlpt-level-grid{grid-template-columns:1fr;gap:10px}
   .jlpt-level-card{padding:14px;border-radius:19px}
 }
+
+
+/* Stage 7A-10 — progress dashboard */
+.progress-hero{padding:18px;border:1px solid rgba(255,255,255,.08);border-radius:24px;background:linear-gradient(145deg,#1b2732,#171b22);box-shadow:0 12px 32px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.025)}
+.progress-hero-copy span{display:block;font-size:10px;letter-spacing:.16em;font-weight:900;color:#8fa6b9}
+.progress-hero-copy b{display:block;margin-top:5px;font-size:22px}
+.progress-hero-copy small{display:block;margin-top:5px;color:#aeb8c1;font-size:11.5px;line-height:1.45}
+.progress-summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:15px}
+.progress-summary-grid>div{padding:11px 8px;border:1px solid rgba(255,255,255,.07);border-radius:15px;background:rgba(0,0,0,.16);text-align:center}
+.progress-summary-grid>div.attention{border-color:rgba(240,184,107,.28);background:rgba(96,64,23,.18)}
+.progress-summary-grid span{display:block;font-size:18px}
+.progress-summary-grid b{display:block;margin-top:3px;font-size:18px}
+.progress-summary-grid small{display:block;margin-top:2px;color:#aeb5bd;font-size:10px}
+
+.progress-section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:24px 2px 11px}
+.progress-section-head>div span{display:block;font-size:10px;letter-spacing:.14em;font-weight:900;color:#8495a5}
+.progress-section-head>div b{display:block;margin-top:3px;font-size:18px}
+.progress-section-head>small{color:var(--muted);font-size:10.5px;text-align:right}
+
+.progress-level-list{display:grid;gap:9px}
+.progress-level-card{padding:13px 14px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:linear-gradient(145deg,#1a222b,#171b21);box-shadow:0 8px 22px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.02)}
+.progress-level-head{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px}
+.progress-level-badge{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:rgba(94,148,200,.10);border:1px solid rgba(115,171,224,.14);font-size:11px;font-weight:950;color:#d4e9fb}
+.progress-level-head b{display:block;font-size:14px}
+.progress-level-head small{display:block;margin-top:2px;color:#aeb8c1;font-size:10.5px}
+.progress-level-head em{font-style:normal;font-size:12px;font-weight:900;color:#c8def1}
+.progress-track{height:7px;margin-top:11px;background:rgba(0,0,0,.28);border-radius:99px;overflow:hidden}
+.progress-track i{display:block;height:100%;border-radius:inherit;background:var(--accent)}
+.progress-level-meta{display:flex;justify-content:space-between;gap:10px;margin-top:9px;color:#9da8b3;font-size:10.5px}
+.progress-level-meta .hot,.progress-work-meta .hot{color:#efc782;font-weight:850}
+
+.progress-work-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.progress-work-card{padding:14px;border:1px solid rgba(255,255,255,.08);border-radius:19px;background:linear-gradient(145deg,#1a2026,#16191e);box-shadow:0 8px 22px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.02)}
+.progress-work-card.kaigo{border-color:rgba(101,187,135,.16)}
+.progress-work-card.tools{border-color:rgba(91,192,204,.16)}
+.progress-work-card.houkoku{grid-column:1/-1;border-color:rgba(216,178,94,.16);background:linear-gradient(145deg,#2a2319,#1d1a16)}
+.progress-work-title{display:grid;grid-template-columns:auto 1fr auto;gap:9px;align-items:center}
+.progress-work-title>span{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.06);font-size:19px}
+.progress-work-title b{display:block;font-size:14px}
+.progress-work-title small{display:block;margin-top:2px;color:#aab4bd;font-size:10.5px}
+.progress-work-title em{font-style:normal;font-size:11.5px;font-weight:900;color:#d2dde5}
+.progress-work-meta{display:flex;justify-content:space-between;gap:8px;margin-top:9px;color:#a2adb7;font-size:10px}
+.progress-houkoku-levels{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}
+.progress-houkoku-levels span{padding:8px;border:1px solid rgba(255,255,255,.07);border-radius:12px;background:rgba(0,0,0,.15);text-align:center;color:#c8bda9;font-size:10px}
+.progress-houkoku-levels span.done{border-color:rgba(86,169,117,.34);background:rgba(31,91,57,.18);color:#a8dfb9}
+
+@media(max-width:520px){
+  .progress-hero{padding:15px;border-radius:21px}
+  .progress-hero-copy b{font-size:20px}
+  .progress-summary-grid{grid-template-columns:1fr 1fr}
+  .progress-work-grid{grid-template-columns:1fr}
+  .progress-work-card.houkoku{grid-column:auto}
+}
+@media(max-width:360px){
+  .progress-houkoku-levels{grid-template-columns:1fr}
+}
