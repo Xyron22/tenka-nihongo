@@ -3,7 +3,7 @@
 const D=window.TENKA_DATA;if(!D||!D.kaigo)return;
 
 // Stage 6A-3: tools 01–08 use independent images (one 1×1 cell).
-// Stage 6A-4A: tools 09–10 now use standalone images; tools 11–13 still use the draft 4×4 atlas.
+// Stage 6A-4B: tools 09–13 now use standalone images; no tool card depends on the draft atlas.
 // Explicit dimensions preserve each image's aspect ratio.
 const SPRITE='assets/tools/medical-tools-sprite.jpg';
 D.kaigo.tools=[
@@ -72,19 +72,19 @@ D.kaigo.tools=[
 },
 {
  id:'tool-11',term:'ポータブルトイレ',reading:'ぽーたぶるといれ',meaning:'toilet portable / commode chair',category:'排泄・清潔',
- image:SPRITE,spriteIndex:10,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/portable-toilet-v2.svg',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:512,spriteHeight:512,
  functionJP:'トイレまで移動することが難しい人が、ベッドの近くなどで使う便器です。',functionReading:'トイレ まで いどう する こと が むずかしい ひと が、ベッド の ちかく など で つかう べんき です。',functionID:'Toilet portable untuk orang yang sulit pergi sampai toilet.',
  example:'ポータブルトイレをベッドの近くに置きます。',exampleReading:'ぽーたぶるといれ を ベッド の ちかく に おきます。',exampleMeaning:'Meletakkan toilet portable di dekat tempat tidur.'
 },
 {
  id:'tool-12',term:'おむつ',reading:'おむつ',meaning:'popok dewasa / diaper',category:'排泄・清潔',
- image:SPRITE,spriteIndex:11,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/adult-diaper-v2.svg',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:512,spriteHeight:512,
  functionJP:'尿や便を受けるために使用する排泄用品です。',functionReading:'にょう や べん を うける ため に しよう する はいせつようひん です。',functionID:'Perlengkapan untuk menampung urine atau feses.',
  example:'おむつを交換します。',exampleReading:'おむつ を こうかん します。',exampleMeaning:'Mengganti popok.'
 },
 {
  id:'tool-13',term:'使い捨て手袋',reading:'つかいすててぶくろ',meaning:'sarung tangan sekali pakai',category:'感染対策',
- image:SPRITE,spriteIndex:12,spriteCols:4,spriteRows:4,spriteWidth:448,spriteHeight:336,
+ image:'assets/tools/disposable-gloves-v2.svg',spriteIndex:0,spriteCols:1,spriteRows:1,spriteWidth:512,spriteHeight:512,
  functionJP:'手を汚染から守り、感染対策のために使用します。',functionReading:'て を おせん から まもり、かんせんたいさく の ため に しよう します。',functionID:'Sarung tangan sekali pakai untuk melindungi tangan dan membantu pencegahan infeksi.',
  example:'ケアの前に使い捨て手袋を着けます。',exampleReading:'ケア の まえ に つかいすててぶくろ を つけます。',exampleMeaning:'Memakai sarung tangan sekali pakai sebelum melakukan care.'
 }
