@@ -173,11 +173,22 @@ function home(){
       <div class="tenka-panel-progress"><i style="width:${kaigoPct}%"></i></div>
       <div class="tenka-panel-foot"><span>🩺 ${allMedicalToolCards().length} alat medis</span><span>🗣️ ${handoffDoneCount()}/${D.kaigo.handoff.length} 申し送り</span></div>
     </button>
-    <button class="tenka-panel tenka-panel-houkoku" onclick="openHoukokuPractice()">
-      <div class="tenka-panel-head"><span>📣</span><div><b>Houkoku・報告</b><small>Latihan laporan kerja</small></div><strong>${reportDone}/${reportTotal}</strong></div>
-      <div class="tenka-mini-road"><span class="${reportDone?'done':''}">1</span><i></i><span class="${essayDone?'done':''}">2</span><i></i><span>3</span></div>
-      <div class="tenka-panel-foot"><span>Level 1 Puzzle</span><span>Level 2 Tulis</span><span>Level 3 Rencana</span></div>
-    </button>
+    <section class="tenka-panel tenka-panel-houkoku">
+      <div class="tenka-panel-head"><span>📣</span><div><b>Houkoku・報告</b><small>Roadmap latihan laporan kerja</small></div><strong>${reportDone+essayDone}/${Math.max(1,reportTotal*2)}</strong></div>
+      <div class="tenka-houkoku-roadmap">
+        <button class="tenka-houkoku-step ${reportDone>=reportTotal&&reportTotal?'complete':''}" onclick="openHoukokuPractice()">
+          <span class="tenka-step-no">1</span><div><b>Level 1</b><small>Susun laporan dari potongan kalimat</small></div><em>${reportDone}/${reportTotal}</em>
+        </button>
+        <div class="tenka-road-line ${reportDone>=reportTotal&&reportTotal?'complete':''}"></div>
+        <button class="tenka-houkoku-step ${essayDone>=reportTotal&&reportTotal?'complete':''}" onclick="openHoukokuEssay()">
+          <span class="tenka-step-no">2</span><div><b>Level 2</b><small>Tulis laporan sendiri lalu bandingkan</small></div><em>${essayDone}/${reportTotal}</em>
+        </button>
+        <div class="tenka-road-line"></div>
+        <div class="tenka-houkoku-step planned" aria-disabled="true">
+          <span class="tenka-step-no">3</span><div><b>Level 3</b><small>Simulasi laporan cepat • segera hadir</small></div><em>Rencana</em>
+        </div>
+      </div>
+    </section>
     <button class="tenka-panel tenka-panel-jlpt" onclick="go('jlpt')">
       <div class="tenka-panel-head"><span>📘</span><div><b>JLPT Roadmap</b><small>N5 → N1</small></div><strong>${n5Pct}%</strong></div>
       <div class="tenka-panel-progress"><i style="width:${n5Pct}%"></i></div>
