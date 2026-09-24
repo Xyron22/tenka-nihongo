@@ -155,6 +155,7 @@ function dueSession(){return [...LEVELS.flatMap(l=>dueCards(l)),...dueCards('KAI
 function home(){
   const due=totalDue(),streak=state.progress.streak||1;
   const kaigoTouched=touchedCount('KAIGO'),kaigoTotal=allKaigoStudyCards().length,kaigoPct=Math.round(kaigoTouched/Math.max(1,kaigoTotal)*100);
+  const kaigoVocab=allKaigoCards(),kaigoTools=allMedicalToolCards(),kaigoVocabTouched=kaigoVocab.filter(x=>reviewInfo(x.id)).length,kaigoToolTouched=kaigoTools.filter(x=>reviewInfo(x.id)).length,kaigoDue=dueCards('KAIGO').length,handoffDone=handoffDoneCount(),handoffTotal=D.kaigo.handoff.length;
   const jlptStats=LEVELS.map(level=>{const total=allLevelCards(level).length,touched=touchedCount(level),pct=Math.round(touched/Math.max(1,total)*100);return{level,total,touched,pct}}),jlptTouched=jlptStats.reduce((n,x)=>n+x.touched,0),jlptTotal=jlptStats.reduce((n,x)=>n+x.total,0),jlptPct=Math.round(jlptTouched/Math.max(1,jlptTotal)*100);
   const reportTotal=(D.kaigo.houkoku||[]).length,reportDone=houkokuDoneCount(),essayDone=houkokuEssayDoneCount();
   return `<section class="tenka-home-hero">
@@ -168,11 +169,17 @@ function home(){
     <button class="action primary tenka-home-primary" onclick="homePrimary()">${due?`🧠 Mulai Review ${due} kartu →`:'🎯 Mulai belajar hari ini →'}</button>
   </section>
   <div class="tenka-dashboard-grid">
-    <button class="tenka-panel tenka-panel-kaigo" onclick="go('kaigo')">
+    <section class="tenka-panel tenka-panel-kaigo">
       <div class="tenka-panel-head"><span>🏥</span><div><b>Kaigo・介護</b><small>Bahasa kerja & keperawatan</small></div><strong>${kaigoPct}%</strong></div>
       <div class="tenka-panel-progress"><i style="width:${kaigoPct}%"></i></div>
-      <div class="tenka-panel-foot"><span>🩺 ${allMedicalToolCards().length} alat medis</span><span>🗣️ ${handoffDoneCount()}/${D.kaigo.handoff.length} 申し送り</span></div>
-    </button>
+      <div class="tenka-kaigo-grid">
+        <button class="tenka-kaigo-stat" onclick="openKaigoFlash()"><span>🈴</span><div><b>Kosakata</b><small>${kaigoVocabTouched}/${kaigoVocab.length} disentuh</small></div><em>→</em></button>
+        <button class="tenka-kaigo-stat" onclick="go('medicalTools')"><span>🩺</span><div><b>Alat Medis</b><small>${kaigoToolTouched}/${kaigoTools.length} disentuh</small></div><em>→</em></button>
+        <button class="tenka-kaigo-stat" onclick="openHandoffPractice()"><span>🗣️</span><div><b>申し送り</b><small>${handoffDone}/${handoffTotal} dikuasai</small></div><em>→</em></button>
+        <button class="tenka-kaigo-stat ${kaigoDue?'attention':''}" onclick="openReview('KAIGO')"><span>🧠</span><div><b>Review</b><small>${kaigoDue?kaigoDue+' kartu due':'Belum ada yang due'}</small></div><em>→</em></button>
+      </div>
+      <button class="tenka-kaigo-all" onclick="go('kaigo')">Buka semua materi Kaigo →</button>
+    </section>
     <section class="tenka-panel tenka-panel-houkoku">
       <div class="tenka-panel-head"><span>📣</span><div><b>Houkoku・報告</b><small>Roadmap latihan laporan kerja</small></div><strong>${reportDone+essayDone}/${Math.max(1,reportTotal*2)}</strong></div>
       <div class="tenka-houkoku-roadmap">
