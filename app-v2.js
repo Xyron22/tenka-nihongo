@@ -612,11 +612,31 @@ function progress(){
   </div>`;
 }
 function audioSettings(){
-  const a=window.TENKA_AUDIO,s=a?.settings?.()||{enabled:true,volume:.82,celebrationVoice:true};
-  return `<section id="tenka-sound-engine"><div class="section-title">🎧 Exam Sound</div><div class="muted-box">Benar, salah, dan time up memakai satu SFX pendek. Voice Jepang hanya untuk momen sesi.</div><div class="toggle"><div><b>🔊 Master Audio</b><div class="subtle">SFX jawaban + celebration voice</div></div><input type="checkbox" ${s.enabled?'checked':''} onchange="setAudioSetting('enabled',this.checked)"></div><div class="row"><div style="flex:1"><b>🔉 Volume</b><small>${Math.round((s.volume??.82)*100)}%</small></div><input aria-label="Volume" type="range" min="0" max="1" step="0.05" value="${s.volume??.82}" onchange="setAudioSetting('volume',this.value)" style="width:145px"></div><div class="toggle"><div><b>🎙️ Celebration Voice</b><div class="subtle">Mulai, selesai, dan perfect</div></div><input type="checkbox" ${s.celebrationVoice!==false?'checked':''} onchange="setAudioSetting('celebrationVoice',this.checked)"></div><div class="section-title">🎚️ Test</div><div class="small-actions"><button class="pill" onclick="previewAudio('correct')">✅ Benar</button><button class="pill" onclick="previewAudio('wrong')">❌ Salah</button><button class="pill" onclick="previewAudio('timeout')">⏱️ Time up</button><button class="pill" onclick="previewAudio('finish')">🎉 Selesai</button><button class="pill" onclick="previewAudio('perfect')">💯 Perfect</button></div><div id="tenka-sound-pack-status" class="muted-box" style="margin-top:12px">Memeriksa voice pack…</div></section>`;
+  const a=window.TENKA_AUDIO,s=a?.settings?.()||{enabled:true,volume:.82,celebrationVoice:true},volume=Math.round((s.volume??.82)*100);
+  return `<section id="tenka-sound-engine" class="settings-card settings-audio-card">
+    <div class="settings-card-head"><span class="settings-card-icon">🎧</span><div><span>AUDIO SYSTEM</span><b>Exam Sound</b><small>SFX jawaban + voice Jepang untuk momen sesi.</small></div></div>
+    <div class="settings-card-body">
+      <div class="settings-option"><div class="settings-option-copy"><b>🔊 Master Audio</b><small>Aktifkan seluruh suara TENKA</small></div><input class="settings-switch" aria-label="Master Audio" type="checkbox" ${s.enabled?'checked':''} onchange="setAudioSetting('enabled',this.checked)"></div>
+      <div class="settings-volume"><div class="settings-volume-head"><div><b>🔉 Volume</b><small>Atur volume efek dan celebration voice</small></div><strong>${volume}%</strong></div><input aria-label="Volume" type="range" min="0" max="1" step="0.05" value="${s.volume??.82}" onchange="setAudioSetting('volume',this.value)"></div>
+      <div class="settings-option"><div class="settings-option-copy"><b>🎙️ Celebration Voice</b><small>Suara Jepang saat mulai, selesai, dan perfect</small></div><input class="settings-switch" aria-label="Celebration Voice" type="checkbox" ${s.celebrationVoice!==false?'checked':''} onchange="setAudioSetting('celebrationVoice',this.checked)"></div>
+    </div>
+    <div class="settings-test"><div><span>SOUND TEST</span><b>Coba suara</b></div><div class="settings-test-grid"><button onclick="previewAudio('correct')">✅<small>Benar</small></button><button onclick="previewAudio('wrong')">❌<small>Salah</small></button><button onclick="previewAudio('timeout')">⏱️<small>Time up</small></button><button onclick="previewAudio('finish')">🎉<small>Selesai</small></button><button onclick="previewAudio('perfect')">💯<small>Perfect</small></button></div></div>
+    <div id="tenka-sound-pack-status" class="settings-audio-status">Memeriksa voice pack…</div>
+  </section>`;
 }
-function settings(){return `${header('Settings','Sistem inti dibuat sederhana dan stabil')}<button class="back" onclick="go('home')">←</button>${toggleRow('voice','🗣️ Audio pengucapan','Bacaan Jepang & listening',state.settings.voice,false)}${toggleRow('haptic','📳 Haptic',HAPTIC_SUPPORTED?'Didukung browser ini':'Tidak didukung Safari/iPhone untuk web app',state.settings.haptic,!HAPTIC_SUPPORTED)}<div class="spacer"></div>${audioSettings()}<div class="spacer"></div><button class="action bad" onclick="resetProgress()">Reset progress belajar</button>`}
-function toggleRow(key,title,sub,on,disabled){return `<div class="toggle"><div><b>${title}</b><div class="subtle">${sub}</div></div><input type="checkbox" ${on?'checked':''} ${disabled?'disabled aria-disabled="true"':''} onchange="setSetting('${key}',this.checked)"></div>`}
+function settings(){
+  return `${header('Settings','Atur pengalaman belajar TENKA')}<button class="back" onclick="go('home')">←</button>
+  <section class="settings-hero"><div><span>TENKA PREFERENCES</span><b>Belajar senyaman mungkin.</b><small>Pengaturan ini tersimpan di perangkatmu dan bisa diubah kapan saja.</small></div><div class="settings-hero-mark">⚙️</div></section>
+  <div class="settings-section-head"><div><span>GENERAL</span><b>Pengalaman belajar</b></div><small>Perangkat ini</small></div>
+  <section class="settings-card"><div class="settings-card-body compact">${toggleRow('voice','🗣️ Audio pengucapan','Bacaan Jepang & listening',state.settings.voice,false)}${toggleRow('haptic','📳 Haptic',HAPTIC_SUPPORTED?'Getaran ringan saat interaksi':'Tidak didukung Safari/iPhone untuk web app',state.settings.haptic,!HAPTIC_SUPPORTED)}</div></section>
+  <div class="settings-section-head"><div><span>SOUND</span><b>Audio & feedback</b></div><small>SFX + Voice</small></div>
+  ${audioSettings()}
+  <div class="settings-section-head danger-head"><div><span>DATA</span><b>Progress belajar</b></div><small>Hati-hati</small></div>
+  <section class="settings-danger"><div><span>⚠️</span><div><b>Reset progress belajar</b><small>Menghapus progress, streak, review, quiz, dan data belajar yang tersimpan di perangkat ini.</small></div></div><button class="settings-reset" onclick="resetProgress()">Reset progress</button></section>`;
+}
+function toggleRow(key,title,sub,on,disabled){
+  return `<div class="settings-option ${disabled?'disabled':''}"><div class="settings-option-copy"><b>${title}</b><small>${sub}</small></div><input class="settings-switch" type="checkbox" ${on?'checked':''} ${disabled?'disabled aria-disabled="true"':''} onchange="setSetting('${key}',this.checked)"></div>`;
+}
 function setSetting(key,value){if(key==='haptic'&&!HAPTIC_SUPPORTED){state.settings.haptic=false;save();return}state.settings[key]=value;save();toast('Tersimpan')}
 function setAudioSetting(key,value){if(key==='volume')value=Math.max(0,Math.min(1,Number(value)||0));window.TENKA_AUDIO?.setSetting?.(key,value);render()}
 function previewAudio(event){window.TENKA_AUDIO?.playEvent?.(event)}
