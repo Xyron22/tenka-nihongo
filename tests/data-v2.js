@@ -7,6 +7,7 @@ vm.runInContext(fs.readFileSync('content-pack-v2.js','utf8'),c,{filename:'conten
 vm.runInContext(fs.readFileSync('content-pack-v3.js','utf8'),c,{filename:'content-pack-v3.js'});
 vm.runInContext(fs.readFileSync('houkoku-pack-v1.js','utf8'),c,{filename:'houkoku-pack-v1.js'});
 vm.runInContext(fs.readFileSync('houkoku-pack-v2.js','utf8'),c,{filename:'houkoku-pack-v2.js'});
+vm.runInContext(fs.readFileSync('tools-pack-v1.js','utf8'),c,{filename:'tools-pack-v1.js'});
 const D=c.TENKA_DATA;assert(D&&D.jlpt&&D.kaigo,'TENKA_DATA missing');
 const KAIGO_EXAM_AREAS=new Set(['人間の尊厳と自立','介護の基本','社会の理解','人間関係とコミュニケーション','コミュニケーション技術','生活支援技術','こころとからだのしくみ','発達と老化の理解','認知症の理解','障害の理解','医療的ケア','介護過程','総合問題']);
 const ids=new Set();
@@ -17,6 +18,15 @@ for(const level of ['N5','N4','N3','N2','N1']){
 }
 assert(Array.isArray(D.kaigo.vocab)&&Array.isArray(D.kaigo.handoff)&&Array.isArray(D.kaigo.houkoku),'Kaigo structure');
 for(const item of [...D.kaigo.vocab,...D.kaigo.handoff,...D.kaigo.houkoku]){assert(item.id,'Kaigo item without id');assert(!ids.has(item.id),'duplicate id '+item.id);ids.add(item.id)}
+assert(Array.isArray(D.kaigo.tools)&&D.kaigo.tools.length>=13,'Medical tools pack incomplete');
+for(const tool of D.kaigo.tools){
+ assert(tool.id&&tool.term&&tool.reading&&tool.meaning&&tool.category,'Medical tool missing core fields '+(tool.id||'?'));
+ assert(!ids.has(tool.id),'duplicate id '+tool.id);ids.add(tool.id);
+ assert(tool.image&&!String(tool.image).includes('medical-tools-sprite'),'Medical tool must use standalone image '+tool.id);
+ assert(tool.functionJP&&tool.functionReading&&tool.functionID,'Medical tool missing function fields '+tool.id);
+ assert(tool.example&&tool.exampleReading&&tool.exampleMeaning,'Medical tool missing example fields '+tool.id);
+ if(tool.safetyNote)assert(tool.safetyNoteReading&&tool.safetyNoteMeaning,'Medical tool safety note incomplete '+tool.id);
+}
 for(const item of D.kaigo.vocab){
  assert(item.term&&item.reading&&item.meaning&&item.category,'Kaigo vocab missing core fields '+item.id);
  assert(item.example&&item.exampleMeaning,'Kaigo vocab missing example '+item.id);

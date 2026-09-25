@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Portable toilet illustration">
+  <rect width="512" height="512" rx="72" fill="#f7f8fa"/>
+  <path d="M154 132h204v72H154z" fill="#dbe3ea" stroke="#252a31" stroke-width="20"/>
+  <path d="M176 204h160l24 86H152z" fill="#ffffff" stroke="#252a31" stroke-width="20" stroke-linejoin="round"/>
+  <ellipse cx="256" cy="282" rx="66" ry="30" fill="#eef2f5" stroke="#252a31" stroke-width="18"/>
+  <path d="M166 290v110M346 290v110M150 400h38M324 400h38" fill="none" stroke="#252a31" stroke-width="22" stroke-linecap="round"/>
+  <path d="M188 146h136" fill="none" stroke="#e0b93e" stroke-width="18" stroke-linecap="round"/>
+</svg>

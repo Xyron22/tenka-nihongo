@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Walker illustration">
+  <rect width="512" height="512" rx="72" fill="#f7f8fa"/>
+  <path d="M150 112v86l-44 206M362 112v86l44 206" fill="none" stroke="#252a31" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M150 116h212M132 210h248M120 310h272" fill="none" stroke="#252a31" stroke-width="24" stroke-linecap="round"/>
+  <path d="M182 118h148" fill="none" stroke="#e0b93e" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="104" cy="416" r="28" fill="#dbe3ea" stroke="#252a31" stroke-width="16"/>
+  <circle cx="408" cy="416" r="28" fill="#dbe3ea" stroke="#252a31" stroke-width="16"/>
+  <path d="M152 200l-18 92M360 200l18 92" fill="none" stroke="#8b98a5" stroke-width="14" stroke-linecap="round"/>
+</svg>

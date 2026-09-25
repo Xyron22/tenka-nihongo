@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Wheelchair illustration">
+  <rect width="512" height="512" rx="72" fill="#f7f8fa"/>
+  <circle cx="212" cy="336" r="112" fill="none" stroke="#252a31" stroke-width="26"/>
+  <circle cx="212" cy="336" r="18" fill="#252a31"/>
+  <circle cx="386" cy="386" r="38" fill="none" stroke="#252a31" stroke-width="20"/>
+  <path d="M168 104v126c0 27 22 49 49 49h109" fill="none" stroke="#252a31" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M166 170h92c22 0 40 18 40 40v42H174" fill="#dbe3ea" stroke="#252a31" stroke-width="20" stroke-linejoin="round"/>
+  <path d="M300 252l46 114h34" fill="none" stroke="#252a31" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M160 106h70" fill="none" stroke="#e0b93e" stroke-width="28" stroke-linecap="round"/>
+  <path d="M328 370h58" fill="none" stroke="#e0b93e" stroke-width="18" stroke-linecap="round"/>
+</svg>

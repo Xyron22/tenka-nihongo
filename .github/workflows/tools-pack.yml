@@ -1,0 +1,31 @@
+name: TENKA tools pack validation
+
+on:
+  push:
+    branches: [medical-tools-pack-6a1]
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools-pack-v1.js'
+      - 'assets/tools/**'
+      - 'tests/tools-pack-v1.js'
+      - '.github/workflows/tools-pack.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check tools syntax
+        run: node --check tools-pack-v1.js
+      - name: Check tools data and standalone image assets
+        run: node --test tests/tools-pack-v1.js
+      - name: Check existing learning data
+        run: node tests/data-v2.js
