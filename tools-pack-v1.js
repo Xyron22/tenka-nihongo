@@ -5,7 +5,6 @@ const D=window.TENKA_DATA;if(!D||!D.kaigo)return;
 // Stage 6A-3: tools 01–08 use independent images (one 1×1 cell).
 // Stage 6A-4B: tools 09–13 now use standalone images; no tool card depends on the draft atlas.
 // Explicit dimensions preserve each image's aspect ratio.
-const SPRITE='assets/tools/medical-tools-sprite.jpg';
 D.kaigo.tools=[
 {
  id:'tool-01',term:'体温計',reading:'たいおんけい',meaning:'termometer',category:'検査・測定',
