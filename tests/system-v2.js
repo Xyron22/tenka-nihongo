@@ -52,7 +52,7 @@ function setQuiz(c,{length=2,index=0,answer=0}){
 (async()=>{
   {
     const b=boot();assert(b.context.TENKA_APP_VERSION==='2.4.0','app version');
-    assert(b.html.includes('始めよう！'),'home CTA should be start when no due');
+    assert(b.html.includes('Mulai belajar hari ini'),'home CTA should be start when no due');
     b.context.homePrimary();assert(b.context.TENKA_CORE.state.view==='daily','home start should open Daily');
   }
   {
