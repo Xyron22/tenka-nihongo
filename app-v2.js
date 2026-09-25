@@ -505,16 +505,29 @@ function openHoukokuEssay(caseIndex=null){
 function currentHoukokuEssay(){const hs=state.houkokuEssaySession;return hs?houkokuItems()[hs.caseIndex]||null:null}
 function houkokuEssay(){
   const arr=houkokuItems();
-  if(!arr.length)return `${header('報告 Level 2','Belum ada materi')}<button class="back" onclick="go('kaigo')">←</button><div class="muted-box">Materi belum tersedia.</div>`;
-  if(!state.houkokuEssaySession){const i=firstIncompleteHoukokuEssay();if(i<0)return `${header('報告 Level 2','Semua kasus selesai')}<button class="back" onclick="go('kaigo')">←</button><div class="score"><h2>完了 ✅</h2><p>Semua kasus Level 2 sudah kamu tandai bisa.</p><button class="action primary" onclick="go('kaigo')">Selesai</button></div>`;state.houkokuEssaySession=makeHoukokuEssaySession(i)}
+  if(!arr.length)return `${header('報告 Level 2','Belum ada materi')}<button class="back" onclick="go('kaigo')">←</button><div class="work-empty"><span>✍️</span><b>Materi belum tersedia</b><small>Kasus 報告 Level 2 akan muncul di sini saat tersedia.</small></div>`;
+  if(!state.houkokuEssaySession){const i=firstIncompleteHoukokuEssay();if(i<0)return `${header('報告 Level 2','Semua kasus selesai')}<button class="back" onclick="go('kaigo')">←</button><section class="work-complete"><span>✅</span><b>完了</b><p>Semua kasus Level 2 sudah kamu tandai bisa.</p><button class="action primary" onclick="go('kaigo')">Selesai</button></section>`;state.houkokuEssaySession=makeHoukokuEssaySession(i)}
   const hs=state.houkokuEssaySession,h=currentHoukokuEssay();if(!h){state.houkokuEssaySession=null;return ''}
-  const label=`Kasus ${hs.caseIndex+1}/${arr.length}`;
+  const label=`Kasus ${hs.caseIndex+1}/${arr.length}`,pct=Math.round((hs.caseIndex+1)/Math.max(1,arr.length)*100);
   if(hs.stage==='model'){
     const fullText=h.pieces.map(houkokuPieceText).join('');
-    const model=h.pieces.map(piece=>`<div class="houkoku-model-line"><div class="handoff">${houkokuPieceHtml(piece)}</div><div class="houkoku-id">🇮🇩 ${houkokuPieceMeaning(piece)}</div></div>`).join('');
-    return `${header('報告 Level 2',`${label} • Bandingkan`)}<button class="back" onclick="finishHoukokuEssay(false)">←</button><article class="grammar-card"><span class="badge">✍️ あなたの報告</span><div class="essay-answer">${htmlSafe(hs.draft)}</div></article><article class="grammar-card"><span class="badge">✅ 報告モデル</span><h3>${houkokuRuby(h.title,h.titleReading)}</h3><div class="houkoku-model">${model}</div><div class="muted-box" style="margin-top:12px">💡 ${h.note||''}</div><div class="small-actions"><button class="pill" onclick="speakText('${esc(fullText)}',.82)">🔊 Model audio</button></div></article><div class="muted-box">Nilai sendiri: tidak harus sama persis dengan model. Yang penting fakta, urutan, dan maksud laporannya jelas.</div><div class="controls essay-controls"><button class="action" onclick="finishHoukokuEssay(false)">Masih perlu latihan</button><button class="action primary" onclick="finishHoukokuEssay(true)">✅ Sudah bisa</button></div>`;
+    const model=h.pieces.map((piece,i)=>`<div class="work-model-line"><span class="work-line-no">${i+1}</span><div><div class="handoff">${houkokuPieceHtml(piece)}</div><div class="houkoku-id">🇮🇩 ${houkokuPieceMeaning(piece)}</div></div></div>`).join('');
+    return `${header('報告 Level 2',`${label} • Bandingkan`)}<button class="back" onclick="finishHoukokuEssay(false)">←</button>
+    <section class="work-session-hero essay"><div><span>LEVEL 2 • SELF WRITING</span><b>${houkokuRuby(h.title,h.titleReading)}</b><small>Bandingkan laporanmu dengan model.</small></div><strong>${hs.caseIndex+1}/${arr.length}</strong><div class="work-hero-track"><i style="width:${pct}%"></i></div></section>
+    <div class="work-compare-grid">
+      <section class="work-compare-card yours"><div class="work-card-label">✍️ あなたの報告</div><div class="essay-answer">${htmlSafe(hs.draft)}</div></section>
+      <section class="work-compare-card model"><div class="work-card-label">✅ 報告モデル</div><div class="houkoku-model">${model}</div>${h.note?`<div class="work-tip">💡 <span>${h.note}</span></div>`:''}<button class="work-audio-btn" onclick="speakText('${esc(fullText)}',.82)">🔊 Model audio</button></section>
+    </div>
+    <div class="work-self-note"><span>💡</span><p>Nilai sendiri: tidak harus sama persis dengan model. Yang penting fakta, urutan, dan maksud laporannya jelas.</p></div>
+    <div class="controls essay-controls work-controls"><button class="action" onclick="finishHoukokuEssay(false)">Masih perlu latihan</button><button class="action primary" onclick="finishHoukokuEssay(true)">✅ Sudah bisa</button></div>`;
   }
-  return `${header('報告 Level 2',`${label} • Tulis sendiri`)}<button class="back" onclick="finishHoukokuEssay(false)">←</button><article class="grammar-card"><span class="badge">${h.examArea||'コミュニケーション技術'}</span><h3>${houkokuRuby(h.title,h.titleReading)}</h3><div class="example">🧑‍⚕️ ${h.situation}</div></article><div class="muted-box"><b>Urutan bantu:</b><br>① Siapa yang dilaporkan<br>② Fakta / perubahan yang terjadi<br>③ Kondisi yang kamu lihat atau ukur<br>④ Minta pengecekan / konfirmasi bila perlu</div><div class="section-title">✍️ Tulis houkoku-mu</div><textarea id="houkoku-essay-input" class="houkoku-textarea" lang="ja" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="Contoh mulai: 〇〇さんですが、"></textarea><div class="controls essay-controls"><button class="action" onclick="finishHoukokuEssay(false)">Selesai</button><button class="action primary" onclick="houkokuEssayReveal()">Bandingkan dengan model →</button></div>`;
+  return `${header('報告 Level 2',`${label} • Tulis sendiri`)}<button class="back" onclick="finishHoukokuEssay(false)">←</button>
+  <section class="work-session-hero essay"><div><span>LEVEL 2 • SELF WRITING</span><b>${houkokuRuby(h.title,h.titleReading)}</b><small>${h.examArea||'コミュニケーション技術'}</small></div><strong>${hs.caseIndex+1}/${arr.length}</strong><div class="work-hero-track"><i style="width:${pct}%"></i></div></section>
+  <section class="work-situation-card"><div class="work-card-label">SITUASI</div><p>🧑‍⚕️ ${h.situation}</p></section>
+  <section class="work-guide-card"><div class="work-card-label">URUTAN BANTU</div><ol><li>Siapa yang dilaporkan</li><li>Fakta / perubahan yang terjadi</li><li>Kondisi yang kamu lihat atau ukur</li><li>Minta pengecekan / konfirmasi bila perlu</li></ol></section>
+  <div class="work-section-head"><div><span>WRITE YOUR REPORT</span><b>✍️ Tulis houkoku-mu</b></div><small>Bahasa Jepang</small></div>
+  <textarea id="houkoku-essay-input" class="houkoku-textarea modern" lang="ja" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="Contoh mulai: 〇〇さんですが、"></textarea>
+  <div class="controls essay-controls work-controls"><button class="action" onclick="finishHoukokuEssay(false)">Selesai</button><button class="action primary" onclick="houkokuEssayReveal()">Bandingkan dengan model →</button></div>`;
 }
 function houkokuEssayReveal(draft=null){
   const hs=state.houkokuEssaySession;if(!hs)return;
