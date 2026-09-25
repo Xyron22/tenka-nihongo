@@ -17,7 +17,17 @@ const n5Kanji=[
 {id:'n5-k-37',kanji:'書',reading:'しょ・かく',romaji:'sho / kaku',meaning:'menulis',example:'名前を書いてください。',exampleReading:'なまえ を かいて ください。',exampleMeaning:'Tolong tulis nama.'},
 {id:'n5-k-38',kanji:'買',reading:'ばい・かう',romaji:'bai / kau',meaning:'membeli',example:'スーパーで野菜を買います。',exampleReading:'スーパー で やさい を かいます。',exampleMeaning:'Saya membeli sayur di supermarket.'},
 {id:'n5-k-39',kanji:'朝',reading:'ちょう・あさ',romaji:'chou / asa',meaning:'pagi',example:'朝、コーヒーを飲みます。',exampleReading:'あさ、コーヒー を のみます。',exampleMeaning:'Pagi hari saya minum kopi.'},
-{id:'n5-k-40',kanji:'夜',reading:'や・よる',romaji:'ya / yoru',meaning:'malam',example:'夜は早く寝ます。',exampleReading:'よる は はやく ねます。',exampleMeaning:'Malam hari saya tidur lebih awal.'}
+{id:'n5-k-40',kanji:'夜',reading:'や・よる',romaji:'ya / yoru',meaning:'malam',example:'夜は早く寝ます。',exampleReading:'よる は はやく ねます。',exampleMeaning:'Malam hari saya tidur lebih awal.'},
+{id:'n5-k-41',kanji:'前',reading:'ぜん・まえ',romaji:'zen / mae',meaning:'depan / sebelum',example:'駅の前で待ちます。',exampleReading:'えき の まえ で まちます。',exampleMeaning:'Saya menunggu di depan stasiun.'},
+{id:'n5-k-42',kanji:'後',reading:'ご・こう・あと・うしろ',romaji:'go / kou / ato / ushiro',meaning:'setelah / belakang',example:'仕事の後で買い物に行きます。',exampleReading:'しごと の あと で かいもの に いきます。',exampleMeaning:'Setelah kerja saya pergi berbelanja.'},
+{id:'n5-k-43',kanji:'左',reading:'さ・ひだり',romaji:'sa / hidari',meaning:'kiri',example:'左に曲がってください。',exampleReading:'ひだり に まがって ください。',exampleMeaning:'Tolong belok ke kiri.'},
+{id:'n5-k-44',kanji:'右',reading:'う・ゆう・みぎ',romaji:'u / yuu / migi',meaning:'kanan',example:'右に駅があります。',exampleReading:'みぎ に えき が あります。',exampleMeaning:'Ada stasiun di sebelah kanan.'},
+{id:'n5-k-45',kanji:'外',reading:'がい・げ・そと',romaji:'gai / ge / soto',meaning:'luar',example:'外は寒いです。',exampleReading:'そと は さむい です。',exampleMeaning:'Di luar dingin.'},
+{id:'n5-k-46',kanji:'東',reading:'とう・ひがし',romaji:'tou / higashi',meaning:'timur',example:'駅の東に店があります。',exampleReading:'えき の ひがし に みせ が あります。',exampleMeaning:'Ada toko di sebelah timur stasiun.'},
+{id:'n5-k-47',kanji:'西',reading:'せい・さい・にし',romaji:'sei / sai / nishi',meaning:'barat',example:'西の空が明るいです。',exampleReading:'にし の そら が あかるい です。',exampleMeaning:'Langit di sebelah barat terlihat terang.'},
+{id:'n5-k-48',kanji:'南',reading:'なん・みなみ',romaji:'nan / minami',meaning:'selatan',example:'南に公園があります。',exampleReading:'みなみ に こうえん が あります。',exampleMeaning:'Ada taman di sebelah selatan.'},
+{id:'n5-k-49',kanji:'北',reading:'ほく・きた',romaji:'hoku / kita',meaning:'utara',example:'北海道は日本の北にあります。',exampleReading:'ほっかいどう は にほん の きた に あります。',exampleMeaning:'Hokkaido berada di bagian utara Jepang.'},
+{id:'n5-k-50',kanji:'何',reading:'なん・なに',romaji:'nan / nani',meaning:'apa',example:'これは何ですか。',exampleReading:'これ は なん です か。',exampleMeaning:'Ini apa?'}
 ];
 
 const n5Vocab=[
