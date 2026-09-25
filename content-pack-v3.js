@@ -33,7 +33,7 @@ const n5Vocab=[
 {id:'n5-v-45',term:'病院',reading:'びょういん',meaning:'rumah sakit',example:'病院で働いています。',exampleMeaning:'Saya bekerja di rumah sakit.'},
 {id:'n5-v-46',term:'家',reading:'いえ',meaning:'rumah',example:'家に帰ります。',exampleReading:'いえ に かえります。',exampleMeaning:'Saya pulang ke rumah.'},
 {id:'n5-v-47',term:'学校',reading:'がっこう',meaning:'sekolah',example:'毎朝、学校へ行きます。',exampleReading:'まいあさ、がっこう へ いきます。',exampleMeaning:'Setiap pagi saya pergi ke sekolah.'},
-{id:'n5-v-48',term:'先生',reading:'せんせい',meaning:'guru / pengajar',example:'先生に質問します。',exampleReading:'せんせい に しつもん します。',exampleMeaning:'Saya bertanya kepada guru.'},
+{id:'n5-v-48',term:'先生',reading:'せんせい',meaning:'guru / pengajar',example:'先生と話します。',exampleReading:'せんせい と はなします。',exampleMeaning:'Saya berbicara dengan guru.'},
 {id:'n5-v-49',term:'学生',reading:'がくせい',meaning:'pelajar / mahasiswa',example:'あの人は学生です。',exampleReading:'あの ひと は がくせい です。',exampleMeaning:'Orang itu adalah pelajar.'},
 {id:'n5-v-50',term:'会社',reading:'かいしゃ',meaning:'perusahaan',example:'父は会社で働いています。',exampleReading:'ちち は かいしゃ で はたらいて います。',exampleMeaning:'Ayah saya bekerja di perusahaan.'},
 {id:'n5-v-51',term:'駅',reading:'えき',meaning:'stasiun',example:'駅で友だちを待ちます。',exampleReading:'えき で ともだち を まちます。',exampleMeaning:'Saya menunggu teman di stasiun.'},
