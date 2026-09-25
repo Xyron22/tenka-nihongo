@@ -25,7 +25,7 @@ jobs:
           node-version: '22'
       - name: Check tools syntax
         run: node --check tools-pack-v1.js
-      - name: Check tools data and sprite geometry
+      - name: Check tools data and standalone image assets
         run: node --test tests/tools-pack-v1.js
       - name: Check existing learning data
         run: node tests/data-v2.js
