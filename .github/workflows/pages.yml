@@ -42,6 +42,7 @@ jobs:
           node --check tests/data-v2.js
           node --check tests/system-v2.js
           node --check tests/audio-v5.js
+          node --check tests/tools-pack-v1.js
           node --check scripts/build-sound-manifest-v2.mjs
           bash -n scripts/generate-voicevox-nemo.sh
 
@@ -87,6 +88,9 @@ jobs:
 
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js
+
+      - name: Medical tools standalone asset test
+        run: node --test tests/tools-pack-v1.js
 
       - name: Exam Sound 5.1.1 test
         run: node tests/audio-v5.js
