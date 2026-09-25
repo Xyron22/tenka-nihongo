@@ -30,7 +30,22 @@ const n5Vocab=[
 {id:'n5-v-42',term:'明日',reading:'あした',meaning:'besok',example:'明日は休みです。',exampleMeaning:'Besok libur.'},
 {id:'n5-v-43',term:'昨日',reading:'きのう',meaning:'kemarin',example:'昨日、スーパーへ行きました。',exampleMeaning:'Kemarin saya pergi ke supermarket.'},
 {id:'n5-v-44',term:'仕事',reading:'しごと',meaning:'pekerjaan / kerja',example:'八時半から仕事です。',exampleMeaning:'Saya mulai kerja pukul 8.30.'},
-{id:'n5-v-45',term:'病院',reading:'びょういん',meaning:'rumah sakit',example:'病院で働いています。',exampleMeaning:'Saya bekerja di rumah sakit.'}
+{id:'n5-v-45',term:'病院',reading:'びょういん',meaning:'rumah sakit',example:'病院で働いています。',exampleMeaning:'Saya bekerja di rumah sakit.'},
+{id:'n5-v-46',term:'家',reading:'いえ',meaning:'rumah',example:'家に帰ります。',exampleReading:'いえ に かえります。',exampleMeaning:'Saya pulang ke rumah.'},
+{id:'n5-v-47',term:'学校',reading:'がっこう',meaning:'sekolah',example:'毎朝、学校へ行きます。',exampleReading:'まいあさ、がっこう へ いきます。',exampleMeaning:'Setiap pagi saya pergi ke sekolah.'},
+{id:'n5-v-48',term:'先生',reading:'せんせい',meaning:'guru / pengajar',example:'先生に質問します。',exampleReading:'せんせい に しつもん します。',exampleMeaning:'Saya bertanya kepada guru.'},
+{id:'n5-v-49',term:'学生',reading:'がくせい',meaning:'pelajar / mahasiswa',example:'あの人は学生です。',exampleReading:'あの ひと は がくせい です。',exampleMeaning:'Orang itu adalah pelajar.'},
+{id:'n5-v-50',term:'会社',reading:'かいしゃ',meaning:'perusahaan',example:'父は会社で働いています。',exampleReading:'ちち は かいしゃ で はたらいて います。',exampleMeaning:'Ayah saya bekerja di perusahaan.'},
+{id:'n5-v-51',term:'駅',reading:'えき',meaning:'stasiun',example:'駅で友だちを待ちます。',exampleReading:'えき で ともだち を まちます。',exampleMeaning:'Saya menunggu teman di stasiun.'},
+{id:'n5-v-52',term:'電車',reading:'でんしゃ',meaning:'kereta listrik / kereta',example:'電車で仕事へ行きます。',exampleReading:'でんしゃ で しごと へ いきます。',exampleMeaning:'Saya pergi bekerja dengan kereta.'},
+{id:'n5-v-53',term:'車',reading:'くるま',meaning:'mobil / kendaraan',example:'車でスーパーへ行きます。',exampleReading:'くるま で スーパー へ いきます。',exampleMeaning:'Saya pergi ke supermarket dengan mobil.'},
+{id:'n5-v-54',term:'店',reading:'みせ',meaning:'toko',example:'この店は九時に開きます。',exampleReading:'この みせ は くじ に あきます。',exampleMeaning:'Toko ini buka pukul sembilan.'},
+{id:'n5-v-55',term:'お金',reading:'おかね',meaning:'uang',example:'お金を払います。',exampleReading:'おかね を はらいます。',exampleMeaning:'Saya membayar uang.'},
+{id:'n5-v-56',term:'時間',reading:'じかん',meaning:'waktu / jam (durasi)',example:'少し時間があります。',exampleReading:'すこし じかん が あります。',exampleMeaning:'Saya punya sedikit waktu.'},
+{id:'n5-v-57',term:'毎日',reading:'まいにち',meaning:'setiap hari',example:'毎日、日本語を勉強します。',exampleReading:'まいにち、にほんご を べんきょう します。',exampleMeaning:'Saya belajar bahasa Jepang setiap hari.'},
+{id:'n5-v-58',term:'今',reading:'いま',meaning:'sekarang',example:'今、ご飯を食べています。',exampleReading:'いま、ごはん を たべて います。',exampleMeaning:'Sekarang saya sedang makan.'},
+{id:'n5-v-59',term:'一緒',reading:'いっしょ',meaning:'bersama',example:'一緒に帰りましょう。',exampleReading:'いっしょ に かえりましょう。',exampleMeaning:'Mari pulang bersama.'},
+{id:'n5-v-60',term:'少し',reading:'すこし',meaning:'sedikit',example:'日本語が少し分かります。',exampleReading:'にほんご が すこし わかります。',exampleMeaning:'Saya mengerti sedikit bahasa Jepang.'}
 ];
 
 const n5Grammar=[
