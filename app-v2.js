@@ -297,8 +297,23 @@ function rateCard(rating){
 }
 function openGrammar(level){state.level=level;go('grammar')}
 function grammar(){
-  const arr=D.jlpt[state.level].grammar||[];
-  return `${header(`Bunpou ${state.level}`,'Pahami konteks, lalu tes diri')}<button class="back" onclick="go('level')">←</button><div class="small-actions"><button class="action primary" onclick="startGrammarQuiz('${state.level}')">🎮 Quiz Bunpou</button></div>${arr.map(g=>{const done=!!state.progress.grammarDone[g.id];return `<article class="grammar-card"><span class="badge">${state.level}${done?' • ✅ Paham':''}</span><h3>${g.title}</h3><div class="meaning">${g.meaning}</div><p>${g.explanation}</p><div class="pattern">${g.pattern}</div><div class="example"><b>${g.example}</b><br><small>${g.exampleReading||''}</small><br>${g.exampleMeaning||''}</div><p class="subtle">⚠️ ${g.contrast||''}</p><div class="small-actions"><button class="pill" onclick="speakText('${esc(g.example)}')">🔊 Dengarkan</button><button class="pill" onclick="toggleGrammar('${g.id}')">${done?'↩️ Belum yakin':'✅ Tandai paham'}</button></div></article>`}).join('')}`;
+  const arr=D.jlpt[state.level].grammar||[],doneCount=arr.filter(g=>state.progress.grammarDone[g.id]).length,pct=Math.round(doneCount/Math.max(1,arr.length)*100);
+  return `${header(`Bunpou ${state.level}`,'Pahami konteks, lalu tes diri')}<button class="back" onclick="go('level')">←</button>
+  <section class="grammar-hero">
+    <div><span>文法・GRAMMAR</span><b>${state.level} Bunpou Roadmap</b><small>${doneCount}/${arr.length} pola sudah ditandai paham</small></div>
+    <div class="grammar-hero-progress"><strong>${pct}%</strong><div class="grammar-hero-track"><i style="width:${pct}%"></i></div></div>
+    <button class="grammar-quiz-btn" onclick="startGrammarQuiz('${state.level}')">🎮 Quiz Bunpou <span>→</span></button>
+  </section>
+  <div class="grammar-section-head"><div><span>POLA BAHASA</span><b>Pelajari satu per satu</b></div><small>${arr.length} materi</small></div>
+  <div class="grammar-list">${arr.map((g,i)=>{const done=!!state.progress.grammarDone[g.id];return `<article class="grammar-card modern ${done?'complete':''}">
+    <div class="grammar-card-head"><span class="grammar-index">${String(i+1).padStart(2,'0')}</span><div><span class="grammar-level">${state.level}${done?' • ✅ PAHAM':''}</span><h3>${g.title}</h3></div></div>
+    <div class="grammar-meaning">${g.meaning}</div>
+    <p class="grammar-explanation">${g.explanation}</p>
+    <div class="grammar-block pattern-block"><span>PATTERN</span><b>${g.pattern}</b></div>
+    <div class="grammar-block example-block"><span>CONTOH</span><b>${g.example}</b>${g.exampleReading?`<small>${g.exampleReading}</small>`:''}<p>${g.exampleMeaning||''}</p></div>
+    ${g.contrast?`<div class="grammar-note"><span>⚠️</span><div><b>Catatan</b><small>${g.contrast}</small></div></div>`:''}
+    <div class="grammar-actions"><button onclick="speakText('${esc(g.example)}')">🔊 Dengarkan</button><button class="${done?'done':''}" onclick="toggleGrammar('${g.id}')">${done?'↩️ Belum yakin':'✅ Tandai paham'}</button></div>
+  </article>`}).join('')}</div>`;
 }
 function toggleGrammar(id){if(state.progress.grammarDone[id])delete state.progress.grammarDone[id];else{state.progress.grammarDone[id]=new Date().toISOString();markStudy();markDaily('grammar',id)}save();render()}
 function startGrammarQuiz(level){
@@ -561,7 +576,19 @@ function handoffAnswer(index){
 function finishHandoff(){state.handoffSession=null;go('kaigo')}
 function findKanji(id){for(const l of LEVELS){const c=(D.jlpt[l].kanji||[]).find(x=>x.id===id);if(c)return Object.assign({_kind:'kanji',_level:l},c)}return null}
 function openKakijun(id){state.kakijun=findKanji(id);if(state.kakijun)go('kakijun')}
-function kakijun(){const c=state.kakijun,has=c?.strokes?.length;return `<div class="topbar"><button class="back" onclick="go('flash')">←</button><div><b>書き順 Kakijun</b><div class="subtle">${c?.kanji||''} • ${has?c.strokes.length+' goresan':'stroke belum tersedia'}</div></div><button class="icon-btn" onclick="animateStrokes()">▶️</button></div>${has?`<div class="kanji-stage"><svg viewBox="0 0 100 100">${c.strokes.map((p,i)=>`<path class="stroke" data-i="${i}" d="${p}"/>`).join('')}</svg></div>`:`<div class="muted-box">Data stroke akurat untuk kanji ini belum dimasukkan. Engine latihan menulis tetap bisa dipakai.</div>`}<div class="section-title">✍️ Coba tulis dengan jari</div><div class="canvas-wrap"><canvas id="writeCanvas" width="650" height="420"></canvas></div><div class="small-actions" style="margin-top:10px"><button class="pill" onclick="clearCanvas()">Hapus</button><button class="pill" onclick="toggleGuide()">${state.guide?'Sembunyikan':'Tampilkan'} contoh</button><button class="pill" onclick="speakText('${esc(c?.reading||c?.kanji||'')}')">🔊 Bacaan</button></div>`}
+function kakijun(){
+  const c=state.kakijun,has=c?.strokes?.length,strokeCount=has?c.strokes.length:0;
+  return `<div class="kakijun-head"><button class="back" onclick="go('flash')">←</button><div><span>KANJI WRITING</span><b>書き順 Kakijun</b><small>${c?.kanji||''} • ${has?strokeCount+' goresan':'stroke belum tersedia'}</small></div><button class="kakijun-play" onclick="animateStrokes()" ${has?'':'disabled aria-disabled="true"'}>▶️</button></div>
+  <section class="kakijun-hero">
+    <div class="kakijun-kanji-copy"><span>TARGET KANJI</span><strong>${c?.kanji||''}</strong><b>${c?.reading||''}</b><small>${c?.meaning||''}</small></div>
+    <div class="kakijun-meta"><div><span>✍️</span><b>${strokeCount||'—'}</b><small>goresan</small></div><div><span>🔊</span><b>JP</b><small>bacaan</small></div></div>
+  </section>
+  <div class="kakijun-section-head"><div><span>STROKE ORDER</span><b>Urutan goresan</b></div><button onclick="animateStrokes()" ${has?'':'disabled aria-disabled="true"'}>▶ Putar ulang</button></div>
+  ${has?`<div class="kanji-stage modern"><svg viewBox="0 0 100 100">${c.strokes.map((p,i)=>`<path class="stroke" data-i="${i}" d="${p}"/>`).join('')}</svg></div>`:`<div class="kakijun-empty"><span>✍️</span><b>Stroke belum tersedia</b><small>Engine latihan menulis tetap bisa dipakai untuk kanji ini.</small></div>`}
+  <div class="kakijun-section-head write-head"><div><span>WRITING PRACTICE</span><b>Coba tulis dengan jari</b></div><small>Canvas latihan</small></div>
+  <div class="canvas-wrap modern"><canvas id="writeCanvas" width="650" height="420"></canvas></div>
+  <div class="kakijun-controls"><button onclick="clearCanvas()">🗑️ Hapus</button><button class="${state.guide?'active':''}" onclick="toggleGuide()">${state.guide?'🙈 Sembunyikan contoh':'👁️ Tampilkan contoh'}</button><button onclick="speakText('${esc(c?.reading||c?.kanji||'')}')">🔊 Bacaan</button></div>`;
+}
 function animateStrokes(){$$('.stroke').forEach((p,i)=>{p.classList.remove('animate');void p.offsetWidth;setTimeout(()=>p.classList.add('animate'),i*620)})}
 let drawing=false,ctx2=null;
 function setupCanvas(){const c=$('#writeCanvas');if(!c)return;ctx2=c.getContext('2d');ctx2.lineWidth=12;ctx2.lineCap='round';ctx2.strokeStyle='#111';const pos=e=>{const r=c.getBoundingClientRect();return[(e.clientX-r.left)*c.width/r.width,(e.clientY-r.top)*c.height/r.height]};c.onpointerdown=e=>{e.preventDefault();drawing=true;const[x,y]=pos(e);ctx2.beginPath();ctx2.moveTo(x,y)};c.onpointermove=e=>{if(!drawing)return;e.preventDefault();const[x,y]=pos(e);ctx2.lineTo(x,y);ctx2.stroke()};c.onpointerup=c.onpointerleave=()=>drawing=false;if(state.guide)drawGuide()}
