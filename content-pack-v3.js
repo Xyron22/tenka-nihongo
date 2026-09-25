@@ -7,7 +7,17 @@ const n5Kanji=[
 {id:'n5-k-27',kanji:'名',reading:'めい・な',romaji:'mei / na',meaning:'nama',example:'名前を書いてください。',exampleReading:'なまえ を かいて ください。',exampleMeaning:'Tolong tulis nama.'},
 {id:'n5-k-28',kanji:'友',reading:'ゆう・とも',romaji:'yuu / tomo',meaning:'teman',example:'友だちと話します。',exampleReading:'ともだち と はなします。',exampleMeaning:'Saya berbicara dengan teman.'},
 {id:'n5-k-29',kanji:'食',reading:'しょく・たべる',romaji:'shoku / taberu',meaning:'makan / makanan',example:'朝ご飯を食べます。',exampleReading:'あさごはん を たべます。',exampleMeaning:'Saya makan sarapan.'},
-{id:'n5-k-30',kanji:'飲',reading:'いん・のむ',romaji:'in / nomu',meaning:'minum',example:'水を飲みます。',exampleReading:'みず を のみます。',exampleMeaning:'Saya minum air.'}
+{id:'n5-k-30',kanji:'飲',reading:'いん・のむ',romaji:'in / nomu',meaning:'minum',example:'水を飲みます。',exampleReading:'みず を のみます。',exampleMeaning:'Saya minum air.'},
+{id:'n5-k-31',kanji:'行',reading:'こう・ぎょう・いく',romaji:'kou / gyou / iku',meaning:'pergi / berjalan',example:'毎日、仕事へ行きます。',exampleReading:'まいにち、しごと へ いきます。',exampleMeaning:'Setiap hari saya pergi bekerja.'},
+{id:'n5-k-32',kanji:'来',reading:'らい・くる',romaji:'rai / kuru',meaning:'datang / berikutnya',example:'友だちが家に来ます。',exampleReading:'ともだち が いえ に きます。',exampleMeaning:'Teman datang ke rumah saya.'},
+{id:'n5-k-33',kanji:'見',reading:'けん・みる',romaji:'ken / miru',meaning:'melihat',example:'テレビを見ます。',exampleReading:'テレビ を みます。',exampleMeaning:'Saya menonton televisi.'},
+{id:'n5-k-34',kanji:'聞',reading:'ぶん・もん・きく',romaji:'bun / mon / kiku',meaning:'mendengar / bertanya',example:'日本語を毎日聞きます。',exampleReading:'にほんご を まいにち ききます。',exampleMeaning:'Saya mendengarkan bahasa Jepang setiap hari.'},
+{id:'n5-k-35',kanji:'話',reading:'わ・はなす・はなし',romaji:'wa / hanasu / hanashi',meaning:'berbicara / cerita',example:'友だちと日本語で話します。',exampleReading:'ともだち と にほんご で はなします。',exampleMeaning:'Saya berbicara bahasa Jepang dengan teman.'},
+{id:'n5-k-36',kanji:'読',reading:'どく・よむ',romaji:'doku / yomu',meaning:'membaca',example:'毎晩、本を読みます。',exampleReading:'まいばん、ほん を よみます。',exampleMeaning:'Setiap malam saya membaca buku.'},
+{id:'n5-k-37',kanji:'書',reading:'しょ・かく',romaji:'sho / kaku',meaning:'menulis',example:'名前を書いてください。',exampleReading:'なまえ を かいて ください。',exampleMeaning:'Tolong tulis nama.'},
+{id:'n5-k-38',kanji:'買',reading:'ばい・かう',romaji:'bai / kau',meaning:'membeli',example:'スーパーで野菜を買います。',exampleReading:'スーパー で やさい を かいます。',exampleMeaning:'Saya membeli sayur di supermarket.'},
+{id:'n5-k-39',kanji:'朝',reading:'ちょう・あさ',romaji:'chou / asa',meaning:'pagi',example:'朝、コーヒーを飲みます。',exampleReading:'あさ、コーヒー を のみます。',exampleMeaning:'Pagi hari saya minum kopi.'},
+{id:'n5-k-40',kanji:'夜',reading:'や・よる',romaji:'ya / yoru',meaning:'malam',example:'夜は早く寝ます。',exampleReading:'よる は はやく ねます。',exampleMeaning:'Malam hari saya tidur lebih awal.'}
 ];
 
 const n5Vocab=[
