@@ -44,7 +44,15 @@ for(const h of D.kaigo.handoff){
  }
  assert(h.text===h.segments.map(x=>x.text).join(''),'handoff text must equal segment join '+h.id);
 }
-assert(D.jlpt.N5.kanji.length>=30,'N5 kanji Stage 2A incomplete');
+assert(D.jlpt.N5.kanji.length>=40,'N5 kanji Stage 8A-1 incomplete');
+const n5Batch81=D.jlpt.N5.kanji.filter(x=>/^n5-k-(3[1-9]|40)$/.test(x.id));
+assert(n5Batch81.length===10,'N5 Stage 8A-1 must contain exactly 10 kanji');
+for(const item of n5Batch81){
+ assert(item.kanji&&item.reading&&item.romaji&&item.meaning,'N5 Stage 8A-1 missing core field '+item.id);
+ assert(item.example&&item.exampleReading&&item.exampleMeaning,'N5 Stage 8A-1 missing example '+item.id);
+ assert(!/\p{Script=Han}/u.test(item.reading),'N5 Stage 8A-1 reading must not contain kanji '+item.id);
+ assert(!/\p{Script=Han}/u.test(item.exampleReading),'N5 Stage 8A-1 example reading must not contain kanji '+item.id);
+}
 assert(D.jlpt.N5.vocab.length>=45,'N5 vocab Stage 2A incomplete');
 assert(D.jlpt.N5.grammar.length>=15,'N5 grammar Stage 2A incomplete');
 assert(D.kaigo.vocab.length>=52,'Kaigo vocab Stage 2A incomplete');
