@@ -17,13 +17,14 @@ function examSettingsHtml(){
 function refresh(){
   const box=document.querySelector('#tenka-sound-engine');
   if(!box||box.dataset.examSoundV51==='1')return;
-  box.dataset.examSoundV51='1';box.innerHTML=examSettingsHtml();
+  box.dataset.examSoundV51='1';
+  if(!box.classList?.contains('settings-audio-card'))box.innerHTML=examSettingsHtml();
   setTimeout(()=>window.TENKA_SOUND_PACK?.renderStatus?.(),0);
 }
 function observe(){
   refresh();const app=document.querySelector('#app');
   if(app&&'MutationObserver'in window)new MutationObserver(()=>setTimeout(refresh,0)).observe(app,{childList:true,subtree:true});
 }
-window.TENKA_AUDIO_UI={version:'5.1.0',refresh};
+window.TENKA_AUDIO_UI={version:'5.1.1',refresh};
 setTimeout(observe,0);
 })();
