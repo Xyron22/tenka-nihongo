@@ -563,24 +563,37 @@ function currentHandoff(){
 }
 function handoff(){
   const arr=D.kaigo.handoff||[];
-  if(!arr.length)return `${header('申し送り Practice','Belum ada materi')}<button class="back" onclick="go('kaigo')">←</button><div class="muted-box">Materi belum tersedia.</div>`;
-  if(!state.handoffSession){const i=firstIncompleteHandoff();if(i<0)return `${header('申し送り Practice','Semua kasus selesai')}<button class="back" onclick="go('kaigo')">←</button><div class="score"><h2>完了 ✅</h2><p>Semua kasus 申し送り yang tersedia sudah selesai.</p><button class="action primary" onclick="go('kaigo')">Selesai</button></div>`;state.handoffSession={caseIndex:i,sentenceIndex:0,stage:'read',answered:false,correct:null,choice:null}}
+  if(!arr.length)return `${header('申し送り Practice','Belum ada materi')}<button class="back" onclick="go('kaigo')">←</button><div class="work-empty"><span>🗣️</span><b>Materi belum tersedia</b><small>Kasus 申し送り akan muncul di sini saat tersedia.</small></div>`;
+  if(!state.handoffSession){const i=firstIncompleteHandoff();if(i<0)return `${header('申し送り Practice','Semua kasus selesai')}<button class="back" onclick="go('kaigo')">←</button><section class="work-complete"><span>✅</span><b>完了</b><p>Semua kasus 申し送り yang tersedia sudah selesai.</p><button class="action primary" onclick="go('kaigo')">Selesai</button></section>`;state.handoffSession={caseIndex:i,sentenceIndex:0,stage:'read',answered:false,correct:null,choice:null}}
   const hs=state.handoffSession,h=currentHandoff();
   if(!h){state.handoffSession=null;return `${header('申し送り Practice','Sesi selesai')}<button class="action primary" onclick="go('kaigo')">Selesai</button>`}
   const segments=handoffSegments(h),seg=segments[Math.min(hs.sentenceIndex,Math.max(0,segments.length-1))]||{text:h.text,reading:h.reading,meaning:h.meaning};
-  const caseLabel=`Kasus ${hs.caseIndex+1}/${arr.length}`;
+  const caseLabel=`Kasus ${hs.caseIndex+1}/${arr.length}`,casePct=Math.round((hs.caseIndex+1)/Math.max(1,arr.length)*100);
 
   if(hs.stage==='read'){
-    const last=hs.sentenceIndex>=segments.length-1;
-    return `${header('申し送り Practice',`${caseLabel} • Kalimat ${hs.sentenceIndex+1}/${segments.length}`)}<button class="back" onclick="finishHandoff()">←</button><article class="grammar-card"><span class="badge">申し送り • 1文ずつ</span><div class="handoff">${seg.text}</div><div class="furigana">${seg.reading||''}</div><div class="small-actions"><button class="pill" onclick="speakText('${esc(seg.text)}')">🔊 Normal</button><button class="pill" onclick="speakText('${esc(seg.text)}',.68)">🐢 Pelan</button></div>${seg.meaning?`<div class="example">🇮🇩 ${seg.meaning}</div>`:''}</article><div class="controls"><button class="action" onclick="finishHandoff()">Selesai</button><button class="action primary" onclick="${last?'handoffToQuestion()':'handoffNextSentence()'}">${last?'Lanjut ke soal →':'Kalimat berikutnya →'}</button></div>`;
+    const last=hs.sentenceIndex>=segments.length-1,sentencePct=Math.round((hs.sentenceIndex+1)/Math.max(1,segments.length)*100);
+    return `${header('申し送り Practice',`${caseLabel} • Kalimat ${hs.sentenceIndex+1}/${segments.length}`)}<button class="back" onclick="finishHandoff()">←</button>
+    <section class="work-session-hero handoff-hero"><div><span>申し送り • 1文ずつ</span><b>${caseLabel}</b><small>Kalimat ${hs.sentenceIndex+1}/${segments.length}</small></div><strong>${hs.caseIndex+1}/${arr.length}</strong><div class="work-hero-track"><i style="width:${casePct}%"></i></div></section>
+    <section class="handoff-sentence-card">
+      <div class="handoff-sentence-head"><span>SENTENCE ${hs.sentenceIndex+1}</span><em>${sentencePct}%</em></div>
+      <div class="handoff">${seg.text}</div>
+      ${seg.reading?`<div class="furigana">${seg.reading}</div>`:''}
+      <div class="handoff-audio-grid"><button onclick="speakText('${esc(seg.text)}')">🔊<span>Normal</span></button><button onclick="speakText('${esc(seg.text)}',.68)">🐢<span>Pelan</span></button></div>
+      ${seg.meaning?`<div class="handoff-meaning"><span>🇮🇩</span><p>${seg.meaning}</p></div>`:''}
+    </section>
+    <div class="controls work-controls"><button class="action" onclick="finishHandoff()">Selesai</button><button class="action primary" onclick="${last?'handoffToQuestion()':'handoffNextSentence()'}">${last?'Lanjut ke soal →':'Kalimat berikutnya →'}</button></div>`;
   }
 
   if(hs.stage==='question'){
-    return `${header('申し送り Practice',`${caseLabel} • Pemahaman`)}<button class="back" onclick="finishHandoff()">←</button><article class="grammar-card"><span class="badge">確認問題</span><h3 style="font-size:18px">${h.question}</h3><div class="choices">${h.choices.map((c,i)=>`<button class="choice" onclick="handoffAnswer(${i})">${String.fromCharCode(65+i)}. ${c}</button>`).join('')}</div></article><button class="action" onclick="finishHandoff()">Selesai</button>`;
+    return `${header('申し送り Practice',`${caseLabel} • Pemahaman`)}<button class="back" onclick="finishHandoff()">←</button>
+    <section class="work-session-hero handoff-hero"><div><span>確認問題 • CHECK</span><b>${caseLabel}</b><small>Pastikan inti laporan tertangkap.</small></div><strong>?</strong><div class="work-hero-track"><i style="width:${casePct}%"></i></div></section>
+    <section class="handoff-question-card"><div class="work-card-label">確認問題</div><h3>${h.question}</h3><div class="handoff-choice-list">${h.choices.map((choice,i)=>`<button onclick="handoffAnswer(${i})"><span>${String.fromCharCode(65+i)}</span><div>${choice}</div></button>`).join('')}</div></section>
+    <button class="action work-finish-btn" onclick="finishHandoff()">Selesai</button>`;
   }
 
   const ok=hs.correct===true;
-  return `${header('申し送り Practice',`${caseLabel} • Selesai`)}<article class="grammar-card"><span class="badge">${ok?'✅ 正解':'❌ 要復習'}</span><h3>${ok?'Intinya tertangkap dengan benar.':'Jawaban yang tepat:'}</h3><div class="example">${h.choices[h.answer]}</div></article><button class="action primary" onclick="finishHandoff()">Selesai</button>`;
+  return `${header('申し送り Practice',`${caseLabel} • Selesai`)}
+  <section class="handoff-result ${ok?'correct':'wrong'}"><div class="handoff-result-icon">${ok?'✅':'↻'}</div><span>${ok?'正解':'要復習'}</span><h2>${ok?'Intinya tertangkap dengan benar.':'Jawaban yang tepat:'}</h2><div class="handoff-result-answer">${h.choices[h.answer]}</div><p>${ok?'Kasus ini sudah dicatat sebagai dikuasai.':'Baca lagi kalimatnya nanti dan fokus pada informasi inti.'}</p><button class="action primary" onclick="finishHandoff()">Selesai</button></section>`;
 }
 function handoffNextSentence(){
   const hs=state.handoffSession,h=currentHandoff();if(!hs||!h)return;
