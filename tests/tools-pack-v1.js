@@ -4,16 +4,19 @@ const path = require('node:path');
 const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
+
 const root = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'tools-pack-v1.js'), 'utf8');
 const baseFiles = ['data.js', 'content-pack-v1.js', 'content-pack-v2.js',
   'content-pack-v3.js', 'houkoku-pack-v1.js', 'houkoku-pack-v2.js'];
+
 function loadBase() {
   const c = { window: null }; c.window = c; vm.createContext(c);
   for (const file of baseFiles) vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), c, { filename: file });
   return c;
 }
 function loadTools(c) { vm.runInContext(source, c, { filename: 'tools-pack-v1.js' }); }
+
 const c = loadBase();
 const before = JSON.stringify(c.TENKA_DATA);
 const existingIds = new Set();
@@ -50,7 +53,6 @@ test('13 complete cards with unique IDs, readings, translations and examples', (
   }
 });
 
-// Read JPEG frame dimensions without browser or third-party dependencies.
 function jpegSize(bytes) {
   assert.equal(bytes.readUInt16BE(0), 0xffd8, 'JPEG SOI missing');
   assert.equal(bytes.readUInt16BE(bytes.length - 2), 0xffd9, 'JPEG EOI missing');
@@ -70,66 +72,73 @@ function jpegSize(bytes) {
   }
   throw new Error('JPEG frame dimensions not found');
 }
-
-function imageSize(bytes) {
+function pngSize(bytes) {
   const signature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
-  if (!bytes.subarray(0, 8).equals(signature)) return jpegSize(bytes);
+  assert.ok(bytes.subarray(0, 8).equals(signature), 'PNG signature missing');
   assert.ok(bytes.length >= 45, 'truncated PNG');
   assert.equal(bytes.readUInt32BE(8), 13, 'PNG IHDR length is invalid');
   assert.equal(bytes.toString('ascii', 12, 16), 'IHDR', 'PNG IHDR missing');
   assert.equal(bytes.toString('ascii', bytes.length - 8, bytes.length - 4), 'IEND', 'PNG IEND missing');
-  const width = bytes.readUInt32BE(16), height = bytes.readUInt32BE(20);
-  assert.ok(width > 0 && height > 0, 'PNG dimensions must be positive');
-  return { width, height };
+  return { width: bytes.readUInt32BE(16), height: bytes.readUInt32BE(20) };
+}
+function svgSize(bytes) {
+  const text = bytes.toString('utf8');
+  assert.match(text, /<svg\b/i, 'SVG root missing');
+  const m = text.match(/viewBox=["']\s*[-\d.]+\s+[-\d.]+\s+([\d.]+)\s+([\d.]+)\s*["']/i);
+  assert.ok(m, 'SVG viewBox dimensions missing');
+  return { width: Number(m[1]), height: Number(m[2]) };
+}
+function imageSize(file) {
+  const bytes = fs.readFileSync(file);
+  const ext = path.extname(file).toLowerCase();
+  if (ext === '.png') return pngSize(bytes);
+  if (ext === '.jpg' || ext === '.jpeg') return jpegSize(bytes);
+  if (ext === '.svg') return svgSize(bytes);
+  throw new Error('unsupported image format: ' + ext);
 }
 
-test('every image cell fits the actual PNG/JPEG and is assigned once', () => {
+test('all 13 cards use unique standalone image assets with valid 1x1 metadata', () => {
   const used = new Set();
-  const images = new Map();
   for (const card of cards) {
     const file = path.resolve(root, card.image);
     assert.ok(file.startsWith(root + path.sep), 'image must stay inside repository');
-    if (!images.has(file)) images.set(file, imageSize(fs.readFileSync(file)));
-    const actual = images.get(file);
-    assert.equal(card.spriteWidth, actual.width, `${card.id}: wrong atlas width`);
-    assert.equal(card.spriteHeight, actual.height, `${card.id}: wrong atlas height`);
-    for (const key of ['spriteCols', 'spriteRows']) assert.ok(Number.isInteger(card[key]) && card[key] > 0);
-    assert.equal(actual.width % card.spriteCols, 0, 'fractional cell width');
-    assert.equal(actual.height % card.spriteRows, 0, 'fractional cell height');
-    assert.ok(Number.isInteger(card.spriteIndex) && card.spriteIndex >= 0);
-    assert.ok(card.spriteIndex < card.spriteCols * card.spriteRows, `${card.id}: cell outside image`);
-    const cell = `${file}:${card.spriteIndex}`;
-    assert.ok(!used.has(cell), `${card.id}: reused sprite cell`); used.add(cell);
+    assert.ok(fs.existsSync(file), `${card.id}: image file missing`);
+    assert.ok(!card.image.includes('medical-tools-sprite'), `${card.id}: legacy atlas reference remains`);
+    assert.ok(!used.has(file), `${card.id}: image file reused`); used.add(file);
+
+    const actual = imageSize(file);
+    assert.ok(actual.width > 0 && actual.height > 0, `${card.id}: invalid image dimensions`);
+    assert.equal(card.spriteWidth, actual.width, `${card.id}: metadata width mismatch`);
+    assert.equal(card.spriteHeight, actual.height, `${card.id}: metadata height mismatch`);
+    assert.equal(card.spriteCols, 1, `${card.id}: standalone image must use one column`);
+    assert.equal(card.spriteRows, 1, `${card.id}: standalone image must use one row`);
+    assert.equal(card.spriteIndex, 0, `${card.id}: standalone image must use cell zero`);
   }
+  assert.equal(used.size, 13);
 });
 
-test('reviewed individual images and remaining atlas cells match their tools', () => {
+test('reviewed standalone image mapping matches every medical/care tool', () => {
   const expected = [
-    ['体温計', 'thermometer-v2.png', 0],
-    ['血圧計', 'blood-pressure-monitor-v2.png', 0],
-    ['聴診器', 'stethoscope-v2.png', 0],
-    ['パルスオキシメーター', 'pulse-oximeter-v2.png', 0],
-    ['注射器', 'syringe-v2.png', 0],
-    ['点滴', 'iv-drip-v2.png', 0],
-    ['点滴スタンド', 'iv-pole-v2.png', 0],
-    ['吸引器', 'suction-machine-v2.png', 0],
-    ['車椅子', 'medical-tools-sprite.jpg', 8],
-    ['歩行器', 'medical-tools-sprite.jpg', 9],
-    ['ポータブルトイレ', 'medical-tools-sprite.jpg', 10],
-    ['おむつ', 'medical-tools-sprite.jpg', 11],
-    ['使い捨て手袋', 'medical-tools-sprite.jpg', 12]
+    ['体温計', 'thermometer-v2.png'],
+    ['血圧計', 'blood-pressure-monitor-v2.png'],
+    ['聴診器', 'stethoscope-v2.png'],
+    ['パルスオキシメーター', 'pulse-oximeter-v2.png'],
+    ['注射器', 'syringe-v2.png'],
+    ['点滴', 'iv-drip-v2.png'],
+    ['点滴スタンド', 'iv-pole-v2.png'],
+    ['吸引器', 'suction-machine-v2.png'],
+    ['車椅子', 'wheelchair-v2.svg'],
+    ['歩行器', 'walker-v2.svg'],
+    ['ポータブルトイレ', 'portable-toilet-v2.svg'],
+    ['おむつ', 'adult-diaper-v2.svg'],
+    ['使い捨て手袋', 'disposable-gloves-v2.svg']
   ];
-  expected.forEach(([term, file, index], i) => {
+  expected.forEach(([term, file], i) => {
     const id = `tool-${String(i + 1).padStart(2, '0')}`;
     const card = cards.find(x => x.id === id);
     assert.ok(card, `missing ${id}`);
     assert.equal(card.term, term);
     assert.equal(card.image, `assets/tools/${file}`, `${id}: wrong image file`);
-    assert.equal(card.spriteIndex, index, `${id}: wrong image cell`);
-    if (i < 8) {
-      assert.equal(card.spriteCols, 1); assert.equal(card.spriteRows, 1);
-      assert.ok(card.spriteWidth >= 1024 && card.spriteHeight >= 1024, `${id}: individual image resolution too small`);
-    }
   });
 });
 
@@ -145,8 +154,8 @@ test('loading the pack preserves existing JLPT, Kaigo and Houkoku data', () => {
 test('missing base data remains a safe no-op', () => {
   for (const seed of [{}, { TENKA_DATA: {} }]) {
     const sandbox = vm.createContext({ window: seed });
-    const before = JSON.stringify(seed);
+    const snapshot = JSON.stringify(seed);
     assert.doesNotThrow(() => loadTools(sandbox));
-    assert.equal(JSON.stringify(seed), before);
+    assert.equal(JSON.stringify(seed), snapshot);
   }
 });
