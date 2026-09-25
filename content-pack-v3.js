@@ -67,7 +67,15 @@ const kaigoVocab=[
 {id:'k-v-49',term:'声かけ',reading:'こえかけ',meaning:'menyapa / memberi arahan verbal',category:'コミュニケーション',examArea:'コミュニケーション技術',example:'移動前に声かけをします。',exampleMeaning:'Memberi penjelasan atau sapaan sebelum berpindah.'},
 {id:'k-v-50',term:'車椅子',reading:'くるまいす',meaning:'kursi roda',category:'ADL・移動',examArea:'生活支援技術',example:'車椅子のブレーキを確認します。',exampleMeaning:'Memeriksa rem kursi roda.'},
 {id:'k-v-51',term:'入浴介助',reading:'にゅうよくかいじょ',meaning:'bantuan saat mandi',category:'清潔・整容',examArea:'生活支援技術',example:'本人の状態を確認しながら入浴介助を行います。',exampleMeaning:'Membantu mandi sambil memperhatikan kondisi orang tersebut.'},
-{id:'k-v-52',term:'排泄介助',reading:'はいせつかいじょ',meaning:'bantuan toileting / eliminasi',category:'排泄',examArea:'生活支援技術',example:'プライバシーに配慮して排泄介助を行います。',exampleMeaning:'Memberikan bantuan toileting dengan menjaga privasi.'}
+{id:'k-v-52',term:'排泄介助',reading:'はいせつかいじょ',meaning:'bantuan toileting / eliminasi',category:'排泄',examArea:'生活支援技術',example:'プライバシーに配慮して排泄介助を行います。',exampleMeaning:'Memberikan bantuan toileting dengan menjaga privasi.'},
+{id:'k-v-53',term:'食事介助',reading:'しょくじかいじょ',meaning:'bantuan saat makan',category:'食事・嚥下',examArea:'生活支援技術',example:'本人のペースに合わせて食事介助を行います。',exampleMeaning:'Membantu makan dengan menyesuaikan tempo orang tersebut.'},
+{id:'k-v-54',term:'水分補給',reading:'すいぶんほきゅう',meaning:'pemberian / pemenuhan cairan',category:'食事・嚥下',examArea:'生活支援技術',example:'こまめに水分補給をしていただきます。',exampleMeaning:'Mendorong asupan cairan secara berkala.'},
+{id:'k-v-55',term:'トイレ誘導',reading:'トイレゆうどう',meaning:'mengarahkan / mendampingi ke toilet',category:'排泄',examArea:'生活支援技術',example:'食後にトイレ誘導を行います。',exampleMeaning:'Mendampingi ke toilet setelah makan.'},
+{id:'k-v-56',term:'おむつ交換',reading:'おむつこうかん',meaning:'mengganti popok',category:'排泄',examArea:'生活支援技術',example:'必要に応じておむつ交換を行います。',exampleMeaning:'Mengganti popok sesuai kebutuhan.'},
+{id:'k-v-57',term:'歩行介助',reading:'ほこうかいじょ',meaning:'bantuan saat berjalan',category:'ADL・移動',examArea:'生活支援技術',example:'ふらつきに注意しながら歩行介助を行います。',exampleMeaning:'Membantu berjalan sambil memperhatikan adanya sempoyongan.'},
+{id:'k-v-58',term:'移動介助',reading:'いどうかいじょ',meaning:'bantuan saat berpindah tempat',category:'ADL・移動',examArea:'生活支援技術',example:'安全を確認して移動介助を行います。',exampleMeaning:'Membantu berpindah tempat setelah memastikan keselamatan.'},
+{id:'k-v-59',term:'起床',reading:'きしょう',meaning:'bangun dari tidur',category:'ADL・生活支援',examArea:'生活支援技術',example:'六時ごろに起床されました。',exampleMeaning:'Beliau bangun sekitar pukul enam.'},
+{id:'k-v-60',term:'就寝',reading:'しゅうしん',meaning:'tidur / pergi tidur',category:'ADL・生活支援',examArea:'生活支援技術',example:'九時ごろに就寝されました。',exampleMeaning:'Beliau tidur sekitar pukul sembilan.'}
 ];
 
 const handoff=[
