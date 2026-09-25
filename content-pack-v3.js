@@ -55,7 +55,22 @@ const n5Vocab=[
 {id:'n5-v-57',term:'毎日',reading:'まいにち',meaning:'setiap hari',example:'毎日、日本語を勉強します。',exampleReading:'まいにち、にほんご を べんきょう します。',exampleMeaning:'Saya belajar bahasa Jepang setiap hari.'},
 {id:'n5-v-58',term:'今',reading:'いま',meaning:'sekarang',example:'今、ご飯を食べています。',exampleReading:'いま、ごはん を たべて います。',exampleMeaning:'Sekarang saya sedang makan.'},
 {id:'n5-v-59',term:'一緒',reading:'いっしょ',meaning:'bersama',example:'一緒に帰りましょう。',exampleReading:'いっしょ に かえりましょう。',exampleMeaning:'Mari pulang bersama.'},
-{id:'n5-v-60',term:'少し',reading:'すこし',meaning:'sedikit',example:'日本語が少し分かります。',exampleReading:'にほんご が すこし わかります。',exampleMeaning:'Saya mengerti sedikit bahasa Jepang.'}
+{id:'n5-v-60',term:'少し',reading:'すこし',meaning:'sedikit',example:'日本語が少し分かります。',exampleReading:'にほんご が すこし わかります。',exampleMeaning:'Saya mengerti sedikit bahasa Jepang.'},
+{id:'n5-v-61',term:'前',reading:'まえ',meaning:'depan / sebelum',example:'駅の前で待ちます。',exampleReading:'えき の まえ で まちます。',exampleMeaning:'Saya menunggu di depan stasiun.'},
+{id:'n5-v-62',term:'後ろ',reading:'うしろ',meaning:'belakang',example:'車の後ろに人がいます。',exampleReading:'くるま の うしろ に ひと が います。',exampleMeaning:'Ada orang di belakang mobil.'},
+{id:'n5-v-63',term:'左',reading:'ひだり',meaning:'kiri',example:'左に曲がってください。',exampleReading:'ひだり に まがって ください。',exampleMeaning:'Tolong belok ke kiri.'},
+{id:'n5-v-64',term:'右',reading:'みぎ',meaning:'kanan',example:'右に駅があります。',exampleReading:'みぎ に えき が あります。',exampleMeaning:'Ada stasiun di sebelah kanan.'},
+{id:'n5-v-65',term:'外',reading:'そと',meaning:'luar',example:'外で友だちを待ちます。',exampleReading:'そと で ともだち を まちます。',exampleMeaning:'Saya menunggu teman di luar.'},
+{id:'n5-v-66',term:'東',reading:'ひがし',meaning:'timur',example:'駅の東に店があります。',exampleReading:'えき の ひがし に みせ が あります。',exampleMeaning:'Ada toko di sebelah timur stasiun.'},
+{id:'n5-v-67',term:'西',reading:'にし',meaning:'barat',example:'西に大きい山があります。',exampleReading:'にし に おおきい やま が あります。',exampleMeaning:'Ada gunung besar di sebelah barat.'},
+{id:'n5-v-68',term:'南',reading:'みなみ',meaning:'selatan',example:'南に公園があります。',exampleReading:'みなみ に こうえん が あります。',exampleMeaning:'Ada taman di sebelah selatan.'},
+{id:'n5-v-69',term:'北',reading:'きた',meaning:'utara',example:'北海道は日本の北にあります。',exampleReading:'ほっかいどう は にほん の きた に あります。',exampleMeaning:'Hokkaido berada di bagian utara Jepang.'},
+{id:'n5-v-70',term:'何',reading:'なに・なん',meaning:'apa',example:'これは何ですか。',exampleReading:'これ は なん です か。',exampleMeaning:'Ini apa?'},
+{id:'n5-v-71',term:'午前',reading:'ごぜん',meaning:'pagi / sebelum tengah hari',example:'午前八時に家を出ます。',exampleReading:'ごぜん はちじ に いえ を でます。',exampleMeaning:'Saya keluar rumah pukul delapan pagi.'},
+{id:'n5-v-72',term:'午後',reading:'ごご',meaning:'siang / sore setelah tengah hari',example:'午後三時に休みます。',exampleReading:'ごご さんじ に やすみます。',exampleMeaning:'Saya beristirahat pukul tiga sore.'},
+{id:'n5-v-73',term:'毎朝',reading:'まいあさ',meaning:'setiap pagi',example:'毎朝六時に起きます。',exampleReading:'まいあさ ろくじ に おきます。',exampleMeaning:'Saya bangun pukul enam setiap pagi.'},
+{id:'n5-v-74',term:'毎晩',reading:'まいばん',meaning:'setiap malam',example:'毎晩、日本語を勉強します。',exampleReading:'まいばん、にほんご を べんきょう します。',exampleMeaning:'Saya belajar bahasa Jepang setiap malam.'},
+{id:'n5-v-75',term:'来週',reading:'らいしゅう',meaning:'minggu depan',example:'来週、友だちに会います。',exampleReading:'らいしゅう、ともだち に あいます。',exampleMeaning:'Minggu depan saya akan bertemu teman.'}
 ];
 
 const n5Grammar=[
