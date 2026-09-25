@@ -1,7 +1,11 @@
 # Stage 6A-2 — four examination-tool images
 
-Historical checkpoint: the following treatment-tool batch is now complete in
-[Stage 6A-3](TOOLS_IMAGES_6A3.md). Eight of thirteen cards have individual images.
+> Historical checkpoint. Current repository status: all 13 medical/care cards
+> use standalone image assets and the old draft atlas has been removed. See
+> [TOOLS_PACK_6A1.md](TOOLS_PACK_6A1.md) for the current state.
+
+At this historical checkpoint, the following treatment-tool batch was completed
+next in [Stage 6A-3](TOOLS_IMAGES_6A3.md).
 
 ## Checkpoint
 
