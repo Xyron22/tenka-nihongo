@@ -387,8 +387,22 @@ function setMedicalToolCategory(cat){
 }
 function medicalTools(){
   const all=D.kaigo.tools||[],tools=selectedMedicalTools(),cats=medicalToolCategories(),cat=state.medicalToolCategory||'Semua';
-  const due=tools.filter(t=>isDue(t.id)).length,label=cat==='Semua'?`${tools.length} alat`:`${cat} • ${tools.length}/${all.length} alat`;
-  return `${header('Alat Medis・介護用品',`${label} • gambar + istilah Jepang`)}<button class="back" onclick="go('kaigo')">←</button><div class="tool-filter-bar"><button class="pill tool-filter ${cat==='Semua'?'active':''}" onclick="setMedicalToolCategory('Semua')">Semua</button>${cats.map(x=>`<button class="pill tool-filter ${cat===x?'active':''}" onclick="setMedicalToolCategory('${esc(x)}')">${htmlSafe(x)}</button>`).join('')}</div><div class="tool-study-actions"><button class="action primary" onclick="openMedicalToolFlash()">🃏 Flashcard ${tools.length} alat</button><button class="action" onclick="startMedicalToolQuiz()">🎮 Quiz Gambar</button><button class="action ${due?'blue':''}" onclick="openMedicalToolReview()">🧠 Review ${due}</button></div><div class="tool-list">${tools.map(t=>`<button class="tool-row" onclick="openMedicalTool('${esc(t.id)}')"><img class="tool-thumb" src="${htmlSafe(t.image||'')}" alt="${htmlSafe(t.term||'alat medis')}" loading="lazy"><div class="tool-copy"><span class="badge">${htmlSafe(t.category||'介護用品')}</span><b>${htmlSafe(t.term||'')}</b><small>${htmlSafe(t.reading||'')}</small><div class="tool-meaning">${htmlSafe(t.meaning||'')}</div></div><span class="tool-chevron">›</span></button>`).join('')}</div>`;
+  const due=tools.filter(t=>isDue(t.id)).length,touched=tools.filter(t=>reviewInfo(t.id)).length,pct=Math.round(touched/Math.max(1,tools.length)*100),label=cat==='Semua'?`${tools.length} alat`:`${cat} • ${tools.length}/${all.length} alat`;
+  return `${header('Alat Medis・介護用品',`${label} • gambar + istilah Jepang`)}<button class="back" onclick="go('kaigo')">←</button>
+  <section class="tool-page-hero">
+    <div><span>MEDICAL & CARE TOOLS</span><b>現場で使う道具を覚える。</b><small>Kenali nama Jepang, fungsi, dan contoh pemakaian alat yang sering muncul di Kaigo.</small></div>
+    <div class="tool-page-stats"><div><strong>${tools.length}</strong><span>alat</span></div><div><strong>${touched}</strong><span>disentuh</span></div><div class="${due?'hot':''}"><strong>${due}</strong><span>review</span></div></div>
+    <div class="tool-page-track"><i style="width:${pct}%"></i></div>
+  </section>
+  <div class="tool-section-head"><div><span>CATEGORY</span><b>Filter alat</b></div><small>${cat==='Semua'?'Semua kategori':htmlSafe(cat)}</small></div>
+  <div class="tool-filter-bar"><button class="pill tool-filter ${cat==='Semua'?'active':''}" onclick="setMedicalToolCategory('Semua')">Semua</button>${cats.map(x=>`<button class="pill tool-filter ${cat===x?'active':''}" onclick="setMedicalToolCategory('${esc(x)}')">${htmlSafe(x)}</button>`).join('')}</div>
+  <div class="tool-study-actions modern">
+    <button class="tool-action-card primary" onclick="openMedicalToolFlash()"><span>🃏</span><div><b>Flashcard</b><small>${tools.length} alat</small></div><em>→</em></button>
+    <button class="tool-action-card" onclick="startMedicalToolQuiz()"><span>🎮</span><div><b>Quiz Gambar</b><small>Tebak alat</small></div><em>→</em></button>
+    <button class="tool-action-card ${due?'attention':''}" onclick="openMedicalToolReview()"><span>🧠</span><div><b>Review</b><small>${due} jatuh tempo</small></div><em>→</em></button>
+  </div>
+  <div class="tool-section-head list-head"><div><span>TOOL LIBRARY</span><b>Daftar alat</b></div><small>${tools.length} item</small></div>
+  <div class="tool-list modern">${tools.map((t,i)=>`<button class="tool-row modern" onclick="openMedicalTool('${esc(t.id)}')"><div class="tool-index">${String(i+1).padStart(2,'0')}</div><div class="tool-thumb-wrap"><img class="tool-thumb" src="${htmlSafe(t.image||'')}" alt="${htmlSafe(t.term||'alat medis')}" loading="lazy"></div><div class="tool-copy"><span class="tool-category">${htmlSafe(t.category||'介護用品')}</span><b>${htmlSafe(t.term||'')}</b><small>${htmlSafe(t.reading||'')}</small><div class="tool-meaning">${htmlSafe(t.meaning||'')}</div></div><span class="tool-chevron">›</span></button>`).join('')}</div>`;
 }
 function openMedicalToolFlash(){
   const cards=selectedMedicalTools().map(t=>Object.assign({_kind:'tool',_level:'KAIGO'},t));
@@ -414,12 +428,44 @@ function stepMedicalTool(delta){
 }
 function medicalToolDetail(){
   const tools=selectedMedicalTools(),t=currentMedicalTool();
-  if(!t)return `${header('Alat Medis','Data tidak ditemukan')}<button class="back" onclick="go('medicalTools')">←</button><div class="muted-box">Alat tidak ditemukan.</div>`;
+  if(!t)return `${header('Alat Medis','Data tidak ditemukan')}<button class="back" onclick="go('medicalTools')">←</button><div class="work-empty"><span>🩺</span><b>Alat tidak ditemukan</b><small>Coba kembali ke daftar alat.</small></div>`;
   const index=Math.max(0,tools.findIndex(x=>x.id===t.id)),hasPrev=index>0,hasNext=index<tools.length-1;
-  const safety=t.safetyNote?`<div class="tool-safety"><b>⚠️ Catatan aman</b><div>${htmlSafe(t.safetyNote)}</div>${t.safetyNoteReading?`<small>${htmlSafe(t.safetyNoteReading)}</small>`:''}${t.safetyNoteMeaning?`<p>${htmlSafe(t.safetyNoteMeaning)}</p>`:''}</div>`:'';
-  return `${header('Alat Medis・介護用品',htmlSafe(t.category||''))}<button class="back" onclick="go('medicalTools')">←</button><article class="tool-detail"><div class="tool-hero"><img src="${htmlSafe(t.image||'')}" alt="${htmlSafe(t.term||'alat medis')}"></div><span class="badge">${htmlSafe(t.category||'介護用品')}</span><h2>${htmlSafe(t.term||'')}</h2><div class="tool-reading">${htmlSafe(t.reading||'')}</div><div class="tool-detail-meaning">${htmlSafe(t.meaning||'')}</div><div class="small-actions"><button class="pill" onclick="speakText('${esc(t.term||t.reading)}')">🔊 Nama alat</button></div><div class="section-title">Fungsi</div><div class="tool-info"><b>${htmlSafe(t.functionJP||'')}</b>${t.functionReading?`<small>${htmlSafe(t.functionReading)}</small>`:''}${t.functionID?`<p>🇮🇩 ${htmlSafe(t.functionID)}</p>`:''}${t.functionJP?`<button class="pill" onclick="speakText('${esc(t.functionJP)}',.82)">🔊 Dengarkan fungsi</button>`:''}</div><div class="section-title">Contoh kalimat</div><div class="tool-info"><b>${htmlSafe(t.example||'')}</b>${t.exampleReading?`<small>${htmlSafe(t.exampleReading)}</small>`:''}${t.exampleMeaning?`<p>🇮🇩 ${htmlSafe(t.exampleMeaning)}</p>`:''}${t.example?`<button class="pill" onclick="speakText('${esc(t.example)}',.82)">🔊 Dengarkan contoh</button>`:''}</div>${safety}<div class="tool-pager"><button class="action" onclick="stepMedicalTool(-1)" ${hasPrev?'':'disabled aria-disabled="true"'}>← Sebelumnya</button><span>${index+1}/${tools.length}</span><button class="action primary" onclick="stepMedicalTool(1)" ${hasNext?'':'disabled aria-disabled="true"'}>Berikutnya →</button></div></article>`;
-}
+  const safety=t.safetyNote?`<section class="tool-safety modern"><div class="tool-info-label">SAFETY NOTE</div><b>⚠️ Catatan aman</b><div>${htmlSafe(t.safetyNote)}</div>${t.safetyNoteReading?`<small>${htmlSafe(t.safetyNoteReading)}</small>`:''}${t.safetyNoteMeaning?`<p>🇮🇩 ${htmlSafe(t.safetyNoteMeaning)}</p>`:''}</section>`:'';
+  return `${header('Alat Medis・介護用品',htmlSafe(t.category||''))}<button class="back" onclick="go('medicalTools')">←</button>
+  <article class="tool-detail modern">
+    <section class="tool-detail-hero">
+      <div class="tool-hero"><img src="${htmlSafe(t.image||'')}" alt="${htmlSafe(t.term||'alat medis')}"></div>
+      <div class="tool-detail-copy">
+        <div class="tool-detail-meta"><span>${htmlSafe(t.category||'介護用品')}</span><em>${index+1}/${tools.length}</em></div>
+        <h2>${htmlSafe(t.term||'')}</h2>
+        <div class="tool-reading">${htmlSafe(t.reading||'')}</div>
+        <div class="tool-detail-meaning">${htmlSafe(t.meaning||'')}</div>
+        <button class="tool-name-audio" onclick="speakText('${esc(t.term||t.reading)}')">🔊 <span>Nama alat</span></button>
+      </div>
+    </section>
 
+    <div class="tool-section-head detail-head"><div><span>FUNCTION</span><b>Fungsi alat</b></div><small>日本語 + Indonesia</small></div>
+    <section class="tool-info modern">
+      <div class="tool-info-label">FUNGSI</div>
+      <b>${htmlSafe(t.functionJP||'')}</b>
+      ${t.functionReading?`<small>${htmlSafe(t.functionReading)}</small>`:''}
+      ${t.functionID?`<p>🇮🇩 ${htmlSafe(t.functionID)}</p>`:''}
+      ${t.functionJP?`<button class="tool-inline-audio" onclick="speakText('${esc(t.functionJP)}',.82)">🔊 Dengarkan fungsi</button>`:''}
+    </section>
+
+    <div class="tool-section-head detail-head"><div><span>EXAMPLE</span><b>Contoh kalimat</b></div><small>Situasi kerja</small></div>
+    <section class="tool-info modern">
+      <div class="tool-info-label">CONTOH</div>
+      <b>${htmlSafe(t.example||'')}</b>
+      ${t.exampleReading?`<small>${htmlSafe(t.exampleReading)}</small>`:''}
+      ${t.exampleMeaning?`<p>🇮🇩 ${htmlSafe(t.exampleMeaning)}</p>`:''}
+      ${t.example?`<button class="tool-inline-audio" onclick="speakText('${esc(t.example)}',.82)">🔊 Dengarkan contoh</button>`:''}
+    </section>
+
+    ${safety}
+    <div class="tool-pager modern"><button class="action" onclick="stepMedicalTool(-1)" ${hasPrev?'':'disabled aria-disabled="true"'}>← Sebelumnya</button><span><b>${index+1}</b>/${tools.length}</span><button class="action primary" onclick="stepMedicalTool(1)" ${hasNext?'':'disabled aria-disabled="true"'}>Berikutnya →</button></div>
+  </article>`;
+}
 function houkokuItems(){return D.kaigo.houkoku||[]}
 function houkokuPieceText(piece){return typeof piece==='string'?piece:String(piece?.text||'')}
 function houkokuPieceReading(piece){return typeof piece==='string'?'':String(piece?.reading||'')}
