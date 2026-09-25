@@ -101,6 +101,8 @@ jobs:
           grep -q "houkoku-pack-v1.js" index.html
           grep -q "houkoku-pack-v2.js" index.html
           grep -q "audio-settings-v5.js" index.html
+          grep -q "settings-audio-card" app-v2.js
+          grep -q "settings-audio-card" audio-settings-v5.js
           if grep -E "audio-engine-v2\.js|audio-engine-v3\.js|audio-engine-v4\.js|sound-pack-v2\.js|audio-patch\.js|audio-guard" index.html; then
             echo "Legacy audio runtime reference found" >&2
             exit 1
