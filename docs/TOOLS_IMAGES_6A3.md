@@ -1,5 +1,9 @@
 # Stage 6A-3 — four treatment-tool images
 
+> Historical checkpoint. Current repository status: all 13 medical/care cards
+> use standalone image assets and the old draft atlas has been removed. See
+> [TOOLS_PACK_6A1.md](TOOLS_PACK_6A1.md) for the current state.
+
 ## Checkpoint
 
 Eight of thirteen tools now use individual images. This batch adds the syringe,
