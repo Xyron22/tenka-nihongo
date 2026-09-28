@@ -100,7 +100,15 @@ const kaigoVocab=[
 {id:'k-v-57',term:'歩行介助',reading:'ほこうかいじょ',meaning:'bantuan saat berjalan',category:'ADL・移動',examArea:'生活支援技術',example:'ふらつきに注意しながら歩行介助を行います。',exampleMeaning:'Membantu berjalan sambil memperhatikan adanya sempoyongan.'},
 {id:'k-v-58',term:'移動介助',reading:'いどうかいじょ',meaning:'bantuan saat berpindah tempat',category:'ADL・移動',examArea:'生活支援技術',example:'安全を確認して移動介助を行います。',exampleMeaning:'Membantu berpindah tempat setelah memastikan keselamatan.'},
 {id:'k-v-59',term:'起床',reading:'きしょう',meaning:'bangun dari tidur',category:'ADL・生活支援',examArea:'生活支援技術',example:'六時ごろに起床されました。',exampleMeaning:'Beliau bangun sekitar pukul enam.'},
-{id:'k-v-60',term:'就寝',reading:'しゅうしん',meaning:'tidur / pergi tidur',category:'ADL・生活支援',examArea:'生活支援技術',example:'九時ごろに就寝されました。',exampleMeaning:'Beliau tidur sekitar pukul sembilan.'}
+{id:'k-v-60',term:'就寝',reading:'しゅうしん',meaning:'tidur / pergi tidur',category:'ADL・生活支援',examArea:'生活支援技術',example:'九時ごろに就寝されました。',exampleMeaning:'Beliau tidur sekitar pukul sembilan.'},
+{id:'k-v-61',term:'観察',reading:'かんさつ',meaning:'observasi / mengamati kondisi',category:'観察・記録',examArea:'介護過程',example:'食事中の様子を観察します。',exampleMeaning:'Mengamati kondisi saat makan.'},
+{id:'k-v-62',term:'記録',reading:'きろく',meaning:'catatan / mencatat',category:'観察・記録',examArea:'介護過程',example:'介助後の様子を記録します。',exampleMeaning:'Mencatat kondisi setelah pemberian bantuan.'},
+{id:'k-v-63',term:'報告',reading:'ほうこく',meaning:'laporan / melaporkan',category:'業務・連携',examArea:'コミュニケーション技術',example:'変化があれば看護師に報告します。',exampleMeaning:'Jika ada perubahan, melaporkannya kepada perawat.'},
+{id:'k-v-64',term:'連絡',reading:'れんらく',meaning:'menghubungi / memberi kabar',category:'業務・連携',examArea:'コミュニケーション技術',example:'必要なときは担当者に連絡します。',exampleMeaning:'Jika diperlukan, menghubungi petugas yang bertanggung jawab.'},
+{id:'k-v-65',term:'相談',reading:'そうだん',meaning:'berkonsultasi / berdiskusi',category:'業務・連携',examArea:'コミュニケーション技術',example:'判断に迷ったときは先輩に相談します。',exampleMeaning:'Saat ragu mengambil keputusan, berkonsultasi dengan senior.'},
+{id:'k-v-66',term:'訴え',reading:'うったえ',meaning:'keluhan / hal yang disampaikan oleh pasien atau pengguna layanan',category:'状態・症状',examArea:'コミュニケーション技術',example:'痛みの訴えがありました。',exampleMeaning:'Ada keluhan nyeri.'},
+{id:'k-v-67',term:'変化',reading:'へんか',meaning:'perubahan',category:'状態・症状',examArea:'介護過程',example:'体調に変化がないか確認します。',exampleMeaning:'Memeriksa apakah ada perubahan pada kondisi fisik.'},
+{id:'k-v-68',term:'対応',reading:'たいおう',meaning:'penanganan / respons terhadap situasi',category:'業務・連携',examArea:'介護過程',example:'状況に合わせて対応します。',exampleMeaning:'Menangani sesuai dengan situasi.'}
 ];
 
 const handoff=[
