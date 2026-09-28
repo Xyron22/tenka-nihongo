@@ -94,7 +94,7 @@ for(const item of n5GrammarBatch83){
  assert(!/\p{Script=Han}/u.test(item.exampleReading),'N5 Stage 8A-3 example reading must not contain kanji '+item.id);
  assert(!n5GrammarTitles.has(item.title),'N5 Stage 8A-3 duplicate grammar title '+item.title);n5GrammarTitles.add(item.title);
 }
-assert(D.kaigo.vocab.length>=60,'Kaigo vocab Stage 8B-1 incomplete');
+assert(D.kaigo.vocab.length>=68,'Kaigo vocab Stage 8B-2 incomplete');
 const kaigoBatch8B1=D.kaigo.vocab.filter(x=>/^k-v-(5[3-9]|60)$/.test(x.id));
 assert(kaigoBatch8B1.length===8,'Kaigo Stage 8B-1 must contain exactly 8 vocab items');
 const kaigoBatchTerms=new Set();
@@ -103,6 +103,15 @@ for(const item of kaigoBatch8B1){
  assert(item.example&&item.exampleMeaning,'Kaigo Stage 8B-1 missing example '+item.id);
  assert(item.examArea&&KAIGO_EXAM_AREAS.has(item.examArea),'Kaigo Stage 8B-1 invalid examArea '+item.id);
  assert(!kaigoBatchTerms.has(item.term),'Kaigo Stage 8B-1 duplicate term '+item.term);kaigoBatchTerms.add(item.term);
+}
+const kaigoBatch8B2=D.kaigo.vocab.filter(x=>/^k-v-(6[1-8])$/.test(x.id));
+assert(kaigoBatch8B2.length===8,'Kaigo Stage 8B-2 must contain exactly 8 vocab items');
+const kaigoBatchTerms82=new Set();
+for(const item of kaigoBatch8B2){
+ assert(item.term&&item.reading&&item.meaning&&item.category,'Kaigo Stage 8B-2 missing core field '+item.id);
+ assert(item.example&&item.exampleMeaning,'Kaigo Stage 8B-2 missing example '+item.id);
+ assert(item.examArea&&KAIGO_EXAM_AREAS.has(item.examArea),'Kaigo Stage 8B-2 invalid examArea '+item.id);
+ assert(!kaigoBatchTerms82.has(item.term),'Kaigo Stage 8B-2 duplicate term '+item.term);kaigoBatchTerms82.add(item.term);
 }
 assert(D.kaigo.handoff.length>=12,'Kaigo handoff Stage 2A incomplete');
 assert(D.kaigo.houkoku.length>=12,'Houkoku Pack 2 incomplete');
