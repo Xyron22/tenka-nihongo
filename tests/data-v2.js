@@ -103,6 +103,14 @@ for(const item of n5GrammarBatch86){
  assert(!/\p{Script=Han}/u.test(item.exampleReading),'N5 Stage 8A-6 example reading must not contain kanji '+item.id);
  assert(!n5GrammarTitles86.has(item.title),'N5 Stage 8A-6 duplicate grammar title '+item.title);n5GrammarTitles86.add(item.title);
 }
+const n5GrammarAudit871=D.jlpt.N5.grammar.filter(x=>/^n5-g-0[1-5]$/.test(x.id));
+assert(n5GrammarAudit871.length===5,'N5 Stage 8A-7.1 must audit exactly grammar 01-05');
+for(const item of n5GrammarAudit871){
+ assert(item.usage&&item.whenToUse&&item.watchOut&&item.commonMistake,'N5 Stage 8A-7.1 missing usage guidance '+item.id);
+ assert(item.extraExample&&item.extraExampleReading&&item.extraExampleMeaning,'N5 Stage 8A-7.1 missing extra example '+item.id);
+ assert(!/\p{Script=Han}/u.test(item.extraExampleReading),'N5 Stage 8A-7.1 extra example reading must not contain kanji '+item.id);
+ assert(item.contrast,'N5 Stage 8A-7.1 missing contrast '+item.id);
+}
 assert(D.kaigo.vocab.length>=68,'Kaigo vocab Stage 8B-2 incomplete');
 const kaigoBatch8B1=D.kaigo.vocab.filter(x=>/^k-v-(5[3-9]|60)$/.test(x.id));
 assert(kaigoBatch8B1.length===8,'Kaigo Stage 8B-1 must contain exactly 8 vocab items');
