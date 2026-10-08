@@ -67,6 +67,71 @@ const grammarAudit={
  extraExampleReading:'えいが を み に いきます。',
  extraExampleMeaning:'Saya pergi untuk menonton film.',
  contrast:'～に行きます menyatakan tujuan suatu perpindahan. 行きます saja hanya menyatakan pergi tanpa menjelaskan aktivitas yang menjadi tujuannya.'
+},
+'n5-g-16':{
+ meaning:'tidak boleh melakukan ～',
+ pattern:'Vて + はいけません',
+ explanation:'Dipakai untuk menyatakan larangan: suatu tindakan tidak diizinkan atau tidak boleh dilakukan menurut aturan, situasi, atau penilaian pembicara.',
+ usage:'Menyampaikan aturan atau larangan seperti “dilarang merokok”, “tidak boleh masuk”, atau “tidak boleh melakukan tindakan itu”.',
+ whenToUse:'Cocok ketika memang ada larangan atau aturan yang jelas. Dalam petunjuk keselamatan dan aturan tempat, pola ini sering dipakai untuk menegaskan bahwa tindakan tersebut tidak diperbolehkan.',
+ watchOut:'Nuansanya lebih tegas daripada ～ないでください. ～てはいけません berarti “tidak boleh”, sedangkan ～ないでください berarti “tolong jangan”. Jangan memakai larangan kuat jika sebenarnya hanya ingin membuat permintaan lembut.',
+ commonMistake:'Menyamakan ～てはいけません dengan ～なくてもいいです. Maknanya berlawanan: 行ってはいけません = tidak boleh pergi; 行かなくてもいいです = tidak perlu pergi / boleh tidak pergi.',
+ extraExample:'ここでたばこを吸ってはいけません。',
+ extraExampleReading:'ここ で たばこ を すって は いけません。',
+ extraExampleMeaning:'Tidak boleh merokok di sini.',
+ contrast:'～てもいいです = boleh melakukan; ～てはいけません = tidak boleh melakukan; ～ないでください = tolong jangan melakukan.'
+},
+'n5-g-17':{
+ meaning:'tidak perlu melakukan ～ / boleh tidak melakukan ～',
+ pattern:'Vない → ない diganti なくてもいいです',
+ explanation:'Dipakai untuk menyatakan bahwa suatu tindakan tidak wajib. Orang tersebut boleh tidak melakukannya.',
+ usage:'Menghilangkan kewajiban: “nggak perlu...”, “tidak harus...”, atau “boleh tidak...”.',
+ whenToUse:'Gunakan ketika suatu tindakan opsional atau tidak diperlukan, misalnya besok tidak perlu datang atau formulir ini tidak perlu ditulis.',
+ watchOut:'Pola ini bukan larangan. 来なくてもいいです tidak berarti “jangan datang”; artinya “tidak perlu datang”, sehingga datang pun tidak dilarang kecuali ada konteks lain.',
+ commonMistake:'Menganggap bentuk negatifnya berarti “tidak boleh”. Bandingkan: 食べなくてもいいです = tidak perlu makan; 食べてはいけません = tidak boleh makan. Salah memilih pola bisa membalik instruksi.',
+ extraExample:'今日は残業しなくてもいいです。',
+ extraExampleReading:'きょう は ざんぎょう しなくても いい です。',
+ extraExampleMeaning:'Hari ini tidak perlu lembur.',
+ contrast:'～なくてもいいです = tidak wajib; ～なければなりません = wajib/harus; ～てはいけません = dilarang.'
+},
+'n5-g-18':{
+ meaning:'harus melakukan ～ / wajib ～',
+ pattern:'Vない → ない diganti なければなりません',
+ explanation:'Dipakai untuk menyatakan kewajiban atau sesuatu yang harus dilakukan. Secara harfiah strukturnya berasal dari kondisi negatif, tetapi sebagai pola dipahami sebagai “harus”.',
+ usage:'Menjelaskan kewajiban, aturan, atau tindakan yang memang perlu dilakukan.',
+ whenToUse:'Cocok untuk situasi formal atau netral ketika ingin menyatakan kewajiban dengan jelas, misalnya harus minum obat, harus mengumpulkan dokumen, atau harus datang tepat waktu.',
+ watchOut:'Bentuk ini cukup formal dan panjang. Dalam percakapan santai orang Jepang sering menyingkatnya menjadi ～ないと atau ～なきゃ, tetapi bentuk singkat itu jangan dipakai sembarangan dalam situasi formal.',
+ commonMistake:'Keliru mengubah bentuk ない. Contoh: 飲まない → 飲まなければなりません, bukan 飲むなければなりません. Jangan juga tertukar dengan ～なくてもいいです yang berarti “tidak perlu”.',
+ extraExample:'明日は早く起きなければなりません。',
+ extraExampleReading:'あした は はやく おきなければ なりません。',
+ extraExampleMeaning:'Besok saya harus bangun lebih pagi.',
+ contrast:'～なければなりません = harus; ～なくてもいいです = tidak perlu. Dalam percakapan santai ～ないと／～なきゃ sering muncul sebagai versi lebih pendek.'
+},
+'n5-g-19':{
+ meaning:'B lebih ～ daripada A',
+ pattern:'A より B のほうが + sifat',
+ explanation:'Dipakai untuk membandingkan dua hal dan menyatakan bahwa B memiliki sifat atau tingkat yang lebih kuat daripada A.',
+ usage:'Membuat perbandingan seperti “mobil lebih cepat daripada kereta” atau “kopi lebih saya suka daripada teh”.',
+ whenToUse:'Gunakan ketika ada dua hal yang dibandingkan. A setelah より menjadi standar pembanding, sedangkan B setelah のほうが adalah pihak yang dinilai lebih memiliki sifat tersebut.',
+ watchOut:'Urutan sangat penting. AよりBのほうが速いです berarti B lebih cepat daripada A. Jika A dan B tertukar, makna perbandingannya ikut terbalik.',
+ commonMistake:'Mengira noun sebelum より adalah yang “lebih”. Justru pada pola AよりBのほうが, B-lah yang dinilai lebih. Contoh: 電車より車のほうが速いです = mobil lebih cepat daripada kereta.',
+ extraExample:'紅茶よりコーヒーのほうが好きです。',
+ extraExampleReading:'こうちゃ より コーヒー の ほう が すき です。',
+ extraExampleMeaning:'Saya lebih suka kopi daripada teh.',
+ contrast:'～より～のほうが membandingkan dua pilihan. Untuk memilih yang paling di dalam kelompok, gunakan ～の中で～が一番.'
+},
+'n5-g-20':{
+ meaning:'di antara ～, ... yang paling ～',
+ pattern:'Kelompok の中で + N が一番 + sifat',
+ explanation:'Dipakai untuk menyatakan bahwa satu anggota memiliki tingkat paling tinggi dalam suatu kelompok atau kategori.',
+ usage:'Menyatakan “yang paling...” seperti paling suka, paling cepat, paling besar, atau paling menarik di antara beberapa pilihan.',
+ whenToUse:'Cocok saat membandingkan beberapa anggota dalam satu kelompok. Sebut kelompok dengan の中で, lalu objek pilihan dengan が一番 + sifat.',
+ watchOut:'Untuk perbandingan hanya dua benda, pola ～より～のほうが biasanya lebih natural untuk pembelajaran dasar. ～の中で～が一番 menekankan pemilihan satu yang paling menonjol dari sebuah kelompok.',
+ commonMistake:'Lupa menyebut ruang perbandingan sehingga “paling”-nya tidak jelas, atau menukar partikel. Pola dasar: 果物の中でりんごが一番好きです — kelompoknya 果物, pilihannya りんご.',
+ extraExample:'季節の中で春が一番好きです。',
+ extraExampleReading:'きせつ の なか で はる が いちばん すき です。',
+ extraExampleMeaning:'Di antara musim, saya paling suka musim semi.',
+ contrast:'～の中で～が一番 memilih yang paling dalam kelompok; ～より～のほうが membandingkan dua hal.'
 }
 };
 
