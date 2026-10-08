@@ -4,8 +4,8 @@ const c={window:null};c.window=c;vm.createContext(c);
 for(const file of ['data.js','content-pack-v1.js','content-pack-v2.js','content-pack-v3.js','content-pack-v4.js']){
   vm.runInContext(fs.readFileSync(file,'utf8'),c,{filename:file});
 }
-const items=c.TENKA_DATA.jlpt.N5.grammar.filter(x=>/^n5-g-(1[1-9]|20)$/.test(x.id));
-assert(items.length===10,'Stage 8A-7.3/7.4 must audit exactly grammar 11-20');
+const items=c.TENKA_DATA.jlpt.N5.grammar.filter(x=>/^n5-g-(1[1-9]|2[0-5])$/.test(x.id));
+assert(items.length===15,'Stage 8A-7.3/7.4/7.5 must audit exactly grammar 11-25');
 for(const item of items){
   assert(item.usage&&item.whenToUse&&item.watchOut&&item.commonMistake,'missing contextual guidance '+item.id);
   assert(item.extraExample&&item.extraExampleReading&&item.extraExampleMeaning,'missing extra example '+item.id);
@@ -22,5 +22,10 @@ assert(byId['n5-g-16'].commonMistake.includes('行かなくてもいいです'),
 assert(byId['n5-g-17'].watchOut.includes('来なくてもいいです'),'no-need pattern must explain it is not a prohibition');
 assert(byId['n5-g-18'].watchOut.includes('～ないと')&&byId['n5-g-18'].watchOut.includes('～なきゃ'),'obligation pattern must explain casual shortened forms');
 assert(byId['n5-g-19'].watchOut.includes('AよりBのほうが'),'comparison pattern must explain direction of comparison');
-assert(byId['n5-g-20'].contrast.includes('二つ')||byId['n5-g-20'].contrast.includes('二')||byId['n5-g-20'].contrast.includes('2')||byId['n5-g-20'].contrast.includes('dua'),'superlative pattern must contrast two-item comparison');
-console.log('TENKA N5 Bunpou audit 11-20 passed:',items.map(x=>x.id).join(', '));
+assert(byId['n5-g-20'].contrast.includes('dua'),'superlative pattern must contrast two-item comparison');
+assert(byId['n5-g-21'].watchOut.includes('～たいです')&&byId['n5-g-21'].commonMistake.includes('がほしいです'),'～がほしいです must distinguish noun desire from action desire');
+assert(byId['n5-g-22'].watchOut.includes('静かなとき')&&byId['n5-g-22'].watchOut.includes('学生のとき'),'～とき must explain na-adjective and noun attachment');
+assert(byId['n5-g-23'].watchOut.includes('だでしょう'),'～でしょう must warn against basic だでしょう attachment');
+assert(byId['n5-g-24'].watchOut.includes('まだ行きません')&&byId['n5-g-24'].contrast.includes('もう～ました'),'まだ～ていません must explain incomplete action and contrast with もう');
+assert(byId['n5-g-25'].watchOut.includes('もう食べます')&&byId['n5-g-25'].contrast.includes('まだ～ていません'),'もう～ました must explain completed action and contrast with まだ');
+console.log('TENKA N5 Bunpou audit 11-25 passed:',items.map(x=>x.id).join(', '));
