@@ -4,8 +4,8 @@ const c={window:null};c.window=c;vm.createContext(c);
 for(const file of ['data.js','content-pack-v1.js','content-pack-v2.js','content-pack-v3.js','content-pack-v4.js']){
   vm.runInContext(fs.readFileSync(file,'utf8'),c,{filename:file});
 }
-const items=c.TENKA_DATA.jlpt.N5.grammar.filter(x=>/^n5-g-(11|12|13|14|15)$/.test(x.id));
-assert(items.length===5,'Stage 8A-7.3 must audit exactly grammar 11-15');
+const items=c.TENKA_DATA.jlpt.N5.grammar.filter(x=>/^n5-g-(1[1-9]|20)$/.test(x.id));
+assert(items.length===10,'Stage 8A-7.3/7.4 must audit exactly grammar 11-20');
 for(const item of items){
   assert(item.usage&&item.whenToUse&&item.watchOut&&item.commonMistake,'missing contextual guidance '+item.id);
   assert(item.extraExample&&item.extraExampleReading&&item.extraExampleMeaning,'missing extra example '+item.id);
@@ -18,4 +18,9 @@ assert(byId['n5-g-12'].watchOut.includes('～たりしました'),'～たり～�
 assert(byId['n5-g-13'].watchOut.includes('あります／います'),'existence pattern warning missing');
 assert(byId['n5-g-14'].watchOut.includes('を'),'～が好きです must warn against basic を misuse');
 assert(byId['n5-g-15'].watchOut.includes('食べるに行きます'),'purpose に行きます must warn against dictionary-form attachment');
-console.log('TENKA N5 Bunpou audit 11-15 passed:',items.map(x=>x.id).join(', '));
+assert(byId['n5-g-16'].commonMistake.includes('行かなくてもいいです'),'prohibition pattern must distinguish no-need form');
+assert(byId['n5-g-17'].watchOut.includes('来なくてもいいです'),'no-need pattern must explain it is not a prohibition');
+assert(byId['n5-g-18'].watchOut.includes('～ないと')&&byId['n5-g-18'].watchOut.includes('～なきゃ'),'obligation pattern must explain casual shortened forms');
+assert(byId['n5-g-19'].watchOut.includes('AよりBのほうが'),'comparison pattern must explain direction of comparison');
+assert(byId['n5-g-20'].contrast.includes('二つ')||byId['n5-g-20'].contrast.includes('二')||byId['n5-g-20'].contrast.includes('2')||byId['n5-g-20'].contrast.includes('dua'),'superlative pattern must contrast two-item comparison');
+console.log('TENKA N5 Bunpou audit 11-20 passed:',items.map(x=>x.id).join(', '));
