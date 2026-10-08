@@ -5,10 +5,10 @@ for(const file of ['data.js','content-pack-v1.js','content-pack-v2.js','content-
   vm.runInContext(fs.readFileSync(file,'utf8'),c,{filename:file});
 }
 const all=c.TENKA_DATA.jlpt.N5.grammar;
-assert(all.length>=30,'Stage 8A-8.1 must raise N5 grammar coverage to at least 30 items');
+assert(all.length>=35,'Stage 8A-8.2 must raise N5 grammar coverage to at least 35 items');
 assert(new Set(all.map(x=>x.id)).size===all.length,'N5 grammar ids must stay unique');
-const items=all.filter(x=>/^n5-g-(1[1-9]|2[0-9]|30)$/.test(x.id));
-assert(items.length===20,'Stage 8A-7.3 through 8A-8.1 must cover grammar 11-30');
+const items=all.filter(x=>/^n5-g-(1[1-9]|2[0-9]|3[0-5])$/.test(x.id));
+assert(items.length===25,'Stage 8A-7.3 through 8A-8.2 must cover grammar 11-35');
 for(const item of items){
   assert(item.usage&&item.whenToUse&&item.watchOut&&item.commonMistake,'missing contextual guidance '+item.id);
   assert(item.example&&item.exampleReading&&item.exampleMeaning,'missing main example '+item.id);
@@ -38,7 +38,12 @@ assert(byId['n5-g-27'].watchOut.includes('は')&&byId['n5-g-27'].watchOut.includ
 assert(byId['n5-g-28'].commonMistake.includes('誰が来ますか'),'が must include focused-subject example');
 assert(byId['n5-g-29'].watchOut.includes('日本語が好きです')&&byId['n5-g-29'].watchOut.includes('電車に乗ります'),'を must warn that Japanese patterns can use other particles');
 assert(byId['n5-g-30'].watchOut.includes('病院で働きます')&&byId['n5-g-30'].watchOut.includes('病院にいます'),'に must distinguish action location from existence');
+assert(byId['n5-g-31'].watchOut.includes('病院で働きます')&&byId['n5-g-31'].watchOut.includes('病院にいます'),'で must distinguish action location from existence');
+assert(byId['n5-g-32'].watchOut.includes('日本語の先生'),'の must explain relationships beyond possession');
+assert(byId['n5-g-33'].watchOut.includes('plain')&&byId['n5-g-33'].example.includes('か'),'か must explain polite question use and casual omission');
+assert(byId['n5-g-34'].watchOut.includes('にも')&&byId['n5-g-34'].watchOut.includes('でも'),'も must explain replacement vs particle combination');
+assert(byId['n5-g-35'].watchOut.includes('や')&&byId['n5-g-35'].extraExample.includes('友だちと'),'と must cover list and companion uses');
 const index=fs.readFileSync('index.html','utf8');
 assert(index.includes("load('./content-pack-v5.js','content-pack-v5.js')"),'runtime must load content-pack-v5.js');
 assert(index.indexOf('content-pack-v4.js')<index.indexOf('content-pack-v5.js'),'content-pack-v5 must load after audit overlay v4');
-console.log('TENKA N5 Bunpou audit/coverage 11-30 passed:',items.map(x=>x.id).join(', '));
+console.log('TENKA N5 Bunpou audit/coverage 11-35 passed:',items.map(x=>x.id).join(', '));
