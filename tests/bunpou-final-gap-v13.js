@@ -22,11 +22,11 @@ for(const item of items){
 }
 const byId=Object.fromEntries(items.map(x=>[x.id,x]));
 function has(id,field,...parts){const v=String(byId[id]&&byId[id][field]||'');for(const p of parts)assert(v.includes(p),id+' '+field+' missing '+p)}
-has('n5-g-71','commonMistake','と');has('n5-g-71','watchOut','引用');
-has('n5-g-72','watchOut','最後');has('n5-g-72','contrast','～てから');
+has('n5-g-71','commonMistake','彼は明日行く言いました');has('n5-g-71','watchOut','kutipan');
+has('n5-g-72','watchOut','verba terakhir');has('n5-g-72','contrast','～てから');
 has('n5-g-73','commonMistake','きれいで');has('n5-g-73','watchOut','静かくて');
 has('n5-g-74','commonMistake','コーヒーにします');has('n5-g-74','contrast','～になる');
-has('n5-g-75','watchOut','主語');has('n5-g-75','contrast','～けど');
+has('n5-g-75','watchOut','subjek');has('n5-g-75','contrast','～けど');
 const index=fs.readFileSync('index.html','utf8');
 assert(index.includes("load('./content-pack-v13.js','content-pack-v13.js')"),'runtime must load content-pack-v13.js');
 assert(index.indexOf('content-pack-v12.js')<index.indexOf('content-pack-v13.js'),'content pack order v12<v13');
