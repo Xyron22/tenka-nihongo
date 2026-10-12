@@ -23,7 +23,7 @@ for(const item of items){
 const byId=Object.fromEntries(items.map(x=>[x.id,x]));
 function has(id,field,...parts){const v=String(byId[id]&&byId[id][field]||'');for(const p of parts)assert(v.includes(p),id+' '+field+' missing '+p)}
 has('n5-g-76','watchOut','高いじゃない','ではありません');has('n5-g-76','contrast','～くない');
-has('n5-g-77','commonMistake','学生じゃないでした');has('n5-g-77','contrast','じゃありませんでした');
+has('n5-g-77','commonMistake','じゃない','でした','じゃなかった');has('n5-g-77','contrast','じゃありませんでした');
 has('n5-g-78','watchOut','学生だだろう');has('n5-g-78','contrast','でしょう');
 has('n5-g-79','commonMistake','行かなくてはいけない','行かなくてもいい');has('n5-g-79','extraExample','行かなくちゃ');
 has('n5-g-80','commonMistake','コーヒーてください');has('n5-g-80','contrast','Vてください');
