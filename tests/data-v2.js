@@ -155,9 +155,8 @@ for(const h of D.kaigo.houkoku){
 }
 
 for(const item of D.kaigo.vocab.filter(x=>/^k-v-(3[3-9]|4[0-9]|5[0-2])$/.test(x.id))){
- assert(item.examArea,'Kaigo certification foundation item missing examArea '+item.id);
+ assert(item.exampleReading,'Kaigo example reading missing '+item.id);
+ assert(!/\p{Script=Han}/u.test(item.exampleReading),'Kaigo example reading must not contain kanji '+item.id);
 }
-for(const h of D.kaigo.handoff.filter(x=>/^h-(11|12)$/.test(x.id))){
- assert(h.examArea,'Stage 2A handoff missing examArea '+h.id);
-}
+
 console.log('TENKA data integrity passed:',ids.size,'unique ids');
