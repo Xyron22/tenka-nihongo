@@ -33,6 +33,7 @@ jobs:
           node --check content-pack-v2.js
           node --check content-pack-v3.js
           node --check content-pack-v4.js
+          node --check content-pack-v13.js
           node --check houkoku-pack-v1.js
           node --check houkoku-pack-v2.js
           node --check tools-pack-v1.js
@@ -45,6 +46,7 @@ jobs:
           node --check tests/audio-v5.js
           node --check tests/tools-pack-v1.js
           node --check tests/bunpou-audit-v4.js
+          node --check tests/bunpou-final-gap-v13.js
           node --check scripts/build-sound-manifest-v2.mjs
           bash -n scripts/generate-voicevox-nemo.sh
 
@@ -88,8 +90,11 @@ jobs:
       - name: Data integrity test
         run: node tests/data-v2.js
 
-      - name: N5 Bunpou audit 11-15 test
+      - name: N5 Bunpou audit 11-70 test
         run: node tests/bunpou-audit-v4.js
+
+      - name: N5 Bunpou final-gap 71-75 test
+        run: node tests/bunpou-final-gap-v13.js
 
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js
@@ -108,6 +113,7 @@ jobs:
           grep -q "sound-pack-v3.js" index.html
           grep -q "content-pack-v3.js" index.html
           grep -q "content-pack-v4.js" index.html
+          grep -q "content-pack-v13.js" index.html
           grep -q "houkoku-pack-v1.js" index.html
           grep -q "houkoku-pack-v2.js" index.html
           grep -q "audio-settings-v5.js" index.html
