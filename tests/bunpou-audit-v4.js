@@ -43,7 +43,7 @@ assert(byId['n5-g-32'].watchOut.includes('日本語の先生'),'の must explain
 assert(byId['n5-g-33'].watchOut.includes('plain')&&byId['n5-g-33'].example.includes('か'),'か must explain polite question use and casual omission');
 assert(byId['n5-g-34'].watchOut.includes('にも')&&byId['n5-g-34'].watchOut.includes('でも'),'も must explain replacement vs particle combination');
 assert(byId['n5-g-35'].watchOut.includes('や')&&byId['n5-g-35'].extraExample.includes('友だちと'),'と must cover list and companion uses');
-assert(byId['n5-g-36'].watchOut.includes('“e”')&&byId['n5-g-36'].contrast.includes('に'),'へ must explain particle reading and difference from に');
+assert(byId['n5-g-36'].explanation.includes('dibaca')&&byId['n5-g-36'].explanation.includes('e')&&byId['n5-g-36'].contrast.includes('に'),'へ must explain particle reading and difference from に');
 assert(byId['n5-g-37'].watchOut.includes('と')&&byId['n5-g-37'].contrast.includes('daftar'),'や must distinguish incomplete examples from と');
 assert(byId['n5-g-38'].watchOut.includes('雨だから')&&byId['n5-g-38'].contrast.includes('n5-g-08'),'から origin must distinguish starting point from reason');
 assert(byId['n5-g-39'].extraExample.includes('から')&&byId['n5-g-39'].watchOut.includes('に／へ'),'まで must cover range endpoint and distinguish movement destination');
