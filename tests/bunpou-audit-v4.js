@@ -65,7 +65,7 @@ has('n5-g-52','watchOut','～ないでください');has('n5-g-52','example','�
 has('n5-g-53','watchOut','～ませんか');has('n5-g-53','example','荷物を持ちましょうか');
 has('n5-g-54','watchOut','menggurui');has('n5-g-54','contrast','ね');
 has('n5-g-55','watchOut','pertanyaan');has('n5-g-55','contrast','よ');
-has('n5-g-56','watchOut','休みなので','寒いなので');has('n5-g-56','contrast','～から');
+has('n5-g-56','watchOut','休みなので');has('n5-g-56','commonMistake','寒いなので');has('n5-g-56','contrast','～から');
 has('n5-g-57','watchOut','休みだけど');has('n5-g-57','commonMistake','聞きたいんですけど');
 has('n5-g-58','commonMistake','コーヒーとお茶');has('n5-g-58','contrast','～や');
 has('n5-g-59','watchOut','何も食べません');has('n5-g-59','contrast','誰か');
