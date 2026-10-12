@@ -1,15 +1,15 @@
 const fs=require('fs'),vm=require('vm');
 function assert(x,m){if(!x)throw new Error(m)}
 const c={window:null};c.window=c;vm.createContext(c);
-for(const file of ['data.js','content-pack-v1.js','content-pack-v2.js','content-pack-v3.js','content-pack-v4.js','content-pack-v5.js','content-pack-v6.js','content-pack-v7.js','content-pack-v8.js','content-pack-v9.js','content-pack-v10.js','content-pack-v11.js','houkoku-pack-v1.js','houkoku-pack-v2.js','tools-pack-v1.js']){
+for(const file of ['data.js','content-pack-v1.js','content-pack-v2.js','content-pack-v3.js','content-pack-v4.js','content-pack-v5.js','content-pack-v6.js','content-pack-v7.js','content-pack-v8.js','content-pack-v9.js','content-pack-v10.js','content-pack-v11.js','content-pack-v12.js','houkoku-pack-v1.js','houkoku-pack-v2.js','tools-pack-v1.js']){
   vm.runInContext(fs.readFileSync(file,'utf8'),c,{filename:file});
 }
 const D=c.TENKA_DATA;
 const all=D.jlpt.N5.grammar;
-assert(all.length>=65,'Stage 8A-8.8 must raise N5 grammar coverage to at least 65 items');
+assert(all.length>=70,'Stage 8A-8.9 must raise N5 grammar coverage to at least 70 items');
 assert(new Set(all.map(x=>x.id)).size===all.length,'N5 grammar ids must stay unique');
-const items=all.filter(x=>/^n5-g-(1[1-9]|[2-5][0-9]|6[0-5])$/.test(x.id));
-assert(items.length===55,'Stage 8A-7.3 through 8A-8.8 must cover grammar 11-65');
+const items=all.filter(x=>/^n5-g-(1[1-9]|[2-6][0-9]|70)$/.test(x.id));
+assert(items.length===60,'Stage 8A-7.3 through 8A-8.9 must cover grammar 11-70');
 for(const item of items){
   assert(item.usage&&item.whenToUse&&item.watchOut&&item.commonMistake,'missing contextual guidance '+item.id);
   assert(item.example&&item.exampleReading&&item.exampleMeaning,'missing main example '+item.id);
@@ -75,12 +75,17 @@ has('n5-g-62','watchOut','～たいです');has('n5-g-62','commonMistake','行�
 has('n5-g-63','watchOut','静かくなります','寒いになります','よくなります');
 has('n5-g-64','watchOut','高いすぎる','よすぎる');has('n5-g-64','commonMistake','食べるすぎる');
 has('n5-g-65','watchOut','しますのが上手です');has('n5-g-65','commonMistake','好き','上手');
+has('n5-g-66','watchOut','学生なんです','寒いんです');has('n5-g-66','commonMistake','i-adjective');
+has('n5-g-67','watchOut','好きでした');has('n5-g-67','commonMistake','聞きますのが好きです');
+has('n5-g-68','watchOut','高いな店','きれいな部屋');has('n5-g-68','commonMistake','元気な人');
+has('n5-g-69','watchOut','買いました本','昨日買った本');has('n5-g-69','commonMistake','私が昨日買った本');
+has('n5-g-70','watchOut','どうして日本へ行きますか','どうやって日本へ行きますか');has('n5-g-70','contrast','どうですか');
 const globalIds=[];
 for(const level of ['N5','N4','N3','N2','N1'])for(const kind of ['kanji','vocab','grammar'])for(const x of D.jlpt[level][kind])globalIds.push(x.id);
 for(const kind of ['vocab','handoff','houkoku','tools'])for(const x of (D.kaigo[kind]||[]))globalIds.push(x.id);
-assert(new Set(globalIds).size===globalIds.length,'global content ids must stay unique after grammar 65');
+assert(new Set(globalIds).size===globalIds.length,'global content ids must stay unique after grammar 70');
 const index=fs.readFileSync('index.html','utf8');
-for(const n of [5,6,7,8,9,10,11])assert(index.includes(`load('./content-pack-v${n}.js','content-pack-v${n}.js')`),'runtime must load content-pack-v'+n+'.js');
-for(let n=4;n<11;n++)assert(index.indexOf('content-pack-v'+n+'.js')<index.indexOf('content-pack-v'+(n+1)+'.js'),'content pack order v'+n+'<v'+(n+1));
-console.log('TENKA N5 Bunpou audit/coverage 11-65 passed:',items.map(x=>x.id).join(', '));
+for(const n of [5,6,7,8,9,10,11,12])assert(index.includes(`load('./content-pack-v${n}.js','content-pack-v${n}.js')`),'runtime must load content-pack-v'+n+'.js');
+for(let n=4;n<12;n++)assert(index.indexOf('content-pack-v'+n+'.js')<index.indexOf('content-pack-v'+(n+1)+'.js'),'content pack order v'+n+'<v'+(n+1));
+console.log('TENKA N5 Bunpou audit/coverage 11-70 passed:',items.map(x=>x.id).join(', '));
 console.log('TENKA staged global id audit passed:',globalIds.length,'unique ids');
