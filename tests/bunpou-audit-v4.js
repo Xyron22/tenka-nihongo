@@ -1,14 +1,14 @@
 const fs=require('fs'),vm=require('vm');
 function assert(x,m){if(!x)throw new Error(m)}
 const c={window:null};c.window=c;vm.createContext(c);
-for(const file of ['data.js','content-pack-v1.js','content-pack-v2.js','content-pack-v3.js','content-pack-v4.js','content-pack-v5.js','content-pack-v6.js','content-pack-v7.js','content-pack-v8.js']){
+for(const file of ['data.js','content-pack-v1.js','content-pack-v2.js','content-pack-v3.js','content-pack-v4.js','content-pack-v5.js','content-pack-v6.js','content-pack-v7.js','content-pack-v8.js','content-pack-v9.js']){
   vm.runInContext(fs.readFileSync(file,'utf8'),c,{filename:file});
 }
 const all=c.TENKA_DATA.jlpt.N5.grammar;
-assert(all.length>=50,'Stage 8A-8.5 must raise N5 grammar coverage to at least 50 items');
+assert(all.length>=55,'Stage 8A-8.6 must raise N5 grammar coverage to at least 55 items');
 assert(new Set(all.map(x=>x.id)).size===all.length,'N5 grammar ids must stay unique');
-const items=all.filter(x=>/^n5-g-(1[1-9]|2[0-9]|3[0-9]|4[0-9]|50)$/.test(x.id));
-assert(items.length===40,'Stage 8A-7.3 through 8A-8.5 must cover grammar 11-50');
+const items=all.filter(x=>/^n5-g-(1[1-9]|2[0-9]|3[0-9]|4[0-9]|5[0-5])$/.test(x.id));
+assert(items.length===45,'Stage 8A-7.3 through 8A-8.6 must cover grammar 11-55');
 for(const item of items){
   assert(item.usage&&item.whenToUse&&item.watchOut&&item.commonMistake,'missing contextual guidance '+item.id);
   assert(item.example&&item.exampleReading&&item.exampleMeaning,'missing main example '+item.id);
@@ -58,10 +58,16 @@ assert(byId['n5-g-47'].watchOut.includes('買う→買わない')&&byId['n5-g-47
 assert(byId['n5-g-48'].watchOut.includes('行った')&&byId['n5-g-48'].commonMistake.includes('読んだ'),'ta-form must cover godan sound changes and 行く exception');
 assert(byId['n5-g-49'].watchOut.includes('行かなかった')&&byId['n5-g-49'].contrast.includes('ませんでした'),'plain past negative must derive from nai-form');
 assert(byId['n5-g-50'].watchOut.includes('行って')&&byId['n5-g-50'].commonMistake.includes('飲んで'),'te-form must explain sound changes and 行く exception');
+assert(byId['n5-g-51'].watchOut.includes('～なければなりません')&&byId['n5-g-51'].commonMistake.includes('寝るほうがいい'),'ほうがいい must distinguish advice from obligation and basic positive advice form');
+assert(byId['n5-g-52'].watchOut.includes('～ないでください')&&byId['n5-g-52'].example.includes('食べないで'),'ないで must distinguish without-doing from prohibition');
+assert(byId['n5-g-53'].watchOut.includes('～ませんか')&&byId['n5-g-53'].example.includes('荷物を持ちましょうか'),'ましょうか must cover offer-help usage and contrast invitation');
+assert(byId['n5-g-54'].watchOut.includes('menggurui')&&byId['n5-g-54'].contrast.includes('ね'),'よ must explain emphasis/new-info nuance and contrast with ね');
+assert(byId['n5-g-55'].watchOut.includes('pertanyaan')&&byId['n5-g-55'].contrast.includes('よ'),'ね must explain shared-feeling nuance and contrast with よ');
 const index=fs.readFileSync('index.html','utf8');
-for(const n of [5,6,7,8])assert(index.includes(`load('./content-pack-v${n}.js','content-pack-v${n}.js')`),'runtime must load content-pack-v'+n+'.js');
+for(const n of [5,6,7,8,9])assert(index.includes(`load('./content-pack-v${n}.js','content-pack-v${n}.js')`),'runtime must load content-pack-v'+n+'.js');
 assert(index.indexOf('content-pack-v4.js')<index.indexOf('content-pack-v5.js'),'content pack order v4<v5');
 assert(index.indexOf('content-pack-v5.js')<index.indexOf('content-pack-v6.js'),'content pack order v5<v6');
 assert(index.indexOf('content-pack-v6.js')<index.indexOf('content-pack-v7.js'),'content pack order v6<v7');
 assert(index.indexOf('content-pack-v7.js')<index.indexOf('content-pack-v8.js'),'content pack order v7<v8');
-console.log('TENKA N5 Bunpou audit/coverage 11-50 passed:',items.map(x=>x.id).join(', '));
+assert(index.indexOf('content-pack-v8.js')<index.indexOf('content-pack-v9.js'),'content pack order v8<v9');
+console.log('TENKA N5 Bunpou audit/coverage 11-55 passed:',items.map(x=>x.id).join(', '));
