@@ -5,6 +5,10 @@ vm.runInContext(fs.readFileSync('data.js','utf8'),c,{filename:'data.js'});
 vm.runInContext(fs.readFileSync('content-pack-v1.js','utf8'),c,{filename:'content-pack-v1.js'});
 vm.runInContext(fs.readFileSync('content-pack-v2.js','utf8'),c,{filename:'content-pack-v2.js'});
 vm.runInContext(fs.readFileSync('content-pack-v3.js','utf8'),c,{filename:'content-pack-v3.js'});
+vm.runInContext(fs.readFileSync('content-pack-v4.js','utf8'),c,{filename:'content-pack-v4.js'});
+vm.runInContext(fs.readFileSync('content-pack-v5.js','utf8'),c,{filename:'content-pack-v5.js'});
+vm.runInContext(fs.readFileSync('content-pack-v6.js','utf8'),c,{filename:'content-pack-v6.js'});
+vm.runInContext(fs.readFileSync('content-pack-v7.js','utf8'),c,{filename:'content-pack-v7.js'});
 vm.runInContext(fs.readFileSync('houkoku-pack-v1.js','utf8'),c,{filename:'houkoku-pack-v1.js'});
 vm.runInContext(fs.readFileSync('houkoku-pack-v2.js','utf8'),c,{filename:'houkoku-pack-v2.js'});
 vm.runInContext(fs.readFileSync('tools-pack-v1.js','utf8'),c,{filename:'tools-pack-v1.js'});
@@ -84,7 +88,7 @@ for(const item of n5VocabBatch85){
  assert(!/\p{Script=Han}/u.test(item.exampleReading),'N5 Stage 8A-5 example reading must not contain kanji '+item.id);
  assert(!n5VocabTerms85.has(item.term),'N5 Stage 8A-5 duplicate term '+item.term);n5VocabTerms85.add(item.term);
 }
-assert(D.jlpt.N5.grammar.length>=25,'N5 grammar Stage 8A-6 incomplete');
+assert(D.jlpt.N5.grammar.length>=45,'N5 grammar Stage 8A-8.4 incomplete');
 const n5GrammarBatch83=D.jlpt.N5.grammar.filter(x=>/^n5-g-(1[6-9]|20)$/.test(x.id));
 assert(n5GrammarBatch83.length===5,'N5 Stage 8A-3 must contain exactly 5 grammar items');
 const n5GrammarTitles=new Set();
