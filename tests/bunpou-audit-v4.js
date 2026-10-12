@@ -1,14 +1,14 @@
 const fs=require('fs'),vm=require('vm');
 function assert(x,m){if(!x)throw new Error(m)}
 const c={window:null};c.window=c;vm.createContext(c);
-for(const file of ['data.js','content-pack-v1.js','content-pack-v2.js','content-pack-v3.js','content-pack-v4.js','content-pack-v5.js','content-pack-v6.js']){
+for(const file of ['data.js','content-pack-v1.js','content-pack-v2.js','content-pack-v3.js','content-pack-v4.js','content-pack-v5.js','content-pack-v6.js','content-pack-v7.js']){
   vm.runInContext(fs.readFileSync(file,'utf8'),c,{filename:file});
 }
 const all=c.TENKA_DATA.jlpt.N5.grammar;
-assert(all.length>=40,'Stage 8A-8.3 must raise N5 grammar coverage to at least 40 items');
+assert(all.length>=45,'Stage 8A-8.4 must raise N5 grammar coverage to at least 45 items');
 assert(new Set(all.map(x=>x.id)).size===all.length,'N5 grammar ids must stay unique');
-const items=all.filter(x=>/^n5-g-(1[1-9]|2[0-9]|3[0-9]|40)$/.test(x.id));
-assert(items.length===30,'Stage 8A-7.3 through 8A-8.3 must cover grammar 11-40');
+const items=all.filter(x=>/^n5-g-(1[1-9]|2[0-9]|3[0-9]|4[0-5])$/.test(x.id));
+assert(items.length===35,'Stage 8A-7.3 through 8A-8.4 must cover grammar 11-45');
 for(const item of items){
   assert(item.usage&&item.whenToUse&&item.watchOut&&item.commonMistake,'missing contextual guidance '+item.id);
   assert(item.example&&item.exampleReading&&item.exampleMeaning,'missing main example '+item.id);
@@ -48,9 +48,16 @@ assert(byId['n5-g-37'].watchOut.includes('と')&&byId['n5-g-37'].contrast.includ
 assert(byId['n5-g-38'].watchOut.includes('雨だから')&&byId['n5-g-38'].contrast.includes('n5-g-08'),'から origin must distinguish starting point from reason');
 assert(byId['n5-g-39'].extraExample.includes('から')&&byId['n5-g-39'].watchOut.includes('に／へ'),'まで must cover range endpoint and distinguish movement destination');
 assert(byId['n5-g-40'].commonMistake.includes('水しか飲みます')&&byId['n5-g-40'].contrast.includes('しか～ない'),'だけ must distinguish neutral limit from しか～ない');
+assert(byId['n5-g-41'].watchOut.includes('行きませんでした')&&byId['n5-g-41'].watchOut.includes('ませんか'),'ます／ません must distinguish non-past negative from past negative and invitation');
+assert(byId['n5-g-42'].watchOut.includes('ませんでした')&&byId['n5-g-42'].watchOut.includes('ませんです'),'ました／ませんでした must explain polite past forms');
+assert(byId['n5-g-43'].watchOut.includes('いい')&&byId['n5-g-43'].watchOut.includes('じゃありません'),'i-adjective negative must explain いい exception and avoid noun/na pattern');
+assert(byId['n5-g-44'].watchOut.includes('高いでした')&&byId['n5-g-44'].watchOut.includes('よかったです'),'i-adjective past must reject direct でした and explain いい exception');
+assert(byId['n5-g-45'].watchOut.includes('静かくないです')&&byId['n5-g-45'].watchOut.includes('静かな部屋'),'noun/na-adjective conjugation must stay distinct from i-adjectives');
 const index=fs.readFileSync('index.html','utf8');
 assert(index.includes("load('./content-pack-v5.js','content-pack-v5.js')"),'runtime must load content-pack-v5.js');
 assert(index.includes("load('./content-pack-v6.js','content-pack-v6.js')"),'runtime must load content-pack-v6.js');
+assert(index.includes("load('./content-pack-v7.js','content-pack-v7.js')"),'runtime must load content-pack-v7.js');
 assert(index.indexOf('content-pack-v4.js')<index.indexOf('content-pack-v5.js'),'content-pack-v5 must load after audit overlay v4');
 assert(index.indexOf('content-pack-v5.js')<index.indexOf('content-pack-v6.js'),'content-pack-v6 must load after foundation pack v5');
-console.log('TENKA N5 Bunpou audit/coverage 11-40 passed:',items.map(x=>x.id).join(', '));
+assert(index.indexOf('content-pack-v6.js')<index.indexOf('content-pack-v7.js'),'content-pack-v7 must load after foundation pack v6');
+console.log('TENKA N5 Bunpou audit/coverage 11-45 passed:',items.map(x=>x.id).join(', '));
