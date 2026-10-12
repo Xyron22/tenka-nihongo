@@ -7,7 +7,27 @@ const n5Kanji=[
 {id:'n5-k-27',kanji:'名',reading:'めい・な',romaji:'mei / na',meaning:'nama',example:'名前を書いてください。',exampleReading:'なまえ を かいて ください。',exampleMeaning:'Tolong tulis nama.'},
 {id:'n5-k-28',kanji:'友',reading:'ゆう・とも',romaji:'yuu / tomo',meaning:'teman',example:'友だちと話します。',exampleReading:'ともだち と はなします。',exampleMeaning:'Saya berbicara dengan teman.'},
 {id:'n5-k-29',kanji:'食',reading:'しょく・たべる',romaji:'shoku / taberu',meaning:'makan / makanan',example:'朝ご飯を食べます。',exampleReading:'あさごはん を たべます。',exampleMeaning:'Saya makan sarapan.'},
-{id:'n5-k-30',kanji:'飲',reading:'いん・のむ',romaji:'in / nomu',meaning:'minum',example:'水を飲みます。',exampleReading:'みず を のみます。',exampleMeaning:'Saya minum air.'}
+{id:'n5-k-30',kanji:'飲',reading:'いん・のむ',romaji:'in / nomu',meaning:'minum',example:'水を飲みます。',exampleReading:'みず を のみます。',exampleMeaning:'Saya minum air.'},
+{id:'n5-k-31',kanji:'行',reading:'こう・ぎょう・いく',romaji:'kou / gyou / iku',meaning:'pergi / berjalan',example:'毎日、仕事へ行きます。',exampleReading:'まいにち、しごと へ いきます。',exampleMeaning:'Setiap hari saya pergi bekerja.'},
+{id:'n5-k-32',kanji:'来',reading:'らい・くる',romaji:'rai / kuru',meaning:'datang / berikutnya',example:'友だちが家に来ます。',exampleReading:'ともだち が いえ に きます。',exampleMeaning:'Teman datang ke rumah saya.'},
+{id:'n5-k-33',kanji:'見',reading:'けん・みる',romaji:'ken / miru',meaning:'melihat',example:'テレビを見ます。',exampleReading:'テレビ を みます。',exampleMeaning:'Saya menonton televisi.'},
+{id:'n5-k-34',kanji:'聞',reading:'ぶん・もん・きく',romaji:'bun / mon / kiku',meaning:'mendengar / bertanya',example:'日本語を毎日聞きます。',exampleReading:'にほんご を まいにち ききます。',exampleMeaning:'Saya mendengarkan bahasa Jepang setiap hari.'},
+{id:'n5-k-35',kanji:'話',reading:'わ・はなす・はなし',romaji:'wa / hanasu / hanashi',meaning:'berbicara / cerita',example:'友だちと日本語で話します。',exampleReading:'ともだち と にほんご で はなします。',exampleMeaning:'Saya berbicara bahasa Jepang dengan teman.'},
+{id:'n5-k-36',kanji:'読',reading:'どく・よむ',romaji:'doku / yomu',meaning:'membaca',example:'毎晩、本を読みます。',exampleReading:'まいばん、ほん を よみます。',exampleMeaning:'Setiap malam saya membaca buku.'},
+{id:'n5-k-37',kanji:'書',reading:'しょ・かく',romaji:'sho / kaku',meaning:'menulis',example:'名前を書いてください。',exampleReading:'なまえ を かいて ください。',exampleMeaning:'Tolong tulis nama.'},
+{id:'n5-k-38',kanji:'買',reading:'ばい・かう',romaji:'bai / kau',meaning:'membeli',example:'スーパーで野菜を買います。',exampleReading:'スーパー で やさい を かいます。',exampleMeaning:'Saya membeli sayur di supermarket.'},
+{id:'n5-k-39',kanji:'朝',reading:'ちょう・あさ',romaji:'chou / asa',meaning:'pagi',example:'朝、コーヒーを飲みます。',exampleReading:'あさ、コーヒー を のみます。',exampleMeaning:'Pagi hari saya minum kopi.'},
+{id:'n5-k-40',kanji:'夜',reading:'や・よる',romaji:'ya / yoru',meaning:'malam',example:'夜は早く寝ます。',exampleReading:'よる は はやく ねます。',exampleMeaning:'Malam hari saya tidur lebih awal.'},
+{id:'n5-k-41',kanji:'前',reading:'ぜん・まえ',romaji:'zen / mae',meaning:'depan / sebelum',example:'駅の前で待ちます。',exampleReading:'えき の まえ で まちます。',exampleMeaning:'Saya menunggu di depan stasiun.'},
+{id:'n5-k-42',kanji:'後',reading:'ご・こう・あと・うしろ',romaji:'go / kou / ato / ushiro',meaning:'setelah / belakang',example:'仕事の後で買い物に行きます。',exampleReading:'しごと の あと で かいもの に いきます。',exampleMeaning:'Setelah kerja saya pergi berbelanja.'},
+{id:'n5-k-43',kanji:'左',reading:'さ・ひだり',romaji:'sa / hidari',meaning:'kiri',example:'左に曲がってください。',exampleReading:'ひだり に まがって ください。',exampleMeaning:'Tolong belok ke kiri.'},
+{id:'n5-k-44',kanji:'右',reading:'う・ゆう・みぎ',romaji:'u / yuu / migi',meaning:'kanan',example:'右に駅があります。',exampleReading:'みぎ に えき が あります。',exampleMeaning:'Ada stasiun di sebelah kanan.'},
+{id:'n5-k-45',kanji:'外',reading:'がい・げ・そと',romaji:'gai / ge / soto',meaning:'luar',example:'外は寒いです。',exampleReading:'そと は さむい です。',exampleMeaning:'Di luar dingin.'},
+{id:'n5-k-46',kanji:'東',reading:'とう・ひがし',romaji:'tou / higashi',meaning:'timur',example:'駅の東に店があります。',exampleReading:'えき の ひがし に みせ が あります。',exampleMeaning:'Ada toko di sebelah timur stasiun.'},
+{id:'n5-k-47',kanji:'西',reading:'せい・さい・にし',romaji:'sei / sai / nishi',meaning:'barat',example:'西の空が明るいです。',exampleReading:'にし の そら が あかるい です。',exampleMeaning:'Langit di sebelah barat terlihat terang.'},
+{id:'n5-k-48',kanji:'南',reading:'なん・みなみ',romaji:'nan / minami',meaning:'selatan',example:'南に公園があります。',exampleReading:'みなみ に こうえん が あります。',exampleMeaning:'Ada taman di sebelah selatan.'},
+{id:'n5-k-49',kanji:'北',reading:'ほく・きた',romaji:'hoku / kita',meaning:'utara',example:'北海道は日本の北にあります。',exampleReading:'ほっかいどう は にほん の きた に あります。',exampleMeaning:'Hokkaido berada di bagian utara Jepang.'},
+{id:'n5-k-50',kanji:'何',reading:'なん・なに',romaji:'nan / nani',meaning:'apa',example:'これは何ですか。',exampleReading:'これ は なん です か。',exampleMeaning:'Ini apa?'}
 ];
 
 const n5Vocab=[
@@ -20,13 +40,53 @@ const n5Vocab=[
 {id:'n5-v-42',term:'明日',reading:'あした',meaning:'besok',example:'明日は休みです。',exampleMeaning:'Besok libur.'},
 {id:'n5-v-43',term:'昨日',reading:'きのう',meaning:'kemarin',example:'昨日、スーパーへ行きました。',exampleMeaning:'Kemarin saya pergi ke supermarket.'},
 {id:'n5-v-44',term:'仕事',reading:'しごと',meaning:'pekerjaan / kerja',example:'八時半から仕事です。',exampleMeaning:'Saya mulai kerja pukul 8.30.'},
-{id:'n5-v-45',term:'病院',reading:'びょういん',meaning:'rumah sakit',example:'病院で働いています。',exampleMeaning:'Saya bekerja di rumah sakit.'}
+{id:'n5-v-45',term:'病院',reading:'びょういん',meaning:'rumah sakit',example:'病院で働いています。',exampleMeaning:'Saya bekerja di rumah sakit.'},
+{id:'n5-v-46',term:'家',reading:'いえ',meaning:'rumah',example:'家に帰ります。',exampleReading:'いえ に かえります。',exampleMeaning:'Saya pulang ke rumah.'},
+{id:'n5-v-47',term:'学校',reading:'がっこう',meaning:'sekolah',example:'毎朝、学校へ行きます。',exampleReading:'まいあさ、がっこう へ いきます。',exampleMeaning:'Setiap pagi saya pergi ke sekolah.'},
+{id:'n5-v-48',term:'先生',reading:'せんせい',meaning:'guru / pengajar',example:'先生と話します。',exampleReading:'せんせい と はなします。',exampleMeaning:'Saya berbicara dengan guru.'},
+{id:'n5-v-49',term:'学生',reading:'がくせい',meaning:'pelajar / mahasiswa',example:'あの人は学生です。',exampleReading:'あの ひと は がくせい です。',exampleMeaning:'Orang itu adalah pelajar.'},
+{id:'n5-v-50',term:'会社',reading:'かいしゃ',meaning:'perusahaan',example:'父は会社で働いています。',exampleReading:'ちち は かいしゃ で はたらいて います。',exampleMeaning:'Ayah saya bekerja di perusahaan.'},
+{id:'n5-v-51',term:'駅',reading:'えき',meaning:'stasiun',example:'駅で友だちを待ちます。',exampleReading:'えき で ともだち を まちます。',exampleMeaning:'Saya menunggu teman di stasiun.'},
+{id:'n5-v-52',term:'電車',reading:'でんしゃ',meaning:'kereta listrik / kereta',example:'電車で仕事へ行きます。',exampleReading:'でんしゃ で しごと へ いきます。',exampleMeaning:'Saya pergi bekerja dengan kereta.'},
+{id:'n5-v-53',term:'車',reading:'くるま',meaning:'mobil / kendaraan',example:'車でスーパーへ行きます。',exampleReading:'くるま で スーパー へ いきます。',exampleMeaning:'Saya pergi ke supermarket dengan mobil.'},
+{id:'n5-v-54',term:'店',reading:'みせ',meaning:'toko',example:'この店は九時に開きます。',exampleReading:'この みせ は くじ に あきます。',exampleMeaning:'Toko ini buka pukul sembilan.'},
+{id:'n5-v-55',term:'お金',reading:'おかね',meaning:'uang',example:'お金を払います。',exampleReading:'おかね を はらいます。',exampleMeaning:'Saya membayar uang.'},
+{id:'n5-v-56',term:'時間',reading:'じかん',meaning:'waktu / jam (durasi)',example:'少し時間があります。',exampleReading:'すこし じかん が あります。',exampleMeaning:'Saya punya sedikit waktu.'},
+{id:'n5-v-57',term:'毎日',reading:'まいにち',meaning:'setiap hari',example:'毎日、日本語を勉強します。',exampleReading:'まいにち、にほんご を べんきょう します。',exampleMeaning:'Saya belajar bahasa Jepang setiap hari.'},
+{id:'n5-v-58',term:'今',reading:'いま',meaning:'sekarang',example:'今、ご飯を食べています。',exampleReading:'いま、ごはん を たべて います。',exampleMeaning:'Sekarang saya sedang makan.'},
+{id:'n5-v-59',term:'一緒',reading:'いっしょ',meaning:'bersama',example:'一緒に帰りましょう。',exampleReading:'いっしょ に かえりましょう。',exampleMeaning:'Mari pulang bersama.'},
+{id:'n5-v-60',term:'少し',reading:'すこし',meaning:'sedikit',example:'日本語が少し分かります。',exampleReading:'にほんご が すこし わかります。',exampleMeaning:'Saya mengerti sedikit bahasa Jepang.'},
+{id:'n5-v-61',term:'前',reading:'まえ',meaning:'depan / sebelum',example:'駅の前で待ちます。',exampleReading:'えき の まえ で まちます。',exampleMeaning:'Saya menunggu di depan stasiun.'},
+{id:'n5-v-62',term:'後ろ',reading:'うしろ',meaning:'belakang',example:'車の後ろに人がいます。',exampleReading:'くるま の うしろ に ひと が います。',exampleMeaning:'Ada orang di belakang mobil.'},
+{id:'n5-v-63',term:'左',reading:'ひだり',meaning:'kiri',example:'左に曲がってください。',exampleReading:'ひだり に まがって ください。',exampleMeaning:'Tolong belok ke kiri.'},
+{id:'n5-v-64',term:'右',reading:'みぎ',meaning:'kanan',example:'右に駅があります。',exampleReading:'みぎ に えき が あります。',exampleMeaning:'Ada stasiun di sebelah kanan.'},
+{id:'n5-v-65',term:'外',reading:'そと',meaning:'luar',example:'外で友だちを待ちます。',exampleReading:'そと で ともだち を まちます。',exampleMeaning:'Saya menunggu teman di luar.'},
+{id:'n5-v-66',term:'東',reading:'ひがし',meaning:'timur',example:'駅の東に店があります。',exampleReading:'えき の ひがし に みせ が あります。',exampleMeaning:'Ada toko di sebelah timur stasiun.'},
+{id:'n5-v-67',term:'西',reading:'にし',meaning:'barat',example:'西に大きい山があります。',exampleReading:'にし に おおきい やま が あります。',exampleMeaning:'Ada gunung besar di sebelah barat.'},
+{id:'n5-v-68',term:'南',reading:'みなみ',meaning:'selatan',example:'南に公園があります。',exampleReading:'みなみ に こうえん が あります。',exampleMeaning:'Ada taman di sebelah selatan.'},
+{id:'n5-v-69',term:'北',reading:'きた',meaning:'utara',example:'北海道は日本の北にあります。',exampleReading:'ほっかいどう は にほん の きた に あります。',exampleMeaning:'Hokkaido berada di bagian utara Jepang.'},
+{id:'n5-v-70',term:'何',reading:'なに・なん',meaning:'apa',example:'これは何ですか。',exampleReading:'これ は なん です か。',exampleMeaning:'Ini apa?'},
+{id:'n5-v-71',term:'午前',reading:'ごぜん',meaning:'pagi / sebelum tengah hari',example:'午前八時に家を出ます。',exampleReading:'ごぜん はちじ に いえ を でます。',exampleMeaning:'Saya keluar rumah pukul delapan pagi.'},
+{id:'n5-v-72',term:'午後',reading:'ごご',meaning:'siang / sore setelah tengah hari',example:'午後三時に休みます。',exampleReading:'ごご さんじ に やすみます。',exampleMeaning:'Saya beristirahat pukul tiga sore.'},
+{id:'n5-v-73',term:'毎朝',reading:'まいあさ',meaning:'setiap pagi',example:'毎朝六時に起きます。',exampleReading:'まいあさ ろくじ に おきます。',exampleMeaning:'Saya bangun pukul enam setiap pagi.'},
+{id:'n5-v-74',term:'毎晩',reading:'まいばん',meaning:'setiap malam',example:'毎晩、日本語を勉強します。',exampleReading:'まいばん、にほんご を べんきょう します。',exampleMeaning:'Saya belajar bahasa Jepang setiap malam.'},
+{id:'n5-v-75',term:'来週',reading:'らいしゅう',meaning:'minggu depan',example:'来週、友だちに会います。',exampleReading:'らいしゅう、ともだち に あいます。',exampleMeaning:'Minggu depan saya akan bertemu teman.'}
 ];
 
 const n5Grammar=[
 {id:'n5-g-13',title:'～があります／います',meaning:'ada / terdapat ～',pattern:'N が あります（benda）／います（orang・hewan）',explanation:'Dipakai untuk menyatakan keberadaan. あります digunakan untuk benda atau hal, sedangkan います untuk manusia dan hewan.',example:'部屋にいすがあります。',exampleReading:'へや に いす が あります。',exampleMeaning:'Ada kursi di kamar.',contrast:'人や動物には います を使います。'},
 {id:'n5-g-14',title:'～が好きです',meaning:'suka ～',pattern:'N が 好きです',explanation:'Dipakai untuk menyatakan sesuatu yang disukai.',example:'日本の音楽が好きです。',exampleReading:'にほん の おんがく が すき です。',exampleMeaning:'Saya suka musik Jepang.',contrast:'好き adalah kata sifat-na; partikel yang umum dipakai sebelum 好きです adalah が。'},
-{id:'n5-g-15',title:'～に行きます',meaning:'pergi untuk melakukan ～',pattern:'Vます（ます dihapus）+ に行きます',explanation:'Dipakai ketika pergi ke suatu tempat dengan tujuan melakukan suatu kegiatan.',example:'スーパーへ買い物に行きます。',exampleReading:'スーパー へ かいもの に いきます。',exampleMeaning:'Saya pergi ke supermarket untuk berbelanja.',contrast:'Tempat tujuan dapat ditandai dengan へ atau に; tujuan kegiatan ditandai dengan に。'}
+{id:'n5-g-15',title:'～に行きます',meaning:'pergi untuk melakukan ～',pattern:'Vます（ます dihapus）+ に行きます',explanation:'Dipakai ketika pergi ke suatu tempat dengan tujuan melakukan suatu kegiatan.',example:'スーパーへ買い物に行きます。',exampleReading:'スーパー へ かいもの に いきます。',exampleMeaning:'Saya pergi ke supermarket untuk berbelanja.',contrast:'Tempat tujuan dapat ditandai dengan へ atau に; tujuan kegiatan ditandai dengan に。'},
+{id:'n5-g-16',title:'～てはいけません',meaning:'tidak boleh melakukan ～',pattern:'Vて + はいけません',explanation:'Dipakai untuk menyatakan larangan atau sesuatu yang tidak diperbolehkan.',example:'ここで写真を撮ってはいけません。',exampleReading:'ここ で しゃしん を とって は いけません。',exampleMeaning:'Tidak boleh mengambil foto di sini.',contrast:'～てもいいです = boleh melakukan ～。'},
+{id:'n5-g-17',title:'～なくてもいいです',meaning:'tidak perlu melakukan ～ / tidak apa-apa jika tidak ～',pattern:'Vない → ない diganti なくてもいいです',explanation:'Dipakai untuk mengatakan bahwa suatu tindakan tidak wajib dilakukan.',example:'明日は来なくてもいいです。',exampleReading:'あした は こなくても いい です。',exampleMeaning:'Besok tidak perlu datang.',contrast:'～なければなりません = harus melakukan ～。'},
+{id:'n5-g-18',title:'～なければなりません',meaning:'harus melakukan ～',pattern:'Vない → ない diganti なければなりません',explanation:'Dipakai untuk menyatakan kewajiban atau sesuatu yang harus dilakukan.',example:'薬を飲まなければなりません。',exampleReading:'くすり を のまなければ なりません。',exampleMeaning:'Harus minum obat.',contrast:'～なくてもいいです = tidak perlu melakukan ～。'},
+{id:'n5-g-19',title:'～より～のほうが',meaning:'～ lebih ... daripada ～',pattern:'A より B のほうが + sifat',explanation:'Dipakai untuk membandingkan dua hal dan menyatakan bahwa B memiliki sifat tersebut lebih kuat daripada A.',example:'電車より車のほうが速いです。',exampleReading:'でんしゃ より くるま の ほう が はやい です。',exampleMeaning:'Mobil lebih cepat daripada kereta.',contrast:'より menandai pembanding; のほうが menandai pihak yang dinilai lebih ～。'},
+{id:'n5-g-20',title:'～の中で～が一番',meaning:'di antara ～, ... yang paling ～',pattern:'Kelompok の中で + N が一番 + sifat',explanation:'Dipakai untuk menyatakan sesuatu yang paling menonjol di dalam suatu kelompok.',example:'果物の中でりんごが一番好きです。',exampleReading:'くだもの の なか で りんご が いちばん すき です。',exampleMeaning:'Di antara buah-buahan, saya paling suka apel.',contrast:'Dua hal biasanya dibandingkan dengan ～より～のほうが。'},
+{id:'n5-g-21',title:'～がほしいです',meaning:'ingin / menginginkan ～',pattern:'N が ほしいです',explanation:'Dipakai untuk menyatakan bahwa pembicara menginginkan suatu benda atau hal.',example:'新しい本がほしいです。',exampleReading:'あたらしい ほん が ほしい です。',exampleMeaning:'Saya ingin buku baru.',contrast:'～たいです dipakai untuk keinginan melakukan suatu tindakan.'},
+{id:'n5-g-22',title:'～とき',meaning:'ketika / saat ～',pattern:'V普通形・A・N + とき',explanation:'Dipakai untuk menunjukkan waktu atau situasi ketika suatu hal terjadi.',example:'寝るとき、電気を消します。',exampleReading:'ねる とき、でんき を けします。',exampleMeaning:'Saat akan tidur, saya mematikan lampu.',contrast:'～前に menekankan tindakan yang dilakukan sebelum hal lain.'},
+{id:'n5-g-23',title:'～でしょう',meaning:'mungkin / sepertinya / kemungkinan ～',pattern:'Kalimat bentuk biasa + でしょう',explanation:'Dipakai untuk menyatakan perkiraan atau dugaan dengan cukup sopan.',example:'明日は雨でしょう。',exampleReading:'あした は あめ でしょう。',exampleMeaning:'Besok mungkin akan hujan.',contrast:'です menyatakan hal secara lebih pasti; でしょう menunjukkan perkiraan.'},
+{id:'n5-g-24',title:'まだ～ていません',meaning:'belum melakukan ～',pattern:'まだ + Vて + いません',explanation:'Dipakai untuk menyatakan bahwa suatu tindakan belum dilakukan sampai sekarang.',example:'まだ朝ご飯を食べていません。',exampleReading:'まだ あさごはん を たべて いません。',exampleMeaning:'Saya belum makan sarapan.',contrast:'もう～ました = sudah melakukan ～.'},
+{id:'n5-g-25',title:'もう～ました',meaning:'sudah melakukan ～',pattern:'もう + Vました',explanation:'Dipakai untuk menyatakan bahwa suatu tindakan sudah selesai dilakukan.',example:'もう薬を飲みました。',exampleReading:'もう くすり を のみました。',exampleMeaning:'Saya sudah minum obat.',contrast:'まだ～ていません = belum melakukan ～.'}
 ];
 
 const kaigoVocab=[
@@ -37,7 +97,23 @@ const kaigoVocab=[
 {id:'k-v-49',term:'声かけ',reading:'こえかけ',meaning:'menyapa / memberi arahan verbal',category:'コミュニケーション',examArea:'コミュニケーション技術',example:'移動前に声かけをします。',exampleMeaning:'Memberi penjelasan atau sapaan sebelum berpindah.'},
 {id:'k-v-50',term:'車椅子',reading:'くるまいす',meaning:'kursi roda',category:'ADL・移動',examArea:'生活支援技術',example:'車椅子のブレーキを確認します。',exampleMeaning:'Memeriksa rem kursi roda.'},
 {id:'k-v-51',term:'入浴介助',reading:'にゅうよくかいじょ',meaning:'bantuan saat mandi',category:'清潔・整容',examArea:'生活支援技術',example:'本人の状態を確認しながら入浴介助を行います。',exampleMeaning:'Membantu mandi sambil memperhatikan kondisi orang tersebut.'},
-{id:'k-v-52',term:'排泄介助',reading:'はいせつかいじょ',meaning:'bantuan toileting / eliminasi',category:'排泄',examArea:'生活支援技術',example:'プライバシーに配慮して排泄介助を行います。',exampleMeaning:'Memberikan bantuan toileting dengan menjaga privasi.'}
+{id:'k-v-52',term:'排泄介助',reading:'はいせつかいじょ',meaning:'bantuan toileting / eliminasi',category:'排泄',examArea:'生活支援技術',example:'プライバシーに配慮して排泄介助を行います。',exampleMeaning:'Memberikan bantuan toileting dengan menjaga privasi.'},
+{id:'k-v-53',term:'食事介助',reading:'しょくじかいじょ',meaning:'bantuan saat makan',category:'食事・嚥下',examArea:'生活支援技術',example:'本人のペースに合わせて食事介助を行います。',exampleMeaning:'Membantu makan dengan menyesuaikan tempo orang tersebut.'},
+{id:'k-v-54',term:'水分補給',reading:'すいぶんほきゅう',meaning:'pemberian / pemenuhan cairan',category:'食事・嚥下',examArea:'生活支援技術',example:'こまめに水分補給をしていただきます。',exampleMeaning:'Mendorong asupan cairan secara berkala.'},
+{id:'k-v-55',term:'トイレ誘導',reading:'トイレゆうどう',meaning:'mengarahkan / mendampingi ke toilet',category:'排泄',examArea:'生活支援技術',example:'食後にトイレ誘導を行います。',exampleMeaning:'Mendampingi ke toilet setelah makan.'},
+{id:'k-v-56',term:'おむつ交換',reading:'おむつこうかん',meaning:'mengganti popok',category:'排泄',examArea:'生活支援技術',example:'必要に応じておむつ交換を行います。',exampleMeaning:'Mengganti popok sesuai kebutuhan.'},
+{id:'k-v-57',term:'歩行介助',reading:'ほこうかいじょ',meaning:'bantuan saat berjalan',category:'ADL・移動',examArea:'生活支援技術',example:'ふらつきに注意しながら歩行介助を行います。',exampleMeaning:'Membantu berjalan sambil memperhatikan adanya sempoyongan.'},
+{id:'k-v-58',term:'移動介助',reading:'いどうかいじょ',meaning:'bantuan saat berpindah tempat',category:'ADL・移動',examArea:'生活支援技術',example:'安全を確認して移動介助を行います。',exampleMeaning:'Membantu berpindah tempat setelah memastikan keselamatan.'},
+{id:'k-v-59',term:'起床',reading:'きしょう',meaning:'bangun dari tidur',category:'ADL・生活支援',examArea:'生活支援技術',example:'六時ごろに起床されました。',exampleMeaning:'Beliau bangun sekitar pukul enam.'},
+{id:'k-v-60',term:'就寝',reading:'しゅうしん',meaning:'tidur / pergi tidur',category:'ADL・生活支援',examArea:'生活支援技術',example:'九時ごろに就寝されました。',exampleMeaning:'Beliau tidur sekitar pukul sembilan.'},
+{id:'k-v-61',term:'観察',reading:'かんさつ',meaning:'observasi / mengamati kondisi',category:'観察・記録',examArea:'介護過程',example:'食事中の様子を観察します。',exampleMeaning:'Mengamati kondisi saat makan.'},
+{id:'k-v-62',term:'記録',reading:'きろく',meaning:'catatan / mencatat',category:'観察・記録',examArea:'介護過程',example:'介助後の様子を記録します。',exampleMeaning:'Mencatat kondisi setelah pemberian bantuan.'},
+{id:'k-v-63',term:'報告',reading:'ほうこく',meaning:'laporan / melaporkan',category:'業務・連携',examArea:'コミュニケーション技術',example:'変化があれば看護師に報告します。',exampleMeaning:'Jika ada perubahan, melaporkannya kepada perawat.'},
+{id:'k-v-64',term:'連絡',reading:'れんらく',meaning:'menghubungi / memberi kabar',category:'業務・連携',examArea:'コミュニケーション技術',example:'必要なときは担当者に連絡します。',exampleMeaning:'Jika diperlukan, menghubungi petugas yang bertanggung jawab.'},
+{id:'k-v-65',term:'相談',reading:'そうだん',meaning:'berkonsultasi / berdiskusi',category:'業務・連携',examArea:'コミュニケーション技術',example:'判断に迷ったときは先輩に相談します。',exampleMeaning:'Saat ragu mengambil keputusan, berkonsultasi dengan senior.'},
+{id:'k-v-66',term:'訴え',reading:'うったえ',meaning:'keluhan / hal yang disampaikan oleh pasien atau pengguna layanan',category:'状態・症状',examArea:'コミュニケーション技術',example:'痛みの訴えがありました。',exampleMeaning:'Ada keluhan nyeri.'},
+{id:'k-v-67',term:'変化',reading:'へんか',meaning:'perubahan',category:'状態・症状',examArea:'介護過程',example:'体調に変化がないか確認します。',exampleMeaning:'Memeriksa apakah ada perubahan pada kondisi fisik.'},
+{id:'k-v-68',term:'対応',reading:'たいおう',meaning:'penanganan / respons terhadap situasi',category:'業務・連携',examArea:'介護過程',example:'状況に合わせて対応します。',exampleMeaning:'Menangani sesuai dengan situasi.'}
 ];
 
 const handoff=[

@@ -309,9 +309,14 @@ function grammar(){
     <div class="grammar-card-head"><span class="grammar-index">${String(i+1).padStart(2,'0')}</span><div><span class="grammar-level">${state.level}${done?' • ✅ PAHAM':''}</span><h3>${g.title}</h3></div></div>
     <div class="grammar-meaning">${g.meaning}</div>
     <p class="grammar-explanation">${g.explanation}</p>
+    ${g.usage?`<div class="grammar-note"><span>🎯</span><div><b>Fungsi</b><small>${g.usage}</small></div></div>`:''}
+    ${g.whenToUse?`<div class="grammar-note"><span>🧭</span><div><b>Kapan dipakai</b><small>${g.whenToUse}</small></div></div>`:''}
     <div class="grammar-block pattern-block"><span>PATTERN</span><b>${g.pattern}</b></div>
     <div class="grammar-block example-block"><span>CONTOH</span><b>${g.example}</b>${g.exampleReading?`<small>${g.exampleReading}</small>`:''}<p>${g.exampleMeaning||''}</p></div>
-    ${g.contrast?`<div class="grammar-note"><span>⚠️</span><div><b>Catatan</b><small>${g.contrast}</small></div></div>`:''}
+    ${g.extraExample?`<div class="grammar-block example-block"><span>CONTOH TAMBAHAN</span><b>${g.extraExample}</b>${g.extraExampleReading?`<small>${g.extraExampleReading}</small>`:''}<p>${g.extraExampleMeaning||''}</p></div>`:''}
+    ${g.watchOut?`<div class="grammar-note"><span>⚠️</span><div><b>Hati-hati</b><small>${g.watchOut}</small></div></div>`:''}
+    ${g.commonMistake?`<div class="grammar-note"><span>❌</span><div><b>Kesalahan umum</b><small>${g.commonMistake}</small></div></div>`:''}
+    ${g.contrast?`<div class="grammar-note"><span>🔄</span><div><b>Bandingkan</b><small>${g.contrast}</small></div></div>`:''}
     <div class="grammar-actions"><button onclick="speakText('${esc(g.example)}')">🔊 Dengarkan</button><button class="${done?'done':''}" onclick="toggleGrammar('${g.id}')">${done?'↩️ Belum yakin':'✅ Tandai paham'}</button></div>
   </article>`}).join('')}</div>`;
 }
