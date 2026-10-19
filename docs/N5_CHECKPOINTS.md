@@ -26,3 +26,17 @@ Validation: local syntax/regression passed; [CI run 39246348396](https://github.
 - Lessons 88–97 close distinct uses of の, recognition of subject が／の, prohibitive な, casual quotation って, なあ, sentence connectors, まだ／もう, and basic adverb placement.
 - Focused overlays add casual prohibition, なくてはならない, complete verb-group conjugation guidance, Vまで, existence clauses, and question-word variants.
 - Level disagreements are recorded rather than inflated into new N5 lessons. In particular 方 and てある remain deferred; object giving/receiving does not add the N4 Vて benefactive patterns.
+
+Validation: local syntax/regression and [CI run 39246861385](https://github.com/Xyron22/tenka-nihongo/actions/runs/39246861385) passed at `c829450`. The reference matrix resolves 214 topics through grouped lessons and defers 2 with reasons. Every loaded lesson has all required guidance, two translated examples, and kana readings.
+
+## Stage 8A-9.4 — BUNPOU CONTENT CLOSED
+
+- Content closure is based on the committed reference matrix, required fields, semantic distinctions, verb-group guidance, and manual Japanese/reading/translation review; not the lesson count.
+- Final exercise/quiz audit remains a separate N5 closure gate.
+- Replace one legacy advice example containing the N4 conditional なら with an N5 から example.
+
+## Stage 8A-10.1 — Kotoba foundations
+
+- Add everyday family/person/body/food/place/household/stationery vocabulary with original examples and kana.
+- Fill all example kana on the original 75 cards, preserving their IDs.
+- Cross-reference sources: [MLC N5 vocabulary](https://www.mlcjapanese.co.jp/n5_04_01.html) and [JLPT Sensei N5 vocabulary](https://jlptsensei.com/jlpt-n5-vocabulary-list/). Their word counts are reference inventories, not an official completion threshold. Classify variants and level disagreements before final vocabulary closure.
