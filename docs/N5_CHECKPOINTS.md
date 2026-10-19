@@ -64,3 +64,11 @@ Validation: 505 vocabulary cards; local syntax/regression and [CI run 3924819496
 - Calendar, relative time, clock time versus duration, numerals and common counters in concrete examples.
 - Explicit readings include 四月／七月／九月, 四時／七時／九時, irregular dates, 一人／二人, 二十歳, and sound changes in 本／匹／杯／階.
 - 同形異読 such as 一日（ついたち／いちにち）are separate cards with contextual examples. Generic numeric compositions will map to these counter lessons in the coverage ledger rather than creating filler cards.
+
+Validation: 624 vocabulary cards; local syntax/regression and [CI run 39248587242](https://github.com/Xyron22/tenka-nihongo/actions/runs/39248587242) passed at `302fcc2`.
+
+## Stage 8A-10.5 — Kotoba reference gaps and expressions
+
+- Pronouns and demonstratives, question words, relative locations, adverbs, sentence connectors, and fixed daily expressions.
+- Polite 方 meaning “person” is distinct from the deferred N4 suffix 方 meaning “way of doing”.
+- Interjections are grouped by communicative use and explicitly marked unsuitable for a single-meaning quiz. Shortened and orthographic variants will be reconciled in the ledger.
