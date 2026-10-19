@@ -48,3 +48,11 @@ Validation: 223 vocabulary cards; local syntax/regression and [CI run 3924732222
 - Clothing, household objects, transport, geography, weather, animals, colours, study language and leisure.
 - Separate homophones by spelling and meaning (e.g. 箸／橋, 花／鼻, 雨／飴).
 - New words use modern beginner senses. Historical devices retained in references are explicitly labelled as such; they do not establish a numeric completion target.
+
+Validation: 351 vocabulary cards; local syntax/regression and [CI run 39247694838](https://github.com/Xyron22/tenka-nihongo/actions/runs/39247694838) passed at `2460e7b`.
+
+## Stage 8A-10.3 — Kotoba adjectives and verbs
+
+- Distinguish weather 暑い from touch/temperature 熱い and thickness 厚い; distinguish 早い／速い, 易しい／優しい, 着る／切る and 鳴く／泣く.
+- Verb examples distinguish transitive and intransitive pairs (開ける／開く, 閉める／閉まる, 消す／消える, 並べる／並ぶ) and giving/receiving direction.
+- Kana readings and Indonesian examples remain mandatory for every vocabulary card.

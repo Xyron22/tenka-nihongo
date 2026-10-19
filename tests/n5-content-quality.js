@@ -33,6 +33,7 @@ for(const row of coverage.entries){
 for(const v of D.jlpt.N5.vocab){
   for(const field of ['term','reading','meaning','example','exampleReading','exampleMeaning'])assert(v[field]?.trim(),`${v.id}: missing ${field}`);
   for(const field of ['reading','exampleReading'])assert(!/\p{Script=Han}/u.test(v[field]),`${v.id}: non-kana ${field}`);
+  assert(!v.exampleMeaning.includes('(kata sifat'),`${v.id}: grammatical labels belong to the gloss, not the translated example`);
 }
 assert(!D.jlpt.N5.grammar.find(g=>g.id==='n5-g-51').example.includes('なら'),'N5 advice example must not require N4 conditional');
 console.log(`N5 current runtime quality: ${D.jlpt.N5.grammar.length} complete Bunpou lessons; IDs unique across all JLPT levels.`);

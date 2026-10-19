@@ -87,7 +87,8 @@ function addRows(pack,category,text,frame){
   const [term,reading,meaning,example,exampleReading,exampleMeaning]=line.split('|');
   const id=`n5-v-${pack}-${String(i+1).padStart(3,'0')}`;
   if(V.some(v=>v.id===id||v.term===term&&v.reading===reading))return;
-  const format=s=>s.replaceAll('{term}',term).replaceAll('{reading}',reading).replaceAll('{meaning}',meaning);
+  const exampleGloss=meaning.replace(/\s*\([^)]*\)/g,'').split(' / ')[0];
+  const format=s=>s.replaceAll('{term}',term).replaceAll('{reading}',reading).replaceAll('{meaning}',exampleGloss);
   const f=frame||[];
   V.push({id,term,reading,meaning,category,example:example||format(f[0]),exampleReading:exampleReading||format(f[1]),exampleMeaning:exampleMeaning||format(f[2])});
  });
