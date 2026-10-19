@@ -44,6 +44,7 @@ jobs:
           node --check content-pack-v13.js
           node --check content-pack-v14.js
           node --check content-pack-v15.js
+          node --check content-pack-v16.js
           node --check tests/helpers/load-content.js
           node --check tests/n5-content-quality.js
           node --check houkoku-pack-v1.js

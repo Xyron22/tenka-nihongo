@@ -18,3 +18,11 @@ Closure means the audited TENKA curriculum is ready; it is not an official JLPT 
 - Coverage references checked 2026-10-19: [official JLPT FAQ](https://www.jlpt.jp/e/faq/), [Bunpro grammar library](https://bunpro.jp/grammar_points), [JLPT Sensei N5 index](https://jlptsensei.com/jlpt-n5-grammar-list/) (all three pages).
 - Do not import explanatory text or example sentences from references. All Indonesian guidance and examples in the new lessons are original.
 - Continue with remaining minor constructions, conjugation clarity, and a complete reference-to-lesson matrix before closing Bunpou.
+
+Validation: local syntax/regression passed; [CI run 39246348396](https://github.com/Xyron22/tenka-nihongo/actions/runs/39246348396) passed at `1c850e7`. Production upload and deployment were skipped.
+
+## Stage 8A-9.3
+
+- Lessons 88–97 close distinct uses of の, recognition of subject が／の, prohibitive な, casual quotation って, なあ, sentence connectors, まだ／もう, and basic adverb placement.
+- Focused overlays add casual prohibition, なくてはならない, complete verb-group conjugation guidance, Vまで, existence clauses, and question-word variants.
+- Level disagreements are recorded rather than inflated into new N5 lessons. In particular 方 and てある remain deferred; object giving/receiving does not add the N4 Vて benefactive patterns.
