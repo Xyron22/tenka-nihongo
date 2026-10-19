@@ -56,3 +56,11 @@ Validation: 351 vocabulary cards; local syntax/regression and [CI run 3924769483
 - Distinguish weather 暑い from touch/temperature 熱い and thickness 厚い; distinguish 早い／速い, 易しい／優しい, 着る／切る and 鳴く／泣く.
 - Verb examples distinguish transitive and intransitive pairs (開ける／開く, 閉める／閉まる, 消す／消える, 並べる／並ぶ) and giving/receiving direction.
 - Kana readings and Indonesian examples remain mandatory for every vocabulary card.
+
+Validation: 505 vocabulary cards; local syntax/regression and [CI run 39248194962](https://github.com/Xyron22/tenka-nihongo/actions/runs/39248194962) passed at `7b79a4b`.
+
+## Stage 8A-10.4 — Kotoba numbers and time
+
+- Calendar, relative time, clock time versus duration, numerals and common counters in concrete examples.
+- Explicit readings include 四月／七月／九月, 四時／七時／九時, irregular dates, 一人／二人, 二十歳, and sound changes in 本／匹／杯／階.
+- 同形異読 such as 一日（ついたち／いちにち）are separate cards with contextual examples. Generic numeric compositions will map to these counter lessons in the coverage ledger rather than creating filler cards.
