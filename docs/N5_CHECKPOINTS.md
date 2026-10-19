@@ -72,3 +72,11 @@ Validation: 624 vocabulary cards; local syntax/regression and [CI run 3924858724
 - Pronouns and demonstratives, question words, relative locations, adverbs, sentence connectors, and fixed daily expressions.
 - Polite 方 meaning “person” is distinct from the deferred N4 suffix 方 meaning “way of doing”.
 - Interjections are grouped by communicative use and explicitly marked unsuitable for a single-meaning quiz. Shortened and orthographic variants will be reconciled in the ledger.
+
+Validation: 758 vocabulary cards; local syntax/regression and [CI run 39249165032](https://github.com/Xyron22/tenka-nihongo/actions/runs/39249165032) passed at `bc3b7ae`.
+
+## Stage 8A-10.6 — Kotoba final reconciliation
+
+- Fill the remaining common headword gaps, including exam instructions, plus contextual counter/name compounds.
+- Annotate irregular readings, verb-group traps, 同じ and きれい, and register-sensitive forms.
+- A complete two-source coverage ledger must contain no unexplained gaps before Kotoba content closure. Level-disputed advanced constructions are deferred with specific reasons.

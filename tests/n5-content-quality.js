@@ -36,4 +36,18 @@ for(const v of D.jlpt.N5.vocab){
   assert(!v.exampleMeaning.includes('(kata sifat'),`${v.id}: grammatical labels belong to the gloss, not the translated example`);
 }
 assert(!D.jlpt.N5.grammar.find(g=>g.id==='n5-g-51').example.includes('なら'),'N5 advice example must not require N4 conditional');
+const vocabCoverage=require('../docs/n5-vocabulary-coverage.json');
+const allIds=new Set([...D.jlpt.N5.vocab,...D.jlpt.N5.grammar].map(x=>x.id));
+for(const [source,rows] of Object.entries(vocabCoverage.entries)){
+  assert.equal(rows.length,vocabCoverage.sources[source].observedEntries,`incomplete reference inventory: ${source}`);
+  for(const row of rows){
+    const [,disposition,linked,reason]=source==='sensei'?row:row.slice(1);
+    assert(['covered','grouped','composition','deferred'].includes(disposition),`unresolved vocabulary ${row[0]}`);
+    if(disposition==='deferred')assert(reason&&linked.length===0,'defer must explain the boundary');
+    else{
+      assert(linked.length,'reference entry must map to learning content');
+      for(const id of linked)assert(allIds.has(id),`missing vocabulary coverage target ${id}`);
+    }
+  }
+}
 console.log(`N5 current runtime quality: ${D.jlpt.N5.grammar.length} complete Bunpou lessons; IDs unique across all JLPT levels.`);
