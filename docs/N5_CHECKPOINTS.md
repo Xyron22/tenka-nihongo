@@ -40,3 +40,11 @@ Validation: local syntax/regression and [CI run 39246861385](https://github.com/
 - Add everyday family/person/body/food/place/household/stationery vocabulary with original examples and kana.
 - Fill all example kana on the original 75 cards, preserving their IDs.
 - Cross-reference sources: [MLC N5 vocabulary](https://www.mlcjapanese.co.jp/n5_04_01.html) and [JLPT Sensei N5 vocabulary](https://jlptsensei.com/jlpt-n5-vocabulary-list/). Their word counts are reference inventories, not an official completion threshold. Classify variants and level disagreements before final vocabulary closure.
+
+Validation: 223 vocabulary cards; local syntax/regression and [CI run 39247322228](https://github.com/Xyron22/tenka-nihongo/actions/runs/39247322228) passed at `2b2989a`.
+
+## Stage 8A-10.2 — Kotoba surroundings and study
+
+- Clothing, household objects, transport, geography, weather, animals, colours, study language and leisure.
+- Separate homophones by spelling and meaning (e.g. 箸／橋, 花／鼻, 雨／飴).
+- New words use modern beginner senses. Historical devices retained in references are explicitly labelled as such; they do not establish a numeric completion target.
