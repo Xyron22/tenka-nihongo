@@ -43,6 +43,9 @@ jobs:
           node --check content-pack-v12.js
           node --check content-pack-v13.js
           node --check content-pack-v14.js
+          node --check content-pack-v15.js
+          node --check tests/helpers/load-content.js
+          node --check tests/n5-content-quality.js
           node --check houkoku-pack-v1.js
           node --check houkoku-pack-v2.js
           node --check tools-pack-v1.js
@@ -112,6 +115,9 @@ jobs:
 
       - name: N5 Bunpou closure remediation 76-80
         run: node tests/bunpou-remediation-v14.js
+
+      - name: N5 current runtime content quality
+        run: node tests/n5-content-quality.js
 
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js
