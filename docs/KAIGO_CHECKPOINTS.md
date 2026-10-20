@@ -50,3 +50,13 @@ Checked 2026-10-21. References establish naming and workplace context; Indonesia
 - [MHLW facility guidance](https://www.mhlw.go.jp/web/t_doc?dataId=00ta4206&dataType=1&pageNo=1): attestation of established care-facility vocabulary. This historical guidance is used for terminology context, not as a statement of current building/staffing law.
 
 Workplace vocabulary remains separate from JLPT-level inventories. Room and equipment recognition does not grant authority to perform clinical procedures.
+
+
+## Stage 9B-1 — Workplace reports in context
+
+- Add eight original report models, `r-13`–`r-20`, using the existing puzzle and self-writing workflows. Topics: meal-card count/identity, clean-linen shortage, wheelchair brake observations, call-system observations, wet floors, storage-location questions and unfinished restocking.
+- Every model has a situation, ordered Japanese/kana/Indonesian pieces and a usage distinction. Counts distinguish 42 versus 41 cards and 枚 versus 人; an unlocated item is not automatically labelled out of stock. Scenarios spell out observed facts and unknowns without attributing blame or inventing a cause.
+- Preserve all legacy data and progress identities. The curriculum remains workplace language practice, separate from national-exam questions and clinical procedure instruction. The existing `examArea` field is a broad subject tag rather than evidence of exam coverage.
+- Current-manifest regression checks every report in both puzzle and writing flows: old completions lead to new cases, wrong/incomplete answers do not mark mastery, duplicate taps count once, models retain kana/translations, sessions end and stored progress survives reload.
+- Source context: the [JACCW international-care-worker materials catalogue](https://www.jaccw.or.jp/projects/kokusai) distinguishes workplace language resources from certification study. The accessible [MHLW-hosted 介護の日本語](https://www.mhlw.go.jp/content/12000000/001184460.pdf) supports the basic terminology context. All scenarios, report sentences and explanations here are original; no source lesson or exam question is reproduced.
+- Validation for the exact commit is recorded in draft PR #16. The next checkpoint audits workplace handoff comprehension, model-order wording and pronunciation through the real UI.

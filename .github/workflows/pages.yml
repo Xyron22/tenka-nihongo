@@ -72,6 +72,8 @@ jobs:
           node --check tests/n5-content-quality.js
           node --check houkoku-pack-v1.js
           node --check houkoku-pack-v2.js
+          node --check houkoku-pack-v3.js
+          node --check tests/kaigo-reports.js
           node --check tools-pack-v1.js
           node --check app-v2.js
           node --check audio-engine-v5.js
@@ -163,6 +165,9 @@ jobs:
 
       - name: Kaigo kana listening and quiz review
         run: node tests/kaigo-listening.js
+
+      - name: Kaigo workplace report models and persistence
+        run: node tests/kaigo-reports.js
 
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js
