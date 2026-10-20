@@ -258,6 +258,19 @@ function cardBack(c){
   if(c._kind==='tool')return `<div class="reading">${htmlSafe(c.reading||'')}</div><div class="meaning">${htmlSafe(c.meaning||'')}</div><div class="tool-flash-block"><b>${htmlSafe(c.functionJP||'')}</b>${c.functionReading?`<small>${htmlSafe(c.functionReading)}</small>`:''}${c.functionID?`<div>🇮🇩 ${htmlSafe(c.functionID)}</div>`:''}</div><div class="example"><b>${htmlSafe(c.example||'')}</b>${c.exampleReading?`<br><small>${htmlSafe(c.exampleReading)}</small>`:''}<br>${htmlSafe(c.exampleMeaning||'')}</div>`;
   return `<div class="reading">${c.reading||''}</div>${c.romaji?`<div class="subtle">${c.romaji}</div>`:''}<div class="meaning">${c.meaning||''}</div><div class="example"><b>${c.example||''}</b>${c.exampleReading?`<br><small>${c.exampleReading}</small>`:''}<br>${c.exampleMeaning||''}</div>`;
 }
+function kanjiStudyNotes(c){
+  if(!c.bushu)return '';
+  const b=c.bushu;
+  return `<details class="muted-box kanji-study-notes"><summary>Bushu, komponen & cara mengingat</summary>
+  <p><b>Onyomi:</b> ${htmlSafe((c.onyomi||[]).join('・')||'—')}<br><b>Kunyomi:</b> ${htmlSafe((c.kunyomi||[]).join('・')||'—')}</p>
+  <p>Bacaan umum untuk tahap ini. Bacaan kata utuh dapat berubah; pelajari juga contoh katanya.</p>
+  <p><b>Bushu:</b> ${htmlSafe(b.symbol)} · ${htmlSafe(b.name)} · nomor ${b.number}<br>${htmlSafe(b.meaning)}</p>
+  <p>Bushu adalah indeks kamus. Satu kanji memiliki beberapa komponen visual; tidak semuanya merupakan Bushu. Pengelompokan kamus dapat berbeda.</p>
+  <p><b>Komponen visual:</b> ${htmlSafe((c.components||[]).join(' + '))}</p>
+  <p><b>Mnemonic:</b> ${htmlSafe(c.mnemonic)}<br><small>Cerita ini alat bantu ingatan, bukan etimologi atau asal-usul historis kanji.</small></p>
+  <p><b>Contoh kata:</b><br>${(c.words||[]).map(w=>`${htmlSafe(w.term)}（${htmlSafe(w.reading)}）— ${htmlSafe(w.meaning)}`).join('<br>')}</p>
+  <small>Metadata: <a href="https://www.edrdg.org/wiki/KANJIDIC_Project.html" target="_blank" rel="noopener">KANJIDIC2 / EDRDG</a> · Goresan: <a href="https://kanjivg.tagaini.net/" target="_blank" rel="noopener">KanjiVG</a>. <a href="./docs/N5_KANJI_SOURCES.md" target="_blank" rel="noopener">Sumber & lisensi</a>.</small></details>`;
+}
 function flash(){
   const c=currentCard();if(!c)return `<section class="session-complete"><div class="session-complete-icon">🎉</div><span>SESSION COMPLETE</span><h2>Selesai</h2><p>Tidak ada kartu lagi di sesi ini.</p><button class="action primary" onclick="go('${state.returnView}')">Kembali</button></section>`;
   const due=reviewInfo(c.id)?.due,isToolMode=state.mode==='tools',isToolCard=c._kind==='tool',index=state.cardIndex+1,total=state.cards.length,pct=Math.round(index/Math.max(1,total)*100);
@@ -268,6 +281,7 @@ function flash(){
   return `<div class="study-session-head"><button class="back" onclick="go('${state.returnView}')">←</button><div class="study-session-meta"><span>${modeLabel.toUpperCase()}</span><b>${index}/${total}</b><div class="study-session-track"><i style="width:${pct}%"></i></div></div><button class="icon-btn session-audio" onclick="speakText('${esc(c.term||c.reading||c.kanji)}')" aria-label="Putar pengucapan">🔊</button></div>
   <div class="flash-wrap"><div class="flash ${isToolCard?'tool-flash':''} ${state.flipped?'flipped':''}" onclick="flipCard()"><div class="face"><div class="flash-side-label">QUESTION</div>${cardFront(c)}<div class="flash-tap-hint"><span>↻</span> Tap untuk balik</div></div><div class="face backface"><div class="flash-side-label">ANSWER</div>${cardBack(c)}</div></div></div>
   ${c.note?`<details class="muted-box"><summary>Catatan pemakaian</summary><p>${htmlSafe(c.note)}</p></details>`:''}
+  ${c._kind==='kanji'?kanjiStudyNotes(c):''}
   ${c._kind==='kanji'?`<div class="small-actions flash-extra-actions"><button class="pill" onclick="openKakijun('${c.id}')">✍️ Kakijun</button><button class="pill" onclick="speakText('${esc(c.example||c.kanji)}')">🔊 Contoh</button></div>`:''}
   ${toolControls}${srsHint}
   <div class="srs-label"><span>Seberapa ingat?</span><small>Pilih untuk mengatur jadwal review berikutnya</small></div>
@@ -673,7 +687,7 @@ function kakijun(){
     <div class="kakijun-meta"><div><span>✍️</span><b>${strokeCount||'—'}</b><small>goresan</small></div><div><span>🔊</span><b>JP</b><small>bacaan</small></div></div>
   </section>
   <div class="kakijun-section-head"><div><span>STROKE ORDER</span><b>Urutan goresan</b></div><button onclick="animateStrokes()" ${has?'':'disabled aria-disabled="true"'}>▶ Putar ulang</button></div>
-  ${has?`<div class="kanji-stage modern"><svg viewBox="0 0 100 100">${c.strokes.map((p,i)=>`<path class="stroke" data-i="${i}" d="${p}"/>`).join('')}</svg></div>`:`<div class="kakijun-empty"><span>✍️</span><b>Stroke belum tersedia</b><small>Engine latihan menulis tetap bisa dipakai untuk kanji ini.</small></div>`}
+  ${has?`<div class="kanji-stage modern"><svg viewBox="${htmlSafe(c.strokeViewBox||'0 0 100 100')}">${c.strokes.map((p,i)=>`<path class="stroke" data-i="${i}" d="${p}"/>`).join('')}</svg></div>`:`<div class="kakijun-empty"><span>✍️</span><b>Stroke belum tersedia</b><small>Engine latihan menulis tetap bisa dipakai untuk kanji ini.</small></div>`}
   <div class="kakijun-section-head write-head"><div><span>WRITING PRACTICE</span><b>Coba tulis dengan jari</b></div><small>Canvas latihan</small></div>
   <div class="canvas-wrap modern"><canvas id="writeCanvas" width="650" height="420"></canvas></div>
   <div class="kakijun-controls"><button onclick="clearCanvas()">🗑️ Hapus</button><button class="${state.guide?'active':''}" onclick="toggleGuide()">${state.guide?'🙈 Sembunyikan contoh':'👁️ Tampilkan contoh'}</button><button onclick="speakText('${esc(c?.reading||c?.kanji||'')}')">🔊 Bacaan</button></div>`;

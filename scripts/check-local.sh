@@ -3,6 +3,6 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 while IFS= read -r file; do node --check "$file"; done < <(git ls-files --cached --others --exclude-standard '*.js' '*.mjs')
 bash -n scripts/generate-voicevox-nemo.sh
-for test in tests/data-v2.js tests/bunpou-audit-v4.js tests/bunpou-final-gap-v13.js tests/bunpou-closure-n5.js tests/bunpou-remediation-v14.js tests/n5-content-quality.js tests/system-v2.js tests/tools-pack-v1.js tests/audio-v5.js; do
+for test in tests/data-v2.js tests/bunpou-audit-v4.js tests/bunpou-final-gap-v13.js tests/bunpou-closure-n5.js tests/bunpou-remediation-v14.js tests/n5-content-quality.js tests/n5-kanji-quality.js tests/system-v2.js tests/tools-pack-v1.js tests/audio-v5.js; do
   node "$test"
 done

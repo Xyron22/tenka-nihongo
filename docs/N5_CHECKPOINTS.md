@@ -80,3 +80,18 @@ Validation: 758 vocabulary cards; local syntax/regression and [CI run 3924916503
 - Fill the remaining common headword gaps, including exam instructions, plus contextual counter/name compounds.
 - Annotate irregular readings, verb-group traps, 同じ and きれい, and register-sensitive forms.
 - A complete two-source coverage ledger must contain no unexplained gaps before Kotoba content closure. Level-disputed advanced constructions are deferred with specific reasons.
+
+Validation: 820 vocabulary cards; all 1,446 reference rows are resolved by coverage, grouping, composition or reasoned deferral. Local syntax/regression and [CI run 39249962812](https://github.com/Xyron22/tenka-nihongo/actions/runs/39249962812) passed at `6520ff9`.
+
+## Stage 8A-10.7 — KOTOBA CONTENT CLOSED
+
+- Both reference inventories are reconciled. Seven MLC entries involving disputed/advanced constructions remain deferred, with reasons in the committed ledger.
+- Kana, original Japanese examples and Indonesian translations exist on every card. Usage notes cover irregular readings and common confusions; interjections are flagged for exclusion from single-answer meaning quizzes.
+- Exercise behaviour remains a separate closure gate.
+
+## Stage 8A-11.1 — Kanji, Bushu and verified stroke foundations
+
+- Enrich all original 50 cards and add the first 28 missing cross-referenced targets, preserving old IDs.
+- Provide selected onyomi/kunyomi, verified classical Bushu, visual components, concrete word readings and explicitly non-etymological memory aids.
+- Replace approximate N5 stroke diagrams with attributed KanjiVG paths; preserve the original 109-unit coordinate system. Validate path counts against KANJIDIC2.
+- Keep notes outside the fixed-height flip card. Content closure follows the next reference reconciliation checkpoint.
