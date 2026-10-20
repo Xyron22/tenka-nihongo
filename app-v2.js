@@ -338,7 +338,10 @@ function grammar(){
 function toggleGrammar(id){if(state.progress.grammarDone[id])delete state.progress.grammarDone[id];else{state.progress.grammarDone[id]=new Date().toISOString();markStudy();markDaily('grammar',id)}save();render()}
 function startGrammarQuiz(level){
   const src=(D.jlpt[level].grammar||[]).slice();if(!src.length){toast('Materi bunpou belum tersedia');return}
-  const items=shuffle(src).slice(0,Math.min(10,src.length)).map(g=>{const wrong=shuffle([...new Set(src.filter(x=>x.id!==g.id&&x.meaning!==g.meaning).map(x=>x.meaning))]).slice(0,3);const choices=shuffle([g.meaning,...wrong]);return{prompt:g.title,reading:g.pattern,correct:g.meaning,choices,answer:choices.indexOf(g.meaning),voiceText:g.example,type:'grammar'}});beginQuiz(level,'grammar',items,'grammar');
+  const items=shuffle(src).slice(0,Math.min(10,src.length)).map(g=>{
+    if(g.quiz){const quiz=g.quiz,correct=quiz.choices[quiz.answer],choices=shuffle(quiz.choices);return{sourceId:g.id,prompt:quiz.prompt,reading:quiz.reading,context:quiz.context,correct,choices,answer:choices.indexOf(correct),explanation:quiz.explanation,lessonTitle:g.title,type:'grammar',contextual:true}}
+    const wrong=shuffle([...new Set(src.filter(x=>x.id!==g.id&&x.meaning!==g.meaning).map(x=>x.meaning))]).slice(0,3);const choices=shuffle([g.meaning,...wrong]);return{sourceId:g.id,prompt:g.title,reading:g.pattern,correct:g.meaning,choices,answer:choices.indexOf(g.meaning),voiceText:g.example,type:'grammar'}
+  });beginQuiz(level,'grammar',items,'grammar');
 }
 function shuffle(arr){const x=arr.slice();for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x}
 function makeCardQuiz(cards,type){const pool=[...new Set(cards.map(c=>c.meaning).filter(Boolean))];return shuffle(cards).slice(0,Math.min(10,cards.length)).map(c=>{const wrong=shuffle(pool.filter(x=>x!==c.meaning)).slice(0,3),choices=shuffle([c.meaning,...wrong]);return{prompt:c.term||c.kanji,reading:c.reading,voiceText:c.term||c.kanji||c.reading,correct:c.meaning,choices,answer:choices.indexOf(c.meaning),type}})}
@@ -356,7 +359,7 @@ function beginQuiz(level,type,items,returnView){clearTimer();if(!items.length){t
 function quizView(){
   const q=state.quiz;if(!q)return '';if(q.i>=q.items.length)return finishQuiz();const item=q.items[q.i],listening=q.type.includes('listening'),medicalTools=q.type==='medical-tools',index=q.i+1,total=q.items.length,pct=Math.round(q.i/Math.max(1,total)*100);
   const modeLabel=medicalTools?'MEDICAL TOOLS':listening?'LISTENING':q.type==='grammar'?'BUNPOU QUIZ':'QUIZ';
-  const questionBody=medicalTools?`<div class="quiz-kicker">Alat apakah ini?</div><img class="tool-quiz-image" src="${htmlSafe(item.image||'')}" alt="Gambar alat medis"><div class="quiz-help">Pilih nama Jepang + arti yang benar</div>`:listening?`<div class="quiz-kicker">Dengarkan lalu pilih arti</div><div class="quiz-listening-icon">🔊</div><button class="pill quiz-replay" onclick="speakText('${esc(item.voiceText||item.prompt)}')">▶ Putar lagi</button>`:`<div class="quiz-kicker">${q.type==='grammar'?'Apa arti/penggunaan pola ini?':'Apa arti kata ini?'}</div><div class="jp">${item.prompt}</div><div class="quiz-reading">${item.reading||''}</div>`;
+  const questionBody=medicalTools?`<div class="quiz-kicker">Alat apakah ini?</div><img class="tool-quiz-image" src="${htmlSafe(item.image||'')}" alt="Gambar alat medis"><div class="quiz-help">Pilih nama Jepang + arti yang benar</div>`:listening?`<div class="quiz-kicker">Dengarkan lalu pilih arti</div><div class="quiz-listening-icon">🔊</div><button class="pill quiz-replay" onclick="speakText('${esc(item.voiceText||item.prompt)}')">▶ Putar lagi</button>`:`<div class="quiz-kicker">${item.contextual?'Lengkapi kalimat sesuai petunjuk':q.type==='grammar'?'Apa arti/penggunaan pola ini?':'Apa arti kata ini?'}</div><div class="jp">${htmlSafe(item.prompt)}</div><div class="quiz-reading">${htmlSafe(item.reading||'')}</div>${item.context?`<p class="quiz-help">${htmlSafe(item.context)}</p>`:''}`;
   return `<div class="quiz-session-head"><button class="back" onclick="go('${state.returnView}')">←</button><div class="quiz-session-meta"><span>${modeLabel}</span><b>${index}/${total}</b><div class="quiz-session-track"><i style="width:${pct}%"></i></div></div><div id="timer" class="timer">30</div></div>
   <section class="question ${medicalTools?'tool-quiz-question':''}">${questionBody}</section>
   <div class="quiz-answer-label"><span>PILIH JAWABAN</span><small>Satu jawaban saja</small></div>
@@ -366,6 +369,7 @@ function startTimer(){clearTimer();state.seconds=30;const token=state.quiz?.i;st
 function answerQuiz(index){
   const q=state.quiz;if(state.quizAnswered||!q||q.i>=q.items.length)return;state.quizAnswered=true;clearTimer();
   const item=q.items[q.i],timedOut=index<0,ok=!timedOut&&index===item.answer,finalQuestion=q.i===q.items.length-1;
+  item.selected=index;
   state.progress.total++;let reaction=null;
   if(ok){q.score++;state.progress.correct++;if(!finalQuestion)reaction='correct';haptic(18)}
   else{if(!finalQuestion)reaction=timedOut?'timeout':'wrong';haptic(55)}
@@ -378,7 +382,8 @@ function finishQuiz(){
   if(!q.saved){q.saved=true;state.progress.quizRuns[key]=(state.progress.quizRuns[key]||0)+1;state.progress.best[key]=Math.max(state.progress.best[key]||0,pct);markStudy();markDaily('quizzes');save()}
   if(!q.resultSoundPlayed){q.resultSoundPlayed=true;setTimeout(()=>{if(state.quiz===q&&state.view==='quiz')audioEvent(pct===100?'perfect':'finish')},80)}
   const message=pct===100?'パーフェクト！':pct>=70?'おめでとう！':'Sesi selesai',note=pct===100?'Semua jawaban benar. Mantap.':pct>=70?'Hasil bagus. Sedikit review lagi biar makin kuat.':'Nggak masalah, tandai bagian yang masih susah lalu coba lagi nanti.';
-  return `<section class="quiz-result-card"><div class="quiz-result-icon">${pct===100?'🏆':pct>=70?'🎉':'🌱'}</div><span>QUIZ COMPLETE</span><div class="quiz-result-score">${pct}%</div><h2>${message}</h2><p>${q.score}/${q.items.length} benar</p><small>${note}</small><button class="action primary" onclick="go('${state.returnView}')">Selesai</button></section>`;
+  const review=q.items.filter(item=>item.explanation).map((item,i)=>`<details class="muted-box quiz-review"><summary>${i+1}. ${htmlSafe(item.lessonTitle||item.prompt)} · ${item.selected===item.answer?'Benar':'Perlu diulang'}</summary><p>${htmlSafe(item.prompt)}<br><small>${htmlSafe(item.reading||'')}</small></p>${item.context?`<p>${htmlSafe(item.context)}</p>`:''}<p>Jawabanmu: ${htmlSafe(item.selected>=0?item.choices[item.selected]:'Waktu habis')}<br><b>Jawaban: ${htmlSafe(item.choices[item.answer])}</b></p><p>${htmlSafe(item.explanation)}</p></details>`).join('');
+  return `<section class="quiz-result-card"><div class="quiz-result-icon">${pct===100?'🏆':pct>=70?'🎉':'🌱'}</div><span>QUIZ COMPLETE</span><div class="quiz-result-score">${pct}%</div><h2>${message}</h2><p>${q.score}/${q.items.length} benar</p><small>${note}</small><button class="action primary" onclick="go('${state.returnView}')">Selesai</button></section>${review?`<section class="quiz-review-list"><h3>Pembahasan sesi</h3>${review}</section>`:''}`;
 }
 function kaigo(){
   const cats=[...new Set((D.kaigo.vocab||[]).map(x=>x.category).filter(Boolean))],due=dueCards('KAIGO').length,done=handoffDoneCount(),reportDone=houkokuDoneCount(),reportTotal=(D.kaigo.houkoku||[]).length,essayDone=houkokuEssayDoneCount();

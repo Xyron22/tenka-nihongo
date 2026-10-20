@@ -104,3 +104,12 @@ Validation: local syntax/regression and [CI run 39453710246](https://github.com/
 - Resolve every entry in three reference inventories: KANJIDIC2 historical Level 4, JLPT Sensei N5, and MLC Basic Kanji 120. MLC-only targets with conflicting level placement are deferred individually, while their beginner vocabulary remains learnable.
 - All loaded N5 kanji have verified radical numbers and stroke counts, selected readings, visual components, a labelled memory aid, a word with kana and Indonesian meaning, and an original translated example.
 - Preserve all original kanji IDs. Final exercise and UI audit remains required before N5 CLOSED.
+
+Validation: local syntax/regression and [CI run 39454144822](https://github.com/Xyron22/tenka-nihongo/actions/runs/39454144822) passed at `69b29d4`. **KANJI CONTENT CLOSED**; coverage is reconciled, with 15 MLC-only standalone targets deferred for conflicting level placement and two legacy support cards retained. No fixed count is represented as official JLPT completion.
+
+## Stage 8A-12.1 — Contextual Bunpou quiz
+
+- Replace random meaning distractors for N5 grammar with one original, reviewed cloze question per lesson. Each has a kana scaffold, Indonesian intent cue, four distinct kana choices and an explanation.
+- The cue distinguishes intention/register when more than one Japanese form could otherwise be grammatical. Synonymous obligation/prohibition meanings no longer compete as random correct-looking choices.
+- Sample ten questions after shuffling the entire grammar inventory. A real-runtime seeded audit verifies all 97 lessons are reachable.
+- Add a session review with the learner's answer, correct answer and explanation, while preserving double-tap protection, one feedback event, explicit finish, and save-once scoring.

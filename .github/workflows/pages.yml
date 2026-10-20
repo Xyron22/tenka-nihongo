@@ -54,6 +54,8 @@ jobs:
           node --check content-pack-v23-strokes.js
           node --check content-pack-v23.js
           node --check content-pack-v24.js
+          node --check content-pack-v25.js
+          node --check tests/n5-grammar-quiz.js
           node --check tests/n5-kanji-quality.js
           node --check tests/helpers/load-content.js
           node --check tests/n5-content-quality.js
@@ -132,6 +134,9 @@ jobs:
 
       - name: N5 Kanji metadata and stroke quality
         run: node tests/n5-kanji-quality.js
+
+      - name: N5 contextual grammar quiz
+        run: node tests/n5-grammar-quiz.js
 
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js
