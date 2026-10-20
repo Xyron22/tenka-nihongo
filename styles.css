@@ -466,6 +466,8 @@
 .face.backface .reading{font-size:26px}
 .face.backface .meaning{font-size:19px}
 .face.backface .example{border:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.20)}
+.flash.kaigo-flash{display:grid;height:auto;min-height:390px}
+.flash.kaigo-flash .face{position:relative;inset:auto;grid-area:1/1;min-width:0;min-height:390px;padding:52px 22px 28px}
 .flash-extra-actions{margin-bottom:12px}
 .flash-extra-actions .pill{background:linear-gradient(145deg,#20242b,#191c22);border:1px solid rgba(255,255,255,.08)}
 .srs-label{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:14px 2px 9px}

@@ -12,6 +12,25 @@ N5 is closed at `e92f15f`. The next agreed focus is Kaigo, including hospital/fa
 
 ## Reference basis
 
+Stage 9A-1 validation: local syntax/regression and [CI run 39512346807](https://github.com/Xyron22/tenka-nihongo/actions/runs/39512346807) passed at `dec93fd`. Production upload/deploy were skipped.
+
+## Stage 9A-2 — Work equipment and supplies
+
+- Add vocabulary for meal labels/carts, oral-care items, towels/bed linen, wheelchair/bed parts, protective equipment and stock management.
+- Distinguish 食札（しょくさつ）from 名札（なふだ）, 配膳 from 下膳, and 物品/備品/消耗品. Closely related labels share distractor exclusions.
+- Every entry includes kana, an original translated example and a usage note. Equipment recognition is taught separately from clinical technique.
+- Keep the existing 13 illustrated medical-tool cards and their image mapping intact; this batch expands workplace vocabulary rather than substituting unillustrated cards for the image collection.
+- Let Kaigo vocabulary flashcards grow with their content. Browser QA found two legacy cards clipping at 320 px after kana was supplied; the scoped grid layout reserves space for the label and both faces. N5 and illustrated-tool card layouts remain separate.
+
+Additional terminology references:
+
+- [MHLW/Japan Association of Certified Care Workers: 介護の日本語](https://www.mhlw.go.jp/content/12000000/001184460.pdf): basic care vocabulary and bedside equipment terminology; original sentences/illustrations are not copied.
+- [Dokkyo Medical University Hospital: meals](https://www.dokkyomed.ac.jp/hosp-m/hospitalization/meals.html): meal-label and cart terminology.
+- [Showa Medical University East Hospital: inpatient life](https://www.showa-u.ac.jp/SUHE/patient/inpatient/staying.html): 下膳車 and 食札 terminology.
+- [Saitama Medical University International Medical Center: inpatient guide](https://www.international.saitama-med.ac.jp/wp/wp-content/uploads/2025/07/publicity_book_250705.pdf): reading and role of 食札.
+
+## Shared reference policy
+
 Checked 2026-10-21. References establish naming and workplace context; Indonesian explanations and examples are authored for TENKA. Hospital names/room functions vary. These sources are not presented as the learner's own workplace layout or an operational care protocol.
 
 - [Nihon University Hospital floor guide](https://www.nihon-u.ac.jp/hospital/outline/facility/): contemporary hospital room labels, nurse stations, room types and circulation.

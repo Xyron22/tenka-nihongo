@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 const load=require('./helpers/load-content'),boot=require('./helpers/boot-runtime');
 const {data:D,context,files}=load(),source=fs.readFileSync('content-pack-v27.js','utf8');
 const baseline={window:null};baseline.window=baseline;vm.createContext(baseline);
-for(const file of files.filter(f=>f!=='content-pack-v27.js'))vm.runInContext(fs.readFileSync(file,'utf8'),baseline);
+for(const file of files.filter(f=>!/^content-pack-v(?:27|28)\.js$/.test(f)))vm.runInContext(fs.readFileSync(file,'utf8'),baseline);
 assert.equal(JSON.stringify(D.jlpt),JSON.stringify(baseline.TENKA_DATA.jlpt),'workplace expansion must preserve all JLPT data, including N5 CLOSED');
 const old=baseline.TENKA_DATA.kaigo.vocab,cards=D.kaigo.vocab,byId=new Map(cards.map(c=>[c.id,c]));
 for(const c of old){
@@ -17,12 +17,16 @@ for(const c of cards){
 assert.equal(byId.size,cards.length,'no duplicate Kaigo IDs');
 const allIds=new Set();
 for(const c of [...Object.values(D.jlpt).flatMap(l=>[...l.vocab,...l.kanji,...l.grammar]),...cards,...D.kaigo.tools,...D.kaigo.handoff,...D.kaigo.houkoku]){assert(!allIds.has(c.id),`global identity conflict ${c.id}`);allIds.add(c.id)}
-const snapshot=JSON.stringify(D);vm.runInContext(source,context);assert.equal(JSON.stringify(D),snapshot,'pack reload is idempotent');
+const snapshot=JSON.stringify(D);for(const file of ['content-pack-v27.js','content-pack-v28.js'])vm.runInContext(fs.readFileSync(file,'utf8'),context);assert.equal(JSON.stringify(D),snapshot,'pack reload is idempotent');
 const absent={window:{}};vm.runInNewContext(source,absent);assert.deepEqual(absent.window,{},'missing base is a safe no-op');
 for(const [a,b]of [['病棟','病室'],['脱衣室','更衣室'],['洗面所','洗濯室'],['医務室','診察室'],['倉庫','リネン室']]){
  const x=cards.find(c=>c.term===a),y=cards.find(c=>c.term===b);assert(x&&y,`${a}/${b}`);
  assert(x.quizGroup&&x.quizGroup===y.quizGroup,'overlapping room functions excluded from competing answers');assert.notEqual(x.meaning,y.meaning);
 }
+for(const [a,b]of [['食札','名札'],['配膳車','下膳車'],['タオル','バスタオル'],['シーツ','防水シーツ'],['備品','消耗品']]){
+ const x=cards.find(c=>c.term===a),y=cards.find(c=>c.term===b);assert(x&&y);assert(x.quizGroup&&x.quizGroup===y.quizGroup,'equipment/stock umbrellas cannot compete');
+}
+assert.equal(cards.find(c=>c.term==='食札').reading,'しょくさつ');assert.equal(cards.find(c=>c.term==='名札').reading,'なふだ');
 let seed=91;const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
 const saved={reviews:{'k-v-12':{due:'2020-01-01T00:00:00Z',intervalDays:1}},best:{'KAIGO-kaigo':90}},b=boot({random,storedProgress:saved});
 b.context.go('kaigo');assert(b.html.includes('Ruangan & fasilitas'),'new topic is discoverable');
