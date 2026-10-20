@@ -349,7 +349,7 @@ function makeCardQuiz(cards,type){
   const policy=cards.length&&cards.every(c=>c._level==='N5')?window.TENKA_N5_QUIZ:null;
   const eligible=cards.filter(c=>!c.quizExcludeReason&&c.meaning);
   return shuffle(eligible).slice(0,Math.min(10,eligible.length)).map(c=>{
-    const candidates=eligible.filter(x=>x.meaning!==c.meaning&&(!policy||policy.allowed(c,x)));
+    const candidates=eligible.filter(x=>x.meaning!==c.meaning&&(!c.quizGroup||c.quizGroup!==x.quizGroup)&&(!policy||policy.allowed(c,x)));
     const preferred=policy&&c.category?shuffle(candidates.filter(x=>x.category===c.category)):[];
     const rest=shuffle(candidates.filter(x=>!preferred.includes(x))),used=new Set([c.meaning]);
     const wrong=[...preferred,...rest].filter(x=>{if(used.has(x.meaning))return false;used.add(x.meaning);return true}).slice(0,3);
