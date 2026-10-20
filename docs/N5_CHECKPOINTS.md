@@ -123,3 +123,12 @@ Validation: local syntax/regression and [CI run 39455257440](https://github.com/
 - Use an authored kana reading followed by the kana example for N5 audio. This distinguishes homophones without depending on TTS to guess a kanji reading.
 - Include Japanese/kana context in the written quiz and translated examples plus usage notes in the session review.
 - Seeded runtime tests require every eligible N5 card to remain reachable, four distinct answers, correct shuffled scoring, kana context and separation from other levels and Kaigo.
+
+Validation: local syntax/regression and [CI run 39456853771](https://github.com/Xyron22/tenka-nihongo/actions/runs/39456853771) passed at `055cff9`. Production upload and deployment were skipped.
+
+## Stage 8A-12.3 — Session, progress and mobile audit
+
+- Review all 97 authored grammar questions. Remove dictionary-form 寝る as a competing choice in the affirmative advice question: 寝るほうがいい is also grammatical as a comparison, so it must not be marked wrong here.
+- Exercise correct, wrong and timeout paths through the actual runtime with a controlled clock; require one attempt/feedback per question, one result save, persistent scores, and no stale audio or question advancement after navigating or starting a new session.
+- Load legacy SRS and grammar records, review old cards, mark a newly added lesson, and reload the saved progress. Existing IDs and best scores remain intact, and Daily Mission reflects the actual actions.
+- Browser validation and final closure evidence follow after this checkpoint's full regression and CI gates.
