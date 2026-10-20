@@ -715,6 +715,13 @@
 .handoff-result p{margin:10px 0 14px;color:#aab5af;font-size:10.5px;line-height:1.45}
 .handoff-result .action{width:100%}
 
+/* Whole-sentence readings wrap below Japanese text on narrow report cards. */
+.houkoku-ruby{display:flex;flex-direction:column;max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:left}
+.houkoku-ruby rt{display:block;font-size:11px;line-height:1.6;margin-top:3px}
+.work-selected-piece,.work-model-line{grid-template-columns:auto minmax(0,1fr)}
+.work-piece-chip{max-width:100%;min-width:0}
+.work-compare-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+
 @media(max-width:520px){
   .work-session-hero{padding:15px;border-radius:21px}
   .work-session-hero>div>b{font-size:18px}

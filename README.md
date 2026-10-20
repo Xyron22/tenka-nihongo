@@ -10,7 +10,7 @@ Kurikulum **N5 CLOSED** pada branch `stage-8a1-n5-kanji`: Bunpou, Kotoba, Kanji/
 
 Rincian scope, sumber, hasil audit dan batas rilis ada di [laporan N5 CLOSED](docs/N5_CLOSED.md) dan [checkpoint bertahap](docs/N5_CHECKPOINTS.md). Penutupan kurikulum tidak mengubah progres belajar pengguna. Inventaris materi mengikuti audit silang rujukan; jumlahnya tidak dinyatakan sebagai daftar resmi JLPT.
 
-Kaigo kini memiliki **140 kartu kosakata**: 68 kartu lama dengan contoh berkana lengkap, ditambah 72 istilah ruangan, fasilitas, peralatan dan persediaan kerja. Audio menggunakan bacaan kana yang disiapkan; quiz tertulis/listening menyediakan konteks dan pembahasan. Rincian dan rujukan ada di [checkpoint Kaigo](docs/KAIGO_CHECKPOINTS.md). Milestone ini mencakup ruangan/peralatan; keseluruhan kurikulum Kaigo belum dinyatakan selesai.
+Kaigo kini memiliki **140 kartu kosakata**: 68 kartu lama dengan contoh berkana lengkap, ditambah 72 istilah ruangan, fasilitas, peralatan dan persediaan kerja. Audio menggunakan bacaan kana yang disiapkan; quiz tertulis/listening menyediakan konteks dan pembahasan. Latihan 報告 kini memuat 20 model untuk susun kalimat/tulis sendiri, dan 申し送り memuat 20 kasus (59 kalimat) dengan soal pemahaman. Rincian dan rujukan ada di [checkpoint Kaigo](docs/KAIGO_CHECKPOINTS.md). Milestone ini mencakup ruangan/peralatan; keseluruhan kurikulum Kaigo belum dinyatakan selesai.
 
 ## Fitur yang sudah ada
 

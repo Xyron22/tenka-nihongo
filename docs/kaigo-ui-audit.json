@@ -6,7 +6,10 @@
     {
       "width": 320,
       "cardsChecked": 140,
+      "reportModelsChecked": 40,
+      "handoffSentencesChecked": 59,
       "bad": [],
+      "practiceBad": [],
       "widths": [
         {
           "view": "home",
@@ -45,7 +48,10 @@
     {
       "width": 390,
       "cardsChecked": 140,
+      "reportModelsChecked": 40,
+      "handoffSentencesChecked": 59,
       "bad": [],
+      "practiceBad": [],
       "widths": [
         {
           "view": "home",
@@ -84,7 +90,10 @@
     {
       "width": 720,
       "cardsChecked": 140,
+      "reportModelsChecked": 40,
+      "handoffSentencesChecked": 59,
       "bad": [],
+      "practiceBad": [],
       "widths": [
         {
           "view": "home",
@@ -131,12 +140,17 @@
     "listeningReplayText": true,
     "wrongAndCorrectAnswers": true,
     "translatedResultReview": true,
-    "quizResultReload": true
+    "quizResultReload": true,
+    "reportPuzzleAndKanaAudio": true,
+    "reportWritingAndKanaAudio": true,
+    "handoffSentenceAudioAndComprehension": true,
+    "handoffNormalSlowRates": true,
+    "workplacePracticeReload": true
   },
   "sourceHashes": {
-    "index.html": "d368194d970c2933026884b4b7922c8c30b076e45f22a9252fa63926b81a7f2d",
-    "styles.css": "725eba6020a2d1353a7d6a6cf1b58ade1cd71c713125f45ccdc37180607a6e95",
-    "app-v2.js": "7a3d31a59f72fea09e212b13a46eee3e96d696e06d026d01b8233a478542abc9",
+    "index.html": "e163d20fc8e539f396af44feb4c126e0c5f8ca59f4b69b8d617a4e73fd81cd61",
+    "styles.css": "8cd4f6f1d0cd5e71345e697d506b9b424f87ea89e61e792e0ae4fac246baa4c2",
+    "app-v2.js": "23a97dc7bc08418c639453ef9792294298aa44d813ea53b102a30413ad65a9ad",
     "data.js": "feaccc112134d2b8575cfbd4602454185c96a178425894cfd8679a13828c61c6",
     "content-pack-v1.js": "d0835acbcc74267b58455a346287e610920f33afada36cbbc6b90e3065e517fa",
     "content-pack-v2.js": "0118afe7b6a8c70c81bb40be6fa05949b00c1f43d5466def888204c4dd736385",
@@ -168,8 +182,10 @@
     "content-pack-v27.js": "ba21a7a347596763f4dbd6985002408a2b159b6c4b7544bfe42d2806eeb9434a",
     "content-pack-v28.js": "cb0026792dafc3530f47cd2cd5ad428b0dd5a7a68e08f17da01c0c8e2103ca3f",
     "content-pack-v29.js": "1a3dc16256d43ffb25bbe8d8562fe16fc672d3d02505fae698df4f6d4bba7de8",
+    "content-pack-v30.js": "99ce086fb2a0420f2aa7ef345a66d63a2dce20255f8a674d94579570bb2ae949",
     "houkoku-pack-v1.js": "6752aed020dd6ee8811b45dbd708f25806dafdf1eba37a7ecb8cb50f7190089d",
     "houkoku-pack-v2.js": "271ffec2c6bbd3e278378a7c3c887f476a7da8520340ff2c7e262db5a65231fd",
+    "houkoku-pack-v3.js": "b3609744cf5f214dfcc6f77b016c7650190a9367080ab187db93183f8142c795",
     "tools-pack-v1.js": "4c777fb00164e20bf6bfd2268704261d2ebedf0144ad20aceea1c90a14397f24"
   }
 }

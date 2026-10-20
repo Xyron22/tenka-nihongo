@@ -19,7 +19,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  if(fonts){
  await page.addStyleTag({content:fs.readFileSync(path.join(fonts,'400.css'),'utf8').replaceAll('url(./files/','url(https://tenka.test/fonts/files/')+'\nhtml,body{font-family:"Noto Sans JP",sans-serif}'});
  await page.evaluate(async()=>{
-   const chars=[...new Set(TENKA_DATA.kaigo.vocab.map(c=>[c.term,c.kanji,c.reading,c.example,c.exampleReading].join('')).join(''))].join('');
+   const chars=[...new Set(JSON.stringify(TENKA_DATA.kaigo))].join('');
    await document.fonts.load('16px "Noto Sans JP"',chars);await document.fonts.ready;
  });
  }
@@ -38,14 +38,33 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
          }
        }
      }
+     let reportModelsChecked=0,handoffSentencesChecked=0;
+     const practiceBad=[];
+     function scan(view,id){
+       const overflow=[...document.querySelectorAll('.work-session-hero,.work-piece-chip,.work-selected-piece,.work-model-line,.work-compare-card,.handoff-sentence-card,.handoff-question-card,.handoff-result')].filter(el=>el.scrollWidth>el.clientWidth+2);
+       if(document.documentElement.scrollWidth>innerWidth||overflow.length)practiceBad.push({view,id,width:document.documentElement.scrollWidth,overflow:overflow.map(el=>el.className)});
+     }
+     TENKA_DATA.kaigo.houkoku.forEach((h,index)=>{
+       openHoukokuPractice(index);scan('report-puzzle',h.id);
+       h.pieces.forEach((_,i)=>houkokuPick(i));houkokuCheck();scan('report-selected',h.id);houkokuShowResult();scan('report-model',h.id);reportModelsChecked++;
+       openHoukokuEssay(index);scan('report-write',h.id);houkokuEssayReveal(h.pieces.map(p=>p.text).join(''));scan('report-writing-model',h.id);reportModelsChecked++;
+     });
+     TENKA_DATA.kaigo.handoff.forEach((h,index)=>{
+       openHandoffPractice(index);
+       h.segments.forEach((_,i)=>{scan('handoff-sentence-'+(i+1),h.id);handoffSentencesChecked++;if(i+1<h.segments.length)handoffNextSentence()});
+       handoffToQuestion();scan('handoff-question',h.id);handoffAnswer(h.answer);scan('handoff-result',h.id);finishHandoff();
+     });
      for(const view of ['home','kaigo','daily','progress']){go(view);widths.push({view,width:document.documentElement.scrollWidth})}
-     return{width:innerWidth,cardsChecked,bad,widths};
+     return{width:innerWidth,cardsChecked,reportModelsChecked,handoffSentencesChecked,bad,practiceBad,widths};
    });results.push(result);
-   console.log(JSON.stringify({width,badCount:result.bad.length,firstBad:result.bad.slice(0,5),widths:result.widths}));
+   console.log(JSON.stringify({width,badCount:result.bad.length,practiceBadCount:result.practiceBad.length,firstPracticeBad:result.practiceBad.slice(0,3),widths:result.widths}));
  }
+ await page.setViewportSize({width:320,height:844});
+ await page.evaluate(()=>{openHoukokuPractice(12);[0,1,2,3].forEach(i=>houkokuPick(i));houkokuCheck();houkokuShowResult()});
+ await page.screenshot({path:path.join(out,'kaigo-count-report.png'),fullPage:true});
  await page.evaluate(()=>{
-   window.__tenkaSpoken=[];
-   Object.defineProperty(speechSynthesis,'speak',{configurable:true,value:u=>window.__tenkaSpoken.push(u.text)});
+   window.__tenkaSpoken=[];window.__tenkaUtterances=[];
+   Object.defineProperty(speechSynthesis,'speak',{configurable:true,value:u=>{window.__tenkaSpoken.push(u.text);window.__tenkaUtterances.push({text:u.text,rate:u.rate,lang:u.lang})}});
  });
  await page.setViewportSize({width:320,height:844});
  await page.evaluate(()=>{openKaigoFlash();const s=TENKA_CORE.state;s.cardIndex=s.cards.findIndex(c=>c.id==='k-v-37');s.flipped=true;TENKA_CORE.render()});
@@ -96,14 +115,40 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
    await page.setViewportSize({width:390,height:844});
    await page.screenshot({path:path.join(out,'kaigo-'+mode+'-review.png'),fullPage:true});
  }
+ await page.evaluate(()=>{openHoukokuPractice(12);[3,2,1,0].forEach(i=>houkokuPick(i));houkokuCheck()});
+ assert((await page.locator('.work-feedback').textContent()).includes('belum sesuai model latihan'));
+ await page.getByRole('button',{name:'Coba lagi',exact:true}).click();
+ for(let i=0;i<4;i++)await page.locator('[onclick="houkokuPick('+i+')"]').click();
+ await page.getByRole('button',{name:'Periksa',exact:true}).click();await page.getByRole('button',{name:'Lihat model →',exact:true}).click();
+ await page.locator('.work-audio-btn').click();
+ assert.equal(await page.evaluate(()=>window.__tenkaSpoken.at(-1)),await page.evaluate(()=>TENKA_DATA.kaigo.houkoku[12].reading),'report model audio sends authored count readings');
+ await page.locator('.work-finish-btn').click();assert.equal(await page.evaluate(()=>TENKA_CORE.state.view),'kaigo');
+ await page.evaluate(()=>openHoukokuEssay(12));
+ await page.locator('#houkoku-essay-input').fill('食札は41枚でした。確認をお願いします。');
+ await page.getByRole('button',{name:'Bandingkan dengan model →',exact:true}).click();
+ assert((await page.locator('.essay-answer').textContent()).includes('食札は41枚でした。'));
+ await page.locator('.work-audio-btn').click();assert.equal(await page.evaluate(()=>window.__tenkaSpoken.at(-1)),await page.evaluate(()=>TENKA_DATA.kaigo.houkoku[12].reading));
+ await page.screenshot({path:path.join(out,'kaigo-report-writing.png'),fullPage:true});
+ await page.getByRole('button',{name:'✅ Sudah bisa',exact:true}).click();assert.equal(await page.evaluate(()=>TENKA_CORE.state.view),'kaigo');
+ await page.evaluate(()=>openHandoffPractice(12));
+ await page.locator('.handoff-audio-grid button').first().click();
+ assert.equal(await page.evaluate(()=>window.__tenkaSpoken.at(-1)),await page.evaluate(()=>TENKA_DATA.kaigo.handoff[12].segments[0].reading));
+ await page.locator('.handoff-audio-grid button').last().click();
+ const rates=await page.evaluate(()=>window.__tenkaUtterances.slice(-2));assert(rates.every(u=>u.lang==='ja-JP')&&Math.abs(rates[0].rate-.9)<.00001&&Math.abs(rates[1].rate-.68)<.00001,'normal/slow handoff rates and Japanese locale are preserved');
+ await page.screenshot({path:path.join(out,'kaigo-handoff-count.png'),fullPage:true});
+ for(let i=0;i<2;i++)await page.getByRole('button',{name:'Kalimat berikutnya →',exact:true}).click();
+ await page.getByRole('button',{name:'Lanjut ke soal →',exact:true}).click();
+ const correct=await page.evaluate(()=>TENKA_DATA.kaigo.handoff[12].answer);await page.locator('.handoff-choice-list button').nth(correct).click();
+ await page.locator('.handoff-result .action').click();assert.equal(await page.evaluate(()=>TENKA_CORE.state.view),'kaigo');
  await page.reload();await page.waitForFunction(()=>window.TENKA_READY);
  assert(await page.evaluate(id=>TENKA_CORE.state.progress.reviews[id]?.rating==='good',savedId),'SRS survives browser reload');
  assert(await page.evaluate(()=>TENKA_CORE.state.progress.best['KAIGO-kaigo']===90&&TENKA_CORE.state.progress.best['KAIGO-kaigo-listening']===100),'both quiz results survive reload');
+ assert(await page.evaluate(()=>!!TENKA_CORE.state.progress.houkokuDone['r-13']&&!!TENKA_CORE.state.progress.houkokuEssayDone['r-13']&&!!TENKA_CORE.state.progress.handoffDone['h-13']),'report/writing/handoff completions survive browser reload');
  assert.equal(errors.length,0,errors.join('\n'));
  const names=['index.html','styles.css','app-v2.js',...require('./helpers/load-content')().files];
  const sourceHashes=Object.fromEntries([...new Set(names)].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(base,name))).digest('hex')]));
- const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true},sourceHashes};
+ const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWritingAndKanaAudio:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true},sourceHashes};
  fs.writeFileSync(path.join(out,'kaigo-ui-audit.json'),JSON.stringify(report,null,2)+'\n');
- if(results.some(r=>r.bad.length||r.widths.some(v=>v.width>r.width)))process.exitCode=1;
+ if(results.some(r=>r.bad.length||r.practiceBad.length||r.widths.some(v=>v.width>r.width)))process.exitCode=1;
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exitCode=1});

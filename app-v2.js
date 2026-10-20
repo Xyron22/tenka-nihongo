@@ -533,7 +533,7 @@ function houkoku(){
   const hs=state.houkokuSession,h=currentHoukoku();if(!h){state.houkokuSession=null;return ''}
   const label=`Kasus ${hs.caseIndex+1}/${arr.length}`,pct=Math.round((hs.caseIndex+1)/Math.max(1,arr.length)*100);
   if(hs.stage==='result'){
-    const fullText=h.pieces.map(houkokuPieceText).join('');
+    const fullText=h.reading||h.pieces.map(houkokuPieceText).join('');
     const model=h.pieces.map((piece,i)=>`<div class="work-model-line"><span class="work-line-no">${i+1}</span><div><div class="handoff">${houkokuPieceHtml(piece)}</div><div class="houkoku-id">🇮🇩 ${houkokuPieceMeaning(piece)}</div></div></div>`).join('');
     return `${header('報告 Practice',`${label} • Model laporan`)}<button class="back" onclick="finishHoukoku()">←</button>
     <section class="work-session-hero result"><div><span>LEVEL 1 • 報告モデル</span><b>${houkokuRuby(h.title,h.titleReading)}</b><small>Bandingkan urutanmu dengan model laporan.</small></div><strong>${hs.caseIndex+1}/${arr.length}</strong></section>
@@ -542,10 +542,10 @@ function houkoku(){
   }
   const selected=hs.selected.map((pieceIndex,pos)=>`<button class="work-selected-piece ${hs.checked?(hs.correct?'correct':'wrong'):''}" onclick="houkokuRemove(${pos})"><span>${pos+1}</span><div>${houkokuPieceHtml(h.pieces[pieceIndex])}</div></button>`).join('');
   const available=hs.remaining.map(pieceIndex=>`<button class="work-piece-chip" draggable="true" ondragstart="houkokuDragStart(event,${pieceIndex})" onclick="houkokuPick(${pieceIndex})">${houkokuPieceHtml(h.pieces[pieceIndex])}</button>`).join('');
-  const feedback=hs.checked?(hs.correct?'<div class="work-feedback correct">✅ Urutannya benar. Ini sudah menjadi laporan yang natural.</div>':'<div class="work-feedback wrong">❌ Urutannya belum tepat. Coba susun lagi dari fakta → kondisi → permintaan konfirmasi.</div>'):'';
+  const feedback=hs.checked?(hs.correct?'<div class="work-feedback correct">✅ Urutannya sesuai model latihan.</div>':'<div class="work-feedback wrong">Urutannya belum sesuai model latihan. Cocokkan dengan alur pada situasi; urutan lain dapat tetap wajar dalam percakapan.</div>'):'';
   return `${header('報告 Practice',`${label} • Puzzle laporan`)}<button class="back" onclick="finishHoukoku()">←</button>
   <section class="work-session-hero"><div><span>LEVEL 1 • PUZZLE</span><b>${houkokuRuby(h.title,h.titleReading)}</b><small>${h.examArea||'コミュニケーション技術'}</small></div><strong>${hs.caseIndex+1}/${arr.length}</strong><div class="work-hero-track"><i style="width:${pct}%"></i></div></section>
-  <section class="work-situation-card"><div class="work-card-label">SITUASI</div><p>🧑‍⚕️ ${h.situation}</p><small>Susun potongan Jepang menjadi houkoku. Di iPhone cukup tap; drag & drop juga tersedia bila browser mendukung.</small></section>
+  <section class="work-situation-card"><div class="work-card-label">SITUASI</div><p>🧑‍⚕️ ${h.situation}</p><small>Susun sesuai alur model latihan. Ada urutan lain yang juga wajar dalam laporan sehari-hari. Di iPhone cukup tap potongannya.</small></section>
   <div class="work-section-head"><div><span>YOUR REPORT</span><b>🧩 Laporanmu</b></div><small>${hs.selected.length}/${h.pieces.length} potongan</small></div>
   <div class="work-selected-list" ondragover="event.preventDefault()" ondrop="houkokuDrop(event)">${selected||'<div class="work-placeholder">Tap potongan kalimat di bawah untuk mulai menyusun.</div>'}</div>
   ${feedback}
@@ -596,7 +596,7 @@ function houkokuEssay(){
   const hs=state.houkokuEssaySession,h=currentHoukokuEssay();if(!h){state.houkokuEssaySession=null;return ''}
   const label=`Kasus ${hs.caseIndex+1}/${arr.length}`,pct=Math.round((hs.caseIndex+1)/Math.max(1,arr.length)*100);
   if(hs.stage==='model'){
-    const fullText=h.pieces.map(houkokuPieceText).join('');
+    const fullText=h.reading||h.pieces.map(houkokuPieceText).join('');
     const model=h.pieces.map((piece,i)=>`<div class="work-model-line"><span class="work-line-no">${i+1}</span><div><div class="handoff">${houkokuPieceHtml(piece)}</div><div class="houkoku-id">🇮🇩 ${houkokuPieceMeaning(piece)}</div></div></div>`).join('');
     return `${header('報告 Level 2',`${label} • Bandingkan`)}<button class="back" onclick="finishHoukokuEssay(false)">←</button>
     <section class="work-session-hero essay"><div><span>LEVEL 2 • SELF WRITING</span><b>${houkokuRuby(h.title,h.titleReading)}</b><small>Bandingkan laporanmu dengan model.</small></div><strong>${hs.caseIndex+1}/${arr.length}</strong><div class="work-hero-track"><i style="width:${pct}%"></i></div></section>
@@ -610,7 +610,7 @@ function houkokuEssay(){
   return `${header('報告 Level 2',`${label} • Tulis sendiri`)}<button class="back" onclick="finishHoukokuEssay(false)">←</button>
   <section class="work-session-hero essay"><div><span>LEVEL 2 • SELF WRITING</span><b>${houkokuRuby(h.title,h.titleReading)}</b><small>${h.examArea||'コミュニケーション技術'}</small></div><strong>${hs.caseIndex+1}/${arr.length}</strong><div class="work-hero-track"><i style="width:${pct}%"></i></div></section>
   <section class="work-situation-card"><div class="work-card-label">SITUASI</div><p>🧑‍⚕️ ${h.situation}</p></section>
-  <section class="work-guide-card"><div class="work-card-label">URUTAN BANTU</div><ol><li>Siapa yang dilaporkan</li><li>Fakta / perubahan yang terjadi</li><li>Kondisi yang kamu lihat atau ukur</li><li>Minta pengecekan / konfirmasi bila perlu</li></ol></section>
+  <section class="work-guide-card"><div class="work-card-label">URUTAN BANTU</div><ol><li>Orang, barang, atau tugas yang dilaporkan</li><li>Fakta / perubahan yang terjadi</li><li>Kondisi yang kamu lihat atau ukur</li><li>Minta pengecekan / konfirmasi bila perlu</li></ol></section>
   <div class="work-section-head"><div><span>WRITE YOUR REPORT</span><b>✍️ Tulis houkoku-mu</b></div><small>Bahasa Jepang</small></div>
   <textarea id="houkoku-essay-input" class="houkoku-textarea modern" lang="ja" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="Contoh mulai: 〇〇さんですが、"></textarea>
   <div class="controls essay-controls work-controls"><button class="action" onclick="finishHoukokuEssay(false)">Selesai</button><button class="action primary" onclick="houkokuEssayReveal()">Bandingkan dengan model →</button></div>`;
@@ -664,7 +664,7 @@ function handoff(){
       <div class="handoff-sentence-head"><span>SENTENCE ${hs.sentenceIndex+1}</span><em>${sentencePct}%</em></div>
       <div class="handoff">${seg.text}</div>
       ${seg.reading?`<div class="furigana">${seg.reading}</div>`:''}
-      <div class="handoff-audio-grid"><button onclick="speakText('${esc(seg.text)}')">🔊<span>Normal</span></button><button onclick="speakText('${esc(seg.text)}',.68)">🐢<span>Pelan</span></button></div>
+      <div class="handoff-audio-grid"><button onclick="speakText('${esc(seg.reading||seg.text)}')">🔊<span>Normal</span></button><button onclick="speakText('${esc(seg.reading||seg.text)}',.68)">🐢<span>Pelan</span></button></div>
       ${seg.meaning?`<div class="handoff-meaning"><span>🇮🇩</span><p>${seg.meaning}</p></div>`:''}
     </section>
     <div class="controls work-controls"><button class="action" onclick="finishHandoff()">Selesai</button><button class="action primary" onclick="${last?'handoffToQuestion()':'handoffNextSentence()'}">${last?'Lanjut ke soal →':'Kalimat berikutnya →'}</button></div>`;
