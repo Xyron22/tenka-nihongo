@@ -136,8 +136,8 @@ function afterRender(){
   if(state.view==='quiz'&&state.quiz&&state.quiz.i<state.quiz.items.length&&!state.quiz.finished){
     startTimer();
     if(state.quiz.type.includes('listening')){
-      const item=state.quiz.items[state.quiz.i];
-      setTimeout(()=>speakText(item.voiceText||item.reading||item.prompt),80);
+      const q=state.quiz,item=q.items[q.i];
+      setTimeout(()=>{if(state.view==='quiz'&&state.quiz===q&&q.items[q.i]===item&&!state.quizAnswered)speakText(item.voiceText||item.reading||item.prompt)},80);
     }
   }
   if(state.view==='kakijun')setTimeout(()=>{if(state.kakijun?.strokes?.length)animateStrokes();setupCanvas()},30);
@@ -278,7 +278,8 @@ function flash(){
   const toolControls=isToolMode?`<div class="controls tool-flash-controls"><button class="action" onclick="stepToolFlash(-1)" ${state.cardIndex===0?'disabled aria-disabled="true"':''}>← Sebelumnya</button><button class="action" onclick="${state.cardIndex>=state.cards.length-1?`go('${state.returnView}')`:'stepToolFlash(1)'}">${state.cardIndex>=state.cards.length-1?'Selesai':'Lewati →'}</button></div>`:'';
   const srsHint=isToolMode?`<div class="subtle tool-srs-hint">Nilai kartu untuk memasukkannya ke jadwal review.</div>`:'';
   const reviewControls=`<div class="controls srs-controls"><button class="action bad" onclick="rateCard('again')"><span>😵</span>Lagi</button><button class="action blue" onclick="rateCard('good')"><span>🙂</span>Hafal</button><button class="action ok" onclick="rateCard('easy')"><span>✨</span>Mudah</button></div>`;
-  return `<div class="study-session-head"><button class="back" onclick="go('${state.returnView}')">←</button><div class="study-session-meta"><span>${modeLabel.toUpperCase()}</span><b>${index}/${total}</b><div class="study-session-track"><i style="width:${pct}%"></i></div></div><button class="icon-btn session-audio" onclick="speakText('${esc(c.term||c.reading||c.kanji)}')" aria-label="Putar pengucapan">🔊</button></div>
+  const voiceText=c._level==='N5'&&c._kind==='vocab'&&window.TENKA_N5_QUIZ?window.TENKA_N5_QUIZ.primaryReading(c):(c.term||c.reading||c.kanji);
+  return `<div class="study-session-head"><button class="back" onclick="go('${state.returnView}')">←</button><div class="study-session-meta"><span>${modeLabel.toUpperCase()}</span><b>${index}/${total}</b><div class="study-session-track"><i style="width:${pct}%"></i></div></div><button class="icon-btn session-audio" onclick="speakText('${esc(voiceText)}')" aria-label="Putar pengucapan">🔊</button></div>
   <div class="flash-wrap"><div class="flash ${isToolCard?'tool-flash':''} ${state.flipped?'flipped':''}" onclick="flipCard()"><div class="face"><div class="flash-side-label">QUESTION</div>${cardFront(c)}<div class="flash-tap-hint"><span>↻</span> Tap untuk balik</div></div><div class="face backface"><div class="flash-side-label">ANSWER</div>${cardBack(c)}</div></div></div>
   ${c.note?`<details class="muted-box"><summary>Catatan pemakaian</summary><p>${htmlSafe(c.note)}</p></details>`:''}
   ${c._kind==='kanji'?kanjiStudyNotes(c):''}
@@ -344,7 +345,19 @@ function startGrammarQuiz(level){
   });beginQuiz(level,'grammar',items,'grammar');
 }
 function shuffle(arr){const x=arr.slice();for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x}
-function makeCardQuiz(cards,type){const pool=[...new Set(cards.map(c=>c.meaning).filter(Boolean))];return shuffle(cards).slice(0,Math.min(10,cards.length)).map(c=>{const wrong=shuffle(pool.filter(x=>x!==c.meaning)).slice(0,3),choices=shuffle([c.meaning,...wrong]);return{prompt:c.term||c.kanji,reading:c.reading,voiceText:c.term||c.kanji||c.reading,correct:c.meaning,choices,answer:choices.indexOf(c.meaning),type}})}
+function makeCardQuiz(cards,type){
+  const policy=cards.length&&cards.every(c=>c._level==='N5')?window.TENKA_N5_QUIZ:null;
+  const eligible=cards.filter(c=>!c.quizExcludeReason&&c.meaning);
+  return shuffle(eligible).slice(0,Math.min(10,eligible.length)).map(c=>{
+    const candidates=eligible.filter(x=>x.meaning!==c.meaning&&(!policy||policy.allowed(c,x)));
+    const preferred=policy&&c.category?shuffle(candidates.filter(x=>x.category===c.category)):[];
+    const rest=shuffle(candidates.filter(x=>!preferred.includes(x))),used=new Set([c.meaning]);
+    const wrong=[...preferred,...rest].filter(x=>{if(used.has(x.meaning))return false;used.add(x.meaning);return true}).slice(0,3);
+    const options=shuffle([c,...wrong]),choices=options.map(x=>x.meaning);
+    return{sourceId:c.id,prompt:c.term||c.kanji,reading:c.reading,voiceText:policy?policy.voice(c):(c.term||c.kanji||c.reading),correct:c.meaning,choices,optionIds:options.map(x=>x.id),answer:options.indexOf(c),type,
+      ...(policy?{audioContext:true,example:c.example,exampleReading:c.exampleReading,exampleMeaning:c.exampleMeaning,explanation:c.note||'Cocokkan arti kata sasaran dengan bacaan dan contoh penggunaannya.'}:{})};
+  });
+}
 function makeMedicalToolQuiz(){
   const tools=selectedMedicalTools(),all=D.kaigo.tools||[],pool=all.map(t=>({id:t.id,label:`${t.term} — ${t.meaning}`}));
   return shuffle(tools).slice(0,Math.min(10,tools.length)).map(t=>{
@@ -359,7 +372,7 @@ function beginQuiz(level,type,items,returnView){clearTimer();if(!items.length){t
 function quizView(){
   const q=state.quiz;if(!q)return '';if(q.i>=q.items.length)return finishQuiz();const item=q.items[q.i],listening=q.type.includes('listening'),medicalTools=q.type==='medical-tools',index=q.i+1,total=q.items.length,pct=Math.round(q.i/Math.max(1,total)*100);
   const modeLabel=medicalTools?'MEDICAL TOOLS':listening?'LISTENING':q.type==='grammar'?'BUNPOU QUIZ':'QUIZ';
-  const questionBody=medicalTools?`<div class="quiz-kicker">Alat apakah ini?</div><img class="tool-quiz-image" src="${htmlSafe(item.image||'')}" alt="Gambar alat medis"><div class="quiz-help">Pilih nama Jepang + arti yang benar</div>`:listening?`<div class="quiz-kicker">Dengarkan lalu pilih arti</div><div class="quiz-listening-icon">🔊</div><button class="pill quiz-replay" onclick="speakText('${esc(item.voiceText||item.prompt)}')">▶ Putar lagi</button>`:`<div class="quiz-kicker">${item.contextual?'Lengkapi kalimat sesuai petunjuk':q.type==='grammar'?'Apa arti/penggunaan pola ini?':'Apa arti kata ini?'}</div><div class="jp">${htmlSafe(item.prompt)}</div><div class="quiz-reading">${htmlSafe(item.reading||'')}</div>${item.context?`<p class="quiz-help">${htmlSafe(item.context)}</p>`:''}`;
+  const questionBody=medicalTools?`<div class="quiz-kicker">Alat apakah ini?</div><img class="tool-quiz-image" src="${htmlSafe(item.image||'')}" alt="Gambar alat medis"><div class="quiz-help">Pilih nama Jepang + arti yang benar</div>`:listening?`<div class="quiz-kicker">Dengarkan lalu pilih arti</div><div class="quiz-listening-icon">🔊</div>${item.audioContext?'<p class="quiz-help">Dengarkan satu kata, lalu kalimat contohnya. Pilih arti kata pertama.</p>':''}<button class="pill quiz-replay" onclick="speakText('${esc(item.voiceText||item.prompt)}')">▶ Putar lagi</button>`:`<div class="quiz-kicker">${item.contextual?'Lengkapi kalimat sesuai petunjuk':q.type==='grammar'?'Apa arti/penggunaan pola ini?':'Apa arti kata ini?'}</div><div class="jp">${htmlSafe(item.prompt)}</div><div class="quiz-reading">${htmlSafe(item.reading||'')}</div>${item.context?`<p class="quiz-help">${htmlSafe(item.context)}</p>`:''}${item.example?`<p class="quiz-help">${htmlSafe(item.example)}<br>${htmlSafe(item.exampleReading||'')}</p>`:''}`;
   return `<div class="quiz-session-head"><button class="back" onclick="go('${state.returnView}')">←</button><div class="quiz-session-meta"><span>${modeLabel}</span><b>${index}/${total}</b><div class="quiz-session-track"><i style="width:${pct}%"></i></div></div><div id="timer" class="timer">30</div></div>
   <section class="question ${medicalTools?'tool-quiz-question':''}">${questionBody}</section>
   <div class="quiz-answer-label"><span>PILIH JAWABAN</span><small>Satu jawaban saja</small></div>
@@ -382,7 +395,7 @@ function finishQuiz(){
   if(!q.saved){q.saved=true;state.progress.quizRuns[key]=(state.progress.quizRuns[key]||0)+1;state.progress.best[key]=Math.max(state.progress.best[key]||0,pct);markStudy();markDaily('quizzes');save()}
   if(!q.resultSoundPlayed){q.resultSoundPlayed=true;setTimeout(()=>{if(state.quiz===q&&state.view==='quiz')audioEvent(pct===100?'perfect':'finish')},80)}
   const message=pct===100?'パーフェクト！':pct>=70?'おめでとう！':'Sesi selesai',note=pct===100?'Semua jawaban benar. Mantap.':pct>=70?'Hasil bagus. Sedikit review lagi biar makin kuat.':'Nggak masalah, tandai bagian yang masih susah lalu coba lagi nanti.';
-  const review=q.items.filter(item=>item.explanation).map((item,i)=>`<details class="muted-box quiz-review"><summary>${i+1}. ${htmlSafe(item.lessonTitle||item.prompt)} · ${item.selected===item.answer?'Benar':'Perlu diulang'}</summary><p>${htmlSafe(item.prompt)}<br><small>${htmlSafe(item.reading||'')}</small></p>${item.context?`<p>${htmlSafe(item.context)}</p>`:''}<p>Jawabanmu: ${htmlSafe(item.selected>=0?item.choices[item.selected]:'Waktu habis')}<br><b>Jawaban: ${htmlSafe(item.choices[item.answer])}</b></p><p>${htmlSafe(item.explanation)}</p></details>`).join('');
+  const review=q.items.filter(item=>item.explanation).map((item,i)=>`<details class="muted-box quiz-review"><summary>${i+1}. ${htmlSafe(item.lessonTitle||item.prompt)} · ${item.selected===item.answer?'Benar':'Perlu diulang'}</summary><p>${htmlSafe(item.prompt)}<br><small>${htmlSafe(item.reading||'')}</small></p>${item.context?`<p>${htmlSafe(item.context)}</p>`:''}<p>Jawabanmu: ${htmlSafe(item.selected>=0?item.choices[item.selected]:'Waktu habis')}<br><b>Jawaban: ${htmlSafe(item.choices[item.answer])}</b></p>${item.example?`<p>${htmlSafe(item.example)}<br><small>${htmlSafe(item.exampleReading||'')}</small><br>${htmlSafe(item.exampleMeaning||'')}</p>`:''}<p>${htmlSafe(item.explanation)}</p></details>`).join('');
   return `<section class="quiz-result-card"><div class="quiz-result-icon">${pct===100?'🏆':pct>=70?'🎉':'🌱'}</div><span>QUIZ COMPLETE</span><div class="quiz-result-score">${pct}%</div><h2>${message}</h2><p>${q.score}/${q.items.length} benar</p><small>${note}</small><button class="action primary" onclick="go('${state.returnView}')">Selesai</button></section>${review?`<section class="quiz-review-list"><h3>Pembahasan sesi</h3>${review}</section>`:''}`;
 }
 function kaigo(){

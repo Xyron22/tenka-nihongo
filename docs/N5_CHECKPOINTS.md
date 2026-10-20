@@ -113,3 +113,13 @@ Validation: local syntax/regression and [CI run 39454144822](https://github.com/
 - The cue distinguishes intention/register when more than one Japanese form could otherwise be grammatical. Synonymous obligation/prohibition meanings no longer compete as random correct-looking choices.
 - Sample ten questions after shuffling the entire grammar inventory. A real-runtime seeded audit verifies all 97 lessons are reachable.
 - Add a session review with the learner's answer, correct answer and explanation, while preserving double-tap protection, one feedback event, explicit finish, and save-once scoring.
+
+Validation: local syntax/regression and [CI run 39455257440](https://github.com/Xyron22/tenka-nihongo/actions/runs/39455257440) passed at `34306ac`. Production upload and deployment were skipped.
+
+## Stage 8A-12.2 — Kotoba/Kanji quiz and listening context
+
+- Filter competing synonymous glosses, duplicate meanings and generic umbrella distractors in the N5 card pool. Prefer eligible distractors from the same topic when available.
+- Keep context-dependent interjections available in flashcards/SRS while excluding them from single-answer meaning quizzes.
+- Use an authored kana reading followed by the kana example for N5 audio. This distinguishes homophones without depending on TTS to guess a kanji reading.
+- Include Japanese/kana context in the written quiz and translated examples plus usage notes in the session review.
+- Seeded runtime tests require every eligible N5 card to remain reachable, four distinct answers, correct shuffled scoring, kana context and separation from other levels and Kaigo.
