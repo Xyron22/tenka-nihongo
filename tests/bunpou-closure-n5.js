@@ -27,4 +27,4 @@ assert(app.includes("markDaily('grammar',id)"),'Bunpou completion must remain co
 const meanings=new Set(grammar.map(x=>x.meaning));
 assert(meanings.size>=60,'Bunpou quiz needs a sufficiently diverse meaning pool for distractors');
 console.log('TENKA N5 Bunpou closure structural audit passed:',grammar.length,'ordered grammar items');
-console.log('Closure status: STRUCTURE READY; external coverage remediation still required before N5 Bunpou CLOSED');
+console.log('Historical 75-item baseline preserved; current N5 closure is checked by the runtime content, coverage and curriculum closure gates.');

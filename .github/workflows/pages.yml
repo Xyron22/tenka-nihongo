@@ -58,6 +58,8 @@ jobs:
           node --check content-pack-v26.js
           node --check tests/n5-card-quiz.js
           node --check tests/n5-session-audit.js
+          node --check tests/n5-closure.js
+          node --check tests/n5-browser-smoke.cjs
           node --check tests/n5-grammar-quiz.js
           node --check tests/n5-kanji-quality.js
           node --check tests/helpers/load-content.js
@@ -146,6 +148,9 @@ jobs:
 
       - name: N5 session and saved progress audit
         run: node tests/n5-session-audit.js
+
+      - name: N5 curriculum closure gate
+        run: node tests/n5-closure.js
 
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js

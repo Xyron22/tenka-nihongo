@@ -6,28 +6,32 @@
 
 ## Status
 
-Ini adalah **V0.1 / fondasi V1**. UI dan sistem utama sudah berjalan, tetapi materi N5–N1 masih berupa data awal/demo dan akan diperluas bertahap. Fokus konten pertama adalah **N5 + Kaigo**.
+Kurikulum **N5 CLOSED** pada branch `stage-8a1-n5-kanji`: Bunpou, Kotoba, Kanji/Bushu dan alur latihan telah melewati audit coverage serta regresi. PR #16 tetap **draft**; perubahan ini belum di-merge atau di-deploy ke situs publik. Level lain dan Kaigo berkembang secara terpisah.
+
+Rincian scope, sumber, hasil audit dan batas rilis ada di [laporan N5 CLOSED](docs/N5_CLOSED.md) dan [checkpoint bertahap](docs/N5_CHECKPOINTS.md). Penutupan kurikulum tidak mengubah progres belajar pengguna. Inventaris materi mengikuti audit silang rujukan; jumlahnya tidak dinyatakan sebagai daftar resmi JLPT.
 
 ## Fitur yang sudah ada
 
 - JLPT N5, N4, N3, N2, N1 terpisah
 - Flashcard kanji dan kosakata dengan animasi flip
-- Furigana/bacaan, romaji, arti Indonesia, dan contoh kalimat
-- Bunpou per level dengan penjelasan Indonesia
+- Bacaan kana, arti Indonesia, dan contoh kalimat; romaji pada kartu yang menyediakannya
+- Bunpou N5 dengan fungsi, kapan dipakai, kesalahan umum, dua contoh, dan contrast
 - Quiz pilihan ganda dengan timer 30 detik
-- Listening quiz
-- Sound effect benar/salah + voice Jepang + Meme Mode
+- Listening kosakata N5 dengan bacaan dan konteks kana untuk homofon
+- Pembahasan jawaban, contoh dan penjelasan setelah quiz N5
+- Sound effect jawaban + voice Jepang untuk awal/akhir sesi
 - Progress lokal, streak, best score, dan jumlah quiz
 - SRS dasar / review card
 - Daily Mission
 - Kaigo・Keperawatan tanpa level JLPT
 - Kosakata medis & latihan 申し送り
-- Kakijun / stroke-order demo dan canvas latihan menulis kanji
+- Bushu, komponen visual dan mnemonic sebagai alat bantu ingatan
+- Kakijun N5 dari KanjiVG terverifikasi serta canvas latihan menulis
 - PWA / Add to Home Screen di iPhone
 
 ## Menjalankan secara lokal
 
-Service worker/PWA perlu HTTP(S). Jalankan dari folder project:
+Aplikasi perlu HTTP(S). Jalankan dari folder project:
 
 ```bash
 python3 -m http.server 8080
@@ -46,16 +50,20 @@ Setelah aplikasi di-host melalui HTTPS:
 
 ## Penyimpanan progres
 
-V0.1 menggunakan `localStorage`, jadi belum perlu akun maupun server. Cloud sync dapat ditambahkan pada versi berikutnya.
+Progres memakai `localStorage` (`tenka-progress`), jadi belum perlu akun maupun server. Progres tetap berada di perangkat/browser tempat belajar.
 
 ## Struktur konten
 
-Materi utama ada di `data.js`. Dengan begitu database kosakata, kanji, bunpou, dan Kaigo dapat diperluas tanpa membongkar UI utama.
+Data dasar ada di `data.js`, dilengkapi content pack yang dimuat berurutan oleh `index.html`. Coverage N5 dan sumber Kanji ada di `docs/`. ID materi lama dipertahankan agar progres tetap terbaca.
 
 ## Kakijun
 
-Beberapa kanji awal memiliki stroke path demo. Untuk materi penuh akan digunakan dataset stroke-order yang terverifikasi, dengan atribusi/lisensi yang sesuai.
+Seluruh Kanji N5 memakai goresan berurutan KanjiVG dan metadata Bushu/jumlah goresan KANJIDIC2. Lihat [sumber dan lisensi](docs/N5_KANJI_SOURCES.md). Canvas untuk latihan bebas dan tidak menilai kebenaran tulisan.
 
 ## Audio
 
-Voice Jepang menggunakan speech synthesis dari perangkat. Sound effect dibuat secara programatik dan tidak mengambil klip audio berhak cipta dari anime.
+Pengucapan materi memakai speech synthesis perangkat. SFX quiz dan VOICEVOX Nemo untuk awal/akhir sesi disiapkan oleh pipeline build; sistem audio memiliki fallback runtime.
+
+## Pemeriksaan
+
+Jalankan `bash scripts/check-local.sh` untuk syntax dan seluruh regresi. Tes mengikuti manifest runtime terkini, memeriksa kualitas konten/coverage, semua target quiz N5, sesi dan progres lama. CI juga memvalidasi aset/build. Browser QA opsional tersedia di `tests/n5-browser-smoke.cjs`; petunjuknya ada di laporan N5 CLOSED.

@@ -483,10 +483,10 @@
 .question{position:relative;margin:0 0 14px;padding:24px;border-color:rgba(255,255,255,.08);border-radius:24px;background:linear-gradient(155deg,#22262e,#181b21);box-shadow:0 12px 30px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.025);text-align:center}
 .quiz-kicker{font-size:11px;font-weight:850;color:#a9b3bc}
 .question .jp{font-size:42px;margin:14px 0 7px;letter-spacing:-.02em}
-.quiz-reading{color:#aeb8c2;font-size:13px}
+.quiz-reading{color:#aeb8c2;font-size:14px;line-height:1.65}
 .quiz-listening-icon{width:76px;height:76px;display:grid;place-items:center;margin:16px auto 13px;border-radius:24px;background:rgba(127,179,255,.09);border:1px solid rgba(127,179,255,.13);font-size:34px}
 .quiz-replay{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
-.quiz-help{margin-top:5px;color:#9ea9b3;font-size:10.5px}
+.quiz-help{margin-top:5px;color:#aeb8c2;font-size:13px;line-height:1.65}
 .quiz-answer-label{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:18px 2px 9px}
 .quiz-answer-label span{font-size:9.5px;letter-spacing:.14em;font-weight:900;color:#84909b}
 .quiz-answer-label small{font-size:10px;color:#777f88}

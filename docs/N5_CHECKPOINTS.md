@@ -132,3 +132,14 @@ Validation: local syntax/regression and [CI run 39456853771](https://github.com/
 - Exercise correct, wrong and timeout paths through the actual runtime with a controlled clock; require one attempt/feedback per question, one result save, persistent scores, and no stale audio or question advancement after navigating or starting a new session.
 - Load legacy SRS and grammar records, review old cards, mark a newly added lesson, and reload the saved progress. Existing IDs and best scores remain intact, and Daily Mission reflects the actual actions.
 - Browser validation and final closure evidence follow after this checkpoint's full regression and CI gates.
+
+Validation: local syntax/regression and [CI run 39457481708](https://github.com/Xyron22/tenka-nihongo/actions/runs/39457481708) passed at `b97d195`. Production upload and deployment were skipped.
+
+## Stage 8A-13.1 — N5 CLOSED
+
+- All content, reference coverage, practice, saved-progress and mobile gates are closed for the TENKA curriculum scope described in [N5_CLOSED.md](N5_CLOSED.md).
+- Record the closure snapshot separately from learner progress. Preserve all pre-expansion IDs across JLPT levels and keep PR #16 draft.
+- Make quiz kana/context easier to read on mobile and label Kanji questions explicitly.
+- Check all 925 cards at three viewport widths, inspect Bushu/kakijun/quiz review visually, and verify progress after a real browser reload. The reproducible optional browser script records exact source hashes in `n5-ui-audit.json`.
+- Keep historical tests labelled as baseline checks. Current closure and its integration with CI have their own regression gate.
+- Final local syntax/regression and the final PR-head CI must pass before delivery. No merge or production deployment is performed.
