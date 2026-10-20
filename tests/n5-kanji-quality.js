@@ -33,5 +33,16 @@ for(const file of ['data.js',...Array.from({length:14},(_,i)=>`content-pack-v${i
   if(fs.existsSync(path))vm.runInContext(fs.readFileSync(path,'utf8'),baseline);
 }
 for(const old of baseline.TENKA_DATA.jlpt.N5.kanji)assert(cards.some(c=>c.id===old.id&&c.kanji===old.kanji),`lost progress ID ${old.id}`);
-if(manifest.contentClosed)for(const char of [...manifest.expectedCore,...manifest.retainedSupport])assert(chars.has(char),`uncovered target ${char}`);
+if(manifest.contentClosed){
+  for(const char of [...manifest.expectedCore,...manifest.retainedSupport])assert(chars.has(char),`uncovered target ${char}`);
+  const coverage=require('../docs/n5-kanji-coverage.json');
+  for(const [source,rows] of Object.entries(coverage.entries)){
+    assert.equal(rows.length,coverage.sources[source].observedEntries,`reference inventory incomplete: ${source}`);
+    for(const row of rows){
+      assert(['covered','deferred'].includes(row.status),`unresolved ${source}: ${row.character}`);
+      if(row.status==='covered')assert(cards.some(c=>c.id===row.lesson&&c.kanji===row.character),`broken coverage ${row.character}`);
+      else assert(row.reason&&row.lesson===null,`reasoned deferral ${row.character}`);
+    }
+  }
+}
 console.log(`N5 Kanji quality: ${cards.length} lessons; verified radicals, readings, memory aids and stroke paths.`);

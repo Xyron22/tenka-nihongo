@@ -95,3 +95,12 @@ Validation: 820 vocabulary cards; all 1,446 reference rows are resolved by cover
 - Provide selected onyomi/kunyomi, verified classical Bushu, visual components, concrete word readings and explicitly non-etymological memory aids.
 - Replace approximate N5 stroke diagrams with attributed KanjiVG paths; preserve the original 109-unit coordinate system. Validate path counts against KANJIDIC2.
 - Keep notes outside the fixed-height flip card. Content closure follows the next reference reconciliation checkpoint.
+
+Validation: local syntax/regression and [CI run 39453710246](https://github.com/Xyron22/tenka-nihongo/actions/runs/39453710246) passed at `45bb0fe`. Production upload and deployment were skipped.
+
+## Stage 8A-11.2 — Kanji reference reconciliation
+
+- Add the remaining 27 targets, for 103 cross-referenced targets plus two retained supporting cards (朝 and 夜). These are curriculum inventory figures, not an official modern JLPT threshold.
+- Resolve every entry in three reference inventories: KANJIDIC2 historical Level 4, JLPT Sensei N5, and MLC Basic Kanji 120. MLC-only targets with conflicting level placement are deferred individually, while their beginner vocabulary remains learnable.
+- All loaded N5 kanji have verified radical numbers and stroke counts, selected readings, visual components, a labelled memory aid, a word with kana and Indonesian meaning, and an original translated example.
+- Preserve all original kanji IDs. Final exercise and UI audit remains required before N5 CLOSED.

@@ -53,6 +53,7 @@ jobs:
           node --check content-pack-v22.js
           node --check content-pack-v23-strokes.js
           node --check content-pack-v23.js
+          node --check content-pack-v24.js
           node --check tests/n5-kanji-quality.js
           node --check tests/helpers/load-content.js
           node --check tests/n5-content-quality.js
