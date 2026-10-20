@@ -58,6 +58,9 @@ jobs:
           node --check content-pack-v26.js
           node --check content-pack-v27.js
           node --check content-pack-v28.js
+          node --check content-pack-v29.js
+          node --check tests/kaigo-browser-smoke.cjs
+          node --check tests/kaigo-listening.js
           node --check tests/kaigo-workplace.js
           node --check tests/n5-card-quiz.js
           node --check tests/n5-session-audit.js
@@ -157,6 +160,9 @@ jobs:
 
       - name: Kaigo workplace content and practice
         run: node tests/kaigo-workplace.js
+
+      - name: Kaigo kana listening and quiz review
+        run: node tests/kaigo-listening.js
 
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js

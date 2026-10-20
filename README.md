@@ -10,6 +10,8 @@ Kurikulum **N5 CLOSED** pada branch `stage-8a1-n5-kanji`: Bunpou, Kotoba, Kanji/
 
 Rincian scope, sumber, hasil audit dan batas rilis ada di [laporan N5 CLOSED](docs/N5_CLOSED.md) dan [checkpoint bertahap](docs/N5_CHECKPOINTS.md). Penutupan kurikulum tidak mengubah progres belajar pengguna. Inventaris materi mengikuti audit silang rujukan; jumlahnya tidak dinyatakan sebagai daftar resmi JLPT.
 
+Kaigo kini memiliki **140 kartu kosakata**: 68 kartu lama dengan contoh berkana lengkap, ditambah 72 istilah ruangan, fasilitas, peralatan dan persediaan kerja. Audio menggunakan bacaan kana yang disiapkan; quiz tertulis/listening menyediakan konteks dan pembahasan. Rincian dan rujukan ada di [checkpoint Kaigo](docs/KAIGO_CHECKPOINTS.md). Milestone ini mencakup ruangan/peralatan; keseluruhan kurikulum Kaigo belum dinyatakan selesai.
+
 ## Fitur yang sudah ada
 
 - JLPT N5, N4, N3, N2, N1 terpisah
@@ -17,8 +19,8 @@ Rincian scope, sumber, hasil audit dan batas rilis ada di [laporan N5 CLOSED](do
 - Bacaan kana, arti Indonesia, dan contoh kalimat; romaji pada kartu yang menyediakannya
 - Bunpou N5 dengan fungsi, kapan dipakai, kesalahan umum, dua contoh, dan contrast
 - Quiz pilihan ganda dengan timer 30 detik
-- Listening kosakata N5 dengan bacaan dan konteks kana untuk homofon
-- Pembahasan jawaban, contoh dan penjelasan setelah quiz N5
+- Listening kosakata N5 dan Kaigo dengan bacaan serta konteks kana
+- Pembahasan jawaban, contoh dan penjelasan setelah quiz N5/Kaigo
 - Sound effect jawaban + voice Jepang untuk awal/akhir sesi
 - Progress lokal, streak, best score, dan jumlah quiz
 - SRS dasar / review card
@@ -66,4 +68,4 @@ Pengucapan materi memakai speech synthesis perangkat. SFX quiz dan VOICEVOX Nemo
 
 ## Pemeriksaan
 
-Jalankan `bash scripts/check-local.sh` untuk syntax dan seluruh regresi. Tes mengikuti manifest runtime terkini, memeriksa kualitas konten/coverage, semua target quiz N5, sesi dan progres lama. CI juga memvalidasi aset/build. Browser QA opsional tersedia di `tests/n5-browser-smoke.cjs`; petunjuknya ada di laporan N5 CLOSED.
+Jalankan `bash scripts/check-local.sh` untuk syntax dan seluruh regresi. Tes mengikuti manifest runtime terkini, memeriksa kualitas konten/coverage, semua target quiz N5, sesi dan progres lama. CI juga memvalidasi aset/build. Browser QA opsional tersedia di `tests/n5-browser-smoke.cjs` dan `tests/kaigo-browser-smoke.cjs`; petunjuknya ada di laporan N5 CLOSED dan checkpoint Kaigo.

@@ -10,8 +10,6 @@ N5 is closed at `e92f15f`. The next agreed focus is Kaigo, including hospital/fa
 - Rooms with potentially overlapping glosses share a quiz exclusion group. They cannot compete as distractors, while every card stays available for flashcards/SRS and quiz sampling.
 - Current-runtime tests preserve every JLPT dataset byte-for-byte, preserve legacy Kaigo content, validate kana, exercise category/SRS integration and require old/new quiz targets to remain reachable.
 
-## Reference basis
-
 Stage 9A-1 validation: local syntax/regression and [CI run 39512346807](https://github.com/Xyron22/tenka-nihongo/actions/runs/39512346807) passed at `dec93fd`. Production upload/deploy were skipped.
 
 ## Stage 9A-2 — Work equipment and supplies
@@ -21,6 +19,20 @@ Stage 9A-1 validation: local syntax/regression and [CI run 39512346807](https://
 - Every entry includes kana, an original translated example and a usage note. Equipment recognition is taught separately from clinical technique.
 - Keep the existing 13 illustrated medical-tool cards and their image mapping intact; this batch expands workplace vocabulary rather than substituting unillustrated cards for the image collection.
 - Let Kaigo vocabulary flashcards grow with their content. Browser QA found two legacy cards clipping at 320 px after kana was supplied; the scoped grid layout reserves space for the label and both faces. N5 and illustrated-tool card layouts remain separate.
+
+Stage 9A-2 validation: local syntax/regression and [CI run 39513239316](https://github.com/Xyron22/tenka-nihongo/actions/runs/39513239316) passed at `35756b2`. All 140 vocabulary cards pass browser layout checks at 320/390/720 px. Production upload/deploy were skipped.
+
+## Stage 9A-3 — Contextual pronunciation and practice audit
+
+- Use authored kana on Kaigo vocabulary flashcard audio. Listening speaks the target reading followed by its kana example, including explicit readings for 食札 and SpO₂.
+- Add conservative semantic exclusions to the workplace quiz: generic supply labels cannot become a second defensible answer; assistance, swallowing and communication glosses with overlap are not paired.
+- Written quizzes show Japanese/kana context; result review includes the selected/correct answer, translated example and usage notes. All 140 vocabulary targets remain reachable in written and listening modes.
+- Audit timeout, wrong/correct answers, duplicate taps, save-once results and persistence. Existing N5, illustrated tools, SRS and clinical report workflows retain their regression gates.
+- Complete the rooms/equipment vocabulary checkpoint after the browser and final-head CI gates. Broader Kaigo and national-exam development remain separate workstreams.
+
+Stage 9A-3 local validation: syntax and the full runtime/content/audio regression suite passed. The [browser audit](kaigo-ui-audit.json) records runtime source hashes, 140 cards at 320/390/720 px, category/usage-note access, authored speech text, written/listening results and SRS/result persistence after reload. Both quiz modes and expanded result reviews have no horizontal overflow at those widths. Screenshots were inspected for a long legacy card, facility usage notes and result review. N5 browser regression also checks all 925 cards plus Bushu, stroke animation, canvas and grammar result/persistence flows on the updated runtime. The exact final commit and CI result are pinned in [draft PR #16](https://github.com/Xyron22/tenka-nihongo/pull/16); production steps must stay skipped.
+
+Reproduce the optional browser check with `node tests/kaigo-browser-smoke.cjs` and Playwright installed. Optional environment variables select Chromium (`TENKA_TEST_CHROMIUM`), an installed `@fontsource/noto-sans-jp` directory (`TENKA_TEST_JAPANESE_FONT_DIR`) and an output directory (`TENKA_UI_AUDIT_OUTPUT`). The test uses a fresh browser context with local assets. It verifies the text sent to speech synthesis; the available Japanese voice and playback remain device/browser dependent.
 
 Additional terminology references:
 
