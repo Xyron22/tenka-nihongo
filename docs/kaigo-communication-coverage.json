@@ -20,9 +20,13 @@
         "k-v-141",
         "k-v-147"
       ],
-      "handoffIds": [],
-      "status": "vocabulary-ready",
-      "intent": "Memisahkan penjelasan, pemahaman dan persetujuan."
+      "handoffIds": [
+        "h-21"
+      ],
+      "status": "vocabulary-and-practice-ready",
+      "intent": "Memisahkan penjelasan, pemahaman dan persetujuan.",
+      "answerReview": "Penjelasan sudah diberikan, tetapi pasien menyatakan belum ingin dibantu; bantuan belum dimulai.",
+      "contrast": "Pemberian penjelasan, diam atau kata memahami tidak otomatis menyatakan persetujuan."
     },
     {
       "id": "preference",
@@ -30,9 +34,13 @@
         "k-v-142",
         "k-v-143"
       ],
-      "handoffIds": [],
-      "status": "vocabulary-ready",
-      "intent": "Mengenali kehendak dan keinginan tanpa membuat asumsi."
+      "handoffIds": [
+        "h-22"
+      ],
+      "status": "vocabulary-and-practice-ready",
+      "intent": "Mengenali kehendak dan keinginan tanpa membuat asumsi.",
+      "answerReview": "Keinginan yang disampaikan adalah teh hangat; minuman belum disajikan dan persiapannya sedang dikonfirmasi.",
+      "contrast": "Keinginan, ketersediaan dan tindakan yang sudah selesai merupakan informasi berbeda."
     },
     {
       "id": "choice-refusal",
@@ -40,9 +48,13 @@
         "k-v-144",
         "k-v-145"
       ],
-      "handoffIds": [],
-      "status": "vocabulary-ready",
-      "intent": "Memahami pilihan nyata dan penolakan terhadap suatu tawaran."
+      "handoffIds": [
+        "h-23"
+      ],
+      "status": "vocabulary-and-practice-ready",
+      "intent": "Memahami pilihan nyata dan penolakan terhadap suatu tawaran.",
+      "answerReview": "Pilihan putih dibatalkan dan pilihan terakhir yang dikonfirmasi adalah biru.",
+      "contrast": "Jangan memakai pilihan awal setelah pasien mengubahnya dengan jelas."
     },
     {
       "id": "privacy-accompaniment",
@@ -50,9 +62,13 @@
         "k-v-146",
         "k-v-152"
       ],
-      "handoffIds": [],
-      "status": "vocabulary-ready",
-      "intent": "Mengenali privasi percakapan dan kegiatan menemani."
+      "handoffIds": [
+        "h-24"
+      ],
+      "status": "vocabulary-and-practice-ready",
+      "intent": "Mengenali privasi percakapan dan kegiatan menemani.",
+      "answerReview": "Keinginan tempat tenang dikonfirmasi dan pasien ditemani ke ruang konsultasi; isi percakapan tidak dibahas di koridor.",
+      "contrast": "Menemani ke lokasi dan membagikan isi konsultasi adalah tindakan yang berbeda."
     },
     {
       "id": "clarify",
@@ -60,9 +76,13 @@
         "k-v-150",
         "k-v-151"
       ],
-      "handoffIds": [],
-      "status": "vocabulary-ready",
-      "intent": "Meminta pengulangan/tempo lebih pelan dan memberi waktu menjawab."
+      "handoffIds": [
+        "h-25"
+      ],
+      "status": "vocabulary-and-practice-ready",
+      "intent": "Meminta pengulangan/tempo lebih pelan dan memberi waktu menjawab.",
+      "answerReview": "Pasien meminta tempo lebih pelan, bukan volume lebih keras; penjelasan diulang dan jawaban ditunggu.",
+      "contrast": "分かりました menyatakan memahami dalam kasus ini dan tidak membuktikan persetujuan untuk tindakan lain."
     },
     {
       "id": "confirm",
@@ -70,9 +90,13 @@
         "k-v-148",
         "k-v-149"
       ],
-      "handoffIds": [],
-      "status": "vocabulary-ready",
-      "intent": "Memastikan informasi dan memperbaruinya setelah koreksi."
+      "handoffIds": [
+        "h-26"
+      ],
+      "status": "vocabulary-and-practice-ready",
+      "intent": "Memastikan informasi dan memperbaruinya setelah koreksi.",
+      "answerReview": "午後二時 / 14.00 adalah informasi yang dikoreksi dan dikonfirmasi terakhir.",
+      "contrast": "Bedakan jam yang salah saat pengulangan dari koreksi dan konfirmasi akhir; 午後 bukan 午前."
     }
   ]
 }

@@ -140,14 +140,44 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  await page.getByRole('button',{name:'Lanjut ke soal →',exact:true}).click();
  const correct=await page.evaluate(()=>TENKA_DATA.kaigo.handoff[12].answer);await page.locator('.handoff-choice-list button').nth(correct).click();
  await page.locator('.handoff-result .action').click();assert.equal(await page.evaluate(()=>TENKA_CORE.state.view),'kaigo');
+ await page.evaluate(()=>go('kaigo'));
+ await page.getByRole('button',{name:'Komunikasi & pilihan pribadi',exact:true}).click();
+ assert(await page.evaluate(()=>TENKA_CORE.state.cards.length===12&&TENKA_CORE.state.cards.every(c=>c.workplacePack==='9C-1')));
+ const communicationId=await page.evaluate(()=>TENKA_CORE.state.cards[0].id);
+ await page.locator('.flash').click();await page.locator('.muted-box summary').click();
+ await page.waitForFunction(()=>{const el=document.querySelector('.flash'),m=new DOMMatrixReadOnly(getComputedStyle(el).transform);return el.classList.contains('flipped')&&Math.abs(m.m11+1)<.001&&Math.abs(m.m13)<.001});
+ assert((await page.locator('.muted-box').textContent()).includes('memahami penjelasan belum tentu berarti menyetujuinya'));
+ await page.locator('.session-audio').click();assert.equal(await page.evaluate(()=>window.__tenkaSpoken.at(-1)),'どうい');
+ await page.screenshot({path:path.join(out,'kaigo-communication-card.png'),fullPage:true});
+ await page.locator('[onclick="rateCard(\'good\')"]').click();
+ const communicationCases=await page.evaluate(()=>TENKA_DATA.kaigo.handoff.flatMap((h,index)=>h.workplacePack==='9C-2'?[{id:h.id,index}]:[]));
+ await page.evaluate(cases=>{for(const h of cases)delete TENKA_CORE.state.progress.handoffDone[h.id];openHandoffPractice(cases[0].index)},communicationCases);
+ for(let i=0;i<2;i++)await page.getByRole('button',{name:'Kalimat berikutnya →',exact:true}).click();
+ await page.getByRole('button',{name:'Lanjut ke soal →',exact:true}).click();
+ const wrong=await page.evaluate(()=>{const h=TENKA_DATA.kaigo.handoff[TENKA_CORE.state.handoffSession.caseIndex];return(h.answer+1)%4});
+ await page.locator('.handoff-choice-list button').nth(wrong).click();
+ assert.equal(await page.evaluate(()=>!!TENKA_CORE.state.progress.handoffDone['h-21']),false,'wrong consent answer is not mastery');
+ await page.locator('.handoff-result .action').click();
+ for(const c of communicationCases){
+   await page.evaluate(index=>openHandoffPractice(index),c.index);
+   await page.locator('.handoff-audio-grid button').first().click();
+   assert.equal(await page.evaluate(()=>window.__tenkaSpoken.at(-1)),await page.evaluate(index=>TENKA_DATA.kaigo.handoff[index].segments[0].reading,c.index));
+   for(let i=0;i<2;i++)await page.getByRole('button',{name:'Kalimat berikutnya →',exact:true}).click();
+   if(c.id==='h-26')await page.screenshot({path:path.join(out,'kaigo-communication-confirm.png'),fullPage:true});
+   await page.getByRole('button',{name:'Lanjut ke soal →',exact:true}).click();
+   const answer=await page.evaluate(index=>TENKA_DATA.kaigo.handoff[index].answer,c.index);
+   await page.locator('.handoff-choice-list button').nth(answer).click();await page.locator('.handoff-result .action').click();
+   assert.equal(await page.evaluate(()=>TENKA_CORE.state.view),'kaigo');
+ }
  await page.reload();await page.waitForFunction(()=>window.TENKA_READY);
+ assert(await page.evaluate(({id,cases})=>TENKA_CORE.state.progress.reviews[id]?.rating==='good'&&cases.every(c=>!!TENKA_CORE.state.progress.handoffDone[c.id]),{id:communicationId,cases:communicationCases}),'communication SRS and all six case completions survive reload');
  assert(await page.evaluate(id=>TENKA_CORE.state.progress.reviews[id]?.rating==='good',savedId),'SRS survives browser reload');
  assert(await page.evaluate(()=>TENKA_CORE.state.progress.best['KAIGO-kaigo']===90&&TENKA_CORE.state.progress.best['KAIGO-kaigo-listening']===100),'both quiz results survive reload');
  assert(await page.evaluate(()=>!!TENKA_CORE.state.progress.houkokuDone['r-13']&&!!TENKA_CORE.state.progress.houkokuEssayDone['r-13']&&!!TENKA_CORE.state.progress.handoffDone['h-13']),'report/writing/handoff completions survive browser reload');
  assert.equal(errors.length,0,errors.join('\n'));
  const names=['index.html','styles.css','app-v2.js',...require('./helpers/load-content')().files];
  const sourceHashes=Object.fromEntries([...new Set(names)].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(base,name))).digest('hex')]));
- const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWritingAndKanaAudio:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true},sourceHashes};
+ const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWritingAndKanaAudio:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true,communicationCategoryAndNotes:true,communicationKanaSpeech:true,communicationWrongAnswerAndRetry:true,communicationProgressReload:true},sourceHashes};
  fs.writeFileSync(path.join(out,'kaigo-ui-audit.json'),JSON.stringify(report,null,2)+'\n');
  if(results.some(r=>r.bad.length||r.practiceBad.length||r.widths.some(v=>v.width>r.width)))process.exitCode=1;
  }finally{await browser.close()}

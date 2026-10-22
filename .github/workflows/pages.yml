@@ -61,6 +61,7 @@ jobs:
           node --check content-pack-v29.js
           node --check content-pack-v30.js
           node --check content-pack-v31.js
+          node --check content-pack-v32.js
           node --check tests/kaigo-communication.js
           node --check tests/kaigo-handoff.js
           node --check tests/kaigo-browser-smoke.cjs
@@ -176,7 +177,7 @@ jobs:
       - name: Kaigo sentence handoff and authored audio
         run: node tests/kaigo-handoff.js
 
-      - name: Kaigo communication vocabulary and objective coverage
+      - name: Kaigo communication content and practice coverage
         run: node tests/kaigo-communication.js
 
       - name: TENKA Core 2 system regression test
