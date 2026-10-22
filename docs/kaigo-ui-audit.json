@@ -1,0 +1,197 @@
+{
+  "browser": "Chromium",
+  "font": "Noto Sans JP",
+  "errors": [],
+  "results": [
+    {
+      "width": 320,
+      "cardsChecked": 152,
+      "reportModelsChecked": 40,
+      "handoffSentencesChecked": 77,
+      "bad": [],
+      "practiceBad": [],
+      "widths": [
+        {
+          "view": "home",
+          "width": 320
+        },
+        {
+          "view": "kaigo",
+          "width": 320
+        },
+        {
+          "view": "daily",
+          "width": 320
+        },
+        {
+          "view": "progress",
+          "width": 320
+        },
+        {
+          "view": "kaigo-kaigo-quiz",
+          "width": 320
+        },
+        {
+          "view": "kaigo-kaigo-review",
+          "width": 320
+        },
+        {
+          "view": "kaigo-listening-quiz",
+          "width": 320
+        },
+        {
+          "view": "kaigo-listening-review",
+          "width": 320
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "cardsChecked": 152,
+      "reportModelsChecked": 40,
+      "handoffSentencesChecked": 77,
+      "bad": [],
+      "practiceBad": [],
+      "widths": [
+        {
+          "view": "home",
+          "width": 390
+        },
+        {
+          "view": "kaigo",
+          "width": 390
+        },
+        {
+          "view": "daily",
+          "width": 390
+        },
+        {
+          "view": "progress",
+          "width": 390
+        },
+        {
+          "view": "kaigo-kaigo-quiz",
+          "width": 390
+        },
+        {
+          "view": "kaigo-kaigo-review",
+          "width": 390
+        },
+        {
+          "view": "kaigo-listening-quiz",
+          "width": 390
+        },
+        {
+          "view": "kaigo-listening-review",
+          "width": 390
+        }
+      ]
+    },
+    {
+      "width": 720,
+      "cardsChecked": 152,
+      "reportModelsChecked": 40,
+      "handoffSentencesChecked": 77,
+      "bad": [],
+      "practiceBad": [],
+      "widths": [
+        {
+          "view": "home",
+          "width": 720
+        },
+        {
+          "view": "kaigo",
+          "width": 720
+        },
+        {
+          "view": "daily",
+          "width": 720
+        },
+        {
+          "view": "progress",
+          "width": 720
+        },
+        {
+          "view": "kaigo-kaigo-quiz",
+          "width": 720
+        },
+        {
+          "view": "kaigo-kaigo-review",
+          "width": 720
+        },
+        {
+          "view": "kaigo-listening-quiz",
+          "width": 720
+        },
+        {
+          "view": "kaigo-listening-review",
+          "width": 720
+        }
+      ]
+    }
+  ],
+  "flows": {
+    "facilityCategory": true,
+    "flashFlipAndUsageNote": true,
+    "authoredKanaSpeechText": true,
+    "srsScheduleAndReload": true,
+    "writtenQuizContext": true,
+    "listeningTargetHidden": true,
+    "listeningReplayText": true,
+    "wrongAndCorrectAnswers": true,
+    "translatedResultReview": true,
+    "quizResultReload": true,
+    "reportPuzzleAndKanaAudio": true,
+    "reportWritingAndKanaAudio": true,
+    "handoffSentenceAudioAndComprehension": true,
+    "handoffNormalSlowRates": true,
+    "workplacePracticeReload": true,
+    "communicationCategoryAndNotes": true,
+    "communicationKanaSpeech": true,
+    "communicationWrongAnswerAndRetry": true,
+    "communicationProgressReload": true
+  },
+  "sourceHashes": {
+    "index.html": "cd8b783d490cc2f0f025912c67cc20f828ad8c8c3fa3b3790c15093d4c52e0ae",
+    "styles.css": "8cd4f6f1d0cd5e71345e697d506b9b424f87ea89e61e792e0ae4fac246baa4c2",
+    "app-v2.js": "23a97dc7bc08418c639453ef9792294298aa44d813ea53b102a30413ad65a9ad",
+    "data.js": "feaccc112134d2b8575cfbd4602454185c96a178425894cfd8679a13828c61c6",
+    "content-pack-v1.js": "d0835acbcc74267b58455a346287e610920f33afada36cbbc6b90e3065e517fa",
+    "content-pack-v2.js": "0118afe7b6a8c70c81bb40be6fa05949b00c1f43d5466def888204c4dd736385",
+    "content-pack-v3.js": "e1f64113093c6b72f269fce7c7687c3b5b98d18d22b92e74a14b97e38cfb3009",
+    "content-pack-v4.js": "3c03f577403739355d612eb15ed9d0dce8a824c0ace88b41f0b35cb1a5685304",
+    "content-pack-v5.js": "92b733b3fcd0f14cc7642ec30cdbf903aeb9084a58dcba90c42a23ddefe9f28b",
+    "content-pack-v6.js": "890292998eda2f8c2e5008847fb272bb50e1bba5f6891f74fcad1f430747fdbf",
+    "content-pack-v7.js": "3e5483a5449f08e439c6c66d19a4ff99fc85dd339d7003801f91c01b40b556a2",
+    "content-pack-v8.js": "a9d6d0566f872bdcb20bed228cbec82e52bcc47f851fc361ca20d300ff965325",
+    "content-pack-v9.js": "a00f30055319e0b3b97859c54c23a16cc5ab94c10bb79a745bd4a7a3ddf002bc",
+    "content-pack-v10.js": "2dd7cf5a86141cc94b54a396eae3e8dc876c2674111ce6a2f1fdc1e508af3f06",
+    "content-pack-v11.js": "5d6ba06ff964f986b07ea03312f9e802df680cd21b3ea2ec44bfd6cecd3c39e1",
+    "content-pack-v12.js": "e8421eaad1096c050071e57ff4d27d7d36839cd4c13945502a3605f5b6fe93a7",
+    "content-pack-v13.js": "7191d5298beafd80f89ac3540235eb8d802d17011a4437b344809fc63c1fa78c",
+    "content-pack-v14.js": "716fa5c985fb2833e3919c71a935c864872507081229e29ab51934a27fc506cc",
+    "content-pack-v15.js": "aaf4f7b2f459c7a7f29ab87c17daebdea2dcfdf7dfb96dcd69dbfe03d42e6ea1",
+    "content-pack-v16.js": "9d7028e2edec2359ca104ffafafc5ba354e70882765ba8b4c21bea2863aad619",
+    "content-pack-v17.js": "d2919fa49d58f6ebe5d47b21a4bc27355260021dc8305e9e0a9ce41215f2abf1",
+    "content-pack-v18.js": "62d0e765cf8fee5fe83cf4047787dca51b42dcd9b7f619c4ac3606138e23c58d",
+    "content-pack-v19.js": "59ca8f0e112f93a8ad3822bd0552619456e1514b3f84480f89781feee1292672",
+    "content-pack-v20.js": "59909421ae71fc9386160f6cdcddc12958af13ccec74342f5f7794db4287bf39",
+    "content-pack-v21.js": "de0ff6c48f052d259497aa8c3420bd3c149ee963fb43dab8e647db0876e897ca",
+    "content-pack-v22.js": "ce72b8784e3798e682e127e86f8c816f964179f67e66d934c49c3d432fc642c0",
+    "content-pack-v23-strokes.js": "9806004f881ab478998d247facbf0e03a3ec0b644ff7e2d15670cece0657e5e7",
+    "content-pack-v23.js": "da3b4cdd4d2b9d3c67d2915955f627037419a41241d64f9c084c4c3e9450b15b",
+    "content-pack-v24.js": "7a79a8662b02a2146f47fe6f19405834bf2a65b2a99cd3c26b11e08f5f3a1cf5",
+    "content-pack-v25.js": "a46b2cbc5c3e949516e04a6e97d6901d8bdfcf4f523902918cc27e74be2276ec",
+    "content-pack-v26.js": "c4a6f4cf0fc008f0a4b35f797158d085ee7ccb47fc9d165c58b2cf8c9ce679cd",
+    "content-pack-v27.js": "ba21a7a347596763f4dbd6985002408a2b159b6c4b7544bfe42d2806eeb9434a",
+    "content-pack-v28.js": "cb0026792dafc3530f47cd2cd5ad428b0dd5a7a68e08f17da01c0c8e2103ca3f",
+    "content-pack-v29.js": "1a3dc16256d43ffb25bbe8d8562fe16fc672d3d02505fae698df4f6d4bba7de8",
+    "content-pack-v30.js": "99ce086fb2a0420f2aa7ef345a66d63a2dce20255f8a674d94579570bb2ae949",
+    "content-pack-v31.js": "e5c0a265d066f4660152cd01b1e41f057624b0ae7dde65756b77050ebb5fa8e3",
+    "content-pack-v32.js": "217e8ea98213a716643ee3c28fe01dc7fd18576edcc908b8b0b040be4cbd054f",
+    "houkoku-pack-v1.js": "6752aed020dd6ee8811b45dbd708f25806dafdf1eba37a7ecb8cb50f7190089d",
+    "houkoku-pack-v2.js": "271ffec2c6bbd3e278378a7c3c887f476a7da8520340ff2c7e262db5a65231fd",
+    "houkoku-pack-v3.js": "b3609744cf5f214dfcc6f77b016c7650190a9367080ab187db93183f8142c795",
+    "tools-pack-v1.js": "4c777fb00164e20bf6bfd2268704261d2ebedf0144ad20aceea1c90a14397f24"
+  }
+}

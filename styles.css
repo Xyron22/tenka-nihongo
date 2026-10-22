@@ -466,6 +466,8 @@
 .face.backface .reading{font-size:26px}
 .face.backface .meaning{font-size:19px}
 .face.backface .example{border:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.20)}
+.flash.kaigo-flash{display:grid;height:auto;min-height:390px}
+.flash.kaigo-flash .face{position:relative;inset:auto;grid-area:1/1;min-width:0;min-height:390px;padding:52px 22px 28px}
 .flash-extra-actions{margin-bottom:12px}
 .flash-extra-actions .pill{background:linear-gradient(145deg,#20242b,#191c22);border:1px solid rgba(255,255,255,.08)}
 .srs-label{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:14px 2px 9px}
@@ -483,10 +485,10 @@
 .question{position:relative;margin:0 0 14px;padding:24px;border-color:rgba(255,255,255,.08);border-radius:24px;background:linear-gradient(155deg,#22262e,#181b21);box-shadow:0 12px 30px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.025);text-align:center}
 .quiz-kicker{font-size:11px;font-weight:850;color:#a9b3bc}
 .question .jp{font-size:42px;margin:14px 0 7px;letter-spacing:-.02em}
-.quiz-reading{color:#aeb8c2;font-size:13px}
+.quiz-reading{color:#aeb8c2;font-size:14px;line-height:1.65}
 .quiz-listening-icon{width:76px;height:76px;display:grid;place-items:center;margin:16px auto 13px;border-radius:24px;background:rgba(127,179,255,.09);border:1px solid rgba(127,179,255,.13);font-size:34px}
 .quiz-replay{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
-.quiz-help{margin-top:5px;color:#9ea9b3;font-size:10.5px}
+.quiz-help{margin-top:5px;color:#aeb8c2;font-size:13px;line-height:1.65}
 .quiz-answer-label{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:18px 2px 9px}
 .quiz-answer-label span{font-size:9.5px;letter-spacing:.14em;font-weight:900;color:#84909b}
 .quiz-answer-label small{font-size:10px;color:#777f88}
@@ -712,6 +714,13 @@
 .handoff-result-answer{padding:12px;border-radius:13px;background:rgba(0,0,0,.16);font-size:14px;font-weight:850}
 .handoff-result p{margin:10px 0 14px;color:#aab5af;font-size:10.5px;line-height:1.45}
 .handoff-result .action{width:100%}
+
+/* Whole-sentence readings wrap below Japanese text on narrow report cards. */
+.houkoku-ruby{display:flex;flex-direction:column;max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:left}
+.houkoku-ruby rt{display:block;font-size:11px;line-height:1.6;margin-top:3px}
+.work-selected-piece,.work-model-line{grid-template-columns:auto minmax(0,1fr)}
+.work-piece-chip{max-width:100%;min-width:0}
+.work-compare-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 
 @media(max-width:520px){
   .work-session-hero{padding:15px;border-radius:21px}

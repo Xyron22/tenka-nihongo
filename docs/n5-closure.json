@@ -1,0 +1,20 @@
+{
+  "level": "N5",
+  "status": "N5 CLOSED",
+  "checkedLocalDate": "2026-10-21",
+  "timezone": "Asia/Tokyo",
+  "completionBasis": "Resolved cross-reference coverage, content review, practice audit and runtime regression",
+  "officialJlptInventory": false,
+  "inventorySnapshot": {"grammar": 97, "vocab": 820, "kanji": 105},
+  "gates": {
+    "bunpou": "CLOSED",
+    "kotoba": "CLOSED",
+    "kanjiBushu": "CLOSED",
+    "quizzes": "CLOSED",
+    "savedProgress": "CLOSED",
+    "mobileLayout": "CLOSED"
+  },
+  "coverageLedgers": ["docs/n5-bunpou-coverage.json", "docs/n5-vocabulary-coverage.json", "docs/n5-kanji-coverage.json"],
+  "releasePolicy": {"branch": "stage-8a1-n5-kanji", "draftPr": 16, "mergeAuthorized": false, "productionDeployAuthorized": false},
+  "learnerProgress": "Unchanged; curriculum closure never marks a learner's cards or lessons complete"
+}

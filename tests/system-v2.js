@@ -7,7 +7,7 @@ function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
 
 const mockData={
   jlpt:{
-    N5:{kanji:[{id:'k1',kanji:'聞',reading:'ぶん・もん・きく',meaning:'kanji mendengar',example:'音を聞く',exampleMeaning:'mendengar suara'}],vocab:[{id:'v1',term:'聞く',reading:'きく',meaning:'mendengar'},{id:'v2',term:'読む',reading:'よむ',meaning:'membaca'},{id:'v3',term:'書く',reading:'かく',meaning:'menulis'},{id:'v4',term:'話す',reading:'はなす',meaning:'berbicara'}],grammar:[{id:'g1',title:'〜ます',meaning:'bentuk sopan',pattern:'Vます',explanation:'x',example:'食べます',exampleMeaning:'makan',contrast:''},{id:'g2',title:'〜てください',meaning:'tolong lakukan',pattern:'Vてください',explanation:'x',example:'見てください',exampleMeaning:'tolong lihat',contrast:''}]},
+    N5:{kanji:[{id:'k1',kanji:'聞',reading:'ぶん・もん・きく',meaning:'kanji mendengar',example:'音を聞く',exampleMeaning:'mendengar suara'}],vocab:[{id:'v1',term:'聞く',reading:'きく',meaning:'mendengar'},{id:'v2',term:'読む',reading:'よむ',meaning:'membaca'},{id:'v3',term:'書く',reading:'かく',meaning:'menulis'},{id:'v4',term:'話す',reading:'はなす',meaning:'berbicara'}],grammar:[{id:'g1',title:'〜ます',meaning:'bentuk sopan',pattern:'Vます',explanation:'x',usage:'fungsi uji',whenToUse:'kapan uji',watchOut:'hati-hati uji',commonMistake:'kesalahan uji',example:'食べます',exampleReading:'たべます',exampleMeaning:'makan',extraExample:'飲みます',extraExampleReading:'のみます',extraExampleMeaning:'minum',contrast:'bandingkan uji'},{id:'g2',title:'〜てください',meaning:'tolong lakukan',pattern:'Vてください',explanation:'x',example:'見てください',exampleMeaning:'tolong lihat',contrast:''}]},
     N4:{kanji:[],vocab:[],grammar:[{id:'g4',title:'〜たことがあります',meaning:'pernah melakukan',pattern:'Vたことがあります',explanation:'x',example:'行ったことがあります',exampleMeaning:'pernah pergi',contrast:''}]},N3:{kanji:[],vocab:[],grammar:[]},N2:{kanji:[],vocab:[],grammar:[]},N1:{kanji:[],vocab:[],grammar:[]}
   },
   kaigo:{vocab:[{id:'kg1',term:'体温',reading:'たいおん',meaning:'suhu tubuh',category:'バイタル'},{id:'kg2',term:'排便',reading:'はいべん',meaning:'buang air besar',category:'排泄'}],handoff:[{id:'h1',text:'体温は37度です。食事は5割です。',reading:'たいおん は さんじゅうななど です。しょくじ は ごわり です。',meaning:'Suhu 37 derajat. Makan 50%.',segments:[{text:'体温は37度です。',reading:'たいおん は さんじゅうななど です。',meaning:'Suhu 37 derajat.'},{text:'食事は5割です。',reading:'しょくじ は ごわり です。',meaning:'Makan 50%.'}],question:'berapa?',choices:['37','40'],answer:0}],houkoku:[{id:'r1',title:'転倒',titleReading:'てんとう',examArea:'コミュニケーション技術',situation:'A-san sudah duduk di lantai saat ditemukan.',pieces:[{text:'Aさんですが、',reading:'エーさん ですが、',meaning:'Mengenai A-san,'},{text:'私が見た時には床に座っておられました。',reading:'わたし が みた とき には ゆか に すわって おられました。',meaning:'Saat dilihat, beliau sudah duduk di lantai.'},{text:'状態の確認をお願いします。',reading:'じょうたい の かくにん を おねがいします。',meaning:'Mohon periksa kondisinya.'}],reading:'エーさん ですが、わたし が みた とき には ゆか に すわって おられました。じょうたい の かくにん を おねがいします。',meaning:'Model laporan jatuh.',note:'Laporkan fakta yang benar-benar terlihat.'}]}
@@ -114,6 +114,16 @@ function setQuiz(c,{length=2,index=0,answer=0}){
     for(const item of s.quiz.items)for(const choice of item.choices)assert(allowed.has(choice),'JLPT quiz distractors must stay inside the selected level');
     assert(!s.quiz.items.some(item=>item.choices.includes('suhu tubuh')||item.choices.includes('buang air besar')),'JLPT quiz must never pull Kaigo distractors');
     b.context.go('level');
+  }
+  {
+    const b=boot(),s=b.context.TENKA_CORE.state;
+    s.level='N5';b.context.go('grammar');
+    assert(b.html.includes('Fungsi')&&b.html.includes('fungsi uji'),'Bunpou card must render function guidance');
+    assert(b.html.includes('Kapan dipakai')&&b.html.includes('kapan uji'),'Bunpou card must render usage condition guidance');
+    assert(b.html.includes('Hati-hati')&&b.html.includes('hati-hati uji'),'Bunpou card must render misuse warning');
+    assert(b.html.includes('Kesalahan umum')&&b.html.includes('kesalahan uji'),'Bunpou card must render common mistake guidance');
+    assert(b.html.includes('CONTOH TAMBAHAN')&&b.html.includes('飲みます')&&b.html.includes('のみます'),'Bunpou card must render extra example with reading');
+    assert(b.html.includes('Bandingkan')&&b.html.includes('bandingkan uji'),'Bunpou card must render contrast guidance');
   }
   {
     const b=boot(),s=b.context.TENKA_CORE.state;

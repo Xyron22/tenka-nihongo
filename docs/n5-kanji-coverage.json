@@ -1,0 +1,2083 @@
+{
+  "policy": "Reference reconciliation, not an official current JLPT item specification or a count target. Historical Level 4 and modern N5 are distinct labels.",
+  "sources": {
+    "kanjidicHistorical4": {
+      "url": "https://www.edrdg.org/wiki/KANJIDIC_Project.html",
+      "observedEntries": 103
+    },
+    "jlptsensei": {
+      "url": "https://jlptsensei.com/jlpt-n5-kanji-list/",
+      "observedEntries": 80
+    },
+    "mlc": {
+      "url": "https://www.mlcjapanese.co.jp/Download/Kanji120.pdf",
+      "observedEntries": 120
+    }
+  },
+  "entries": {
+    "kanjidicHistorical4": [
+      {
+        "character": "一",
+        "status": "covered",
+        "lesson": "n5-k-51",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "七",
+        "status": "covered",
+        "lesson": "n5-k-57",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "万",
+        "status": "covered",
+        "lesson": "n5-k-63",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "三",
+        "status": "covered",
+        "lesson": "n5-k-53",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "上",
+        "status": "covered",
+        "lesson": "n5-k-10",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "下",
+        "status": "covered",
+        "lesson": "n5-k-11",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "中",
+        "status": "covered",
+        "lesson": "n5-k-12",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "九",
+        "status": "covered",
+        "lesson": "n5-k-59",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "二",
+        "status": "covered",
+        "lesson": "n5-k-52",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "五",
+        "status": "covered",
+        "lesson": "n5-k-55",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "人",
+        "status": "covered",
+        "lesson": "n5-k-02",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "今",
+        "status": "covered",
+        "lesson": "n5-k-67",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "休",
+        "status": "covered",
+        "lesson": "n5-k-05",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "会",
+        "status": "covered",
+        "lesson": "n5-k-21",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "何",
+        "status": "covered",
+        "lesson": "n5-k-50",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "先",
+        "status": "covered",
+        "lesson": "n5-k-17",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "入",
+        "status": "covered",
+        "lesson": "n5-k-104",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "八",
+        "status": "covered",
+        "lesson": "n5-k-58",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "六",
+        "status": "covered",
+        "lesson": "n5-k-56",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "円",
+        "status": "covered",
+        "lesson": "n5-k-64",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "出",
+        "status": "covered",
+        "lesson": "n5-k-105",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "分",
+        "status": "covered",
+        "lesson": "n5-k-65",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "前",
+        "status": "covered",
+        "lesson": "n5-k-41",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "北",
+        "status": "covered",
+        "lesson": "n5-k-49",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "十",
+        "status": "covered",
+        "lesson": "n5-k-60",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "千",
+        "status": "covered",
+        "lesson": "n5-k-62",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "午",
+        "status": "covered",
+        "lesson": "n5-k-93",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "半",
+        "status": "covered",
+        "lesson": "n5-k-94",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "南",
+        "status": "covered",
+        "lesson": "n5-k-48",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "友",
+        "status": "covered",
+        "lesson": "n5-k-28",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "口",
+        "status": "covered",
+        "lesson": "n5-k-76",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "古",
+        "status": "covered",
+        "lesson": "n5-k-89",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "右",
+        "status": "covered",
+        "lesson": "n5-k-44",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "名",
+        "status": "covered",
+        "lesson": "n5-k-27",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "四",
+        "status": "covered",
+        "lesson": "n5-k-54",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "国",
+        "status": "covered",
+        "lesson": "n5-k-68",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "土",
+        "status": "covered",
+        "lesson": "n5-k-84",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "外",
+        "status": "covered",
+        "lesson": "n5-k-45",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "多",
+        "status": "covered",
+        "lesson": "n5-k-91",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "大",
+        "status": "covered",
+        "lesson": "n5-k-13",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "天",
+        "status": "covered",
+        "lesson": "n5-k-82",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "女",
+        "status": "covered",
+        "lesson": "n5-k-70",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "子",
+        "status": "covered",
+        "lesson": "n5-k-69",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "学",
+        "status": "covered",
+        "lesson": "n5-k-19",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "安",
+        "status": "covered",
+        "lesson": "n5-k-88",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "小",
+        "status": "covered",
+        "lesson": "n5-k-14",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "少",
+        "status": "covered",
+        "lesson": "n5-k-92",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "山",
+        "status": "covered",
+        "lesson": "n5-k-03",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "川",
+        "status": "covered",
+        "lesson": "n5-k-85",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "左",
+        "status": "covered",
+        "lesson": "n5-k-43",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "年",
+        "status": "covered",
+        "lesson": "n5-k-16",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "店",
+        "status": "covered",
+        "lesson": "n5-k-98",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "後",
+        "status": "covered",
+        "lesson": "n5-k-42",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "手",
+        "status": "covered",
+        "lesson": "n5-k-77",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "新",
+        "status": "covered",
+        "lesson": "n5-k-90",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "日",
+        "status": "covered",
+        "lesson": "n5-k-01",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "時",
+        "status": "covered",
+        "lesson": "n5-k-15",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "書",
+        "status": "covered",
+        "lesson": "n5-k-37",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "月",
+        "status": "covered",
+        "lesson": "n5-k-06",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "木",
+        "status": "covered",
+        "lesson": "n5-k-08",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "本",
+        "status": "covered",
+        "lesson": "n5-k-26",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "来",
+        "status": "covered",
+        "lesson": "n5-k-32",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "東",
+        "status": "covered",
+        "lesson": "n5-k-46",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "校",
+        "status": "covered",
+        "lesson": "n5-k-20",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "母",
+        "status": "covered",
+        "lesson": "n5-k-73",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "毎",
+        "status": "covered",
+        "lesson": "n5-k-95",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "気",
+        "status": "covered",
+        "lesson": "n5-k-25",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "水",
+        "status": "covered",
+        "lesson": "n5-k-04",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "火",
+        "status": "covered",
+        "lesson": "n5-k-07",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "父",
+        "status": "covered",
+        "lesson": "n5-k-72",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "生",
+        "status": "covered",
+        "lesson": "n5-k-18",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "男",
+        "status": "covered",
+        "lesson": "n5-k-71",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "白",
+        "status": "covered",
+        "lesson": "n5-k-81",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "百",
+        "status": "covered",
+        "lesson": "n5-k-61",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "目",
+        "status": "covered",
+        "lesson": "n5-k-74",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "社",
+        "status": "covered",
+        "lesson": "n5-k-22",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "空",
+        "status": "covered",
+        "lesson": "n5-k-86",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "立",
+        "status": "covered",
+        "lesson": "n5-k-97",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "耳",
+        "status": "covered",
+        "lesson": "n5-k-75",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "聞",
+        "status": "covered",
+        "lesson": "n5-k-34",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "花",
+        "status": "covered",
+        "lesson": "n5-k-87",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "行",
+        "status": "covered",
+        "lesson": "n5-k-31",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "西",
+        "status": "covered",
+        "lesson": "n5-k-47",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "見",
+        "status": "covered",
+        "lesson": "n5-k-33",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "言",
+        "status": "covered",
+        "lesson": "n5-k-96",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "話",
+        "status": "covered",
+        "lesson": "n5-k-35",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "語",
+        "status": "covered",
+        "lesson": "n5-k-103",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "読",
+        "status": "covered",
+        "lesson": "n5-k-36",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "買",
+        "status": "covered",
+        "lesson": "n5-k-38",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "足",
+        "status": "covered",
+        "lesson": "n5-k-78",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "車",
+        "status": "covered",
+        "lesson": "n5-k-23",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "週",
+        "status": "covered",
+        "lesson": "n5-k-100",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "道",
+        "status": "covered",
+        "lesson": "n5-k-101",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "金",
+        "status": "covered",
+        "lesson": "n5-k-09",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "長",
+        "status": "covered",
+        "lesson": "n5-k-79",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "間",
+        "status": "covered",
+        "lesson": "n5-k-66",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "雨",
+        "status": "covered",
+        "lesson": "n5-k-83",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "電",
+        "status": "covered",
+        "lesson": "n5-k-24",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "食",
+        "status": "covered",
+        "lesson": "n5-k-29",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "飲",
+        "status": "covered",
+        "lesson": "n5-k-30",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "駅",
+        "status": "covered",
+        "lesson": "n5-k-99",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "高",
+        "status": "covered",
+        "lesson": "n5-k-80",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "魚",
+        "status": "covered",
+        "lesson": "n5-k-102",
+        "scope": "cross-referenced-core"
+      }
+    ],
+    "jlptsensei": [
+      {
+        "character": "日",
+        "status": "covered",
+        "lesson": "n5-k-01",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "一",
+        "status": "covered",
+        "lesson": "n5-k-51",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "国",
+        "status": "covered",
+        "lesson": "n5-k-68",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "人",
+        "status": "covered",
+        "lesson": "n5-k-02",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "年",
+        "status": "covered",
+        "lesson": "n5-k-16",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "大",
+        "status": "covered",
+        "lesson": "n5-k-13",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "十",
+        "status": "covered",
+        "lesson": "n5-k-60",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "二",
+        "status": "covered",
+        "lesson": "n5-k-52",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "本",
+        "status": "covered",
+        "lesson": "n5-k-26",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "中",
+        "status": "covered",
+        "lesson": "n5-k-12",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "長",
+        "status": "covered",
+        "lesson": "n5-k-79",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "出",
+        "status": "covered",
+        "lesson": "n5-k-105",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "三",
+        "status": "covered",
+        "lesson": "n5-k-53",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "時",
+        "status": "covered",
+        "lesson": "n5-k-15",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "行",
+        "status": "covered",
+        "lesson": "n5-k-31",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "見",
+        "status": "covered",
+        "lesson": "n5-k-33",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "月",
+        "status": "covered",
+        "lesson": "n5-k-06",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "分",
+        "status": "covered",
+        "lesson": "n5-k-65",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "後",
+        "status": "covered",
+        "lesson": "n5-k-42",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "前",
+        "status": "covered",
+        "lesson": "n5-k-41",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "生",
+        "status": "covered",
+        "lesson": "n5-k-18",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "五",
+        "status": "covered",
+        "lesson": "n5-k-55",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "間",
+        "status": "covered",
+        "lesson": "n5-k-66",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "上",
+        "status": "covered",
+        "lesson": "n5-k-10",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "東",
+        "status": "covered",
+        "lesson": "n5-k-46",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "四",
+        "status": "covered",
+        "lesson": "n5-k-54",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "今",
+        "status": "covered",
+        "lesson": "n5-k-67",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "金",
+        "status": "covered",
+        "lesson": "n5-k-09",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "九",
+        "status": "covered",
+        "lesson": "n5-k-59",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "入",
+        "status": "covered",
+        "lesson": "n5-k-104",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "学",
+        "status": "covered",
+        "lesson": "n5-k-19",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "高",
+        "status": "covered",
+        "lesson": "n5-k-80",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "円",
+        "status": "covered",
+        "lesson": "n5-k-64",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "子",
+        "status": "covered",
+        "lesson": "n5-k-69",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "外",
+        "status": "covered",
+        "lesson": "n5-k-45",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "八",
+        "status": "covered",
+        "lesson": "n5-k-58",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "六",
+        "status": "covered",
+        "lesson": "n5-k-56",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "下",
+        "status": "covered",
+        "lesson": "n5-k-11",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "来",
+        "status": "covered",
+        "lesson": "n5-k-32",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "気",
+        "status": "covered",
+        "lesson": "n5-k-25",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "小",
+        "status": "covered",
+        "lesson": "n5-k-14",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "七",
+        "status": "covered",
+        "lesson": "n5-k-57",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "山",
+        "status": "covered",
+        "lesson": "n5-k-03",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "話",
+        "status": "covered",
+        "lesson": "n5-k-35",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "女",
+        "status": "covered",
+        "lesson": "n5-k-70",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "北",
+        "status": "covered",
+        "lesson": "n5-k-49",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "午",
+        "status": "covered",
+        "lesson": "n5-k-93",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "百",
+        "status": "covered",
+        "lesson": "n5-k-61",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "書",
+        "status": "covered",
+        "lesson": "n5-k-37",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "先",
+        "status": "covered",
+        "lesson": "n5-k-17",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "名",
+        "status": "covered",
+        "lesson": "n5-k-27",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "川",
+        "status": "covered",
+        "lesson": "n5-k-85",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "千",
+        "status": "covered",
+        "lesson": "n5-k-62",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "水",
+        "status": "covered",
+        "lesson": "n5-k-04",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "半",
+        "status": "covered",
+        "lesson": "n5-k-94",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "男",
+        "status": "covered",
+        "lesson": "n5-k-71",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "西",
+        "status": "covered",
+        "lesson": "n5-k-47",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "電",
+        "status": "covered",
+        "lesson": "n5-k-24",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "校",
+        "status": "covered",
+        "lesson": "n5-k-20",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "語",
+        "status": "covered",
+        "lesson": "n5-k-103",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "土",
+        "status": "covered",
+        "lesson": "n5-k-84",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "木",
+        "status": "covered",
+        "lesson": "n5-k-08",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "聞",
+        "status": "covered",
+        "lesson": "n5-k-34",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "食",
+        "status": "covered",
+        "lesson": "n5-k-29",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "車",
+        "status": "covered",
+        "lesson": "n5-k-23",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "何",
+        "status": "covered",
+        "lesson": "n5-k-50",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "南",
+        "status": "covered",
+        "lesson": "n5-k-48",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "万",
+        "status": "covered",
+        "lesson": "n5-k-63",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "毎",
+        "status": "covered",
+        "lesson": "n5-k-95",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "白",
+        "status": "covered",
+        "lesson": "n5-k-81",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "天",
+        "status": "covered",
+        "lesson": "n5-k-82",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "母",
+        "status": "covered",
+        "lesson": "n5-k-73",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "火",
+        "status": "covered",
+        "lesson": "n5-k-07",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "右",
+        "status": "covered",
+        "lesson": "n5-k-44",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "読",
+        "status": "covered",
+        "lesson": "n5-k-36",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "友",
+        "status": "covered",
+        "lesson": "n5-k-28",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "左",
+        "status": "covered",
+        "lesson": "n5-k-43",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "休",
+        "status": "covered",
+        "lesson": "n5-k-05",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "父",
+        "status": "covered",
+        "lesson": "n5-k-72",
+        "scope": "cross-referenced-core"
+      },
+      {
+        "character": "雨",
+        "status": "covered",
+        "lesson": "n5-k-83",
+        "scope": "cross-referenced-core"
+      }
+    ],
+    "mlc": [
+      {
+        "referenceIndex": 1,
+        "character": "人",
+        "status": "covered",
+        "lesson": "n5-k-02",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 2,
+        "character": "日",
+        "status": "covered",
+        "lesson": "n5-k-01",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 3,
+        "character": "一",
+        "status": "covered",
+        "lesson": "n5-k-51",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 4,
+        "character": "二",
+        "status": "covered",
+        "lesson": "n5-k-52",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 5,
+        "character": "三",
+        "status": "covered",
+        "lesson": "n5-k-53",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 6,
+        "character": "四",
+        "status": "covered",
+        "lesson": "n5-k-54",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 7,
+        "character": "五",
+        "status": "covered",
+        "lesson": "n5-k-55",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 8,
+        "character": "六",
+        "status": "covered",
+        "lesson": "n5-k-56",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 9,
+        "character": "七",
+        "status": "covered",
+        "lesson": "n5-k-57",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 10,
+        "character": "八",
+        "status": "covered",
+        "lesson": "n5-k-58",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 11,
+        "character": "九",
+        "status": "covered",
+        "lesson": "n5-k-59",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 12,
+        "character": "十",
+        "status": "covered",
+        "lesson": "n5-k-60",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 13,
+        "character": "月",
+        "status": "covered",
+        "lesson": "n5-k-06",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 14,
+        "character": "火",
+        "status": "covered",
+        "lesson": "n5-k-07",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 15,
+        "character": "水",
+        "status": "covered",
+        "lesson": "n5-k-04",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 16,
+        "character": "木",
+        "status": "covered",
+        "lesson": "n5-k-08",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 17,
+        "character": "金",
+        "status": "covered",
+        "lesson": "n5-k-09",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 18,
+        "character": "土",
+        "status": "covered",
+        "lesson": "n5-k-84",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 19,
+        "character": "百",
+        "status": "covered",
+        "lesson": "n5-k-61",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 20,
+        "character": "千",
+        "status": "covered",
+        "lesson": "n5-k-62",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 21,
+        "character": "万",
+        "status": "covered",
+        "lesson": "n5-k-63",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 22,
+        "character": "円",
+        "status": "covered",
+        "lesson": "n5-k-64",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 23,
+        "character": "行",
+        "status": "covered",
+        "lesson": "n5-k-31",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 24,
+        "character": "来",
+        "status": "covered",
+        "lesson": "n5-k-32",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 25,
+        "character": "休",
+        "status": "covered",
+        "lesson": "n5-k-05",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 26,
+        "character": "見",
+        "status": "covered",
+        "lesson": "n5-k-33",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 27,
+        "character": "今",
+        "status": "covered",
+        "lesson": "n5-k-67",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 28,
+        "character": "大",
+        "status": "covered",
+        "lesson": "n5-k-13",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 29,
+        "character": "小",
+        "status": "covered",
+        "lesson": "n5-k-14",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 30,
+        "character": "上",
+        "status": "covered",
+        "lesson": "n5-k-10",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 31,
+        "character": "下",
+        "status": "covered",
+        "lesson": "n5-k-11",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 32,
+        "character": "中",
+        "status": "covered",
+        "lesson": "n5-k-12",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 33,
+        "character": "右",
+        "status": "covered",
+        "lesson": "n5-k-44",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 34,
+        "character": "左",
+        "status": "covered",
+        "lesson": "n5-k-43",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 35,
+        "character": "山",
+        "status": "covered",
+        "lesson": "n5-k-03",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 36,
+        "character": "川",
+        "status": "covered",
+        "lesson": "n5-k-85",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 37,
+        "character": "白",
+        "status": "covered",
+        "lesson": "n5-k-81",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 38,
+        "character": "本",
+        "status": "covered",
+        "lesson": "n5-k-26",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 39,
+        "character": "子",
+        "status": "covered",
+        "lesson": "n5-k-69",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 40,
+        "character": "男",
+        "status": "covered",
+        "lesson": "n5-k-71",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 41,
+        "character": "女",
+        "status": "covered",
+        "lesson": "n5-k-70",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 42,
+        "character": "父",
+        "status": "covered",
+        "lesson": "n5-k-72",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 43,
+        "character": "母",
+        "status": "covered",
+        "lesson": "n5-k-73",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 44,
+        "character": "友",
+        "status": "covered",
+        "lesson": "n5-k-28",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 45,
+        "character": "先",
+        "status": "covered",
+        "lesson": "n5-k-17",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 46,
+        "character": "生",
+        "status": "covered",
+        "lesson": "n5-k-18",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 47,
+        "character": "学",
+        "status": "covered",
+        "lesson": "n5-k-19",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 48,
+        "character": "校",
+        "status": "covered",
+        "lesson": "n5-k-20",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 49,
+        "character": "何",
+        "status": "covered",
+        "lesson": "n5-k-50",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 50,
+        "character": "時",
+        "status": "covered",
+        "lesson": "n5-k-15",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 51,
+        "character": "間",
+        "status": "covered",
+        "lesson": "n5-k-66",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 52,
+        "character": "分",
+        "status": "covered",
+        "lesson": "n5-k-65",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 53,
+        "character": "半",
+        "status": "covered",
+        "lesson": "n5-k-94",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 54,
+        "character": "毎",
+        "status": "covered",
+        "lesson": "n5-k-95",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 55,
+        "character": "年",
+        "status": "covered",
+        "lesson": "n5-k-16",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 56,
+        "character": "前",
+        "status": "covered",
+        "lesson": "n5-k-41",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 57,
+        "character": "後",
+        "status": "covered",
+        "lesson": "n5-k-42",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 58,
+        "character": "午",
+        "status": "covered",
+        "lesson": "n5-k-93",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 59,
+        "character": "名",
+        "status": "covered",
+        "lesson": "n5-k-27",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 60,
+        "character": "車",
+        "status": "covered",
+        "lesson": "n5-k-23",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 61,
+        "character": "天",
+        "status": "covered",
+        "lesson": "n5-k-82",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 62,
+        "character": "気",
+        "status": "covered",
+        "lesson": "n5-k-25",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 63,
+        "character": "電",
+        "status": "covered",
+        "lesson": "n5-k-24",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 64,
+        "character": "話",
+        "status": "covered",
+        "lesson": "n5-k-35",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 65,
+        "character": "食",
+        "status": "covered",
+        "lesson": "n5-k-29",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 66,
+        "character": "聞",
+        "status": "covered",
+        "lesson": "n5-k-34",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 67,
+        "character": "書",
+        "status": "covered",
+        "lesson": "n5-k-37",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 68,
+        "character": "読",
+        "status": "covered",
+        "lesson": "n5-k-36",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 69,
+        "character": "国",
+        "status": "covered",
+        "lesson": "n5-k-68",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 70,
+        "character": "外",
+        "status": "covered",
+        "lesson": "n5-k-45",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 71,
+        "character": "語",
+        "status": "covered",
+        "lesson": "n5-k-103",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 72,
+        "character": "入",
+        "status": "covered",
+        "lesson": "n5-k-104",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 73,
+        "character": "出",
+        "status": "covered",
+        "lesson": "n5-k-105",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 74,
+        "character": "雨",
+        "status": "covered",
+        "lesson": "n5-k-83",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 75,
+        "character": "東",
+        "status": "covered",
+        "lesson": "n5-k-46",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 76,
+        "character": "西",
+        "status": "covered",
+        "lesson": "n5-k-47",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 77,
+        "character": "南",
+        "status": "covered",
+        "lesson": "n5-k-48",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 78,
+        "character": "北",
+        "status": "covered",
+        "lesson": "n5-k-49",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 79,
+        "character": "長",
+        "status": "covered",
+        "lesson": "n5-k-79",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 80,
+        "character": "高",
+        "status": "covered",
+        "lesson": "n5-k-80",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 81,
+        "character": "口",
+        "status": "covered",
+        "lesson": "n5-k-76",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 82,
+        "character": "目",
+        "status": "covered",
+        "lesson": "n5-k-74",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 83,
+        "character": "手",
+        "status": "covered",
+        "lesson": "n5-k-77",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 84,
+        "character": "足",
+        "status": "covered",
+        "lesson": "n5-k-78",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 85,
+        "character": "近",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "base historical curriculum",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 86,
+        "character": "有",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "base historical curriculum",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 87,
+        "character": "花",
+        "status": "covered",
+        "lesson": "n5-k-87",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 88,
+        "character": "赤",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "base historical curriculum",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 89,
+        "character": "紙",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "base historical curriculum",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 90,
+        "character": "買",
+        "status": "covered",
+        "lesson": "n5-k-38",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 91,
+        "character": "朝",
+        "status": "covered",
+        "lesson": "n5-k-39",
+        "scope": "legacy-support",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 92,
+        "character": "昼",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "base historical curriculum",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 93,
+        "character": "夕",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "base historical curriculum",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 94,
+        "character": "夜",
+        "status": "covered",
+        "lesson": "n5-k-40",
+        "scope": "legacy-support",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 95,
+        "character": "私",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "base historical curriculum",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 96,
+        "character": "家",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "base historical curriculum",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 97,
+        "character": "会",
+        "status": "covered",
+        "lesson": "n5-k-21",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 98,
+        "character": "社",
+        "status": "covered",
+        "lesson": "n5-k-22",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 99,
+        "character": "店",
+        "status": "covered",
+        "lesson": "n5-k-98",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 100,
+        "character": "飲",
+        "status": "covered",
+        "lesson": "n5-k-30",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 101,
+        "character": "多",
+        "status": "covered",
+        "lesson": "n5-k-91",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 102,
+        "character": "少",
+        "status": "covered",
+        "lesson": "n5-k-92",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 103,
+        "character": "古",
+        "status": "covered",
+        "lesson": "n5-k-89",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 104,
+        "character": "新",
+        "status": "covered",
+        "lesson": "n5-k-90",
+        "scope": "cross-referenced-core",
+        "designation": "base historical curriculum"
+      },
+      {
+        "referenceIndex": 105,
+        "character": "広",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "possibly tested extension",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 106,
+        "character": "安",
+        "status": "covered",
+        "lesson": "n5-k-88",
+        "scope": "cross-referenced-core",
+        "designation": "possibly tested extension"
+      },
+      {
+        "referenceIndex": 107,
+        "character": "立",
+        "status": "covered",
+        "lesson": "n5-k-97",
+        "scope": "cross-referenced-core",
+        "designation": "possibly tested extension"
+      },
+      {
+        "referenceIndex": 108,
+        "character": "知",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "possibly tested extension",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 109,
+        "character": "言",
+        "status": "covered",
+        "lesson": "n5-k-96",
+        "scope": "cross-referenced-core",
+        "designation": "possibly tested extension"
+      },
+      {
+        "referenceIndex": 110,
+        "character": "思",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "possibly tested extension",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 111,
+        "character": "歩",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "possibly tested extension",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 112,
+        "character": "走",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "possibly tested extension",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 113,
+        "character": "住",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "possibly tested extension",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 114,
+        "character": "空",
+        "status": "covered",
+        "lesson": "n5-k-86",
+        "scope": "cross-referenced-core",
+        "designation": "possibly tested extension"
+      },
+      {
+        "referenceIndex": 115,
+        "character": "週",
+        "status": "covered",
+        "lesson": "n5-k-100",
+        "scope": "cross-referenced-core",
+        "designation": "possibly tested extension"
+      },
+      {
+        "referenceIndex": 116,
+        "character": "魚",
+        "status": "covered",
+        "lesson": "n5-k-102",
+        "scope": "cross-referenced-core",
+        "designation": "possibly tested extension"
+      },
+      {
+        "referenceIndex": 117,
+        "character": "耳",
+        "status": "covered",
+        "lesson": "n5-k-75",
+        "scope": "cross-referenced-core",
+        "designation": "possibly tested extension"
+      },
+      {
+        "referenceIndex": 118,
+        "character": "銀",
+        "status": "deferred",
+        "lesson": null,
+        "designation": "possibly tested extension",
+        "reason": "Listed in the MLC curriculum, but outside both the KANJIDIC2 historical Level 4 inventory and the JLPT Sensei N5 index. Defer the standalone kanji target because level assignments conflict; retain its beginner words in N5 vocabulary. No claim that its exclusion is an official JLPT boundary."
+      },
+      {
+        "referenceIndex": 119,
+        "character": "道",
+        "status": "covered",
+        "lesson": "n5-k-101",
+        "scope": "cross-referenced-core",
+        "designation": "possibly tested extension"
+      },
+      {
+        "referenceIndex": 120,
+        "character": "駅",
+        "status": "covered",
+        "lesson": "n5-k-99",
+        "scope": "cross-referenced-core",
+        "designation": "possibly tested extension"
+      }
+    ]
+  }
+}

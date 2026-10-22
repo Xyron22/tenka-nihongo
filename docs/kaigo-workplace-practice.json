@@ -1,0 +1,65 @@
+{
+  "scope": "Kaigo workplace rooms/equipment communication checkpoint",
+  "officialExamCoverage": false,
+  "fullKaigoClosed": false,
+  "n5ContentChanged": false,
+  "sourcePolicy": "Original scenarios and questions; references support terminology and resource scope, not a definitive coverage inventory.",
+  "topics": [
+    {
+      "id": "meal-count",
+      "reportId": "r-13",
+      "handoffId": "h-13",
+      "objective": "Membedakan jumlah rencana, hitungan nyata dan pengecekan yang belum selesai.",
+      "answerReview": "42 kartu diperlukan, 41 ditemukan; pencocokan sudah diminta tetapi belum selesai."
+    },
+    {
+      "id": "meal-identity",
+      "reportId": "r-14",
+      "handoffId": "h-14",
+      "objective": "Melaporkan selisih nama dan status makanan belum diberikan.",
+      "answerReview": "Perbedaan nama terlihat; pemberian dan perubahan diet tidak boleh diasumsikan."
+    },
+    {
+      "id": "linen-stock",
+      "reportId": "r-15",
+      "handoffId": "h-15",
+      "objective": "Membedakan stok sebelum dan setelah pengisian.",
+      "answerReview": "3 tersedia sebelumnya, 2 ditambahkan, kini 5; angka tambahan bukan stok akhir."
+    },
+    {
+      "id": "wheelchair-fault",
+      "reportId": "r-16",
+      "handoffId": "h-16",
+      "objective": "Membedakan gejala alat, status tidak digunakan dan konfirmasi pemeriksaan.",
+      "answerReview": "Roda bergerak meski rem dipasang; tidak digunakan dan belum ada kabar pemeriksaan selesai."
+    },
+    {
+      "id": "call-fault",
+      "reportId": "r-17",
+      "handoffId": "h-17",
+      "objective": "Melaporkan indikator yang terlihat tanpa menebak penyebab.",
+      "answerReview": "Lampu tidak menyala; sebab dan lingkup gangguan belum diketahui."
+    },
+    {
+      "id": "wet-floor",
+      "reportId": "r-18",
+      "handoffId": "h-18",
+      "objective": "Menangkap urutan laporan, pembersihan dan konfirmasi lantai kering.",
+      "answerReview": "Informasi terbaru adalah pembersihan selesai dan lantai kering; pelaku tidak diketahui."
+    },
+    {
+      "id": "storage-location",
+      "reportId": "r-19",
+      "handoffId": "h-19",
+      "objective": "Membedakan barang belum ditemukan di satu lokasi dari stok habis.",
+      "answerReview": "Dalam kasus fiktif ini barang ditemukan di ruang linen setelah bertanya, bukan aturan lokasi semua fasilitas."
+    },
+    {
+      "id": "work-progress",
+      "reportId": "r-20",
+      "handoffId": "h-20",
+      "objective": "Memisahkan tugas selesai, tugas belum selesai dan rencana.",
+      "answerReview": "Handuk selesai diisi; sarung bantal masih dicek dan pengisiannya baru direncanakan."
+    }
+  ]
+}
