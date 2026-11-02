@@ -4,6 +4,14 @@ const appSource=fs.readFileSync('app-v2.js','utf8');
 
 function assert(x,m){if(!x)throw new Error(m)}
 function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
+async function waitForQuizResult(b){
+  const deadline=Date.now()+5000;
+  // Result rendering and its feedback use chained timers; CPU load can delay either.
+  while(!b.context.TENKA_CORE.state.quiz?.finished||!b.events.length){
+    assert(Date.now()<deadline,'quiz result feedback did not arrive');
+    await sleep(10);
+  }
+}
 
 const mockData={
   jlpt:{
@@ -73,10 +81,10 @@ function setQuiz(c,{length=2,index=0,answer=0}){
     const b=boot();setQuiz(b.context,{length:2,index:0});b.context.answerQuiz(-1);assert(b.events.join(',')==='timeout','timeout must emit one timeout');
   }
   {
-    const b=boot();setQuiz(b.context,{length:1,index:0});b.context.answerQuiz(0);assert(b.events.length===0,'final correct must be silent until result');await sleep(850);assert(b.events.join(',')==='perfect','final correct must emit only perfect');assert(b.html.includes('Selesai'),'quiz result must provide finish action');assert(!b.html.includes('Main lagi'),'quiz result must not push automatic repeat');
+    const b=boot();setQuiz(b.context,{length:1,index:0});b.context.answerQuiz(0);assert(b.events.length===0,'final correct must be silent until result');await waitForQuizResult(b);assert(b.events.join(',')==='perfect','final correct must emit only perfect');assert(b.html.includes('Selesai'),'quiz result must provide finish action');assert(!b.html.includes('Main lagi'),'quiz result must not push automatic repeat');
   }
   {
-    const b=boot();setQuiz(b.context,{length:1,index:0});b.context.answerQuiz(1);assert(b.events.length===0,'final wrong must be silent until result');await sleep(850);assert(b.events.join(',')==='finish','final wrong must emit only finish');
+    const b=boot();setQuiz(b.context,{length:1,index:0});b.context.answerQuiz(1);assert(b.events.length===0,'final wrong must be silent until result');await waitForQuizResult(b);assert(b.events.join(',')==='finish','final wrong must emit only finish');
   }
   {
     const b=boot(),s=b.context.TENKA_CORE.state;

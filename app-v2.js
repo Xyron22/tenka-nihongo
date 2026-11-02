@@ -400,6 +400,21 @@ function finishQuiz(){
   const review=q.items.filter(item=>item.explanation).map((item,i)=>`<details class="muted-box quiz-review"><summary>${i+1}. ${htmlSafe(item.lessonTitle||item.prompt)} · ${item.selected===item.answer?'Benar':'Perlu diulang'}</summary><p>${htmlSafe(item.prompt)}<br><small>${htmlSafe(item.reading||'')}</small></p>${item.context?`<p>${htmlSafe(item.context)}</p>`:''}<p>Jawabanmu: ${htmlSafe(item.selected>=0?item.choices[item.selected]:'Waktu habis')}<br><b>Jawaban: ${htmlSafe(item.choices[item.answer])}</b></p>${item.example?`<p>${htmlSafe(item.example)}<br><small>${htmlSafe(item.exampleReading||'')}</small><br>${htmlSafe(item.exampleMeaning||'')}</p>`:''}<p>${htmlSafe(item.explanation)}</p></details>`).join('');
   return `<section class="quiz-result-card"><div class="quiz-result-icon">${pct===100?'🏆':pct>=70?'🎉':'🌱'}</div><span>QUIZ COMPLETE</span><div class="quiz-result-score">${pct}%</div><h2>${message}</h2><p>${q.score}/${q.items.length} benar</p><small>${note}</small><button class="action primary" onclick="go('${state.returnView}')">Selesai</button></section>${review?`<section class="quiz-review-list"><h3>Pembahasan sesi</h3>${review}</section>`:''}`;
 }
+function kaigoCaseLibrary(){
+  const groups=[
+    {mode:'report',label:'報告 Level 1 · Susun kalimat',action:'openHoukokuPractice',aria:'susun laporan',progress:'houkokuDone',items:houkokuItems()},
+    {mode:'writing',label:'報告 Level 2 · Tulis sendiri',action:'openHoukokuEssay',aria:'tulis laporan',progress:'houkokuEssayDone',items:houkokuItems()},
+    {mode:'handoff',label:'申し送り · Operan',action:'openHandoffPractice',aria:'operan',progress:'handoffDone',items:D.kaigo.handoff||[]}
+  ].filter(g=>g.items.length);
+  if(!groups.length)return '';
+  return `<section class="work-case-library"><div class="section-title section-title-polished"><span>Pilih kasus latihan</span><small>Buka kasus baru atau pelajari kembali</small></div>${groups.map(g=>{
+    const completed=g.items.filter(h=>!!state.progress[g.progress][h.id]).length;
+    return `<details class="work-case-group" data-case-mode="${g.mode}"><summary>${g.label}<small>${completed}/${g.items.length} selesai</small></summary><div class="work-case-options">${g.items.map((h,i)=>{
+      const done=!!state.progress[g.progress][h.id],title=h.title?`${i+1}. ${h.title}`:`Kasus ${i+1}`,preview=h.situation||h.segments?.[0]?.meaning||h.meaning||'';
+      return `<button class="work-case-option" data-case-id="${htmlSafe(h.id)}" aria-label="Buka kasus ${i+1} untuk ${g.aria}" onclick="${g.action}(${i})"><span class="work-case-copy"><b>${htmlSafe(title)}</b>${h.titleReading?`<small lang="ja">${htmlSafe(h.titleReading)}</small>`:''}<span>${htmlSafe(preview)}</span></span><span class="work-case-status ${done?'done':''}">${done?'Selesai':'Belum'}</span></button>`;
+    }).join('')}</div></details>`;
+  }).join('')}</section>`;
+}
 function kaigo(){
   const cats=[...new Set((D.kaigo.vocab||[]).map(x=>x.category).filter(Boolean))],due=dueCards('KAIGO').length,done=handoffDoneCount(),reportDone=houkokuDoneCount(),reportTotal=(D.kaigo.houkoku||[]).length,essayDone=houkokuEssayDoneCount();
   return `${header('Kaigo・Keperawatan','Bahasa kerja • listening • 申し送り')}<button class="back" onclick="go('home')">←</button><div class="study-list">
@@ -411,7 +426,7 @@ function kaigo(){
     <button class="study-row tone-gold" onclick="openHoukokuPractice()"><span class="study-row-icon">📣</span><div class="study-row-copy"><b>報告 Level 1</b><small>${reportDone}/${reportTotal} kasus • susun potongan laporan</small></div><span class="study-row-end">›</span></button>
     <button class="study-row tone-purple" onclick="openHoukokuEssay()"><span class="study-row-icon">✍️</span><div class="study-row-copy"><b>報告 Level 2</b><small>${essayDone}/${reportTotal} kasus • tulis sendiri lalu bandingkan</small></div><span class="study-row-end">›</span></button>
     <button class="study-row tone-green" onclick="openHandoffPractice()"><span class="study-row-icon">🗣️</span><div class="study-row-copy"><b>申し送り Practice</b><small>${done}/${D.kaigo.handoff.length} kasus dikuasai • per kalimat</small></div><span class="study-row-end">›</span></button>
-  </div><div class="section-title section-title-polished"><span>Kategori</span><small>Pilih materi Kaigo</small></div><div class="small-actions kaigo-category-pills">${cats.map(x=>`<button class="pill" onclick="openKaigoCategory('${esc(x)}')">${x}</button>`).join('')}</div>`;
+  </div>${kaigoCaseLibrary()}<div class="section-title section-title-polished"><span>Kategori</span><small>Pilih materi Kaigo</small></div><div class="small-actions kaigo-category-pills">${cats.map(x=>`<button class="pill" onclick="openKaigoCategory('${esc(x)}')">${x}</button>`).join('')}</div>`;
 }
 function openKaigoFlash(){state.level='KAIGO';state.cards=allKaigoCards();state.mode='vocab';state.cardIndex=0;state.flipped=false;state.returnView='kaigo';go('flash')}
 function openKaigoCategory(cat){const cards=allKaigoCards().filter(x=>x.category===cat);if(!cards.length)return;state.level='KAIGO';openCustomFlash(cards,'kaigo','vocab')}

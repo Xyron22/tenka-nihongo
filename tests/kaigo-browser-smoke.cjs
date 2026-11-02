@@ -41,7 +41,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
      let reportModelsChecked=0,handoffSentencesChecked=0;
      const practiceBad=[];
      function scan(view,id){
-       const overflow=[...document.querySelectorAll('.work-session-hero,.work-piece-chip,.work-selected-piece,.work-model-line,.work-compare-card,.handoff-sentence-card,.handoff-question-card,.handoff-result')].filter(el=>el.scrollWidth>el.clientWidth+2);
+       const overflow=[...document.querySelectorAll('.work-session-hero,.work-piece-chip,.work-selected-piece,.work-model-line,.work-compare-card,.handoff-sentence-card,.handoff-question-card,.handoff-result,.work-case-option')].filter(el=>el.scrollWidth>el.clientWidth+2);
        if(document.documentElement.scrollWidth>innerWidth||overflow.length)practiceBad.push({view,id,width:document.documentElement.scrollWidth,overflow:overflow.map(el=>el.className)});
      }
      TENKA_DATA.kaigo.houkoku.forEach((h,index)=>{
@@ -55,7 +55,10 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
        handoffToQuestion();scan('handoff-question',h.id);handoffAnswer(h.answer);scan('handoff-result',h.id);finishHandoff();
      });
      for(const view of ['home','kaigo','daily','progress']){go(view);widths.push({view,width:document.documentElement.scrollWidth})}
-     return{width:innerWidth,cardsChecked,reportModelsChecked,handoffSentencesChecked,bad,practiceBad,widths};
+     go('kaigo');for(const group of document.querySelectorAll('.work-case-group'))group.open=true;
+     const caseButtonsChecked=document.querySelectorAll('.work-case-option').length;scan('case-library','all');
+     widths.push({view:'kaigo-case-library',width:document.documentElement.scrollWidth});
+     return{width:innerWidth,cardsChecked,reportModelsChecked,handoffSentencesChecked,caseButtonsChecked,bad,practiceBad,widths};
    });results.push(result);
    console.log(JSON.stringify({width,badCount:result.bad.length,practiceBadCount:result.practiceBad.length,firstPracticeBad:result.practiceBad.slice(0,3),widths:result.widths}));
  }
@@ -169,6 +172,19 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
    await page.locator('.handoff-choice-list button').nth(answer).click();await page.locator('.handoff-result .action').click();
    assert.equal(await page.evaluate(()=>TENKA_CORE.state.view),'kaigo');
  }
+ const beforeSelection=await page.evaluate(()=>JSON.stringify(TENKA_CORE.state.progress));
+ const selections=[{mode:'report',id:'r-13',index:12,session:'houkokuSession',view:'houkoku'},{mode:'writing',id:'r-13',index:12,session:'houkokuEssaySession',view:'houkokuEssay'},{mode:'handoff',id:'h-26',index:25,session:'handoffSession',view:'handoff'}];
+ for(const c of selections){
+   await page.evaluate(()=>go('kaigo'));
+   const group=page.locator('.work-case-group[data-case-mode="'+c.mode+'"]');await group.locator('summary').click();
+   const row=group.locator('[data-case-id="'+c.id+'"]');assert.equal(await row.locator('.work-case-status').textContent(),'Selesai');
+   await row.click();assert(await page.evaluate(c=>TENKA_CORE.state.view===c.view&&TENKA_CORE.state[c.session].caseIndex===c.index,c),'menu opens the chosen completed case');
+   if(c.mode==='handoff')await page.getByRole('button',{name:'Selesai',exact:true}).click();else await page.locator('.back').click();
+   assert.equal(await page.evaluate(()=>TENKA_CORE.state.view),'kaigo');
+ }
+ assert.equal(await page.evaluate(()=>JSON.stringify(TENKA_CORE.state.progress)),beforeSelection,'revisiting cases preserves progress');
+ await page.setViewportSize({width:320,height:844});await page.evaluate(()=>{go('kaigo');document.querySelector('.work-case-group[data-case-mode="handoff"]').open=true});
+ await page.locator('.work-case-group[data-case-mode="handoff"] summary').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'kaigo-case-library.png'),fullPage:false});
  await page.reload();await page.waitForFunction(()=>window.TENKA_READY);
  assert(await page.evaluate(({id,cases})=>TENKA_CORE.state.progress.reviews[id]?.rating==='good'&&cases.every(c=>!!TENKA_CORE.state.progress.handoffDone[c.id]),{id:communicationId,cases:communicationCases}),'communication SRS and all six case completions survive reload');
  assert(await page.evaluate(id=>TENKA_CORE.state.progress.reviews[id]?.rating==='good',savedId),'SRS survives browser reload');
@@ -177,7 +193,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  assert.equal(errors.length,0,errors.join('\n'));
  const names=['index.html','styles.css','app-v2.js',...require('./helpers/load-content')().files];
  const sourceHashes=Object.fromEntries([...new Set(names)].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(base,name))).digest('hex')]));
- const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWritingAndKanaAudio:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true,communicationCategoryAndNotes:true,communicationKanaSpeech:true,communicationWrongAnswerAndRetry:true,communicationProgressReload:true},sourceHashes};
+ const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWritingAndKanaAudio:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true,communicationCategoryAndNotes:true,communicationKanaSpeech:true,communicationWrongAnswerAndRetry:true,communicationProgressReload:true,caseLibrarySelectionAndExit:true,caseLibraryProgressPreserved:true},sourceHashes};
  fs.writeFileSync(path.join(out,'kaigo-ui-audit.json'),JSON.stringify(report,null,2)+'\n');
  if(results.some(r=>r.bad.length||r.practiceBad.length||r.widths.some(v=>v.width>r.width)))process.exitCode=1;
  }finally{await browser.close()}

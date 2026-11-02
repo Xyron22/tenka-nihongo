@@ -8,6 +8,7 @@
       "cardsChecked": 152,
       "reportModelsChecked": 40,
       "handoffSentencesChecked": 77,
+      "caseButtonsChecked": 66,
       "bad": [],
       "practiceBad": [],
       "widths": [
@@ -25,6 +26,10 @@
         },
         {
           "view": "progress",
+          "width": 320
+        },
+        {
+          "view": "kaigo-case-library",
           "width": 320
         },
         {
@@ -50,6 +55,7 @@
       "cardsChecked": 152,
       "reportModelsChecked": 40,
       "handoffSentencesChecked": 77,
+      "caseButtonsChecked": 66,
       "bad": [],
       "practiceBad": [],
       "widths": [
@@ -67,6 +73,10 @@
         },
         {
           "view": "progress",
+          "width": 390
+        },
+        {
+          "view": "kaigo-case-library",
           "width": 390
         },
         {
@@ -92,6 +102,7 @@
       "cardsChecked": 152,
       "reportModelsChecked": 40,
       "handoffSentencesChecked": 77,
+      "caseButtonsChecked": 66,
       "bad": [],
       "practiceBad": [],
       "widths": [
@@ -109,6 +120,10 @@
         },
         {
           "view": "progress",
+          "width": 720
+        },
+        {
+          "view": "kaigo-case-library",
           "width": 720
         },
         {
@@ -149,12 +164,14 @@
     "communicationCategoryAndNotes": true,
     "communicationKanaSpeech": true,
     "communicationWrongAnswerAndRetry": true,
-    "communicationProgressReload": true
+    "communicationProgressReload": true,
+    "caseLibrarySelectionAndExit": true,
+    "caseLibraryProgressPreserved": true
   },
   "sourceHashes": {
     "index.html": "cd8b783d490cc2f0f025912c67cc20f828ad8c8c3fa3b3790c15093d4c52e0ae",
-    "styles.css": "8cd4f6f1d0cd5e71345e697d506b9b424f87ea89e61e792e0ae4fac246baa4c2",
-    "app-v2.js": "23a97dc7bc08418c639453ef9792294298aa44d813ea53b102a30413ad65a9ad",
+    "styles.css": "2cc0b3e7d6dff5d4044573904209f01e2ec5635e2dee0617d0e8da48a1a105b5",
+    "app-v2.js": "d1c63d75eaf3dc249bda8282ddd6c22a1867f79cc7fb4e48156cd183f067ada1",
     "data.js": "feaccc112134d2b8575cfbd4602454185c96a178425894cfd8679a13828c61c6",
     "content-pack-v1.js": "d0835acbcc74267b58455a346287e610920f33afada36cbbc6b90e3065e517fa",
     "content-pack-v2.js": "0118afe7b6a8c70c81bb40be6fa05949b00c1f43d5466def888204c4dd736385",

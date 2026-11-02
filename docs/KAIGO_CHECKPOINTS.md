@@ -89,3 +89,16 @@ Stage 9C-1 validation: local syntax/full regressions and [CI run 39775062933](ht
 - Keep all old cards/reports/handoffs intact. There are now 152 vocabulary cards, 20 report models and 26 handoff cases (77 sentences). Existing one-sentence presentation, kana audio, normal/slow replay, explicit finish and progress storage handle the new material.
 - Validate new case reachability after old completions, wrong/correct responses, duplicate taps, authored readings, one feedback event and reload. Browser QA covers all Kaigo cards, report models and handoff sentences at 320/390/720 px, plus the new category and communication-case flows.
 Stage 9C-2 local validation: syntax and the full N5/Kaigo/runtime/tools/audio regression suite passed. The [browser audit](kaigo-ui-audit.json) pins all 41 runtime sources and checks 152 cards, both views of 20 report models, and all 77 handoff sentences at 320/390/720 px without clipping/overflow or page errors. New-category notes and kana speech, wrong-answer retry, all six communication case completions, and SRS/completion persistence after reload pass. Consent-card and corrected-time screenshots were inspected. Exact final-head CI is recorded in [draft PR #16](https://github.com/Xyron22/tenka-nihongo/pull/16). No new clinical protocol, examination track, route, scoring rule or storage migration is introduced.
+
+
+Stage 9C-2 CI: [run 39776212459](https://github.com/Xyron22/tenka-nihongo/actions/runs/39776212459) passed at `d378c18`; production configuration/upload/deploy were skipped.
+
+## Stage 9D-1 — Explicit selection of practice cases
+
+- Fix a discoverability gap: completed report and handoff cases had an explicit-index replay API but no menu control for selecting them. Add three collapsible lists on the existing Kaigo menu for report puzzle, self-writing and handoff practice.
+- Every case remains selectable with its completion status and an Indonesian situation preview; report titles include kana. Selecting a case invokes the existing indexed opener. The result/finish flow and the all-complete default behavior remain finite and do not automatically replay or chain cases.
+- Preserve all content, mastery records, SRS, scores and storage keys. No new route or practice engine is introduced. Runtime checks exercise every rendered menu callback, including completed cases, partial completion counts and empty libraries.
+- Browser QA expands all 66 case buttons at 320/390/720 px without horizontal overflow and opens completed cases in all three modes through actual menu controls. The [audit with runtime source hashes](kaigo-ui-audit.json) also retains all card, model, handoff, speech and persistence checks. The menu screenshot was inspected.
+- Final local syntax and full regressions passed while browser QA ran in parallel. Exact final commit and CI evidence are recorded in draft PR #16.
+
+- During local parallel browser/regression QA, the legacy system test exposed a fixed-delay result-feedback wait: its 850 ms sleep could expire before chained callbacks ran under CPU load. Isolated execution passed. Replace that sleep with a bounded result/event condition; keep the exact event and initial-silence assertions. Production quiz timing/audio code is unchanged.
