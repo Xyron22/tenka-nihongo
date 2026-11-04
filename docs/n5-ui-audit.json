@@ -149,7 +149,7 @@
     "browserProgressReload": true
   },
   "sourceHashes": {
-    "index.html": "8ca00a1a3321524c0488414a5509ca54999e3f30fc9aab26035df054b22d22da",
+    "index.html": "6877a4aee7fe5be1a17b856b785de2d55f5189bd1d36c7bbec136a11b18f5826",
     "styles.css": "c800a0324487438b54014c3bf6d2f773652a1b9f59b2fa44fefca37976d2338a",
     "app-v2.js": "39d2bfcc1d84e748c79615ab39483fc19153c5903d26cc8cc94332ed1b3c2a4d",
     "data.js": "feaccc112134d2b8575cfbd4602454185c96a178425894cfd8679a13828c61c6",
@@ -174,7 +174,7 @@
     "content-pack-v19.js": "59ca8f0e112f93a8ad3822bd0552619456e1514b3f84480f89781feee1292672",
     "content-pack-v20.js": "59909421ae71fc9386160f6cdcddc12958af13ccec74342f5f7794db4287bf39",
     "content-pack-v21.js": "de0ff6c48f052d259497aa8c3420bd3c149ee963fb43dab8e647db0876e897ca",
-    "content-pack-v22.js": "ce72b8784e3798e682e127e86f8c816f964179f67e66d934c49c3d432fc642c0",
+    "content-pack-v22.js": "c58f0a62dd5384bdd2e6a90640af1a169eee8acea5825de14e8de341988d3c37",
     "content-pack-v23-strokes.js": "9806004f881ab478998d247facbf0e03a3ec0b644ff7e2d15670cece0657e5e7",
     "content-pack-v23.js": "da3b4cdd4d2b9d3c67d2915955f627037419a41241d64f9c084c4c3e9450b15b",
     "content-pack-v24.js": "7a79a8662b02a2146f47fe6f19405834bf2a65b2a99cd3c26b11e08f5f3a1cf5",
@@ -201,6 +201,7 @@
     "content-pack-v45.js": "9d6fdeb885c69d568cab6431cc4a7fc84e54c620deb301a5760bf335a7685152",
     "content-pack-v46.js": "890bab8cc90d361f7c3e1b5c4dde84086cc5f63cacf8dc0ad0b8778119424f3d",
     "content-pack-v47.js": "043417761675b87c9c1ed4e4d6410a06185531ade79572c0aafda36ee464742e",
+    "content-pack-v48.js": "a5e34bb289c3337c46c95f0bce5127f688c88ea3610bbd788df706ad2c216bd5",
     "houkoku-pack-v1.js": "6752aed020dd6ee8811b45dbd708f25806dafdf1eba37a7ecb8cb50f7190089d",
     "houkoku-pack-v2.js": "271ffec2c6bbd3e278378a7c3c887f476a7da8520340ff2c7e262db5a65231fd",
     "houkoku-pack-v3.js": "b3609744cf5f214dfcc6f77b016c7650190a9367080ab187db93183f8142c795",
