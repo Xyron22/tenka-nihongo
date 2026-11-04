@@ -12,7 +12,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  await page.route('https://tenka.test/**',async route=>{
    const name=decodeURIComponent(new URL(route.request().url()).pathname),root=name.startsWith('/fonts/')?fonts:base;
    const file=path.join(root||base,name.startsWith('/fonts/')?name.slice(7):name==='/'?'index.html':name);
-   const types={'.html':'text/html','.js':'application/javascript','.css':'text/css','.svg':'image/svg+xml','.json':'application/json','.webmanifest':'application/manifest+json','.mp3':'audio/mpeg','.woff2':'font/woff2'};
+   const types={'.html':'text/html','.js':'application/javascript','.css':'text/css','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.json':'application/json','.webmanifest':'application/manifest+json','.mp3':'audio/mpeg','.woff2':'font/woff2'};
    await route.fulfill(fs.existsSync(file)&&fs.statSync(file).isFile()?{path:file,contentType:types[path.extname(file)]||'application/octet-stream'}:{status:404,body:'Missing local test asset'});
  });
  await page.goto('https://tenka.test/');await page.waitForFunction(()=>window.TENKA_READY);
@@ -25,25 +25,27 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  }
  for(const width of [320,390,720]){
    await page.setViewportSize({width,height:844});
-   const result=await page.evaluate(()=>{
-     const state=TENKA_CORE.state,bad=[],widths=[];let cardsChecked=0;
-     for(const kind of ['vocab']){
-       openKaigoFlash();state.flipped=true;
+   const result=await page.evaluate(async()=>{
+     const state=TENKA_CORE.state,bad=[],widths=[];let cardsChecked=0,toolCardsChecked=0,toolDetailsChecked=0;
+     for(const kind of ['vocab','tool']){
+       if(kind==='tool')openMedicalToolFlash();else openKaigoFlash();state.flipped=true;
        for(let i=0;i<state.cards.length;i++){
-         state.cardIndex=i;TENKA_CORE.render();cardsChecked++;
+         state.cardIndex=i;TENKA_CORE.render();if(kind==='tool')toolCardsChecked++;else cardsChecked++;
          for(const side of document.querySelectorAll('.flash .face')){
-           const r=side.getBoundingClientRect();
-           const clipped=[...side.querySelectorAll('.reading,.meaning,.example,.term')].some(el=>(!el.matches('.term')&&el.scrollHeight>el.clientHeight+2)||el.scrollWidth>el.clientWidth+2||el.getBoundingClientRect().bottom>r.bottom+1||el.getBoundingClientRect().top<r.top-1);
-           if(clipped||side.scrollHeight>side.clientHeight+2||side.scrollWidth>side.clientWidth+2)bad.push({id:state.cards[i].id,side:side.className,height:side.clientHeight,scroll:side.scrollHeight,width:side.clientWidth,scrollWidth:side.scrollWidth});
+           const r=side.getBoundingClientRect(),scrollable=kind==='tool'&&['auto','scroll'].includes(getComputedStyle(side).overflowY);
+           const clipped=[...side.querySelectorAll('.reading,.meaning,.example,.term,.tool-flash-term,.tool-flash-block')].some(el=>(!el.matches('.term,.tool-flash-term')&&el.scrollHeight>el.clientHeight+2)||el.scrollWidth>el.clientWidth+2||(!scrollable&&(el.getBoundingClientRect().bottom>r.bottom+1||el.getBoundingClientRect().top<r.top-1)));
+           if(clipped||(!scrollable&&side.scrollHeight>side.clientHeight+2)||side.scrollWidth>side.clientWidth+2)bad.push({id:state.cards[i].id,side:side.className,height:side.clientHeight,scroll:side.scrollHeight,width:side.clientWidth,scrollWidth:side.scrollWidth});
+           if(scrollable){side.scrollTop=side.scrollHeight;if(Math.abs(side.scrollHeight-side.clientHeight-side.scrollTop)>2)throw Error('Unreachable tool-card content: '+state.cards[i].id);side.scrollTop=0;}
          }
        }
      }
      let reportModelsChecked=0,reportWrongModelsChecked=0,writingRevisionsChecked=0,handoffSentencesChecked=0,handoffReviewsChecked=0;
      const practiceBad=[];
      function scan(view,id){
-       const overflow=[...document.querySelectorAll('.work-session-hero,.work-piece-chip,.work-selected-piece,.work-model-line,.work-compare-card,.handoff-sentence-card,.handoff-question-card,.handoff-result,.work-case-option')].filter(el=>el.scrollWidth>el.clientWidth+2);
+       const overflow=[...document.querySelectorAll('.work-session-hero,.work-piece-chip,.work-selected-piece,.work-model-line,.work-compare-card,.handoff-sentence-card,.handoff-question-card,.handoff-result,.work-case-option,.tool-detail-hero,.tool-detail-copy,.tool-info,.tool-safety')].filter(el=>el.scrollWidth>el.clientWidth+2);
        if(document.documentElement.scrollWidth>innerWidth||overflow.length)practiceBad.push({view,id,width:document.documentElement.scrollWidth,overflow:overflow.map(el=>el.className)});
      }
+     for(const t of TENKA_DATA.kaigo.tools){openMedicalTool(t.id);const img=document.querySelector('.tool-hero img');await img.decode();if(!img.naturalWidth)throw Error('Missing tool illustration: '+t.id);scan('tool-detail',t.id);toolDetailsChecked++;}
      TENKA_DATA.kaigo.houkoku.forEach((h,index)=>{
        openHoukokuPractice(index);scan('report-puzzle',h.id);
        h.pieces.forEach((_,i)=>houkokuPick(i));houkokuCheck();scan('report-selected',h.id);houkokuShowResult();scan('report-model',h.id);reportModelsChecked++;
@@ -62,7 +64,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
      go('kaigo');for(const group of document.querySelectorAll('.work-case-group'))group.open=true;
      const caseButtonsChecked=document.querySelectorAll('.work-case-option').length;scan('case-library','all');
      widths.push({view:'kaigo-case-library',width:document.documentElement.scrollWidth});
-     return{width:innerWidth,cardsChecked,reportModelsChecked,reportWrongModelsChecked,writingRevisionsChecked,handoffSentencesChecked,handoffReviewsChecked,caseButtonsChecked,bad,practiceBad,widths};
+     return{width:innerWidth,cardsChecked,toolCardsChecked,toolDetailsChecked,reportModelsChecked,reportWrongModelsChecked,writingRevisionsChecked,handoffSentencesChecked,handoffReviewsChecked,caseButtonsChecked,bad,practiceBad,widths};
    });results.push(result);
    console.log(JSON.stringify({width,badCount:result.bad.length,practiceBadCount:result.practiceBad.length,firstPracticeBad:result.practiceBad.slice(0,3),widths:result.widths}));
  }
@@ -73,6 +75,20 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
    window.__tenkaSpoken=[];window.__tenkaUtterances=[];
    Object.defineProperty(speechSynthesis,'speak',{configurable:true,value:u=>{window.__tenkaSpoken.push(u.text);window.__tenkaUtterances.push({text:u.text,rate:u.rate,lang:u.lang})}});
  });
+ await page.setViewportSize({width:390,height:844});
+ const toolSpeechCases=await page.evaluate(()=>TENKA_DATA.kaigo.tools.map(t=>({id:t.id,reading:t.reading,functionReading:t.functionReading,exampleReading:t.exampleReading})));
+ for(const t of toolSpeechCases){
+   await page.evaluate(id=>openMedicalTool(id),t.id);const progressBefore=await page.evaluate(()=>JSON.stringify(TENKA_CORE.state.progress));
+   for(const [selector,expected,rate] of [['.tool-name-audio',t.reading,.9],['.tool-inline-audio >> nth=0',t.functionReading,.82],['.tool-inline-audio >> nth=1',t.exampleReading,.82]]){
+     await page.locator(selector).click();const u=await page.evaluate(()=>window.__tenkaUtterances.at(-1));assert.equal(u.text,expected);assert.equal(u.lang,'ja-JP');assert(Math.abs(u.rate-rate)<.00001);
+   }
+   assert.equal(await page.evaluate(()=>JSON.stringify(TENKA_CORE.state.progress)),progressBefore,'tool audio does not change progress');
+   if(t.id==='tool-04')await page.screenshot({path:path.join(out,'kaigo-tool-kana-audio.png'),fullPage:true});
+ }
+ await page.evaluate(()=>openMedicalToolFlash());
+ for(const t of toolSpeechCases){await page.evaluate(id=>{const s=TENKA_CORE.state;s.cardIndex=s.cards.findIndex(c=>c.id===id);TENKA_CORE.render()},t.id);await page.locator('.session-audio').click();assert.equal(await page.evaluate(()=>window.__tenkaSpoken.at(-1)),t.reading);}
+ const savedToolId='tool-04';await page.evaluate(id=>{const s=TENKA_CORE.state;s.cardIndex=s.cards.findIndex(c=>c.id===id);TENKA_CORE.render()},savedToolId);
+ await page.locator('[onclick="rateCard(\'good\')"]').click();assert(await page.evaluate(id=>TENKA_CORE.state.progress.reviews[id]?.rating==='good',savedToolId));
  await page.setViewportSize({width:320,height:844});
  await page.evaluate(()=>{openKaigoFlash();const s=TENKA_CORE.state;s.cardIndex=s.cards.findIndex(c=>c.id==='k-v-37');s.flipped=true;TENKA_CORE.render()});
  await page.screenshot({path:path.join(out,'kaigo-long-legacy-card.png'),fullPage:true});
@@ -228,12 +244,13 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  await page.reload();await page.waitForFunction(()=>window.TENKA_READY);
  assert(await page.evaluate(({id,cases})=>TENKA_CORE.state.progress.reviews[id]?.rating==='good'&&cases.every(c=>!!TENKA_CORE.state.progress.handoffDone[c.id]),{id:communicationId,cases:communicationCases}),'communication SRS and all six case completions survive reload');
  assert(await page.evaluate(id=>TENKA_CORE.state.progress.reviews[id]?.rating==='good',savedId),'SRS survives browser reload');
+ assert(await page.evaluate(id=>TENKA_CORE.state.progress.reviews[id]?.rating==='good',savedToolId),'illustrated-tool SRS survives browser reload');
  assert(await page.evaluate(()=>TENKA_CORE.state.progress.best['KAIGO-kaigo']===90&&TENKA_CORE.state.progress.best['KAIGO-kaigo-listening']===100),'both quiz results survive reload');
  assert(await page.evaluate(()=>!!TENKA_CORE.state.progress.houkokuDone['r-13']&&!!TENKA_CORE.state.progress.houkokuEssayDone['r-13']&&!!TENKA_CORE.state.progress.handoffDone['h-13']),'report/writing/handoff completions survive browser reload');
  assert.equal(errors.length,0,errors.join('\n'));
- const names=['index.html','styles.css','app-v2.js',...require('./helpers/load-content')().files];
+ const loaded=require('./helpers/load-content')(),names=['index.html','styles.css','app-v2.js',...loaded.files,...loaded.data.kaigo.tools.map(t=>t.image)];
  const sourceHashes=Object.fromEntries([...new Set(names)].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(base,name))).digest('hex')]));
- const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWrongModelAndSelectedOrder:true,reportWrongReviewNoMastery:true,reportWrongReplayPreserved:true,reportWritingAndKanaAudio:true,writingDraftRevision:true,writingRevisionNoMastery:true,writingDraftLiteralText:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true,communicationCategoryAndNotes:true,communicationKanaSpeech:true,communicationWrongAnswerAndRetry:true,communicationProgressReload:true,caseLibrarySelectionAndExit:true,caseLibraryProgressPreserved:true,handoffAnswerExplanation:true,handoffQuotedEvidence:true,handoffWrongReplayPreserved:true},sourceHashes};
+ const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{illustratedToolsLoaded:true,toolAuthoredKanaSpeech:true,toolFlashKanaAndSrsReload:true,facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWrongModelAndSelectedOrder:true,reportWrongReviewNoMastery:true,reportWrongReplayPreserved:true,reportWritingAndKanaAudio:true,writingDraftRevision:true,writingRevisionNoMastery:true,writingDraftLiteralText:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true,communicationCategoryAndNotes:true,communicationKanaSpeech:true,communicationWrongAnswerAndRetry:true,communicationProgressReload:true,caseLibrarySelectionAndExit:true,caseLibraryProgressPreserved:true,handoffAnswerExplanation:true,handoffQuotedEvidence:true,handoffWrongReplayPreserved:true},sourceHashes};
  fs.writeFileSync(path.join(out,'kaigo-ui-audit.json'),JSON.stringify(report,null,2)+'\n');
  if(results.some(r=>r.bad.length||r.practiceBad.length||r.widths.some(v=>v.width>r.width)))process.exitCode=1;
  }finally{await browser.close()}

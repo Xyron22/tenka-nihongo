@@ -6,6 +6,8 @@
     {
       "width": 320,
       "cardsChecked": 152,
+      "toolCardsChecked": 13,
+      "toolDetailsChecked": 13,
       "reportModelsChecked": 40,
       "reportWrongModelsChecked": 20,
       "writingRevisionsChecked": 20,
@@ -56,6 +58,8 @@
     {
       "width": 390,
       "cardsChecked": 152,
+      "toolCardsChecked": 13,
+      "toolDetailsChecked": 13,
       "reportModelsChecked": 40,
       "reportWrongModelsChecked": 20,
       "writingRevisionsChecked": 20,
@@ -106,6 +110,8 @@
     {
       "width": 720,
       "cardsChecked": 152,
+      "toolCardsChecked": 13,
+      "toolDetailsChecked": 13,
       "reportModelsChecked": 40,
       "reportWrongModelsChecked": 20,
       "writingRevisionsChecked": 20,
@@ -155,6 +161,9 @@
     }
   ],
   "flows": {
+    "illustratedToolsLoaded": true,
+    "toolAuthoredKanaSpeech": true,
+    "toolFlashKanaAndSrsReload": true,
     "facilityCategory": true,
     "flashFlipAndUsageNote": true,
     "authoredKanaSpeechText": true,
@@ -189,7 +198,7 @@
   "sourceHashes": {
     "index.html": "a151030fefff1c0351d525ce3ec82b2beaf8138721eaef1b9cf4d4bf23672668",
     "styles.css": "c800a0324487438b54014c3bf6d2f773652a1b9f59b2fa44fefca37976d2338a",
-    "app-v2.js": "f1bbd313b482ab772757bd9a36080676fddaa48d83d8afb960634e56241e3b79",
+    "app-v2.js": "b8875353fa9a3a13fa25e9e3e2aa795c77976b194ef81e9fd633f641c168b731",
     "data.js": "feaccc112134d2b8575cfbd4602454185c96a178425894cfd8679a13828c61c6",
     "content-pack-v1.js": "d0835acbcc74267b58455a346287e610920f33afada36cbbc6b90e3065e517fa",
     "content-pack-v2.js": "0118afe7b6a8c70c81bb40be6fa05949b00c1f43d5466def888204c4dd736385",
@@ -228,6 +237,19 @@
     "houkoku-pack-v1.js": "6752aed020dd6ee8811b45dbd708f25806dafdf1eba37a7ecb8cb50f7190089d",
     "houkoku-pack-v2.js": "271ffec2c6bbd3e278378a7c3c887f476a7da8520340ff2c7e262db5a65231fd",
     "houkoku-pack-v3.js": "b3609744cf5f214dfcc6f77b016c7650190a9367080ab187db93183f8142c795",
-    "tools-pack-v1.js": "4c777fb00164e20bf6bfd2268704261d2ebedf0144ad20aceea1c90a14397f24"
+    "tools-pack-v1.js": "4c777fb00164e20bf6bfd2268704261d2ebedf0144ad20aceea1c90a14397f24",
+    "assets/tools/thermometer-v2.png": "ff0a03ba726c2769a5e45ef17fa1f253fb7c44c128b9b143683ea6e8c5d222bc",
+    "assets/tools/blood-pressure-monitor-v2.png": "58c68aeb46ceb19777caf119868867546fa0dd22950ab66cd5c6b43bde1c292a",
+    "assets/tools/stethoscope-v2.png": "1cea43e645b2dfa85ebf55ada990731685048da264ad78874be316bfeb80e0ce",
+    "assets/tools/pulse-oximeter-v2.png": "738d1711d47cfcda1690ead0321c0e8e4f6c9e6f5820bdc6515b4623235ce108",
+    "assets/tools/syringe-v2.png": "572f403c46674d5a4f5b2861c5b177dd40cdad402769339e7abe4fd65d5eca30",
+    "assets/tools/iv-drip-v2.png": "1a92c9d838c52da63e4c5f8c5defd920a80742d1212c0e5ffb1d16b1c127dc97",
+    "assets/tools/iv-pole-v2.png": "576c850c4297b405fcd48f19cbf4bed7888410e578d7f0da78d8c47e798e346f",
+    "assets/tools/suction-machine-v2.png": "e94051b0c308005e283e538f815aa270d356d1072a90d97d7bc62982beec5f2e",
+    "assets/tools/wheelchair-v2.svg": "d4f7d937160f90d9dbe28056364dbd58bec7d9decba8b14e224ca5daa4b2244f",
+    "assets/tools/walker-v2.svg": "f35799090d24a4931021d848b03ab3b2e9574d597c35f0d617a9cea2e24f3b7a",
+    "assets/tools/portable-toilet-v2.svg": "c53cb6c3775d152b9108a5464a98ba1c65995d56cb79d118ea2ea2ed7da219ee",
+    "assets/tools/adult-diaper-v2.svg": "885bda1e01c06049d0ec30365560bbcc9b2e4af11324b869caa3d066c45a7993",
+    "assets/tools/disposable-gloves-v2.svg": "02b0625e7e8aa9f088e7ab511c8f87ded9f6d6cefb73ffe5af38fe12e51e159e"
   }
 }

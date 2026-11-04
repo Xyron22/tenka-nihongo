@@ -279,7 +279,7 @@ function flash(){
   const srsHint=isToolMode?`<div class="subtle tool-srs-hint">Nilai kartu untuk memasukkannya ke jadwal review.</div>`:'';
   const reviewControls=`<div class="controls srs-controls"><button class="action bad" onclick="rateCard('again')"><span>😵</span>Lagi</button><button class="action blue" onclick="rateCard('good')"><span>🙂</span>Hafal</button><button class="action ok" onclick="rateCard('easy')"><span>✨</span>Mudah</button></div>`;
   const voicePolicy=c._kind==='vocab'?(c._level==='N5'?window.TENKA_N5_QUIZ:c._level==='KAIGO'?window.TENKA_KAIGO_QUIZ:null):null;
-  const voiceText=voicePolicy?voicePolicy.primaryReading(c):(c.term||c.reading||c.kanji);
+  const voiceText=voicePolicy?voicePolicy.primaryReading(c):isToolCard?(c.reading||c.term):(c.term||c.reading||c.kanji);
   return `<div class="study-session-head"><button class="back" onclick="go('${state.returnView}')">←</button><div class="study-session-meta"><span>${modeLabel.toUpperCase()}</span><b>${index}/${total}</b><div class="study-session-track"><i style="width:${pct}%"></i></div></div><button class="icon-btn session-audio" onclick="speakText('${esc(voiceText)}')" aria-label="Putar pengucapan">🔊</button></div>
   <div class="flash-wrap"><div class="flash ${isToolCard?'tool-flash':''} ${isKaigoCard?'kaigo-flash':''} ${state.flipped?'flipped':''}" onclick="flipCard()"><div class="face"><div class="flash-side-label">QUESTION</div>${cardFront(c)}<div class="flash-tap-hint"><span>↻</span> Tap untuk balik</div></div><div class="face backface"><div class="flash-side-label">ANSWER</div>${cardBack(c)}</div></div></div>
   ${c.note?`<details class="muted-box"><summary>Catatan pemakaian</summary><p>${htmlSafe(c.note)}</p></details>`:''}
@@ -495,7 +495,7 @@ function medicalToolDetail(){
         <h2>${htmlSafe(t.term||'')}</h2>
         <div class="tool-reading">${htmlSafe(t.reading||'')}</div>
         <div class="tool-detail-meaning">${htmlSafe(t.meaning||'')}</div>
-        <button class="tool-name-audio" onclick="speakText('${esc(t.term||t.reading)}')">🔊 <span>Nama alat</span></button>
+        <button class="tool-name-audio" onclick="speakText('${esc(t.reading||t.term)}')">🔊 <span>Nama alat</span></button>
       </div>
     </section>
 
@@ -505,7 +505,7 @@ function medicalToolDetail(){
       <b>${htmlSafe(t.functionJP||'')}</b>
       ${t.functionReading?`<small>${htmlSafe(t.functionReading)}</small>`:''}
       ${t.functionID?`<p>🇮🇩 ${htmlSafe(t.functionID)}</p>`:''}
-      ${t.functionJP?`<button class="tool-inline-audio" onclick="speakText('${esc(t.functionJP)}',.82)">🔊 Dengarkan fungsi</button>`:''}
+      ${t.functionJP?`<button class="tool-inline-audio" onclick="speakText('${esc(t.functionReading||t.functionJP)}',.82)">🔊 Dengarkan fungsi</button>`:''}
     </section>
 
     <div class="tool-section-head detail-head"><div><span>EXAMPLE</span><b>Contoh kalimat</b></div><small>Situasi kerja</small></div>
@@ -514,7 +514,7 @@ function medicalToolDetail(){
       <b>${htmlSafe(t.example||'')}</b>
       ${t.exampleReading?`<small>${htmlSafe(t.exampleReading)}</small>`:''}
       ${t.exampleMeaning?`<p>🇮🇩 ${htmlSafe(t.exampleMeaning)}</p>`:''}
-      ${t.example?`<button class="tool-inline-audio" onclick="speakText('${esc(t.example)}',.82)">🔊 Dengarkan contoh</button>`:''}
+      ${t.example?`<button class="tool-inline-audio" onclick="speakText('${esc(t.exampleReading||t.example)}',.82)">🔊 Dengarkan contoh</button>`:''}
     </section>
 
     ${safety}

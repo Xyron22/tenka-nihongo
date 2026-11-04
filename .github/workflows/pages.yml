@@ -84,6 +84,7 @@ jobs:
           node --check tests/kaigo-reports.js
           node --check tests/kaigo-report-review.js
           node --check tests/kaigo-writing-revision.js
+          node --check tests/kaigo-tools-audio.js
           node --check tools-pack-v1.js
           node --check app-v2.js
           node --check audio-engine-v5.js
@@ -202,6 +203,9 @@ jobs:
 
       - name: Medical tools standalone asset test
         run: node --test tests/tools-pack-v1.js
+
+      - name: Kaigo illustrated-tool pronunciation and progress
+        run: node tests/kaigo-tools-audio.js
 
       - name: Exam Sound 5.1.1 test
         run: node tests/audio-v5.js

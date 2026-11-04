@@ -31,6 +31,7 @@ Kaigo kini memiliki **152 kartu kosakata**: 68 kartu lama dengan contoh berkana 
 - Pembahasan operan Kaigo dengan alasan jawaban dan kalimat bukti Jepang, kana, serta Indonesia
 - Perbandingan urutan laporan yang belum sesuai dengan model, kana, arti, dan audio tanpa otomatis menandai penguasaan
 - Revisi tulisan laporan setelah membandingkan model, dengan draf tetap tersedia selama sesi aktif
+- Pengucapan kana untuk nama, fungsi, dan contoh 13 kartu alat bergambar, termasuk flashcard/review
 - Bushu, komponen visual dan mnemonic sebagai alat bantu ingatan
 - Kakijun N5 dari KanjiVG terverifikasi serta canvas latihan menulis
 - PWA / Add to Home Screen di iPhone
