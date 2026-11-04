@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "N4 grammar through requests, gratitude, internal questions, consultation and wishes; remaining source gaps stay OPEN",
+  "scope": "N4 grammar through restriction, quantity, boundaries and comparison; unresolved publisher and depth checks stay OPEN",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -1894,6 +1894,11 @@
           "source": "bunpro",
           "level": "N4",
           "topic": "かい"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "かい"
         }
       ]
     },
@@ -1963,6 +1968,214 @@
           "source": "jlptsensei",
           "level": "N4",
           "topic": "じゃないか／ではないか"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-102",
+      "topic": "しか～ない（限定）",
+      "role": "introduced",
+      "rationale": "Restrictive noun/quantity しか with mandatory negative predicate, distinguished from additive/zero も, neutral だけ and later no-choice Vるしかない.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "しか～ない／数量＋しか～ない"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-103",
+      "topic": "ばかり（物・種類の偏り）",
+      "role": "introduced",
+      "rationale": "Noun-based restriction/dominance ばかり, not assumed always negative; distinguish recent Vたばかり and defer the dedicated wider Vてばかりいる construction.",
+      "levelScopeNotes": "Sensei directly places the noun-based introductory objective at N4; Bunpro places restrictive ばかり at N3. The dedicated Vてばかりいる expansion remains separate.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ばかり（名詞の限定）"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "ばかり"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-104",
+      "topic": "だけで（条件・手段の限定）",
+      "role": "introduced",
+      "rationale": "Application of N5 だけ to a sufficient condition/means using で, not a new duplicate base objective; distinguish additive だけでなく.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-40",
+        "n4-g-86",
+        "n4-g-87"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "だけで"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "だけで"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-105",
+      "topic": "だけでなく（～も）",
+      "role": "introduced",
+      "rationale": "Non-exclusive addition using だけでなく and basic following も, with noun/verb/adjective attachment and retained inclusion of A.",
+      "levelScopeNotes": "The N4 parent lesson explicitly describes the usual following も. Do not infer advanced formal equivalents or all extended N3 compound patterns from this basic construction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "だけでなく"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-106",
+      "topic": "など／とか～とか（例を挙げる）",
+      "role": "introduced",
+      "rationale": "Open examples with など and casual とか, including verb examples, contrasted with closed と and N5 や/たり prerequisites.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "など／とか～とか"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "など／とか～とか"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-107",
+      "topic": "数量＋も（多さ・最小量の否定）",
+      "role": "introduced",
+      "rationale": "Scalar quantity も in positive surprise and negative minimum-zero contexts, distinct from N5 additive も.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "数量＋も"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "も（程度の強調）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-108",
+      "topic": "数量＋は（最低限の見込み）",
+      "role": "introduced",
+      "rationale": "Amount + は lower-bound estimate, not a guaranteed exact amount or maximum; distinguish scalar も and restrictive しか.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "数量＋は"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-109",
+      "topic": "以上／以下／数量＋より",
+      "role": "introduced",
+      "rationale": "Inclusive numeric 以上/以下 versus exclusive numeric より; Sensei's broader comparison row uses existing N5 comparison plus this explicit quantity extension.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "以上／以下／数量＋より"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "より"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-110",
+      "topic": "以外（例外・追加）",
+      "role": "introduced",
+      "rationale": "Exclusion/addition with 以外は/以外にも/以外の and interpretation of which set is excluded.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "以外"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-111",
+      "topic": "何＋助数詞＋か（いくつか）",
+      "role": "introduced",
+      "rationale": "Indefinite quantities with 何 + appropriate counter + か, distinct from direct questions and emphatic quantity も.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "何＋助数詞＋か"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-112",
+      "topic": "～は～の一つだ",
+      "role": "introduced",
+      "rationale": "One member of a category using の一つ; no inference of uniqueness, superlative or exhaustive group size.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "～は～の一つだ"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-113",
+      "topic": "AとBと、どちらが（比較の質問）",
+      "role": "introduced",
+      "rationale": "Explicit two-way comparison question and context-bound answer as application of canonical N5 comparison, not a newly counted base comparison objective.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-19"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "と～と、どちらが"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-114",
+      "topic": "まで（意外な範囲への追加）",
+      "role": "introduced",
+      "rationale": "Scalar/unexpected addition まで, distinct from N5 time/place endpoints and neutral additive も.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "まで（程度・意外な追加）"
         }
       ]
     }

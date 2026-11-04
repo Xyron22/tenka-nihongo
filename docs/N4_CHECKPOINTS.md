@@ -170,3 +170,14 @@ Stage 10A-12 final repair/evidence checkpoint: `bf250101ea24d48c2c83b8a1fab90be2
 
 
 Stage 10A-13 content checkpoint: `ae14c52bae61d40453997b36cbd1ac0e50a5b7f9`; CI [41803983405](https://github.com/Xyron22/tenka-nihongo/actions/runs/41803983405) passed syntax/full regressions, all-target quiz/progress flows and all three browser audits. Actual runner reports verify 101 N4 cards at five widths, 54/54/67 current source hashes and 6/7/39 flows. The latest mobile confirmation card was visually inspected. This follow-up persists those generated reports without changing runtime inputs; final-head CI is still required. Production steps/deployment were skipped.
+
+
+Stage 10A-13 final evidence checkpoint: `6b5b28633c09ef04030017184bb79e9f629b7a1b`; CI [41804467876](https://github.com/Xyron22/tenka-nihongo/actions/runs/41804467876) passed syntax/full regressions, all-target quiz/progress and all three browser audits. Recovered reports exactly matched persisted evidence; production steps/deployment skipped.
+
+## Stage 10A-14 — Restriction, quantity and comparison
+
+- Add thirteen original rich lessons: しか～ない, noun-based ばかり, sufficient-condition だけで, additive だけでなく, open examples など／とか, scalar quantity も, lower-bound amount は, numeric 以上／以下／より, 以外, indefinite 何＋counter＋か, membership の一つ, explicit two-way comparison questions, and unexpected additive まで.
+- Distinguish one yen only from not even one yen; minimum estimates from maximum limits; inclusive boundary numbers from exclusive comparisons; actual group membership from uniqueness or superlatives. Every lesson has full guidance, two Japanese/kana/Indonesian examples and contextual practice.
+- Mark だけで and comparison questions as applications of existing prerequisites rather than inflating base-objective counts. Restrictive ばかり follows the directly verified narrow Sensei N4 noun scope and records Bunpro N3 placement; wider てばかりいる and advanced variants remain separate.
+- Resolve only actual source scopes, retaining N5 comparison evidence on the broader Sensei より row. Add the previously missed Sensei かい row to its existing authored lesson. Expand read-only CI export to include full N4 guidance for the remaining depth review; no app or user-storage changes.
+- All 114 installed N4 lessons remain part of an OPEN curriculum. Accept after CI syntax/full regressions, all-target wrong/timeout/correct sessions and all three browser audits at five widths, then persist actual current evidence. N5 CLOSED retained; N2/N1 deferred, PR #16 draft and no merge/deployment.

@@ -184,9 +184,11 @@
         "snapshotLine": 295
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-104"
+      ],
+      "reason": "Application of N5 だけ to a sufficient condition/means using で, not a new duplicate base objective; distinguish additive だけでなく."
     },
     {
       "id": "bp-n4-L297",
@@ -345,9 +347,11 @@
         "snapshotLine": 318
       },
       "scope": "Scalar まで, not the N5 endpoint particle.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-114"
+      ],
+      "reason": "Scalar/unexpected addition まで, distinct from N5 time/place endpoints and neutral additive も."
     },
     {
       "id": "bp-n4-L320",
@@ -487,9 +491,11 @@
         "snapshotLine": 337
       },
       "scope": "Numeric より meaning over, not only basic comparison.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-109"
+      ],
+      "reason": "Inclusive numeric 以上/以下 versus exclusive numeric より; Sensei's broader comparison row uses existing N5 comparison plus this explicit quantity extension."
     },
     {
       "id": "bp-n4-L339",
@@ -573,9 +579,11 @@
         "snapshotLine": 350
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-106"
+      ],
+      "reason": "Open examples with など and casual とか, including verb examples, contrasted with closed と and N5 や/たり prerequisites."
     },
     {
       "id": "bp-n4-L352",
@@ -644,9 +652,11 @@
         "snapshotLine": 359
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-106"
+      ],
+      "reason": "Open examples with など and casual とか, including verb examples, contrasted with closed と and N5 や/たり prerequisites."
     },
     {
       "id": "bp-n4-L361",
@@ -1154,9 +1164,11 @@
         "snapshotLine": 431
       },
       "scope": "Scalar/emphatic amount + も, not additive also.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-107"
+      ],
+      "reason": "Scalar quantity も in positive surprise and negative minimum-zero contexts, distinct from N5 additive も."
     },
     {
       "id": "bp-n4-L433",
@@ -1219,9 +1231,11 @@
         "snapshotLine": 440
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-109"
+      ],
+      "reason": "Inclusive numeric 以上/以下 versus exclusive numeric より; Sensei's broader comparison row uses existing N5 comparison plus this explicit quantity extension."
     },
     {
       "id": "bp-n4-L442",
@@ -1232,9 +1246,11 @@
         "snapshotLine": 442
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-109"
+      ],
+      "reason": "Inclusive numeric 以上/以下 versus exclusive numeric より; Sensei's broader comparison row uses existing N5 comparison plus this explicit quantity extension."
     },
     {
       "id": "bp-n4-L444",
@@ -1245,9 +1261,11 @@
         "snapshotLine": 444
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-110"
+      ],
+      "reason": "Exclusion/addition with 以外は/以外にも/以外の and interpretation of which set is excluded."
     },
     {
       "id": "bp-n4-L445",
@@ -1314,9 +1332,11 @@
         "snapshotLine": 453
       },
       "scope": "Amount + は lower bound, not topic は.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-108"
+      ],
+      "reason": "Amount + は lower-bound estimate, not a guaranteed exact amount or maximum; distinguish scalar も and restrictive しか."
     },
     {
       "id": "bp-n4-L455",
@@ -1327,9 +1347,11 @@
         "snapshotLine": 455
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-111"
+      ],
+      "reason": "Indefinite quantities with 何 + appropriate counter + か, distinct from direct questions and emphatic quantity も."
     },
     {
       "id": "bp-n4-L456",
@@ -1353,9 +1375,11 @@
         "snapshotLine": 458
       },
       "scope": "Quantity + しか～ない.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-102"
+      ],
+      "reason": "Restrictive noun/quantity しか with mandatory negative predicate, distinguished from additive/zero も, neutral だけ and later no-choice Vるしかない."
     },
     {
       "id": "bp-n4-L460",
@@ -1366,9 +1390,11 @@
         "snapshotLine": 460
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-112"
+      ],
+      "reason": "One member of a category using の一つ; no inference of uniqueness, superlative or exhaustive group size."
     },
     {
       "id": "bp-n4-L462",
@@ -2109,9 +2135,11 @@
         "snapshotLine": 561
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-102"
+      ],
+      "reason": "Restrictive noun/quantity しか with mandatory negative predicate, distinguished from additive/zero も, neutral だけ and later no-choice Vるしかない."
     },
     {
       "id": "bp-n4-L563",
@@ -2122,9 +2150,11 @@
         "snapshotLine": 563
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-105"
+      ],
+      "reason": "Non-exclusive addition using だけでなく and basic following も, with noun/verb/adjective attachment and retained inclusion of A."
     },
     {
       "id": "bp-n4-L564",
@@ -2251,11 +2281,11 @@
         "snapshotLine": 581
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "partial",
+      "disposition": "covered_n4",
       "lessons": [
-        "n5-g-19"
+        "n4-g-113"
       ],
-      "reason": "Basic comparison exists; explicit AとBとどちらが question coverage needs runtime review."
+      "reason": "Explicit two-way comparison question and context-bound answer as application of canonical N5 comparison, not a newly counted base comparison objective."
     },
     {
       "id": "bp-n4-L583",
@@ -2766,10 +2796,12 @@
         "ordinal": 7
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision.",
-      "levelReview": "Bunpro places restrictive ばかり at N3; narrow N4 teaching scope remains to be justified."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-103"
+      ],
+      "reason": "Noun-based restriction/dominance ばかり, not assumed always negative; distinguish recent Vたばかり and defer the dedicated wider Vてばかりいる construction.",
+      "levelReview": "Bunpro places restrictive ばかり at N3; narrow N4 teaching scope remains to be justified. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
     },
     {
       "id": "js-n4-008",
@@ -2780,9 +2812,11 @@
         "ordinal": 8
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-104"
+      ],
+      "reason": "Application of N5 だけ to a sufficient condition/means using で, not a new duplicate base objective; distinguish additive だけでなく."
     },
     {
       "id": "js-n4-009",
@@ -3066,9 +3100,11 @@
         "ordinal": 28
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-97"
+      ],
+      "reason": "Existing N4 かい lesson provides the familiar yes/no question and register guidance; this independent publisher row was previously missed in the matrix."
     },
     {
       "id": "js-n4-029",
@@ -3340,9 +3376,11 @@
         "ordinal": 47
       },
       "scope": "Scalar/emphatic も, not additive also.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-107"
+      ],
+      "reason": "Scalar quantity も in positive surprise and negative minimum-zero contexts, distinct from N5 additive も."
     },
     {
       "id": "js-n4-048",
@@ -3368,9 +3406,11 @@
         "ordinal": 49
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-106"
+      ],
+      "reason": "Open examples with など and casual とか, including verb examples, contrasted with closed と and N5 や/たり prerequisites."
     },
     {
       "id": "js-n4-050",
@@ -4339,9 +4379,11 @@
         "ordinal": 115
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-106"
+      ],
+      "reason": "Open examples with など and casual とか, including verb examples, contrasted with closed と and N5 や/たり prerequisites."
     },
     {
       "id": "js-n4-116",
@@ -4456,11 +4498,12 @@
         "ordinal": 123
       },
       "scope": "Comparison and quantity over; basic comparison is only partial.",
-      "disposition": "partial",
+      "disposition": "covered_n4",
       "lessons": [
+        "n4-g-109",
         "n5-g-19"
       ],
-      "reason": "Basic comparison exists; numeric より meaning over needs separate quantity coverage."
+      "reason": "Inclusive numeric 以上/以下 versus exclusive numeric より; Sensei's broader comparison row uses existing N5 comparison plus this explicit quantity extension."
     },
     {
       "id": "js-n4-124",
