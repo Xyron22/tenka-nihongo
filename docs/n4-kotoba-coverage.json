@@ -1,0 +1,303 @@
+{
+  "status": "OPEN",
+  "checked": "2026-11-05",
+  "officialJlptInventory": false,
+  "fullReferenceReconciliation": false,
+  "scope": "First N4 lexical batch: two retained cards and twelve authored sense/application cards. Full N4 vocabulary inventory, wider senses and contextual exercise depth remain OPEN.",
+  "sourcePolicy": "Publisher level/topic mappings and meaning verification only. TENKA examples, Indonesian notes and practice wording are original. Grammar-library lexical rows are not a complete vocabulary inventory.",
+  "entries": [
+    {
+      "cardId": "n4-v-01",
+      "term": "間に合う",
+      "role": "legacy-baseline",
+      "scope": "Arriving or finishing in time; original card fields retained.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "間に合う",
+          "url": "https://bunpro.jp/vocabs/%E9%96%93%E3%81%AB%E5%90%88%E3%81%86?deck_id=43"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    },
+    {
+      "cardId": "n4-v-02",
+      "term": "続ける",
+      "role": "legacy-baseline",
+      "scope": "Standalone transitive continuation; distinct from stem compounds.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "続ける",
+          "url": "https://jlptsensei.com/learn-japanese-vocabulary/%E7%B6%9A%E3%81%91%E3%82%8B-%E3%81%A4%E3%81%A5%E3%81%91%E3%82%8B-tsudzukeru-meaning/"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    },
+    {
+      "cardId": "n4-v-03",
+      "term": "どんどん",
+      "role": "introduced",
+      "scope": "Ongoing energetic/rapid progression, contrasted with gradual だんだん.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "どんどん",
+          "url": "https://bunpro.jp/grammar_points/%E3%81%A9%E3%82%93%E3%81%A9%E3%82%93"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    },
+    {
+      "cardId": "n4-v-04",
+      "term": "まず",
+      "role": "introduced",
+      "scope": "First step or topic, not first-place ranking.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "まず",
+          "url": "https://bunpro.jp/grammar_points/%E3%81%BE%E3%81%9A"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    },
+    {
+      "cardId": "n4-v-05",
+      "term": "とうとう",
+      "role": "introduced",
+      "scope": "Eventual outcome, with original positive and negative contexts; not forced against overlapping やっと.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "とうとう",
+          "url": "https://bunpro.jp/grammar_points/%E3%81%A8%E3%81%86%E3%81%A8%E3%81%86"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    },
+    {
+      "cardId": "n4-v-06",
+      "term": "なるべく",
+      "role": "introduced",
+      "scope": "Effort within practical limits; not guaranteed outcome.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "なるべく",
+          "url": "https://bunpro.jp/grammar_points/%E3%81%AA%E3%82%8B%E3%81%B9%E3%81%8F"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    },
+    {
+      "cardId": "n4-v-07",
+      "term": "やっと",
+      "role": "introduced",
+      "scope": "Success after waiting/effort and barely being able, taught in separate contexts.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "やっと",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        },
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "やっと",
+          "url": "https://bunpro.jp/vocabs/%E3%82%84%E3%81%A3%E3%81%A8?deck_id=45"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    },
+    {
+      "cardId": "n4-v-08",
+      "term": "きっと",
+      "role": "introduced",
+      "scope": "Strong speaker expectation, without turning a prediction into fact or assigning a fixed percentage.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "きっと",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        },
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "きっと",
+          "url": "https://bunpro.jp/vocabs/%E3%81%8D%E3%81%A3%E3%81%A8?deck_id=47"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    },
+    {
+      "cardId": "n4-v-09",
+      "term": "急に",
+      "role": "introduced",
+      "scope": "Abrupt occurrence/change; distinguish hurried manner.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "急に",
+          "url": "https://jlptsensei.com/learn-japanese-grammar/%E6%80%A5%E3%81%AB-kyuu-ni-meaning/"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    },
+    {
+      "cardId": "n4-v-10",
+      "term": "さっき",
+      "role": "introduced",
+      "scope": "Recent past relative to context, with no invented fixed minute range.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "さっき",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    },
+    {
+      "cardId": "n4-v-11",
+      "term": "ぜひ",
+      "role": "introduced",
+      "scope": "Strong desire and invitation, distinguished from prediction.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ぜひ",
+          "url": "https://jlptsensei.com/learn-japanese-grammar/%E3%81%9C%E3%81%B2-zehi-meaning/"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    },
+    {
+      "cardId": "n4-v-12",
+      "term": "だいたい",
+      "role": "application-extension",
+      "scope": "Numeric/duration approximation extends the actual closed-N5 mostly example; not a new headword.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "だいたい",
+          "url": "https://bunpro.jp/grammar_points/%E3%81%A0%E3%81%84%E3%81%9F%E3%81%84"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ],
+      "canonicalCardId": "n5-v-22-gaps-030",
+      "countAsNewN4Word": false
+    },
+    {
+      "cardId": "n4-v-13",
+      "term": "また",
+      "role": "application-extension",
+      "scope": "Additive sentence connection extends the N5 repetition example; not a new headword.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "また",
+          "url": "https://bunpro.jp/grammar_points/%E3%81%BE%E3%81%9F"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ],
+      "canonicalCardId": "n5-v-22-gaps-032",
+      "countAsNewN4Word": false
+    },
+    {
+      "cardId": "n4-v-14",
+      "term": "取り出す",
+      "role": "construction-application",
+      "scope": "Representative outward-compound lexical application of the Sensei N4 出す construction. Bunpro classifies the standalone word N2; this is not claimed as Bunpro N4 lexical coverage or as development of the deferred N2 track.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "出す (parent outward construction, not an exact headword level claim)",
+          "url": "https://jlptsensei.com/learn-japanese-grammar/%E5%87%BA%E3%81%99-dasu-meaning/"
+        },
+        {
+          "source": "bunpro",
+          "level": "N2",
+          "topic": "取り出す (meaning verification and recorded level difference)",
+          "url": "https://bunpro.jp/vocabs/%E5%8F%96%E3%82%8A%E5%87%BA%E3%81%99?deck_id=3467"
+        }
+      ],
+      "practice": [
+        "written-meaning-with-context",
+        "kana-word-plus-example-listening",
+        "translated-result-review"
+      ]
+    }
+  ],
+  "remainingWork": [
+    "Capture and reconcile full independent N4 vocabulary inventories and actual N5 overlaps.",
+    "Resolve remaining lexical rows in n4-grammar-reference-audit.json without treating word-string matches as scope coverage.",
+    "Expand contextual comprehension, Kanji/Bushu and reading/listening objectives before N4 closure."
+  ]
+}

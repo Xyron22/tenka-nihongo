@@ -16,6 +16,12 @@ At `5f2f2c1`, N4 contains one grammar sample, two vocabulary cards and one Kanji
 
 The initial N4 experience lesson overlaps an audited N5 prerequisite. Retain its legacy ID and explicitly classify the bridge/review role in the N4 coverage ledger; it must not inflate the number of distinct covered objectives.
 
+## Current implementation checkpoint — 2026-11-05
+
+Stage 10A-19 starts the N4 vocabulary phase after 149 installed rich grammar lessons. N4 has fourteen vocabulary cards (two retained and twelve new sense/application cards) and one legacy Kanji sample. The [first vocabulary ledger](n4-kotoba-coverage.json) records the actual authored scope and N5 prerequisite extensions. Eighteen rows in the captured grammar-library inventories remain unresolved; those inventories are not a complete N4 vocabulary syllabus.
+
+Next: continue lexical reconciliation and capture full independent vocabulary inventories, then build reviewed vocabulary/Kanji/Bushu batches and mature reading/listening/contextual practice. N4 and N3 stay OPEN; N5 and the bounded Kaigo basic unit remain CLOSED. The dedicated certification track remains planned separately.
+
 ## Quality gates for each level
 
 - Use multiple reference inventories and official JLPT ability descriptions. Individual vocabulary/Kanji/grammar lists are level-aligned references, not official JLPT completion thresholds.

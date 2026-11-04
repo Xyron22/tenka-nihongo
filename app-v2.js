@@ -256,7 +256,8 @@ function cardFront(c){
 }
 function cardBack(c){
   if(c._kind==='tool')return `<div class="reading">${htmlSafe(c.reading||'')}</div><div class="meaning">${htmlSafe(c.meaning||'')}</div><div class="tool-flash-block"><b>${htmlSafe(c.functionJP||'')}</b>${c.functionReading?`<small>${htmlSafe(c.functionReading)}</small>`:''}${c.functionID?`<div>🇮🇩 ${htmlSafe(c.functionID)}</div>`:''}</div><div class="example"><b>${htmlSafe(c.example||'')}</b>${c.exampleReading?`<br><small>${htmlSafe(c.exampleReading)}</small>`:''}<br>${htmlSafe(c.exampleMeaning||'')}</div>`;
-  return `<div class="reading">${c.reading||''}</div>${c.romaji?`<div class="subtle">${c.romaji}</div>`:''}<div class="meaning">${c.meaning||''}</div><div class="example"><b>${c.example||''}</b>${c.exampleReading?`<br><small>${c.exampleReading}</small>`:''}<br>${c.exampleMeaning||''}</div>`;
+  const extra=c._level==='N4'&&c._kind==='vocab'&&c.extraExample?`<div class="example"><b>${htmlSafe(c.extraExample)}</b><br><small>${htmlSafe(c.extraExampleReading||'')}</small><br>${htmlSafe(c.extraExampleMeaning||'')}</div>`:'';
+  return `<div class="reading">${c.reading||''}</div>${c.romaji?`<div class="subtle">${c.romaji}</div>`:''}<div class="meaning">${c.meaning||''}</div><div class="example"><b>${c.example||''}</b>${c.exampleReading?`<br><small>${c.exampleReading}</small>`:''}<br>${c.exampleMeaning||''}</div>${extra}`;
 }
 function kanjiStudyNotes(c){
   if(!c.bushu)return '';
@@ -278,10 +279,10 @@ function flash(){
   const toolControls=isToolMode?`<div class="controls tool-flash-controls"><button class="action" onclick="stepToolFlash(-1)" ${state.cardIndex===0?'disabled aria-disabled="true"':''}>← Sebelumnya</button><button class="action" onclick="${state.cardIndex>=state.cards.length-1?`go('${state.returnView}')`:'stepToolFlash(1)'}">${state.cardIndex>=state.cards.length-1?'Selesai':'Lewati →'}</button></div>`:'';
   const srsHint=isToolMode?`<div class="subtle tool-srs-hint">Nilai kartu untuk memasukkannya ke jadwal review.</div>`:'';
   const reviewControls=`<div class="controls srs-controls"><button class="action bad" onclick="rateCard('again')"><span>😵</span>Lagi</button><button class="action blue" onclick="rateCard('good')"><span>🙂</span>Hafal</button><button class="action ok" onclick="rateCard('easy')"><span>✨</span>Mudah</button></div>`;
-  const voicePolicy=c._kind==='vocab'?(c._level==='N5'?window.TENKA_N5_QUIZ:c._level==='KAIGO'?window.TENKA_KAIGO_QUIZ:null):null;
+  const voicePolicy=c._kind==='vocab'?(c._level==='N5'?window.TENKA_N5_QUIZ:c._level==='N4'?window.TENKA_N4_QUIZ:c._level==='KAIGO'?window.TENKA_KAIGO_QUIZ:null):null;
   const voiceText=voicePolicy?voicePolicy.primaryReading(c):isToolCard?(c.reading||c.term):(c.term||c.reading||c.kanji);
   return `<div class="study-session-head"><button class="back" onclick="go('${state.returnView}')">←</button><div class="study-session-meta"><span>${modeLabel.toUpperCase()}</span><b>${index}/${total}</b><div class="study-session-track"><i style="width:${pct}%"></i></div></div><button class="icon-btn session-audio" onclick="speakText('${esc(voiceText)}')" aria-label="Putar pengucapan">🔊</button></div>
-  <div class="flash-wrap"><div class="flash ${isToolCard?'tool-flash':''} ${isKaigoCard?'kaigo-flash':''} ${state.flipped?'flipped':''}" onclick="flipCard()"><div class="face"><div class="flash-side-label">QUESTION</div>${cardFront(c)}<div class="flash-tap-hint"><span>↻</span> Tap untuk balik</div></div><div class="face backface"><div class="flash-side-label">ANSWER</div>${cardBack(c)}</div></div></div>
+  <div class="flash-wrap"><div class="flash ${isToolCard?'tool-flash':''} ${isKaigoCard?'kaigo-flash':''} ${c._level==='N4'&&c._kind==='vocab'?'n4-vocab-flash':''} ${state.flipped?'flipped':''}" onclick="flipCard()"><div class="face"><div class="flash-side-label">QUESTION</div>${cardFront(c)}<div class="flash-tap-hint"><span>↻</span> Tap untuk balik</div></div><div class="face backface"><div class="flash-side-label">ANSWER</div>${cardBack(c)}</div></div></div>
   ${c.note?`<details class="muted-box"><summary>Catatan pemakaian</summary><p>${htmlSafe(c.note)}</p></details>`:''}
   ${c._kind==='kanji'?kanjiStudyNotes(c):''}
   ${c._kind==='kanji'?`<div class="small-actions flash-extra-actions"><button class="pill" onclick="openKakijun('${c.id}')">✍️ Kakijun</button><button class="pill" onclick="speakText('${esc(c.example||c.kanji)}')">🔊 Contoh</button></div>`:''}
@@ -348,7 +349,7 @@ function startGrammarQuiz(level){
 function shuffle(arr){const x=arr.slice();for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x}
 function makeCardQuiz(cards,type){
   const sameLevel=cards.length&&cards.every(c=>c._level===cards[0]._level);
-  const policy=sameLevel?(cards[0]._level==='N5'?window.TENKA_N5_QUIZ:cards[0]._level==='KAIGO'?window.TENKA_KAIGO_QUIZ:null):null;
+  const policy=sameLevel?(cards[0]._level==='N5'?window.TENKA_N5_QUIZ:cards[0]._level==='N4'?window.TENKA_N4_QUIZ:cards[0]._level==='KAIGO'?window.TENKA_KAIGO_QUIZ:null):null;
   const eligible=cards.filter(c=>!c.quizExcludeReason&&c.meaning);
   return shuffle(eligible).slice(0,Math.min(10,eligible.length)).map(c=>{
     const candidates=eligible.filter(x=>x.meaning!==c.meaning&&(!c.quizGroup||c.quizGroup!==x.quizGroup)&&(!policy||policy.allowed(c,x)));

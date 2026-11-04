@@ -1,6 +1,6 @@
 {
   "status": "OPEN",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "officialJlptInventory": false,
   "fullReferenceInventoryCaptured": true,
   "fullReferenceReconciliation": false,
@@ -119,9 +119,11 @@
         "snapshotLine": 286
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-03"
+      ],
+      "reason": "Progression sense has an original kana example, contrast and contextual written/listening practice."
     },
     {
       "id": "bp-n4-L288",
@@ -345,9 +347,11 @@
         "snapshotLine": 316
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-04"
+      ],
+      "reason": "First-step scope taught with sequence, ranking contrast and contextual practice."
     },
     {
       "id": "bp-n4-L318",
@@ -387,10 +391,13 @@
       "position": {
         "snapshotLine": 322
       },
-      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "scope": "Introductory repetition and additive sentence connection.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n5-v-22-gaps-032",
+        "n4-v-13"
+      ],
+      "reason": "N5 retains repetition; N4 adds actual additive sentence connection with translated kana context and practice."
     },
     {
       "id": "bp-n4-L323",
@@ -491,9 +498,11 @@
         "snapshotLine": 335
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-05"
+      ],
+      "reason": "Positive and negative eventual outcomes taught; overlapping やっと is conservatively excluded as a competing answer."
     },
     {
       "id": "bp-n4-L337",
@@ -534,9 +543,11 @@
         "snapshotLine": 341
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-06"
+      ],
+      "reason": "Practical-limit effort taught, contrasted with prediction and guaranteed outcome."
     },
     {
       "id": "bp-n4-L342",
@@ -1330,12 +1341,13 @@
       "position": {
         "snapshotLine": 447
       },
-      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "partial",
+      "scope": "Introductory mostly and numeric/duration approximation; not every idiomatic use.",
+      "disposition": "covered_n4",
       "lessons": [
-        "n5-v-22-gaps-030"
+        "n5-v-22-gaps-030",
+        "n4-v-12"
       ],
-      "reason": "N5 だいたい has mostly/roughly gloss and an actual mostly example. A numeric-approximation application with its own context remains pending; do not claim it from a matching term alone."
+      "reason": "N5 mostly scope retained; N4 adds numeric/duration approximation in two original kana contexts and practice."
     },
     {
       "id": "bp-n4-L449",
@@ -2909,12 +2921,13 @@
       "position": {
         "ordinal": 9
       },
-      "scope": "Both inception and outward compounds.",
-      "disposition": "partial",
+      "scope": "Inception plus a representative outward lexical application; not all possible 出す compounds.",
+      "disposition": "covered_n4",
       "lessons": [
-        "n4-g-17"
+        "n4-g-17",
+        "n4-v-14"
       ],
-      "reason": "Sudden inception is taught. Outward compounds such as 取り出す require a lexical entry and must not be inferred from inception alone."
+      "reason": "Inception remains in n4-g-17. The lexical application teaches outward 取り出す in two original contexts, not a general assertion that every compound means start. Bunpro standalone vocabulary placement is N2; the narrow Sensei N4 parent-construction application and level difference are recorded in n4-kotoba-coverage.json."
     },
     {
       "id": "js-n4-010",
@@ -3255,9 +3268,11 @@
         "ordinal": 32
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-08"
+      ],
+      "reason": "Strong speaker expectation taught with contextual practice; no fixed probability or guaranteed truth."
     },
     {
       "id": "js-n4-033",
@@ -3376,9 +3391,11 @@
         "ordinal": 40
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-09"
+      ],
+      "reason": "Sudden-change introductory scope taught with kana example and hurried-manner contrast."
     },
     {
       "id": "js-n4-041",
@@ -3857,9 +3874,11 @@
         "ordinal": 72
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-10"
+      ],
+      "reason": "Context-relative recent past taught without an invented minute threshold."
     },
     {
       "id": "js-n4-073",
@@ -4606,9 +4625,11 @@
         "ordinal": 122
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-07"
+      ],
+      "reason": "Effort/waiting success and barely-able senses taught in two original kana contexts; eventual-outcome alternatives excluded."
     },
     {
       "id": "js-n4-123",
@@ -4725,9 +4746,11 @@
         "ordinal": 130
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-11"
+      ],
+      "reason": "Strong desire/invitation taught with two original contexts, distinct from prediction."
     },
     {
       "id": "js-n4-131",

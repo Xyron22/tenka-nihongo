@@ -85,6 +85,8 @@ jobs:
           node --check content-pack-v48.js
           node --check content-pack-v49.js
           node --check content-pack-v50.js
+          node --check content-pack-v51.js
+          node --check tests/n4-card-quiz.js
           node --check scripts/export-curriculum-audit.cjs
           node --check tests/n4-bunpou-quality.js
           node --check tests/n4-grammar-quiz.js
@@ -241,6 +243,9 @@ jobs:
 
       - name: N4 contextual grammar quiz and progress
         run: node tests/n4-grammar-quiz.js
+
+      - name: N4 lexical content, contextual listening and progress
+        run: node tests/n4-card-quiz.js
 
       - name: Kaigo workplace content and practice
         run: node tests/kaigo-workplace.js
