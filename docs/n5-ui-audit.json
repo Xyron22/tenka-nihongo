@@ -149,7 +149,7 @@
     "browserProgressReload": true
   },
   "sourceHashes": {
-    "index.html": "74932cc7635a8456caa4bdad231a6572b94f55620613d000481058a9b265f088",
+    "index.html": "b6965149c9c7f5d99574bfb5b4befbab2ff528f1af4ec53fe8d54f02f0608f8b",
     "styles.css": "c800a0324487438b54014c3bf6d2f773652a1b9f59b2fa44fefca37976d2338a",
     "app-v2.js": "39d2bfcc1d84e748c79615ab39483fc19153c5903d26cc8cc94332ed1b3c2a4d",
     "data.js": "feaccc112134d2b8575cfbd4602454185c96a178425894cfd8679a13828c61c6",
@@ -191,6 +191,7 @@
     "content-pack-v35.js": "be5d8c98aaa82c28e463af7db75ce09e9e5f9d37b7234191be285ded11778110",
     "content-pack-v36.js": "1dae605671a0bade3adaca88f7e3989516e4f38cfb4154954a693f3cb1bee5b1",
     "content-pack-v37.js": "dda7f5f950de34665dc8059903d2adefc0fcaaba6211c52657caa6acd419d951",
+    "content-pack-v38.js": "6cac3101b93c6951b631e45ace5130899d39af46edb93c6c18650086fa1361af",
     "houkoku-pack-v1.js": "6752aed020dd6ee8811b45dbd708f25806dafdf1eba37a7ecb8cb50f7190089d",
     "houkoku-pack-v2.js": "271ffec2c6bbd3e278378a7c3c887f476a7da8520340ff2c7e262db5a65231fd",
     "houkoku-pack-v3.js": "b3609744cf5f214dfcc6f77b016c7650190a9367080ab187db93183f8142c795",

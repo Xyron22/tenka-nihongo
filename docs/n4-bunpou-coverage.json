@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Staged N4 actions, phases, ability/volition/planning, directional development and conditionals; full inventory reconciliation still pending",
+  "scope": "Staged N4 actions, phases, ability/volition/planning, direction, conditionals, possibility/inference/appearance; full inventory reconciliation still pending",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -600,6 +600,184 @@
           "level": "N4",
           "topic": "場合は",
           "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-32",
+      "topic": "かもしれない",
+      "role": "introduced",
+      "rationale": "Open possibility without fixed percentage or certainty; correct plain-form attachment.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かもしれない"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "かもしれない",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-33",
+      "topic": "はずだ／はずがない",
+      "role": "introduced",
+      "rationale": "Expected/impossible inference from reasons, including negative distinction; not obligation.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "はずだ／はずがない"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "はずだ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "はずがない",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-34",
+      "topic": "そう（見た目・兆し）",
+      "role": "introduced",
+      "rationale": "Appearance/impending-event stem construction plus そうな/そうに; hearsay そう is contrasted but not claimed here.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "そう（見た目・兆し）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "そうだ [2]",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "そうに／そうな",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-35",
+      "topic": "ようだ／のような・のように",
+      "role": "introduced",
+      "rationale": "Inference and likeness with proper noun/na-adjective attachment and modifier roles.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ようだ／のような・のように"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ようだ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ように／ような",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-36",
+      "topic": "みたい／みたいな・みたいに",
+      "role": "introduced",
+      "rationale": "Conversational inference/likeness and modifier roles, not the desire 見たい.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "みたい／みたいな・みたいに"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "みたいだ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "みたいな",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "みたいに",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-37",
+      "topic": "らしい①（推定・伝聞）",
+      "role": "introduced",
+      "rationale": "Inference from received information, not automatic proof or exclusively oral information.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "らしい①（推定・伝聞）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "らしい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-38",
+      "topic": "らしい②（特徴）",
+      "role": "introduced",
+      "rationale": "Characteristic likeness as an adjective, separately from inference about status; no universal group-trait claim.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "らしい②",
+          "url": "https://bunpro.jp/grammar_points/637"
+        }
+      ],
+      "referenceScopeNote": "Bunpro explicitly lists this characteristic construction at N4. JLPT Sensei's parent らしい inventory entry is glossed as inference/hearsay; it is not claimed as direct verification of the characteristic sense."
+    },
+    {
+      "lessonId": "n4-g-39",
+      "topic": "にみえる",
+      "role": "introduced",
+      "rationale": "Visual impression with N/na-adjective に versus i-adjective く; not merely visibility.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "にみえる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "に見える",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
         }
       ]
     }
