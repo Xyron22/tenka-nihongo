@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Staged N4 grammar through causation, permission, commands, advice, regret and purpose; full inventory reconciliation still pending",
+  "scope": "Staged N4 grammar through honorific/humble/formal-request foundations; full inventory reconciliation still pending",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -19,6 +19,16 @@
       "id": "wasabi",
       "url": "https://wasabi-jpn.com/magazine/japanese-grammar/japanese-causative-form/",
       "role": "Construction/particle/actor verification for causative; not a JLPT level inventory"
+    },
+    {
+      "id": "bunka-keigo",
+      "url": "https://www.bunka.go.jp/seisaku/kokugo_nihongo/kokugo_shisaku/keigo/chapter2/detail.html",
+      "role": "Agency for Cultural Affairs keigo principles and actor/recipient/listener distinctions; not a JLPT level inventory"
+    },
+    {
+      "id": "bunka-keigo-forms",
+      "url": "https://www.bunka.go.jp/seisaku/kokugo_nihongo/kokugo_shisaku/keigo/chapter4/detail.html",
+      "role": "Agency for Cultural Affairs prefix selection and honorific/humble role safeguards; original Indonesian teaching, no examples copied"
     }
   ],
   "entries": [
@@ -1396,6 +1406,212 @@
         }
       ],
       "referenceScopeNote": "Bunpro directly lists the purpose construction at N4. JLPT Sensei's likeness ように／ような parent is not claimed as an exact purpose match."
+    },
+    {
+      "lessonId": "n4-g-72",
+      "topic": "お～になる",
+      "role": "introduced",
+      "rationale": "Honor the action's actor, who may be listener or a respected third party; distinguish humble own-side action.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "お～になる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "お～になる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-73",
+      "topic": "お～ください／ご～ください",
+      "role": "introduced",
+      "rationale": "Respectful request to the actor with conventional prefix/stem formation, distinct from offering one's own action.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "お～ください／ご～ください"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "お～ください",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-74",
+      "topic": "いらっしゃる",
+      "role": "introduced",
+      "rationale": "Honorific existence/go/come chosen by context; standard polite いらっしゃいます.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "いらっしゃる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "いらっしゃる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-75",
+      "topic": "なさる",
+      "role": "introduced",
+      "rationale": "Honorific する with なさいます and actor-role/register safeguards.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "なさる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "なさる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-76",
+      "topic": "ございます／でございます",
+      "role": "introduced",
+      "rationale": "Formal ある versus formal copula; politeness to listener is not identical to honoring an action actor.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ございます／でございます"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ございます",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "でございます",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-77",
+      "topic": "お～する／ご～する",
+      "role": "introduced",
+      "rationale": "Own-side action toward/related to an honored person; do not indiscriminately humble the guest's action.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "お～する",
+          "url": "https://bunpro.jp/grammar_points/726"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "謙譲語I direction and action roles."
+        },
+        {
+          "source": "bunka-keigo-forms",
+          "scope": "Conventional お/ご, eligible words and distinction from honorific actor forms."
+        }
+      ],
+      "referenceScopeNote": "Direct N4 placement follows Bunpro. No nonexistent dedicated JLPT Sensei N4 お～する row is claimed."
+    },
+    {
+      "lessonId": "n4-g-78",
+      "topic": "いたす",
+      "role": "introduced",
+      "rationale": "Formal own-side action toward listener (謙譲語II), distinct from specifically honoring an action's destination.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "いたす"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "いたします",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-79",
+      "topic": "ていただけませんか",
+      "role": "introduced",
+      "rationale": "Polite request from benefit-receiver viewpoint; listener is requested to perform the main action.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ていただけませんか"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ていただけませんか",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
     }
   ]
 }

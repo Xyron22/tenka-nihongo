@@ -115,3 +115,14 @@ Stage 10A-9 checkpoint: `ca03964947c802d1d47565122af2542f20135265`; CI [41791953
 - Use Node 24, pinned Playwright 1.64.1 and Noto Sans JP 5.3.1. Install test dependencies and write screenshots/reports in the runner temporary directory, outside the static-site checkout. No application runtime, curriculum, storage identity or production condition changes.
 - Emit complete JSON reports and the latest N4 mobile screenshot in numbered, length-checked log chunks. A reviewer can recover actual runner-produced evidence rather than copying hashes onto an older report. Later content checkpoints must retain current evidence and pass the browser gates as well as syntax/full regressions.
 - Accept only when exact-head CI including all three browser audits passes. N4/N3 remain OPEN, PR #16 stays draft and main/deployment remain approval-gated.
+
+
+Stage 10A-9.1 checkpoint: `088ae9cef1445ac0d8cc5ed21bb9154dc5f1d9dd`; CI [41794147113](https://github.com/Xyron22/tenka-nihongo/actions/runs/41794147113) passed with Node 24, the full syntax/regression suite and all three automatic browser audits. Recovered JSON evidence was identical to committed reports (51/51/64 current source hashes); the actual mobile screenshot was inspected. Production-related steps and deployment were skipped.
+
+## Stage 10A-10 — Honorific, humble and formal-request foundations
+
+- Add eight original rich lessons: お～になる, お／ご～ください, いらっしゃる, なさる, ございます／でございます, お／ご～する, いたす and ていただけませんか. All seventy-nine installed lessons have complete guidance, two Japanese/kana/Indonesian examples, contrast and contextual practice; old fields/IDs remain preserved.
+- Distinguish honoring the actor, honoring the party related to an own-side action, and speaking formally to the listener. A respected actor can be a third party; honorifics are not falsely limited to the listener. Context/inside-outside relations matter. Formal ある/copula is not a general replacement for living-person existence.
+- Explain conventional お／ご and eligible verbs rather than a universal prefix rule. Teach special polite いらっしゃいます／なさいます, correct する-noun formation, and polite receiving-side requests without treating them as proof of agreement or completion. Actor/recipient questions supplement form recognition.
+- Cross-check level placement against publisher inventories and the keigo role/prefix principles against the Agency for Cultural Affairs. The official language guidance is not treated as a JLPT inventory. Dedicated special-verb vocabulary and complete coverage reconciliation are still required before full N4 closure.
+- Validate syntax, full regressions and all-target wrong/timeout/correct flows in CI. Run all three browser audits on the actual new manifest at five widths, recover the runner-produced reports/screenshot and persist matching evidence before final acceptance. N4/N3 remain OPEN, N2/N1 stay deferred, PR #16 remains draft, and no merge/production deployment is authorized.
