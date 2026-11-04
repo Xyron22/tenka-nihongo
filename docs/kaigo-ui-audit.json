@@ -161,9 +161,96 @@
           "width": 720
         }
       ]
+    },
+    {
+      "width": 1280,
+      "cardsChecked": 152,
+      "toolCardsChecked": 13,
+      "toolDetailsChecked": 13,
+      "toolQuizReviewsChecked": 13,
+      "reportModelsChecked": 40,
+      "reportWrongModelsChecked": 20,
+      "writingRevisionsChecked": 20,
+      "handoffSentencesChecked": 77,
+      "handoffReviewsChecked": 26,
+      "caseButtonsChecked": 66,
+      "bad": [],
+      "practiceBad": [],
+      "widths": [
+        {
+          "view": "home",
+          "width": 1280
+        },
+        {
+          "view": "kaigo",
+          "width": 1280
+        },
+        {
+          "view": "daily",
+          "width": 1280
+        },
+        {
+          "view": "progress",
+          "width": 1280
+        },
+        {
+          "view": "kaigo-case-library",
+          "width": 1280
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "cardsChecked": 152,
+      "toolCardsChecked": 13,
+      "toolDetailsChecked": 13,
+      "toolQuizReviewsChecked": 13,
+      "reportModelsChecked": 40,
+      "reportWrongModelsChecked": 20,
+      "writingRevisionsChecked": 20,
+      "handoffSentencesChecked": 77,
+      "handoffReviewsChecked": 26,
+      "caseButtonsChecked": 66,
+      "bad": [],
+      "practiceBad": [],
+      "widths": [
+        {
+          "view": "home",
+          "width": 1440
+        },
+        {
+          "view": "kaigo",
+          "width": 1440
+        },
+        {
+          "view": "daily",
+          "width": 1440
+        },
+        {
+          "view": "progress",
+          "width": 1440
+        },
+        {
+          "view": "kaigo-case-library",
+          "width": 1440
+        }
+      ]
+    }
+  ],
+  "desktopProfiles": [
+    {
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "width": 1440,
+      "height": 900
     }
   ],
   "flows": {
+    "desktopKeyboardMenu": true,
+    "desktopWritingRevision": true,
+    "desktopMouseFlash": true,
     "illustratedToolsLoaded": true,
     "toolAuthoredKanaSpeech": true,
     "toolFlashKanaAndSrsReload": true,

@@ -23,7 +23,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
    await document.fonts.load('16px "Noto Sans JP"',chars);await document.fonts.ready;
  });
  }
- for(const width of [320,390,720]){
+ for(const width of [320,390,720,1280,1440]){
    await page.setViewportSize({width,height:844});
    const result=await page.evaluate(()=>{
      const state=TENKA_CORE.state,bad=[],widths=[];let cardsChecked=0;

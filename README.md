@@ -37,6 +37,12 @@ Kaigo kini memiliki **152 kartu kosakata**: 68 kartu lama dengan contoh berkana 
 - Kakijun N5 dari KanjiVG terverifikasi serta canvas latihan menulis
 - PWA / Add to Home Screen di iPhone
 
+## Target perangkat
+
+TENKA menggunakan aplikasi web/PWA yang sama untuk HP dan PC/laptop. Dukungan layar desktop, mouse, navigasi tombol dengan keyboard, dan pengetikan laporan masuk [kriteria versi awal](docs/V1_ACCEPTANCE.md). Audit browser mencakup lebar 320/390/720 serta 1280/1440 piksel.
+
+Progres saat ini lokal per browser/perangkat. Jalur pemindahan progres HP ke laptop masih menjadi kebutuhan terbuka sebelum kelanjutan lintas perangkat dinyatakan siap.
+
 ## Menjalankan secara lokal
 
 Aplikasi perlu HTTP(S). Jalankan dari folder project:
