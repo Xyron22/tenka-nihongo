@@ -12,7 +12,7 @@ Rincian scope, sumber, hasil audit dan batas rilis ada di [laporan N5 CLOSED](do
 
 Target aktif sekarang **N4 CLOSED lalu N3 CLOSED**; N2 dan N1 ditunda. [Roadmap proyek](docs/PROJECT_ROADMAP.md) mencatat urutan, standar materi dan batas penutupan. N4/N3 pada baseline masih berupa sampel awal dan tetap OPEN sampai coverage serta latihannya benar-benar diaudit.
 
-Pengembangan N4 dimulai dengan [materi tindakan/aspek/bantuan dan soal konteks](docs/N4_CHECKPOINTS.md). Ledger cakupannya tetap OPEN; materi jembatan N5 dicatat terpisah dari tujuan N4 baru.
+N4 Stage 10A-2 kini memiliki **17 materi Bunpou** dengan panduan lengkap dan soal berkonteks: tindakan/aspek/bantuan, tahap baru akan–sedang–baru selesai, kebaruan subjektif, dan verba gabungan mulai/terus/selesai/mendadak mulai. [Checkpoint dan ledger N4](docs/N4_CHECKPOINTS.md) tetap OPEN; materi jembatan N5 dicatat terpisah dari tujuan N4 baru.
 
 Kaigo kini memiliki **152 kartu kosakata**: 68 kartu lama dengan contoh berkana lengkap, 72 istilah ruangan/fasilitas/peralatan/persediaan kerja, serta 12 istilah komunikasi dan pilihan pribadi. Audio menggunakan bacaan kana yang disiapkan; quiz tertulis/listening menyediakan konteks dan pembahasan. Latihan 報告 kini memuat 20 model untuk susun kalimat/tulis sendiri, dan 申し送り memuat 26 kasus (77 kalimat) dengan soal pemahaman. Rincian dan rujukan ada di [checkpoint Kaigo](docs/KAIGO_CHECKPOINTS.md). Milestone ini mencakup ruangan/peralatan dan komunikasi dasar; [cakupan unit komunikasi](docs/kaigo-communication-coverage.json) dicatat per tujuan belajar. Keseluruhan kurikulum Kaigo belum dinyatakan selesai.
 

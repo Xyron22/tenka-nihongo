@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Initial N4 action/aspect/benefactive batch; full inventory reconciliation still pending",
+  "scope": "Staged N4 action/aspect/benefactive and temporal/action-phase batches; full inventory reconciliation still pending",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -184,6 +184,158 @@
         }
       ],
       "levelResolution": "Teach at N4 following Bunpro and the already documented N5 deferral. JLPT Sensei labels it N5; retain this disagreement explicitly and leave the closed N5 curriculum unchanged."
+    },
+    {
+      "lessonId": "n4-g-10",
+      "topic": "るところだ",
+      "role": "introduced",
+      "rationale": "Dictionary-form action immediately before beginning; contrasted with ongoing and completed phases.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "るところだ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ところ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-11",
+      "topic": "ているところだ",
+      "role": "introduced",
+      "rationale": "Action currently in progress; not every habitual/result-state use of plain ている.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ているところだ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ているところ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-12",
+      "topic": "たところだ",
+      "role": "introduced",
+      "rationale": "Immediate post-completion phase; contrasted with subjective recency.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "たところだ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たところ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-13",
+      "topic": "たばかり",
+      "role": "introduced",
+      "rationale": "Subjectively recent completed action, including longer intervals when context supports it.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "たばかり"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たばかり",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-14",
+      "topic": "はじめる",
+      "role": "introduced",
+      "rationale": "Neutral inception of voluntary action or non-volitional event.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "はじめる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "始める",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-15",
+      "topic": "つづける",
+      "role": "introduced",
+      "rationale": "Continuation of an action; not confused with standalone intransitive 続く.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "つづける"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "続ける",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-16",
+      "topic": "おわる",
+      "role": "introduced",
+      "rationale": "Completion of a bounded action; not merely stopping before completion.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "おわる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "終わる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-17",
+      "topic": "だす",
+      "role": "introduced",
+      "rationale": "Sudden inception only; distinguish other 出す compounds and avoid an absolute ban on voluntary uses.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "だす"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "出す",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
     }
   ]
 }
