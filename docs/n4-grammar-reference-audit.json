@@ -204,11 +204,12 @@
         "snapshotLine": 297
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "partial",
+      "disposition": "covered_n4",
       "lessons": [
+        "n4-g-146",
         "n5-g-75"
       ],
-      "reason": "Basic conjunction が is a prerequisite; sentence-initial だが／ですが and register still need explicit review."
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
     },
     {
       "id": "bp-n4-L299",
@@ -717,7 +718,7 @@
     {
       "id": "bp-n4-L367",
       "source": "bunpro",
-      "topic": "ぜんぜん ぜんぜん(",
+      "topic": "ぜんぜん（否定との基本用法）",
       "sourceUrl": "https://bunpro.jp/grammar_points",
       "position": {
         "snapshotLine": 367
@@ -1411,7 +1412,7 @@
     {
       "id": "bp-n4-L460",
       "source": "bunpro",
-      "topic": "～は～の一つだ は～のひとつだ〜",
+      "topic": "～は～の一つだ",
       "sourceUrl": "https://bunpro.jp/grammar_points",
       "position": {
         "snapshotLine": 460
@@ -1432,9 +1433,11 @@
         "snapshotLine": 462
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-139"
+      ],
+      "reason": "Negative relative clause + concrete noun + existential negation excludes all counterexamples within a stated group; distinguish no-one-knows from no-one-does-not-know and from N3 weak double negation."
     },
     {
       "id": "bp-n4-L464",
@@ -1636,9 +1639,11 @@
         "snapshotLine": 489
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-140"
+      ],
+      "reason": "Application combining likeness/purpose ように with てほしい, using actual actor/goal examples and distinguishing speaker desire from the actor's desire or agreement."
     },
     {
       "id": "bp-n4-L491",
@@ -2225,9 +2230,11 @@
         "snapshotLine": 568
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-141"
+      ],
+      "reason": "Hypothesis signal もし applied to already taught conditionals, not a replacement for the conditional ending or proof of current weather."
     },
     {
       "id": "bp-n4-L572",
@@ -2444,7 +2451,7 @@
     {
       "id": "bp-n4-L598",
       "source": "bunpro",
-      "topic": "化する かする-",
+      "topic": "化する",
       "sourceUrl": "https://bunpro.jp/grammar_points",
       "position": {
         "snapshotLine": 598
@@ -2523,9 +2530,11 @@
         "snapshotLine": 609
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-142"
+      ],
+      "reason": "Casual impression/gist って感じ and its limits in precise/formal reporting; not official naming or verified fact."
     },
     {
       "id": "bp-n4-L611",
@@ -2551,14 +2560,16 @@
         "snapshotLine": 613
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-143"
+      ],
+      "reason": "Evidence-based inferential とみえる in recognition-focused formal/literary contexts, distinguishing observation from deduction and visual に見える."
     },
     {
       "id": "bp-n4-L615",
       "source": "bunpro",
-      "topic": "風 ふう-",
+      "topic": "風（ふう）",
       "sourceUrl": "https://bunpro.jp/grammar_points",
       "position": {
         "snapshotLine": 615
@@ -2577,9 +2588,11 @@
         "snapshotLine": 617
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-144"
+      ],
+      "reason": "Observation/opportunity が見られる as an explicit contextual application of existing potential/passive 見る, with object/observer roles and natural visibility distinguished."
     },
     {
       "id": "bp-n4-L619",
@@ -2620,9 +2633,11 @@
         "snapshotLine": 622
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-146"
+      ],
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
     },
     {
       "id": "bp-n4-L624",
@@ -2633,9 +2648,11 @@
         "snapshotLine": 624
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-146"
+      ],
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
     },
     {
       "id": "bp-n4-L626",
@@ -2661,9 +2678,11 @@
         "snapshotLine": 628
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-146"
+      ],
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
     },
     {
       "id": "bp-n4-L630",
@@ -2689,9 +2708,11 @@
         "snapshotLine": 632
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-145"
+      ],
+      "reason": "Reported general evaluation と考えられている/とされている, not a guarantee of universal agreement or all advanced deductive/potential と考えられる uses."
     },
     {
       "id": "bp-n4-L633",
@@ -2702,9 +2723,11 @@
         "snapshotLine": 633
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-145"
+      ],
+      "reason": "Reported general evaluation と考えられている/とされている, not a guarantee of universal agreement or all advanced deductive/potential と考えられる uses."
     },
     {
       "id": "bp-n4-L635",
@@ -3369,9 +3392,9 @@
         "ordinal": 43
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
+      "disposition": "pending_lexical",
       "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "reason": "Lexical coordinator または means or and will receive a meaning-specific vocabulary card/example and practice; do not invent a separate grammatical conjugation objective or mark it covered yet."
     },
     {
       "id": "js-n4-044",
@@ -3487,10 +3510,12 @@
         "ordinal": 51
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision.",
-      "levelReview": "Sensei N4 / Bunpro N3: なかなか～ない."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-147"
+      ],
+      "reason": "Negative なかなか for difficulty or delayed expected results, not impossibility forever; broader positive なかなか is only a contrast, not claimed complete here.",
+      "levelReview": "Sensei N4 / Bunpro N3: なかなか～ない. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
     },
     {
       "id": "js-n4-052",
@@ -3904,9 +3929,11 @@
         "ordinal": 79
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-146"
+      ],
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
     },
     {
       "id": "js-n4-080",
@@ -3917,9 +3944,11 @@
         "ordinal": 80
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-146"
+      ],
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
     },
     {
       "id": "js-n4-081",

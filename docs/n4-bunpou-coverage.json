@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "N4 grammar through occasional events, function, intervals, selection, focus and verified prerequisite depth; unresolved grammar/lexical rows remain OPEN",
+  "scope": "Authored N4 constructions mapped across complete publisher snapshots; lexical coordination/meaning-specific rows and outward compounds still OPEN",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -2578,6 +2578,175 @@
           "source": "bunpro",
           "level": "N4",
           "topic": "とき"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-139",
+      "topic": "～ないNはない（例外の否定）",
+      "role": "introduced",
+      "rationale": "Negative relative clause + concrete noun + existential negation excludes all counterexamples within a stated group; distinguish no-one-knows from no-one-does-not-know and from N3 weak double negation.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "～ない～はない"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-140",
+      "topic": "ように～てほしい（比べ方・目的を添える）",
+      "role": "introduced",
+      "rationale": "Application combining likeness/purpose ように with てほしい, using actual actor/goal examples and distinguishing speaker desire from the actor's desire or agreement.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n4-g-35",
+        "n4-g-46",
+        "n4-g-71",
+        "n4-g-22"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ように～てほしい"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-141",
+      "topic": "もし（仮定を強調）",
+      "role": "introduced",
+      "rationale": "Hypothesis signal もし applied to already taught conditionals, not a replacement for the conditional ending or proof of current weather.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n4-g-26",
+        "n4-g-27",
+        "n4-g-28"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "もし"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-142",
+      "topic": "って感じ（くだけた印象）",
+      "role": "introduced",
+      "rationale": "Casual impression/gist って感じ and its limits in precise/formal reporting; not official naming or verified fact.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "って感じ"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-143",
+      "topic": "とみえる（根拠からの推測）",
+      "role": "introduced",
+      "rationale": "Evidence-based inferential とみえる in recognition-focused formal/literary contexts, distinguishing observation from deduction and visual に見える.",
+      "levelScopeNotes": "Bunpro directly places the introductory inferential form at N4; Sensei places it at N3. Retain the variance. N4 teaches bounded recognition with simple evidence and conclusions; broader N3 reuse must be review or a distinct extension.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "とみえる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N3",
+          "topic": "とみえる／とみえて"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-144",
+      "topic": "が見られる（観察・見る機会）",
+      "role": "introduced",
+      "rationale": "Observation/opportunity が見られる as an explicit contextual application of existing potential/passive 見る, with object/observer roles and natural visibility distinguished.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n4-g-18",
+        "n4-g-63"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "が見られる"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-145",
+      "topic": "と考えられている／とされている",
+      "role": "introduced",
+      "rationale": "Reported general evaluation と考えられている/とされている, not a guarantee of universal agreement or all advanced deductive/potential と考えられる uses.",
+      "objectiveType": "scope-extension",
+      "prerequisiteLessonIds": [
+        "n4-g-40",
+        "n4-g-63",
+        "n4-g-84"
+      ],
+      "countAsNewN4Objective": false,
+      "levelScopeNotes": "Match the exact Bunpro N4 reported-view forms with ている. A separate N2 と考えられる entry is not asserted to be the same objective or imported wholesale.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "と考えられている／とされている"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-146",
+      "topic": "それに／それで／それでも／だが",
+      "role": "introduced",
+      "rationale": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-95",
+        "n5-g-75"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "それに／それで／それでも／だが・ですが"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "それに／それでも"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-147",
+      "topic": "なかなか～ない",
+      "role": "introduced",
+      "rationale": "Negative なかなか for difficulty or delayed expected results, not impossibility forever; broader positive なかなか is only a contrast, not claimed complete here.",
+      "levelScopeNotes": "Use the directly verified Sensei N4 negative-verb objective; record Bunpro N3 placement. Positive evaluative/adjectival extensions stay separate for N3 review.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "なかなか～ない"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "なかなか～ない"
         }
       ]
     }
