@@ -38,7 +38,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
          }
        }
      }
-     let reportModelsChecked=0,handoffSentencesChecked=0;
+     let reportModelsChecked=0,handoffSentencesChecked=0,handoffReviewsChecked=0;
      const practiceBad=[];
      function scan(view,id){
        const overflow=[...document.querySelectorAll('.work-session-hero,.work-piece-chip,.work-selected-piece,.work-model-line,.work-compare-card,.handoff-sentence-card,.handoff-question-card,.handoff-result,.work-case-option')].filter(el=>el.scrollWidth>el.clientWidth+2);
@@ -52,13 +52,15 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
      TENKA_DATA.kaigo.handoff.forEach((h,index)=>{
        openHandoffPractice(index);
        h.segments.forEach((_,i)=>{scan('handoff-sentence-'+(i+1),h.id);handoffSentencesChecked++;if(i+1<h.segments.length)handoffNextSentence()});
-       handoffToQuestion();scan('handoff-question',h.id);handoffAnswer(h.answer);scan('handoff-result',h.id);finishHandoff();
+       handoffToQuestion();scan('handoff-question',h.id);handoffAnswer(h.answer);scan('handoff-result',h.id);
+       const review=document.querySelector('.handoff-review');if(!review)throw Error('Missing handoff review: '+h.id);review.open=true;scan('handoff-review',h.id);handoffReviewsChecked++;
+       openHandoffPractice(index);handoffToQuestion();handoffAnswer((h.answer+1)%h.choices.length);scan('handoff-wrong-review',h.id);finishHandoff();
      });
      for(const view of ['home','kaigo','daily','progress']){go(view);widths.push({view,width:document.documentElement.scrollWidth})}
      go('kaigo');for(const group of document.querySelectorAll('.work-case-group'))group.open=true;
      const caseButtonsChecked=document.querySelectorAll('.work-case-option').length;scan('case-library','all');
      widths.push({view:'kaigo-case-library',width:document.documentElement.scrollWidth});
-     return{width:innerWidth,cardsChecked,reportModelsChecked,handoffSentencesChecked,caseButtonsChecked,bad,practiceBad,widths};
+     return{width:innerWidth,cardsChecked,reportModelsChecked,handoffSentencesChecked,handoffReviewsChecked,caseButtonsChecked,bad,practiceBad,widths};
    });results.push(result);
    console.log(JSON.stringify({width,badCount:result.bad.length,practiceBadCount:result.practiceBad.length,firstPracticeBad:result.practiceBad.slice(0,3),widths:result.widths}));
  }
@@ -142,6 +144,8 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  for(let i=0;i<2;i++)await page.getByRole('button',{name:'Kalimat berikutnya →',exact:true}).click();
  await page.getByRole('button',{name:'Lanjut ke soal →',exact:true}).click();
  const correct=await page.evaluate(()=>TENKA_DATA.kaigo.handoff[12].answer);await page.locator('.handoff-choice-list button').nth(correct).click();
+ assert.equal(await page.locator('.handoff-review').evaluate(el=>el.open),false,'correct-answer review stays optional');
+ await page.locator('.handoff-review summary').click();assert(await page.locator('.handoff-review').evaluate(el=>el.open));
  await page.locator('.handoff-result .action').click();assert.equal(await page.evaluate(()=>TENKA_CORE.state.view),'kaigo');
  await page.evaluate(()=>go('kaigo'));
  await page.getByRole('button',{name:'Komunikasi & pilihan pribadi',exact:true}).click();
@@ -172,6 +176,18 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
    await page.locator('.handoff-choice-list button').nth(answer).click();await page.locator('.handoff-result .action').click();
    assert.equal(await page.evaluate(()=>TENKA_CORE.state.view),'kaigo');
  }
+ const oldCompletion=await page.evaluate(()=>{openHandoffPractice(25);return TENKA_CORE.state.progress.handoffDone['h-26']});
+ for(let i=0;i<2;i++)await page.getByRole('button',{name:'Kalimat berikutnya →',exact:true}).click();
+ await page.getByRole('button',{name:'Lanjut ke soal →',exact:true}).click();assert.equal(await page.locator('.handoff-review').count(),0,'question does not expose the explanation');
+ await page.locator('.handoff-choice-list button').nth(1).click();
+ assert(await page.locator('.handoff-review').evaluate(el=>el.open),'wrong answer opens its explanation');
+ assert((await page.locator('.handoff-your-answer').textContent()).includes('15.00'));
+ assert((await page.locator('.handoff-result-answer').textContent()).includes('14.00'));
+ assert((await page.locator('.handoff-review').textContent()).includes('ごご にじ'));
+ assert.equal(await page.locator('.handoff-evidence').count(),2);
+ assert.equal(await page.evaluate(()=>TENKA_CORE.state.progress.handoffDone['h-26']),oldCompletion,'wrong replay preserves prior mastery');
+ await page.screenshot({path:path.join(out,'kaigo-handoff-review.png'),fullPage:true});
+ await page.getByRole('button',{name:'Selesai',exact:true}).click();
  const beforeSelection=await page.evaluate(()=>JSON.stringify(TENKA_CORE.state.progress));
  const selections=[{mode:'report',id:'r-13',index:12,session:'houkokuSession',view:'houkoku'},{mode:'writing',id:'r-13',index:12,session:'houkokuEssaySession',view:'houkokuEssay'},{mode:'handoff',id:'h-26',index:25,session:'handoffSession',view:'handoff'}];
  for(const c of selections){
@@ -193,7 +209,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  assert.equal(errors.length,0,errors.join('\n'));
  const names=['index.html','styles.css','app-v2.js',...require('./helpers/load-content')().files];
  const sourceHashes=Object.fromEntries([...new Set(names)].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(base,name))).digest('hex')]));
- const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWritingAndKanaAudio:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true,communicationCategoryAndNotes:true,communicationKanaSpeech:true,communicationWrongAnswerAndRetry:true,communicationProgressReload:true,caseLibrarySelectionAndExit:true,caseLibraryProgressPreserved:true},sourceHashes};
+ const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWritingAndKanaAudio:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true,communicationCategoryAndNotes:true,communicationKanaSpeech:true,communicationWrongAnswerAndRetry:true,communicationProgressReload:true,caseLibrarySelectionAndExit:true,caseLibraryProgressPreserved:true,handoffAnswerExplanation:true,handoffQuotedEvidence:true,handoffWrongReplayPreserved:true},sourceHashes};
  fs.writeFileSync(path.join(out,'kaigo-ui-audit.json'),JSON.stringify(report,null,2)+'\n');
  if(results.some(r=>r.bad.length||r.practiceBad.length||r.widths.some(v=>v.width>r.width)))process.exitCode=1;
  }finally{await browser.close()}

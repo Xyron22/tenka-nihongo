@@ -62,6 +62,8 @@ jobs:
           node --check content-pack-v30.js
           node --check content-pack-v31.js
           node --check content-pack-v32.js
+          node --check content-pack-v33.js
+          node --check tests/kaigo-handoff-review.js
           node --check tests/kaigo-communication.js
           node --check tests/kaigo-case-library.js
           node --check tests/kaigo-handoff.js
@@ -183,6 +185,9 @@ jobs:
 
       - name: Kaigo explicit case selection and progress preservation
         run: node tests/kaigo-case-library.js
+
+      - name: Kaigo handoff answer explanations and evidence
+        run: node tests/kaigo-handoff-review.js
 
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js

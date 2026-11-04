@@ -726,6 +726,14 @@
 .handoff-result-answer{padding:12px;border-radius:13px;background:rgba(0,0,0,.16);font-size:14px;font-weight:850}
 .handoff-result p{margin:10px 0 14px;color:#aab5af;font-size:10.5px;line-height:1.45}
 .handoff-result .action{width:100%}
+.handoff-result .handoff-your-answer{font-size:13px;line-height:1.6}
+.handoff-review{margin-top:18px;padding:12px;border:1px solid var(--line);border-radius:14px;text-align:left;overflow-wrap:anywhere}
+.handoff-review summary{cursor:pointer;font-size:14px;font-weight:750;line-height:1.5}
+.handoff-review>p,.handoff-evidence p{font-size:13px;line-height:1.6;color:#c6cbd2}
+.handoff-evidence{padding:12px;margin-top:10px;border-radius:10px;background:rgba(0,0,0,.18);line-height:1.65;font-size:15px}
+.handoff-evidence>b{display:block;color:var(--accent);font-size:11px;margin-bottom:6px}
+.handoff-evidence small{display:block;margin-top:6px;color:var(--muted);font-size:12px}
+.handoff-evidence p{margin-bottom:0}
 
 /* Whole-sentence readings wrap below Japanese text on narrow report cards. */
 .houkoku-ruby{display:flex;flex-direction:column;max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:left}

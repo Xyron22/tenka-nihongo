@@ -28,6 +28,7 @@ Kaigo kini memiliki **152 kartu kosakata**: 68 kartu lama dengan contoh berkana 
 - Kaigo・Keperawatan tanpa level JLPT
 - Kosakata medis & latihan 申し送り
 - Daftar kasus Kaigo untuk memilih materi dan membuka kembali latihan yang sudah selesai
+- Pembahasan operan Kaigo dengan alasan jawaban dan kalimat bukti Jepang, kana, serta Indonesia
 - Bushu, komponen visual dan mnemonic sebagai alat bantu ingatan
 - Kakijun N5 dari KanjiVG terverifikasi serta canvas latihan menulis
 - PWA / Add to Home Screen di iPhone

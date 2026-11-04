@@ -102,3 +102,14 @@ Stage 9C-2 CI: [run 39776212459](https://github.com/Xyron22/tenka-nihongo/action
 - Final local syntax and full regressions passed while browser QA ran in parallel. Exact final commit and CI evidence are recorded in draft PR #16.
 
 - During local parallel browser/regression QA, the legacy system test exposed a fixed-delay result-feedback wait: its 850 ms sleep could expire before chained callbacks ran under CPU load. Isolated execution passed. Replace that sleep with a bounded result/event condition; keep the exact event and initial-silence assertions. Production quiz timing/audio code is unchanged.
+
+
+Stage 9D-1 CI: [run 41475018547](https://github.com/Xyron22/tenka-nihongo/actions/runs/41475018547) passed at `ae51c1d`; production configuration/upload/deploy were skipped.
+
+## Stage 9D-2 — Handoff answer explanations and source evidence
+
+- Add an original explanation and relevant sentence indices for all 26 installed handoff cases. The metadata registry leaves every lesson, answer choice and answer key intact. Evidence is rendered directly from the authored Japanese/kana/Indonesian segments, avoiding a second copy of each sentence.
+- After a wrong answer, show the selected answer and open the explanation; correct answers can open the same explanation deliberately. Read/question stages do not expose it. The case still ends with Selesai and does not chain automatically.
+- Explanations follow the facts and requests stated in each fictional operan. They distinguish initial/current quantities, pending/completed checks, expressed wishes, corrected information and statements that the case does not support. They do not introduce clinical protocols or diagnoses.
+- Verify all cases with both wrong and correct answers, exact evidence text, duplicate-tap protection, correct-only mastery, old completion preservation, reload and a fallback for content without review metadata. Browser QA expands every explanation at 320/390/720 px and exercises wrong-answer feedback through the real UI.
+- Final local syntax and the full regression suite passed, including 52 wrong/correct handoff sessions. Chromium with Noto Sans JP checked all 26 expanded reviews, 66 case selections, 152 cards, 40 report-mode views and 77 handoff sentences at 320/390/720 px; no overflow or page errors were found. The updated browser report contains 42 matching source hashes and verifies optional correct-answer review, automatic wrong-answer review and old completion preservation. Exact final-head CI is recorded in draft PR #16. Full Kaigo and national-exam closure remain open; N5 remains CLOSED.

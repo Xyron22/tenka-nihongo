@@ -692,9 +692,14 @@ function handoff(){
     <button class="action work-finish-btn" onclick="finishHandoff()">Selesai</button>`;
   }
 
-  const ok=hs.correct===true;
+  const ok=hs.correct===true,review=window.TENKA_KAIGO_HANDOFF_REVIEW?.[h.id];
+  const evidence=(review?.evidence||[]).filter(i=>Number.isInteger(i)&&i>=0&&i<segments.length).map(i=>{
+    const s=segments[i];return `<div class="handoff-evidence"><b>Kalimat ${i+1}</b><div lang="ja">${htmlSafe(s.text)}</div>${s.reading?`<small lang="ja">${htmlSafe(s.reading)}</small>`:''}<p>${htmlSafe(s.meaning)}</p></div>`;
+  }).join('');
+  const explanation=review?`<details class="handoff-review" ${ok?'':'open'}><summary>Mengapa jawaban ini?</summary><p>${htmlSafe(review.explanation)}</p>${evidence}</details>`:'';
+  const selected=!ok?`<p class="handoff-your-answer">Jawabanmu: ${htmlSafe(h.choices[hs.choice]||'Belum memilih jawaban')}</p>`:'';
   return `${header('申し送り Practice',`${caseLabel} • Selesai`)}
-  <section class="handoff-result ${ok?'correct':'wrong'}"><div class="handoff-result-icon">${ok?'✅':'↻'}</div><span>${ok?'正解':'要復習'}</span><h2>${ok?'Intinya tertangkap dengan benar.':'Jawaban yang tepat:'}</h2><div class="handoff-result-answer">${h.choices[h.answer]}</div><p>${ok?'Kasus ini sudah dicatat sebagai dikuasai.':'Baca lagi kalimatnya nanti dan fokus pada informasi inti.'}</p><button class="action primary" onclick="finishHandoff()">Selesai</button></section>`;
+  <section class="handoff-result ${ok?'correct':'wrong'}"><div class="handoff-result-icon">${ok?'✅':'↻'}</div><span>${ok?'正解':'要復習'}</span>${selected}<h2>${ok?'Intinya tertangkap dengan benar.':'Jawaban yang tepat:'}</h2><div class="handoff-result-answer">${h.choices[h.answer]}</div><p>${ok?'Kasus ini sudah dicatat sebagai dikuasai.':review?'Bandingkan jawabanmu dengan kalimat kunci pada pembahasan.':'Baca lagi kalimatnya nanti dan fokus pada informasi inti.'}</p>${explanation}<button class="action primary" onclick="finishHandoff()">Selesai</button></section>`;
 }
 function handoffNextSentence(){
   const hs=state.handoffSession,h=currentHandoff();if(!hs||!h)return;
