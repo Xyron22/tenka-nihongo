@@ -105,3 +105,13 @@ Stage 10A-8 checkpoint: `f74e92c24da7c6618c93d923f11ee835660df1f1`; CI [41790334
 - Original exercise instructions teach 選べ／選びなさい and one-answer scope. No actual exam/book question is copied. Register guidance explains why understanding a command does not make it a universal polite request. Regret questions distinguish wishing one had not bought from wishing one had bought.
 - Purpose ように is distinct from analogy, habit/effort, changed ability and reported instructions. Source mappings retain exact-versus-parent scope; related publisher rows are not asserted as direct verification. Causative particle choices were also checked against Wasabi's own construction lesson, which is not treated as a level inventory.
 - Accept only after syntax/full regressions, all-target wrong/timeout/correct sessions, all three five-width browser audits with current hashes and final-head CI pass. N4/N3 remain OPEN; full reference reconciliation, remaining grammar, vocabulary/Kanji and reading/listening audits are still pending. N2/N1 stay deferred; PR #16 remains draft with no merge/production deployment.
+
+
+Stage 10A-9 checkpoint: `ca03964947c802d1d47565122af2542f20135265`; CI [41791953148](https://github.com/Xyron22/tenka-nihongo/actions/runs/41791953148) passed on that exact head. Production-related steps and deployment were skipped.
+
+## Stage 10A-9.1 — Reproducible browser audits in CI
+
+- Run the existing N4/N5/Kaigo browser audits automatically before the content/runtime gates, at all five phone-to-laptop widths. Add a mobile capture of the latest N4 lesson; the existing flow/assertion coverage remains in place.
+- Use Node 24, pinned Playwright 1.64.1 and Noto Sans JP 5.3.1. Install test dependencies and write screenshots/reports in the runner temporary directory, outside the static-site checkout. No application runtime, curriculum, storage identity or production condition changes.
+- Emit complete JSON reports and the latest N4 mobile screenshot in numbered, length-checked log chunks. A reviewer can recover actual runner-produced evidence rather than copying hashes onto an older report. Later content checkpoints must retain current evidence and pass the browser gates as well as syntax/full regressions.
+- Accept only when exact-head CI including all three browser audits passes. N4/N3 remain OPEN, PR #16 stays draft and main/deployment remain approval-gated.

@@ -26,6 +26,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Set up Node for regression and browser audits
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
       - name: Validate source syntax
         run: |
           node --check data.js
@@ -150,6 +155,40 @@ jobs:
               if data[:3] != b'ID3' and not (len(data)>=2 and data[0]==0xff and (data[1]&0xe0)==0xe0):
                   raise SystemExit(f'{name} does not look like MP3 data')
               print(name, len(data), 'bytes')
+          PY
+
+      - name: Install pinned browser audit dependencies
+        run: |
+          mkdir -p "$RUNNER_TEMP/tenka-browser-deps"
+          npm install --prefix "$RUNNER_TEMP/tenka-browser-deps" --no-save --package-lock=false --ignore-scripts playwright@1.64.1 @fontsource/noto-sans-jp@5.3.1
+          if ! "$RUNNER_TEMP/tenka-browser-deps/node_modules/.bin/playwright" install --with-deps chromium > "$RUNNER_TEMP/tenka-browser-install.log" 2>&1; then
+            cat "$RUNNER_TEMP/tenka-browser-install.log"
+            exit 1
+          fi
+
+      - name: Browser audits at phone and laptop widths
+        env:
+          CODEX_PRIMARY_RUNTIME_NODE_MODULES: ${{ runner.temp }}/tenka-browser-deps/node_modules
+          TENKA_TEST_JAPANESE_FONT_DIR: ${{ runner.temp }}/tenka-browser-deps/node_modules/@fontsource/noto-sans-jp
+          TENKA_UI_AUDIT_OUTPUT: ${{ runner.temp }}/tenka-ci-ui
+        run: |
+          node tests/n4-browser-smoke.cjs
+          node tests/n5-browser-smoke.cjs
+          node tests/kaigo-browser-smoke.cjs
+          python3 - <<'PY'
+          import base64,json,os
+          from pathlib import Path
+          root=Path(os.environ['TENKA_UI_AUDIT_OUTPUT'])
+          def emit(prefix,name,payload):
+              chunks=[payload[i:i+30000] for i in range(0,len(payload),30000)]
+              for i,chunk in enumerate(chunks):
+                  print(prefix+':'+name+':'+str(i)+':'+chunk)
+              print(prefix+'_DONE:'+name+':'+str(len(payload))+':'+str(len(chunks)))
+          for kind in ['n4','n5','kaigo']:
+              report=json.loads((root/(kind+'-ui-audit.json')).read_text())
+              emit('TENKA_UI_AUDIT',kind,json.dumps(report,ensure_ascii=True,separators=(',',':')))
+          screenshot=root/'n4-latest-lesson.png'
+          emit('TENKA_UI_SCREENSHOT','n4',base64.b64encode(screenshot.read_bytes()).decode('ascii'))
           PY
 
       - name: Data integrity test

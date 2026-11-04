@@ -86,4 +86,4 @@ Pengucapan materi memakai speech synthesis perangkat. SFX quiz dan VOICEVOX Nemo
 
 ## Pemeriksaan
 
-Jalankan `bash scripts/check-local.sh` untuk syntax dan seluruh regresi. Tes mengikuti manifest runtime terkini, memeriksa kualitas konten/coverage, semua target quiz N5, sesi dan progres lama. CI juga memvalidasi aset/build. Browser QA opsional tersedia di `tests/n5-browser-smoke.cjs` dan `tests/kaigo-browser-smoke.cjs`; petunjuknya ada di laporan N5 CLOSED dan checkpoint Kaigo.
+Jalankan `bash scripts/check-local.sh` untuk syntax dan seluruh regresi. Tes mengikuti manifest runtime terkini, memeriksa kualitas konten/coverage, semua target quiz N5, sesi dan progres lama. CI juga memvalidasi aset/build. CI juga menjalankan audit browser N4/N5/Kaigo pada lebar 320/390/720/1280/1440 px dengan font Jepang. Laporan JSON dan tangkapan materi N4 terbaru tersedia pada log job; script yang sama dapat dijalankan manual melalui `tests/n4-browser-smoke.cjs`, `tests/n5-browser-smoke.cjs` dan `tests/kaigo-browser-smoke.cjs`.
