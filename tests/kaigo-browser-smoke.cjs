@@ -39,13 +39,23 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
          }
        }
      }
-     let reportModelsChecked=0,reportWrongModelsChecked=0,writingRevisionsChecked=0,handoffSentencesChecked=0,handoffReviewsChecked=0;
+     let reportModelsChecked=0,reportWrongModelsChecked=0,writingRevisionsChecked=0,handoffSentencesChecked=0,handoffReviewsChecked=0,toolQuizReviewsChecked=0;
      const practiceBad=[];
      function scan(view,id){
-       const overflow=[...document.querySelectorAll('.work-session-hero,.work-piece-chip,.work-selected-piece,.work-model-line,.work-compare-card,.handoff-sentence-card,.handoff-question-card,.handoff-result,.work-case-option,.tool-detail-hero,.tool-detail-copy,.tool-info,.tool-safety')].filter(el=>el.scrollWidth>el.clientWidth+2);
+       const overflow=[...document.querySelectorAll('.work-session-hero,.work-piece-chip,.work-selected-piece,.work-model-line,.work-compare-card,.handoff-sentence-card,.handoff-question-card,.handoff-result,.work-case-option,.tool-detail-hero,.tool-detail-copy,.tool-info,.tool-safety,.quiz-review,.tool-quiz-image')].filter(el=>el.scrollWidth>el.clientWidth+2);
        if(document.documentElement.scrollWidth>innerWidth||overflow.length)practiceBad.push({view,id,width:document.documentElement.scrollWidth,overflow:overflow.map(el=>el.className)});
      }
      for(const t of TENKA_DATA.kaigo.tools){openMedicalTool(t.id);const img=document.querySelector('.tool-hero img');await img.decode();if(!img.naturalWidth)throw Error('Missing tool illustration: '+t.id);scan('tool-detail',t.id);toolDetailsChecked++;}
+     // Render all category review layouts; real controls below verify timers, grading and saving.
+     for(const category of [...new Set(TENKA_DATA.kaigo.tools.map(t=>t.category))]){
+       go('medicalTools');setMedicalToolCategory(category);startMedicalToolQuiz();const q=state.quiz;
+       q.items.forEach((item,i)=>{item.selected=i%3===0?item.answer:i%3===1?(item.answer+1)%4:-1});
+       Object.assign(q,{i:q.items.length,score:q.items.filter(item=>item.selected===item.answer).length,finished:true,saved:true,resultSoundPlayed:true});TENKA_CORE.render();
+       for(const detail of document.querySelectorAll('.quiz-review'))detail.open=true;
+       for(const img of document.querySelectorAll('.quiz-review img'))await img.decode();
+       scan('tool-quiz-review',category);toolQuizReviewsChecked+=document.querySelectorAll('.quiz-review').length;
+     }
+     go('medicalTools');setMedicalToolCategory('Semua');
      TENKA_DATA.kaigo.houkoku.forEach((h,index)=>{
        openHoukokuPractice(index);scan('report-puzzle',h.id);
        h.pieces.forEach((_,i)=>houkokuPick(i));houkokuCheck();scan('report-selected',h.id);houkokuShowResult();scan('report-model',h.id);reportModelsChecked++;
@@ -64,7 +74,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
      go('kaigo');for(const group of document.querySelectorAll('.work-case-group'))group.open=true;
      const caseButtonsChecked=document.querySelectorAll('.work-case-option').length;scan('case-library','all');
      widths.push({view:'kaigo-case-library',width:document.documentElement.scrollWidth});
-     return{width:innerWidth,cardsChecked,toolCardsChecked,toolDetailsChecked,reportModelsChecked,reportWrongModelsChecked,writingRevisionsChecked,handoffSentencesChecked,handoffReviewsChecked,caseButtonsChecked,bad,practiceBad,widths};
+     return{width:innerWidth,cardsChecked,toolCardsChecked,toolDetailsChecked,toolQuizReviewsChecked,reportModelsChecked,reportWrongModelsChecked,writingRevisionsChecked,handoffSentencesChecked,handoffReviewsChecked,caseButtonsChecked,bad,practiceBad,widths};
    });results.push(result);
    console.log(JSON.stringify({width,badCount:result.bad.length,practiceBadCount:result.practiceBad.length,firstPracticeBad:result.practiceBad.slice(0,3),widths:result.widths}));
  }
@@ -228,6 +238,19 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  assert.equal(await page.evaluate(()=>TENKA_CORE.state.progress.handoffDone['h-26']),oldCompletion,'wrong replay preserves prior mastery');
  await page.screenshot({path:path.join(out,'kaigo-handoff-review.png'),fullPage:true});
  await page.getByRole('button',{name:'Selesai',exact:true}).click();
+ await page.evaluate(()=>go('medicalTools'));
+ const toolQuizCategory=await page.evaluate(()=>TENKA_DATA.kaigo.tools.find(t=>t.id==='tool-08').category);await page.getByRole('button',{name:toolQuizCategory,exact:true}).click();
+ const toolQuizBeforeRuns=await page.evaluate(()=>TENKA_CORE.state.progress.quizRuns['KAIGO-medical-tools']||0);
+ await page.locator('[onclick="startMedicalToolQuiz()"]').click();
+ const toolQuizLength=await page.evaluate(()=>TENKA_CORE.state.quiz.items.length);assert(toolQuizLength>=3);
+ assert.equal(await page.locator('.question .jp,.quiz-review').count(),0);assert.equal(await page.locator('.question img').getAttribute('alt'),'Gambar alat medis');
+ await page.evaluate(()=>{TENKA_CORE.state.seconds=1});await page.waitForFunction(()=>TENKA_CORE.state.quiz.i===1);
+ for(let i=1;i<toolQuizLength;i++){const choice=await page.evaluate(i=>{const item=TENKA_CORE.state.quiz.items[i];return i===1?(item.answer+1)%4:item.answer},i);await page.locator('#choice-'+choice).click();await page.waitForFunction(i=>TENKA_CORE.state.quiz.i===i+1,i);}
+ const toolQuizExpected=Math.round((toolQuizLength-2)/toolQuizLength*100);assert((await page.locator('.quiz-result-score').textContent()).includes(toolQuizExpected+'%'));assert.equal(await page.locator('.quiz-review').count(),toolQuizLength);
+ assert((await page.locator('.quiz-review').first().textContent()).includes('Waktu habis'));
+ const cautionIndex=await page.evaluate(()=>TENKA_CORE.state.quiz.items.findIndex(item=>item.sourceId==='tool-08'));assert(cautionIndex>=0);const cautionReview=page.locator('.quiz-review').nth(cautionIndex);await cautionReview.locator('summary').click();
+ assert((await cautionReview.textContent()).includes(await page.evaluate(()=>TENKA_DATA.kaigo.tools.find(t=>t.id==='tool-08').safetyNoteMeaning)));await cautionReview.locator('img').evaluate(img=>img.decode());assert(await cautionReview.locator('img').evaluate(img=>img.naturalWidth>0));
+ await page.screenshot({path:path.join(out,'kaigo-tool-quiz-review.png'),fullPage:true});await page.getByRole('button',{name:'Selesai',exact:true}).click();assert.equal(await page.evaluate(()=>TENKA_CORE.state.view),'medicalTools');
  const beforeSelection=await page.evaluate(()=>JSON.stringify(TENKA_CORE.state.progress));
  const selections=[{mode:'report',id:'r-13',index:12,session:'houkokuSession',view:'houkoku'},{mode:'writing',id:'r-13',index:12,session:'houkokuEssaySession',view:'houkokuEssay'},{mode:'handoff',id:'h-26',index:25,session:'handoffSession',view:'handoff'}];
  for(const c of selections){
@@ -246,11 +269,12 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  assert(await page.evaluate(id=>TENKA_CORE.state.progress.reviews[id]?.rating==='good',savedId),'SRS survives browser reload');
  assert(await page.evaluate(id=>TENKA_CORE.state.progress.reviews[id]?.rating==='good',savedToolId),'illustrated-tool SRS survives browser reload');
  assert(await page.evaluate(()=>TENKA_CORE.state.progress.best['KAIGO-kaigo']===90&&TENKA_CORE.state.progress.best['KAIGO-kaigo-listening']===100),'both quiz results survive reload');
+ assert(await page.evaluate(({score,runs})=>TENKA_CORE.state.progress.best['KAIGO-medical-tools']===score&&TENKA_CORE.state.progress.quizRuns['KAIGO-medical-tools']===runs,{score:toolQuizExpected,runs:toolQuizBeforeRuns+1}),'tool-quiz score and single saved run survive reload');
  assert(await page.evaluate(()=>!!TENKA_CORE.state.progress.houkokuDone['r-13']&&!!TENKA_CORE.state.progress.houkokuEssayDone['r-13']&&!!TENKA_CORE.state.progress.handoffDone['h-13']),'report/writing/handoff completions survive browser reload');
  assert.equal(errors.length,0,errors.join('\n'));
  const loaded=require('./helpers/load-content')(),names=['index.html','styles.css','app-v2.js',...loaded.files,...loaded.data.kaigo.tools.map(t=>t.image)];
  const sourceHashes=Object.fromEntries([...new Set(names)].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(base,name))).digest('hex')]));
- const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{illustratedToolsLoaded:true,toolAuthoredKanaSpeech:true,toolFlashKanaAndSrsReload:true,facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWrongModelAndSelectedOrder:true,reportWrongReviewNoMastery:true,reportWrongReplayPreserved:true,reportWritingAndKanaAudio:true,writingDraftRevision:true,writingRevisionNoMastery:true,writingDraftLiteralText:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true,communicationCategoryAndNotes:true,communicationKanaSpeech:true,communicationWrongAnswerAndRetry:true,communicationProgressReload:true,caseLibrarySelectionAndExit:true,caseLibraryProgressPreserved:true,handoffAnswerExplanation:true,handoffQuotedEvidence:true,handoffWrongReplayPreserved:true},sourceHashes};
+ const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{illustratedToolsLoaded:true,toolAuthoredKanaSpeech:true,toolFlashKanaAndSrsReload:true,toolQuizReviewContent:true,toolQuizTimeoutAndWrongAnswers:true,toolQuizResultReload:true,facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWrongModelAndSelectedOrder:true,reportWrongReviewNoMastery:true,reportWrongReplayPreserved:true,reportWritingAndKanaAudio:true,writingDraftRevision:true,writingRevisionNoMastery:true,writingDraftLiteralText:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true,communicationCategoryAndNotes:true,communicationKanaSpeech:true,communicationWrongAnswerAndRetry:true,communicationProgressReload:true,caseLibrarySelectionAndExit:true,caseLibraryProgressPreserved:true,handoffAnswerExplanation:true,handoffQuotedEvidence:true,handoffWrongReplayPreserved:true},sourceHashes};
  fs.writeFileSync(path.join(out,'kaigo-ui-audit.json'),JSON.stringify(report,null,2)+'\n');
  if(results.some(r=>r.bad.length||r.practiceBad.length||r.widths.some(v=>v.width>r.width)))process.exitCode=1;
  }finally{await browser.close()}

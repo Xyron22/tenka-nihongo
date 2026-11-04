@@ -364,7 +364,7 @@ function makeMedicalToolQuiz(){
   const tools=selectedMedicalTools(),all=D.kaigo.tools||[],pool=all.map(t=>({id:t.id,label:`${t.term} — ${t.meaning}`}));
   return shuffle(tools).slice(0,Math.min(10,tools.length)).map(t=>{
     const correct=`${t.term} — ${t.meaning}`,wrong=shuffle(pool.filter(x=>x.id!==t.id).map(x=>x.label)).slice(0,3),choices=shuffle([correct,...wrong]);
-    return{prompt:t.term,reading:t.reading,voiceText:t.term,image:t.image,correct,choices,answer:choices.indexOf(correct),type:'medical-tools'};
+    return{sourceId:t.id,prompt:t.term,reading:t.reading,voiceText:t.term,image:t.image,correct,choices,answer:choices.indexOf(correct),type:'medical-tools',explanation:t.functionID,toolReview:{...t}};
   });
 }
 function startQuiz(level,type='mix'){state.level=level;const cards=type==='listening'?(D.jlpt[level]?.vocab||[]).map(c=>Object.assign({_kind:'vocab',_level:level},c)):allLevelCards(level);beginQuiz(level,type,makeCardQuiz(cards,type),'level')}
@@ -392,12 +392,17 @@ function answerQuiz(index){
   item.choices.forEach((_,n)=>{const b=$(`#choice-${n}`);if(!b)return;if(n===item.answer)b.classList.add('correct');else if(n===index)b.classList.add('wrong')});
   setTimeout(()=>{if(!state.quiz||state.quiz!==q)return;q.i++;state.quizAnswered=false;render()},700);
 }
+function medicalToolQuizReview(item){
+  const t=item.toolReview;
+  const safety=t.safetyNote?`<p><b>Catatan pemakaian</b><br><span lang="ja">${htmlSafe(t.safetyNote)}</span><br><small lang="ja">${htmlSafe(t.safetyNoteReading||'')}</small><br>${htmlSafe(t.safetyNoteMeaning||'')}</p>`:'';
+  return `<p>${htmlSafe(t.term)}<br><small lang="ja">${htmlSafe(t.reading||'')}</small></p><img class="tool-quiz-image" src="${htmlSafe(t.image||'')}" alt="${htmlSafe(t.term)}"><p>Jawabanmu: ${htmlSafe(item.selected>=0?item.choices[item.selected]:'Waktu habis')}<br><b>Jawaban: ${htmlSafe(item.choices[item.answer])}</b></p><p><b>Fungsi alat</b><br><span lang="ja">${htmlSafe(t.functionJP||'')}</span><br><small lang="ja">${htmlSafe(t.functionReading||'')}</small><br>${htmlSafe(t.functionID||'')}</p><p><b>Contoh kalimat</b><br><span lang="ja">${htmlSafe(t.example||'')}</span><br><small lang="ja">${htmlSafe(t.exampleReading||'')}</small><br>${htmlSafe(t.exampleMeaning||'')}</p>${safety}`;
+}
 function finishQuiz(){
   const q=state.quiz;if(!q)return '';q.finished=true;clearTimer();const pct=Math.round(q.score/Math.max(1,q.items.length)*100),key=`${state.level}-${q.type}`;
   if(!q.saved){q.saved=true;state.progress.quizRuns[key]=(state.progress.quizRuns[key]||0)+1;state.progress.best[key]=Math.max(state.progress.best[key]||0,pct);markStudy();markDaily('quizzes');save()}
   if(!q.resultSoundPlayed){q.resultSoundPlayed=true;setTimeout(()=>{if(state.quiz===q&&state.view==='quiz')audioEvent(pct===100?'perfect':'finish')},80)}
   const message=pct===100?'パーフェクト！':pct>=70?'おめでとう！':'Sesi selesai',note=pct===100?'Semua jawaban benar. Mantap.':pct>=70?'Hasil bagus. Sedikit review lagi biar makin kuat.':'Nggak masalah, tandai bagian yang masih susah lalu coba lagi nanti.';
-  const review=q.items.filter(item=>item.explanation).map((item,i)=>`<details class="muted-box quiz-review"><summary>${i+1}. ${htmlSafe(item.lessonTitle||item.prompt)} · ${item.selected===item.answer?'Benar':'Perlu diulang'}</summary><p>${htmlSafe(item.prompt)}<br><small>${htmlSafe(item.reading||'')}</small></p>${item.context?`<p>${htmlSafe(item.context)}</p>`:''}<p>Jawabanmu: ${htmlSafe(item.selected>=0?item.choices[item.selected]:'Waktu habis')}<br><b>Jawaban: ${htmlSafe(item.choices[item.answer])}</b></p>${item.example?`<p>${htmlSafe(item.example)}<br><small>${htmlSafe(item.exampleReading||'')}</small><br>${htmlSafe(item.exampleMeaning||'')}</p>`:''}<p>${htmlSafe(item.explanation)}</p></details>`).join('');
+  const review=q.items.filter(item=>item.explanation).map((item,i)=>`<details class="muted-box quiz-review"><summary>${i+1}. ${htmlSafe(item.lessonTitle||item.prompt)} · ${item.selected===item.answer?'Benar':'Perlu diulang'}</summary>${item.type==='medical-tools'&&item.toolReview?medicalToolQuizReview(item):`<p>${htmlSafe(item.prompt)}<br><small>${htmlSafe(item.reading||'')}</small></p>${item.context?`<p>${htmlSafe(item.context)}</p>`:''}<p>Jawabanmu: ${htmlSafe(item.selected>=0?item.choices[item.selected]:'Waktu habis')}<br><b>Jawaban: ${htmlSafe(item.choices[item.answer])}</b></p>${item.example?`<p>${htmlSafe(item.example)}<br><small>${htmlSafe(item.exampleReading||'')}</small><br>${htmlSafe(item.exampleMeaning||'')}</p>`:''}<p>${htmlSafe(item.explanation)}</p>`}</details>`).join('');
   return `<section class="quiz-result-card"><div class="quiz-result-icon">${pct===100?'🏆':pct>=70?'🎉':'🌱'}</div><span>QUIZ COMPLETE</span><div class="quiz-result-score">${pct}%</div><h2>${message}</h2><p>${q.score}/${q.items.length} benar</p><small>${note}</small><button class="action primary" onclick="go('${state.returnView}')">Selesai</button></section>${review?`<section class="quiz-review-list"><h3>Pembahasan sesi</h3>${review}</section>`:''}`;
 }
 function kaigoCaseLibrary(){
