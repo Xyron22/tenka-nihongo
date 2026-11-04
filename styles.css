@@ -698,6 +698,7 @@
 .work-compare-card{margin-top:0}
 .work-compare-card.yours{border-color:rgba(174,139,209,.18)}
 .work-compare-card.model{border-color:rgba(86,169,117,.18)}
+.work-report-attempt{margin-top:12px}
 .work-compare-card .essay-answer{margin-top:10px;border:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.16)}
 .work-self-note{display:grid;grid-template-columns:auto 1fr;gap:9px;align-items:start;margin-top:11px;padding:11px 12px;border:1px solid rgba(127,179,255,.11);border-radius:14px;background:rgba(74,111,160,.07)}
 .work-self-note p{margin:0;color:#acb9c5;font-size:10.5px;line-height:1.5}

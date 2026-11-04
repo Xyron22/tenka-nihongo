@@ -550,8 +550,10 @@ function houkoku(){
   if(hs.stage==='result'){
     const fullText=h.reading||h.pieces.map(houkokuPieceText).join('');
     const model=h.pieces.map((piece,i)=>`<div class="work-model-line"><span class="work-line-no">${i+1}</span><div><div class="handoff">${houkokuPieceHtml(piece)}</div><div class="houkoku-id">🇮🇩 ${houkokuPieceMeaning(piece)}</div></div></div>`).join('');
+    const attempt=!hs.correct?`<div class="work-self-note"><span>💡</span><p>${state.progress.houkokuDone[h.id]?'Status selesai dari latihan sebelumnya tetap tersimpan.':'Belum ditandai selesai.'} Bandingkan urutanmu dengan contoh model; urutan lain dapat tetap wajar dalam percakapan.</p></div><section class="work-compare-card yours work-report-attempt"><div class="work-card-label">URUTANMU</div><div class="houkoku-model">${hs.selected.map((pieceIndex,i)=>{const piece=h.pieces[pieceIndex];return `<div class="work-model-line"><span class="work-line-no">${i+1}</span><div><div class="handoff">${houkokuPieceHtml(piece)}</div><div class="houkoku-id">🇮🇩 ${houkokuPieceMeaning(piece)}</div></div></div>`}).join('')}</div></section>`:'';
     return `${header('報告 Practice',`${label} • Model laporan`)}<button class="back" onclick="finishHoukoku()">←</button>
     <section class="work-session-hero result"><div><span>LEVEL 1 • 報告モデル</span><b>${houkokuRuby(h.title,h.titleReading)}</b><small>Bandingkan urutanmu dengan model laporan.</small></div><strong>${hs.caseIndex+1}/${arr.length}</strong></section>
+    ${attempt}
     <section class="work-model-card"><div class="work-card-label">✅ 報告モデル</div><div class="houkoku-model">${model}</div>${h.note?`<div class="work-tip">💡 <span>${h.note}</span></div>`:''}<button class="work-audio-btn" onclick="speakText('${esc(fullText)}',.82)">🔊 Dengarkan model</button></section>
     <button class="action primary work-finish-btn" onclick="finishHoukoku()">Selesai</button>`;
   }
@@ -566,7 +568,7 @@ function houkoku(){
   ${feedback}
   <div class="work-section-head"><div><span>SENTENCE PIECES</span><b>Potongan kalimat</b></div><small>${hs.remaining.length} tersisa</small></div>
   <div class="work-piece-bank">${available||'<span class="subtle">Semua potongan sudah dipakai.</span>'}</div>
-  <div class="controls work-controls"><button class="action" onclick="houkokuReset()">↻ Acak ulang</button>${hs.checked&&hs.correct?'<button class="action primary" onclick="houkokuShowResult()">Lihat model →</button>':hs.checked?'<button class="action primary" onclick="houkokuReset()">Coba lagi</button>':'<button class="action primary" onclick="houkokuCheck()">Periksa</button>'}</div>`;
+  <div class="controls work-controls"><button class="action" onclick="houkokuReset()">↻ Acak ulang</button>${hs.checked&&hs.correct?'<button class="action primary" onclick="houkokuShowResult()">Lihat model →</button>':hs.checked?'<button class="action primary" onclick="houkokuReset()">Coba lagi</button>':'<button class="action primary" onclick="houkokuCheck()">Periksa</button>'}</div>${hs.checked&&!hs.correct?'<button class="work-audio-btn" onclick="houkokuShowResult()">Pelajari model →</button>':''}`;
 }
 function houkokuPick(pieceIndex){
   const hs=state.houkokuSession;if(!hs||hs.checked)return;
@@ -590,7 +592,7 @@ function houkokuReset(){
   const hs=state.houkokuSession,h=currentHoukoku();if(!hs||!h)return;
   hs.selected=[];hs.remaining=shuffle(h.pieces.map((_,i)=>i));hs.checked=false;hs.correct=false;render();
 }
-function houkokuShowResult(){const hs=state.houkokuSession;if(!hs||!hs.correct)return;hs.stage='result';render()}
+function houkokuShowResult(){const hs=state.houkokuSession;if(!hs||!hs.checked)return;hs.stage='result';render()}
 function finishHoukoku(){state.houkokuSession=null;go('kaigo')}
 
 function houkokuEssayDoneCount(){return houkokuItems().filter(h=>!!state.progress.houkokuEssayDone[h.id]).length}
