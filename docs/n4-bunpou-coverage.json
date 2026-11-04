@@ -1,0 +1,189 @@
+{
+  "status": "OPEN",
+  "checked": "2026-11-04",
+  "scope": "Initial N4 action/aspect/benefactive batch; full inventory reconciliation still pending",
+  "officialJlptInventory": false,
+  "fullReferenceReconciliation": false,
+  "references": [
+    {
+      "id": "bunpro",
+      "url": "https://bunpro.jp/grammar_points",
+      "role": "Publisher level/topic inventory; no explanatory text/examples copied"
+    },
+    {
+      "id": "jlptsensei",
+      "url": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "role": "Independent publisher inventory for staged reconciliation; not an official threshold"
+    }
+  ],
+  "entries": [
+    {
+      "lessonId": "n4-g-01",
+      "topic": "たことがある",
+      "role": "prerequisite-review",
+      "rationale": "Existing N4 sample retained as review of the canonical N5 experience lesson; not counted again as a distinct N4 objective.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N5",
+          "topic": "たことがある"
+        }
+      ],
+      "canonicalLessonId": "n5-g-61",
+      "countAsNewN4Objective": false
+    },
+    {
+      "lessonId": "n4-g-02",
+      "topic": "てみる",
+      "role": "introduced",
+      "rationale": "Trying an action to discover its result.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てみる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てみる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-03",
+      "topic": "ておく",
+      "role": "introduced",
+      "rationale": "Preparatory action/maintaining readiness, distinct from a completed result state.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ておく"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ておく",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-04",
+      "topic": "てしまう",
+      "role": "introduced",
+      "rationale": "Completion and unintended/regretted result are taught together, not inflated into duplicate lessons.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てしまう"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てしまう",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-05",
+      "topic": "てあげる",
+      "role": "introduced",
+      "rationale": "Action benefit from giver toward another person, with register caution.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てあげる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てあげる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-06",
+      "topic": "てくれる",
+      "role": "introduced",
+      "rationale": "Other person acts for the speaker/in-group; actor remains subject.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てくれる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てくれる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-07",
+      "topic": "てもらう",
+      "role": "introduced",
+      "rationale": "Beneficiary subject receives another person's action; actor marked に.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てもらう"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てもらう",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-08",
+      "topic": "ながら",
+      "role": "introduced",
+      "rationale": "Concurrent actions by the same actor, contrasted with sequential action.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ながら"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ながら",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-09",
+      "topic": "てある",
+      "role": "introduced",
+      "rationale": "Intentionally produced result state with a transitive verb, contrasted with intransitive ている and preparatory ておく.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てある"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N5",
+          "topic": "てある",
+          "url": "https://jlptsensei.com/learn-japanese-grammar/てある-te-aru-meaning/"
+        }
+      ],
+      "levelResolution": "Teach at N4 following Bunpro and the already documented N5 deferral. JLPT Sensei labels it N5; retain this disagreement explicitly and leave the closed N5 curriculum unchanged."
+    }
+  ]
+}

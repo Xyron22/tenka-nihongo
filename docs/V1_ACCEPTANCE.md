@@ -21,8 +21,8 @@ An explicit, tested way to transfer existing progress from phone to laptop is an
 ## Current automated evidence
 
 - The [N5 browser audit](n5-ui-audit.json) checks all 925 cards and its existing Bushu, writing-canvas, quiz and reload flows. The [Kaigo browser audit](kaigo-ui-audit.json) checks the installed vocabulary, illustrated tools, reports, handoffs and quizzes. Both layout inventories pass at 320/390/720/1280/1440 px without horizontal overflow or unreachable/clipped content; tool-card backs retain their existing vertical scrolling.
-- At 1280×800 and 1440×900, actual controls pass Tab/Enter navigation, keyboard activation of the writing-case menu, Japanese text entry, comparison, Space activation of revision, retained draft text and mouse card-flipping/exit. The desktop writing comparison screenshot was inspected. The Kaigo report records these viewport profiles and 39 UI flow checks; its 55 source/image hashes and the N5 report's 42 source hashes match the tested files.
-- Local syntax and the full N5/Kaigo/runtime/tools/audio suite pass. Exact final-head CI and the retained draft/release boundary are recorded in PR #16. This checkpoint changes requirements and QA evidence; lesson data, runtime code and saved progress remain unchanged.
+- At 1280×800 and 1440×900, actual controls pass Tab/Enter navigation, keyboard activation of the writing-case menu, Japanese text entry, comparison, Space activation of revision, retained draft text and mouse card-flipping/exit. The desktop writing comparison screenshot was inspected. The Kaigo report records these viewport profiles and UI flow checks; runtime/source/illustration hashes in both reports match their tested files.
+- Local syntax and the full content/runtime/tools/audio suite pass. Exact final-head CI and the retained draft/release boundary are recorded in PR #16. Subsequent N4/N3 content checkpoints must refresh the relevant browser evidence against their actual manifest and keep saved progress readable.
 
 ## Remaining first-version gates
 
