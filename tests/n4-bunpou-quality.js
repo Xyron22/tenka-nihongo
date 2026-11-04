@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
-const load=require('./helpers/load-content'),{data:D,context,files}=load(),coverage=require('../docs/n4-bunpou-coverage.json'),packs=['content-pack-v34.js','content-pack-v35.js','content-pack-v36.js','content-pack-v37.js','content-pack-v38.js','content-pack-v39.js','content-pack-v40.js'];
+const load=require('./helpers/load-content'),{data:D,context,files}=load(),coverage=require('../docs/n4-bunpou-coverage.json'),packs=['content-pack-v34.js','content-pack-v35.js','content-pack-v36.js','content-pack-v37.js','content-pack-v38.js','content-pack-v39.js','content-pack-v40.js','content-pack-v41.js'];
 for(const pack of packs){
  assert(files.includes(pack));const baseline={window:null};baseline.window=baseline;vm.createContext(baseline);for(const f of files.filter(f=>f!==pack))vm.runInContext(fs.readFileSync(f,'utf8'),baseline);
  const old=baseline.TENKA_DATA;for(const level of ['N5','N3','N2','N1'])assert.equal(JSON.stringify(D.jlpt[level]),JSON.stringify(old.jlpt[level]),`${pack} cannot alter ${level}`);assert.equal(JSON.stringify(D.kaigo),JSON.stringify(old.kaigo));for(const kind of ['vocab','kanji'])assert.equal(JSON.stringify(D.jlpt.N4[kind]),JSON.stringify(old.jlpt.N4[kind]));

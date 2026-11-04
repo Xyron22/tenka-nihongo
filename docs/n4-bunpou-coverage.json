@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Staged N4 grammar through time spans/deadlines, past aspect, reasons and concession; full inventory reconciliation still pending",
+  "scope": "Staged N4 grammar through ease/difficulty, methods, manner, deliberate change, transitivity and passive roles; full inventory reconciliation still pending",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -1073,6 +1073,170 @@
           "level": "N4",
           "topic": "のに（逆接）",
           "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-56",
+      "topic": "やすい／にくい",
+      "role": "introduced",
+      "rationale": "Ease/difficulty and tendency with stem formation/adjective behavior; not identical to inability.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "やすい／にくい"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "やすい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "にくい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-57",
+      "topic": "づらい",
+      "role": "introduced",
+      "rationale": "Experienced burden/discomfort; no absolute subjective/objective split from にくい.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "づらい",
+          "url": "https://bunpro.jp/grammar_points/づらい"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "づらい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-58",
+      "topic": "方（かた）",
+      "role": "introduced",
+      "rationale": "Method nominalization from stems, including Nする→Nのしかた and contrast with advice ほう.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かた",
+          "url": "https://bunpro.jp/grammar_points/729"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N5",
+          "topic": "方（かた）",
+          "url": "https://jlptsensei.com/learn-japanese-grammar/方-かた-kata-meaning/"
+        }
+      ],
+      "levelResolution": "N4 following Bunpro and the explicitly recorded deferral of this exact topic in the closed N5 ledger. JLPT Sensei places it at N5; keep that disagreement visible and leave closed N5 content unchanged."
+    },
+    {
+      "lessonId": "n4-g-59",
+      "topic": "なおす",
+      "role": "introduced",
+      "rationale": "Basic redo/revision compound, distinguished from continuation and simple repetition.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "なおす"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N3",
+          "topic": "直す",
+          "url": "https://jlptsensei.com/learn-japanese-grammar/直す-なおす-naosu-meaning/"
+        }
+      ],
+      "levelResolution": "Teach the basic redo/revision compound at N4 following Bunpro's explicit N4 placement. JLPT Sensei sequences it at N3. Later N3 work should reuse this as a prerequisite rather than counting the identical construction again as new coverage."
+    },
+    {
+      "lessonId": "n4-g-60",
+      "topic": "く・に（動作の様子）",
+      "role": "introduced",
+      "rationale": "Adjective modification of actions, not a duplicate of noun modifiers or state change.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "く・に（Describing verbs）"
+        }
+      ],
+      "referenceScopeNote": "Direct N4 placement follows Bunpro. No dedicated JLPT Sensei N4 row is asserted for adjective adverbial formation."
+    },
+    {
+      "lessonId": "n4-g-61",
+      "topic": "くする／にする（形容詞）",
+      "role": "introduced",
+      "rationale": "Deliberate adjective-state change, extending rather than duplicating N5 noun-choice にする.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "にする・くする"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "くする",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "にする",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-62",
+      "topic": "他動詞・自動詞",
+      "role": "introduced",
+      "rationale": "Verb-pair roles rather than guessed endings or automatic intentionality; path を is not misclassified.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "他動詞・自動詞"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "他動詞＆自動詞",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-63",
+      "topic": "れる・られる（受身）",
+      "role": "introduced",
+      "rationale": "Passive formation/actor-recipient roles with positive and neutral examples; distinguish potential and retained objects.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "れる・られる（Passive）",
+          "url": "https://bunpro.jp/grammar_points/Verb%5Bpassive%5D"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "受身形",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
         }
       ]
     }
