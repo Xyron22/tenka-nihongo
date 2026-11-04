@@ -7,35 +7,35 @@
     {
       "width": 320,
       "height": 844,
-      "grammarCardsChecked": 47,
+      "grammarCardsChecked": 55,
       "pageWidth": 320,
       "bad": []
     },
     {
       "width": 390,
       "height": 844,
-      "grammarCardsChecked": 47,
+      "grammarCardsChecked": 55,
       "pageWidth": 390,
       "bad": []
     },
     {
       "width": 720,
       "height": 844,
-      "grammarCardsChecked": 47,
+      "grammarCardsChecked": 55,
       "pageWidth": 720,
       "bad": []
     },
     {
       "width": 1280,
       "height": 800,
-      "grammarCardsChecked": 47,
+      "grammarCardsChecked": 55,
       "pageWidth": 1280,
       "bad": []
     },
     {
       "width": 1440,
       "height": 900,
-      "grammarCardsChecked": 47,
+      "grammarCardsChecked": 55,
       "pageWidth": 1440,
       "bad": []
     }
@@ -49,7 +49,7 @@
     "legacyAndNewProgressReload": true
   },
   "sourceHashes": {
-    "index.html": "eea26f4a7191c317029d7485b04a8dea8167bf34cff7fe58358c4a8d5ec314fe",
+    "index.html": "673e083c6f196fad00d8443a9241d5a808445772bbcc5c62ffe5ee2109812071",
     "styles.css": "c800a0324487438b54014c3bf6d2f773652a1b9f59b2fa44fefca37976d2338a",
     "app-v2.js": "39d2bfcc1d84e748c79615ab39483fc19153c5903d26cc8cc94332ed1b3c2a4d",
     "data.js": "feaccc112134d2b8575cfbd4602454185c96a178425894cfd8679a13828c61c6",
@@ -93,6 +93,7 @@
     "content-pack-v37.js": "dda7f5f950de34665dc8059903d2adefc0fcaaba6211c52657caa6acd419d951",
     "content-pack-v38.js": "6cac3101b93c6951b631e45ace5130899d39af46edb93c6c18650086fa1361af",
     "content-pack-v39.js": "bd2964a6e8717ca155642669499297e278dc18ccc6ae0a29bc4309efd5dc1551",
+    "content-pack-v40.js": "9b40e9113b121f833f28887c6a8ceae19101b98cf4b3a4d5d2e7e3e6622c73d4",
     "houkoku-pack-v1.js": "6752aed020dd6ee8811b45dbd708f25806dafdf1eba37a7ecb8cb50f7190089d",
     "houkoku-pack-v2.js": "271ffec2c6bbd3e278378a7c3c887f476a7da8520340ff2c7e262db5a65231fd",
     "houkoku-pack-v3.js": "b3609744cf5f214dfcc6f77b016c7650190a9367080ab187db93183f8142c795",

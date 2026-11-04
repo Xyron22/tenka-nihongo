@@ -72,3 +72,14 @@ Stage 10A-5 checkpoint: `06d1112368bcd9f7c0f6bff1c45100d4213a5af1`; CI [41787405
 - Teach desired action versus a communicated request, identify who speaks and who is expected to act, and avoid treating a reported instruction as proof of consent or completed action. The reported-request question tests actor comprehension, not only suffix recognition.
 - Record direct N4 publisher support for every new objective. Dedicated wh-embedding and ように言う sources are verified at Bunpro; related JLPT Sensei parent entries are not invented as exact matches. Full N4 reference reconciliation remains pending.
 - Accept only after syntax/full regressions, all-target wrong/timeout/correct sessions, N4/N5/Kaigo browser audits at all five widths with matching current hashes and final-head CI pass. N4/N3 remain OPEN; N2/N1 stay deferred. Draft PR #16 records the exact final-head CI, with no merge or production deployment.
+
+
+Stage 10A-6 checkpoint: `407326827d9f1375e5fe2f7a304b3314db2b86dd`; CI [41788294606](https://github.com/Xyron22/tenka-nihongo/actions/runs/41788294606) passed on that exact head. Production-related steps and deployment were skipped; main remained `8139e1eb74fb3d8a51489632c5771eb9f6b06c71`.
+
+## Stage 10A-7 — Time spans, deadlines, past aspect and clause relations
+
+- Add eight original rich lessons: たあとで／Nのあとで, までに, 間／間に, ごろ／Nのころ, ごとに, past ongoing/result-state ていた, reason-listing し and concessive のに. All fifty-five installed lessons retain the complete fields and contextual practice; old identities/fields stay preserved.
+- Distinguish sequence from tense, deadline from duration, approximate time point from interval repetition, span-wide continuation from an event inside a span, and a past transition from a state already in effect. 間に is not falsely limited to exactly one event; neither identical actors nor lack of speaker control is made a universal requirement.
+- Reason-listing し is not required to occur twice. Concessive のに is separated from its purpose use, while ても is not falsely limited to hypothetical conditions. Meaning questions cover deadlines, interval events and contrary-to-expectation results, alongside attachment/application questions.
+- Record publisher scope precisely: Bunpro's N4 ている間に supports ongoing-action intervals, while its broader の間に entry is N3; the basic-duration lesson also follows JLPT Sensei's N4 間／間に grouping and does not claim full broader-entry coverage. ごとに has direct Bunpro N4 support; a related おきに entry is not invented as an exact second-publisher match.
+- Accept only after syntax/full regressions, all-target wrong/timeout/correct sessions, N4/N5/Kaigo five-width browser audits with matching current-manifest hashes and final-head CI pass. N4/N3 remain OPEN; N2/N1 remain deferred. Draft PR #16 records exact final-head CI; no merge or production deployment is authorized.

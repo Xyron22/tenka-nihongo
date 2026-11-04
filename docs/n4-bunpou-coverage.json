@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Staged N4 grammar through thoughts, received information, embedded questions, nominalization and reported requests; full inventory reconciliation still pending",
+  "scope": "Staged N4 grammar through time spans/deadlines, past aspect, reasons and concession; full inventory reconciliation still pending",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -924,6 +924,157 @@
         }
       ],
       "referenceScopeNote": "Dedicated N4 source verified at Bunpro. No separate JLPT Sensei inventory entry is asserted for this construction."
+    },
+    {
+      "lessonId": "n4-g-48",
+      "topic": "あとで",
+      "role": "introduced",
+      "rationale": "Post-completion sequence and noun attachment, not necessarily immediate or past in reference time.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "あとで"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "後で",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-49",
+      "topic": "までに",
+      "role": "introduced",
+      "rationale": "Completion/arrival deadline versus continued duration まで.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "までに"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "までに",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-50",
+      "topic": "間／間に（時間の基本）",
+      "role": "introduced",
+      "rationale": "Continuing span versus event within a span, allowing different actors and more than one bounded event.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ているあいだに",
+          "url": "https://bunpro.jp/grammar_points/ているあいだに",
+          "scope": "Ongoing-verb interval construction directly matches this lesson's main examples."
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "間／間に",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ],
+      "referenceScopeNote": "Bunpro separately labels broader の間に as N3 (https://bunpro.jp/grammar_points/210), including between-endpoint uses. This N4 lesson follows JLPT Sensei's basic duration grouping and Bunpro's narrower N4 ongoing-action interval. It does not claim the full broader N3 entry."
+    },
+    {
+      "lessonId": "n4-g-51",
+      "topic": "ころ／ごろ",
+      "role": "introduced",
+      "rationale": "Approximate time point/life period versus duration; no blanket ban on following に or conversational くらい.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ころ／ごろ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "頃",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-52",
+      "topic": "ごとに",
+      "role": "introduced",
+      "rationale": "Each temporal/distributive unit, without claiming universal interchangeability with おきに.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ごとに",
+          "url": "https://bunpro.jp/grammar_points/388"
+        }
+      ],
+      "referenceScopeNote": "Direct N4 support is Bunpro's dedicated ごとに entry. JLPT Sensei's おきに entry is related but is not asserted as an exact ごとに match."
+    },
+    {
+      "lessonId": "n4-g-53",
+      "topic": "ていた",
+      "role": "introduced",
+      "rationale": "Past ongoing activity/pre-existing result anchored against another past time/event, extending the N5 present-aspect prerequisite.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ていた"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ていた",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-54",
+      "topic": "し（理由・列挙）",
+      "role": "introduced",
+      "rationale": "Non-exhaustive reasons/qualities with correct copula; a single し can imply additional reasons.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "し（理由・列挙）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "し",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-55",
+      "topic": "のに（逆接）",
+      "role": "introduced",
+      "rationale": "Factual unexpected-result concession, not a claim to cover the separate purpose construction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "のに（逆接）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "のに（逆接）",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
     }
   ]
 }
