@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "N4 grammar through decisions, hearsay/naming and causal/manner/parallel linking; unresolved inventory rows remain explicit",
+  "scope": "N4 grammar through requests, gratitude, internal questions, consultation and wishes; remaining source gaps stay OPEN",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -1797,6 +1797,172 @@
           "source": "jlptsensei",
           "level": "N4",
           "topic": "てすみません"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-91",
+      "topic": "て／ないで（親しい相手への依頼）",
+      "role": "introduced",
+      "rationale": "Bare affirmative/negative casual requests, distinct from clause-linking て, without-doing ないで, and stronger imperatives.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "て／ないで（依頼）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-92",
+      "topic": "てくれてありがとう",
+      "role": "introduced",
+      "rationale": "Gratitude for another actor's help toward the speaker, with actor/benefit direction and register safeguards.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てくれてありがとう"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-93",
+      "topic": "てくれない？／てもらえない？",
+      "role": "introduced",
+      "rationale": "Casual negative-question benefactive requests, contrasted with negative reports/complaints, prohibitions and formal receiving-side requests.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てくれない・てもらえない"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-94",
+      "topic": "てやる（くだけた授受）",
+      "role": "introduced",
+      "rationale": "Recognition of casual benefactive てやる with animals and a firm warning about hierarchical/disrespectful human use; not an instruction to address patients this way.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てやる"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-95",
+      "topic": "たらいいですか（指示を求める）",
+      "role": "introduced",
+      "rationale": "Wh-word instructions-seeking たらいいですか, distinguished from advice-giving and permission requests.",
+      "levelScopeNotes": "The directly verified Sensei N4 row is the specific instructions-seeking question. Bunpro's broader N3 たらいい parent construction is not misrepresented as an exact N4 match.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たらいいですか"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-96",
+      "topic": "かな／かしら／のだろうか",
+      "role": "introduced",
+      "rationale": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かな／かしら／のだろうか"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "かな／かしら"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-97",
+      "topic": "かい（親しい相手への質問）",
+      "role": "introduced",
+      "rationale": "Familiar yes/no question ending かい and social/register recognition; not a universal polite-question replacement.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かい"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-98",
+      "topic": "と言ってもいい",
+      "role": "introduced",
+      "rationale": "Qualified judgement と言ってもいい with full clause forms, distinct from reported reputation, literal permission and concessive と言っても.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "と言ってもいい"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "と言ってもいい"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-99",
+      "topic": "んだけど／んですが（相談の入り口）",
+      "role": "introduced",
+      "rationale": "N4 conversation application combining N5 explanatory んです and softening けど/が. Not counted as another new base grammar objective.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-66",
+        "n5-g-57",
+        "n5-g-75"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "んだけど・んですが"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-100",
+      "topic": "といい／ように祈る（願い）",
+      "role": "introduced",
+      "rationale": "Hope といい and explicit prayer ように祈る, with polarity, self/other wishes and distinction from advice, purpose, expectation and decision.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "といい／ように祈る"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-101",
+      "topic": "じゃないか／ではないか（確認・気づき）",
+      "role": "introduced",
+      "rationale": "Contextual confirmation/discovery with じゃないか/ではないか, distinguished from literal negation and with confrontational-tone warning.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "じゃないか"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "じゃないか／ではないか"
         }
       ]
     }

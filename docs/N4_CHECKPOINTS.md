@@ -156,3 +156,14 @@ Stage 10A-11 checkpoint: `11019bd4e7161dbac6969cc181cbe52dcee56dc9`; CI [4180133
 Stage 10A-12 validation repair: CI [41802439164](https://github.com/Xyron22/tenka-nihongo/actions/runs/41802439164) passed syntax/content checks and all three browser audits, then failed the separate fixed-60-session reachability probe (89 of 90 targets). Each full wrong/timeout/correct mode had already passed its all-target assertion. Replace fixed sample caps with a bounded curriculum-sized budget (at least 80 sessions, otherwise twice the current installed target count), stop as soon as all targets are seen, keep exact all-target assertions and print missing IDs on failure. No application/question/progress behavior changes.
 
 Persist the actual runner-produced 90-card browser reports (53/53/66 source hashes; 6/7/39 flows) and visually inspect the latest mobile apology card. This evidence does not waive the failed regression: the repair must pass the complete CI before the next content stage. Production steps/deployment remain skipped.
+
+
+Stage 10A-12 final repair/evidence checkpoint: `bf250101ea24d48c2c83b8a1fab90be27a20be52`; CI [41803364174](https://github.com/Xyron22/tenka-nihongo/actions/runs/41803364174) passed all syntax, regressions and browser audits. Recovered reports were identical to persisted 53/53/66-hash evidence; all-target quiz reachability and wrong/timeout/correct progress flows passed. Production steps/deployment skipped.
+
+## Stage 10A-13 — Requests, gratitude, questions and wishes
+
+- Add eleven original rich lessons: bare て／ないで requests, てくれてありがとう, negative-question benefactive requests, recognition of てやる, instructions-seeking たらいいですか, internal questions かな／かしら／のだろうか, familiar かい, qualified judgement と言ってもいい, explanatory consultation んだけど／んですが, wishes といい／ように祈る, and confirming/discovering じゃないか／ではないか.
+- Keep request direction, real negation, gratitude, apology and permission distinct. Explain relationship/register; てやる can demean a human recipient and is not modeled as appropriate language toward patients or seniors. Internal-question style tendencies are not grammatical gender prohibitions.
+- Treat consultation using N5 んです plus けど／が as a prerequisite application, not a newly discovered base objective. Preserve exact publisher scopes and the narrower N4 instructions question rather than claiming all N3 たらいい uses.
+- All 101 installed lessons have full guidance, two Japanese/kana/Indonesian examples, contrasts and contextual questions. Update only the source rows actually taught; all unresolved grammar/lexical/depth work remains OPEN.
+- Accept after CI syntax/full regressions, all-target wrong/timeout/correct sessions and all three browser audits at five widths, with actual generated evidence persisted. N5 CLOSED preserved, N4/N3 OPEN, N2/N1 deferred, PR #16 draft and no merge/production deploy.

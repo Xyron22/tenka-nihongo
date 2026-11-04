@@ -713,9 +713,11 @@
         "snapshotLine": 369
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-96"
+      ],
+      "reason": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules."
     },
     {
       "id": "bp-n4-L371",
@@ -939,9 +941,11 @@
         "snapshotLine": 401
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-100"
+      ],
+      "reason": "Hope といい and explicit prayer ように祈る, with polarity, self/other wishes and distinction from advice, purpose, expectation and decision."
     },
     {
       "id": "bp-n4-L403",
@@ -980,9 +984,11 @@
         "snapshotLine": 406
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-101"
+      ],
+      "reason": "Contextual confirmation/discovery with じゃないか/ではないか, distinguished from literal negation and with confrontational-tone warning."
     },
     {
       "id": "bp-n4-L408",
@@ -1427,9 +1433,11 @@
         "snapshotLine": 471
       },
       "scope": "Bare て-form casual request, not てください alone.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-91"
+      ],
+      "reason": "Bare affirmative/negative casual requests, distinct from clause-linking て, without-doing ないで, and stronger imperatives."
     },
     {
       "id": "bp-n4-L473",
@@ -1470,9 +1478,11 @@
         "snapshotLine": 477
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-98"
+      ],
+      "reason": "Qualified judgement と言ってもいい with full clause forms, distinct from reported reputation, literal permission and concessive と言っても."
     },
     {
       "id": "bp-n4-L479",
@@ -1721,9 +1731,11 @@
         "snapshotLine": 510
       },
       "scope": "Bare ないで casual request, not only without doing.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-91"
+      ],
+      "reason": "Bare affirmative/negative casual requests, distinct from clause-linking て, without-doing ないで, and stronger imperatives."
     },
     {
       "id": "bp-n4-L512",
@@ -1734,9 +1746,11 @@
         "snapshotLine": 512
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-92"
+      ],
+      "reason": "Gratitude for another actor's help toward the speaker, with actor/benefit direction and register safeguards."
     },
     {
       "id": "bp-n4-L514",
@@ -1747,9 +1761,11 @@
         "snapshotLine": 514
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-93"
+      ],
+      "reason": "Casual negative-question benefactive requests, contrasted with negative reports/complaints, prohibitions and formal receiving-side requests."
     },
     {
       "id": "bp-n4-L516",
@@ -1760,9 +1776,11 @@
         "snapshotLine": 516
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-96"
+      ],
+      "reason": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules."
     },
     {
       "id": "bp-n4-L517",
@@ -2003,9 +2021,11 @@
         "snapshotLine": 549
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-99"
+      ],
+      "reason": "N4 conversation application combining N5 explanatory んです and softening けど/が. Not counted as another new base grammar objective."
     },
     {
       "id": "bp-n4-L551",
@@ -2130,9 +2150,11 @@
         "snapshotLine": 566
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-97"
+      ],
+      "reason": "Familiar yes/no question ending かい and social/register recognition; not a universal polite-question replacement."
     },
     {
       "id": "bp-n4-L568",
@@ -2335,9 +2357,11 @@
         "snapshotLine": 595
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-100"
+      ],
+      "reason": "Hope といい and explicit prayer ように祈る, with polarity, self/other wishes and distinction from advice, purpose, expectation and decision."
     },
     {
       "id": "bp-n4-L596",
@@ -2406,9 +2430,11 @@
         "snapshotLine": 606
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-96"
+      ],
+      "reason": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules."
     },
     {
       "id": "bp-n4-L608",
@@ -2810,9 +2836,11 @@
         "ordinal": 12
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-101"
+      ],
+      "reason": "Contextual confirmation/discovery with じゃないか/ではないか, distinguished from literal negation and with confrontational-tone warning."
     },
     {
       "id": "js-n4-013",
@@ -2993,9 +3021,11 @@
         "ordinal": 25
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-101"
+      ],
+      "reason": "Contextual confirmation/discovery with じゃないか/ではないか, distinguished from literal negation and with confrontational-tone warning."
     },
     {
       "id": "js-n4-026",
@@ -3021,9 +3051,11 @@
         "ordinal": 27
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-96"
+      ],
+      "reason": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules."
     },
     {
       "id": "js-n4-028",
@@ -3062,9 +3094,11 @@
         "ordinal": 30
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-96"
+      ],
+      "reason": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules."
     },
     {
       "id": "js-n4-031",
@@ -3928,10 +3962,12 @@
         "ordinal": 90
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision.",
-      "levelReview": "The N4 instructions-seeking question たらいいですか is narrower than generic N3 たらいい."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-95"
+      ],
+      "reason": "Wh-word instructions-seeking たらいいですか, distinguished from advice-giving and permission requests.",
+      "levelReview": "The N4 instructions-seeking question たらいいですか is narrower than generic N3 たらいい. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
     },
     {
       "id": "js-n4-091",
@@ -4137,9 +4173,11 @@
         "ordinal": 104
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-94"
+      ],
+      "reason": "Recognition of casual benefactive てやる with animals and a firm warning about hierarchical/disrespectful human use; not an instruction to address patients this way."
     },
     {
       "id": "js-n4-105",
@@ -4210,9 +4248,11 @@
         "ordinal": 109
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-98"
+      ],
+      "reason": "Qualified judgement と言ってもいい with full clause forms, distinct from reported reputation, literal permission and concessive と言っても."
     },
     {
       "id": "js-n4-110",
