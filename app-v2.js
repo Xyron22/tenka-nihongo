@@ -622,6 +622,7 @@ function houkokuEssay(){
       <section class="work-compare-card model"><div class="work-card-label">✅ 報告モデル</div><div class="houkoku-model">${model}</div>${h.note?`<div class="work-tip">💡 <span>${h.note}</span></div>`:''}<button class="work-audio-btn" onclick="speakText('${esc(fullText)}',.82)">🔊 Model audio</button></section>
     </div>
     <div class="work-self-note"><span>💡</span><p>Nilai sendiri: tidak harus sama persis dengan model. Yang penting fakta, urutan, dan maksud laporannya jelas.</p></div>
+    <button class="action work-finish-btn" onclick="houkokuEssayRevise()">Perbaiki tulisan</button>
     <div class="controls essay-controls work-controls"><button class="action" onclick="finishHoukokuEssay(false)">Masih perlu latihan</button><button class="action primary" onclick="finishHoukokuEssay(true)">✅ Sudah bisa</button></div>`;
   }
   return `${header('報告 Level 2',`${label} • Tulis sendiri`)}<button class="back" onclick="finishHoukokuEssay(false)">←</button>
@@ -629,7 +630,7 @@ function houkokuEssay(){
   <section class="work-situation-card"><div class="work-card-label">SITUASI</div><p>🧑‍⚕️ ${h.situation}</p></section>
   <section class="work-guide-card"><div class="work-card-label">URUTAN BANTU</div><ol><li>Orang, barang, atau tugas yang dilaporkan</li><li>Fakta / perubahan yang terjadi</li><li>Kondisi yang kamu lihat atau ukur</li><li>Minta pengecekan / konfirmasi bila perlu</li></ol></section>
   <div class="work-section-head"><div><span>WRITE YOUR REPORT</span><b>✍️ Tulis houkoku-mu</b></div><small>Bahasa Jepang</small></div>
-  <textarea id="houkoku-essay-input" class="houkoku-textarea modern" lang="ja" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="Contoh mulai: 〇〇さんですが、"></textarea>
+  <textarea id="houkoku-essay-input" class="houkoku-textarea modern" lang="ja" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="Contoh mulai: 〇〇さんですが、">${htmlSafe(hs.draft)}</textarea>
   <div class="controls essay-controls work-controls"><button class="action" onclick="finishHoukokuEssay(false)">Selesai</button><button class="action primary" onclick="houkokuEssayReveal()">Bandingkan dengan model →</button></div>`;
 }
 function houkokuEssayReveal(draft=null){
@@ -638,9 +639,13 @@ function houkokuEssayReveal(draft=null){
   const clean=typed.trim();if(!clean){toast('Tulis laporanmu dulu');return}
   hs.draft=clean;hs.stage='model';markStudy();render();
 }
+function houkokuEssayRevise(){
+  const hs=state.houkokuEssaySession;if(!hs||hs.stage!=='model')return;
+  hs.stage='write';render();
+}
 function finishHoukokuEssay(mastered=false){
   const hs=state.houkokuEssaySession,h=currentHoukokuEssay();
-  if(mastered&&hs&&h){state.progress.houkokuEssayDone[h.id]=new Date().toISOString();markDaily('kaigo','houkoku-essay:'+h.id);save()}
+  if(mastered&&hs?.stage==='model'&&h){state.progress.houkokuEssayDone[h.id]=new Date().toISOString();markDaily('kaigo','houkoku-essay:'+h.id);save()}
   state.houkokuEssaySession=null;go('kaigo');
 }
 
@@ -826,7 +831,7 @@ function setAudioSetting(key,value){if(key==='volume')value=Math.max(0,Math.min(
 function previewAudio(event){window.TENKA_AUDIO?.playEvent?.(event)}
 function resetProgress(){if(confirm('Reset semua progress belajar di perangkat ini?')){state.progress=defaultProgress();save();render();toast('Progress direset')}}
 
-Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,startKaigoQuiz,startMedicalToolQuiz,openKaigoFlash,openKaigoCategory,setMedicalToolCategory,openMedicalToolFlash,openMedicalToolReview,openMedicalTool,stepMedicalTool,stepToolFlash,openHoukokuPractice,houkokuPick,houkokuRemove,houkokuDragStart,houkokuDrop,houkokuCheck,houkokuReset,houkokuShowResult,finishHoukoku,openHoukokuEssay,houkokuEssayReveal,finishHoukokuEssay,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
+Object.assign(window,{startGreeting,go,homePrimary,dailyStart,openLevel,openFlash,openReview,flipCard,rateCard,openGrammar,toggleGrammar,startGrammarQuiz,speakText,startQuiz,answerQuiz,startKaigoQuiz,startMedicalToolQuiz,openKaigoFlash,openKaigoCategory,setMedicalToolCategory,openMedicalToolFlash,openMedicalToolReview,openMedicalTool,stepMedicalTool,stepToolFlash,openHoukokuPractice,houkokuPick,houkokuRemove,houkokuDragStart,houkokuDrop,houkokuCheck,houkokuReset,houkokuShowResult,finishHoukoku,openHoukokuEssay,houkokuEssayReveal,houkokuEssayRevise,finishHoukokuEssay,openHandoffPractice,handoffNextSentence,handoffToQuestion,handoffAnswer,finishHandoff,openKakijun,animateStrokes,clearCanvas,toggleGuide,setSetting,setAudioSetting,previewAudio,resetProgress});
 window.TENKA_CORE={state,render,dueCards,allLevelCards,allKaigoCards,allMedicalToolCards,allKaigoStudyCards,totalDue};
 window.TENKA_APP_VERSION=APP_VERSION;
 render();

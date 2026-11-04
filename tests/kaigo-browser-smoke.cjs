@@ -38,7 +38,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
          }
        }
      }
-     let reportModelsChecked=0,reportWrongModelsChecked=0,handoffSentencesChecked=0,handoffReviewsChecked=0;
+     let reportModelsChecked=0,reportWrongModelsChecked=0,writingRevisionsChecked=0,handoffSentencesChecked=0,handoffReviewsChecked=0;
      const practiceBad=[];
      function scan(view,id){
        const overflow=[...document.querySelectorAll('.work-session-hero,.work-piece-chip,.work-selected-piece,.work-model-line,.work-compare-card,.handoff-sentence-card,.handoff-question-card,.handoff-result,.work-case-option')].filter(el=>el.scrollWidth>el.clientWidth+2);
@@ -48,6 +48,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
        openHoukokuPractice(index);scan('report-puzzle',h.id);
        h.pieces.forEach((_,i)=>houkokuPick(i));houkokuCheck();scan('report-selected',h.id);houkokuShowResult();scan('report-model',h.id);reportModelsChecked++;
        openHoukokuEssay(index);scan('report-write',h.id);houkokuEssayReveal(h.pieces.map(p=>p.text).join(''));scan('report-writing-model',h.id);reportModelsChecked++;
+       const draft=TENKA_CORE.state.houkokuEssaySession.draft;houkokuEssayRevise();if(document.querySelector('#houkoku-essay-input').value!==draft)throw Error('Lost writing draft: '+h.id);scan('report-writing-revision',h.id);houkokuEssayReveal(draft);writingRevisionsChecked++;finishHoukokuEssay(false);
        openHoukokuPractice(index);h.pieces.map((_,i)=>i).reverse().forEach(i=>houkokuPick(i));houkokuCheck();scan('report-wrong-feedback',h.id);houkokuShowResult();scan('report-wrong-model',h.id);reportWrongModelsChecked++;finishHoukoku();
      });
      TENKA_DATA.kaigo.handoff.forEach((h,index)=>{
@@ -61,7 +62,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
      go('kaigo');for(const group of document.querySelectorAll('.work-case-group'))group.open=true;
      const caseButtonsChecked=document.querySelectorAll('.work-case-option').length;scan('case-library','all');
      widths.push({view:'kaigo-case-library',width:document.documentElement.scrollWidth});
-     return{width:innerWidth,cardsChecked,reportModelsChecked,reportWrongModelsChecked,handoffSentencesChecked,handoffReviewsChecked,caseButtonsChecked,bad,practiceBad,widths};
+     return{width:innerWidth,cardsChecked,reportModelsChecked,reportWrongModelsChecked,writingRevisionsChecked,handoffSentencesChecked,handoffReviewsChecked,caseButtonsChecked,bad,practiceBad,widths};
    });results.push(result);
    console.log(JSON.stringify({width,badCount:result.bad.length,practiceBadCount:result.practiceBad.length,firstPracticeBad:result.practiceBad.slice(0,3),widths:result.widths}));
  }
@@ -143,11 +144,20 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  assert.equal(await page.evaluate(()=>TENKA_CORE.state.progress.houkokuDone['r-13']),masteredReport,'wrong review preserves earlier report completion');
  await page.getByRole('button',{name:'Selesai',exact:true}).click();
  await page.evaluate(()=>openHoukokuEssay(12));
- await page.locator('#houkoku-essay-input').fill('食札は41枚でした。確認をお願いします。');
+ const firstDraft='食札は41枚でした。\n確認をお願いします。',revisedDraft='昼食の食札についてですが、\n予定は42枚ですが、41枚しかありません。\n確認をお願いします。';
+ await page.locator('#houkoku-essay-input').fill(firstDraft);
  await page.getByRole('button',{name:'Bandingkan dengan model →',exact:true}).click();
  assert((await page.locator('.essay-answer').textContent()).includes('食札は41枚でした。'));
  await page.locator('.work-audio-btn').click();assert.equal(await page.evaluate(()=>window.__tenkaSpoken.at(-1)),await page.evaluate(()=>TENKA_DATA.kaigo.houkoku[12].reading));
+ const beforeRevision=await page.evaluate(()=>JSON.stringify(TENKA_CORE.state.progress));
+ await page.getByRole('button',{name:'Perbaiki tulisan',exact:true}).click();assert.equal(await page.locator('#houkoku-essay-input').inputValue(),firstDraft);
+ assert.equal(await page.evaluate(()=>JSON.stringify(TENKA_CORE.state.progress)),beforeRevision,'revision changes no mastery, SRS or quiz record');
+ await page.locator('#houkoku-essay-input').fill(revisedDraft);await page.getByRole('button',{name:'Bandingkan dengan model →',exact:true}).click();assert.equal(await page.locator('.essay-answer').textContent(),revisedDraft);
  await page.screenshot({path:path.join(out,'kaigo-report-writing.png'),fullPage:true});
+ const literalDraft='</textarea><b id="tenka-draft-probe">文字</b>\n食札は「41枚」です。 & "確認"';
+ await page.getByRole('button',{name:'Perbaiki tulisan',exact:true}).click();await page.locator('#houkoku-essay-input').fill(literalDraft);await page.getByRole('button',{name:'Bandingkan dengan model →',exact:true}).click();
+ assert.equal(await page.locator('.essay-answer').textContent(),literalDraft);await page.getByRole('button',{name:'Perbaiki tulisan',exact:true}).click();assert.equal(await page.locator('#houkoku-essay-input').inputValue(),literalDraft);assert.equal(await page.locator('#tenka-draft-probe').count(),0,'draft markup remains literal text');
+ await page.locator('#houkoku-essay-input').fill(revisedDraft);await page.getByRole('button',{name:'Bandingkan dengan model →',exact:true}).click();
  await page.getByRole('button',{name:'✅ Sudah bisa',exact:true}).click();assert.equal(await page.evaluate(()=>TENKA_CORE.state.view),'kaigo');
  await page.evaluate(()=>openHandoffPractice(12));
  await page.locator('.handoff-audio-grid button').first().click();
@@ -223,7 +233,7 @@ const base=path.resolve(__dirname,'..'),fonts=process.env.TENKA_TEST_JAPANESE_FO
  assert.equal(errors.length,0,errors.join('\n'));
  const names=['index.html','styles.css','app-v2.js',...require('./helpers/load-content')().files];
  const sourceHashes=Object.fromEntries([...new Set(names)].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(base,name))).digest('hex')]));
- const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWrongModelAndSelectedOrder:true,reportWrongReviewNoMastery:true,reportWrongReplayPreserved:true,reportWritingAndKanaAudio:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true,communicationCategoryAndNotes:true,communicationKanaSpeech:true,communicationWrongAnswerAndRetry:true,communicationProgressReload:true,caseLibrarySelectionAndExit:true,caseLibraryProgressPreserved:true,handoffAnswerExplanation:true,handoffQuotedEvidence:true,handoffWrongReplayPreserved:true},sourceHashes};
+ const report={browser:'Chromium',font:fonts?'Noto Sans JP':'system font',errors,results,flows:{facilityCategory:true,flashFlipAndUsageNote:true,authoredKanaSpeechText:true,srsScheduleAndReload:true,writtenQuizContext:true,listeningTargetHidden:true,listeningReplayText:true,wrongAndCorrectAnswers:true,translatedResultReview:true,quizResultReload:true,reportPuzzleAndKanaAudio:true,reportWrongModelAndSelectedOrder:true,reportWrongReviewNoMastery:true,reportWrongReplayPreserved:true,reportWritingAndKanaAudio:true,writingDraftRevision:true,writingRevisionNoMastery:true,writingDraftLiteralText:true,handoffSentenceAudioAndComprehension:true,handoffNormalSlowRates:true,workplacePracticeReload:true,communicationCategoryAndNotes:true,communicationKanaSpeech:true,communicationWrongAnswerAndRetry:true,communicationProgressReload:true,caseLibrarySelectionAndExit:true,caseLibraryProgressPreserved:true,handoffAnswerExplanation:true,handoffQuotedEvidence:true,handoffWrongReplayPreserved:true},sourceHashes};
  fs.writeFileSync(path.join(out,'kaigo-ui-audit.json'),JSON.stringify(report,null,2)+'\n');
  if(results.some(r=>r.bad.length||r.practiceBad.length||r.widths.some(v=>v.width>r.width)))process.exitCode=1;
  }finally{await browser.close()}

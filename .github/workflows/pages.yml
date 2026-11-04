@@ -83,6 +83,7 @@ jobs:
           node --check houkoku-pack-v3.js
           node --check tests/kaigo-reports.js
           node --check tests/kaigo-report-review.js
+          node --check tests/kaigo-writing-revision.js
           node --check tools-pack-v1.js
           node --check app-v2.js
           node --check audio-engine-v5.js
@@ -180,6 +181,9 @@ jobs:
 
       - name: Kaigo wrong-report model review and mastery preservation
         run: node tests/kaigo-report-review.js
+
+      - name: Kaigo writing revision and explicit self-assessment
+        run: node tests/kaigo-writing-revision.js
 
       - name: Kaigo sentence handoff and authored audio
         run: node tests/kaigo-handoff.js
