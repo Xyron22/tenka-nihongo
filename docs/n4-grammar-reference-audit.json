@@ -126,9 +126,11 @@
         "snapshotLine": 288
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-121"
+      ],
+      "reason": "Limited plural/associative ら with personal and demonstrative pronouns, real examples of 彼ら and これら, no fixed group count or universal noun plural rule, and register safeguards."
     },
     {
       "id": "bp-n4-L290",
@@ -639,9 +641,11 @@
         "snapshotLine": 358
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-120"
+      ],
+      "reason": "Adjective nominalization さ with i/na formation and いい→よさ; distinguish a noun degree/quality from adjective modification."
     },
     {
       "id": "bp-n4-L359",
@@ -781,9 +785,11 @@
         "snapshotLine": 376
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-115"
+      ],
+      "reason": "Observable adjective-based がる/がっている including 欲しがる, momentary signs versus tendencies and direct quotations; no absolute ban on third-person adjectives or mind-reading claim."
     },
     {
       "id": "bp-n4-L378",
@@ -794,9 +800,11 @@
         "snapshotLine": 378
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-118"
+      ],
+      "reason": "Sensory noun + がする for sound/smell/taste; distinguish sensory evidence from unverified causes, voluntary listening and visual impression."
     },
     {
       "id": "bp-n4-L380",
@@ -807,9 +815,11 @@
         "snapshotLine": 380
       },
       "scope": "する describing a feature/accessory, not generic do.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-119"
+      ],
+      "reason": "Conventional feature/expression and accessory をしている, not generic do or an unrestricted verb for all clothing."
     },
     {
       "id": "bp-n4-L382",
@@ -820,9 +830,11 @@
         "snapshotLine": 382
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-116"
+      ],
+      "reason": "Observed desire to act using たがる/たがっている, with actor/owner distinguished from speaker-desired てほしい and direct たい quotations."
     },
     {
       "id": "bp-n4-L386",
@@ -938,9 +950,11 @@
         "snapshotLine": 399
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-123"
+      ],
+      "reason": "Contrastive adjective くは in both positive acknowledgement and negative judgement, preserving polarity and avoiding unwarranted opposite-property inference."
     },
     {
       "id": "bp-n4-L401",
@@ -981,9 +995,11 @@
         "snapshotLine": 404
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-122"
+      ],
+      "reason": "Frequent repetition 毎～のように as almost every/emphatically frequent period, not a fixed precise interval or universal interchange with みたいに."
     },
     {
       "id": "bp-n4-L406",
@@ -2223,9 +2239,11 @@
         "snapshotLine": 574
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-124"
+      ],
+      "reason": "Material/origin でできている and から作る/作られている, distinguished from tools and travel origin without an absolute visible-material rule."
     },
     {
       "id": "bp-n4-L576",
@@ -2898,9 +2916,11 @@
         "ordinal": 14
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-118"
+      ],
+      "reason": "Sensory noun + がする for sound/smell/taste; distinguish sensory evidence from unverified causes, voluntary listening and visual impression."
     },
     {
       "id": "js-n4-015",
@@ -2911,9 +2931,11 @@
         "ordinal": 15
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-117"
+      ],
+      "reason": "Lexically conventional がり tendency/sensitivity nouns, self/other uses and distinction from momentary がっている; not a universal adjective rule or diagnosis."
     },
     {
       "id": "js-n4-016",
@@ -2924,9 +2946,11 @@
         "ordinal": 16
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-115"
+      ],
+      "reason": "Observable adjective-based がる/がっている including 欲しがる, momentary signs versus tendencies and direct quotations; no absolute ban on third-person adjectives or mind-reading claim."
     },
     {
       "id": "js-n4-017",
@@ -3145,9 +3169,11 @@
         "ordinal": 31
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-124"
+      ],
+      "reason": "Material/origin でできている and から作る/作られている, distinguished from tools and travel origin without an absolute visible-material rule."
     },
     {
       "id": "js-n4-032",
@@ -3305,9 +3331,11 @@
         "ordinal": 42
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-125"
+      ],
+      "reason": "Unchanged-state まま after ta/nai verbs, nouns and adjectives; keep result state versus mere sequence distinct."
     },
     {
       "id": "js-n4-043",
@@ -3730,9 +3758,11 @@
         "ordinal": 71
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-120"
+      ],
+      "reason": "Adjective nominalization さ with i/na formation and いい→よさ; distinguish a noun degree/quality from adjective modification."
     },
     {
       "id": "js-n4-072",
@@ -3959,9 +3989,11 @@
         "ordinal": 87
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-116"
+      ],
+      "reason": "Observed desire to act using たがる/たがっている, with actor/owner distinguished from speaker-desired てほしい and direct たい quotations."
     },
     {
       "id": "js-n4-088",

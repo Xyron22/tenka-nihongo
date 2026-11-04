@@ -184,3 +184,14 @@ Stage 10A-13 final evidence checkpoint: `6b5b28633c09ef04030017184bb79e9f629b7a1
 
 
 Stage 10A-14 content checkpoint: `ed831e83425136d8cfed6adc054288d14bb4fb90`; CI [41805178901](https://github.com/Xyron22/tenka-nihongo/actions/runs/41805178901) passed all syntax/regressions, all-target quiz/progress and three browser audits. Actual reports verify 114 N4 cards at all five widths, 55/55/68 current source hashes and 6/7/39 flows. The latest mobile scalar まで card was visually inspected. Persist these runner-produced reports without changing runtime inputs; final evidence-head CI remains required. Production steps/deployment were skipped.
+
+
+Stage 10A-14 final evidence checkpoint: `ac9cec809b0e90c792b589c77e17fa19994b5275`; CI [41805906572](https://github.com/Xyron22/tenka-nihongo/actions/runs/41805906572) passed syntax/full regressions, all-target quiz/progress and all three browser audits. Actual reports exactly matched persisted evidence; production steps/deployment skipped.
+
+## Stage 10A-15 — Observable feelings, descriptions, word formation and unchanged states
+
+- Add eleven original rich lessons: がる／がっている, たがる, tendency nouns がり, sensory がする, feature/accessory をしている, adjective nominalization さ, group suffix ら for personal/demonstrative pronouns, frequent 毎～のように, adjective contrast くは, materials でできている／から作る, and unchanged-state まま.
+- Separate observed behavior from a direct quotation and from certainty about another person's private feelings. Desire to act is distinct from the speaker wanting another person to act. Tendency descriptions are not diagnoses; conventional derivatives and clothing verbs are not universal formulas.
+- Teach both polarities of くは, inclusive groups without invented exact membership counts, high frequency without invented day counts, and materials without an absolute visibility test. Maintain state and mere action sequence stay distinct.
+- Record Sensei N4/Bunpro N3 placement for basic まま. Every one of the 125 installed lessons has complete guidance, two Japanese/kana/Indonesian examples, contrast and contextual practice. Only directly taught source rows are resolved; vocabulary and remaining depth/grammar remain OPEN.
+- Accept after CI syntax/full regressions, all-target wrong/timeout/correct sessions and all three phone-to-laptop browser audits, then persist actual runner evidence. N5 CLOSED preserved, N4/N3 OPEN, N2/N1 deferred; draft PR #16, no merge/deployment.

@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "N4 grammar through restriction, quantity, boundaries and comparison; unresolved publisher and depth checks stay OPEN",
+  "scope": "N4 grammar through observable feelings, descriptions, conventional word formation and unchanged states; remaining source/lexical/depth work OPEN",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -2176,6 +2176,180 @@
           "source": "bunpro",
           "level": "N4",
           "topic": "まで（程度・意外な追加）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-115",
+      "topic": "がる／がっている（様子から見る気持ち）",
+      "role": "introduced",
+      "rationale": "Observable adjective-based がる/がっている including 欲しがる, momentary signs versus tendencies and direct quotations; no absolute ban on third-person adjectives or mind-reading claim.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "がる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "がる／がっている"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-116",
+      "topic": "たがる／たがっている",
+      "role": "introduced",
+      "rationale": "Observed desire to act using たがる/たがっている, with actor/owner distinguished from speaker-desired てほしい and direct たい quotations.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "たがる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たがる"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-117",
+      "topic": "がり（傾向・感じやすさ）",
+      "role": "introduced",
+      "rationale": "Lexically conventional がり tendency/sensitivity nouns, self/other uses and distinction from momentary がっている; not a universal adjective rule or diagnosis.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "がり"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-118",
+      "topic": "がする（音・におい・味）",
+      "role": "introduced",
+      "rationale": "Sensory noun + がする for sound/smell/taste; distinguish sensory evidence from unverified causes, voluntary listening and visual impression.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "がする"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "がする"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-119",
+      "topic": "をしている（特徴・身につけた物）",
+      "role": "introduced",
+      "rationale": "Conventional feature/expression and accessory をしている, not generic do or an unrestricted verb for all clothing.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "する（特徴・身につける物）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-120",
+      "topic": "さ（形容詞の名詞化）",
+      "role": "introduced",
+      "rationale": "Adjective nominalization さ with i/na formation and いい→よさ; distinguish a noun degree/quality from adjective modification.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "さ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "さ"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-121",
+      "topic": "ら（人や物のまとまり）",
+      "role": "introduced",
+      "rationale": "Limited plural/associative ら with personal and demonstrative pronouns, real examples of 彼ら and これら, no fixed group count or universal noun plural rule, and register safeguards.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ら"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-122",
+      "topic": "毎～のように（頻繁な繰り返し）",
+      "role": "introduced",
+      "rationale": "Frequent repetition 毎～のように as almost every/emphatically frequent period, not a fixed precise interval or universal interchange with みたいに.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "毎～のように"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-123",
+      "topic": "くは（形容詞の対比）",
+      "role": "introduced",
+      "rationale": "Contrastive adjective くは in both positive acknowledgement and negative judgement, preserving polarity and avoiding unwarranted opposite-property inference.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "くは"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-124",
+      "topic": "でできている／から作る（材料）",
+      "role": "introduced",
+      "rationale": "Material/origin でできている and から作る/作られている, distinguished from tools and travel origin without an absolute visible-material rule.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "でできる・からできる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "から作る"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-125",
+      "topic": "まま（状態を保つ）",
+      "role": "introduced",
+      "rationale": "Unchanged-state まま after ta/nai verbs, nouns and adjectives; keep result state versus mere sequence distinct.",
+      "levelScopeNotes": "Sensei places the directly taught unchanged-state objective at N4; Bunpro places the corresponding broader entry at N3. Preserve this variance and treat future N3 reuse as prerequisite review or a genuinely distinct extension.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "まま"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "まま（状態の維持）"
         }
       ]
     }
