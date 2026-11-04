@@ -42,9 +42,12 @@
         "snapshotLine": 277
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-132",
+        "n4-g-133"
+      ],
+      "reason": "N4 g132 teaches exemplifying proposals and g133 teaches wh-word universal/free selection; these separately authored scopes jointly cover this publisher row."
     },
     {
       "id": "bp-n4-L278",
@@ -261,11 +264,12 @@
         "snapshotLine": 305
       },
       "scope": "Passive including remaining indirect/adversative application review.",
-      "disposition": "partial",
+      "disposition": "covered_n4",
       "lessons": [
+        "n4-g-137",
         "n4-g-63"
       ],
-      "reason": "Basic passive formation/roles exist; indirect/adversative passive application needs a separate depth review."
+      "reason": "Depth application of existing N4 passive to affected-party/adversative and intransitive events, with retained を and separate actor/object/affected-person roles."
     },
     {
       "id": "bp-n4-L306",
@@ -321,11 +325,12 @@
         "snapshotLine": 314
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "partial",
+      "disposition": "covered_n4",
       "lessons": [
+        "n4-g-138",
         "n5-g-22"
       ],
-      "reason": "N5 とき is an existing prerequisite; broader clause/timing scope must be checked against the compiled lesson."
+      "reason": "Relative-time application of canonical N5 とき: nonpast versus past reference stage within an actual past narrative; not a universal calendar-tense rule."
     },
     {
       "id": "bp-n4-L316",
@@ -467,9 +472,11 @@
         "snapshotLine": 333
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-130"
+      ],
+      "reason": "Per-period counts/durations using に, distinguished from fixed intervals, time points and location/goal marking."
     },
     {
       "id": "bp-n4-L335",
@@ -671,9 +678,11 @@
         "snapshotLine": 361
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-134"
+      ],
+      "reason": "Type/content modifiers こういう/そういう/ああいう/どういう, not the exact demonstrative referent, naming という or visual stem そう."
     },
     {
       "id": "bp-n4-L363",
@@ -1234,9 +1243,11 @@
         "snapshotLine": 438
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-131"
+      ],
+      "reason": "Ranking の次に with explicit comparison scope, not automatically a worldwide second rank or temporal succession."
     },
     {
       "id": "bp-n4-L440",
@@ -2123,9 +2134,12 @@
         "snapshotLine": 557
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-136",
+        "n5-g-18"
+      ],
+      "reason": "Explicit ないと（いけない） and なければいけない variants apply N5 obligation to actual N4 forms/contexts; distinguish negative condition, prohibition and no need."
     },
     {
       "id": "bp-n4-L559",
@@ -2329,12 +2343,13 @@
         "snapshotLine": 585
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "partial",
+      "disposition": "covered_n4",
       "lessons": [
+        "n4-g-136",
         "n5-g-18",
         "n5-g-79"
       ],
-      "reason": "Obligation is a prerequisite; verify the exact なければいけない variant in compiled examples."
+      "reason": "Explicit ないと（いけない） and なければいけない variants apply N5 obligation to actual N4 forms/contexts; distinguish negative condition, prohibition and no need."
     },
     {
       "id": "bp-n4-L587",
@@ -2575,9 +2590,11 @@
         "snapshotLine": 619
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-129"
+      ],
+      "reason": "Awareness に気がつく/気づく with nouns and nominalized facts, distinct from correction and 気をつける; awareness alone does not imply resolution."
     },
     {
       "id": "bp-n4-L621",
@@ -2588,9 +2605,11 @@
         "snapshotLine": 621
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-133"
+      ],
+      "reason": "Free/universal selection with wh-word でも and AでもBでも; actual examples of anyone and either named option, distinct from indefinite か and negative も."
     },
     {
       "id": "bp-n4-L622",
@@ -2875,9 +2894,11 @@
         "ordinal": 11
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-132"
+      ],
+      "reason": "Exemplifying noun でも in a light proposal, retaining case particles where needed and distinguishing contrast, concession and strict restriction."
     },
     {
       "id": "js-n4-012",
@@ -3227,10 +3248,12 @@
         "ordinal": 35
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision.",
-      "levelReview": "Sometimes Vることがある differs from N5 experiential Vたことがある; Bunpro places it at N3."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-126"
+      ],
+      "reason": "Occasional Vる/Vないことがある, distinct from canonical N5 past experiential Vたことがある, current habits and personal decisions.",
+      "levelReview": "Sometimes Vることがある differs from N5 experiential Vたことがある; Bunpro places it at N3. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
     },
     {
       "id": "js-n4-036",
@@ -3478,12 +3501,13 @@
         "ordinal": 52
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "partial",
+      "disposition": "covered_n4",
       "lessons": [
+        "n4-g-136",
         "n5-g-18",
         "n5-g-79"
       ],
-      "reason": "Obligation is a prerequisite; verify the exact なければいけない variant in compiled examples."
+      "reason": "Explicit ないと（いけない） and なければいけない variants apply N5 obligation to actual N4 forms/contexts; distinguish negative condition, prohibition and no need."
     },
     {
       "id": "js-n4-053",
@@ -3554,9 +3578,11 @@
         "ordinal": 57
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-129"
+      ],
+      "reason": "Awareness に気がつく/気づく with nouns and nominalized facts, distinct from correction and 気をつける; awareness alone does not imply resolution."
     },
     {
       "id": "js-n4-058",
@@ -3642,10 +3668,12 @@
         "ordinal": 63
       },
       "scope": "Purpose/function/cost のに; distinct from concession.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision.",
-      "levelReview": "Sensei N4 / Bunpro N3: purpose のに."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-127"
+      ],
+      "reason": "Purpose/function/resources-time のに after dictionary form, distinct from concessive のに and not a blanket replacement for every purpose construction.",
+      "levelReview": "Sensei N4 / Bunpro N3: purpose のに. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
     },
     {
       "id": "js-n4-064",
@@ -3656,9 +3684,11 @@
         "ordinal": 64
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-135"
+      ],
+      "reason": "Focus/identification and reason with のは～だ as an application of N5 nominalization; examples identify the actor and state the reason explicitly."
     },
     {
       "id": "js-n4-065",
@@ -3699,10 +3729,12 @@
         "ordinal": 67
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision.",
-      "levelReview": "Sensei N4 / Bunpro N3: interval おきに; ごとに is related, not automatically equivalent."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-128"
+      ],
+      "reason": "Intervals おきに with minute/hour behavior versus the explicit one-day-gap reading 一日おき; distinguish per-period frequency and avoid universal equivalence with ごとに.",
+      "levelReview": "Sensei N4 / Bunpro N3: interval おきに; ごとに is related, not automatically equivalent. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
     },
     {
       "id": "js-n4-068",
@@ -4471,11 +4503,12 @@
         "ordinal": 119
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "partial",
+      "disposition": "covered_n4",
       "lessons": [
+        "n4-g-137",
         "n4-g-63"
       ],
-      "reason": "Basic passive formation/roles exist; indirect/adversative application still needs review."
+      "reason": "Depth application of existing N4 passive to affected-party/adversative and intransitive events, with retained を and separate actor/object/affected-person roles."
     },
     {
       "id": "js-n4-120",

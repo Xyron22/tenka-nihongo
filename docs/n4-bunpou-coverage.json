@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "N4 grammar through observable feelings, descriptions, conventional word formation and unchanged states; remaining source/lexical/depth work OPEN",
+  "scope": "N4 grammar through occasional events, function, intervals, selection, focus and verified prerequisite depth; unresolved grammar/lexical rows remain OPEN",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -2350,6 +2350,234 @@
           "source": "bunpro",
           "level": "N3",
           "topic": "まま（状態の維持）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-126",
+      "topic": "ことがある（時々の出来事）",
+      "role": "introduced",
+      "rationale": "Occasional Vる/Vないことがある, distinct from canonical N5 past experiential Vたことがある, current habits and personal decisions.",
+      "levelScopeNotes": "Teach the narrow directly verified Sensei N4 occurrence scope; Bunpro N3 placement is retained as a variance. Do not reclassify the existing N5 experience objective.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ことがある（時々）"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "ことがある（時々）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-127",
+      "topic": "のに（用途・必要な時間など）",
+      "role": "introduced",
+      "rationale": "Purpose/function/resources-time のに after dictionary form, distinct from concessive のに and not a blanket replacement for every purpose construction.",
+      "levelScopeNotes": "Sensei N4 / Bunpro N3 variance retained. Introductory use, convenience/necessity and required-time examples only; not all possible purpose/conditional extensions.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "のに（用途・必要な時間）"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "のに（目的）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-128",
+      "topic": "おきに（間隔）",
+      "role": "introduced",
+      "rationale": "Intervals おきに with minute/hour behavior versus the explicit one-day-gap reading 一日おき; distinguish per-period frequency and avoid universal equivalence with ごとに.",
+      "levelScopeNotes": "Direct Sensei N4 introductory interval scope retained with Bunpro N3 placement noted. Exact dates/times remove ambiguity for important schedules.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "おきに"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "おきに"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-129",
+      "topic": "に気がつく／に気づく",
+      "role": "introduced",
+      "rationale": "Awareness に気がつく/気づく with nouns and nominalized facts, distinct from correction and 気をつける; awareness alone does not imply resolution.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "に気がつく"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "に気がつく"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-130",
+      "topic": "期間に回数（頻度）",
+      "role": "introduced",
+      "rationale": "Per-period counts/durations using に, distinguished from fixed intervals, time points and location/goal marking.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "に（頻度）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-131",
+      "topic": "の次に（順位）",
+      "role": "introduced",
+      "rationale": "Ranking の次に with explicit comparison scope, not automatically a worldwide second rank or temporal succession.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "の次に"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-132",
+      "topic": "Nでも（軽い提案）",
+      "role": "introduced",
+      "rationale": "Exemplifying noun でも in a light proposal, retaining case particles where needed and distinguishing contrast, concession and strict restriction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "でも（提案・例示）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "でも（提案）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-133",
+      "topic": "疑問詞でも／AでもBでも（自由な選択）",
+      "role": "introduced",
+      "rationale": "Free/universal selection with wh-word でも and AでもBでも; actual examples of anyone and either named option, distinct from indefinite か and negative も.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "疑問詞でも／でも～でも"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-134",
+      "topic": "こういう／そういう／ああいう／どういう",
+      "role": "introduced",
+      "rationale": "Type/content modifiers こういう/そういう/ああいう/どういう, not the exact demonstrative referent, naming という or visual stem そう.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "そういう"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-135",
+      "topic": "のは～だ（焦点を示す）",
+      "role": "introduced",
+      "rationale": "Focus/identification and reason with のは～だ as an application of N5 nominalization; examples identify the actor and state the reason explicitly.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-88"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "のは～だ"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-136",
+      "topic": "ないと／なければいけない（義務の言い方）",
+      "role": "introduced",
+      "rationale": "Explicit ないと（いけない） and なければいけない variants apply N5 obligation to actual N4 forms/contexts; distinguish negative condition, prohibition and no need.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-18",
+        "n5-g-79"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ないと／なければいけない"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "なければいけない"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-137",
+      "topic": "受身（迷惑・影響を受ける）",
+      "role": "introduced",
+      "rationale": "Depth application of existing N4 passive to affected-party/adversative and intransitive events, with retained を and separate actor/object/affected-person roles.",
+      "objectiveType": "scope-extension",
+      "prerequisiteLessonIds": [
+        "n4-g-63"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "受身（迷惑・影響）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "受身形"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-138",
+      "topic": "Vるとき／Vたとき（時間の関係）",
+      "role": "introduced",
+      "rationale": "Relative-time application of canonical N5 とき: nonpast versus past reference stage within an actual past narrative; not a universal calendar-tense rule.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-22"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "とき"
         }
       ]
     }

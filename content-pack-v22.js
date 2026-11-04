@@ -80,7 +80,7 @@ const notes={
  'テープレコーダー':'Perangkat rekaman kaset; dipertahankan untuk pengenalan dalam bahan lama, bukan disebut perangkat modern.'
 };
 for(const v of D.jlpt.N5.vocab)if(notes[v.term])v.note=notes[v.term];
-for(const v of D.jlpt.N5.vocab)if(v.term.endsWith('する')){
+for(const v of D.jlpt.N5.vocab)if(v.term!=='する'&&v.term.endsWith('する')){
  const noun=v.term.slice(0,-2),kana=v.reading.slice(0,-2);
  const nounNote=`Tanpa する, ${noun}（${kana}）adalah nomina kegiatan. Tambahkan する／します untuk menjadikannya verba.`;
  if(!v.note?.includes(nounNote))v.note=(v.note?v.note+' ':'')+nounNote;

@@ -31,6 +31,7 @@ for(const row of coverage.entries){
   }else assert(row.reason&&row.lessons.length===0,`defer with reason: ${row.topic}`);
 }
 for(const v of D.jlpt.N5.vocab){
+  assert(!v.note?.includes('（）'),`${v.id}: empty derived-noun guide must not be shown`);
   for(const field of ['term','reading','meaning','example','exampleReading','exampleMeaning'])assert(v[field]?.trim(),`${v.id}: missing ${field}`);
   for(const field of ['reading','exampleReading'])assert(!/\p{Script=Han}/u.test(v[field]),`${v.id}: non-kana ${field}`);
   assert(!v.exampleMeaning.includes('(kata sifat'),`${v.id}: grammatical labels belong to the gloss, not the translated example`);
