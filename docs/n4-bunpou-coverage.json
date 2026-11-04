@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Staged N4 actions, phases, ability/volition/planning, direction, conditionals, possibility/inference/appearance; full inventory reconciliation still pending",
+  "scope": "Staged N4 grammar through thoughts, received information, embedded questions, nominalization and reported requests; full inventory reconciliation still pending",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -780,6 +780,150 @@
           "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
         }
       ]
+    },
+    {
+      "lessonId": "n4-g-40",
+      "topic": "とおもう",
+      "role": "introduced",
+      "rationale": "Opinion/thought after plain clauses; N5 quotation prerequisite is retained, not falsely assumed to teach every thinking construction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "とおもう"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "と思う",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-41",
+      "topic": "ときいた",
+      "role": "introduced",
+      "rationale": "Received-information report, distinct from own opinion, visibility and verification.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ときいた"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "と聞いた",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-42",
+      "topic": "かどうか",
+      "role": "introduced",
+      "rationale": "Embedded yes/no question without present-positive noun/na-adjective だ.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かどうか"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "かどうか",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-43",
+      "topic": "疑問詞のある文＋か（間接疑問）",
+      "role": "introduced",
+      "rationale": "Embed a wh-question with a main predicate; distinguish N5 standalone questions and indefinite 誰か from 誰が～か.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "Question-phrase＋か",
+          "url": "https://bunpro.jp/grammar_points/question-phrase-か"
+        }
+      ],
+      "referenceScopeNote": "Bunpro explicitly lists embedded questions at N4. JLPT Sensei's かどうか row covers the related polar-question construction; it is not claimed as a dedicated wh-embedding entry."
+    },
+    {
+      "lessonId": "n4-g-44",
+      "topic": "こと（名詞化）",
+      "role": "introduced",
+      "rationale": "Activity nominalization beyond the preserved N5 fixed ability/experience constructions.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "こと（名詞化）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "こと",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-45",
+      "topic": "ということ（名詞化）",
+      "role": "introduced",
+      "rationale": "Nominalized proposition as information object, not automatic full coverage of report/conclusion ということだ.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ということ（名詞化）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ということ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-46",
+      "topic": "てほしい",
+      "role": "introduced",
+      "rationale": "Desire for another actor's action, distinct from own desire and an actually communicated request.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てほしい"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てほしい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-47",
+      "topic": "ようにいう",
+      "role": "introduced",
+      "rationale": "Reported request/instruction with separate speaker and intended actor; report does not prove compliance.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ようにいう",
+          "url": "https://bunpro.jp/grammar_points/386"
+        }
+      ],
+      "referenceScopeNote": "Dedicated N4 source verified at Bunpro. No separate JLPT Sensei inventory entry is asserted for this construction."
     }
   ]
 }

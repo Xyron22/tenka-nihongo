@@ -61,3 +61,14 @@ Stage 10A-4 checkpoint: `a15fe4779e568c38389f1e4e5bb2cfc991ee5b0d`; CI [41786266
 - The two らしい lessons teach genuinely different constructions: inferred status from information versus characteristic likeness with adjective behavior. The ledger does not falsely claim that JLPT Sensei's hearsay-only parent gloss independently verifies the characteristic sense; that N4 placement is verified directly against Bunpro's dedicated characteristic lesson.
 - Review distractors for more than one plausible answer. The characteristic-らしい question asks meaning in a stated context; it avoids a slot where both adjective and adverbial variants could form valid sentences. Hearsay そう is explained only as a contrast and is not counted as taught coverage in this appearance batch.
 - Accept only after syntax/full regressions, all-target wrong/timeout/correct runtime sessions, N4/N5/Kaigo browser audits at all five widths with current hashes, and final-head CI pass. N4/N3 remain OPEN; old identities, other levels, Kaigo and core runtime remain unchanged. Draft PR #16 records final-head CI; no merge/production deployment is authorized.
+
+
+Stage 10A-5 checkpoint: `06d1112368bcd9f7c0f6bff1c45100d4213a5af1`; CI [41787405263](https://github.com/Xyron22/tenka-nihongo/actions/runs/41787405263) passed on that exact head. Production-related steps and deployment were skipped.
+
+## Stage 10A-6 — Thoughts, information, embedded questions and requests
+
+- Add eight original rich lessons: と思う, と聞いた, かどうか, wh-question＋か, こと nominalization, proposition＋ということ, てほしい and ように言う. All forty-seven installed lessons have complete guidance, two translated kana examples, contrast and contextual practice. Earlier fields/IDs and the N5 experience prerequisite bridge stay preserved.
+- Distinguish own thoughts, received information and verified facts. Embedded questions preserve wh-information versus polar yes/no uncertainty, and distinguish 誰が～か from the N5 indefinite 誰か. Nominalization is not misrepresented as full coverage of every experience, decision or hearsay pattern containing こと.
+- Teach desired action versus a communicated request, identify who speaks and who is expected to act, and avoid treating a reported instruction as proof of consent or completed action. The reported-request question tests actor comprehension, not only suffix recognition.
+- Record direct N4 publisher support for every new objective. Dedicated wh-embedding and ように言う sources are verified at Bunpro; related JLPT Sensei parent entries are not invented as exact matches. Full N4 reference reconciliation remains pending.
+- Accept only after syntax/full regressions, all-target wrong/timeout/correct sessions, N4/N5/Kaigo browser audits at all five widths with matching current hashes and final-head CI pass. N4/N3 remain OPEN; N2/N1 stay deferred. Draft PR #16 records the exact final-head CI, with no merge or production deployment.
