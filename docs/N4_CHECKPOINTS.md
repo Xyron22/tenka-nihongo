@@ -94,3 +94,14 @@ Stage 10A-7 checkpoint: `f2364bca69aaca7205b9b9f967b0e883c65f312e`; CI [41789234
 - The method lesson fulfills an existing N5 deferral: Bunpro lists N4 while JLPT Sensei lists N5. Keep the closed N5 content unchanged. Basic 直す follows Bunpro N4 while recording JLPT Sensei N3; subsequent N3 work should treat it as a prerequisite, not duplicate new coverage. Adjective-adverb formation has explicit Bunpro N4 support; no nonexistent exact second-publisher row is claimed.
 - Separate method 方 from advice ほう, adjective manner from noun modification, and adjective state change from the preserved N5 noun-choice にする. Object/actor role questions supplement conjugation questions.
 - Accept only after syntax/full regressions, all-target wrong/timeout/correct sessions, all three browser audits at 320/390/720/1280/1440 px with matching current hashes, and final-head CI pass. N4/N3 remain OPEN; N2/N1 development stays deferred. Draft PR #16 records exact final-head CI; no merge or production deployment is authorized.
+
+
+Stage 10A-8 checkpoint: `f74e92c24da7c6618c93d923f11ee835660df1f1`; CI [41790334809](https://github.com/Xyron22/tenka-nihongo/actions/runs/41790334809) passed on that exact head. Production-related steps and deployment were skipped.
+
+## Stage 10A-9 — Causation, permission, commands, advice, regret and purpose
+
+- Add eight original rich lessons: causative, causative-passive, causative permission＋ください, imperative formation, なさい, たらどう, ばよかった and purpose ように. All seventy-one installed lessons retain full guidance, two translated kana examples, contrast and contextual practice.
+- Teach separate cause-giver/action-actor roles, the limits of に／を heuristics, full and common contracted causative-passive forms, and a permission request rather than an already granted permission. Actor-comprehension questions exercise the causative, causative-passive and permission viewpoints.
+- Original exercise instructions teach 選べ／選びなさい and one-answer scope. No actual exam/book question is copied. Register guidance explains why understanding a command does not make it a universal polite request. Regret questions distinguish wishing one had not bought from wishing one had bought.
+- Purpose ように is distinct from analogy, habit/effort, changed ability and reported instructions. Source mappings retain exact-versus-parent scope; related publisher rows are not asserted as direct verification. Causative particle choices were also checked against Wasabi's own construction lesson, which is not treated as a level inventory.
+- Accept only after syntax/full regressions, all-target wrong/timeout/correct sessions, all three five-width browser audits with current hashes and final-head CI pass. N4/N3 remain OPEN; full reference reconciliation, remaining grammar, vocabulary/Kanji and reading/listening audits are still pending. N2/N1 stay deferred; PR #16 remains draft with no merge/production deployment.

@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Staged N4 grammar through ease/difficulty, methods, manner, deliberate change, transitivity and passive roles; full inventory reconciliation still pending",
+  "scope": "Staged N4 grammar through causation, permission, commands, advice, regret and purpose; full inventory reconciliation still pending",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -14,6 +14,11 @@
       "id": "jlptsensei",
       "url": "https://jlptsensei.com/jlpt-n4-grammar-list/",
       "role": "Independent publisher inventory for staged reconciliation; not an official threshold"
+    },
+    {
+      "id": "wasabi",
+      "url": "https://wasabi-jpn.com/magazine/japanese-grammar/japanese-causative-form/",
+      "role": "Construction/particle/actor verification for causative; not a JLPT level inventory"
     }
   ],
   "entries": [
@@ -1239,6 +1244,158 @@
           "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
         }
       ]
+    },
+    {
+      "lessonId": "n4-g-64",
+      "topic": "せる・させる（使役）",
+      "role": "introduced",
+      "rationale": "Causing/allowing with separate cause-giver/action actor; transitivity and context prevent an absolute に=let/を=force rule.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "せる・させる",
+          "url": "https://bunpro.jp/grammar_points/causative"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "させる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "wasabi",
+          "scope": "Transitive/intransitive causative particles, contextual permission/coercion and avoidance of duplicate を."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-65",
+      "topic": "させられる（使役受身）",
+      "role": "introduced",
+      "rationale": "Action actor is the one made to act, with cause-giver に; full and common contracted forms taught without indiscriminate shortening.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "させられる",
+          "url": "https://bunpro.jp/grammar_points/causative-passive"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "させられる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-66",
+      "topic": "させてください／せてください",
+      "role": "introduced",
+      "rationale": "Request to be allowed to act, not a grant of permission or instruction for the other person to perform the main action.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "させてください",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        },
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "せる・させる（parent construction）",
+          "url": "https://bunpro.jp/grammar_points/causative",
+          "scope": "Causative formation prerequisite; not asserted as a separate permission-entry title."
+        }
+      ],
+      "referenceScopeNote": "JLPT Sensei directly lists the permission construction at N4. Bunpro parent causative supports formation; no separate exact inventory row is invented."
+    },
+    {
+      "lessonId": "n4-g-67",
+      "topic": "命令形",
+      "role": "introduced",
+      "rationale": "Direct imperative formation and original written-exercise instruction comprehension; distinguish potential, volitional and N5 prohibition.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "命令形",
+          "url": "https://bunpro.jp/grammar_points/1032"
+        }
+      ],
+      "referenceScopeNote": "Dedicated N4 placement follows Bunpro. JLPT Sensei's なさい is related but is not asserted as an exact direct-imperative entry."
+    },
+    {
+      "lessonId": "n4-g-68",
+      "topic": "なさい",
+      "role": "introduced",
+      "rationale": "Stem-based command and written question instructions with relationship/register caution.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "なさい",
+          "url": "https://bunpro.jp/grammar_points/95"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "なさい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-69",
+      "topic": "たらどう",
+      "role": "introduced",
+      "rationale": "Suggestion to consider an action, not a past report or guaranteed politeness.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "たらどう"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たらどう",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-70",
+      "topic": "ばよかった",
+      "role": "introduced",
+      "rationale": "Retrospective regret with positive/negative alternatives, not obligation or a claim that the wished alternative happened.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ばよかった",
+          "url": "https://bunpro.jp/grammar_points/ばよかった"
+        }
+      ],
+      "referenceScopeNote": "Bunpro directly lists N4. A generic ば inventory row is not asserted as direct verification of the complete regret construction."
+    },
+    {
+      "lessonId": "n4-g-71",
+      "topic": "ように（目的）",
+      "role": "introduced",
+      "rationale": "Action to enable/prevent an outcome, often negative or potential/non-volitional; distinguish analogy, changed ability, effort and reported instruction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ように（目的）",
+          "url": "https://bunpro.jp/grammar_points/628"
+        }
+      ],
+      "referenceScopeNote": "Bunpro directly lists the purpose construction at N4. JLPT Sensei's likeness ように／ような parent is not claimed as an exact purpose match."
     }
   ]
 }
