@@ -15,6 +15,7 @@ const {chromium}=playwright,base=path.resolve(__dirname,'..'),fonts=process.env.
  }
  await page.locator('.grammar-card').nth(4).screenshot({path:path.join(out,'n4-benefactive-lesson.png')});
  await page.locator('.grammar-card').nth(9).screenshot({path:path.join(out,'n4-action-phase-lesson.png')});
+ await page.locator('.grammar-card').nth(17).screenshot({path:path.join(out,'n4-ability-lesson.png')});
  await page.setViewportSize({width:390,height:844});await page.evaluate(()=>openGrammar('N5'));await page.locator('[onclick="toggleGrammar(\'n5-g-01\')"]').click();
  await page.evaluate(()=>openGrammar('N4'));await page.locator('[onclick="toggleGrammar(\'n4-g-05\')"]').click();assert(await page.evaluate(()=>!!TENKA_CORE.state.progress.grammarDone['n4-g-05']));
  await page.locator('.grammar-quiz-btn').click();const count=await page.evaluate(()=>TENKA_CORE.state.quiz.items.length);assert(count>2&&count<=10);assert(await page.evaluate(()=>TENKA_CORE.state.quiz.items.every(q=>q.sourceId.startsWith('n4-g-'))));

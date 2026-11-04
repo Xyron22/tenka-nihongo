@@ -28,3 +28,14 @@ Stage 10A-1 checkpoint: `cb6c5af65778d26f8ab5021aea27e00770f42853`; CI [41783265
 - Extend the staged cross-reference ledger with both publisher topic mappings for the eight new objectives. Source topic counts remain non-official and full N4 reference reconciliation remains pending.
 - Strengthen the runtime regression so every installed N4 target is exercised through wrong, real controlled-clock timeout and correct answer/result/save/reload sessions. Each grammar pack is independently checked for idempotence, preserved earlier fields and no changes to other levels, Kaigo or N4 vocabulary/Kanji.
 - Syntax/full regressions and the N4/N5/Kaigo browser audits must all pass for this checkpoint. Browser QA covers all seventeen N4 cards at 320/390/720/1280/1440 px, the result/exit/progress flow, and existing N5/Kaigo behavior against the new manifest. The exact final-head CI is recorded in draft PR #16. N4/N3 remain OPEN; vocabulary, Kanji/Bushu, reading/listening and full objective audits still need their own batches.
+
+
+Stage 10A-2 checkpoint: `c6384b4c1cf18a8d194659a68426a5e681c54278`; CI [41784679214](https://github.com/Xyron22/tenka-nihongo/actions/runs/41784679214) passed on that exact head. Production-related steps and deployment were skipped.
+
+## Stage 10A-3 — Ability, volition, plans and development
+
+- Add eight original rich lessons: potential-form formation, plain volitional formation, volitional＋と思う, 予定だ, ようになる, ようにする, ていく and てくる. All twenty-five installed grammar lessons include the complete guidance, two translated kana examples, contrast and contextual question. The legacy experience bridge is preserved as prerequisite review.
+- Potential formation covers godan/ichidan/する/来る, godan verbs ending in る, standard versus conversational variants, and ability versus permission. Volitional formation distinguishes invitation/intention from ability and commands. Plans are not represented as guaranteed outcomes; third-person intentions require actual evidence.
+- Change in ability/habit is distinguished from intentional effort to maintain a habit. The directional lessons teach both physical movement relative to a reference point and development relative to an anchor time; てくる is not falsely limited to round trips.
+- Extend both publisher mappings for these N4 objectives. Full reference reconciliation remains pending; purpose ために and other unreviewed objectives are not added merely to inflate this batch.
+- Before accepting the checkpoint, run local syntax/full regressions, all-target wrong/timeout/correct grammar sessions and all three five-width browser audits. N4/N5/Kaigo reports must match the current manifest. Final-head CI is recorded in draft PR #16. N4/N3 remain OPEN; N2/N1 development stays deferred.

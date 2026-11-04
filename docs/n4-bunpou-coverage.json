@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Staged N4 action/aspect/benefactive and temporal/action-phase batches; full inventory reconciliation still pending",
+  "scope": "Staged N4 action/aspect/benefactive, temporal/action-phase, ability/volition/planning and directional-development batches; full inventory reconciliation still pending",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -334,6 +334,158 @@
           "level": "N4",
           "topic": "出す",
           "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-18",
+      "topic": "れる・られる (Potential)",
+      "role": "introduced",
+      "rationale": "Standard godan/ichidan/irregular potential formation and ability versus permission.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "れる・られる (Potential)"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "られる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-19",
+      "topic": "う・よう (Volitional)",
+      "role": "introduced",
+      "rationale": "Plain volitional formation for intention/invitation; distinct from ability and commands.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "う・よう (Volitional)"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "意向形",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-20",
+      "topic": "う・よう＋と思う",
+      "role": "introduced",
+      "rationale": "Personal intention using the volitional form, not a generic prediction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "う・よう＋と思う"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ようと思う",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-21",
+      "topic": "よていだ",
+      "role": "introduced",
+      "rationale": "Arranged plan/schedule with dictionary-form verbs or Nの; not guaranteed execution.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "よていだ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "予定だ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-22",
+      "topic": "ようになる",
+      "role": "introduced",
+      "rationale": "Change into an ability or habit; distinct from deliberate effort to maintain it.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ようになる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ようになる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-23",
+      "topic": "ようにする",
+      "role": "introduced",
+      "rationale": "Deliberate effort/habit with positive or negative plain verbs; not guaranteed success.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ようにする"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ようにする",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-24",
+      "topic": "ていく",
+      "role": "introduced",
+      "rationale": "Movement away from a reference point and continuation/development forward from it.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ていく"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ていく",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-25",
+      "topic": "てくる",
+      "role": "introduced",
+      "rationale": "Movement toward/return to a reference point and development up to it, without a universal round-trip claim.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てくる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てくる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
         }
       ]
     }
