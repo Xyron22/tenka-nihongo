@@ -7,35 +7,35 @@
     {
       "width": 320,
       "height": 844,
-      "grammarCardsChecked": 114,
+      "grammarCardsChecked": 125,
       "pageWidth": 320,
       "bad": []
     },
     {
       "width": 390,
       "height": 844,
-      "grammarCardsChecked": 114,
+      "grammarCardsChecked": 125,
       "pageWidth": 390,
       "bad": []
     },
     {
       "width": 720,
       "height": 844,
-      "grammarCardsChecked": 114,
+      "grammarCardsChecked": 125,
       "pageWidth": 720,
       "bad": []
     },
     {
       "width": 1280,
       "height": 800,
-      "grammarCardsChecked": 114,
+      "grammarCardsChecked": 125,
       "pageWidth": 1280,
       "bad": []
     },
     {
       "width": 1440,
       "height": 900,
-      "grammarCardsChecked": 114,
+      "grammarCardsChecked": 125,
       "pageWidth": 1440,
       "bad": []
     }
@@ -49,7 +49,7 @@
     "legacyAndNewProgressReload": true
   },
   "sourceHashes": {
-    "index.html": "ed9d1d3295fd8bc79a107e9f119aba7fdbd6855a8689cbe0c1ea8227c1ca6bc9",
+    "index.html": "8ca00a1a3321524c0488414a5509ca54999e3f30fc9aab26035df054b22d22da",
     "styles.css": "c800a0324487438b54014c3bf6d2f773652a1b9f59b2fa44fefca37976d2338a",
     "app-v2.js": "39d2bfcc1d84e748c79615ab39483fc19153c5903d26cc8cc94332ed1b3c2a4d",
     "data.js": "feaccc112134d2b8575cfbd4602454185c96a178425894cfd8679a13828c61c6",
@@ -100,6 +100,7 @@
     "content-pack-v44.js": "5345a855244543e7c79eafce378267222d99b086c01e9236365eaa5b6429ef9e",
     "content-pack-v45.js": "9d6fdeb885c69d568cab6431cc4a7fc84e54c620deb301a5760bf335a7685152",
     "content-pack-v46.js": "890bab8cc90d361f7c3e1b5c4dde84086cc5f63cacf8dc0ad0b8778119424f3d",
+    "content-pack-v47.js": "043417761675b87c9c1ed4e4d6410a06185531ade79572c0aafda36ee464742e",
     "houkoku-pack-v1.js": "6752aed020dd6ee8811b45dbd708f25806dafdf1eba37a7ecb8cb50f7190089d",
     "houkoku-pack-v2.js": "271ffec2c6bbd3e278378a7c3c887f476a7da8520340ff2c7e262db5a65231fd",
     "houkoku-pack-v3.js": "b3609744cf5f214dfcc6f77b016c7650190a9367080ab187db93183f8142c795",
