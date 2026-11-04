@@ -1,0 +1,534 @@
+{
+  "expectedCore": [
+    "一",
+    "七",
+    "万",
+    "三",
+    "上",
+    "下",
+    "中",
+    "九",
+    "二",
+    "五",
+    "人",
+    "今",
+    "休",
+    "会",
+    "何",
+    "先",
+    "入",
+    "八",
+    "六",
+    "円",
+    "出",
+    "分",
+    "前",
+    "北",
+    "十",
+    "千",
+    "午",
+    "半",
+    "南",
+    "友",
+    "口",
+    "古",
+    "右",
+    "名",
+    "四",
+    "国",
+    "土",
+    "外",
+    "多",
+    "大",
+    "天",
+    "女",
+    "子",
+    "学",
+    "安",
+    "小",
+    "少",
+    "山",
+    "川",
+    "左",
+    "年",
+    "店",
+    "後",
+    "手",
+    "新",
+    "日",
+    "時",
+    "書",
+    "月",
+    "木",
+    "本",
+    "来",
+    "東",
+    "校",
+    "母",
+    "毎",
+    "気",
+    "水",
+    "火",
+    "父",
+    "生",
+    "男",
+    "白",
+    "百",
+    "目",
+    "社",
+    "空",
+    "立",
+    "耳",
+    "聞",
+    "花",
+    "行",
+    "西",
+    "見",
+    "言",
+    "話",
+    "語",
+    "読",
+    "買",
+    "足",
+    "車",
+    "週",
+    "道",
+    "金",
+    "長",
+    "間",
+    "雨",
+    "電",
+    "食",
+    "飲",
+    "駅",
+    "高",
+    "魚"
+  ],
+  "retainedSupport": [
+    "朝",
+    "夜"
+  ],
+  "metadata": {
+    "一": {
+      "radicalNumber": 1,
+      "strokeCount": 1
+    },
+    "七": {
+      "radicalNumber": 1,
+      "strokeCount": 2
+    },
+    "万": {
+      "radicalNumber": 1,
+      "strokeCount": 3
+    },
+    "三": {
+      "radicalNumber": 1,
+      "strokeCount": 3
+    },
+    "上": {
+      "radicalNumber": 1,
+      "strokeCount": 3
+    },
+    "下": {
+      "radicalNumber": 1,
+      "strokeCount": 3
+    },
+    "中": {
+      "radicalNumber": 2,
+      "strokeCount": 4
+    },
+    "九": {
+      "radicalNumber": 5,
+      "strokeCount": 2
+    },
+    "二": {
+      "radicalNumber": 7,
+      "strokeCount": 2
+    },
+    "五": {
+      "radicalNumber": 7,
+      "strokeCount": 4
+    },
+    "人": {
+      "radicalNumber": 9,
+      "strokeCount": 2
+    },
+    "今": {
+      "radicalNumber": 9,
+      "strokeCount": 4
+    },
+    "休": {
+      "radicalNumber": 9,
+      "strokeCount": 6
+    },
+    "会": {
+      "radicalNumber": 9,
+      "strokeCount": 6
+    },
+    "何": {
+      "radicalNumber": 9,
+      "strokeCount": 7
+    },
+    "先": {
+      "radicalNumber": 10,
+      "strokeCount": 6
+    },
+    "入": {
+      "radicalNumber": 11,
+      "strokeCount": 2
+    },
+    "八": {
+      "radicalNumber": 12,
+      "strokeCount": 2
+    },
+    "六": {
+      "radicalNumber": 12,
+      "strokeCount": 4
+    },
+    "円": {
+      "radicalNumber": 13,
+      "strokeCount": 4
+    },
+    "出": {
+      "radicalNumber": 17,
+      "strokeCount": 5
+    },
+    "分": {
+      "radicalNumber": 18,
+      "strokeCount": 4
+    },
+    "前": {
+      "radicalNumber": 18,
+      "strokeCount": 9
+    },
+    "北": {
+      "radicalNumber": 21,
+      "strokeCount": 5
+    },
+    "十": {
+      "radicalNumber": 24,
+      "strokeCount": 2
+    },
+    "千": {
+      "radicalNumber": 24,
+      "strokeCount": 3
+    },
+    "午": {
+      "radicalNumber": 24,
+      "strokeCount": 4
+    },
+    "半": {
+      "radicalNumber": 24,
+      "strokeCount": 5
+    },
+    "南": {
+      "radicalNumber": 24,
+      "strokeCount": 9
+    },
+    "友": {
+      "radicalNumber": 29,
+      "strokeCount": 4
+    },
+    "口": {
+      "radicalNumber": 30,
+      "strokeCount": 3
+    },
+    "古": {
+      "radicalNumber": 30,
+      "strokeCount": 5
+    },
+    "右": {
+      "radicalNumber": 30,
+      "strokeCount": 5
+    },
+    "名": {
+      "radicalNumber": 30,
+      "strokeCount": 6
+    },
+    "四": {
+      "radicalNumber": 31,
+      "strokeCount": 5
+    },
+    "国": {
+      "radicalNumber": 31,
+      "strokeCount": 8
+    },
+    "土": {
+      "radicalNumber": 32,
+      "strokeCount": 3
+    },
+    "外": {
+      "radicalNumber": 36,
+      "strokeCount": 5
+    },
+    "多": {
+      "radicalNumber": 36,
+      "strokeCount": 6
+    },
+    "夜": {
+      "radicalNumber": 36,
+      "strokeCount": 8
+    },
+    "大": {
+      "radicalNumber": 37,
+      "strokeCount": 3
+    },
+    "天": {
+      "radicalNumber": 37,
+      "strokeCount": 4
+    },
+    "女": {
+      "radicalNumber": 38,
+      "strokeCount": 3
+    },
+    "子": {
+      "radicalNumber": 39,
+      "strokeCount": 3
+    },
+    "学": {
+      "radicalNumber": 39,
+      "strokeCount": 8
+    },
+    "安": {
+      "radicalNumber": 40,
+      "strokeCount": 6
+    },
+    "小": {
+      "radicalNumber": 42,
+      "strokeCount": 3
+    },
+    "少": {
+      "radicalNumber": 42,
+      "strokeCount": 4
+    },
+    "山": {
+      "radicalNumber": 46,
+      "strokeCount": 3
+    },
+    "川": {
+      "radicalNumber": 47,
+      "strokeCount": 3
+    },
+    "左": {
+      "radicalNumber": 48,
+      "strokeCount": 5
+    },
+    "年": {
+      "radicalNumber": 51,
+      "strokeCount": 6
+    },
+    "店": {
+      "radicalNumber": 53,
+      "strokeCount": 8
+    },
+    "後": {
+      "radicalNumber": 60,
+      "strokeCount": 9
+    },
+    "手": {
+      "radicalNumber": 64,
+      "strokeCount": 4
+    },
+    "新": {
+      "radicalNumber": 69,
+      "strokeCount": 13
+    },
+    "日": {
+      "radicalNumber": 72,
+      "strokeCount": 4
+    },
+    "時": {
+      "radicalNumber": 72,
+      "strokeCount": 10
+    },
+    "書": {
+      "radicalNumber": 73,
+      "strokeCount": 10
+    },
+    "月": {
+      "radicalNumber": 74,
+      "strokeCount": 4
+    },
+    "朝": {
+      "radicalNumber": 74,
+      "strokeCount": 12
+    },
+    "木": {
+      "radicalNumber": 75,
+      "strokeCount": 4
+    },
+    "本": {
+      "radicalNumber": 75,
+      "strokeCount": 5
+    },
+    "来": {
+      "radicalNumber": 75,
+      "strokeCount": 7
+    },
+    "東": {
+      "radicalNumber": 75,
+      "strokeCount": 8
+    },
+    "校": {
+      "radicalNumber": 75,
+      "strokeCount": 10
+    },
+    "母": {
+      "radicalNumber": 80,
+      "strokeCount": 5
+    },
+    "毎": {
+      "radicalNumber": 80,
+      "strokeCount": 6
+    },
+    "気": {
+      "radicalNumber": 84,
+      "strokeCount": 6
+    },
+    "水": {
+      "radicalNumber": 85,
+      "strokeCount": 4
+    },
+    "火": {
+      "radicalNumber": 86,
+      "strokeCount": 4
+    },
+    "父": {
+      "radicalNumber": 88,
+      "strokeCount": 4
+    },
+    "生": {
+      "radicalNumber": 100,
+      "strokeCount": 5
+    },
+    "男": {
+      "radicalNumber": 102,
+      "strokeCount": 7
+    },
+    "白": {
+      "radicalNumber": 106,
+      "strokeCount": 5
+    },
+    "百": {
+      "radicalNumber": 106,
+      "strokeCount": 6
+    },
+    "目": {
+      "radicalNumber": 109,
+      "strokeCount": 5
+    },
+    "社": {
+      "radicalNumber": 113,
+      "strokeCount": 7
+    },
+    "空": {
+      "radicalNumber": 116,
+      "strokeCount": 8
+    },
+    "立": {
+      "radicalNumber": 117,
+      "strokeCount": 5
+    },
+    "耳": {
+      "radicalNumber": 128,
+      "strokeCount": 6
+    },
+    "聞": {
+      "radicalNumber": 128,
+      "strokeCount": 14
+    },
+    "花": {
+      "radicalNumber": 140,
+      "strokeCount": 7
+    },
+    "行": {
+      "radicalNumber": 144,
+      "strokeCount": 6
+    },
+    "西": {
+      "radicalNumber": 146,
+      "strokeCount": 6
+    },
+    "見": {
+      "radicalNumber": 147,
+      "strokeCount": 7
+    },
+    "言": {
+      "radicalNumber": 149,
+      "strokeCount": 7
+    },
+    "話": {
+      "radicalNumber": 149,
+      "strokeCount": 13
+    },
+    "語": {
+      "radicalNumber": 149,
+      "strokeCount": 14
+    },
+    "読": {
+      "radicalNumber": 149,
+      "strokeCount": 14
+    },
+    "買": {
+      "radicalNumber": 154,
+      "strokeCount": 12
+    },
+    "足": {
+      "radicalNumber": 157,
+      "strokeCount": 7
+    },
+    "車": {
+      "radicalNumber": 159,
+      "strokeCount": 7
+    },
+    "週": {
+      "radicalNumber": 162,
+      "strokeCount": 11
+    },
+    "道": {
+      "radicalNumber": 162,
+      "strokeCount": 12
+    },
+    "金": {
+      "radicalNumber": 167,
+      "strokeCount": 8
+    },
+    "長": {
+      "radicalNumber": 168,
+      "strokeCount": 8
+    },
+    "間": {
+      "radicalNumber": 169,
+      "strokeCount": 12
+    },
+    "雨": {
+      "radicalNumber": 173,
+      "strokeCount": 8
+    },
+    "電": {
+      "radicalNumber": 173,
+      "strokeCount": 13
+    },
+    "食": {
+      "radicalNumber": 184,
+      "strokeCount": 9
+    },
+    "飲": {
+      "radicalNumber": 184,
+      "strokeCount": 12
+    },
+    "駅": {
+      "radicalNumber": 187,
+      "strokeCount": 14
+    },
+    "高": {
+      "radicalNumber": 189,
+      "strokeCount": 10
+    },
+    "魚": {
+      "radicalNumber": 195,
+      "strokeCount": 11
+    }
+  },
+  "contentClosed": true
+}

@@ -1,0 +1,1955 @@
+{
+  "checked": "2026-10-19",
+  "basis": "Cross-reference curriculum coverage; not an official JLPT list. Reference topic names only; no copied lessons or examples.",
+  "officialPolicy": "https://www.jlpt.jp/e/faq/",
+  "entries": [
+    {
+      "source": "bunpro",
+      "topic": "だ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A0",
+      "status": "covered",
+      "lessons": [
+        "n5-g-26"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "です",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A7%E3%81%99",
+      "status": "covered",
+      "lessons": [
+        "n5-g-26"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "は",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AF",
+      "status": "covered",
+      "lessons": [
+        "n5-g-27"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "も",
+      "url": "https://bunpro.jp/grammar_points/%E3%82%82",
+      "status": "covered",
+      "lessons": [
+        "n5-g-34"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "これ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%93%E3%82%8C",
+      "status": "covered",
+      "lessons": [
+        "n5-g-81"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "それ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%9D%E3%82%8C",
+      "status": "covered",
+      "lessons": [
+        "n5-g-81"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "あれ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%82%E3%82%8C",
+      "status": "covered",
+      "lessons": [
+        "n5-g-81"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "の",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AE",
+      "status": "covered",
+      "lessons": [
+        "n5-g-32"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "いい",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%84%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-43"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "い-adjectives",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%84-adjectives",
+      "status": "covered",
+      "lessons": [
+        "n5-g-68"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "な-adjectives",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA-adjectives",
+      "status": "covered",
+      "lessons": [
+        "n5-g-68"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "か",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-33"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "が",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8C",
+      "status": "covered",
+      "lessons": [
+        "n5-g-28"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "よ",
+      "url": "https://bunpro.jp/grammar_points/%E3%82%88",
+      "status": "covered",
+      "lessons": [
+        "n5-g-54"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "ね",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AD",
+      "status": "covered",
+      "lessons": [
+        "n5-g-55"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "る-Verbs",
+      "url": "https://bunpro.jp/grammar_points/%E3%82%8B-Verbs",
+      "status": "covered",
+      "lessons": [
+        "n5-g-46"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "う-Verbs",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%86-Verbs",
+      "status": "covered",
+      "lessons": [
+        "n5-g-46"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "を",
+      "url": "https://bunpro.jp/grammar_points/%E3%82%92",
+      "status": "covered",
+      "lessons": [
+        "n5-g-29"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "polite-verb-endings",
+      "url": "https://bunpro.jp/grammar_points/polite-verb-endings",
+      "status": "covered",
+      "lessons": [
+        "n5-g-41"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "るverb-ない",
+      "url": "https://bunpro.jp/grammar_points/%E3%82%8Bverb-%E3%81%AA%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-47"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "うverb--ない",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%86verb--%E3%81%AA%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-47"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "と-and",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A8-and",
+      "status": "covered",
+      "lessons": [
+        "n5-g-35"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "ここ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%93%E3%81%93",
+      "status": "covered",
+      "lessons": [
+        "n5-g-83"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "そこ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%9D%E3%81%93",
+      "status": "covered",
+      "lessons": [
+        "n5-g-83"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "あそこ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%82%E3%81%9D%E3%81%93",
+      "status": "covered",
+      "lessons": [
+        "n5-g-83"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "で",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A7",
+      "status": "covered",
+      "lessons": [
+        "n5-g-31"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "に",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AB",
+      "status": "covered",
+      "lessons": [
+        "n5-g-30"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "か-or",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8B-or",
+      "status": "covered",
+      "lessons": [
+        "n5-g-58"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "と-with",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A8-with",
+      "status": "covered",
+      "lessons": [
+        "n5-g-35"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "でしょう",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A7%E3%81%97%E3%82%87%E3%81%86",
+      "status": "covered",
+      "lessons": [
+        "n5-g-23"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "だろう",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A0%E3%82%8D%E3%81%86",
+      "status": "covered",
+      "lessons": [
+        "n5-g-78"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "がある",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8C%E3%81%82%E3%82%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-13"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "がいる",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8C%E3%81%84%E3%82%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-13"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "この",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%93%E3%81%AE",
+      "status": "covered",
+      "lessons": [
+        "n5-g-82"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "その",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%9D%E3%81%AE",
+      "status": "covered",
+      "lessons": [
+        "n5-g-82"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "あの",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%82%E3%81%AE",
+      "status": "covered",
+      "lessons": [
+        "n5-g-82"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "-んです-のです",
+      "url": "https://bunpro.jp/grammar_points/-%E3%82%93%E3%81%A7%E3%81%99-%E3%81%AE%E3%81%A7%E3%81%99",
+      "status": "covered",
+      "lessons": [
+        "n5-g-66"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "の-questions",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AE-questions",
+      "status": "covered",
+      "lessons": [
+        "n5-g-89"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "past-tense-い-adjectives",
+      "url": "https://bunpro.jp/grammar_points/past-tense-%E3%81%84-adjectives",
+      "status": "covered",
+      "lessons": [
+        "n5-g-44"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "のは",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AE%E3%81%AF",
+      "status": "covered",
+      "lessons": [
+        "n5-g-88"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "い-adjective-noun",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%84-adjective-noun",
+      "status": "covered",
+      "lessons": [
+        "n5-g-68"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "な-adjective-noun",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA-adjective-noun",
+      "status": "covered",
+      "lessons": [
+        "n5-g-68"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "へいく",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%B8%E3%81%84%E3%81%8F",
+      "status": "covered",
+      "lessons": [
+        "n5-g-36"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "する",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%99%E3%82%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-46"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "くる",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8F%E3%82%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-46"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "る-verb-past",
+      "url": "https://bunpro.jp/grammar_points/%E3%82%8B-verb-past",
+      "status": "covered",
+      "lessons": [
+        "n5-g-48"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "う-verb-past",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%86-verb-past",
+      "status": "covered",
+      "lessons": [
+        "n5-g-48"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "すき",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%99%E3%81%8D",
+      "status": "covered",
+      "lessons": [
+        "n5-g-14"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "きらい",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8D%E3%82%89%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-14"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "のがすき",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AE%E3%81%8C%E3%81%99%E3%81%8D",
+      "status": "covered",
+      "lessons": [
+        "n5-g-67"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "がある-noun",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8C%E3%81%82%E3%82%8B-noun",
+      "status": "covered",
+      "lessons": [
+        "n5-g-69"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "negative-い-adjectives",
+      "url": "https://bunpro.jp/grammar_points/negative-%E3%81%84-adjectives",
+      "status": "covered",
+      "lessons": [
+        "n5-g-43"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "で-by",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A7-by",
+      "status": "covered",
+      "lessons": [
+        "n5-g-31"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "ので",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AE%E3%81%A7",
+      "status": "covered",
+      "lessons": [
+        "n5-g-56"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "から-because",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8B%E3%82%89-because",
+      "status": "covered",
+      "lessons": [
+        "n5-g-08"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "から",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8B%E3%82%89",
+      "status": "covered",
+      "lessons": [
+        "n5-g-38"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "けど-だけど",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%91%E3%81%A9-%E3%81%A0%E3%81%91%E3%81%A9",
+      "status": "covered",
+      "lessons": [
+        "n5-g-57"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "が-but",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8C-but",
+      "status": "covered",
+      "lessons": [
+        "n5-g-75"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "る-verb-neg-past",
+      "url": "https://bunpro.jp/grammar_points/%E3%82%8B-verb-neg-past",
+      "status": "covered",
+      "lessons": [
+        "n5-g-49"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "う-verb-neg-past",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%86-verb-neg-past",
+      "status": "covered",
+      "lessons": [
+        "n5-g-49"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "verb-て",
+      "url": "https://bunpro.jp/grammar_points/verb-%E3%81%A6",
+      "status": "covered",
+      "lessons": [
+        "n5-g-72"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "ている1",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A6%E3%81%84%E3%82%8B1",
+      "status": "covered",
+      "lessons": [
+        "n5-g-01"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "へ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%B8",
+      "status": "covered",
+      "lessons": [
+        "n5-g-36"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "verb-にいく",
+      "url": "https://bunpro.jp/grammar_points/verb-%E3%81%AB%E3%81%84%E3%81%8F",
+      "status": "covered",
+      "lessons": [
+        "n5-g-15"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "だれ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A0%E3%82%8C",
+      "status": "covered",
+      "lessons": [
+        "n5-g-70"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "なぜ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA%E3%81%9C",
+      "status": "covered",
+      "lessons": [
+        "n5-g-70"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "どうして",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A9%E3%81%86%E3%81%97%E3%81%A6",
+      "status": "covered",
+      "lessons": [
+        "n5-g-70"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "なんで",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA%E3%82%93%E3%81%A7",
+      "status": "covered",
+      "lessons": [
+        "n5-g-70"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "い-adjective-predicate",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%84-adjective-predicate",
+      "status": "covered",
+      "lessons": [
+        "n5-g-26"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "な-adjective-predicate",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA-adjective-predicate",
+      "status": "covered",
+      "lessons": [
+        "n5-g-26"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "だった-でした",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A0%E3%81%A3%E3%81%9F-%E3%81%A7%E3%81%97%E3%81%9F",
+      "status": "covered",
+      "lessons": [
+        "n5-g-45"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "じゃない",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%98%E3%82%83%E3%81%AA%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-76"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "じゃなかった",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%98%E3%82%83%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F",
+      "status": "covered",
+      "lessons": [
+        "n5-g-77"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "い-Adjective-くなかった",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%84-Adjective-%E3%81%8F%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F",
+      "status": "covered",
+      "lessons": [
+        "n5-g-44"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "と",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A8",
+      "status": "covered",
+      "lessons": [
+        "n5-g-71"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "って",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A3%E3%81%A6",
+      "status": "covered",
+      "lessons": [
+        "n5-g-93"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "verb-non-past",
+      "url": "https://bunpro.jp/grammar_points/verb-non-past",
+      "status": "covered",
+      "lessons": [
+        "n5-g-46"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "verb-た-noun",
+      "url": "https://bunpro.jp/grammar_points/verb-%E3%81%9F-noun",
+      "status": "covered",
+      "lessons": [
+        "n5-g-69"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "の-subject",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AE-subject",
+      "status": "covered",
+      "lessons": [
+        "n5-g-91"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "の-noun-ommission",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AE-noun-ommission",
+      "status": "covered",
+      "lessons": [
+        "n5-g-90"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "な",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA",
+      "status": "covered",
+      "lessons": [
+        "n5-g-92"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "だけ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A0%E3%81%91",
+      "status": "covered",
+      "lessons": [
+        "n5-g-40"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "どれ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A9%E3%82%8C",
+      "status": "covered",
+      "lessons": [
+        "n5-g-81"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "どこ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A9%E3%81%93",
+      "status": "covered",
+      "lessons": [
+        "n5-g-83"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "どの",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A9%E3%81%AE",
+      "status": "covered",
+      "lessons": [
+        "n5-g-82"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "ている2",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A6%E3%81%84%E3%82%8B2",
+      "status": "covered",
+      "lessons": [
+        "n5-g-01"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "てから",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A6%E3%81%8B%E3%82%89",
+      "status": "covered",
+      "lessons": [
+        "n5-g-10"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "verb-て-b",
+      "url": "https://bunpro.jp/grammar_points/verb-%E3%81%A6-b",
+      "status": "covered",
+      "lessons": [
+        "n5-g-72"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "もう",
+      "url": "https://bunpro.jp/grammar_points/%E3%82%82%E3%81%86",
+      "status": "covered",
+      "lessons": [
+        "n5-g-96"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "まだ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%BE%E3%81%A0",
+      "status": "covered",
+      "lessons": [
+        "n5-g-96"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "まだ-ていません",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%BE%E3%81%A0-%E3%81%A6%E3%81%84%E3%81%BE%E3%81%9B%E3%82%93",
+      "status": "covered",
+      "lessons": [
+        "n5-g-24"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "てもいい",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A6%E3%82%82%E3%81%84%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-02"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "たい",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%9F%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-03"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "たり-たりする",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%9F%E3%82%8A-%E3%81%9F%E3%82%8A%E3%81%99%E3%82%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-12"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "けっこう",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%91%E3%81%A3%E3%81%93%E3%81%86",
+      "status": "covered",
+      "lessons": [
+        "n5-g-97"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "たくさん",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%9F%E3%81%8F%E3%81%95%E3%82%93",
+      "status": "covered",
+      "lessons": [
+        "n5-g-97"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "まえに",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%BE%E3%81%88%E3%81%AB",
+      "status": "covered",
+      "lessons": [
+        "n5-g-11"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "くらい1",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8F%E3%82%89%E3%81%841",
+      "status": "covered",
+      "lessons": [
+        "n5-g-86"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "noun-まで",
+      "url": "https://bunpro.jp/grammar_points/noun-%E3%81%BE%E3%81%A7",
+      "status": "covered",
+      "lessons": [
+        "n5-g-39"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "v-まで",
+      "url": "https://bunpro.jp/grammar_points/v-%E3%81%BE%E3%81%A7",
+      "status": "covered",
+      "lessons": [
+        "n5-g-39"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "すぎる",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%99%E3%81%8E%E3%82%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-64"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "にする",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AB%E3%81%99%E3%82%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-74"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "になる-くなる",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AB%E3%81%AA%E3%82%8B-%E3%81%8F%E3%81%AA%E3%82%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-63"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "のなかで-がいちばん",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AE%E3%81%AA%E3%81%8B%E3%81%A7-%E3%81%8C%E3%81%84%E3%81%A1%E3%81%B0%E3%82%93",
+      "status": "covered",
+      "lessons": [
+        "n5-g-20"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "より-のほうが",
+      "url": "https://bunpro.jp/grammar_points/%E3%82%88%E3%82%8A-%E3%81%AE%E3%81%BB%E3%81%86%E3%81%8C",
+      "status": "covered",
+      "lessons": [
+        "n5-g-19"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "なにか-なにも",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA%E3%81%AB%E3%81%8B-%E3%81%AA%E3%81%AB%E3%82%82",
+      "status": "covered",
+      "lessons": [
+        "n5-g-59"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "誰か-どこか-誰も-どこも",
+      "url": "https://bunpro.jp/grammar_points/%E8%AA%B0%E3%81%8B-%E3%81%A9%E3%81%93%E3%81%8B-%E8%AA%B0%E3%82%82-%E3%81%A9%E3%81%93%E3%82%82",
+      "status": "covered",
+      "lessons": [
+        "n5-g-60"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "ましょう",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%BE%E3%81%97%E3%82%87%E3%81%86",
+      "status": "covered",
+      "lessons": [
+        "n5-g-06"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "ましょうか",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%BE%E3%81%97%E3%82%87%E3%81%86%E3%81%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-53"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "ませんか",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%BE%E3%81%9B%E3%82%93%E3%81%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-07"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "verb-てもいい",
+      "url": "https://bunpro.jp/grammar_points/verb-%E3%81%A6%E3%82%82%E3%81%84%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-02"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "てください",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-04"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "ないでください",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA%E3%81%84%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-05"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "てはいけない",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A6%E3%81%AF%E3%81%84%E3%81%91%E3%81%AA%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-16"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "なくてはいけない",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6%E3%81%AF%E3%81%84%E3%81%91%E3%81%AA%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-79"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "なくてはならない",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A6%E3%81%AF%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-79"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "たほうがいい",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%9F%E3%81%BB%E3%81%86%E3%81%8C%E3%81%84%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-51"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "ないほうがいい",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA%E3%81%84%E3%81%BB%E3%81%86%E3%81%8C%E3%81%84%E3%81%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-51"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "なくちゃ-なきゃ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AA%E3%81%8F%E3%81%A1%E3%82%83-%E3%81%AA%E3%81%8D%E3%82%83",
+      "status": "covered",
+      "lessons": [
+        "n5-g-79"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "や",
+      "url": "https://bunpro.jp/grammar_points/%E3%82%84",
+      "status": "covered",
+      "lessons": [
+        "n5-g-37"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "たことがある",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%9F%E3%81%93%E3%81%A8%E3%81%8C%E3%81%82%E3%82%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-61"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "ている3",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A6%E3%81%84%E3%82%8B3",
+      "status": "covered",
+      "lessons": [
+        "n5-g-01"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "adjective-て-noun-で",
+      "url": "https://bunpro.jp/grammar_points/adjective-%E3%81%A6-noun-%E3%81%A7",
+      "status": "covered",
+      "lessons": [
+        "n5-g-73"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "adjective-て-b",
+      "url": "https://bunpro.jp/grammar_points/adjective-%E3%81%A6-b",
+      "status": "covered",
+      "lessons": [
+        "n5-g-73"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "のがへた",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AE%E3%81%8C%E3%81%B8%E3%81%9F",
+      "status": "covered",
+      "lessons": [
+        "n5-g-65"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "のがじょうず",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%AE%E3%81%8C%E3%81%98%E3%82%87%E3%81%86%E3%81%9A",
+      "status": "covered",
+      "lessons": [
+        "n5-g-65"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "adjective-の-は",
+      "url": "https://bunpro.jp/grammar_points/adjective-%E3%81%AE-%E3%81%AF",
+      "status": "covered",
+      "lessons": [
+        "n5-g-90"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "あげる",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%82%E3%81%92%E3%82%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-87"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "くれる",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%8F%E3%82%8C%E3%82%8B",
+      "status": "covered",
+      "lessons": [
+        "n5-g-87"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "もらう",
+      "url": "https://bunpro.jp/grammar_points/%E3%82%82%E3%82%89%E3%81%86",
+      "status": "covered",
+      "lessons": [
+        "n5-g-87"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "けれども",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%91%E3%82%8C%E3%81%A9%E3%82%82",
+      "status": "covered",
+      "lessons": [
+        "n5-g-57"
+      ]
+    },
+    {
+      "source": "bunpro",
+      "topic": "つもりだ",
+      "url": "https://bunpro.jp/grammar_points/%E3%81%A4%E3%82%82%E3%82%8A%E3%81%A0",
+      "status": "covered",
+      "lessons": [
+        "n5-g-62"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "ちゃいけない・じゃいけない",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-16"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "だ / です",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-26"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "だけ",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-40"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "だろう",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-78"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "で",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-31"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "でも",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-95"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "でしょう",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-23"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "どんな",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-84"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "どうして",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-70"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "どうやって",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-70"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "が",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-28"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "があります",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-13"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "がほしい",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-21"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "がいます",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-13"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "ほうがいい",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-51"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "い-adjectives",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-68"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "一番（いちばん）",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-20"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "一緒に（いっしょに）",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-97"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "いつも",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-97"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "じゃない・ではない",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-76"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "か",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-33"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "か～か",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-58"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "から",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-08"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "方（かた）",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "deferred",
+      "lessons": [],
+      "reason": "Level disagreement: Bunpro N4; keep out of new N5 material. Revisit in N4."
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "けど",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-57"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "けれども",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-57"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "まだ",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-96"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "まだ～ていません",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-24"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "まで",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-39"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "前に（まえに）",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-11"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "ませんか",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-07"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "ましょう",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-06"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "ましょうか",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-53"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "も",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-34"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "もう",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-96"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "な-adjectives",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-68"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "なあ",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-94"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "ないで",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-52"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "ないでください",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-05"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "ないといけない",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-18"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "なくてもいい",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-17"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "なくちゃ",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-79"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "なくてはいけない",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-79"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "なくてはならない",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-79"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "なる",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-63"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "んです",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-66"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "ね",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-55"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "に",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-30"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "に行く（にいく）",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-15"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "にする",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-74"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "に/へ",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-36"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "の",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-32"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "のです",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-66"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "のが下手（のがへた）",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-65"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "のが上手（のがじょうず）",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-65"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "のが好き（のがすき）",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-67"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "の中で[A]が一番（のなかで[A]がいちばん）",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-20"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "ので",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-56"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "お / ご",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-85"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "を",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-29"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "をください",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-80"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "しかし",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-95"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "それから",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-95"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "そして",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-95"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "すぎる",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-64"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "たことがある",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-61"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "たい",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-03"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "たり～たり",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-12"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "てある",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "deferred",
+      "lessons": [],
+      "reason": "Level disagreement: Bunpro N4; keep out of new N5 material. Revisit in N4."
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "ている",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-01"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "てから",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-10"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "てください",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-04"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "てはいけない",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-16"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "てもいいです",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-02"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "と",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-35"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "とき",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-22"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "とても",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-97"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "つもり",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-62"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "は",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-27"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "は〜より・・・です",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/2/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-19"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "はどうですか",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/3/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-84"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "や",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/3/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-37"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "よ",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/3/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-54"
+      ]
+    },
+    {
+      "source": "jlptsensei",
+      "topic": "より～ほうが",
+      "url": "https://jlptsensei.com/jlpt-n5-grammar-list/page/3/",
+      "status": "covered",
+      "lessons": [
+        "n5-g-19"
+      ]
+    }
+  ],
+  "scopeDecisions": [
+    "Existing ことができる, なくてもいい, がほしい, とき and ないで are retained as basic N5 study based on JLPT Sensei and common beginner sequencing; Bunpro indexes some as N4. No extra N4 conjugations or uses are added.",
+    "Object あげる・くれる・もらう are N5 on Bunpro; Vて benefactives remain N4.",
+    "Standalone でも is a sentence connector; Nでも and 誰でも are excluded.",
+    "お・ご teaches fixed noun prefixes only; full verb keigo remains outside this batch."
+  ]
+}

@@ -1,0 +1,34 @@
+const assert=require('node:assert/strict'),vm=require('node:vm');
+const boot=require('./helpers/boot-runtime');
+const b=boot({storedProgress:{reviews:{'k-v-12':{rating:'good',due:'2030-01-01T00:00:00Z'}},houkokuDone:{'r-13':'saved'},handoffDone:{'h-26':'saved'}}});
+const reports=b.data.kaigo.houkoku,content=JSON.stringify(b.data);
+let revisions=0;
+for(let index=0;index<reports.length;index++){
+ const h=reports[index],draft=h.pieces.slice(0,2).map(p=>p.text).join('\n');
+ b.context.openHoukokuEssay(index);assert(!b.html.includes('Perbaiki tulisan'),'revision is available after comparison');
+ b.context.houkokuEssayReveal(draft);
+ const button=b.html.match(/<button[^>]+onclick="houkokuEssayRevise\(\)"[^>]*>Perbaiki tulisan<\/button>/)?.[0];
+ assert(button,'the comparison offers an explicit revision control');
+ const before=JSON.stringify(b.state.progress),events=b.events.length;
+ vm.runInContext(button.match(/onclick="([^"]+)"/)[1],b.context);
+ assert.equal(b.state.houkokuEssaySession.stage,'write');assert.equal(b.state.houkokuEssaySession.draft,draft);
+ assert(b.html.includes('>'+draft+'</textarea>'),'the writing field retains the learner\'s multiline draft');
+ b.context.houkokuEssayRevise();assert.equal(b.state.houkokuEssaySession.stage,'write','a duplicate revision does not advance the session');
+ b.context.houkokuEssayReveal('   ');assert.equal(b.state.houkokuEssaySession.stage,'write');assert.equal(b.state.houkokuEssaySession.draft,draft,'an empty revision does not erase the retained draft');
+ assert.equal(JSON.stringify(b.state.progress),before);assert.equal(b.events.length,events,'revision cannot grade, award mastery or alter other progress');
+ const revised=h.pieces.map(p=>p.text).join('\n');b.context.houkokuEssayReveal(revised);assert.equal(b.state.houkokuEssaySession.draft,revised);assert(b.html.includes(revised));
+ b.context.houkokuEssayRevise();b.context.houkokuEssayReveal(revised);assert(!b.state.progress.houkokuEssayDone[h.id],'comparison and revision alone are not mastery');
+ b.context.finishHoukokuEssay(index%2===0);assert.equal(b.state.view,'kaigo');assert.equal(b.state.houkokuEssaySession,null);assert.equal(!!b.state.progress.houkokuEssayDone[h.id],index%2===0);revisions++;
+}
+assert.equal(JSON.stringify(b.data),content,'revision leaves every lesson and answer key intact');
+const restored=boot({storedProgress:JSON.parse(b.storage['tenka-progress'])});
+for(let i=0;i<reports.length;i++)assert.equal(!!restored.state.progress.houkokuEssayDone[reports[i].id],i%2===0);
+assert(restored.state.progress.reviews['k-v-12']);assert.equal(restored.state.progress.houkokuDone['r-13'],'saved');assert.equal(restored.state.progress.handoffDone['h-26'],'saved');assert.equal(restored.state.progress.total,0);
+assert(!restored.state.houkokuEssaySession,'drafts are scoped to the active session');
+const storage=JSON.stringify(restored.state.progress);assert(!storage.includes(reports[0].pieces[0].text),'writing drafts are not added to persistent progress');
+const replay=boot({storedProgress:{houkokuEssayDone:{'r-13':'already-mastered'}}});replay.context.openHoukokuEssay(12);replay.context.houkokuEssayReveal('確認をお願いします。');replay.context.houkokuEssayRevise();replay.context.finishHoukokuEssay(false);assert.equal(replay.state.progress.houkokuEssayDone['r-13'],'already-mastered');
+const early=boot();early.context.openHoukokuEssay(0);early.context.finishHoukokuEssay(true);assert(!early.state.progress.houkokuEssayDone[reports[0].id],'completion requires an actual model comparison');
+const escaped=boot(),literal='</textarea><script>window.unwanted=true</script>\n食札は「41枚」です。 & "確認"';
+escaped.context.openHoukokuEssay(0);escaped.context.houkokuEssayReveal(literal);escaped.context.houkokuEssayRevise();
+assert.equal(escaped.state.houkokuEssaySession.draft,literal);assert(!escaped.html.includes('<script>')&&escaped.html.includes('&lt;/textarea&gt;'),'literal draft text cannot close the writing field or inject markup');
+console.log(`Kaigo writing revision: ${revisions} cases; retained drafts, edit/compare cycles, safe text rendering, explicit self-assessment and saved progress passed.`);

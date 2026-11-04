@@ -1,0 +1,4787 @@
+{
+  "status": "OPEN",
+  "checked": "2026-11-05",
+  "officialJlptInventory": false,
+  "fullReferenceInventoryCaptured": true,
+  "fullReferenceReconciliation": false,
+  "snapshotPolicy": "185 Bunpro rows and 132 JLPT Sensei rows were observed in the linked publisher inventories. These are source snapshot counts, include overlapping constructions/lexical items, and are neither unique lesson counts nor official JLPT totals. Short topic names are factual mappings; explanations, examples and quizzes in TENKA are original.",
+  "sources": [
+    {
+      "id": "bunpro",
+      "url": "https://bunpro.jp/grammar_points",
+      "snapshotRows": 185,
+      "scope": "N4 section; observed snapshot lines 277 through 637, not permanent source identifiers."
+    },
+    {
+      "id": "jlptsensei",
+      "url": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "snapshotRows": 132,
+      "scope": "All four N4 inventory pages; publisher ordinal identifies the captured row."
+    }
+  ],
+  "dispositionPolicy": {
+    "covered_n4": "Authored N4 construction mapped within the stated introductory scope; not a claim that every nuance on a linked page is complete.",
+    "prerequisite_n5": "Existing closed N5 objective, never counted again as a new N4 objective.",
+    "partial": "Some relevant teaching exists, with an explicit unresolved use or depth check.",
+    "pending_grammar": "Unresolved grammar objective, composition/application or publisher level difference.",
+    "pending_lexical": "Meaning-specific vocabulary, example and practice work still required in the N4 vocabulary phase."
+  },
+  "closureRequirements": [
+    "Resolve every partial and pending row with reviewed teaching, meaningful application or a documented scope decision.",
+    "Review publisher level differences without moving material into N5 or filling levels to arbitrary totals.",
+    "Audit N4 vocabulary, Kanji/Bushu, reading/listening and finite quiz sessions; source row counts alone cannot close N4.",
+    "Retain N5 CLOSED, N4/N3 OPEN, N2/N1 deferred, PR #16 draft and no merge/production deployment."
+  ],
+  "records": [
+    {
+      "id": "bp-n4-L277",
+      "source": "bunpro",
+      "topic": "でも",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 277
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-132",
+        "n4-g-133"
+      ],
+      "reason": "N4 g132 teaches exemplifying proposals and g133 teaches wh-word universal/free selection; these separately authored scopes jointly cover this publisher row."
+    },
+    {
+      "id": "bp-n4-L278",
+      "source": "bunpro",
+      "topic": "やすい ～やすい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 278
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-56"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L280",
+      "source": "bunpro",
+      "topic": "にくい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 280
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-56"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L282",
+      "source": "bunpro",
+      "topic": "づらい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 282
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-57"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L284",
+      "source": "bunpro",
+      "topic": "だんだん だんだん",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 284
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-v-21-adverbs-018"
+      ],
+      "reason": "Gradual change だんだん is explicitly glossed and illustrated by だんだん寒くなりました in closed N5.",
+      "evidenceKind": "lexical-prerequisite"
+    },
+    {
+      "id": "bp-n4-L286",
+      "source": "bunpro",
+      "topic": "どんどん",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 286
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-03"
+      ],
+      "reason": "Progression sense has an original kana example, contrast and contextual written/listening practice."
+    },
+    {
+      "id": "bp-n4-L288",
+      "source": "bunpro",
+      "topic": "～ら ら",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 288
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-121"
+      ],
+      "reason": "Limited plural/associative ら with personal and demonstrative pronouns, real examples of 彼ら and これら, no fixed group count or universal noun plural rule, and register safeguards."
+    },
+    {
+      "id": "bp-n4-L290",
+      "source": "bunpro",
+      "topic": "ていく ～ていく",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 290
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-24"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L292",
+      "source": "bunpro",
+      "topic": "てくる ～てくる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 292
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-25"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L293",
+      "source": "bunpro",
+      "topic": "かた かた",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 293
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-58"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L295",
+      "source": "bunpro",
+      "topic": "だけで",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 295
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-104"
+      ],
+      "reason": "Application of N5 だけ to a sufficient condition/means using で, not a new duplicate base objective; distinguish additive だけでなく."
+    },
+    {
+      "id": "bp-n4-L297",
+      "source": "bunpro",
+      "topic": "だが・ですが だが",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 297
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-146",
+        "n5-g-75"
+      ],
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
+    },
+    {
+      "id": "bp-n4-L299",
+      "source": "bunpro",
+      "topic": "なくて（接続）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 299
+      },
+      "scope": "Negative clause connection: sequence/coexisting facts.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-85"
+      ],
+      "reason": "Negative linking and reason including adjective forms; contrasted with without-doing/negative request ないで."
+    },
+    {
+      "id": "bp-n4-L301",
+      "source": "bunpro",
+      "topic": "なくて（理由・原因）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 301
+      },
+      "scope": "Negative clause connection: reason/cause.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-85"
+      ],
+      "reason": "Negative linking and reason including adjective forms; contrasted with without-doing/negative request ないで."
+    },
+    {
+      "id": "bp-n4-L303",
+      "source": "bunpro",
+      "topic": "ないで",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 303
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-g-52"
+      ],
+      "reason": "Existing closed N5 objective retained as prerequisite; not counted as a new N4 objective."
+    },
+    {
+      "id": "bp-n4-L305",
+      "source": "bunpro",
+      "topic": "れる・られる（受身）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 305
+      },
+      "scope": "Passive including remaining indirect/adversative application review.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-137",
+        "n4-g-63"
+      ],
+      "reason": "Depth application of existing N4 passive to affected-party/adversative and intransitive events, with retained を and separate actor/object/affected-person roles."
+    },
+    {
+      "id": "bp-n4-L306",
+      "source": "bunpro",
+      "topic": "他動詞・自動詞 たどうし・じどうし",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 306
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-62"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L308",
+      "source": "bunpro",
+      "topic": "なおす なおす",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 308
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-59"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L310",
+      "source": "bunpro",
+      "topic": "ということ ということ~",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 310
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-45"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L314",
+      "source": "bunpro",
+      "topic": "とき とき",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 314
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-138",
+        "n5-g-22"
+      ],
+      "reason": "Relative-time application of canonical N5 とき: nonpast versus past reference stage within an actual past narrative; not a universal calendar-tense rule."
+    },
+    {
+      "id": "bp-n4-L316",
+      "source": "bunpro",
+      "topic": "まず",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 316
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-04"
+      ],
+      "reason": "First-step scope taught with sequence, ranking contrast and contextual practice."
+    },
+    {
+      "id": "bp-n4-L318",
+      "source": "bunpro",
+      "topic": "まで",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 318
+      },
+      "scope": "Scalar まで, not the N5 endpoint particle.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-114"
+      ],
+      "reason": "Scalar/unexpected addition まで, distinct from N5 time/place endpoints and neutral additive も."
+    },
+    {
+      "id": "bp-n4-L320",
+      "source": "bunpro",
+      "topic": "までに",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 320
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-49"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L322",
+      "source": "bunpro",
+      "topic": "また",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 322
+      },
+      "scope": "Introductory repetition and additive sentence connection.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n5-v-22-gaps-032",
+        "n4-v-13"
+      ],
+      "reason": "N5 retains repetition; N4 adds actual additive sentence connection with translated kana context and practice."
+    },
+    {
+      "id": "bp-n4-L323",
+      "source": "bunpro",
+      "topic": "はじめる はじめる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 323
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-14"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L325",
+      "source": "bunpro",
+      "topic": "おわる おわる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 325
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-16"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L327",
+      "source": "bunpro",
+      "topic": "ごろ ころ",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 327
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-51"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L329",
+      "source": "bunpro",
+      "topic": "あとで あとで",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 329
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-48"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L331",
+      "source": "bunpro",
+      "topic": "ていた ～ていた",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 331
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-53"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L333",
+      "source": "bunpro",
+      "topic": "に（頻度）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 333
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-130"
+      ],
+      "reason": "Per-period counts/durations using に, distinguished from fixed intervals, time points and location/goal marking."
+    },
+    {
+      "id": "bp-n4-L335",
+      "source": "bunpro",
+      "topic": "とうとう とうとう",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 335
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-05"
+      ],
+      "reason": "Positive and negative eventual outcomes taught; overlapping やっと is conservatively excluded as a competing answer."
+    },
+    {
+      "id": "bp-n4-L337",
+      "source": "bunpro",
+      "topic": "より",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 337
+      },
+      "scope": "Numeric より meaning over, not only basic comparison.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-109"
+      ],
+      "reason": "Inclusive numeric 以上/以下 versus exclusive numeric より; Sensei's broader comparison row uses existing N5 comparison plus this explicit quantity extension."
+    },
+    {
+      "id": "bp-n4-L339",
+      "source": "bunpro",
+      "topic": "ごとに ごとに",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 339
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-52"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L341",
+      "source": "bunpro",
+      "topic": "なるべく",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 341
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-06"
+      ],
+      "reason": "Practical-limit effort taught, contrasted with prediction and guaranteed outcome."
+    },
+    {
+      "id": "bp-n4-L342",
+      "source": "bunpro",
+      "topic": "るところだ ～るところだ",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 342
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-10"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L344",
+      "source": "bunpro",
+      "topic": "のに",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 344
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-55"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L348",
+      "source": "bunpro",
+      "topic": "とおもう とおもう",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 348
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-40"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L350",
+      "source": "bunpro",
+      "topic": "など など",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 350
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-106"
+      ],
+      "reason": "Open examples with など and casual とか, including verb examples, contrasted with closed と and N5 や/たり prerequisites."
+    },
+    {
+      "id": "bp-n4-L352",
+      "source": "bunpro",
+      "topic": "みたい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 352
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-36"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L354",
+      "source": "bunpro",
+      "topic": "こと",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 354
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-44"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L356",
+      "source": "bunpro",
+      "topic": "そう",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 356
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-34"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L358",
+      "source": "bunpro",
+      "topic": "さ",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 358
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-120"
+      ],
+      "reason": "Adjective nominalization さ with i/na formation and いい→よさ; distinguish a noun degree/quality from adjective modification."
+    },
+    {
+      "id": "bp-n4-L359",
+      "source": "bunpro",
+      "topic": "とか～とか とか",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 359
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-106"
+      ],
+      "reason": "Open examples with など and casual とか, including verb examples, contrasted with closed と and N5 や/たり prerequisites."
+    },
+    {
+      "id": "bp-n4-L361",
+      "source": "bunpro",
+      "topic": "そういう",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 361
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-134"
+      ],
+      "reason": "Type/content modifiers こういう/そういう/ああいう/どういう, not the exact demonstrative referent, naming という or visual stem そう."
+    },
+    {
+      "id": "bp-n4-L363",
+      "source": "bunpro",
+      "topic": "う・よう（意向形）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 363
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-19"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L365",
+      "source": "bunpro",
+      "topic": "ようだ ようだ",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 365
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-35"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L367",
+      "source": "bunpro",
+      "topic": "ぜんぜん（否定との基本用法）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 367
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-v-21-adverbs-008"
+      ],
+      "reason": "Basic negative 全然 is explicitly glossed and illustrated by 全然分かりません in closed N5; positive/discourse extensions are not inferred.",
+      "evidenceKind": "lexical-prerequisite"
+    },
+    {
+      "id": "bp-n4-L369",
+      "source": "bunpro",
+      "topic": "かな",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 369
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-96"
+      ],
+      "reason": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules."
+    },
+    {
+      "id": "bp-n4-L371",
+      "source": "bunpro",
+      "topic": "あまり～ない あまり～ない",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 371
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-v-21-adverbs-007"
+      ],
+      "reason": "Negative あまり is explicitly glossed and illustrated by コーヒーはあまり飲みません in closed N5.",
+      "evidenceKind": "lexical-prerequisite"
+    },
+    {
+      "id": "bp-n4-L373",
+      "source": "bunpro",
+      "topic": "ば",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 373
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-27"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L375",
+      "source": "bunpro",
+      "topic": "なら",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 375
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-28"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L376",
+      "source": "bunpro",
+      "topic": "がる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 376
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-115"
+      ],
+      "reason": "Observable adjective-based がる/がっている including 欲しがる, momentary signs versus tendencies and direct quotations; no absolute ban on third-person adjectives or mind-reading claim."
+    },
+    {
+      "id": "bp-n4-L378",
+      "source": "bunpro",
+      "topic": "がする",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 378
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-118"
+      ],
+      "reason": "Sensory noun + がする for sound/smell/taste; distinguish sensory evidence from unverified causes, voluntary listening and visual impression."
+    },
+    {
+      "id": "bp-n4-L380",
+      "source": "bunpro",
+      "topic": "する（特徴・身につける物）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 380
+      },
+      "scope": "する describing a feature/accessory, not generic do.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-119"
+      ],
+      "reason": "Conventional feature/expression and accessory をしている, not generic do or an unrestricted verb for all clothing."
+    },
+    {
+      "id": "bp-n4-L382",
+      "source": "bunpro",
+      "topic": "たがる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 382
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-116"
+      ],
+      "reason": "Observed desire to act using たがる/たがっている, with actor/owner distinguished from speaker-desired てほしい and direct たい quotations."
+    },
+    {
+      "id": "bp-n4-L386",
+      "source": "bunpro",
+      "topic": "かもしれない",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 386
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-32"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L388",
+      "source": "bunpro",
+      "topic": "みたいに・みたいな みたいに",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 388
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-36"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L390",
+      "source": "bunpro",
+      "topic": "そうに・そうな そうに",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 390
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-34"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L391",
+      "source": "bunpro",
+      "topic": "のように・のような のように",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 391
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-35"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L393",
+      "source": "bunpro",
+      "topic": "〜ようと思う・〜おうと思う う・よう + とおもう",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 393
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-20"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L395",
+      "source": "bunpro",
+      "topic": "く・に（副詞形）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 395
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-60"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L397",
+      "source": "bunpro",
+      "topic": "～にする・～くする にする・くする",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 397
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-61"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L399",
+      "source": "bunpro",
+      "topic": "くは",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 399
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-123"
+      ],
+      "reason": "Contrastive adjective くは in both positive acknowledgement and negative judgement, preserving polarity and avoiding unwarranted opposite-property inference."
+    },
+    {
+      "id": "bp-n4-L401",
+      "source": "bunpro",
+      "topic": "といい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 401
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-100"
+      ],
+      "reason": "Hope といい and explicit prayer ように祈る, with polarity, self/other wishes and distinction from advice, purpose, expectation and decision."
+    },
+    {
+      "id": "bp-n4-L403",
+      "source": "bunpro",
+      "topic": "ようになる ようになる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 403
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-22"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L404",
+      "source": "bunpro",
+      "topic": "まい～のように まい～のように",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 404
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-122"
+      ],
+      "reason": "Frequent repetition 毎～のように as almost every/emphatically frequent period, not a fixed precise interval or universal interchange with みたいに."
+    },
+    {
+      "id": "bp-n4-L406",
+      "source": "bunpro",
+      "topic": "じゃないか",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 406
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-101"
+      ],
+      "reason": "Contextual confirmation/discovery with じゃないか/ではないか, distinguished from literal negation and with confrontational-tone warning."
+    },
+    {
+      "id": "bp-n4-L408",
+      "source": "bunpro",
+      "topic": "らしい（推定・伝聞）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 408
+      },
+      "scope": "らしい: report/inference.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-37"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L410",
+      "source": "bunpro",
+      "topic": "ておく ～ておく",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 410
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-03"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L412",
+      "source": "bunpro",
+      "topic": "がほしい がほしい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 412
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-g-21"
+      ],
+      "reason": "Existing closed N5 objective retained as prerequisite; not counted as a new N4 objective."
+    },
+    {
+      "id": "bp-n4-L414",
+      "source": "bunpro",
+      "topic": "てほしい ～てほしい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 414
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-46"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L416",
+      "source": "bunpro",
+      "topic": "ときいた ときいた",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 416
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-41"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L418",
+      "source": "bunpro",
+      "topic": "聞こえる きこえる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 418
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L419",
+      "source": "bunpro",
+      "topic": "見える みえる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 419
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L421",
+      "source": "bunpro",
+      "topic": "だす だす",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 421
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-17"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L425",
+      "source": "bunpro",
+      "topic": "～代 だい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 425
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L427",
+      "source": "bunpro",
+      "topic": "かかる（時間・値段）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 427
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-149",
+        "n5-v-19-verbs-b-040"
+      ],
+      "reason": "Cost かかる versus item-price する, two actual cost examples plus the existing N5 time prerequisite; distinguish amount-as-price from object を and avoid universal substitution for duration."
+    },
+    {
+      "id": "bp-n4-L429",
+      "source": "bunpro",
+      "topic": "する（値段）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 429
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-149"
+      ],
+      "reason": "Cost かかる versus item-price する, two actual cost examples plus the existing N5 time prerequisite; distinguish amount-as-price from object を and avoid universal substitution for duration."
+    },
+    {
+      "id": "bp-n4-L431",
+      "source": "bunpro",
+      "topic": "数量＋も",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 431
+      },
+      "scope": "Scalar/emphatic amount + も, not additive also.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-107"
+      ],
+      "reason": "Scalar quantity も in positive surprise and negative minimum-zero contexts, distinct from N5 additive も."
+    },
+    {
+      "id": "bp-n4-L433",
+      "source": "bunpro",
+      "topic": "ほとんど ほとんど",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 433
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L434",
+      "source": "bunpro",
+      "topic": "そんな・こんな・あんな・どんな そんな",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 434
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L436",
+      "source": "bunpro",
+      "topic": "各 かく",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 436
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L438",
+      "source": "bunpro",
+      "topic": "の次に のつぎに",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 438
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-131"
+      ],
+      "reason": "Ranking の次に with explicit comparison scope, not automatically a worldwide second rank or temporal succession."
+    },
+    {
+      "id": "bp-n4-L440",
+      "source": "bunpro",
+      "topic": "以上 ① いじょう ①",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 440
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-109"
+      ],
+      "reason": "Inclusive numeric 以上/以下 versus exclusive numeric より; Sensei's broader comparison row uses existing N5 comparison plus this explicit quantity extension."
+    },
+    {
+      "id": "bp-n4-L442",
+      "source": "bunpro",
+      "topic": "いか いか",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 442
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-109"
+      ],
+      "reason": "Inclusive numeric 以上/以下 versus exclusive numeric より; Sensei's broader comparison row uses existing N5 comparison plus this explicit quantity extension."
+    },
+    {
+      "id": "bp-n4-L444",
+      "source": "bunpro",
+      "topic": "いがい いがい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 444
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-110"
+      ],
+      "reason": "Exclusion/addition with 以外は/以外にも/以外の and interpretation of which set is excluded."
+    },
+    {
+      "id": "bp-n4-L445",
+      "source": "bunpro",
+      "topic": "ずっと ①",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 445
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L447",
+      "source": "bunpro",
+      "topic": "だいたい だいたい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 447
+      },
+      "scope": "Introductory mostly and numeric/duration approximation; not every idiomatic use.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n5-v-22-gaps-030",
+        "n4-v-12"
+      ],
+      "reason": "N5 mostly scope retained; N4 adds numeric/duration approximation in two original kana contexts and practice."
+    },
+    {
+      "id": "bp-n4-L449",
+      "source": "bunpro",
+      "topic": "のなかで のなかで",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 449
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-g-20"
+      ],
+      "reason": "Existing closed N5 objective retained as prerequisite; not counted as a new N4 objective."
+    },
+    {
+      "id": "bp-n4-L451",
+      "source": "bunpro",
+      "topic": "ように・ような よう + に・な",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 451
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-35"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L453",
+      "source": "bunpro",
+      "topic": "数量＋は",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 453
+      },
+      "scope": "Amount + は lower bound, not topic は.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-108"
+      ],
+      "reason": "Amount + は lower-bound estimate, not a guaranteed exact amount or maximum; distinguish scalar も and restrictive しか."
+    },
+    {
+      "id": "bp-n4-L455",
+      "source": "bunpro",
+      "topic": "何＋助数詞＋か",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 455
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-111"
+      ],
+      "reason": "Indefinite quantities with 何 + appropriate counter + か, distinct from direct questions and emphatic quantity も."
+    },
+    {
+      "id": "bp-n4-L456",
+      "source": "bunpro",
+      "topic": "真(っ) まっ",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 456
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L458",
+      "source": "bunpro",
+      "topic": "数量＋しか～ない",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 458
+      },
+      "scope": "Quantity + しか～ない.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-102"
+      ],
+      "reason": "Restrictive noun/quantity しか with mandatory negative predicate, distinguished from additive/zero も, neutral だけ and later no-choice Vるしかない."
+    },
+    {
+      "id": "bp-n4-L460",
+      "source": "bunpro",
+      "topic": "～は～の一つだ",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 460
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-112"
+      ],
+      "reason": "One member of a category using の一つ; no inference of uniqueness, superlative or exhaustive group size."
+    },
+    {
+      "id": "bp-n4-L462",
+      "source": "bunpro",
+      "topic": "～ない～はない ない～はない",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 462
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-139"
+      ],
+      "reason": "Negative relative clause + concrete noun + existential negation excludes all counterexamples within a stated group; distinguish no-one-knows from no-one-does-not-know and from N3 weak double negation."
+    },
+    {
+      "id": "bp-n4-L464",
+      "source": "bunpro",
+      "topic": "すこしも～ない すこしも～ない",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 464
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L466",
+      "source": "bunpro",
+      "topic": "すくなくない すくなくない",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 466
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L469",
+      "source": "bunpro",
+      "topic": "ばあいは ばあいは",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 469
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-31"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L471",
+      "source": "bunpro",
+      "topic": "て（依頼）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 471
+      },
+      "scope": "Bare て-form casual request, not てください alone.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-91"
+      ],
+      "reason": "Bare affirmative/negative casual requests, distinct from clause-linking て, without-doing ないで, and stronger imperatives."
+    },
+    {
+      "id": "bp-n4-L473",
+      "source": "bunpro",
+      "topic": "てよかった ～てよかった",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 473
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-89"
+      ],
+      "reason": "Relief over actual action/non-event, contrasted in all polarities with counterfactual regret ばよかった."
+    },
+    {
+      "id": "bp-n4-L475",
+      "source": "bunpro",
+      "topic": "せる・させる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 475
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-64"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L477",
+      "source": "bunpro",
+      "topic": "といってもいい といってもいい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 477
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-98"
+      ],
+      "reason": "Qualified judgement と言ってもいい with full clause forms, distinct from reported reputation, literal permission and concessive と言っても."
+    },
+    {
+      "id": "bp-n4-L479",
+      "source": "bunpro",
+      "topic": "ても ～ても・でも",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 479
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-30"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L481",
+      "source": "bunpro",
+      "topic": "てしまう・ちゃう ～てしまう",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 481
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-04"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L482",
+      "source": "bunpro",
+      "topic": "て（理由・原因）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 482
+      },
+      "scope": "て／で reason/cause, not just sequential connection.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-86"
+      ],
+      "reason": "Reason/cause te/de followed by an emotional, natural or inability result; distinct from sequence."
+    },
+    {
+      "id": "bp-n4-L484",
+      "source": "bunpro",
+      "topic": "させられる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 484
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-65"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L486",
+      "source": "bunpro",
+      "topic": "て・で（手段・方法）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 486
+      },
+      "scope": "て／で means/manner.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-87"
+      ],
+      "reason": "Verb te and noun de as means/manner; distinguish location/cause and action sequence."
+    },
+    {
+      "id": "bp-n4-L488",
+      "source": "bunpro",
+      "topic": "てある ～てある",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 488
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-09"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L489",
+      "source": "bunpro",
+      "topic": "ように～てほしい ように～てほしい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 489
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-140"
+      ],
+      "reason": "Application combining likeness/purpose ように with てほしい, using actual actor/goal examples and distinguishing speaker desire from the actor's desire or agreement."
+    },
+    {
+      "id": "bp-n4-L491",
+      "source": "bunpro",
+      "topic": "ているあいだに ～ているあいだに",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 491
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-50"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L493",
+      "source": "bunpro",
+      "topic": "なくてもいい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 493
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-g-17"
+      ],
+      "reason": "Existing closed N5 objective retained as prerequisite; not counted as a new N4 objective."
+    },
+    {
+      "id": "bp-n4-L495",
+      "source": "bunpro",
+      "topic": "てみる ～てみる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 495
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-02"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L497",
+      "source": "bunpro",
+      "topic": "てすみません ～てすみません",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 497
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-90"
+      ],
+      "reason": "Apology for action or negative inability, contrasted with thanks and relief."
+    },
+    {
+      "id": "bp-n4-L501",
+      "source": "bunpro",
+      "topic": "てあげる ～てあげる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 501
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-05"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L503",
+      "source": "bunpro",
+      "topic": "てくれる ～てくれる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 503
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-06"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L504",
+      "source": "bunpro",
+      "topic": "てもらう ～てもらう",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 504
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-07"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L506",
+      "source": "bunpro",
+      "topic": "なさい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 506
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-68"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L508",
+      "source": "bunpro",
+      "topic": "て（並列・対比）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 508
+      },
+      "scope": "て non-sequential parallel/contrast clauses.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-88"
+      ],
+      "reason": "Parallel/contrasting facts with explicit distinct actors; no automatic sequential or exact-simultaneity inference."
+    },
+    {
+      "id": "bp-n4-L510",
+      "source": "bunpro",
+      "topic": "ないで（依頼）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 510
+      },
+      "scope": "Bare ないで casual request, not only without doing.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-91"
+      ],
+      "reason": "Bare affirmative/negative casual requests, distinct from clause-linking て, without-doing ないで, and stronger imperatives."
+    },
+    {
+      "id": "bp-n4-L512",
+      "source": "bunpro",
+      "topic": "てくれてありがとう ～てくれてありがとう",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 512
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-92"
+      ],
+      "reason": "Gratitude for another actor's help toward the speaker, with actor/benefit direction and register safeguards."
+    },
+    {
+      "id": "bp-n4-L514",
+      "source": "bunpro",
+      "topic": "てくれない・てもらえない ～て + くれない",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 514
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-93"
+      ],
+      "reason": "Casual negative-question benefactive requests, contrasted with negative reports/complaints, prohibitions and formal receiving-side requests."
+    },
+    {
+      "id": "bp-n4-L516",
+      "source": "bunpro",
+      "topic": "～のだろうか のだろうか",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 516
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-96"
+      ],
+      "reason": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules."
+    },
+    {
+      "id": "bp-n4-L517",
+      "source": "bunpro",
+      "topic": "お～になる お～になる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 517
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-72"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L519",
+      "source": "bunpro",
+      "topic": "なさる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 519
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-75"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L521",
+      "source": "bunpro",
+      "topic": "お～ください お～ください",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 521
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-73"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L523",
+      "source": "bunpro",
+      "topic": "いらっしゃる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 523
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-74"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L525",
+      "source": "bunpro",
+      "topic": "ございます ございます",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 525
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-76"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L527",
+      "source": "bunpro",
+      "topic": "でございます でございます",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 527
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-76"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L529",
+      "source": "bunpro",
+      "topic": "お〜する",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 529
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-77"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L531",
+      "source": "bunpro",
+      "topic": "いたす いたす",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 531
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-78"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L532",
+      "source": "bunpro",
+      "topic": "ていただけませんか ～ていただけませんか",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 532
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-79"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L536",
+      "source": "bunpro",
+      "topic": "たら",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 536
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-26"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L538",
+      "source": "bunpro",
+      "topic": "ほかに(も)・ほか(に)は ほかに",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 538
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L540",
+      "source": "bunpro",
+      "topic": "がひつよう がひつよう",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 540
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-148"
+      ],
+      "reason": "Noun が必要 versus dictionary verb 必要がある, with noun modification and negative no-need distinguished from prohibition; structural guidance merits a rich grammar lesson rather than only a lexical gloss."
+    },
+    {
+      "id": "bp-n4-L542",
+      "source": "bunpro",
+      "topic": "そんなに",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 542
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L544",
+      "source": "bunpro",
+      "topic": "ひつようがある ひつようがある",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 544
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-148"
+      ],
+      "reason": "Noun が必要 versus dictionary verb 必要がある, with noun modification and negative no-need distinguished from prohibition; structural guidance merits a rich grammar lesson rather than only a lexical gloss."
+    },
+    {
+      "id": "bp-n4-L546",
+      "source": "bunpro",
+      "topic": "たとえば たとえば",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 546
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L547",
+      "source": "bunpro",
+      "topic": "れる・られる（可能）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 547
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-18"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L549",
+      "source": "bunpro",
+      "topic": "んだけど・んですが んだけど",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 549
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-99"
+      ],
+      "reason": "N4 conversation application combining N5 explanatory んです and softening けど/が. Not counted as another new base grammar objective."
+    },
+    {
+      "id": "bp-n4-L551",
+      "source": "bunpro",
+      "topic": "はずだ はずだ",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 551
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-33"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L553",
+      "source": "bunpro",
+      "topic": "かどうか",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 553
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-42"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L555",
+      "source": "bunpro",
+      "topic": "と",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 555
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-29"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L557",
+      "source": "bunpro",
+      "topic": "ないと",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 557
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-136",
+        "n5-g-18"
+      ],
+      "reason": "Explicit ないと（いけない） and なければいけない variants apply N5 obligation to actual N4 forms/contexts; distinguish negative condition, prohibition and no need."
+    },
+    {
+      "id": "bp-n4-L559",
+      "source": "bunpro",
+      "topic": "はずがない はずがない",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 559
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-33"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L561",
+      "source": "bunpro",
+      "topic": "しか～ない しか～ない",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 561
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-102"
+      ],
+      "reason": "Restrictive noun/quantity しか with mandatory negative predicate, distinguished from additive/zero も, neutral だけ and later no-choice Vるしかない."
+    },
+    {
+      "id": "bp-n4-L563",
+      "source": "bunpro",
+      "topic": "だけでなく",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 563
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-105"
+      ],
+      "reason": "Non-exclusive addition using だけでなく and basic following も, with noun/verb/adjective attachment and retained inclusion of A."
+    },
+    {
+      "id": "bp-n4-L564",
+      "source": "bunpro",
+      "topic": "ことができる ことができる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 564
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-g-09"
+      ],
+      "reason": "Existing closed N5 objective retained as prerequisite; not counted as a new N4 objective."
+    },
+    {
+      "id": "bp-n4-L566",
+      "source": "bunpro",
+      "topic": "かい",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 566
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-97"
+      ],
+      "reason": "Familiar yes/no question ending かい and social/register recognition; not a universal polite-question replacement."
+    },
+    {
+      "id": "bp-n4-L568",
+      "source": "bunpro",
+      "topic": "もし",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 568
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-141"
+      ],
+      "reason": "Hypothesis signal もし applied to already taught conditionals, not a replacement for the conditional ending or proof of current weather."
+    },
+    {
+      "id": "bp-n4-L572",
+      "source": "bunpro",
+      "topic": "し～し し (",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 572
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-54"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L574",
+      "source": "bunpro",
+      "topic": "でできる・からできる でできる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 574
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-124"
+      ],
+      "reason": "Material/origin でできている and から作る/作られている, distinguished from tools and travel origin without an absolute visible-material rule."
+    },
+    {
+      "id": "bp-n4-L576",
+      "source": "bunpro",
+      "topic": "ながら",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 576
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-08"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L578",
+      "source": "bunpro",
+      "topic": "たところだ ～たところだ",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 578
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-12"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L580",
+      "source": "bunpro",
+      "topic": "ているところだ ～ているところだ",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 580
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-11"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L581",
+      "source": "bunpro",
+      "topic": "と～と、どちらが",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 581
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-113"
+      ],
+      "reason": "Explicit two-way comparison question and context-bound answer as application of canonical N5 comparison, not a newly counted base comparison objective."
+    },
+    {
+      "id": "bp-n4-L583",
+      "source": "bunpro",
+      "topic": "ようにする ようにする",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 583
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-23"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L585",
+      "source": "bunpro",
+      "topic": "なければいけない",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 585
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-136",
+        "n5-g-18",
+        "n5-g-79"
+      ],
+      "reason": "Explicit ないと（いけない） and なければいけない variants apply N5 obligation to actual N4 forms/contexts; distinguish negative condition, prohibition and no need."
+    },
+    {
+      "id": "bp-n4-L587",
+      "source": "bunpro",
+      "topic": "なければならない",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 587
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-g-18"
+      ],
+      "reason": "Existing closed N5 objective retained as prerequisite; not counted as a new N4 objective."
+    },
+    {
+      "id": "bp-n4-L589",
+      "source": "bunpro",
+      "topic": "つづける つづける",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 589
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-15"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L591",
+      "source": "bunpro",
+      "topic": "ようにいう ようにいう",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 591
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-47"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L593",
+      "source": "bunpro",
+      "topic": "よていだ よていだ",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 593
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-21"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L595",
+      "source": "bunpro",
+      "topic": "ようにいのる ようにいのる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 595
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-100"
+      ],
+      "reason": "Hope といい and explicit prayer ように祈る, with polarity, self/other wishes and distinction from advice, purpose, expectation and decision."
+    },
+    {
+      "id": "bp-n4-L596",
+      "source": "bunpro",
+      "topic": "たばかり ～たばかり",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 596
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-13"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L598",
+      "source": "bunpro",
+      "topic": "化する",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 598
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L600",
+      "source": "bunpro",
+      "topic": "命令形 めいれいけい(",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 600
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-67"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L604",
+      "source": "bunpro",
+      "topic": "ように ように",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 604
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-71"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L606",
+      "source": "bunpro",
+      "topic": "かしら",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 606
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-96"
+      ],
+      "reason": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules."
+    },
+    {
+      "id": "bp-n4-L608",
+      "source": "bunpro",
+      "topic": "らしい（特徴）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 608
+      },
+      "scope": "らしい: characteristic/typical.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-38"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L609",
+      "source": "bunpro",
+      "topic": "って感じ ってかんじ",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 609
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-142"
+      ],
+      "reason": "Casual impression/gist って感じ and its limits in precise/formal reporting; not official naming or verified fact."
+    },
+    {
+      "id": "bp-n4-L611",
+      "source": "bunpro",
+      "topic": "にみえる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 611
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-39"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L613",
+      "source": "bunpro",
+      "topic": "とみえる とみえる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 613
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-143"
+      ],
+      "reason": "Evidence-based inferential とみえる in recognition-focused formal/literary contexts, distinguishing observation from deduction and visual に見える."
+    },
+    {
+      "id": "bp-n4-L615",
+      "source": "bunpro",
+      "topic": "風（ふう）",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 615
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "bp-n4-L617",
+      "source": "bunpro",
+      "topic": "がみられる がみられる",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 617
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-144"
+      ],
+      "reason": "Observation/opportunity が見られる as an explicit contextual application of existing potential/passive 見る, with object/observer roles and natural visibility distinguished."
+    },
+    {
+      "id": "bp-n4-L619",
+      "source": "bunpro",
+      "topic": "にきがつく にきがつく",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 619
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-129"
+      ],
+      "reason": "Awareness に気がつく/気づく with nouns and nominalized facts, distinct from correction and 気をつける; awareness alone does not imply resolution."
+    },
+    {
+      "id": "bp-n4-L621",
+      "source": "bunpro",
+      "topic": "〜でも 〜でも でも〜でも",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 621
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-133"
+      ],
+      "reason": "Free/universal selection with wh-word でも and AでもBでも; actual examples of anyone and either named option, distinct from indefinite か and negative も."
+    },
+    {
+      "id": "bp-n4-L622",
+      "source": "bunpro",
+      "topic": "それに",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 622
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-146"
+      ],
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
+    },
+    {
+      "id": "bp-n4-L624",
+      "source": "bunpro",
+      "topic": "それで",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 624
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-146"
+      ],
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
+    },
+    {
+      "id": "bp-n4-L626",
+      "source": "bunpro",
+      "topic": "疑問詞のある文＋か",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 626
+      },
+      "scope": "Embedded question containing a wh-word.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-43"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L628",
+      "source": "bunpro",
+      "topic": "それでも",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 628
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-146"
+      ],
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
+    },
+    {
+      "id": "bp-n4-L630",
+      "source": "bunpro",
+      "topic": "たらどう",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 630
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-69"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "bp-n4-L632",
+      "source": "bunpro",
+      "topic": "とかんがえられている とかんがえられている",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 632
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-145"
+      ],
+      "reason": "Reported general evaluation と考えられている/とされている, not a guarantee of universal agreement or all advanced deductive/potential と考えられる uses."
+    },
+    {
+      "id": "bp-n4-L633",
+      "source": "bunpro",
+      "topic": "とされている",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 633
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-145"
+      ],
+      "reason": "Reported general evaluation と考えられている/とされている, not a guarantee of universal agreement or all advanced deductive/potential と考えられる uses."
+    },
+    {
+      "id": "bp-n4-L635",
+      "source": "bunpro",
+      "topic": "といわれている といわれている",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 635
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-84"
+      ],
+      "reason": "General reported reputation/claim; not visual impression or a guarantee that every speaker agrees."
+    },
+    {
+      "id": "bp-n4-L637",
+      "source": "bunpro",
+      "topic": "ばよかった ばよかった",
+      "sourceUrl": "https://bunpro.jp/grammar_points",
+      "position": {
+        "snapshotLine": 637
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-70"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-001",
+      "source": "jlptsensei",
+      "topic": "間（あいだ）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 1
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-50"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-002",
+      "source": "jlptsensei",
+      "topic": "間に（あいだに）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 2
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-50"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-003",
+      "source": "jlptsensei",
+      "topic": "あまり～ない",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 3
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-v-21-adverbs-007"
+      ],
+      "reason": "Negative あまり prerequisite with an actual kana example; not counted anew as N4.",
+      "evidenceKind": "lexical-prerequisite"
+    },
+    {
+      "id": "js-n4-004",
+      "source": "jlptsensei",
+      "topic": "後で（あとで）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 4
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-48"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-005",
+      "source": "jlptsensei",
+      "topic": "ば",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 5
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-27"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-006",
+      "source": "jlptsensei",
+      "topic": "場合は（ばあいは）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 6
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-31"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-007",
+      "source": "jlptsensei",
+      "topic": "ばかり",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 7
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-103"
+      ],
+      "reason": "Noun-based restriction/dominance ばかり, not assumed always negative; distinguish recent Vたばかり and defer the dedicated wider Vてばかりいる construction.",
+      "levelReview": "Bunpro places restrictive ばかり at N3; narrow N4 teaching scope remains to be justified. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
+    },
+    {
+      "id": "js-n4-008",
+      "source": "jlptsensei",
+      "topic": "だけで",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 8
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-104"
+      ],
+      "reason": "Application of N5 だけ to a sufficient condition/means using で, not a new duplicate base objective; distinguish additive だけでなく."
+    },
+    {
+      "id": "js-n4-009",
+      "source": "jlptsensei",
+      "topic": "出す（だす）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 9
+      },
+      "scope": "Inception plus a representative outward lexical application; not all possible 出す compounds.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-17",
+        "n4-v-14"
+      ],
+      "reason": "Inception remains in n4-g-17. The lexical application teaches outward 取り出す in two original contexts, not a general assertion that every compound means start. Bunpro standalone vocabulary placement is N2; the narrow Sensei N4 parent-construction application and level difference are recorded in n4-kotoba-coverage.json."
+    },
+    {
+      "id": "js-n4-010",
+      "source": "jlptsensei",
+      "topic": "でございます",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 10
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-76"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-011",
+      "source": "jlptsensei",
+      "topic": "でも",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 11
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-132"
+      ],
+      "reason": "Exemplifying noun でも in a light proposal, retaining case particles where needed and distinguishing contrast, concession and strict restriction."
+    },
+    {
+      "id": "js-n4-012",
+      "source": "jlptsensei",
+      "topic": "ではないか",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 12
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-101"
+      ],
+      "reason": "Contextual confirmation/discovery with じゃないか/ではないか, distinguished from literal negation and with confrontational-tone warning."
+    },
+    {
+      "id": "js-n4-013",
+      "source": "jlptsensei",
+      "topic": "が必要（がひつよう）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 13
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-148"
+      ],
+      "reason": "Noun が必要 versus dictionary verb 必要がある, with noun modification and negative no-need distinguished from prohibition; structural guidance merits a rich grammar lesson rather than only a lexical gloss."
+    },
+    {
+      "id": "js-n4-014",
+      "source": "jlptsensei",
+      "topic": "がする",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 14
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-118"
+      ],
+      "reason": "Sensory noun + がする for sound/smell/taste; distinguish sensory evidence from unverified causes, voluntary listening and visual impression."
+    },
+    {
+      "id": "js-n4-015",
+      "source": "jlptsensei",
+      "topic": "がり",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 15
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-117"
+      ],
+      "reason": "Lexically conventional がり tendency/sensitivity nouns, self/other uses and distinction from momentary がっている; not a universal adjective rule or diagnosis."
+    },
+    {
+      "id": "js-n4-016",
+      "source": "jlptsensei",
+      "topic": "がる / がっている",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 16
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-115"
+      ],
+      "reason": "Observable adjective-based がる/がっている including 欲しがる, momentary signs versus tendencies and direct quotations; no absolute ban on third-person adjectives or mind-reading claim."
+    },
+    {
+      "id": "js-n4-017",
+      "source": "jlptsensei",
+      "topic": "ございます",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 17
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-76"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-018",
+      "source": "jlptsensei",
+      "topic": "始める（はじめる）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 18
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-14"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-019",
+      "source": "jlptsensei",
+      "topic": "はずだ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 19
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-33"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-020",
+      "source": "jlptsensei",
+      "topic": "はずがない",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 20
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-33"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-021",
+      "source": "jlptsensei",
+      "topic": "必要がある（ひつようがある）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 21
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-148"
+      ],
+      "reason": "Noun が必要 versus dictionary verb 必要がある, with noun modification and negative no-need distinguished from prohibition; structural guidance merits a rich grammar lesson rather than only a lexical gloss."
+    },
+    {
+      "id": "js-n4-022",
+      "source": "jlptsensei",
+      "topic": "意向形 （いこうけい）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 22
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-19"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-023",
+      "source": "jlptsensei",
+      "topic": "いらっしゃる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 23
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-74"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-024",
+      "source": "jlptsensei",
+      "topic": "いたします",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 24
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-78"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-025",
+      "source": "jlptsensei",
+      "topic": "じゃないか",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 25
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-101"
+      ],
+      "reason": "Contextual confirmation/discovery with じゃないか/ではないか, distinguished from literal negation and with confrontational-tone warning."
+    },
+    {
+      "id": "js-n4-026",
+      "source": "jlptsensei",
+      "topic": "かどうか",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 26
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-42"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-027",
+      "source": "jlptsensei",
+      "topic": "かしら",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 27
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-96"
+      ],
+      "reason": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules."
+    },
+    {
+      "id": "js-n4-028",
+      "source": "jlptsensei",
+      "topic": "かい",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 28
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-97"
+      ],
+      "reason": "Existing N4 かい lesson provides the familiar yes/no question and register guidance; this independent publisher row was previously missed in the matrix."
+    },
+    {
+      "id": "js-n4-029",
+      "source": "jlptsensei",
+      "topic": "かもしれない",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 29
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-32"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-030",
+      "source": "jlptsensei",
+      "topic": "かな",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 30
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-96"
+      ],
+      "reason": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules."
+    },
+    {
+      "id": "js-n4-031",
+      "source": "jlptsensei",
+      "topic": "から作る（からつくる）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 31
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-124"
+      ],
+      "reason": "Material/origin でできている and から作る/作られている, distinguished from tools and travel origin without an absolute visible-material rule."
+    },
+    {
+      "id": "js-n4-032",
+      "source": "jlptsensei",
+      "topic": "きっと",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 32
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-08"
+      ],
+      "reason": "Strong speaker expectation taught with contextual practice; no fixed probability or guaranteed truth."
+    },
+    {
+      "id": "js-n4-033",
+      "source": "jlptsensei",
+      "topic": "頃（ころ / ごろ）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 33
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-51"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-034",
+      "source": "jlptsensei",
+      "topic": "こと",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 34
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-44"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-035",
+      "source": "jlptsensei",
+      "topic": "ことがある",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 35
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-126"
+      ],
+      "reason": "Occasional Vる/Vないことがある, distinct from canonical N5 past experiential Vたことがある, current habits and personal decisions.",
+      "levelReview": "Sometimes Vることがある differs from N5 experiential Vたことがある; Bunpro places it at N3. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
+    },
+    {
+      "id": "js-n4-036",
+      "source": "jlptsensei",
+      "topic": "ことができる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 36
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-g-09"
+      ],
+      "reason": "Existing closed N5 objective retained as prerequisite; not counted as a new N4 objective."
+    },
+    {
+      "id": "js-n4-037",
+      "source": "jlptsensei",
+      "topic": "ことになる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 37
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-81"
+      ],
+      "reason": "Reported decision/arrangement with future action after a completed decision; not a claim of coercion or completed travel.",
+      "levelReview": "Sensei N4 / Bunpro N3: decision or arranged result ことになる. Resolved for the narrow original N4 scope above; broader N3 extensions remain separate."
+    },
+    {
+      "id": "js-n4-038",
+      "source": "jlptsensei",
+      "topic": "ことにする",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 38
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-80"
+      ],
+      "reason": "Personal decision and continuing self-imposed habit; unlike arranged outcome, intended action need not already have happened.",
+      "levelReview": "Sensei N4 / Bunpro N3: personal decision ことにする. Resolved for the narrow original N4 scope above; broader N3 extensions remain separate."
+    },
+    {
+      "id": "js-n4-039",
+      "source": "jlptsensei",
+      "topic": "くする",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 39
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-61"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-040",
+      "source": "jlptsensei",
+      "topic": "急に（きゅうに）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "position": {
+        "ordinal": 40
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-09"
+      ],
+      "reason": "Sudden-change introductory scope taught with kana example and hurried-manner contrast."
+    },
+    {
+      "id": "js-n4-041",
+      "source": "jlptsensei",
+      "topic": "までに",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 41
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-49"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-042",
+      "source": "jlptsensei",
+      "topic": "まま",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 42
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-125"
+      ],
+      "reason": "Unchanged-state まま after ta/nai verbs, nouns and adjectives; keep result state versus mere sequence distinct."
+    },
+    {
+      "id": "js-n4-043",
+      "source": "jlptsensei",
+      "topic": "または",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 43
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Lexical coordinator または means or and will receive a meaning-specific vocabulary card/example and practice; do not invent a separate grammatical conjugation objective or mark it covered yet."
+    },
+    {
+      "id": "js-n4-044",
+      "source": "jlptsensei",
+      "topic": "みたいだ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 44
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-36"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-045",
+      "source": "jlptsensei",
+      "topic": "みたいな",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 45
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-36"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-046",
+      "source": "jlptsensei",
+      "topic": "みたいに",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 46
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-36"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-047",
+      "source": "jlptsensei",
+      "topic": "も",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 47
+      },
+      "scope": "Scalar/emphatic も, not additive also.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-107"
+      ],
+      "reason": "Scalar quantity も in positive surprise and negative minimum-zero contexts, distinct from N5 additive も."
+    },
+    {
+      "id": "js-n4-048",
+      "source": "jlptsensei",
+      "topic": "な",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 48
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-g-92"
+      ],
+      "reason": "Existing closed N5 objective retained as prerequisite; not counted as a new N4 objective."
+    },
+    {
+      "id": "js-n4-049",
+      "source": "jlptsensei",
+      "topic": "など",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 49
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-106"
+      ],
+      "reason": "Open examples with など and casual とか, including verb examples, contrasted with closed と and N5 や/たり prerequisites."
+    },
+    {
+      "id": "js-n4-050",
+      "source": "jlptsensei",
+      "topic": "ながら",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 50
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-08"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-051",
+      "source": "jlptsensei",
+      "topic": "なかなか～ない",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 51
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-147"
+      ],
+      "reason": "Negative なかなか for difficulty or delayed expected results, not impossibility forever; broader positive なかなか is only a contrast, not claimed complete here.",
+      "levelReview": "Sensei N4 / Bunpro N3: なかなか～ない. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
+    },
+    {
+      "id": "js-n4-052",
+      "source": "jlptsensei",
+      "topic": "なければいけない",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 52
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-136",
+        "n5-g-18",
+        "n5-g-79"
+      ],
+      "reason": "Explicit ないと（いけない） and なければいけない variants apply N5 obligation to actual N4 forms/contexts; distinguish negative condition, prohibition and no need."
+    },
+    {
+      "id": "js-n4-053",
+      "source": "jlptsensei",
+      "topic": "なければならない",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 53
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-g-18"
+      ],
+      "reason": "Existing closed N5 objective retained as prerequisite; not counted as a new N4 objective."
+    },
+    {
+      "id": "js-n4-054",
+      "source": "jlptsensei",
+      "topic": "なら",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 54
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-28"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-055",
+      "source": "jlptsensei",
+      "topic": "なさい",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 55
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-68"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-056",
+      "source": "jlptsensei",
+      "topic": "なさる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 56
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-75"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-057",
+      "source": "jlptsensei",
+      "topic": "に気がつく（にきがつく）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 57
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-129"
+      ],
+      "reason": "Awareness に気がつく/気づく with nouns and nominalized facts, distinct from correction and 気をつける; awareness alone does not imply resolution."
+    },
+    {
+      "id": "js-n4-058",
+      "source": "jlptsensei",
+      "topic": "に見える（にみえる）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 58
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-39"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-059",
+      "source": "jlptsensei",
+      "topic": "にする",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 59
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-61"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-060",
+      "source": "jlptsensei",
+      "topic": "にくい",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 60
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-56"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-061",
+      "source": "jlptsensei",
+      "topic": "の中で（のなかで）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 61
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-g-20"
+      ],
+      "reason": "Existing closed N5 objective retained as prerequisite; not counted as a new N4 objective."
+    },
+    {
+      "id": "js-n4-062",
+      "source": "jlptsensei",
+      "topic": "のに",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 62
+      },
+      "scope": "Concession のに.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-55"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-063",
+      "source": "jlptsensei",
+      "topic": "のに",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 63
+      },
+      "scope": "Purpose/function/cost のに; distinct from concession.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-127"
+      ],
+      "reason": "Purpose/function/resources-time のに after dictionary form, distinct from concessive のに and not a blanket replacement for every purpose construction.",
+      "levelReview": "Sensei N4 / Bunpro N3: purpose のに. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
+    },
+    {
+      "id": "js-n4-064",
+      "source": "jlptsensei",
+      "topic": "のは〜だ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 64
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-135"
+      ],
+      "reason": "Focus/identification and reason with のは～だ as an application of N5 nominalization; examples identify the actor and state the reason explicitly."
+    },
+    {
+      "id": "js-n4-065",
+      "source": "jlptsensei",
+      "topic": "お～ください",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 65
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-73"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-066",
+      "source": "jlptsensei",
+      "topic": "お～になる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 66
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-72"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-067",
+      "source": "jlptsensei",
+      "topic": "おきに",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 67
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-128"
+      ],
+      "reason": "Intervals おきに with minute/hour behavior versus the explicit one-day-gap reading 一日おき; distinguish per-period frequency and avoid universal equivalence with ごとに.",
+      "levelReview": "Sensei N4 / Bunpro N3: interval おきに; ごとに is related, not automatically equivalent. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
+    },
+    {
+      "id": "js-n4-068",
+      "source": "jlptsensei",
+      "topic": "終わる（おわる）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 68
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-16"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-069",
+      "source": "jlptsensei",
+      "topic": "られる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 69
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-18"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-070",
+      "source": "jlptsensei",
+      "topic": "らしい",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 70
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-37"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-071",
+      "source": "jlptsensei",
+      "topic": "さ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 71
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-120"
+      ],
+      "reason": "Adjective nominalization さ with i/na formation and いい→よさ; distinguish a noun degree/quality from adjective modification."
+    },
+    {
+      "id": "js-n4-072",
+      "source": "jlptsensei",
+      "topic": "さっき",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 72
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-10"
+      ],
+      "reason": "Context-relative recent past taught without an invented minute threshold."
+    },
+    {
+      "id": "js-n4-073",
+      "source": "jlptsensei",
+      "topic": "させられる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 73
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-65"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-074",
+      "source": "jlptsensei",
+      "topic": "させる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 74
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-64"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-075",
+      "source": "jlptsensei",
+      "topic": "させてください",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 75
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-66"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-076",
+      "source": "jlptsensei",
+      "topic": "さすが",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 76
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "js-n4-077",
+      "source": "jlptsensei",
+      "topic": "し",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 77
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-54"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-078",
+      "source": "jlptsensei",
+      "topic": "そんなに",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 78
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "pending_lexical",
+      "lessons": [],
+      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+    },
+    {
+      "id": "js-n4-079",
+      "source": "jlptsensei",
+      "topic": "それでも",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 79
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-146"
+      ],
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
+    },
+    {
+      "id": "js-n4-080",
+      "source": "jlptsensei",
+      "topic": "それに",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/",
+      "position": {
+        "ordinal": 80
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-146"
+      ],
+      "reason": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite."
+    },
+    {
+      "id": "js-n4-081",
+      "source": "jlptsensei",
+      "topic": "そうだ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 81
+      },
+      "scope": "そうだ reporting a source; distinct from appearance.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-82"
+      ],
+      "reason": "Hearsay with full plain clause, noun/na-adjective だ and explicit source; distinct from appearance stem + そう.",
+      "levelReview": "Sensei N4 / Bunpro N3: hearsay そうだ. Resolved for the narrow original N4 scope above; broader N3 extensions remain separate."
+    },
+    {
+      "id": "js-n4-082",
+      "source": "jlptsensei",
+      "topic": "そうだ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 82
+      },
+      "scope": "そうだ appearance/signs.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-34"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-083",
+      "source": "jlptsensei",
+      "topic": "そうに / そうな",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 83
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-34"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-084",
+      "source": "jlptsensei",
+      "topic": "たばかり",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 84
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-13"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-085",
+      "source": "jlptsensei",
+      "topic": "たところ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 85
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-12"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-086",
+      "source": "jlptsensei",
+      "topic": "他動詞 & 自動詞（たどうし & じどうし）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 86
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-62"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-087",
+      "source": "jlptsensei",
+      "topic": "たがる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 87
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-116"
+      ],
+      "reason": "Observed desire to act using たがる/たがっている, with actor/owner distinguished from speaker-desired てほしい and direct たい quotations."
+    },
+    {
+      "id": "js-n4-088",
+      "source": "jlptsensei",
+      "topic": "たら",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 88
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-26"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-089",
+      "source": "jlptsensei",
+      "topic": "たらどう",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 89
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-69"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-090",
+      "source": "jlptsensei",
+      "topic": "たらいいですか",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 90
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-95"
+      ],
+      "reason": "Wh-word instructions-seeking たらいいですか, distinguished from advice-giving and permission requests.",
+      "levelReview": "The N4 instructions-seeking question たらいいですか is narrower than generic N3 たらいい. Resolved for the stated authored N4 scope; broader N3 treatment remains separate."
+    },
+    {
+      "id": "js-n4-091",
+      "source": "jlptsensei",
+      "topic": "て / で",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 91
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-86"
+      ],
+      "reason": "Reason/cause te/de followed by an emotional, natural or inability result; distinct from sequence."
+    },
+    {
+      "id": "js-n4-092",
+      "source": "jlptsensei",
+      "topic": "てあげる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 92
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-05"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-093",
+      "source": "jlptsensei",
+      "topic": "てほしい",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 93
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-46"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-094",
+      "source": "jlptsensei",
+      "topic": "ていく",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 94
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-24"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-095",
+      "source": "jlptsensei",
+      "topic": "ていた",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 95
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-53"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-096",
+      "source": "jlptsensei",
+      "topic": "ていただけませんか",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 96
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-79"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-097",
+      "source": "jlptsensei",
+      "topic": "てくれる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 97
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-06"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-098",
+      "source": "jlptsensei",
+      "topic": "てくる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 98
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-25"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-099",
+      "source": "jlptsensei",
+      "topic": "てみる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 99
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-02"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-100",
+      "source": "jlptsensei",
+      "topic": "てもらう",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 100
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-07"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-101",
+      "source": "jlptsensei",
+      "topic": "ておく",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 101
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-03"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-102",
+      "source": "jlptsensei",
+      "topic": "てしまう / ちゃう",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 102
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-04"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-103",
+      "source": "jlptsensei",
+      "topic": "てすみません",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 103
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-90"
+      ],
+      "reason": "Apology for action or negative inability, contrasted with thanks and relief."
+    },
+    {
+      "id": "js-n4-104",
+      "source": "jlptsensei",
+      "topic": "てやる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 104
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-94"
+      ],
+      "reason": "Recognition of casual benefactive てやる with animals and a firm warning about hierarchical/disrespectful human use; not an instruction to address patients this way."
+    },
+    {
+      "id": "js-n4-105",
+      "source": "jlptsensei",
+      "topic": "てよかった",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 105
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-89"
+      ],
+      "reason": "Relief over actual action/non-event, contrasted in all polarities with counterfactual regret ばよかった."
+    },
+    {
+      "id": "js-n4-106",
+      "source": "jlptsensei",
+      "topic": "ているところ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 106
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-11"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-107",
+      "source": "jlptsensei",
+      "topic": "ても",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 107
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-30"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-108",
+      "source": "jlptsensei",
+      "topic": "と",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 108
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-29"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-109",
+      "source": "jlptsensei",
+      "topic": "と言ってもいい（といってもいい）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 109
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-98"
+      ],
+      "reason": "Qualified judgement と言ってもいい with full clause forms, distinct from reported reputation, literal permission and concessive と言っても."
+    },
+    {
+      "id": "js-n4-110",
+      "source": "jlptsensei",
+      "topic": "という",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 110
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-83"
+      ],
+      "reason": "Naming including casual っていう／って + noun and basic content-noun modification; not a claim to cover advanced という compounds.",
+      "levelReview": "Sensei N4 / Bunpro N3: naming という; not already covered by N5 quotation. Resolved for the narrow original N4 scope above; broader N3 extensions remain separate."
+    },
+    {
+      "id": "js-n4-111",
+      "source": "jlptsensei",
+      "topic": "ということ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 111
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-45"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-112",
+      "source": "jlptsensei",
+      "topic": "と言われている（といわれている）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 112
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-84"
+      ],
+      "reason": "General reported reputation/claim; not visual impression or a guarantee that every speaker agrees."
+    },
+    {
+      "id": "js-n4-113",
+      "source": "jlptsensei",
+      "topic": "と聞いた（ときいた）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 113
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-41"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-114",
+      "source": "jlptsensei",
+      "topic": "と思う（とおもう）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 114
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-40"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-115",
+      "source": "jlptsensei",
+      "topic": "とか～とか",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 115
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-106"
+      ],
+      "reason": "Open examples with など and casual とか, including verb examples, contrasted with closed と and N5 や/たり prerequisites."
+    },
+    {
+      "id": "js-n4-116",
+      "source": "jlptsensei",
+      "topic": "ところ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 116
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-10"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-117",
+      "source": "jlptsensei",
+      "topic": "続ける（つづける）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 117
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-15"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-118",
+      "source": "jlptsensei",
+      "topic": "って",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 118
+      },
+      "scope": "って naming/called; N5 quotation alone does not cover naming.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-83"
+      ],
+      "reason": "Naming including casual っていう／って + noun and basic content-noun modification; not a claim to cover advanced という compounds."
+    },
+    {
+      "id": "js-n4-119",
+      "source": "jlptsensei",
+      "topic": "受身形（うけみけい）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 119
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-137",
+        "n4-g-63"
+      ],
+      "reason": "Depth application of existing N4 passive to affected-party/adversative and intransitive events, with retained を and separate actor/object/affected-person roles."
+    },
+    {
+      "id": "js-n4-120",
+      "source": "jlptsensei",
+      "topic": "は〜が… は",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/",
+      "position": {
+        "ordinal": 120
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-g-27",
+        "n5-g-75"
+      ],
+      "reason": "Existing closed N5 objective retained as prerequisite; not counted as a new N4 objective."
+    },
+    {
+      "id": "js-n4-121",
+      "source": "jlptsensei",
+      "topic": "やすい",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 121
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-56"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-122",
+      "source": "jlptsensei",
+      "topic": "やっと",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 122
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-07"
+      ],
+      "reason": "Effort/waiting success and barely-able senses taught in two original kana contexts; eventual-outcome alternatives excluded."
+    },
+    {
+      "id": "js-n4-123",
+      "source": "jlptsensei",
+      "topic": "より",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 123
+      },
+      "scope": "Comparison and quantity over; basic comparison is only partial.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-109",
+        "n5-g-19"
+      ],
+      "reason": "Inclusive numeric 以上/以下 versus exclusive numeric より; Sensei's broader comparison row uses existing N5 comparison plus this explicit quantity extension."
+    },
+    {
+      "id": "js-n4-124",
+      "source": "jlptsensei",
+      "topic": "予定だ（よていだ）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 124
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-21"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-125",
+      "source": "jlptsensei",
+      "topic": "ようだ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 125
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-35"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-126",
+      "source": "jlptsensei",
+      "topic": "ように / ような",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 126
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-35"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-127",
+      "source": "jlptsensei",
+      "topic": "ようになる",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 127
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-22"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-128",
+      "source": "jlptsensei",
+      "topic": "ようにする",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 128
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-23"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-129",
+      "source": "jlptsensei",
+      "topic": "ようと思う（ようとおもう）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 129
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-20"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    },
+    {
+      "id": "js-n4-130",
+      "source": "jlptsensei",
+      "topic": "ぜひ",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 130
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-v-11"
+      ],
+      "reason": "Strong desire/invitation taught with two original contexts, distinct from prediction."
+    },
+    {
+      "id": "js-n4-131",
+      "source": "jlptsensei",
+      "topic": "全然～ない（ぜんぜん～ない）",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 131
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-v-21-adverbs-008"
+      ],
+      "reason": "Basic negative 全然 prerequisite with an actual kana example; not counted anew as N4.",
+      "evidenceKind": "lexical-prerequisite"
+    },
+    {
+      "id": "js-n4-132",
+      "source": "jlptsensei",
+      "topic": "づらい",
+      "sourceUrl": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/",
+      "position": {
+        "ordinal": 132
+      },
+      "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-57"
+      ],
+      "reason": "Mapped to an authored rich N4 lesson with contextual practice; application/session closure is tracked separately."
+    }
+  ]
+}

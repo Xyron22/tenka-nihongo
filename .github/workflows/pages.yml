@@ -26,14 +26,95 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Set up Node for regression and browser audits
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
       - name: Validate source syntax
         run: |
           node --check data.js
           node --check content-pack-v1.js
           node --check content-pack-v2.js
           node --check content-pack-v3.js
+          node --check content-pack-v4.js
+          node --check content-pack-v5.js
+          node --check content-pack-v6.js
+          node --check content-pack-v7.js
+          node --check content-pack-v8.js
+          node --check content-pack-v9.js
+          node --check content-pack-v10.js
+          node --check content-pack-v11.js
+          node --check content-pack-v12.js
+          node --check content-pack-v13.js
+          node --check content-pack-v14.js
+          node --check content-pack-v15.js
+          node --check content-pack-v16.js
+          node --check content-pack-v17.js
+          node --check content-pack-v18.js
+          node --check content-pack-v19.js
+          node --check content-pack-v20.js
+          node --check content-pack-v21.js
+          node --check content-pack-v22.js
+          node --check content-pack-v23-strokes.js
+          node --check content-pack-v23.js
+          node --check content-pack-v24.js
+          node --check content-pack-v25.js
+          node --check content-pack-v26.js
+          node --check content-pack-v27.js
+          node --check content-pack-v28.js
+          node --check content-pack-v29.js
+          node --check content-pack-v30.js
+          node --check content-pack-v31.js
+          node --check content-pack-v32.js
+          node --check content-pack-v33.js
+          node --check content-pack-v34.js
+          node --check content-pack-v35.js
+          node --check content-pack-v36.js
+          node --check content-pack-v37.js
+          node --check content-pack-v38.js
+          node --check content-pack-v39.js
+          node --check content-pack-v40.js
+          node --check content-pack-v41.js
+          node --check content-pack-v42.js
+          node --check content-pack-v43.js
+          node --check content-pack-v44.js
+          node --check content-pack-v45.js
+          node --check content-pack-v46.js
+          node --check content-pack-v47.js
+          node --check content-pack-v48.js
+          node --check content-pack-v49.js
+          node --check content-pack-v50.js
+          node --check content-pack-v51.js
+          node --check tests/n4-card-quiz.js
+          node --check scripts/export-curriculum-audit.cjs
+          node --check tests/n4-bunpou-quality.js
+          node --check tests/n4-grammar-quiz.js
+          node --check tests/n4-browser-smoke.cjs
+          node --check tests/kaigo-handoff-review.js
+          node --check tests/kaigo-communication.js
+          node --check tests/kaigo-case-library.js
+          node --check tests/kaigo-handoff.js
+          node --check tests/kaigo-browser-smoke.cjs
+          node --check tests/kaigo-listening.js
+          node --check tests/kaigo-workplace.js
+          node --check tests/n5-card-quiz.js
+          node --check tests/n5-session-audit.js
+          node --check tests/n5-closure.js
+          node --check tests/n5-browser-smoke.cjs
+          node --check tests/n5-grammar-quiz.js
+          node --check tests/n5-kanji-quality.js
+          node --check tests/helpers/load-content.js
+          node --check tests/n5-content-quality.js
           node --check houkoku-pack-v1.js
           node --check houkoku-pack-v2.js
+          node --check houkoku-pack-v3.js
+          node --check tests/kaigo-reports.js
+          node --check tests/kaigo-report-review.js
+          node --check tests/kaigo-writing-revision.js
+          node --check tests/kaigo-tools-audio.js
+          node --check tests/kaigo-tools-quiz.js
+          node --check tests/kaigo-basic-closure.js
           node --check tools-pack-v1.js
           node --check app-v2.js
           node --check audio-engine-v5.js
@@ -43,6 +124,10 @@ jobs:
           node --check tests/system-v2.js
           node --check tests/audio-v5.js
           node --check tests/tools-pack-v1.js
+          node --check tests/bunpou-audit-v4.js
+          node --check tests/bunpou-final-gap-v13.js
+          node --check tests/bunpou-closure-n5.js
+          node --check tests/bunpou-remediation-v14.js
           node --check scripts/build-sound-manifest-v2.mjs
           bash -n scripts/generate-voicevox-nemo.sh
 
@@ -83,14 +168,126 @@ jobs:
               print(name, len(data), 'bytes')
           PY
 
+      - name: Install pinned browser audit dependencies
+        run: |
+          mkdir -p "$RUNNER_TEMP/tenka-browser-deps"
+          npm install --prefix "$RUNNER_TEMP/tenka-browser-deps" --no-save --package-lock=false --ignore-scripts playwright@1.64.1 @fontsource/noto-sans-jp@5.3.1
+          if ! "$RUNNER_TEMP/tenka-browser-deps/node_modules/.bin/playwright" install --with-deps chromium > "$RUNNER_TEMP/tenka-browser-install.log" 2>&1; then
+            cat "$RUNNER_TEMP/tenka-browser-install.log"
+            exit 1
+          fi
+
+      - name: Browser audits at phone and laptop widths
+        env:
+          CODEX_PRIMARY_RUNTIME_NODE_MODULES: ${{ runner.temp }}/tenka-browser-deps/node_modules
+          TENKA_TEST_JAPANESE_FONT_DIR: ${{ runner.temp }}/tenka-browser-deps/node_modules/@fontsource/noto-sans-jp
+          TENKA_UI_AUDIT_OUTPUT: ${{ runner.temp }}/tenka-ci-ui
+        run: |
+          node tests/n4-browser-smoke.cjs
+          node tests/n5-browser-smoke.cjs
+          node tests/kaigo-browser-smoke.cjs
+          python3 - <<'PY'
+          import base64,json,os
+          from pathlib import Path
+          root=Path(os.environ['TENKA_UI_AUDIT_OUTPUT'])
+          def emit(prefix,name,payload):
+              chunks=[payload[i:i+30000] for i in range(0,len(payload),30000)]
+              for i,chunk in enumerate(chunks):
+                  print(prefix+':'+name+':'+str(i)+':'+chunk)
+              print(prefix+'_DONE:'+name+':'+str(len(payload))+':'+str(len(chunks)))
+          for kind in ['n4','n5','kaigo']:
+              report=json.loads((root/(kind+'-ui-audit.json')).read_text())
+              emit('TENKA_UI_AUDIT',kind,json.dumps(report,ensure_ascii=True,separators=(',',':')))
+          screenshot=root/'n4-latest-lesson.png'
+          emit('TENKA_UI_SCREENSHOT','n4',base64.b64encode(screenshot.read_bytes()).decode('ascii'))
+          PY
+
       - name: Data integrity test
         run: node tests/data-v2.js
+
+      - name: N5 Bunpou audit 11-70 test
+        run: node tests/bunpou-audit-v4.js
+
+      - name: N5 Bunpou final-gap 71-75 test
+        run: node tests/bunpou-final-gap-v13.js
+
+      - name: N5 Bunpou closure structural audit
+        run: node tests/bunpou-closure-n5.js
+
+      - name: N5 Bunpou closure remediation 76-80
+        run: node tests/bunpou-remediation-v14.js
+
+      - name: N5 current runtime content quality
+        run: node tests/n5-content-quality.js
+
+      - name: N5 Kanji metadata and stroke quality
+        run: node tests/n5-kanji-quality.js
+
+      - name: N5 contextual grammar quiz
+        run: node tests/n5-grammar-quiz.js
+
+      - name: N5 card and listening quiz coverage
+        run: node tests/n5-card-quiz.js
+
+      - name: N5 session and saved progress audit
+        run: node tests/n5-session-audit.js
+
+      - name: N5 curriculum closure gate
+        run: node tests/n5-closure.js
+
+      - name: N4 grammar content and reference coverage
+        run: node tests/n4-bunpou-quality.js
+
+      - name: Export read-only compiled curriculum for reference reconciliation
+        run: node scripts/export-curriculum-audit.cjs
+
+      - name: N4 contextual grammar quiz and progress
+        run: node tests/n4-grammar-quiz.js
+
+      - name: N4 lexical content, contextual listening and progress
+        run: node tests/n4-card-quiz.js
+
+      - name: Kaigo workplace content and practice
+        run: node tests/kaigo-workplace.js
+
+      - name: Kaigo kana listening and quiz review
+        run: node tests/kaigo-listening.js
+
+      - name: Kaigo workplace report models and persistence
+        run: node tests/kaigo-reports.js
+
+      - name: Kaigo wrong-report model review and mastery preservation
+        run: node tests/kaigo-report-review.js
+
+      - name: Kaigo writing revision and explicit self-assessment
+        run: node tests/kaigo-writing-revision.js
+
+      - name: Kaigo sentence handoff and authored audio
+        run: node tests/kaigo-handoff.js
+
+      - name: Kaigo communication content and practice coverage
+        run: node tests/kaigo-communication.js
+
+      - name: Kaigo explicit case selection and progress preservation
+        run: node tests/kaigo-case-library.js
+
+      - name: Kaigo handoff answer explanations and evidence
+        run: node tests/kaigo-handoff-review.js
 
       - name: TENKA Core 2 system regression test
         run: node tests/system-v2.js
 
       - name: Medical tools standalone asset test
         run: node --test tests/tools-pack-v1.js
+
+      - name: Kaigo illustrated-tool pronunciation and progress
+        run: node tests/kaigo-tools-audio.js
+
+      - name: Kaigo illustrated-tool quiz review and persistence
+        run: node tests/kaigo-tools-quiz.js
+
+      - name: Kaigo bounded basic curriculum closure
+        run: node tests/kaigo-basic-closure.js
 
       - name: Exam Sound 5.1.1 test
         run: node tests/audio-v5.js
@@ -102,6 +299,9 @@ jobs:
           grep -q "app-v2.js" index.html
           grep -q "sound-pack-v3.js" index.html
           grep -q "content-pack-v3.js" index.html
+          grep -q "content-pack-v4.js" index.html
+          grep -q "content-pack-v13.js" index.html
+          grep -q "content-pack-v14.js" index.html
           grep -q "houkoku-pack-v1.js" index.html
           grep -q "houkoku-pack-v2.js" index.html
           grep -q "audio-settings-v5.js" index.html

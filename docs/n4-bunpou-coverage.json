@@ -1,0 +1,2790 @@
+{
+  "status": "OPEN",
+  "checked": "2026-11-05",
+  "scope": "149 installed N4 grammar lessons plus a first lexical application batch; 18 captured publisher rows and the full N4 curriculum remain OPEN",
+  "officialJlptInventory": false,
+  "fullReferenceReconciliation": false,
+  "references": [
+    {
+      "id": "bunpro",
+      "url": "https://bunpro.jp/grammar_points",
+      "role": "Publisher level/topic inventory; no explanatory text/examples copied"
+    },
+    {
+      "id": "jlptsensei",
+      "url": "https://jlptsensei.com/jlpt-n4-grammar-list/",
+      "role": "Independent publisher inventory for staged reconciliation; not an official threshold"
+    },
+    {
+      "id": "wasabi",
+      "url": "https://wasabi-jpn.com/magazine/japanese-grammar/japanese-causative-form/",
+      "role": "Construction/particle/actor verification for causative; not a JLPT level inventory"
+    },
+    {
+      "id": "bunka-keigo",
+      "url": "https://www.bunka.go.jp/seisaku/kokugo_nihongo/kokugo_shisaku/keigo/chapter2/detail.html",
+      "role": "Agency for Cultural Affairs keigo principles and actor/recipient/listener distinctions; not a JLPT level inventory"
+    },
+    {
+      "id": "bunka-keigo-forms",
+      "url": "https://www.bunka.go.jp/seisaku/kokugo_nihongo/kokugo_shisaku/keigo/chapter4/detail.html",
+      "role": "Agency for Cultural Affairs prefix selection and honorific/humble role safeguards; original Indonesian teaching, no examples copied"
+    }
+  ],
+  "entries": [
+    {
+      "lessonId": "n4-g-01",
+      "topic": "たことがある",
+      "role": "prerequisite-review",
+      "rationale": "Existing N4 sample retained as review of the canonical N5 experience lesson; not counted again as a distinct N4 objective.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N5",
+          "topic": "たことがある"
+        }
+      ],
+      "canonicalLessonId": "n5-g-61",
+      "countAsNewN4Objective": false
+    },
+    {
+      "lessonId": "n4-g-02",
+      "topic": "てみる",
+      "role": "introduced",
+      "rationale": "Trying an action to discover its result.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てみる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てみる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-03",
+      "topic": "ておく",
+      "role": "introduced",
+      "rationale": "Preparatory action/maintaining readiness, distinct from a completed result state.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ておく"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ておく",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-04",
+      "topic": "てしまう",
+      "role": "introduced",
+      "rationale": "Completion and unintended/regretted result are taught together, not inflated into duplicate lessons.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てしまう"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てしまう",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-05",
+      "topic": "てあげる",
+      "role": "introduced",
+      "rationale": "Action benefit from giver toward another person, with register caution.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てあげる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てあげる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-06",
+      "topic": "てくれる",
+      "role": "introduced",
+      "rationale": "Other person acts for the speaker/in-group; actor remains subject.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てくれる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てくれる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-07",
+      "topic": "てもらう",
+      "role": "introduced",
+      "rationale": "Beneficiary subject receives another person's action; actor marked に.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てもらう"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てもらう",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-08",
+      "topic": "ながら",
+      "role": "introduced",
+      "rationale": "Concurrent actions by the same actor, contrasted with sequential action.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ながら"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ながら",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-09",
+      "topic": "てある",
+      "role": "introduced",
+      "rationale": "Intentionally produced result state with a transitive verb, contrasted with intransitive ている and preparatory ておく.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てある"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N5",
+          "topic": "てある",
+          "url": "https://jlptsensei.com/learn-japanese-grammar/てある-te-aru-meaning/"
+        }
+      ],
+      "levelResolution": "Teach at N4 following Bunpro and the already documented N5 deferral. JLPT Sensei labels it N5; retain this disagreement explicitly and leave the closed N5 curriculum unchanged."
+    },
+    {
+      "lessonId": "n4-g-10",
+      "topic": "るところだ",
+      "role": "introduced",
+      "rationale": "Dictionary-form action immediately before beginning; contrasted with ongoing and completed phases.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "るところだ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ところ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-11",
+      "topic": "ているところだ",
+      "role": "introduced",
+      "rationale": "Action currently in progress; not every habitual/result-state use of plain ている.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ているところだ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ているところ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-12",
+      "topic": "たところだ",
+      "role": "introduced",
+      "rationale": "Immediate post-completion phase; contrasted with subjective recency.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "たところだ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たところ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-13",
+      "topic": "たばかり",
+      "role": "introduced",
+      "rationale": "Subjectively recent completed action, including longer intervals when context supports it.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "たばかり"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たばかり",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-14",
+      "topic": "はじめる",
+      "role": "introduced",
+      "rationale": "Neutral inception of voluntary action or non-volitional event.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "はじめる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "始める",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-15",
+      "topic": "つづける",
+      "role": "introduced",
+      "rationale": "Continuation of an action; not confused with standalone intransitive 続く.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "つづける"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "続ける",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-16",
+      "topic": "おわる",
+      "role": "introduced",
+      "rationale": "Completion of a bounded action; not merely stopping before completion.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "おわる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "終わる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-17",
+      "topic": "だす",
+      "role": "introduced",
+      "rationale": "Sudden inception only; distinguish other 出す compounds and avoid an absolute ban on voluntary uses.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "だす"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "出す",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-18",
+      "topic": "れる・られる (Potential)",
+      "role": "introduced",
+      "rationale": "Standard godan/ichidan/irregular potential formation and ability versus permission.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "れる・られる (Potential)"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "られる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-19",
+      "topic": "う・よう (Volitional)",
+      "role": "introduced",
+      "rationale": "Plain volitional formation for intention/invitation; distinct from ability and commands.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "う・よう (Volitional)"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "意向形",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-20",
+      "topic": "う・よう＋と思う",
+      "role": "introduced",
+      "rationale": "Personal intention using the volitional form, not a generic prediction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "う・よう＋と思う"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ようと思う",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-21",
+      "topic": "よていだ",
+      "role": "introduced",
+      "rationale": "Arranged plan/schedule with dictionary-form verbs or Nの; not guaranteed execution.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "よていだ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "予定だ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-22",
+      "topic": "ようになる",
+      "role": "introduced",
+      "rationale": "Change into an ability or habit; distinct from deliberate effort to maintain it.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ようになる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ようになる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-23",
+      "topic": "ようにする",
+      "role": "introduced",
+      "rationale": "Deliberate effort/habit with positive or negative plain verbs; not guaranteed success.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ようにする"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ようにする",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-24",
+      "topic": "ていく",
+      "role": "introduced",
+      "rationale": "Movement away from a reference point and continuation/development forward from it.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ていく"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ていく",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-25",
+      "topic": "てくる",
+      "role": "introduced",
+      "rationale": "Movement toward/return to a reference point and development up to it, without a universal round-trip claim.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てくる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てくる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-26",
+      "topic": "たら",
+      "role": "introduced",
+      "rationale": "Hypothetical condition and completed-stage sequence, including requests; た does not force past time.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "たら"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たら",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-27",
+      "topic": "ば",
+      "role": "introduced",
+      "rationale": "Conditional formation and prerequisite/result relation; no blanket claim banning every volitional consequent.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ば"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ば",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-28",
+      "topic": "なら",
+      "role": "introduced",
+      "rationale": "Response to a premise, including advice carried out before the premise event; not a universal chronological connector.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "なら"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "なら",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-29",
+      "topic": "と",
+      "role": "introduced",
+      "rationale": "Habitual/automatic conditional result, distinct from N5 quotation/listing と.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "と"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "と",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-30",
+      "topic": "ても",
+      "role": "introduced",
+      "rationale": "Concessive verb/adjective/noun condition, distinct from N5 permission てもいい.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ても"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ても",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-31",
+      "topic": "ばあいは",
+      "role": "introduced",
+      "rationale": "Scenario-based instructions with proper noun/na-adjective attachment and kana reading.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ばあいは"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "場合は",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-32",
+      "topic": "かもしれない",
+      "role": "introduced",
+      "rationale": "Open possibility without fixed percentage or certainty; correct plain-form attachment.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かもしれない"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "かもしれない",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-33",
+      "topic": "はずだ／はずがない",
+      "role": "introduced",
+      "rationale": "Expected/impossible inference from reasons, including negative distinction; not obligation.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "はずだ／はずがない"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "はずだ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "はずがない",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-34",
+      "topic": "そう（見た目・兆し）",
+      "role": "introduced",
+      "rationale": "Appearance/impending-event stem construction plus そうな/そうに; hearsay そう is contrasted but not claimed here.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "そう（見た目・兆し）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "そうだ [2]",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "そうに／そうな",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-35",
+      "topic": "ようだ／のような・のように",
+      "role": "introduced",
+      "rationale": "Inference and likeness with proper noun/na-adjective attachment and modifier roles.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ようだ／のような・のように"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ようだ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ように／ような",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-36",
+      "topic": "みたい／みたいな・みたいに",
+      "role": "introduced",
+      "rationale": "Conversational inference/likeness and modifier roles, not the desire 見たい.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "みたい／みたいな・みたいに"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "みたいだ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "みたいな",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "みたいに",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-37",
+      "topic": "らしい①（推定・伝聞）",
+      "role": "introduced",
+      "rationale": "Inference from received information, not automatic proof or exclusively oral information.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "らしい①（推定・伝聞）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "らしい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-38",
+      "topic": "らしい②（特徴）",
+      "role": "introduced",
+      "rationale": "Characteristic likeness as an adjective, separately from inference about status; no universal group-trait claim.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "らしい②",
+          "url": "https://bunpro.jp/grammar_points/637"
+        }
+      ],
+      "referenceScopeNote": "Bunpro explicitly lists this characteristic construction at N4. JLPT Sensei's parent らしい inventory entry is glossed as inference/hearsay; it is not claimed as direct verification of the characteristic sense."
+    },
+    {
+      "lessonId": "n4-g-39",
+      "topic": "にみえる",
+      "role": "introduced",
+      "rationale": "Visual impression with N/na-adjective に versus i-adjective く; not merely visibility.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "にみえる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "に見える",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-40",
+      "topic": "とおもう",
+      "role": "introduced",
+      "rationale": "Opinion/thought after plain clauses; N5 quotation prerequisite is retained, not falsely assumed to teach every thinking construction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "とおもう"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "と思う",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-41",
+      "topic": "ときいた",
+      "role": "introduced",
+      "rationale": "Received-information report, distinct from own opinion, visibility and verification.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ときいた"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "と聞いた",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-42",
+      "topic": "かどうか",
+      "role": "introduced",
+      "rationale": "Embedded yes/no question without present-positive noun/na-adjective だ.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かどうか"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "かどうか",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-43",
+      "topic": "疑問詞のある文＋か（間接疑問）",
+      "role": "introduced",
+      "rationale": "Embed a wh-question with a main predicate; distinguish N5 standalone questions and indefinite 誰か from 誰が～か.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "Question-phrase＋か",
+          "url": "https://bunpro.jp/grammar_points/question-phrase-か"
+        }
+      ],
+      "referenceScopeNote": "Bunpro explicitly lists embedded questions at N4. JLPT Sensei's かどうか row covers the related polar-question construction; it is not claimed as a dedicated wh-embedding entry."
+    },
+    {
+      "lessonId": "n4-g-44",
+      "topic": "こと（名詞化）",
+      "role": "introduced",
+      "rationale": "Activity nominalization beyond the preserved N5 fixed ability/experience constructions.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "こと（名詞化）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "こと",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-45",
+      "topic": "ということ（名詞化）",
+      "role": "introduced",
+      "rationale": "Nominalized proposition as information object, not automatic full coverage of report/conclusion ということだ.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ということ（名詞化）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ということ",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-46",
+      "topic": "てほしい",
+      "role": "introduced",
+      "rationale": "Desire for another actor's action, distinct from own desire and an actually communicated request.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てほしい"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てほしい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-47",
+      "topic": "ようにいう",
+      "role": "introduced",
+      "rationale": "Reported request/instruction with separate speaker and intended actor; report does not prove compliance.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ようにいう",
+          "url": "https://bunpro.jp/grammar_points/386"
+        }
+      ],
+      "referenceScopeNote": "Dedicated N4 source verified at Bunpro. No separate JLPT Sensei inventory entry is asserted for this construction."
+    },
+    {
+      "lessonId": "n4-g-48",
+      "topic": "あとで",
+      "role": "introduced",
+      "rationale": "Post-completion sequence and noun attachment, not necessarily immediate or past in reference time.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "あとで"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "後で",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-49",
+      "topic": "までに",
+      "role": "introduced",
+      "rationale": "Completion/arrival deadline versus continued duration まで.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "までに"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "までに",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-50",
+      "topic": "間／間に（時間の基本）",
+      "role": "introduced",
+      "rationale": "Continuing span versus event within a span, allowing different actors and more than one bounded event.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ているあいだに",
+          "url": "https://bunpro.jp/grammar_points/ているあいだに",
+          "scope": "Ongoing-verb interval construction directly matches this lesson's main examples."
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "間／間に",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ],
+      "referenceScopeNote": "Bunpro separately labels broader の間に as N3 (https://bunpro.jp/grammar_points/210), including between-endpoint uses. This N4 lesson follows JLPT Sensei's basic duration grouping and Bunpro's narrower N4 ongoing-action interval. It does not claim the full broader N3 entry."
+    },
+    {
+      "lessonId": "n4-g-51",
+      "topic": "ころ／ごろ",
+      "role": "introduced",
+      "rationale": "Approximate time point/life period versus duration; no blanket ban on following に or conversational くらい.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ころ／ごろ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "頃",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-52",
+      "topic": "ごとに",
+      "role": "introduced",
+      "rationale": "Each temporal/distributive unit, without claiming universal interchangeability with おきに.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ごとに",
+          "url": "https://bunpro.jp/grammar_points/388"
+        }
+      ],
+      "referenceScopeNote": "Direct N4 support is Bunpro's dedicated ごとに entry. JLPT Sensei's おきに entry is related but is not asserted as an exact ごとに match."
+    },
+    {
+      "lessonId": "n4-g-53",
+      "topic": "ていた",
+      "role": "introduced",
+      "rationale": "Past ongoing activity/pre-existing result anchored against another past time/event, extending the N5 present-aspect prerequisite.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ていた"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ていた",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-54",
+      "topic": "し（理由・列挙）",
+      "role": "introduced",
+      "rationale": "Non-exhaustive reasons/qualities with correct copula; a single し can imply additional reasons.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "し（理由・列挙）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "し",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-55",
+      "topic": "のに（逆接）",
+      "role": "introduced",
+      "rationale": "Factual unexpected-result concession, not a claim to cover the separate purpose construction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "のに（逆接）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "のに（逆接）",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-56",
+      "topic": "やすい／にくい",
+      "role": "introduced",
+      "rationale": "Ease/difficulty and tendency with stem formation/adjective behavior; not identical to inability.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "やすい／にくい"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "やすい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "にくい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-57",
+      "topic": "づらい",
+      "role": "introduced",
+      "rationale": "Experienced burden/discomfort; no absolute subjective/objective split from にくい.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "づらい",
+          "url": "https://bunpro.jp/grammar_points/づらい"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "づらい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/4/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-58",
+      "topic": "方（かた）",
+      "role": "introduced",
+      "rationale": "Method nominalization from stems, including Nする→Nのしかた and contrast with advice ほう.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かた",
+          "url": "https://bunpro.jp/grammar_points/729"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N5",
+          "topic": "方（かた）",
+          "url": "https://jlptsensei.com/learn-japanese-grammar/方-かた-kata-meaning/"
+        }
+      ],
+      "levelResolution": "N4 following Bunpro and the explicitly recorded deferral of this exact topic in the closed N5 ledger. JLPT Sensei places it at N5; keep that disagreement visible and leave closed N5 content unchanged."
+    },
+    {
+      "lessonId": "n4-g-59",
+      "topic": "なおす",
+      "role": "introduced",
+      "rationale": "Basic redo/revision compound, distinguished from continuation and simple repetition.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "なおす"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N3",
+          "topic": "直す",
+          "url": "https://jlptsensei.com/learn-japanese-grammar/直す-なおす-naosu-meaning/"
+        }
+      ],
+      "levelResolution": "Teach the basic redo/revision compound at N4 following Bunpro's explicit N4 placement. JLPT Sensei sequences it at N3. Later N3 work should reuse this as a prerequisite rather than counting the identical construction again as new coverage."
+    },
+    {
+      "lessonId": "n4-g-60",
+      "topic": "く・に（動作の様子）",
+      "role": "introduced",
+      "rationale": "Adjective modification of actions, not a duplicate of noun modifiers or state change.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "く・に（Describing verbs）"
+        }
+      ],
+      "referenceScopeNote": "Direct N4 placement follows Bunpro. No dedicated JLPT Sensei N4 row is asserted for adjective adverbial formation."
+    },
+    {
+      "lessonId": "n4-g-61",
+      "topic": "くする／にする（形容詞）",
+      "role": "introduced",
+      "rationale": "Deliberate adjective-state change, extending rather than duplicating N5 noun-choice にする.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "にする・くする"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "くする",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "にする",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-62",
+      "topic": "他動詞・自動詞",
+      "role": "introduced",
+      "rationale": "Verb-pair roles rather than guessed endings or automatic intentionality; path を is not misclassified.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "他動詞・自動詞"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "他動詞＆自動詞",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-63",
+      "topic": "れる・られる（受身）",
+      "role": "introduced",
+      "rationale": "Passive formation/actor-recipient roles with positive and neutral examples; distinguish potential and retained objects.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "れる・られる（Passive）",
+          "url": "https://bunpro.jp/grammar_points/Verb%5Bpassive%5D"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "受身形",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-64",
+      "topic": "せる・させる（使役）",
+      "role": "introduced",
+      "rationale": "Causing/allowing with separate cause-giver/action actor; transitivity and context prevent an absolute に=let/を=force rule.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "せる・させる",
+          "url": "https://bunpro.jp/grammar_points/causative"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "させる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "wasabi",
+          "scope": "Transitive/intransitive causative particles, contextual permission/coercion and avoidance of duplicate を."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-65",
+      "topic": "させられる（使役受身）",
+      "role": "introduced",
+      "rationale": "Action actor is the one made to act, with cause-giver に; full and common contracted forms taught without indiscriminate shortening.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "させられる",
+          "url": "https://bunpro.jp/grammar_points/causative-passive"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "させられる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-66",
+      "topic": "させてください／せてください",
+      "role": "introduced",
+      "rationale": "Request to be allowed to act, not a grant of permission or instruction for the other person to perform the main action.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "させてください",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        },
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "せる・させる（parent construction）",
+          "url": "https://bunpro.jp/grammar_points/causative",
+          "scope": "Causative formation prerequisite; not asserted as a separate permission-entry title."
+        }
+      ],
+      "referenceScopeNote": "JLPT Sensei directly lists the permission construction at N4. Bunpro parent causative supports formation; no separate exact inventory row is invented."
+    },
+    {
+      "lessonId": "n4-g-67",
+      "topic": "命令形",
+      "role": "introduced",
+      "rationale": "Direct imperative formation and original written-exercise instruction comprehension; distinguish potential, volitional and N5 prohibition.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "命令形",
+          "url": "https://bunpro.jp/grammar_points/1032"
+        }
+      ],
+      "referenceScopeNote": "Dedicated N4 placement follows Bunpro. JLPT Sensei's なさい is related but is not asserted as an exact direct-imperative entry."
+    },
+    {
+      "lessonId": "n4-g-68",
+      "topic": "なさい",
+      "role": "introduced",
+      "rationale": "Stem-based command and written question instructions with relationship/register caution.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "なさい",
+          "url": "https://bunpro.jp/grammar_points/95"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "なさい",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-69",
+      "topic": "たらどう",
+      "role": "introduced",
+      "rationale": "Suggestion to consider an action, not a past report or guaranteed politeness.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "たらどう"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たらどう",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-70",
+      "topic": "ばよかった",
+      "role": "introduced",
+      "rationale": "Retrospective regret with positive/negative alternatives, not obligation or a claim that the wished alternative happened.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ばよかった",
+          "url": "https://bunpro.jp/grammar_points/ばよかった"
+        }
+      ],
+      "referenceScopeNote": "Bunpro directly lists N4. A generic ば inventory row is not asserted as direct verification of the complete regret construction."
+    },
+    {
+      "lessonId": "n4-g-71",
+      "topic": "ように（目的）",
+      "role": "introduced",
+      "rationale": "Action to enable/prevent an outcome, often negative or potential/non-volitional; distinguish analogy, changed ability, effort and reported instruction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ように（目的）",
+          "url": "https://bunpro.jp/grammar_points/628"
+        }
+      ],
+      "referenceScopeNote": "Bunpro directly lists the purpose construction at N4. JLPT Sensei's likeness ように／ような parent is not claimed as an exact purpose match."
+    },
+    {
+      "lessonId": "n4-g-72",
+      "topic": "お～になる",
+      "role": "introduced",
+      "rationale": "Honor the action's actor, who may be listener or a respected third party; distinguish humble own-side action.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "お～になる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "お～になる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-73",
+      "topic": "お～ください／ご～ください",
+      "role": "introduced",
+      "rationale": "Respectful request to the actor with conventional prefix/stem formation, distinct from offering one's own action.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "お～ください／ご～ください"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "お～ください",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-74",
+      "topic": "いらっしゃる",
+      "role": "introduced",
+      "rationale": "Honorific existence/go/come chosen by context; standard polite いらっしゃいます.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "いらっしゃる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "いらっしゃる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-75",
+      "topic": "なさる",
+      "role": "introduced",
+      "rationale": "Honorific する with なさいます and actor-role/register safeguards.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "なさる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "なさる",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-76",
+      "topic": "ございます／でございます",
+      "role": "introduced",
+      "rationale": "Formal ある versus formal copula; politeness to listener is not identical to honoring an action actor.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ございます／でございます"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ございます",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "でございます",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-77",
+      "topic": "お～する／ご～する",
+      "role": "introduced",
+      "rationale": "Own-side action toward/related to an honored person; do not indiscriminately humble the guest's action.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "お～する",
+          "url": "https://bunpro.jp/grammar_points/726"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "謙譲語I direction and action roles."
+        },
+        {
+          "source": "bunka-keigo-forms",
+          "scope": "Conventional お/ご, eligible words and distinction from honorific actor forms."
+        }
+      ],
+      "referenceScopeNote": "Direct N4 placement follows Bunpro. No nonexistent dedicated JLPT Sensei N4 お～する row is claimed."
+    },
+    {
+      "lessonId": "n4-g-78",
+      "topic": "いたす",
+      "role": "introduced",
+      "rationale": "Formal own-side action toward listener (謙譲語II), distinct from specifically honoring an action's destination.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "いたす"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "いたします",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-79",
+      "topic": "ていただけませんか",
+      "role": "introduced",
+      "rationale": "Polite request from benefit-receiver viewpoint; listener is requested to perform the main action.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ていただけませんか"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ていただけませんか",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ],
+      "validationReferences": [
+        {
+          "source": "bunka-keigo",
+          "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-80",
+      "topic": "ことにする／ことにしている",
+      "role": "introduced",
+      "rationale": "Personal decision and continuing self-imposed habit; unlike arranged outcome, intended action need not already have happened.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ことにする"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "ことにする"
+        }
+      ],
+      "levelScopeNotes": "Publisher inventories differ: use the directly verified JLPT Sensei N4 introductory scope. Bunpro N3 placement is retained as a variance, not misreported as an independent N4 match. N5 remains unchanged; future N3 treatment will be prerequisite review or a distinct extension."
+    },
+    {
+      "lessonId": "n4-g-81",
+      "topic": "ことになる（決定・予定）",
+      "role": "introduced",
+      "rationale": "Reported decision/arrangement with future action after a completed decision; not a claim of coercion or completed travel.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ことになる"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "ことになる"
+        }
+      ],
+      "levelScopeNotes": "Publisher inventories differ: use the directly verified JLPT Sensei N4 introductory scope. Bunpro N3 placement is retained as a variance, not misreported as an independent N4 match. N5 remains unchanged; future N3 treatment will be prerequisite review or a distinct extension."
+    },
+    {
+      "lessonId": "n4-g-82",
+      "topic": "そうだ（伝聞）",
+      "role": "introduced",
+      "rationale": "Hearsay with full plain clause, noun/na-adjective だ and explicit source; distinct from appearance stem + そう.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "そうだ（伝聞）"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "そうだ（伝聞）"
+        }
+      ],
+      "levelScopeNotes": "Publisher inventories differ: use the directly verified JLPT Sensei N4 introductory scope. Bunpro N3 placement is retained as a variance, not misreported as an independent N4 match. N5 remains unchanged; future N3 treatment will be prerequisite review or a distinct extension."
+    },
+    {
+      "lessonId": "n4-g-83",
+      "topic": "という／っていう（名前・内容）",
+      "role": "introduced",
+      "rationale": "Naming including casual っていう／って + noun and basic content-noun modification; not a claim to cover advanced という compounds.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "という／って（名前）"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "という"
+        }
+      ],
+      "levelScopeNotes": "Publisher inventories differ: use the directly verified JLPT Sensei N4 introductory scope. Bunpro N3 placement is retained as a variance, not misreported as an independent N4 match. N5 remains unchanged; future N3 treatment will be prerequisite review or a distinct extension."
+    },
+    {
+      "lessonId": "n4-g-84",
+      "topic": "と言われている",
+      "role": "introduced",
+      "rationale": "General reported reputation/claim; not visual impression or a guarantee that every speaker agrees.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "と言われている"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "と言われている"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-85",
+      "topic": "なくて（接続・理由）",
+      "role": "introduced",
+      "rationale": "Negative linking and reason including adjective forms; contrasted with without-doing/negative request ないで.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "なくて（接続・理由）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-86",
+      "topic": "て／で（理由・原因）",
+      "role": "introduced",
+      "rationale": "Reason/cause te/de followed by an emotional, natural or inability result; distinct from sequence.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "て（理由・原因）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "て／で（理由）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-87",
+      "topic": "て／で（手段・方法）",
+      "role": "introduced",
+      "rationale": "Verb te and noun de as means/manner; distinguish location/cause and action sequence.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "て・で（手段・方法）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-88",
+      "topic": "て（並列・対比）",
+      "role": "introduced",
+      "rationale": "Parallel/contrasting facts with explicit distinct actors; no automatic sequential or exact-simultaneity inference.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "て（並列・対比）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-89",
+      "topic": "てよかった／なくてよかった",
+      "role": "introduced",
+      "rationale": "Relief over actual action/non-event, contrasted in all polarities with counterfactual regret ばよかった.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てよかった"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てよかった"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-90",
+      "topic": "てすみません／なくてすみません",
+      "role": "introduced",
+      "rationale": "Apology for action or negative inability, contrasted with thanks and relief.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てすみません"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てすみません"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-91",
+      "topic": "て／ないで（親しい相手への依頼）",
+      "role": "introduced",
+      "rationale": "Bare affirmative/negative casual requests, distinct from clause-linking て, without-doing ないで, and stronger imperatives.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "て／ないで（依頼）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-92",
+      "topic": "てくれてありがとう",
+      "role": "introduced",
+      "rationale": "Gratitude for another actor's help toward the speaker, with actor/benefit direction and register safeguards.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てくれてありがとう"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-93",
+      "topic": "てくれない？／てもらえない？",
+      "role": "introduced",
+      "rationale": "Casual negative-question benefactive requests, contrasted with negative reports/complaints, prohibitions and formal receiving-side requests.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てくれない・てもらえない"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-94",
+      "topic": "てやる（くだけた授受）",
+      "role": "introduced",
+      "rationale": "Recognition of casual benefactive てやる with animals and a firm warning about hierarchical/disrespectful human use; not an instruction to address patients this way.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てやる"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-95",
+      "topic": "たらいいですか（指示を求める）",
+      "role": "introduced",
+      "rationale": "Wh-word instructions-seeking たらいいですか, distinguished from advice-giving and permission requests.",
+      "levelScopeNotes": "The directly verified Sensei N4 row is the specific instructions-seeking question. Bunpro's broader N3 たらいい parent construction is not misrepresented as an exact N4 match.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たらいいですか"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-96",
+      "topic": "かな／かしら／のだろうか",
+      "role": "introduced",
+      "rationale": "Internal questions with かな, かしら and のだろうか, including noun/na-adjective formation and contextual register rather than rigid gender rules.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かな／かしら／のだろうか"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "かな／かしら"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-97",
+      "topic": "かい（親しい相手への質問）",
+      "role": "introduced",
+      "rationale": "Familiar yes/no question ending かい and social/register recognition; not a universal polite-question replacement.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かい"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "かい"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-98",
+      "topic": "と言ってもいい",
+      "role": "introduced",
+      "rationale": "Qualified judgement と言ってもいい with full clause forms, distinct from reported reputation, literal permission and concessive と言っても.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "と言ってもいい"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "と言ってもいい"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-99",
+      "topic": "んだけど／んですが（相談の入り口）",
+      "role": "introduced",
+      "rationale": "N4 conversation application combining N5 explanatory んです and softening けど/が. Not counted as another new base grammar objective.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-66",
+        "n5-g-57",
+        "n5-g-75"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "んだけど・んですが"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-100",
+      "topic": "といい／ように祈る（願い）",
+      "role": "introduced",
+      "rationale": "Hope といい and explicit prayer ように祈る, with polarity, self/other wishes and distinction from advice, purpose, expectation and decision.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "といい／ように祈る"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-101",
+      "topic": "じゃないか／ではないか（確認・気づき）",
+      "role": "introduced",
+      "rationale": "Contextual confirmation/discovery with じゃないか/ではないか, distinguished from literal negation and with confrontational-tone warning.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "じゃないか"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "じゃないか／ではないか"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-102",
+      "topic": "しか～ない（限定）",
+      "role": "introduced",
+      "rationale": "Restrictive noun/quantity しか with mandatory negative predicate, distinguished from additive/zero も, neutral だけ and later no-choice Vるしかない.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "しか～ない／数量＋しか～ない"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-103",
+      "topic": "ばかり（物・種類の偏り）",
+      "role": "introduced",
+      "rationale": "Noun-based restriction/dominance ばかり, not assumed always negative; distinguish recent Vたばかり and defer the dedicated wider Vてばかりいる construction.",
+      "levelScopeNotes": "Sensei directly places the noun-based introductory objective at N4; Bunpro places restrictive ばかり at N3. The dedicated Vてばかりいる expansion remains separate.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ばかり（名詞の限定）"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "ばかり"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-104",
+      "topic": "だけで（条件・手段の限定）",
+      "role": "introduced",
+      "rationale": "Application of N5 だけ to a sufficient condition/means using で, not a new duplicate base objective; distinguish additive だけでなく.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-40",
+        "n4-g-86",
+        "n4-g-87"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "だけで"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "だけで"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-105",
+      "topic": "だけでなく（～も）",
+      "role": "introduced",
+      "rationale": "Non-exclusive addition using だけでなく and basic following も, with noun/verb/adjective attachment and retained inclusion of A.",
+      "levelScopeNotes": "The N4 parent lesson explicitly describes the usual following も. Do not infer advanced formal equivalents or all extended N3 compound patterns from this basic construction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "だけでなく"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-106",
+      "topic": "など／とか～とか（例を挙げる）",
+      "role": "introduced",
+      "rationale": "Open examples with など and casual とか, including verb examples, contrasted with closed と and N5 や/たり prerequisites.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "など／とか～とか"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "など／とか～とか"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-107",
+      "topic": "数量＋も（多さ・最小量の否定）",
+      "role": "introduced",
+      "rationale": "Scalar quantity も in positive surprise and negative minimum-zero contexts, distinct from N5 additive も.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "数量＋も"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "も（程度の強調）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-108",
+      "topic": "数量＋は（最低限の見込み）",
+      "role": "introduced",
+      "rationale": "Amount + は lower-bound estimate, not a guaranteed exact amount or maximum; distinguish scalar も and restrictive しか.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "数量＋は"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-109",
+      "topic": "以上／以下／数量＋より",
+      "role": "introduced",
+      "rationale": "Inclusive numeric 以上/以下 versus exclusive numeric より; Sensei's broader comparison row uses existing N5 comparison plus this explicit quantity extension.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "以上／以下／数量＋より"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "より"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-110",
+      "topic": "以外（例外・追加）",
+      "role": "introduced",
+      "rationale": "Exclusion/addition with 以外は/以外にも/以外の and interpretation of which set is excluded.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "以外"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-111",
+      "topic": "何＋助数詞＋か（いくつか）",
+      "role": "introduced",
+      "rationale": "Indefinite quantities with 何 + appropriate counter + か, distinct from direct questions and emphatic quantity も.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "何＋助数詞＋か"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-112",
+      "topic": "～は～の一つだ",
+      "role": "introduced",
+      "rationale": "One member of a category using の一つ; no inference of uniqueness, superlative or exhaustive group size.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "～は～の一つだ"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-113",
+      "topic": "AとBと、どちらが（比較の質問）",
+      "role": "introduced",
+      "rationale": "Explicit two-way comparison question and context-bound answer as application of canonical N5 comparison, not a newly counted base comparison objective.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-19"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "と～と、どちらが"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-114",
+      "topic": "まで（意外な範囲への追加）",
+      "role": "introduced",
+      "rationale": "Scalar/unexpected addition まで, distinct from N5 time/place endpoints and neutral additive も.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "まで（程度・意外な追加）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-115",
+      "topic": "がる／がっている（様子から見る気持ち）",
+      "role": "introduced",
+      "rationale": "Observable adjective-based がる/がっている including 欲しがる, momentary signs versus tendencies and direct quotations; no absolute ban on third-person adjectives or mind-reading claim.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "がる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "がる／がっている"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-116",
+      "topic": "たがる／たがっている",
+      "role": "introduced",
+      "rationale": "Observed desire to act using たがる/たがっている, with actor/owner distinguished from speaker-desired てほしい and direct たい quotations.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "たがる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たがる"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-117",
+      "topic": "がり（傾向・感じやすさ）",
+      "role": "introduced",
+      "rationale": "Lexically conventional がり tendency/sensitivity nouns, self/other uses and distinction from momentary がっている; not a universal adjective rule or diagnosis.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "がり"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-118",
+      "topic": "がする（音・におい・味）",
+      "role": "introduced",
+      "rationale": "Sensory noun + がする for sound/smell/taste; distinguish sensory evidence from unverified causes, voluntary listening and visual impression.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "がする"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "がする"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-119",
+      "topic": "をしている（特徴・身につけた物）",
+      "role": "introduced",
+      "rationale": "Conventional feature/expression and accessory をしている, not generic do or an unrestricted verb for all clothing.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "する（特徴・身につける物）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-120",
+      "topic": "さ（形容詞の名詞化）",
+      "role": "introduced",
+      "rationale": "Adjective nominalization さ with i/na formation and いい→よさ; distinguish a noun degree/quality from adjective modification.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "さ"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "さ"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-121",
+      "topic": "ら（人や物のまとまり）",
+      "role": "introduced",
+      "rationale": "Limited plural/associative ら with personal and demonstrative pronouns, real examples of 彼ら and これら, no fixed group count or universal noun plural rule, and register safeguards.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ら"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-122",
+      "topic": "毎～のように（頻繁な繰り返し）",
+      "role": "introduced",
+      "rationale": "Frequent repetition 毎～のように as almost every/emphatically frequent period, not a fixed precise interval or universal interchange with みたいに.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "毎～のように"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-123",
+      "topic": "くは（形容詞の対比）",
+      "role": "introduced",
+      "rationale": "Contrastive adjective くは in both positive acknowledgement and negative judgement, preserving polarity and avoiding unwarranted opposite-property inference.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "くは"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-124",
+      "topic": "でできている／から作る（材料）",
+      "role": "introduced",
+      "rationale": "Material/origin でできている and から作る/作られている, distinguished from tools and travel origin without an absolute visible-material rule.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "でできる・からできる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "から作る"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-125",
+      "topic": "まま（状態を保つ）",
+      "role": "introduced",
+      "rationale": "Unchanged-state まま after ta/nai verbs, nouns and adjectives; keep result state versus mere sequence distinct.",
+      "levelScopeNotes": "Sensei places the directly taught unchanged-state objective at N4; Bunpro places the corresponding broader entry at N3. Preserve this variance and treat future N3 reuse as prerequisite review or a genuinely distinct extension.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "まま"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "まま（状態の維持）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-126",
+      "topic": "ことがある（時々の出来事）",
+      "role": "introduced",
+      "rationale": "Occasional Vる/Vないことがある, distinct from canonical N5 past experiential Vたことがある, current habits and personal decisions.",
+      "levelScopeNotes": "Teach the narrow directly verified Sensei N4 occurrence scope; Bunpro N3 placement is retained as a variance. Do not reclassify the existing N5 experience objective.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ことがある（時々）"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "ことがある（時々）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-127",
+      "topic": "のに（用途・必要な時間など）",
+      "role": "introduced",
+      "rationale": "Purpose/function/resources-time のに after dictionary form, distinct from concessive のに and not a blanket replacement for every purpose construction.",
+      "levelScopeNotes": "Sensei N4 / Bunpro N3 variance retained. Introductory use, convenience/necessity and required-time examples only; not all possible purpose/conditional extensions.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "のに（用途・必要な時間）"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "のに（目的）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-128",
+      "topic": "おきに（間隔）",
+      "role": "introduced",
+      "rationale": "Intervals おきに with minute/hour behavior versus the explicit one-day-gap reading 一日おき; distinguish per-period frequency and avoid universal equivalence with ごとに.",
+      "levelScopeNotes": "Direct Sensei N4 introductory interval scope retained with Bunpro N3 placement noted. Exact dates/times remove ambiguity for important schedules.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "おきに"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "おきに"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-129",
+      "topic": "に気がつく／に気づく",
+      "role": "introduced",
+      "rationale": "Awareness に気がつく/気づく with nouns and nominalized facts, distinct from correction and 気をつける; awareness alone does not imply resolution.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "に気がつく"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "に気がつく"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-130",
+      "topic": "期間に回数（頻度）",
+      "role": "introduced",
+      "rationale": "Per-period counts/durations using に, distinguished from fixed intervals, time points and location/goal marking.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "に（頻度）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-131",
+      "topic": "の次に（順位）",
+      "role": "introduced",
+      "rationale": "Ranking の次に with explicit comparison scope, not automatically a worldwide second rank or temporal succession.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "の次に"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-132",
+      "topic": "Nでも（軽い提案）",
+      "role": "introduced",
+      "rationale": "Exemplifying noun でも in a light proposal, retaining case particles where needed and distinguishing contrast, concession and strict restriction.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "でも（提案・例示）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "でも（提案）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-133",
+      "topic": "疑問詞でも／AでもBでも（自由な選択）",
+      "role": "introduced",
+      "rationale": "Free/universal selection with wh-word でも and AでもBでも; actual examples of anyone and either named option, distinct from indefinite か and negative も.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "疑問詞でも／でも～でも"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-134",
+      "topic": "こういう／そういう／ああいう／どういう",
+      "role": "introduced",
+      "rationale": "Type/content modifiers こういう/そういう/ああいう/どういう, not the exact demonstrative referent, naming という or visual stem そう.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "そういう"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-135",
+      "topic": "のは～だ（焦点を示す）",
+      "role": "introduced",
+      "rationale": "Focus/identification and reason with のは～だ as an application of N5 nominalization; examples identify the actor and state the reason explicitly.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-88"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "のは～だ"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-136",
+      "topic": "ないと／なければいけない（義務の言い方）",
+      "role": "introduced",
+      "rationale": "Explicit ないと（いけない） and なければいけない variants apply N5 obligation to actual N4 forms/contexts; distinguish negative condition, prohibition and no need.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-18",
+        "n5-g-79"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ないと／なければいけない"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "なければいけない"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-137",
+      "topic": "受身（迷惑・影響を受ける）",
+      "role": "introduced",
+      "rationale": "Depth application of existing N4 passive to affected-party/adversative and intransitive events, with retained を and separate actor/object/affected-person roles.",
+      "objectiveType": "scope-extension",
+      "prerequisiteLessonIds": [
+        "n4-g-63"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "受身（迷惑・影響）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "受身形"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-138",
+      "topic": "Vるとき／Vたとき（時間の関係）",
+      "role": "introduced",
+      "rationale": "Relative-time application of canonical N5 とき: nonpast versus past reference stage within an actual past narrative; not a universal calendar-tense rule.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-22"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "とき"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-139",
+      "topic": "～ないNはない（例外の否定）",
+      "role": "introduced",
+      "rationale": "Negative relative clause + concrete noun + existential negation excludes all counterexamples within a stated group; distinguish no-one-knows from no-one-does-not-know and from N3 weak double negation.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "～ない～はない"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-140",
+      "topic": "ように～てほしい（比べ方・目的を添える）",
+      "role": "introduced",
+      "rationale": "Application combining likeness/purpose ように with てほしい, using actual actor/goal examples and distinguishing speaker desire from the actor's desire or agreement.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n4-g-35",
+        "n4-g-46",
+        "n4-g-71",
+        "n4-g-22"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ように～てほしい"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-141",
+      "topic": "もし（仮定を強調）",
+      "role": "introduced",
+      "rationale": "Hypothesis signal もし applied to already taught conditionals, not a replacement for the conditional ending or proof of current weather.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n4-g-26",
+        "n4-g-27",
+        "n4-g-28"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "もし"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-142",
+      "topic": "って感じ（くだけた印象）",
+      "role": "introduced",
+      "rationale": "Casual impression/gist って感じ and its limits in precise/formal reporting; not official naming or verified fact.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "って感じ"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-143",
+      "topic": "とみえる（根拠からの推測）",
+      "role": "introduced",
+      "rationale": "Evidence-based inferential とみえる in recognition-focused formal/literary contexts, distinguishing observation from deduction and visual に見える.",
+      "levelScopeNotes": "Bunpro directly places the introductory inferential form at N4; Sensei places it at N3. Retain the variance. N4 teaches bounded recognition with simple evidence and conclusions; broader N3 reuse must be review or a distinct extension.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "とみえる"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N3",
+          "topic": "とみえる／とみえて"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-144",
+      "topic": "が見られる（観察・見る機会）",
+      "role": "introduced",
+      "rationale": "Observation/opportunity が見られる as an explicit contextual application of existing potential/passive 見る, with object/observer roles and natural visibility distinguished.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n4-g-18",
+        "n4-g-63"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "が見られる"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-145",
+      "topic": "と考えられている／とされている",
+      "role": "introduced",
+      "rationale": "Reported general evaluation と考えられている/とされている, not a guarantee of universal agreement or all advanced deductive/potential と考えられる uses.",
+      "objectiveType": "scope-extension",
+      "prerequisiteLessonIds": [
+        "n4-g-40",
+        "n4-g-63",
+        "n4-g-84"
+      ],
+      "countAsNewN4Objective": false,
+      "levelScopeNotes": "Match the exact Bunpro N4 reported-view forms with ている. A separate N2 と考えられる entry is not asserted to be the same objective or imported wholesale.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "と考えられている／とされている"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-146",
+      "topic": "それに／それで／それでも／だが",
+      "role": "introduced",
+      "rationale": "Connected-text addition/result/concession/contrast with それに/それで/それでも/だが, including actual sentence-initial written だが and existing polite ですが prerequisite.",
+      "objectiveType": "prerequisite-application",
+      "prerequisiteLessonIds": [
+        "n5-g-95",
+        "n5-g-75"
+      ],
+      "countAsNewN4Objective": false,
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "それに／それで／それでも／だが・ですが"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "それに／それでも"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-147",
+      "topic": "なかなか～ない",
+      "role": "introduced",
+      "rationale": "Negative なかなか for difficulty or delayed expected results, not impossibility forever; broader positive なかなか is only a contrast, not claimed complete here.",
+      "levelScopeNotes": "Use the directly verified Sensei N4 negative-verb objective; record Bunpro N3 placement. Positive evaluative/adjectival extensions stay separate for N3 review.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "なかなか～ない"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "なかなか～ない"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-148",
+      "topic": "が必要／必要がある",
+      "role": "introduced",
+      "rationale": "Noun が必要 versus dictionary verb 必要がある, with noun modification and negative no-need distinguished from prohibition; structural guidance merits a rich grammar lesson rather than only a lexical gloss.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "が必要／必要がある"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "が必要／必要がある"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-149",
+      "topic": "かかる／する（費用）",
+      "role": "introduced",
+      "rationale": "Cost かかる versus item-price する, two actual cost examples plus the existing N5 time prerequisite; distinguish amount-as-price from object を and avoid universal substitution for duration.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かかる（時間・値段）／する（値段）"
+        }
+      ],
+      "objectiveType": "scope-extension",
+      "prerequisiteLessonIds": [
+        "n5-v-19-verbs-b-040"
+      ]
+    }
+  ],
+  "referenceAudit": "docs/n4-grammar-reference-audit.json"
+}
