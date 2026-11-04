@@ -129,3 +129,14 @@ Stage 10A-9.1 checkpoint: `088ae9cef1445ac0d8cc5ed21bb9154dc5f1d9dd`; CI [417941
 
 
 Stage 10A-10 content checkpoint: `76a0fe0afbc0e84ef31d7daaa93dd7bd304216ad`; CI [41795905029](https://github.com/Xyron22/tenka-nihongo/actions/runs/41795905029) passed syntax/full regressions and all three automatic browser audits. The actual runner-produced reports verify 79 N4 cards at all five widths, with 52/52/65 current N4/N5/Kaigo source hashes and 6/7/39 passing flows. The latest mobile keigo card was visually inspected. This evidence-only follow-up persists those generated reports without changing runtime inputs; final-head CI remains required and is recorded in draft PR #16. Production-related steps and deployment were skipped.
+
+
+Stage 10A-10 final evidence checkpoint: `59386091844226bc90a291a133f98602c4a222f2`; CI [41796853160](https://github.com/Xyron22/tenka-nihongo/actions/runs/41796853160) passed all syntax, regression and browser gates. Recovered reports matched the committed evidence exactly; production steps/deployment were skipped.
+
+## Stage 10A-11 — Full publisher-reference snapshot and honest gap tracking
+
+- Capture every observed N4 row from Bunpro (185) and all four JLPT Sensei pages (132) in [the reference audit](n4-grammar-reference-audit.json). These are overlapping publisher snapshot rows, not unique objectives, required lesson counts or an official JLPT inventory.
+- Map each row to current rich N4 teaching, a verified N5 prerequisite, an explicit partial scope, or pending grammar/meaning-specific vocabulary. Keep hearsay/appearance, concession/purpose, quotation/naming and scalar/additive uses distinct. Record publisher level differences without moving harder content into closed N5.
+- Preserve every row, stable snapshot identity and actual lesson reference with integrity assertions. Pending/partial rows block any claim of full reference reconciliation. The existing 79 lessons remain intact; N4/N3 stay OPEN.
+- Export a read-only compiled curriculum snapshot from Node CI for follow-up prerequisite/lexical reconciliation. This uses the real manifest and does not modify the app, user data, progress, or deployed files.
+- Validate syntax/full regressions and all three browser audits in CI; runtime input hashes are unchanged, so compare runner-produced reports to the accepted evidence. PR #16 remains draft; no merge or production deployment.

@@ -43,6 +43,8 @@ Unit bahasa kerja terpilih mencapai **[KAIGO BASIC CLOSED](docs/KAIGO_BASIC_CLOS
 - Kakijun N5 dari KanjiVG terverifikasi serta canvas latihan menulis
 - PWA / Add to Home Screen di iPhone
 
+Cakupan Bunpou N4 juga dilacak pada [audit seluruh baris rujukan](docs/n4-grammar-reference-audit.json). Topik yang baru terisi sebagian dan materi yang belum dibuat tetap tercatat terbuka; jumlah baris penerbit bukan jumlah resmi JLPT.
+
 ## Target perangkat
 
 TENKA menggunakan aplikasi web/PWA yang sama untuk HP dan PC/laptop. Dukungan layar desktop, mouse, navigasi tombol dengan keyboard, dan pengetikan laporan masuk [kriteria versi awal](docs/V1_ACCEPTANCE.md). Audit browser mencakup lebar 320/390/720 serta 1280/1440 piksel.

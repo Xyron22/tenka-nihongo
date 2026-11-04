@@ -13,3 +13,17 @@ assert.equal(coverage.officialJlptInventory,false);assert(coverage.references.so
 for(const row of coverage.entries){assert(D.jlpt.N4.grammar.some(g=>g.id===row.lessonId));assert(row.topic&&row.rationale&&row.referenceMatches.length);if(row.role==='prerequisite-review'){assert(D.jlpt.N5.grammar.some(g=>g.id===row.canonicalLessonId));assert.equal(row.countAsNewN4Objective,false);}else{assert.equal(row.role,'introduced');assert(row.referenceMatches.some(r=>r.level==='N4'));}}
 assert.equal(new Set(coverage.entries.map(e=>e.lessonId)).size,coverage.entries.length,'coverage IDs are unique');assert.equal(coverage.entries.length,D.jlpt.N4.grammar.length,'every installed lesson mapped exactly once');
 console.log(`N4 Bunpou quality: ${D.jlpt.N4.grammar.length} rich lessons with contextual questions, kana/contrast, reference roles and preserved legacy/other-level content passed; full level remains OPEN.`);
+
+const inventory=require('../docs/n4-grammar-reference-audit.json'),sourceIds=new Set(inventory.sources.map(s=>s.id)),recordIds=new Set(),dispositions=new Set(['covered_n4','prerequisite_n5','partial','pending_grammar','pending_lexical']);
+assert.equal(inventory.officialJlptInventory,false);assert.equal(inventory.fullReferenceInventoryCaptured,true);
+for(const r of inventory.records){
+ assert(r.id&&!recordIds.has(r.id),'source row identity must be unique');recordIds.add(r.id);assert(sourceIds.has(r.source));assert(r.topic&&r.scope&&r.reason&&/^https:\/\//.test(r.sourceUrl));assert(dispositions.has(r.disposition));assert(Array.isArray(r.lessons));
+ for(const lesson of r.lessons)assert([...D.jlpt.N5.grammar,...D.jlpt.N4.grammar].some(g=>g.id===lesson),r.id+': unknown lesson');
+ if(r.disposition==='covered_n4')assert(r.lessons.some(id=>D.jlpt.N4.grammar.some(g=>g.id===id)),r.id+': N4 evidence required');
+ if(r.disposition==='prerequisite_n5')assert(r.lessons.length&&r.lessons.every(id=>D.jlpt.N5.grammar.some(g=>g.id===id)),r.id+': real N5 prerequisite required');
+}
+for(const s of inventory.sources)assert.equal(inventory.records.filter(r=>r.source===s.id).length,s.snapshotRows,'full captured source inventory retained');
+for(const e of coverage.entries.filter(e=>e.role==='introduced'))assert(inventory.records.some(r=>r.lessons.includes(e.lessonId)),e.lessonId+': source reconciliation evidence required');
+const unresolved=inventory.records.filter(r=>r.disposition==='partial'||r.disposition.startsWith('pending_'));
+if(unresolved.length){assert.equal(inventory.status,'OPEN');assert.equal(inventory.fullReferenceReconciliation,false);assert.equal(coverage.fullReferenceReconciliation,false);}
+console.log('N4 full source snapshot: '+inventory.records.length+' publisher rows; '+unresolved.length+' unresolved rows across overlapping inventories; no official count or closure inferred.');

@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Staged N4 grammar through honorific/humble/formal-request foundations; full inventory reconciliation still pending",
+  "scope": "Staged N4 grammar through keigo foundations; full publisher inventory captured, unresolved rows tracked explicitly",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -1613,5 +1613,6 @@
         }
       ]
     }
-  ]
+  ],
+  "referenceAudit": "docs/n4-grammar-reference-audit.json"
 }

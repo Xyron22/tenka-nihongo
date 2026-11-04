@@ -78,6 +78,7 @@ jobs:
           node --check content-pack-v41.js
           node --check content-pack-v42.js
           node --check content-pack-v43.js
+          node --check scripts/export-curriculum-audit.cjs
           node --check tests/n4-bunpou-quality.js
           node --check tests/n4-grammar-quiz.js
           node --check tests/n4-browser-smoke.cjs
@@ -227,6 +228,9 @@ jobs:
 
       - name: N4 grammar content and reference coverage
         run: node tests/n4-bunpou-quality.js
+
+      - name: Export read-only compiled curriculum for reference reconciliation
+        run: node scripts/export-curriculum-audit.cjs
 
       - name: N4 contextual grammar quiz and progress
         run: node tests/n4-grammar-quiz.js
