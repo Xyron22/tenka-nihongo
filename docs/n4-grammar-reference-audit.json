@@ -103,9 +103,12 @@
         "snapshotLine": 284
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-v-21-adverbs-018"
+      ],
+      "reason": "Gradual change だんだん is explicitly glossed and illustrated by だんだん寒くなりました in closed N5.",
+      "evidenceKind": "lexical-prerequisite"
     },
     {
       "id": "bp-n4-L286",
@@ -724,9 +727,12 @@
         "snapshotLine": 367
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-v-21-adverbs-008"
+      ],
+      "reason": "Basic negative 全然 is explicitly glossed and illustrated by 全然分かりません in closed N5; positive/discourse extensions are not inferred.",
+      "evidenceKind": "lexical-prerequisite"
     },
     {
       "id": "bp-n4-L369",
@@ -752,9 +758,12 @@
         "snapshotLine": 371
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-v-21-adverbs-007"
+      ],
+      "reason": "Negative あまり is explicitly glossed and illustrated by コーヒーはあまり飲みません in closed N5.",
+      "evidenceKind": "lexical-prerequisite"
     },
     {
       "id": "bp-n4-L373",
@@ -1164,9 +1173,12 @@
         "snapshotLine": 427
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-149",
+        "n5-v-19-verbs-b-040"
+      ],
+      "reason": "Cost かかる versus item-price する, two actual cost examples plus the existing N5 time prerequisite; distinguish amount-as-price from object を and avoid universal substitution for duration."
     },
     {
       "id": "bp-n4-L429",
@@ -1177,9 +1189,11 @@
         "snapshotLine": 429
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-149"
+      ],
+      "reason": "Cost かかる versus item-price する, two actual cost examples plus the existing N5 time prerequisite; distinguish amount-as-price from object を and avoid universal substitution for duration."
     },
     {
       "id": "bp-n4-L431",
@@ -1317,9 +1331,11 @@
         "snapshotLine": 447
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "partial",
+      "lessons": [
+        "n5-v-22-gaps-030"
+      ],
+      "reason": "N5 だいたい has mostly/roughly gloss and an actual mostly example. A numeric-approximation application with its own context remains pending; do not claim it from a matching term alone."
     },
     {
       "id": "bp-n4-L449",
@@ -2012,9 +2028,11 @@
         "snapshotLine": 540
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-148"
+      ],
+      "reason": "Noun が必要 versus dictionary verb 必要がある, with noun modification and negative no-need distinguished from prohibition; structural guidance merits a rich grammar lesson rather than only a lexical gloss."
     },
     {
       "id": "bp-n4-L542",
@@ -2038,9 +2056,11 @@
         "snapshotLine": 544
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-148"
+      ],
+      "reason": "Noun が必要 versus dictionary verb 必要がある, with noun modification and negative no-need distinguished from prohibition; structural guidance merits a rich grammar lesson rather than only a lexical gloss."
     },
     {
       "id": "bp-n4-L546",
@@ -2798,9 +2818,12 @@
         "ordinal": 3
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-v-21-adverbs-007"
+      ],
+      "reason": "Negative あまり prerequisite with an actual kana example; not counted anew as N4.",
+      "evidenceKind": "lexical-prerequisite"
     },
     {
       "id": "js-n4-004",
@@ -2947,9 +2970,11 @@
         "ordinal": 13
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-148"
+      ],
+      "reason": "Noun が必要 versus dictionary verb 必要がある, with noun modification and negative no-need distinguished from prohibition; structural guidance merits a rich grammar lesson rather than only a lexical gloss."
     },
     {
       "id": "js-n4-014",
@@ -3065,9 +3090,11 @@
         "ordinal": 21
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-148"
+      ],
+      "reason": "Noun が必要 versus dictionary verb 必要がある, with noun modification and negative no-need distinguished from prohibition; structural guidance merits a rich grammar lesson rather than only a lexical gloss."
     },
     {
       "id": "js-n4-022",
@@ -4711,9 +4738,12 @@
         "ordinal": 131
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_lexical",
-      "lessons": [],
-      "reason": "Requires meaning-specific N4 vocabulary/examples and practice; a matching word alone is insufficient."
+      "disposition": "prerequisite_n5",
+      "lessons": [
+        "n5-v-21-adverbs-008"
+      ],
+      "reason": "Basic negative 全然 prerequisite with an actual kana example; not counted anew as N4.",
+      "evidenceKind": "lexical-prerequisite"
     },
     {
       "id": "js-n4-132",

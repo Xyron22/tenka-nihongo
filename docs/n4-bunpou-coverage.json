@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Authored N4 constructions mapped across complete publisher snapshots; lexical coordination/meaning-specific rows and outward compounds still OPEN",
+  "scope": "N4 constructions including necessity/cost fully authored; remaining meaning-specific lexical/compound applications and full N4 curriculum remain OPEN",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -2748,6 +2748,41 @@
           "level": "N3",
           "topic": "なかなか～ない"
         }
+      ]
+    },
+    {
+      "lessonId": "n4-g-148",
+      "topic": "が必要／必要がある",
+      "role": "introduced",
+      "rationale": "Noun が必要 versus dictionary verb 必要がある, with noun modification and negative no-need distinguished from prohibition; structural guidance merits a rich grammar lesson rather than only a lexical gloss.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "が必要／必要がある"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "が必要／必要がある"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-149",
+      "topic": "かかる／する（費用）",
+      "role": "introduced",
+      "rationale": "Cost かかる versus item-price する, two actual cost examples plus the existing N5 time prerequisite; distinguish amount-as-price from object を and avoid universal substitution for duration.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "かかる（時間・値段）／する（値段）"
+        }
+      ],
+      "objectiveType": "scope-extension",
+      "prerequisiteLessonIds": [
+        "n5-v-19-verbs-b-040"
       ]
     }
   ],

@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
-const load=require('./helpers/load-content'),{data:D,context,files}=load(),coverage=require('../docs/n4-bunpou-coverage.json'),packs=['content-pack-v34.js','content-pack-v35.js','content-pack-v36.js','content-pack-v37.js','content-pack-v38.js','content-pack-v39.js','content-pack-v40.js','content-pack-v41.js','content-pack-v42.js','content-pack-v43.js','content-pack-v44.js','content-pack-v45.js','content-pack-v46.js','content-pack-v47.js','content-pack-v48.js','content-pack-v49.js'];
+const load=require('./helpers/load-content'),{data:D,context,files}=load(),coverage=require('../docs/n4-bunpou-coverage.json'),packs=['content-pack-v34.js','content-pack-v35.js','content-pack-v36.js','content-pack-v37.js','content-pack-v38.js','content-pack-v39.js','content-pack-v40.js','content-pack-v41.js','content-pack-v42.js','content-pack-v43.js','content-pack-v44.js','content-pack-v45.js','content-pack-v46.js','content-pack-v47.js','content-pack-v48.js','content-pack-v49.js','content-pack-v50.js'];
 for(const pack of packs){
  assert(files.includes(pack));const baseline={window:null};baseline.window=baseline;vm.createContext(baseline);for(const f of files.filter(f=>f!==pack))vm.runInContext(fs.readFileSync(f,'utf8'),baseline);
  const old=baseline.TENKA_DATA;for(const level of ['N5','N3','N2','N1'])assert.equal(JSON.stringify(D.jlpt[level]),JSON.stringify(old.jlpt[level]),`${pack} cannot alter ${level}`);assert.equal(JSON.stringify(D.kaigo),JSON.stringify(old.kaigo));for(const kind of ['vocab','kanji'])assert.equal(JSON.stringify(D.jlpt.N4[kind]),JSON.stringify(old.jlpt.N4[kind]));
@@ -18,9 +18,9 @@ const inventory=require('../docs/n4-grammar-reference-audit.json'),sourceIds=new
 assert.equal(inventory.officialJlptInventory,false);assert.equal(inventory.fullReferenceInventoryCaptured,true);
 for(const r of inventory.records){
  assert(r.id&&!recordIds.has(r.id),'source row identity must be unique');recordIds.add(r.id);assert(sourceIds.has(r.source));assert(r.topic&&r.scope&&r.reason&&/^https:\/\//.test(r.sourceUrl));assert(dispositions.has(r.disposition));assert(Array.isArray(r.lessons));
- for(const lesson of r.lessons)assert([...D.jlpt.N5.grammar,...D.jlpt.N4.grammar].some(g=>g.id===lesson),r.id+': unknown lesson');
- if(r.disposition==='covered_n4')assert(r.lessons.some(id=>D.jlpt.N4.grammar.some(g=>g.id===id)),r.id+': N4 evidence required');
- if(r.disposition==='prerequisite_n5')assert(r.lessons.length&&r.lessons.every(id=>D.jlpt.N5.grammar.some(g=>g.id===id)),r.id+': real N5 prerequisite required');
+ for(const lesson of r.lessons)assert([...D.jlpt.N5.grammar,...D.jlpt.N5.vocab,...D.jlpt.N4.grammar,...D.jlpt.N4.vocab].some(g=>g.id===lesson),r.id+': unknown lesson');
+ if(r.disposition==='covered_n4')assert(r.lessons.some(id=>[...D.jlpt.N4.grammar,...D.jlpt.N4.vocab].some(g=>g.id===id)),r.id+': N4 evidence required');
+ if(r.disposition==='prerequisite_n5')assert(r.lessons.length&&r.lessons.every(id=>[...D.jlpt.N5.grammar,...D.jlpt.N5.vocab].some(g=>g.id===id)),r.id+': real N5 prerequisite required');
 }
 for(const s of inventory.sources)assert.equal(inventory.records.filter(r=>r.source===s.id).length,s.snapshotRows,'full captured source inventory retained');
 for(const e of coverage.entries.filter(e=>e.role==='introduced'))assert(inventory.records.some(r=>r.lessons.includes(e.lessonId)),e.lessonId+': source reconciliation evidence required');
