@@ -159,3 +159,12 @@ Stage 9D-6 CI: [run 41777524430](https://github.com/Xyron22/tenka-nihongo/action
 - Expand both browser layout inventories to 1280/1440 px while retaining 320/390/720 px. Add real desktop interaction checks at 1280×800 and 1440×900. Existing source/content/runtime checks remain in place.
 - Keep current local progress behavior explicit. A tested phone-to-laptop transfer workflow is still open; this checkpoint introduces no account, backend, progress migration or production release.
 - Local syntax/full regressions and both browser audits pass. N5 and Kaigo layout inventories cover 320/390/720/1280/1440 px; desktop controls at 1280×800 and 1440×900 pass native keyboard navigation, Japanese report entry/comparison/revision and mouse card flipping. Updated reports pin the tested runtime/assets; V1 acceptance records the evidence and remaining transfer/device/closure gates. Exact final-head CI is recorded in draft PR #16.
+
+Desktop acceptance CI: [run 41779412250](https://github.com/Xyron22/tenka-nihongo/actions/runs/41779412250) passed at `5f2f2c1`; production configuration/upload/deploy were skipped.
+
+## Stage 9D-7 — Bounded basic unit closed; active target extends through N3
+
+- Reconcile the eight workplace-report/handoff objectives and six respectful-communication objectives against the installed lessons, evidence, answer rationale and practice gates. The closure gate validates required text/kana, unique identities, existing pictures/cautions, segment/answer integrity and both objective ledgers.
+- Record [KAIGO BASIC CLOSED](KAIGO_BASIC_CLOSED.md) and a machine-readable closure snapshot. Keep broad Kaigo/certification flags open and learner mastery untouched. Existing runtime and data are unchanged; phone/desktop audit hashes still match their tested files.
+- Adopt the owner's [N4 → N3 priority](PROJECT_ROADMAP.md), defer N2/N1, and document the original N4/N3 sample baseline. Record the supplied book editions and verified official-exam framework in [KOKUSHI_TRACK.md](KOKUSHI_TRACK.md); chapter mapping and dedicated exam questions remain planned.
+- Local syntax and the full regression suite passed, including the new 14-objective closure gate. Both existing five-width browser reports still match every tested runtime/illustration hash because this checkpoint changes no runtime or lessons. Exact final-head CI is recorded in draft PR #16. The next content checkpoint begins N4 rather than expanding this bounded Kaigo unit indefinitely.

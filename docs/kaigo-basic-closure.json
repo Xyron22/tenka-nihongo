@@ -1,0 +1,36 @@
+{
+  "status": "KAIGO BASIC CLOSED",
+  "checked": "2026-11-04",
+  "scope": "Installed basic workplace-language unit and its selected objectives",
+  "fullKaigoClosed": false,
+  "certificationTrackClosed": false,
+  "inventorySnapshot": {
+    "vocab": 152,
+    "tools": 13,
+    "houkoku": 20,
+    "handoff": 26
+  },
+  "mappedObjectiveSnapshot": 14,
+  "objectiveLedgers": [
+    "docs/kaigo-workplace-practice.json",
+    "docs/kaigo-communication-coverage.json"
+  ],
+  "requiredCiGates": [
+    "Kaigo workplace content and practice",
+    "Kaigo kana listening and quiz review",
+    "Kaigo workplace report models and persistence",
+    "Kaigo wrong-report model review and mastery preservation",
+    "Kaigo writing revision and explicit self-assessment",
+    "Kaigo sentence handoff and authored audio",
+    "Kaigo communication content and practice coverage",
+    "Kaigo explicit case selection and progress preservation",
+    "Kaigo handoff answer explanations and evidence",
+    "Kaigo illustrated-tool pronunciation and progress",
+    "Kaigo illustrated-tool quiz review and persistence"
+  ],
+  "releasePolicy": {
+    "draftPr": 16,
+    "mergeAuthorized": false,
+    "productionDeployAuthorized": false
+  }
+}

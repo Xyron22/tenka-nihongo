@@ -86,6 +86,7 @@ jobs:
           node --check tests/kaigo-writing-revision.js
           node --check tests/kaigo-tools-audio.js
           node --check tests/kaigo-tools-quiz.js
+          node --check tests/kaigo-basic-closure.js
           node --check tools-pack-v1.js
           node --check app-v2.js
           node --check audio-engine-v5.js
@@ -210,6 +211,9 @@ jobs:
 
       - name: Kaigo illustrated-tool quiz review and persistence
         run: node tests/kaigo-tools-quiz.js
+
+      - name: Kaigo bounded basic curriculum closure
+        run: node tests/kaigo-basic-closure.js
 
       - name: Exam Sound 5.1.1 test
         run: node tests/audio-v5.js

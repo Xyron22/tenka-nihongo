@@ -1,6 +1,6 @@
 # TENKA V1 acceptance — N5 and bounded Kaigo basics
 
-The first-version target combines the closed N5 curriculum and the selected Kaigo workplace units. Full N4–N1 development, a full-length JLPT mock exam and complete Kaigo/certification coverage remain separate scopes. The Kaigo closure audit still needs to reconcile its objective ledgers and record remaining gaps; this document does not declare that audit complete.
+The original baseline combines the closed N5 curriculum and the selected Kaigo workplace units. The owner's 2026-11-04 instruction extends the active completion target to **N4 then N3**, with N2/N1 deferred; see [PROJECT_ROADMAP.md](PROJECT_ROADMAP.md). The bounded Kaigo basic unit is closed with its [objective/practice evidence](KAIGO_BASIC_CLOSED.md). Full Kaigo and the dedicated certification track remain separate from that bounded unit. This baseline document does not label N4/N3 or the complete application finished.
 
 ## Phone and PC/laptop requirement
 
@@ -26,7 +26,7 @@ An explicit, tested way to transfer existing progress from phone to laptop is an
 
 ## Remaining first-version gates
 
-1. Finish the bounded Kaigo objective/coverage closure audit and resolve its findings.
+1. Complete the active N4/N3 curriculum and practice gates in the roadmap while preserving N5 and bounded Kaigo closure.
 2. Resolve and test progress transfer if continuation of existing phone progress is required for the first version.
 3. Provide a reviewable test version of the latest branch for owner testing on phone and desktop.
 4. Fix confirmed findings, rerun checks, and record the final release checkpoint.
