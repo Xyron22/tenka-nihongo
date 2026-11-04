@@ -39,3 +39,14 @@ Stage 10A-2 checkpoint: `c6384b4c1cf18a8d194659a68426a5e681c54278`; CI [41784679
 - Change in ability/habit is distinguished from intentional effort to maintain a habit. The directional lessons teach both physical movement relative to a reference point and development relative to an anchor time; てくる is not falsely limited to round trips.
 - Extend both publisher mappings for these N4 objectives. Full reference reconciliation remains pending; purpose ために and other unreviewed objectives are not added merely to inflate this batch.
 - Before accepting the checkpoint, run local syntax/full regressions, all-target wrong/timeout/correct grammar sessions and all three five-width browser audits. N4/N5/Kaigo reports must match the current manifest. Final-head CI is recorded in draft PR #16. N4/N3 remain OPEN; N2/N1 development stays deferred.
+
+
+Stage 10A-3 checkpoint: `c5692e75f8842d4dd83ca576037e7d2f950498f2`; CI [41785460447](https://github.com/Xyron22/tenka-nihongo/actions/runs/41785460447) passed on that exact head. Production-related steps and deployment were skipped.
+
+## Stage 10A-4 — Conditions, concessions and scenarios
+
+- Add six original rich lessons: たら, ば, なら, conditional と, ても／でも and 場合は. All thirty-one installed lessons retain the complete guidance/example/contrast fields and original contextual practice; the N5 experience bridge remains prerequisite review.
+- Explain conditional formation for verb groups, adjectives and nouns, the non-past uses of たら, automatic/habitual と, premise-based なら including advice before the premise event, and concessions rather than permission. Avoid falsely banning every volitional consequent after ば or claiming that other correctly conjugated conditionals can never overlap.
+- Question prompts specify a scenario and retain the actual conjugation boundary. Distractor explanations distinguish a wrong attachment from a differently conjugated pattern that may be valid in another context. 場合は practices everyday workplace instructions without adding medical/legal directives.
+- Both publisher inventories support these six N4 objectives. Explanations/examples are original; comparisons were additionally checked against Bunpro's own conditional topic/formation references. The full N4 ledger remains OPEN.
+- Accept only after syntax/full regressions, all-target wrong/timeout/correct sessions, five-width N4/N5/Kaigo browser audits and final-head CI pass. N5 and existing Kaigo content, old grammar fields, progress identities and core runtime remain unchanged. Draft PR #16 records the final-head CI; no merge or production deployment is authorized.

@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Staged N4 action/aspect/benefactive, temporal/action-phase, ability/volition/planning and directional-development batches; full inventory reconciliation still pending",
+  "scope": "Staged N4 actions, phases, ability/volition/planning, directional development and conditionals; full inventory reconciliation still pending",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -486,6 +486,120 @@
           "level": "N4",
           "topic": "てくる",
           "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-26",
+      "topic": "たら",
+      "role": "introduced",
+      "rationale": "Hypothetical condition and completed-stage sequence, including requests; た does not force past time.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "たら"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "たら",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-27",
+      "topic": "ば",
+      "role": "introduced",
+      "rationale": "Conditional formation and prerequisite/result relation; no blanket claim banning every volitional consequent.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ば"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ば",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-28",
+      "topic": "なら",
+      "role": "introduced",
+      "rationale": "Response to a premise, including advice carried out before the premise event; not a universal chronological connector.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "なら"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "なら",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/2/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-29",
+      "topic": "と",
+      "role": "introduced",
+      "rationale": "Habitual/automatic conditional result, distinct from N5 quotation/listing と.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "と"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "と",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-30",
+      "topic": "ても",
+      "role": "introduced",
+      "rationale": "Concessive verb/adjective/noun condition, distinct from N5 permission てもいい.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ても"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ても",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/page/3/"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-31",
+      "topic": "ばあいは",
+      "role": "introduced",
+      "rationale": "Scenario-based instructions with proper noun/na-adjective attachment and kana reading.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "ばあいは"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "場合は",
+          "url": "https://jlptsensei.com/jlpt-n4-grammar-list/"
         }
       ]
     }
