@@ -212,9 +212,11 @@
         "snapshotLine": 299
       },
       "scope": "Negative clause connection: sequence/coexisting facts.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-85"
+      ],
+      "reason": "Negative linking and reason including adjective forms; contrasted with without-doing/negative request ないで."
     },
     {
       "id": "bp-n4-L301",
@@ -225,9 +227,11 @@
         "snapshotLine": 301
       },
       "scope": "Negative clause connection: reason/cause.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-85"
+      ],
+      "reason": "Negative linking and reason including adjective forms; contrasted with without-doing/negative request ないで."
     },
     {
       "id": "bp-n4-L303",
@@ -1436,9 +1440,11 @@
         "snapshotLine": 473
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-89"
+      ],
+      "reason": "Relief over actual action/non-event, contrasted in all polarities with counterfactual regret ばよかった."
     },
     {
       "id": "bp-n4-L475",
@@ -1507,9 +1513,11 @@
         "snapshotLine": 482
       },
       "scope": "て／で reason/cause, not just sequential connection.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-86"
+      ],
+      "reason": "Reason/cause te/de followed by an emotional, natural or inability result; distinct from sequence."
     },
     {
       "id": "bp-n4-L484",
@@ -1535,9 +1543,11 @@
         "snapshotLine": 486
       },
       "scope": "て／で means/manner.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-87"
+      ],
+      "reason": "Verb te and noun de as means/manner; distinguish location/cause and action sequence."
     },
     {
       "id": "bp-n4-L488",
@@ -1621,9 +1631,11 @@
         "snapshotLine": 497
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-90"
+      ],
+      "reason": "Apology for action or negative inability, contrasted with thanks and relief."
     },
     {
       "id": "bp-n4-L501",
@@ -1694,9 +1706,11 @@
         "snapshotLine": 508
       },
       "scope": "て non-sequential parallel/contrast clauses.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-88"
+      ],
+      "reason": "Parallel/contrasting facts with explicit distinct actors; no automatic sequential or exact-simultaneity inference."
     },
     {
       "id": "bp-n4-L510",
@@ -2608,9 +2622,11 @@
         "snapshotLine": 635
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-84"
+      ],
+      "reason": "General reported reputation/claim; not visual impression or a guarantee that every speaker agrees."
     },
     {
       "id": "bp-n4-L637",
@@ -3144,10 +3160,12 @@
         "ordinal": 37
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision.",
-      "levelReview": "Sensei N4 / Bunpro N3: decision or arranged result ことになる."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-81"
+      ],
+      "reason": "Reported decision/arrangement with future action after a completed decision; not a claim of coercion or completed travel.",
+      "levelReview": "Sensei N4 / Bunpro N3: decision or arranged result ことになる. Resolved for the narrow original N4 scope above; broader N3 extensions remain separate."
     },
     {
       "id": "js-n4-038",
@@ -3158,10 +3176,12 @@
         "ordinal": 38
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision.",
-      "levelReview": "Sensei N4 / Bunpro N3: personal decision ことにする."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-80"
+      ],
+      "reason": "Personal decision and continuing self-imposed habit; unlike arranged outcome, intended action need not already have happened.",
+      "levelReview": "Sensei N4 / Bunpro N3: personal decision ことにする. Resolved for the narrow original N4 scope above; broader N3 extensions remain separate."
     },
     {
       "id": "js-n4-039",
@@ -3774,10 +3794,12 @@
         "ordinal": 81
       },
       "scope": "そうだ reporting a source; distinct from appearance.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision.",
-      "levelReview": "Sensei N4 / Bunpro N3: hearsay そうだ."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-82"
+      ],
+      "reason": "Hearsay with full plain clause, noun/na-adjective だ and explicit source; distinct from appearance stem + そう.",
+      "levelReview": "Sensei N4 / Bunpro N3: hearsay そうだ. Resolved for the narrow original N4 scope above; broader N3 extensions remain separate."
     },
     {
       "id": "js-n4-082",
@@ -3920,9 +3942,11 @@
         "ordinal": 91
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-86"
+      ],
+      "reason": "Reason/cause te/de followed by an emotional, natural or inability result; distinct from sequence."
     },
     {
       "id": "js-n4-092",
@@ -4098,9 +4122,11 @@
         "ordinal": 103
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-90"
+      ],
+      "reason": "Apology for action or negative inability, contrasted with thanks and relief."
     },
     {
       "id": "js-n4-104",
@@ -4124,9 +4150,11 @@
         "ordinal": 105
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-89"
+      ],
+      "reason": "Relief over actual action/non-event, contrasted in all polarities with counterfactual regret ばよかった."
     },
     {
       "id": "js-n4-106",
@@ -4195,10 +4223,12 @@
         "ordinal": 110
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision.",
-      "levelReview": "Sensei N4 / Bunpro N3: naming という; not already covered by N5 quotation."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-83"
+      ],
+      "reason": "Naming including casual っていう／って + noun and basic content-noun modification; not a claim to cover advanced という compounds.",
+      "levelReview": "Sensei N4 / Bunpro N3: naming という; not already covered by N5 quotation. Resolved for the narrow original N4 scope above; broader N3 extensions remain separate."
     },
     {
       "id": "js-n4-111",
@@ -4224,9 +4254,11 @@
         "ordinal": 112
       },
       "scope": "The named introductory construction or lexical sense; broader uses are not inferred from a matching string.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-84"
+      ],
+      "reason": "General reported reputation/claim; not visual impression or a guarantee that every speaker agrees."
     },
     {
       "id": "js-n4-113",
@@ -4310,9 +4342,11 @@
         "ordinal": 118
       },
       "scope": "って naming/called; N5 quotation alone does not cover naming.",
-      "disposition": "pending_grammar",
-      "lessons": [],
-      "reason": "Requires original teaching and contextual questions, or an explicit reviewed scope/placement decision."
+      "disposition": "covered_n4",
+      "lessons": [
+        "n4-g-83"
+      ],
+      "reason": "Naming including casual っていう／って + noun and basic content-noun modification; not a claim to cover advanced という compounds."
     },
     {
       "id": "js-n4-119",

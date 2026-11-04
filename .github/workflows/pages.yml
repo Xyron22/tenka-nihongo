@@ -78,6 +78,7 @@ jobs:
           node --check content-pack-v41.js
           node --check content-pack-v42.js
           node --check content-pack-v43.js
+          node --check content-pack-v44.js
           node --check scripts/export-curriculum-audit.cjs
           node --check tests/n4-bunpou-quality.js
           node --check tests/n4-grammar-quiz.js

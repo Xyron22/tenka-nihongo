@@ -140,3 +140,14 @@ Stage 10A-10 final evidence checkpoint: `59386091844226bc90a291a133f98602c4a222f
 - Preserve every row, stable snapshot identity and actual lesson reference with integrity assertions. Pending/partial rows block any claim of full reference reconciliation. The existing 79 lessons remain intact; N4/N3 stay OPEN.
 - Export a read-only compiled curriculum snapshot from Node CI for follow-up prerequisite/lexical reconciliation. This uses the real manifest and does not modify the app, user data, progress, or deployed files.
 - Validate syntax/full regressions and all three browser audits in CI; runtime input hashes are unchanged, so compare runner-produced reports to the accepted evidence. PR #16 remains draft; no merge or production deployment.
+
+
+Stage 10A-11 checkpoint: `11019bd4e7161dbac6969cc181cbe52dcee56dc9`; CI [41801333736](https://github.com/Xyron22/tenka-nihongo/actions/runs/41801333736) passed syntax/full regressions and all three browser audits. Recovered reports exactly matched committed evidence; the real-manifest snapshot confirmed N5 97/820/105 and N4 79/2/1 (grammar/vocabulary/Kanji). Production steps/deployment were skipped.
+
+## Stage 10A-12 — Decisions, reported information and linking functions
+
+- Add eleven original rich lessons: personal decisions/standing habits, arranged decisions, hearsay そうだ, naming/content という and casual っていう, general と言われている, negative なくて connection/reason, causal て／で, means/manner て／で, parallel/contrasting て, relief てよかった／なくてよかった, and apology てすみません／なくてすみません. All 90 installed lessons retain complete guidance, two Japanese/kana/Indonesian examples, contrast and contextual practice.
+- Keep decision time separate from action time; distinguish voluntary choice, arrangement and coercion. Hearsay retains full clauses including noun/na-adjective だ; appearance uses a different attachment. Reported claims are not proof of universal agreement or truth.
+- Explain each te-form relation by context. Negative requests/without-doing are not blindly replaced with なくて; causal results differ from explicit commands; parallel clauses may have different actors. Relief over actual outcomes differs from regret in both polarities.
+- Update the full reference audit only for actual authored scope. Record Sensei N4/Bunpro N3 differences for decisions, hearsay and naming; the N5 closed curriculum remains unchanged. Fix the read-only audit export to include the existing term field for vocabulary reconciliation.
+- Require CI syntax/full regressions, all-target wrong/timeout/correct sessions and three current five-width browser audits. Recover and persist actual runner reports before final acceptance. N4/N3 remain OPEN, N2/N1 deferred; PR #16 draft, no merge/deployment.

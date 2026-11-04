@@ -1,7 +1,7 @@
 {
   "status": "OPEN",
   "checked": "2026-11-04",
-  "scope": "Staged N4 grammar through keigo foundations; full publisher inventory captured, unresolved rows tracked explicitly",
+  "scope": "N4 grammar through decisions, hearsay/naming and causal/manner/parallel linking; unresolved inventory rows remain explicit",
   "officialJlptInventory": false,
   "fullReferenceReconciliation": false,
   "references": [
@@ -1610,6 +1610,193 @@
         {
           "source": "bunka-keigo",
           "scope": "Honorific/humble/formal categories and who is honored."
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-80",
+      "topic": "ことにする／ことにしている",
+      "role": "introduced",
+      "rationale": "Personal decision and continuing self-imposed habit; unlike arranged outcome, intended action need not already have happened.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ことにする"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "ことにする"
+        }
+      ],
+      "levelScopeNotes": "Publisher inventories differ: use the directly verified JLPT Sensei N4 introductory scope. Bunpro N3 placement is retained as a variance, not misreported as an independent N4 match. N5 remains unchanged; future N3 treatment will be prerequisite review or a distinct extension."
+    },
+    {
+      "lessonId": "n4-g-81",
+      "topic": "ことになる（決定・予定）",
+      "role": "introduced",
+      "rationale": "Reported decision/arrangement with future action after a completed decision; not a claim of coercion or completed travel.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "ことになる"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "ことになる"
+        }
+      ],
+      "levelScopeNotes": "Publisher inventories differ: use the directly verified JLPT Sensei N4 introductory scope. Bunpro N3 placement is retained as a variance, not misreported as an independent N4 match. N5 remains unchanged; future N3 treatment will be prerequisite review or a distinct extension."
+    },
+    {
+      "lessonId": "n4-g-82",
+      "topic": "そうだ（伝聞）",
+      "role": "introduced",
+      "rationale": "Hearsay with full plain clause, noun/na-adjective だ and explicit source; distinct from appearance stem + そう.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "そうだ（伝聞）"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "そうだ（伝聞）"
+        }
+      ],
+      "levelScopeNotes": "Publisher inventories differ: use the directly verified JLPT Sensei N4 introductory scope. Bunpro N3 placement is retained as a variance, not misreported as an independent N4 match. N5 remains unchanged; future N3 treatment will be prerequisite review or a distinct extension."
+    },
+    {
+      "lessonId": "n4-g-83",
+      "topic": "という／っていう（名前・内容）",
+      "role": "introduced",
+      "rationale": "Naming including casual っていう／って + noun and basic content-noun modification; not a claim to cover advanced という compounds.",
+      "referenceMatches": [
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "という／って（名前）"
+        },
+        {
+          "source": "bunpro",
+          "level": "N3",
+          "topic": "という"
+        }
+      ],
+      "levelScopeNotes": "Publisher inventories differ: use the directly verified JLPT Sensei N4 introductory scope. Bunpro N3 placement is retained as a variance, not misreported as an independent N4 match. N5 remains unchanged; future N3 treatment will be prerequisite review or a distinct extension."
+    },
+    {
+      "lessonId": "n4-g-84",
+      "topic": "と言われている",
+      "role": "introduced",
+      "rationale": "General reported reputation/claim; not visual impression or a guarantee that every speaker agrees.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "と言われている"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "と言われている"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-85",
+      "topic": "なくて（接続・理由）",
+      "role": "introduced",
+      "rationale": "Negative linking and reason including adjective forms; contrasted with without-doing/negative request ないで.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "なくて（接続・理由）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-86",
+      "topic": "て／で（理由・原因）",
+      "role": "introduced",
+      "rationale": "Reason/cause te/de followed by an emotional, natural or inability result; distinct from sequence.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "て（理由・原因）"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "て／で（理由）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-87",
+      "topic": "て／で（手段・方法）",
+      "role": "introduced",
+      "rationale": "Verb te and noun de as means/manner; distinguish location/cause and action sequence.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "て・で（手段・方法）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-88",
+      "topic": "て（並列・対比）",
+      "role": "introduced",
+      "rationale": "Parallel/contrasting facts with explicit distinct actors; no automatic sequential or exact-simultaneity inference.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "て（並列・対比）"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-89",
+      "topic": "てよかった／なくてよかった",
+      "role": "introduced",
+      "rationale": "Relief over actual action/non-event, contrasted in all polarities with counterfactual regret ばよかった.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てよかった"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てよかった"
+        }
+      ]
+    },
+    {
+      "lessonId": "n4-g-90",
+      "topic": "てすみません／なくてすみません",
+      "role": "introduced",
+      "rationale": "Apology for action or negative inability, contrasted with thanks and relief.",
+      "referenceMatches": [
+        {
+          "source": "bunpro",
+          "level": "N4",
+          "topic": "てすみません"
+        },
+        {
+          "source": "jlptsensei",
+          "level": "N4",
+          "topic": "てすみません"
         }
       ]
     }
